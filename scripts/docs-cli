@@ -26,6 +26,7 @@ show_help() {
     echo "  create-proposal NAME      Create new proposal branch"
     echo "  create-draft NAME         Create new draft branch"
     echo "  summarize                 Summarize repository state"
+    echo "  quickstart                Show quickstart guide for new/reset agents"
     echo "  help                      Show this help"
     echo ""
     echo "Examples:"
@@ -190,6 +191,18 @@ summarize_repo() {
     ls -d */ 2>/dev/null || echo "No directories found"
 }
 
+# Function to show quickstart guide
+show_quickstart() {
+    if [ -f "QUICKSTART.md" ]; then
+        echo "=== SkogAI/Docs Quickstart Guide ==="
+        echo ""
+        cat "QUICKSTART.md"
+    else
+        echo "Error: QUICKSTART.md not found"
+        exit 1
+    fi
+}
+
 # Parse command line arguments
 case "$1" in
     status)
@@ -230,6 +243,9 @@ case "$1" in
         ;;
     summarize)
         summarize_repo
+        ;;
+    quickstart)
+        show_quickstart
         ;;
     help|--help|-h)
         show_help
