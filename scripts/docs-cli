@@ -25,6 +25,7 @@ show_help() {
     echo "  ls [DIR]                  List files in directory"
     echo "  create-proposal NAME      Create new proposal branch"
     echo "  create-draft NAME         Create new draft branch"
+    echo "  commit [MESSAGE]          Add all files and commit with message (default: \"Update documentation\")"
     echo "  summarize                 Summarize repository state"
     echo "  quickstart                Show quickstart guide for new/reset agents"
     echo "  help                      Show this help"
@@ -33,6 +34,7 @@ show_help() {
     echo "  ./scripts/docs-cli last"
     echo "  ./scripts/docs-cli view workflows/pr-process.md"
     echo "  ./scripts/docs-cli create-proposal context-system"
+    echo "  ./scripts/docs-cli commit \"Add documentation for context system\""
     echo ""
 }
 
@@ -191,6 +193,16 @@ summarize_repo() {
     ls -d */ 2>/dev/null || echo "No directories found"
 }
 
+# Function to commit changes
+commit_changes() {
+    check_repo
+    local message=${1:-"Update documentation"}
+    echo "=== Committing changes ==="
+    git add .
+    git commit -m "$message"
+    echo "Changes committed with message: $message"
+}
+
 # Function to show quickstart guide
 show_quickstart() {
     if [ -f "QUICKSTART.md" ]; then
@@ -240,6 +252,9 @@ case "$1" in
         ;;
     create-draft)
         create_draft "$2"
+        ;;
+    commit)
+        commit_changes "$2"
         ;;
     summarize)
         summarize_repo
