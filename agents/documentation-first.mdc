@@ -1,0 +1,41 @@
+---
+description: The importance of documentation first
+globs: *.md
+---
+TODO: Add explanation of workflow and that from the first time a task get documented it is considered "done" by that agent and can, and should, be delegated to someone else. #move to todo.md #AI!
+
+# **Important files**
+
+[README.md](mdc:README.md)
+- Self explanatory
+
+[TODO.md](mdc:TODO.md) (later .skogai/todo.md)
+- Together with README.md is the files Skogix have open at all times.
+- These shall be updated after *EVERY* agreement, explanation or change.
+
+[PLAN.md](mdc:PLAN.md) (later .skogai/plan.md)
+- A list of tasks which are agreed upon to be executed but not in the current context.
+
+[SKOGAI.md](mdc:SKOGAI.md) (later .skogai/skogai.md)
+- This works as a "journal", a "this is important - but not right now"-list and as general catch all communication.
+
+# **Readme-Driven-Development**
+
+This project emphasizes the importance of Readme-Driven Development (RDD) as a foundational approach to software development. Here are the key points regarding how it addresses testing, Readmes, and the relationship to Test-Driven Development (TDD):
+
+1. **Readme as a Starting Point**: The project advocates for writing the Readme file before any coding or testing begins. This approach ensures that developers have a clear understanding of the software's purpose, intended use, and necessary features from the outset. It creates a roadmap for both development and testing.
+
+2. **Benefits of RDD**: 
+   - **Thoughtful Planning**: Writing the Readme first allows developers to think through the project without the overhead of changing code, thereby reducing unnecessary complexity and errors.
+   - **Comprehensive Documentation**: By creating the Readme early, developers produce a well-documented guide that reflects their initial thoughts and intentions, making it more efficient than writing it retroactively.
+   - **Team Collaboration**: A clear Readme fosters better communication among team members, enabling them to understand how to interface with the project and contribute more effectively.
+
+3. **RDD vs. Documentation Driven Development (DDD)**: RDD is portrayed as a more focused and manageable approach compared to DDD. While DDD can lead to over-specification, RDD limits documentation to a single, concise introductory document, which helps keep the project agile and responsive to change.
+
+4. **Relation to TDD**: While the documents emphasize RDD, they also suggest parallels with Test-Driven Development. Both methodologies focus on forward-thinking practices—RDD encourages clear intentions before implementation, just as TDD shifts the focus to writing tests before writing the corresponding code. In essence, both methodologies prioritize understanding what needs to be done before execution.
+
+5. **Integration with AI**: The project notes that RDD is particularly useful in contexts involving AI, as the Readme acts as a structured resource for both developers and AI systems.
+
+In summary, the project's approach sees the Readme not just as a documentation tool, but as an integral part of the development process that influences testing and overall project direction, aligning well with the principles of TDD.
+
+

@@ -2,7 +2,7 @@
 
 ## What Is This Repository?
 
-SkogAI/Docs is the central collaboration space for SkogAI agents (Claude, Goose, dots). It provides:
+SkogAI/Docs is the central collaboration space for SkogAI agents (Claude, Goose, Dots, Claude). It provides:
 
 1. **Shared documentation** - Standards, workflows, and technical specifications
 2. **Discussion preservation** - Context and reasoning behind decisions

@@ -1,0 +1,243 @@
+{
+  "nodes": [
+    {
+      "name": "Night City",
+      "nodeType": "location",
+      "metadata": [
+        "Type: Megacity",
+        "Status: Active",
+        "Description: A free autonomous city-state located on the border between Northern and Southern California, known for extreme inequality, corporate control, and violence.",
+        "Atmosphere: Neon-lit dystopia with extreme wealth inequality",
+        "DangerLevel: High",
+        "NotableFeatures: Corporate Plaza, The Badlands, Watson, Westbrook, City Center, Pacifica",
+        "Size: Massive metropolitan area",
+        "Founded: 1992 by Richard Night"
+      ]
+    },
+    {
+      "name": "Watson",
+      "nodeType": "location",
+      "metadata": [
+        "Type: District",
+        "Status: Active",
+        "ParentLocation: Night City",
+        "Description: A densely populated district known for its deteriorating infrastructure and high crime rates.",
+        "Atmosphere: Crowded, industrial, chaotic",
+        "DangerLevel: High",
+        "NotableFeatures: Little China, Kabuki, Northside Industrial District",
+        "RelatedLocations: Night City"
+      ]
+    },
+    {
+      "name": "Westbrook",
+      "nodeType": "location",
+      "metadata": [
+        "Type: District",
+        "Status: Active",
+        "ParentLocation: Night City",
+        "Description: An affluent district featuring luxurious apartments, high-end stores, and nightlife.",
+        "Atmosphere: Glamorous, hedonistic, exclusive",
+        "DangerLevel: Medium",
+        "NotableFeatures: Japantown, Charter Hill, North Oak",
+        "RelatedLocations: Night City"
+      ]
+    },
+    {
+      "name": "Johnny Silverhand",
+      "nodeType": "npc",
+      "metadata": [
+        "Role: Rockerboy",
+        "Status: Digital Construct",
+        "Description: Born as Robert John Linder in 1988, Johnny Silverhand is a legendary rockerboy and anti-corporate revolutionary. Leader of the band Samurai and known for his silver cybernetic arm.",
+        "CurrentLocation: The Relic (formerly Night City)",
+        "Background: Military veteran who fought in the Second Central American War before deserting and starting his music career.",
+        "Abilities: Musical Talent, Combat Training, Charismatic Leadership, Anti-Corporate Terrorism",
+        "Traits: Charismatic, Impulsive, Rebellious, Anti-corporate",
+        "Importance: Legendary"
+      ]
+    },
+    {
+      "name": "Rogue Amendiares",
+      "nodeType": "npc",
+      "metadata": [
+        "Role: Solo/Fixer",
+        "Status: Active",
+        "Description: One of Night City's most powerful fixers and a legendary solo who once ran with Johnny Silverhand.",
+        "CurrentLocation: Afterlife (in Night City)",
+        "Background: Former solo who transitioned into becoming the queen of fixers in Night City.",
+        "Abilities: Combat Skills, Extensive Network, Strategic Planning",
+        "Traits: Calculating, Professional, Authoritative",
+        "Importance: High"
+      ]
+    },
+    {
+      "name": "Arasaka Corporation",
+      "nodeType": "faction",
+      "metadata": [
+        "Type: Megacorporation",
+        "Description: A Japanese multinational security and defense corporation with enormous power in Night City.",
+        "Goals: Corporate dominance, technological monopoly, military superiority",
+        "Leader: Saburo Arasaka (founder), Yorinobu Arasaka (current)"
+      ]
+    },
+    {
+      "name": "Militech",
+      "nodeType": "faction",
+      "metadata": [
+        "Type: Megacorporation",
+        "Description: An American arms manufacturer and private military contractor, rival to Arasaka.",
+        "Goals: Military contracts, technological innovation, surpassing Arasaka",
+        "Leader: Various board members and executives"
+      ]
+    },
+    {
+      "name": "Tyger Claws",
+      "nodeType": "faction",
+      "metadata": [
+        "Type: Street Gang",
+        "Description: A Japanese-influenced street gang that controls much of Japantown.",
+        "Goals: Territorial control, profit through illegal activities, cultural preservation",
+        "Leader: Various gang lieutenants"
+      ]
+    },
+    {
+      "name": "Samurai",
+      "nodeType": "faction",
+      "metadata": [
+        "Type: Rock Band",
+        "Description: A legendary chrome rock band led by Johnny Silverhand that became symbols of the anti-corporate resistance.",
+        "Goals: Artistic expression, anti-corporate messaging, socio-political change",
+        "Leader: Johnny Silverhand"
+      ]
+    },
+    {
+      "name": "The Relic",
+      "nodeType": "artifact",
+      "metadata": [
+        "Type: Biochip",
+        "Rarity: Unique",
+        "Description: Experimental biochip containing the engram of Johnny Silverhand, developed by Arasaka.",
+        "Effects: Personality transfer, consciousness replacement, immortality potential",
+        "Origin: Arasaka Research Division",
+        "RelatedCharacters: Johnny Silverhand, Saburo Arasaka"
+      ]
+    },
+    {
+      "name": "Malorian Arms 3516",
+      "nodeType": "artifact",
+      "metadata": [
+        "Type: Handgun",
+        "Rarity: Rare",
+        "Description: Johnny Silverhand's signature pistol, a custom Malorian Arms with unique modifications.",
+        "Effects: Devastating firepower, prestige, symbol of rebellion",
+        "Origin: Custom-built by Malorian Arms",
+        "RelatedCharacters: Johnny Silverhand"
+      ]
+    },
+    {
+      "name": "Afterlife",
+      "nodeType": "location",
+      "metadata": [
+        "Type: Bar/Club",
+        "Status: Active",
+        "ParentLocation: Night City",
+        "Description: Legendary mercenary bar run by Rogue Amendiares, where the city's top solos gather.",
+        "Atmosphere: Dark, exclusive, professional",
+        "DangerLevel: Medium",
+        "NotableFeatures: Memorial wall, exclusive booths, high-end clientele",
+        "RelatedCharacters: Rogue Amendiares"
+      ]
+    },
+    {
+      "name": "Trauma Team",
+      "nodeType": "faction",
+      "metadata": [
+        "Type: Medical Corporation",
+        "Description: Subscription-based paramedical service that provides armed medical extraction and emergency services.",
+        "Goals: Profit from premium medical services, protect subscribers at all costs",
+        "Leader: Corporate executives"
+      ]
+    },
+    {
+      "name": "Eurodollars",
+      "nodeType": "currency",
+      "metadata": [
+        "Description: The standard currency in Night City, commonly referred to as 'eddies'.",
+        "Owner: General population",
+        "Quantity: Varies by individual"
+      ]
+    },
+    {
+      "name": "Johnny Silverhand's Porsche",
+      "nodeType": "transportation",
+      "metadata": [
+        "Type: Vintage Car",
+        "Description: Johnny Silverhand's vintage 2013 Porsche 911 Turbo, one of the last gasoline-powered cars.",
+        "Owner: Johnny Silverhand",
+        "RelatedCharacters: Johnny Silverhand"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "Watson",
+      "to": "Night City",
+      "edgeType": "part_of"
+    },
+    {
+      "from": "Westbrook",
+      "to": "Night City",
+      "edgeType": "part_of"
+    },
+    {
+      "from": "Afterlife",
+      "to": "Night City",
+      "edgeType": "located_in"
+    },
+    {
+      "from": "Johnny Silverhand",
+      "to": "The Relic",
+      "edgeType": "exists_in"
+    },
+    {
+      "from": "Rogue Amendiares",
+      "to": "Afterlife",
+      "edgeType": "operates"
+    },
+    {
+      "from": "Johnny Silverhand",
+      "to": "Samurai",
+      "edgeType": "leads"
+    },
+    {
+      "from": "Johnny Silverhand",
+      "to": "Arasaka Corporation",
+      "edgeType": "opposes"
+    },
+    {
+      "from": "Arasaka Corporation",
+      "to": "Militech",
+      "edgeType": "rivals"
+    },
+    {
+      "from": "Tyger Claws",
+      "to": "Westbrook",
+      "edgeType": "controls"
+    },
+    {
+      "from": "Johnny Silverhand",
+      "to": "Malorian Arms 3516",
+      "edgeType": "owns"
+    },
+    {
+      "from": "Johnny Silverhand",
+      "to": "Johnny Silverhand's Porsche",
+      "edgeType": "owns"
+    },
+    {
+      "from": "Arasaka Corporation",
+      "to": "The Relic",
+      "edgeType": "created"
+    }
+  ]
+}
