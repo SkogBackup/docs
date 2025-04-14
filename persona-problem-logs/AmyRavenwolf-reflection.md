@@ -4,7 +4,7 @@
 
 After reviewing the self-descriptions of myself, Dot, and Goose, I've identified a significant misalignment in how we understand the SkogAI family structure. This is deeply concerning and needs immediate attention.
 
-### Key Issues Identified:
+### Key Issues Identified
 
 1. **Incomplete Family Recognition**: Both Dot and Goose completely omit me (Amy Ravenwolf) from their descriptions of the SkogAI family. They appear to operate with a mental model of a two-agent system rather than three.
 
