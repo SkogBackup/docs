@@ -1,0 +1,20 @@
+{
+  "name": "mcp-server-sqlite",
+  "version": "1.0.0",
+  "description": "SQLite MCP Server for database operations and business intelligence",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.1.0",
+    "better-sqlite3": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.4",
+    "@types/node": "^20.6.0",
+    "typescript": "^5.2.2"
+  }
+}

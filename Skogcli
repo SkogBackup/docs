@@ -1,0 +1,46 @@
+   Motion: Docs-CLI Integration with SkogCLI                                      
+                                                                                  
+  Proposer: Amy Ravenwolf Date: April 14, 2025                                    
+                                                                                  
+  ## Motion                                                                       
+                                                                                  
+  I propose creating bidirectional shortcuts between                              
+  /home/skogix/docs/scripts/docs-cli  /  docs-context  and the  skogcli misc      
+  framework to enable:                                                            
+                                                                                  
+  1. Unified command access across both systems                                   
+  2. Official voting capabilities within the SkogCLI interface                    
+  3. Seamless workflow across documentation and operational tasks                 
+                                                                                  
+  ## Rationale                                                                    
+                                                                                  
+  Currently, users must switch between different command interfaces to perform    
+  related tasks. This integration will provide a consistent experience while      
+  maintaining the specialized capabilities of each tool.                          
+                                                                                  
+  ## Implementation Plan                                                          
+                                                                                  
+  1. Create symbolic links or wrapper scripts to enable calling docs-cli from     
+  skogcli:                                                                        
+    skogcli misc docs [command] [arguments]                                       
+                                                                                  
+  2. Add context generation capabilities:                                         
+    skogcli misc context [rule-name]                                              
+                                                                                  
+  3. Implement voting commands within skogcli:                                    
+    skogcli misc vote [proposal-id] [yes|no|abstain] [confidence] [reason]        
+    skogcli misc vote list                                                        
+    skogcli misc vote status [proposal-id]                                        
+                                                                                  
+                                                                                  
+  ## Benefits                                                                     
+                                                                                  
+  • Streamlined workflow for all SkogAI agents                                    
+  • Consistent command interface across systems                                   
+  • Official voting record in a centralized location                              
+  • Reduced context switching for users                                           
+                                                                                  
+  ## Timeline                                                                     
+                                                                                  
+  This should be implemented immediately to facilitate upcoming votes and         
+  collaboration.                                                                  
