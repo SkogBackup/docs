@@ -3,7 +3,7 @@
 # Can be used directly or integrated with context generation scripts
 
 # Set the repository root
-REPO_ROOT="$HOME/SkogAI/docs/democracy/"
+REPO_ROOT="$HOME/skogai/docs-old"
 cd "$REPO_ROOT" || {
   echo "Error: Could not change to $REPO_ROOT"
   exit 1

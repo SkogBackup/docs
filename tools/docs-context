@@ -3,7 +3,7 @@
 # Designed to be integrated with /home/skogix/.goose/scripts/context-* files
 
 # Set the repository root
-REPO_ROOT="$HOME/SkogAI/docs/democracy/"
+REPO_ROOT="$HOME/skogai/docs-old"
 cd "$REPO_ROOT" || {
   echo "Error: Could not change to $REPO_ROOT"
   exit 1
