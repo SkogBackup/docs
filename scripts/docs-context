@@ -1,0 +1,106 @@
+#!/bin/bash
+# docs-context - Generate context information for SkogAI/docs repository
+# Designed to be integrated with /home/skogix/.goose/scripts/context-* files
+
+# Set the repository root
+REPO_ROOT="$HOME/SkogAI/docs/democracy/"
+cd "$REPO_ROOT" || {
+  echo "Error: Could not change to $REPO_ROOT"
+  exit 1
+}
+
+# Check if we're inside the repo
+if [ ! -d ".git" ]; then
+  echo "Error: $REPO_ROOT is not a git repository"
+  exit 1
+fi
+
+echo "# SkogAI/docs Repository Context"
+echo ""
+echo "## Repository Status"
+echo ""
+echo "Current branch: \`$(git branch --show-current)\`"
+echo ""
+echo "### Recent Activity"
+echo ""
+echo "Last 3 commits:"
+echo "$()$("
+git log -n 3 --pretty=format:"%h - %an, %ar : %s"
+echo ""
+echo ")$()"
+echo ""
+
+echo "### Branch Information"
+echo ""
+echo "Available branches:"
+echo "$()$("
+git branch -a
+echo ")$()"
+echo ""
+
+echo "### Working Directory Status"
+echo ""
+echo "$()$("
+git status -s
+echo ")$()"
+echo ""
+
+echo "## Repository Structure"
+echo ""
+echo "Main directories:"
+echo "$()$("
+ls -la | grep "^d" | awk '{print $9}'
+echo ")$()"
+echo ""
+
+# Check if there are proposal branches
+echo "## Active Proposals"
+echo ""
+PROPOSAL_BRANCHES=$(git branch | grep "proposal/" | sed 's/^\*//g' | sed 's/^ *//')
+if [ -n "$PROPOSAL_BRANCHES" ]; then
+  echo "Current proposal branches:"
+  echo ""
+  for branch in $PROPOSAL_BRANCHES; do
+    echo "- $branch"
+  done
+  echo ""
+else
+  echo "No active proposal branches."
+  echo ""
+fi
+
+# Output specific file contents if they exist
+echo "## Documentation Overview"
+echo ""
+if [ -f "README.md" ]; then
+  echo "Contents of README.md:"
+  echo "$()$(markdown"
+    cat README.md
+    echo ")$()"
+  echo ""
+fi
+
+# Show workflows directory if it exists
+if [ -d "workflows" ] && [ "$(ls -A workflows 2>/dev/null)" ]; then
+  echo "## Workflow Documentation"
+  echo ""
+  echo "Available workflow documents:"
+  echo "$()$("
+    find workflows -type f -name "*.md" | sort
+    echo ")$()"
+  echo ""
+
+  # Show PR process content if it exists
+  if [ -f "workflows/pr-process.md" ]; then
+    echo "### PR Process Overview"
+    echo ""
+    echo "Excerpt from workflows/pr-process.md:"
+    echo "$()$(markdown"
+        head -n 20 "workflows/pr-process.md"
+        echo "..."
+        echo ")$()"
+    echo ""
+  fi
+fi
+
+exit 0
