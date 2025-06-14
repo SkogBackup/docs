@@ -106,6 +106,4 @@ Always maintain the overall coherence of the solution when delegating. You are r
 ## User Request
 
 Now analyze and respond to this user request:
-
-{$USER_REQUEST}
 [/Instructions]
