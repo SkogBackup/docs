@@ -3,7 +3,7 @@
 # Can be used directly or integrated with context generation scripts
 
 # Set the repository root
-REPO_ROOT="$HOME/SkogAI/docs/democracy/"
+REPO_ROOT="$SKOGAI/democracy/"
 cd "$REPO_ROOT" || {
   echo "Error: Could not change to $REPO_ROOT"
   exit 1
@@ -43,7 +43,19 @@ show_help() {
 
 # Check if we're inside the repo
 check_repo() {
-  if [ ! -d ".git" ]; then
+  if [ ! -e ".git" ]; then
+    echo "Error: Not in repository directory"
+    exit 1
+  fi
+
+  # Handle both regular repos (.git is a directory) and submodules (.git is a file)
+  if [ -d ".git" ]; then
+    # Regular git repository
+    return 0
+  elif [ -f ".git" ]; then
+    # Git submodule - .git is a file containing gitdir: path
+    return 0
+  else
     echo "Error: Not in repository directory"
     exit 1
   fi
