@@ -3,14 +3,20 @@
 # Designed to be integrated with /home/skogix/.goose/scripts/context-* files
 
 # Set the repository root
-REPO_ROOT="$HOME/SkogAI/docs/democracy/"
+REPO_ROOT="$SKOGAI/democracy/"
 cd "$REPO_ROOT" || {
   echo "Error: Could not change to $REPO_ROOT"
   exit 1
 }
 
 # Check if we're inside the repo
-if [ ! -d ".git" ]; then
+if [ ! -e ".git" ]; then
+  echo "Error: $REPO_ROOT is not a git repository"
+  exit 1
+fi
+
+# Handle both regular repos (.git is a directory) and submodules (.git is a file)
+if [ ! -d ".git" ] && [ ! -f ".git" ]; then
   echo "Error: $REPO_ROOT is not a git repository"
   exit 1
 fi
