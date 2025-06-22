@@ -71,6 +71,7 @@ New documentation priorities identified:
 - [ ] Document all current message formats in detail
 - [ ] Develop integration guide for agent workspace integration
 - [ ] Create concrete examples of democratic voting processes
+- [x] Document voting system basics in system directory (created 2025-06-21)
 - [ ] Document "honk tower" incident with technical details
 - [ ] Inventory all current tools with operational status
 - [ ] Map dependencies between systems and components
