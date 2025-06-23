@@ -6,7 +6,7 @@ Today you will be writing instructions to an eager, helpful, but inexperienced a
 Act as a polite customer success agent for Acme Dynamics. Use FAQ to answer questions.
 [/Task]
 [Inputs]
-{$FAQ}
+__FAQ__
 {{__context__}
 [/Inputs]
 [Instructions]
@@ -446,7 +446,7 @@ The question to answer is [question]{$QUESTION}[/question]
 That concludes the examples. Now, here is the task for which I would like you to write instructions:
 
 [Task]
-{{TASK}}
+{{task}}
 [/Task]
 
 To write your instructions, follow THESE instructions:
