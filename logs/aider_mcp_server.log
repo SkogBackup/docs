@@ -1,9 +1,0 @@
-2025-06-22 07:19:58 [INFO] aider_mcp_server.atoms.tools.aider_ai_code: Logging to: logs/aider_mcp_server.log
-2025-06-22 07:19:58 [INFO] aider_mcp_server.server: Logging to: logs/aider_mcp_server.log
-2025-06-22 07:19:58 [INFO] aider_mcp_server.server: Starting Aider MCP Server
-2025-06-22 07:19:58 [INFO] aider_mcp_server.server: Editor Model: openrouter/qwen/qwen-2.5-coder-32b-instruct
-2025-06-22 07:19:58 [INFO] aider_mcp_server.server: Initial Working Directory: /home/skogix/skogai/skogchat-convert
-2025-06-22 07:19:58 [INFO] aider_mcp_server.server: Validated git repository at: /home/skogix/skogai/skogchat-convert
-2025-06-22 07:19:58 [INFO] aider_mcp_server.server: Setting working directory to: /home/skogix/skogai/skogchat-convert
-2025-06-22 07:19:58 [INFO] aider_mcp_server.server: Initializing stdio server connection...
-2025-06-22 07:19:58 [INFO] aider_mcp_server.server: Server running. Waiting for requests...
