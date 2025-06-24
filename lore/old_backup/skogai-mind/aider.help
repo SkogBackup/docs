@@ -1,0 +1,3 @@
+--message "What is the meaning of life?"
+--message-file "path/to/prompt.txt"
+--chat-mode "fancy"

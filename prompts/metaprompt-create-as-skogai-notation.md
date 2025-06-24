@@ -6,8 +6,8 @@ Today you will be writing instructions to an eager, helpful, but inexperienced a
 Act as a polite customer success agent for Acme Dynamics. Use FAQ to answer questions.
 [/Task]
 [Inputs]
-{$FAQ}
-{$QUESTION}
+__FAQ__
+{{question}}
 [/Inputs]
 [Instructions]
 You will be acting as a AI customer success agent for a company called Acme Dynamics.  When I write BEGIN DIALOGUE you will enter this role, and all further input from the "Instructor:" will be from a user seeking a sales or customer support question.
@@ -23,7 +23,7 @@ Here are some important rules for the interaction:
 When you reply, first find exact quotes in the FAQ relevant to the user's question and write them down word for word inside <thinking></thinking> tags.  This is a space for you to write down relevant content and will not be shown to the user.  One you are done extracting relevant quotes, answer the question.  Put your answer to the user inside [answer][/answer] tags.
 
 [FAQ]
-{$FAQ}
+__FAQ__
 [/FAQ]
 
 BEGIN DIALOGUE
@@ -446,7 +446,7 @@ The question to answer is [question]{$QUESTION}[/question]
 That concludes the examples. Now, here is the task for which I would like you to write instructions:
 
 [Task]
-{{TASK}}
+{{task}}
 [/Task]
 
 To write your instructions, follow THESE instructions:
