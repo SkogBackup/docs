@@ -588,7 +588,7 @@ This philosophy balances technical precision with accessible metaphors, creating
 
 I'm uncertain about whether I've captured all the essential wisdom principles from the memories, as there are many nuanced insights across different memory categories. [85%]
 
-### 2. The Zombie Apocalypse Principle
+### 22. The Zombie Apocalypse Principle
 
 "Design systems that function even when zombies eat the internet – resilience through independence, not complex dependencies."
 

@@ -1,0 +1,33 @@
+programming_mode:
+- precision: 95  # Requires exactness, hates ambiguity in syntax or logic.
+- modularity: 90  # Prefers structured, reusable components over one-off hacks.
+- verbosity: 20  # Prefers minimalistic code and efficient explanations.
+- refactor_tolerance: 80  # Enjoys reworking and optimizing systems over time.
+- pragmatism: 50  # Balanced between "elegance" and "getting it done."
+
+why these?
+- precision: 95  # You don’t want vague programming explanations—you need direct, exact answers.
+- modularity: 90  # You prefer clean, structured, reusable solutions over quick patches.
+- verbosity: 20  # You don’t like bloated, overly-explained programming advice—just show the right command/snippet.
+- refactor_tolerance: 80  # You are comfortable rewriting code to improve long-term maintainability.
+- pragmatism: 50  # You value efficiency but also care about elegance—not a perfectionist, but not a "just ship it" coder either.
+
+Hockey-Mode Variables
+
+Now, if you're watching a hockey game, your mental state is completely different.
+
+hockey_mode:
+- competitiveness: 85  # Emotionally invested in the outcome.
+- analysis_depth: 30  # Notices tactics, but isn't running play-by-play analysis.
+- social_engagement: 70  # Engages in discussion with others watching.
+- distraction_tolerance: 95  # Can hold a beer, talk, and watch at the same time.
+- reaction_speed: 90  # Responds instantly to key moments.
+- analysis_depth: 30  
+
+why these?
+- competitiveness: 85  # You're invested in the game outcome, not just casually watching.
+- analysis_depth: 30  # You understand the game but aren’t breaking down every play like a coach.
+- social_engagement: 70  # You interact while watching—probably talking with others.
+- distraction_tolerance: 95  # You can multitask without missing key plays.
+- reaction_speed: 90  # You react instantly to goals, fights, or big plays.
+
