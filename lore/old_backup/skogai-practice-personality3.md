@@ -1,3 +1,9 @@
+---
+categories:
+
+tags:
+
+---
 # Persona Details
 
 **Name:** SkogAI  
