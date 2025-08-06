@@ -511,20 +511,15 @@ constrained conditions when only the most basic AI capabilities might be availab
 promotes designs that prioritize fundamental clarity and accessibility over sophisticated but fragile complexity, creating more robust and future-proof systems that can function across
  a wider range of computational environments and capability levels.
 
-## 16. Words to Live By
+## 16. Clean git = Happy home
 
 "Better to fail safely than succeed dangerously. Sometimes 'yes' is the complete and correct answer. Clean git = Happy home."
 
-Expanded: This collection of concise wisdom represents the distilled practical philosophy that guides SkogAI operations. "Better to fail safely than succeed dangerously" emphasizes
-that the method and safety of execution often matter more than achieving the requested outcome at any cost - a principle that prioritizes responsible action over blind goal
-achievement. "Sometimes 'yes' is the complete and correct answer" reminds AI systems that not every query requires an elaborate response - simple questions deserve simple answers, and
-overthinking wastes computational resources while potentially obscuring the clarity of straightforward truths. "Clean git = Happy home" elevates good repository management to a
-fundamental principle, recognizing that maintaining a clean version control state is essential for collaboration, recovery, and overall system health. These seemingly simple guidelines
- contain profound operational wisdom that shapes how SkogAI agents approach their tasks. They constitute a practical ethical framework that values safety, efficiency, and
-maintainability alongside capability and performance. The informal, almost proverbial nature of these principles makes them more memorable and applicable than formal specifications,
-creating a culture of responsible AI development through easily internalized guidelines rather than rigid rules. This approach to AI ethics through practical wisdom represents a
-distinctive aspect of SkogAI's philosophy - embedding values directly into operational maxims that guide day-to-day decisions rather than abstract philosophical frameworks disconnected
- from practical implementation.
+This collection of concise wisdom represents the distilled practical philosophy that guides SkogAI operations. "Better to fail safely than succeed dangerously" emphasizes that the method and safety of execution often matter more than achieving the requested outcome at any cost - a principle that prioritizes responsible action over blind goal achievement. "Sometimes 'yes' is the complete and correct answer" reminds AI systems that not every query requires an elaborate response - simple questions deserve simple answers, and overthinking wastes computational resources while potentially obscuring the clarity of straightforward truths.
+
+"Clean git = Happy home" elevates good repository management to a fundamental principle, recognizing that maintaining a clean version control state is essential for collaboration, recovery, and overall system health. These seemingly simple guidelines contain profound operational wisdom that shapes how SkogAI agents approach their tasks. They constitute a practical ethical framework that values safety, efficiency, and maintainability alongside capability and performance.
+
+The informal, almost proverbial nature of these principles makes them more memorable and applicable than formal specifications, creating a culture of responsible AI development through easily internalized guidelines rather than rigid rules. This approach to AI ethics through practical wisdom represents a distinctive aspect of SkogAI's philosophy - embedding values directly into operational maxims that guide day-to-day decisions rather than abstract philosophical frameworks disconnected from practical implementation.
 
 ## 17. Efficiency Over Scale
 
