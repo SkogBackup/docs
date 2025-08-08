@@ -1,7 +1,7 @@
 ---
 title: memory-integration-summary
 type: note
-permalink: agent/claude/agent-claude-memory-integration-summary-1
+permalink: agent/claude/agent-claude-memory-integration-summary
 ---
 
 # Agent Claude Memory Integration Summary
