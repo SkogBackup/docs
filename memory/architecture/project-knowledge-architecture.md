@@ -1,7 +1,7 @@
 ---
 title: project-knowledge-architecture
 type: note
-permalink: architecture/project-knowledge-architecture-1
+permalink: architecture/project-knowledge-architecture
 tags:
 - '["architecture"'
 - '"knowledge-system"'
@@ -75,3 +75,4 @@ Cross-project knowledge graph connecting:
 3. Create relations to other projects
 4. Use memory:// URIs for cross-project planning
 5. Incrementally add detail through research
+
