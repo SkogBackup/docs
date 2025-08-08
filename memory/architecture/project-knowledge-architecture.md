@@ -1,7 +1,7 @@
 ---
-title: Project Knowledge Architecture
+title: project-knowledge-architecture
 type: note
-permalink: architecture/project-knowledge-architecture
+permalink: architecture/project-knowledge-architecture-1
 tags:
 - '["architecture"'
 - '"knowledge-system"'
@@ -12,19 +12,24 @@ tags:
 # Project Knowledge Architecture
 
 ## Concept
+
 Hybrid knowledge system combining local CLAUDE.md files with basic-memory semantic linking.
 
 ## Architecture Pattern
 
 ### Local Context (CLAUDE.md files)
+
 Each project folder contains focused CLAUDE.md with:
+
 - Build commands specific to that project
 - Architecture overview for immediate context
 - Technology stack and dependencies
 - Development patterns and conventions
 
 ### Semantic Links (basic-memory)
+
 Cross-project knowledge graph connecting:
+
 - Shared architectural patterns
 - Technology relationships
 - Learning from one project applied to another
@@ -49,12 +54,14 @@ Cross-project knowledge graph connecting:
 ## Example Implementation
 
 ### Parttrap Project
+
 ```
 /mnt/extra/work/Parttrap-One/CLAUDE.md
 -> memory://projects/parttrap-project-overview
 ```
 
 ### Future Projects
+
 ```
 /path/to/other-project/CLAUDE.md
 -> memory://projects/other-project-overview
@@ -62,6 +69,7 @@ Cross-project knowledge graph connecting:
 ```
 
 ## Workflow
+
 1. Create focused CLAUDE.md in project directory
 2. Write to basic-memory with semantic markup
 3. Create relations to other projects
