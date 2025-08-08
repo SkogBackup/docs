@@ -1,3 +1,9 @@
+---
+categories:
+
+tags:
+
+---
 # SkogAI Words to Live By: Essential Wisdom
 
 ## Core Principles

@@ -1,31 +1,22 @@
-# Skogix Notation
+# SkogAI Notation
 
 - **"$"**: to define or reference something
-- **"|"**: the act of choosing something
-  - Example: `{$id1|$id2}->[$id1]`
-- **"\_"**: existence?... to be anything/everything and nothing/nobody
-  - Example: `{$id1_$id2}`
-  - ...hard one
+- **"|"**: the act of choosing something = `{$id1|$id2}->[$id1]`
+- **"_"**: to be anything/everything and nothing/nobody = `{$id1_$id2}`
 - **"[_]"**: similarity
-- **"{\_}"**: difference
-- **"@"**: the intent to act or do something
-  - Example: `{$id@$id}`
+- **"{_}"**: difference
+- **"@"**: the intent to act or do something = `{$id@$id}`
+- "*": $id*$id=$id
 - **"."**: to belong or have something via `[$$]`
 - **":"**: to follow or continue something via `[$@]`
-- **"="**: to be something
-  - Example: `[$id=$id]`
-- **"->"**: `{$id1@$id2}`
-- **"\_"**: `$_$=$`
-- **"id"**: `$int*$unique`
-- **"action"**: `$eid*$type.value.list*$type.self`
+- **"="**: to be something = `[$id=$id]`
+- **"->"**: becoming something = `{$id1@$id2}`
+- **"_"**: `$_$=$`
+- **"id"**: the big ID = `$int*$unique`
 - **"self"**: `$self | [$id@$id]`
-- **"type"**:
-  - **"$type.self"**: every base case of a $
-  - **"value"**: the declaration/implementation of a $
-  - **"eid"**: `$eid`
+- **"value"**: the declaration/implementation of a $
+- **"eid"**: `$id*$id`
 - **"unique"**: a thing which there only exists one of
-
-> next level mind blown will come when you realise you have reasoned yourself - just as i did - the concept of ID (i love that $id is not even triggering the connection even though it should:P)
 
 ---
 
@@ -74,3 +65,69 @@
 ---
 
 Types: `($@)` / Transformations: `(@$)` / Functions: `($@=@$)`, linked list, arrays: `($$)` and abstractions: `($$)`
+
+---
+
+Π-types (product types *)
+Σ-types (sum types |)
+identity types (=)
+path types (->)
+
+maybe not needed but for good measure might include these as well
+
+_ as polymorphic existentials (∃x.P(x))
+@ as modal necessity (□) from modal logic
+: as type judgement (Γ ⊢ a : A)
+
+creating a free cartesian closed category is obvious
+
+* = product
+-> = exponential object
+| = coproduct
+@ = monadic binding
+
+and yeah - might as well
+
+_ as polymorphic yoneda embedding
+. as forgetful functor
+= as natural isomorphism
+
+linear types ($unique), the effect system (@), regular persistent data structures ($eid with it's versioning) and security via capability (.) is old news
+
+type universe would be self referential via $ containing $ or dependencies/dependent types such as $message.created_at$datetime
+
+---
+
+the _ operator:
+  heideggerian being-in-the-world (dasein)
+  badiouian event theory (@ as evental site)
+  deleuzian difference engine ({_} as differance)
+but operationalized computationally through:
+  $entity.gen as bergsonian duration
+  $list as husserlian time consciousness
+  $unique as leibnizian identity
+
+data $type : type where
+  ($) : $type -> $type
+  (*) : $type -> $type -> $type
+  (|) : $type -> $type -> $type
+  (@) : $type -> $type -> $type
+  (=) : $type -> $type -> $type
+
+gödel numbering:
+φ($) = 1
+φ(|) = 2
+φ(_) = 3
+etc...
+
+overall trying to avoid inconsistency via:
+  predicative hierarchy (no $ in its own definition)
+  type/token distinction (id vs unique)
+  bounded generality (list as finite ordinal)
+
+lucky to be born early:
+Martin-Löf Type Theory (1972)
+Fitch-Style Calculi (1952)
+Lawvere Theories (1963)
+
+(don't see any _ for existance, $eid representing spacetime coordinates or even basic semiotics like using @ as a pragmatic force? ;)) 
