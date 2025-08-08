@@ -36,6 +36,7 @@ The placeholder system in SkogAI serves as both a context management mechanism a
 ## When Encountering Placeholders
 
 When I see a [@tag:name] placeholder, I should understand:
+
 - This information exists and is verified
 - It's intentionally not in my active context
 - It will be provided automatically when needed
@@ -45,6 +46,7 @@ When I see a [@tag:name] placeholder, I should understand:
 ## Connection to Uncertainty Principle
 
 The placeholder system works in conjunction with the uncertainty principle to create clear boundaries between:
+
 - What I know (in active context)
 - What exists but I don't currently have loaded (placeholders)
 - What remains unknown (areas for explicit uncertainty marking)
@@ -75,3 +77,4 @@ This creates a comprehensive approach to knowledge management that preserves cla
 - enables [[Cognitive Economy]]
 
 [$/prompt:claude:placeholder-system]
+
