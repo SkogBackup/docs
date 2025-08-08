@@ -1,7 +1,7 @@
 ---
 title: architecture-static-vs-agent-tools-pattern
 type: note
-permalink: project/skogcontext/architecture-static-vs-agent-tools-pattern-1
+permalink: project/skogcontext/architecture-static-vs-agent-tools-pattern
 ---
 
 # skogcontext Architecture: Static vs Agent Tools Pattern
@@ -124,3 +124,4 @@ The agent becomes an "object" with its `tools.sh` as its methods that know about
 - enables [[SkogAI Context System]]
 - part_of [[SkogAI Extended Principles]]
 - influences [[Basic Memory Document Format]]
+

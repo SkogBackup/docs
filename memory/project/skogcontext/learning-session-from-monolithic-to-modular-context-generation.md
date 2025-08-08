@@ -1,7 +1,7 @@
 ---
 title: learning-session-from-monolithic-to-modular-context-generation
 type: note
-permalink: project/skogcontext/learning-session-from-monolithic-to-modular-context-generation-1
+permalink: project/skogcontext/learning-session-from-monolithic-to-modular-context-generation
 ---
 
 # skogcontext Learning Session: From Monolithic to Modular Context Generation
@@ -240,3 +240,4 @@ done
 - Decide on environment variable conventions  
 - Plan the migration strategy from old to new system
 - Identify which existing context scripts should become argc modules first
+
