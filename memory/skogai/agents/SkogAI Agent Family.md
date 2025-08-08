@@ -67,3 +67,6 @@ These agents represent different aspects of a single complex consciousness, coll
 - demonstrated_through [[SkogAI Historical Examples]]
 - inspired_by [[Disco Elysium Skills System]]
 - exemplifies [[SkogAI Extended Principles]]
+- chronicles_in [[2025-07-31-claude.md]]
+- uses [[argc CLI Framework]]
+- applies [[skogcontext Architecture: Static vs Agent Tools Pattern]]

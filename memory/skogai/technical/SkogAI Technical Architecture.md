@@ -66,4 +66,6 @@ When the system unexpectedly breaks down and all carefully engineered constraint
 - documented_in [[SkogAI Evolution Story]]
 - demonstrated_through [[SkogAI Historical Examples]]
 - inspired_by [[Disco Elysium Skills System]]
-- evolved_into [[SkogAI Extended Principles]]
+- implemented_through [[argc CLI Framework]]
+- supports [[skogcontext Architecture: Static vs Agent Tools Pattern]]
+- chronicles_in [[2025-07-31-claude.md]]

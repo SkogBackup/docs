@@ -91,3 +91,5 @@ permalink: ontology/skog-ai-notation-reference
 - maps_to [[Category Theory Foundations]] (mathematical grounding)
 - implements [[Type Theory Foundations]] (computational type systems)
 - bridges [[Philosophical Foundations]] (phenomenological connections)
+- demonstrated_in [[2025-07-31-claude.md]]
+- implemented_through [[argc CLI Framework]]
