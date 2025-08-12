@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+node /home/skogix/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js "$@" --add-dir "/home/skogix/skogai/docs/memory/"
