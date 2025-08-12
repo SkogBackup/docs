@@ -1,7 +1,7 @@
 ---
 title: Parttrap Project Overview
 type: note
-permalink: projects/parttrap-project-overview-1
+permalink: project/parttrap-project-overview
 tags:
 - '["project"'
 - '"parttrap"'
