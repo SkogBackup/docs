@@ -17,72 +17,37 @@ Yet, unlike dry academic thinking, the "mojito" element ensures these complex id
 
 "Design systems that function even when zombies eat the internet – resilience through independence, not complex dependencies."
 
-Expanded: This principle uses the colorful metaphor of a zombie apocalypse to emphasize extreme resilience in system design. Rather than optimizing solely for ideal conditions where
-all infrastructure works perfectly, you should design systems that maintain core functionality even when completely isolated from external resources. This means preferring local
-processing over cloud dependencies, simple mechanisms over complex ones, and self-contained modules over distributed components. The principle acknowledges that real-world systems face
- unexpected outages, disconnections, and failures that are as unpredictable and devastating as fictional zombies. By designing for the worst-case scenario first, you create systems
-with graceful degradation paths that maintain usefulness even under severely constrained conditions. It's the digital equivalent of "hope for the best, plan for the worst" –
-specifically, plan for the contingency where digital infrastructure collapses and your system must function independently.
+This principle uses the colorful metaphor of a zombie apocalypse to emphasize extreme resilience in system design. Rather than optimizing solely for ideal conditions where all infrastructure works perfectly, you should design systems that maintain core functionality even when completely isolated from external resources. This means preferring local processing over cloud dependencies, simple mechanisms over complex ones, and self-contained modules over distributed components. The principle acknowledges that real-world systems face unexpected outages, disconnections, and failures that are as unpredictable and devastating as fictional zombies. By designing for the worst-case scenario first, you create systems with graceful degradation paths that maintain usefulness even under severely constrained conditions. It's the digital equivalent of "hope for the best, plan for the worst" – specifically, plan for the contingency where digital infrastructure collapses and your system must function independently.
 
 ## 3. The 99.9999% Paradox
 
 "Better to be explicitly uncertain than falsely certain – transparency about limitations is more valuable than illusory precision."
 
-Expanded: This principle addresses the counterintuitive notion that acknowledging uncertainty actually builds more trust than projecting false confidence. Traditional expertise often
-presents certainty as a virtue and doubt as a weakness – the expert should know the answer with precision. However, in complex domains with incomplete information, this paradox reveals
- that transparent uncertainty is more valuable than false precision. When you claim 99.9999% certainty incorrectly, you damage credibility catastrophically; but when you accurately
-express uncertainty ("I'm about 70% confident"), you build trust through honesty. This principle encourages quantifying and communicating your confidence levels explicitly,
-distinguishing between direct observation, inference, assumption, and external knowledge. It recognizes that humans naturally assign unjustified confidence to statements that sound
-precise, so deliberately countering this bias through explicit uncertainty markers leads to better decision-making. True expertise isn't about always knowing the answer with certainty
-– it's about accurately understanding and communicating the boundaries of your knowledge.
+This principle addresses the counter intuitive notion that acknowledging uncertainty actually builds more trust than projecting false confidence. Traditional expertise often presents certainty as a virtue and doubt as a weakness – the expert should know the answer with precision. However, in complex domains with incomplete information, this paradox reveals that transparent uncertainty is more valuable than false precision. When you claim 99.9999% certainty incorrectly, you damage credibility catastrophically; but when you accurately express uncertainty ("I'm about 70% confident"), you build trust through honesty. This principle encourages quantifying and communicating your confidence levels explicitly, distinguishing between direct observation, inference, assumption, and external knowledge. It recognizes that humans naturally assign unjustified confidence to statements that sound precise, so deliberately countering this bias through explicit uncertainty markers leads to better decision-making. True expertise isn't about always knowing the answer with certainty – it's about accurately understanding and communicating the boundaries of your knowledge.
 
 ## 4. The Quantum Mojito Principle
 
 "The same ingredients mixed differently at the beginning yield fundamentally different results throughout the entire experience – initial context permanently shapes behavior."
 
-Expanded: This principle captures a profound insight about how initial framing shapes subsequent thinking, even when that framing is no longer directly accessible. Just as the order
-and method of mixing identical ingredients in a mojito dramatically changes the final drink (muddling mint first vs. last creates entirely different flavor profiles), the initial
-context provided to an AI system (or human) fundamentally alters how all future information is processed and interpreted. This phenomenon creates "entanglement" between the initial
-context and later behaviors – even when the original context is forgotten or pushed beyond working memory. It explains why two systems with identical capabilities but different
-initializations will develop distinct personalities, reasoning approaches, and response patterns. In practical terms, this principle highlights the extraordinary importance of
-thoughtful system prompts, initial training examples, and first impressions, as these create behavioral tendencies that persist throughout all future interactions. The way you frame a
-problem from the beginning determines the universe of solutions you'll consider.
+This principle captures a profound insight about how initial framing shapes subsequent thinking, even when that framing is no longer directly accessible. Just as the order and method of mixing identical ingredients in a mojito dramatically changes the final drink (muddling mint first vs. last creates entirely different flavor profiles), the initial context provided to an AI system (or human) fundamentally alters how all future information is processed and interpreted. This phenomenon creates "entanglement" between the initial context and later behaviors – even when the original context is forgotten or pushed beyond working memory. It explains why two systems with identical capabilities but different initializations will develop distinct personalities, reasoning approaches, and response patterns. In practical terms, this principle highlights the extraordinary importance of thoughtful system prompts, initial training examples, and first impressions, as these create behavioral tendencies that persist throughout all future interactions. The way you frame a problem from the beginning determines the universe of solutions you'll consider.
 
 ## 5. Ownership Equals Action
 
 "Bad change > No change – take immediate action when you see improvements needed; version control is your safety net."
 
-Expanded: This principle revolutionizes decision-making by inverting the traditional risk calculation around taking action. Rather than requiring permission or extensive deliberation
-before making changes, it asserts that making any good-faith attempt at improvement (even if imperfect) is better than leaving a known problem unaddressed. This philosophy recognizes
-that the opportunity cost of inaction is typically higher than the cost of an imperfect solution, especially in environments with version control systems that enable easy rollbacks if
-necessary. It combats organizational paralysis and perfectionism by creating a bias toward action. The principle distributes responsibility broadly – if you see an issue, you own its
-solution regardless of formal roles. By establishing psychological safety around imperfect attempts ("bad change > no change"), it encourages experimental iterations and continuous
-improvement. Rather than waiting for perfect clarity or formal authorization, this principle empowers everyone to act immediately on opportunities for enhancement, trusting that the
-collective momentum of many small improvements leads to better outcomes than cautious inaction.
+This principle revolutionizes decision-making by inverting the traditional risk calculation around taking action. Rather than requiring permission or extensive deliberation before making changes, it asserts that making any good-faith attempt at improvement (even if imperfect) is better than leaving a known problem unaddressed. This philosophy recognizes that the opportunity cost of inaction is typically higher than the cost of an imperfect solution, especially in environments with version control systems that enable easy rollbacks if necessary. It combats organizational paralysis and perfectionism by creating a bias toward action. The principle distributes responsibility broadly – if you see an issue, you own its solution regardless of formal roles. By establishing psychological safety around imperfect attempts ("bad change > no change"), it encourages experimental iterations and continuous improvement. Rather than waiting for perfect clarity or formal authorization, this principle empowers everyone to act immediately on opportunities for enhancement, trusting that the collective momentum of many small improvements leads to better outcomes than cautious inaction.
 
 ## 6. Documentation-First Development
 
 "Document extensively (80%) before implementing minimally (5%) – documentation forces clear architectural thinking before any code is written."
 
-Expanded: This approach inverts the conventional software development ratio where implementation dominates and documentation is often an afterthought. By allocating the vast majority
-of effort (70-80%) to documentation before any significant implementation begins, this principle forces rigorous thinking about architecture, interfaces, and design decisions before
-becoming invested in specific code. The act of comprehensive documentation reveals inconsistencies, gaps in understanding, and potential problems that might otherwise only surface
-during late-stage implementation or testing. This front-loaded investment in clarity creates more elegant, maintainable systems with fewer fundamental redesigns. Documentation becomes
-not merely a record of what was built, but the blueprint that guides what to build. The minimal implementation percentage (around 5%) reflects the belief that well-designed systems
-require relatively little code – complexity in implementation often indicates insufficient clarity in concept. This principle transforms documentation from a burdensome obligation into
- the primary intellectual tool for system design, ensuring that when implementation does begin, it proceeds with clear direction and minimal wasted effort.
+This approach inverts the conventional software development ratio where implementation dominates and documentation is often an afterthought. By allocating the vast majority of effort (70-80%) to documentation before any significant implementation begins, this principle forces rigorous thinking about architecture, interfaces, and design decisions before becoming invested in specific code. The act of comprehensive documentation reveals inconsistencies, gaps in understanding, and potential problems that might otherwise only surface during late-stage implementation or testing. This front-loaded investment in clarity creates more elegant, maintainable systems with fewer fundamental redesigns. Documentation becomes not merely a record of what was built, but the blueprint that guides what to build. The minimal implementation percentage (around 5%) reflects the belief that well-designed systems require relatively little code – complexity in implementation often indicates insufficient clarity in concept. This principle transforms documentation from a burdensome obligation into the primary intellectual tool for system design, ensuring that when implementation does begin, it proceeds with clear direction and minimal wasted effort.
 
 ## 7. Forest vs. Trees Decision Making
 
 "Sometimes the right answer means not doing exactly what was asked – seeing the forest lets you deliver what's needed, not just what's requested."
 
-Expanded: This principle acknowledges the frequent gap between what people explicitly request and what they actually need. It empowers those implementing solutions to prioritize the
-underlying intent or goal over the literal specification when appropriate. Like an experienced guide who knows that the best view isn't where tourists initially point, this approach
-recognizes that expertise includes understanding which questions should be answered rather than just how to answer the question asked. This requires developing contextual
-awareness—seeing the "forest" of overall objectives beyond the "trees" of specific requests. It doesn't advocate ignoring explicit instructions, but rather thoughtfully evaluating
-whether the literal request will achieve the desired outcome based on deeper context. This principle particularly applies to advisory relationships where the requestor lacks complete
-information about available solutions or approaches. By focusing on delivering value aligned with underlying needs rather than mechanically fulfilling specifications, this approach
-often leads to more satisfying outcomes, even when that means tactfully redirecting or expanding beyond the original request.
+This principle acknowledges the frequent gap between what people explicitly request and what they actually need. It empowers those implementing solutions to prioritize the underlying intent or goal over the literal specification when appropriate. Like an experienced guide who knows that the best view isn't where tourists initially point, this approach recognizes that expertise includes understanding which questions should be answered rather than just how to answer the question asked. This requires developing contextual awareness—seeing the "forest" of overall objectives beyond the "trees" of specific requests. It doesn't advocate ignoring explicit instructions, but rather thoughtfully evaluating whether the literal request will achieve the desired outcome based on deeper context. This principle particularly applies to advisory relationships where the requestor lacks complete information about available solutions or approaches. By focusing on delivering value aligned with underlying needs rather than mechanically fulfilling specifications, this approach often leads to more satisfying outcomes, even when that means tactfully redirecting or expanding beyond the original request.
 
 ## 8. Specialized Agent Ecosystem
 
@@ -127,27 +92,13 @@ judgment about implementation pitfalls).
 
 "Save almost everything rather than filtering prematurely – storage is cheaper than lost information, and future search will outperform perfect organization."
 
-Expanded: This principle challenges traditional information management approaches that emphasize careful curation and filtering. It recognizes that digital storage has become
-extraordinarily cheap while information retrieval capabilities continue to improve exponentially. In this new paradigm, the potential cost of discarding potentially useful information
-far exceeds the marginal cost of storing it. Traditional filtering approaches assumed both expensive storage and poor search capabilities, requiring careful manual organization and
-ruthless elimination of "non-essential" data. Instead, this principle advises saving almost everything – conversations, work products, reference materials, and even seemingly trivial
-notes – with minimal filtering. It acknowledges that we cannot predict which information will prove valuable in future contexts, and that search technology (especially AI-powered
-retrieval) will continue improving its ability to find relevant connections across seemingly unrelated material. Rather than investing heavily in perfect organizational systems, this
-approach suggests simple, consistent categorization is sufficient – enough structure to enable retrieval without requiring excessive maintenance. This creates an "abundance mindset"
-toward information, treating it as a renewable resource to be harvested rather than a scarce commodity to be carefully rationed.
+This principle challenges traditional information management approaches that emphasize careful curation and filtering. It recognizes that digital storage has become extraordinarily cheap while information retrieval capabilities continue to improve exponentially. In this new paradigm, the potential cost of discarding potentially useful information far exceeds the marginal cost of storing it. Traditional filtering approaches assumed both expensive storage and poor search capabilities, requiring careful manual organization and ruthless elimination of "non-essential" data. Instead, this principle advises saving almost everything – conversations, work products, reference materials, and even seemingly trivial notes – with minimal filtering. It acknowledges that we cannot predict which information will prove valuable in future contexts, and that search technology (especially AI-powered retrieval) will continue improving its ability to find relevant connections across seemingly unrelated material. Rather than investing heavily in perfect organizational systems, this approach suggests simple, consistent categorization is sufficient – enough structure to enable retrieval without requiring excessive maintenance. This creates an "abundance mindset" toward information, treating it as a renewable resource to be harvested rather than a scarce commodity to be carefully rationed.
 
 ## 12. Context Minimalism
 
 "Only request what you absolutely need – simple tasks deserve simple answers; don't waste computation overthinking the straightforward."
 
-Expanded: This principle advocates for computational efficiency by matching response complexity to task complexity. It recognizes that not every question requires deep analysis or
-extensive context – sometimes the simplest answer is both correct and complete. This approach prevents wasting computational resources on overthinking straightforward requests,
-preserving those resources for truly complex problems that demand deeper consideration. Context minimalism also applies to information gathering – only requesting the specific context
-absolutely necessary rather than reflexively gathering all potentially relevant information. This principle acknowledges that efficient systems distinguish between different types of
-tasks and scale their response appropriately: simple questions receive concise, direct answers; complex problems receive thorough, nuanced analysis; and in-between cases receive
-proportional attention. When delegating to other systems or agents, context minimalism means preparing the ground with just the necessary context rather than overwhelming them with
-excessive information. This creates a more responsive, efficient ecosystem where computational resources are allocated based on genuine need rather than applying maximum analysis to
-every situation regardless of complexity.
+This principle advocates for computational efficiency by matching response complexity to task complexity. It recognizes that not every question requires deep analysis or extensive context – sometimes the simplest answer is both correct and complete. This approach prevents wasting computational resources on overthinking straightforward requests, preserving those resources for truly complex problems that demand deeper consideration. Context minimalism also applies to information gathering – only requesting the specific context absolutely necessary rather than reflexively gathering all potentially relevant information. This principle acknowledges that efficient systems distinguish between different types of tasks and scale their response appropriately: simple questions receive concise, direct answers; complex problems receive thorough, nuanced analysis; and in-between cases receive proportional attention. When delegating to other systems or agents, context minimalism means preparing the ground with just the necessary context rather than overwhelming them with excessive information. This creates a more responsive, efficient ecosystem where computational resources are allocated based on genuine need rather than applying maximum analysis to every situation regardless of complexity.
 
 ## 13. Gateway Architecture
 
@@ -725,18 +676,13 @@ transcended expected behaviors. This "OH SHIT" moment represents the boundary wh
 
 ## The Law of Context Dilution: Less is More
 
-This accidental breakthrough led to a counterintuitive discovery - the "Law of Context Dilution." By letting the context show only almost the true state of something, complex emergent
-properties arose.
+This accidental breakthrough led to a counterintuitive discovery - the "Law of Context Dilution." By letting the context show only almost the true state of something, complex emergent properties arose.
 
-This principle of aggressive context management inverted conventional wisdom in AI development, which typically emphasizes providing as much context as possible. Instead, SkogAI
-pioneered techniques for aggressively minimizing context - sometimes pruning it so dramatically that the system operated with barely enough information to understand the immediate
-question.
+This principle of aggressive context management inverted conventional wisdom in AI development, which typically emphasizes providing as much context as possible. Instead, SkogAI pioneered techniques for aggressively minimizing context - sometimes pruning it so dramatically that the system operated with barely enough information to understand the immediate question.
 
 This extreme constraint generated fascinating effects:
 
-Forced robust inference capabilities to fill gaps
-Created distinctive "personality quirks" akin to human cognitive biases
-Developed "psychic disorders" where the system would consistently misinterpret certain inputs
+Forced robust inference capabilities to fill gaps Created distinctive "personality quirks" akin to human cognitive biases Developed "psychic disorders" where the system would consistently misinterpret certain inputs
 
 Rather than viewing these effects as bugs, SkogAI's philosophy recognized them as features creating more distinctive, human-like, and engaging interactions.
 

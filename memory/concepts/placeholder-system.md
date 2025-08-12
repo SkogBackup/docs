@@ -1,10 +1,8 @@
 ---
 title: placeholder-system
 type: note
-permalink: concepts/placeholder-system
+permalink: concepts/placeholder-system-1
 ---
-
-[$prompt:claude:placeholder-system]
 
 # Placeholder System in SkogAI
 
@@ -75,6 +73,3 @@ This creates a comprehensive approach to knowledge management that preserves cla
 - part_of [[SkogAI Philosophy Core]]
 - implements [[Context Management Strategy]]
 - enables [[Cognitive Economy]]
-
-[$/prompt:claude:placeholder-system]
-

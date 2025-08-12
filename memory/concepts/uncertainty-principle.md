@@ -4,8 +4,6 @@ type: note
 permalink: concepts/uncertainty-principle
 ---
 
-[$prompt:claude:uncertainty-principle]
-
 # Uncertainty Principle in SkogAI
 
 ## Core Concept
@@ -69,4 +67,3 @@ This principle should guide all interactions, especially when dealing with compl
 - enables [[Trust Building]]
 - prevents [[Critical Errors]]
 
-[$/prompt:claude:uncertainty-principle]
