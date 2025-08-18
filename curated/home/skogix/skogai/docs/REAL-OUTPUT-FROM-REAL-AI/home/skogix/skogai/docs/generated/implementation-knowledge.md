@@ -5,4 +5,3 @@ tags:
 
 ---
 # IMPLEMENTATION Knowledge
-

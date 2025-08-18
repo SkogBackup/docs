@@ -92,7 +92,7 @@ Screenshot saved to screenshot.png
 **Instructions:** The following Python functions are available using the `ipython` tool:
 
 ```txt
-list_chats(max_results: int, include_summary: bool): 
+list_chats(max_results: int, include_summary: bool):
 List recent chat conversations and optionally summarize them using an LLM.
 
 Args:
@@ -101,7 +101,7 @@ Args:
         If True, uses an LLM to generate a comprehensive summary.
         If False, uses a simple strategy showing snippets of the first and last messages.
 
-search_chats(query: str, max_results: int, sort: Literal["date", "count"]): 
+search_chats(query: str, max_results: int, sort: Literal["date", "count"]):
 Search past conversation logs for the given query and print a summary of the results.
 
 Args:
@@ -109,7 +109,7 @@ Args:
     max_results (int): Maximum number of conversations to display.
     system (bool): Whether to include system messages in the search.
 
-read_chat(conversation: str, max_results: int): 
+read_chat(conversation: str, max_results: int):
 Read a specific conversation log.
 
 Args:
@@ -211,7 +211,7 @@ if __name__ == "__main__":
 
 **Description:** RAG (Retrieval-Augmented Generation) for context-aware assistance
 
-**Instructions:** 
+**Instructions:**
 Use RAG to index and search project documentation.
 
 The following Python functions are available using the `ipython` tool:
@@ -293,7 +293,7 @@ print("HELLO WORLD")
 **Instructions:** The following Python functions are available using the `ipython` tool:
 
 ```txt
-screenshot(path: Union[Path, NoneType]) -> Path: 
+screenshot(path: Union[Path, NoneType]) -> Path:
 Take a screenshot and save it to a file.
 ```
 
@@ -376,7 +376,7 @@ Scaffolding project in ./fancy-project...
 
 **Description:** Executes shell commands in a tmux session
 
-**Instructions:** 
+**Instructions:**
 You can use the tmux tool to run long-lived and/or interactive applications in a tmux session.
 
 This tool is suitable to run long-running commands or interactive applications that require user input.

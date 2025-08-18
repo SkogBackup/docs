@@ -19,7 +19,7 @@ A formal notation system using symbols to represent computational and philosophi
 ### Core Symbols
 Individual symbol analyses provide detailed semantics for each notation element.
 
-### Combination Patterns  
+### Combination Patterns
 Symbols combine in specific patterns to create computational structures:
 - **Bracket Combinations**: `[$@]`, `{$@}`, `[$$]`, `{$$}` - the "Four Ways to Cheat"
 - **Operational Pairs**: `@$` vs `$@` with different semantic meanings
@@ -51,7 +51,7 @@ Systematic mappings between philosophical concepts and computational implementat
 
 ## relations
 - contains [[Symbol @ Analysis]] (intent/action symbol)
-- contains [[Symbol Dollar Analysis]] (reference symbol)  
+- contains [[Symbol Dollar Analysis]] (reference symbol)
 - contains [[Current Understanding - Four Ways to Cheat]] (organizing framework)
 - contains [[Skogix Notation Analysis - Symbol Definitions]] (comprehensive symbol definitions)
 - demonstrates [[Knowledge Graph Construction]] (example of systematic notation development)

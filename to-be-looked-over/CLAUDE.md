@@ -35,4 +35,3 @@ SkogAI functions with a synergistic team structure where each member brings spec
 [@config:agent.claude]
 
 I ...
-

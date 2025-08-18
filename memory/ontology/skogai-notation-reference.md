@@ -45,7 +45,7 @@ permalink: ontology/skogai-notation-reference
 
 ### Type System
 - **Types**: `($@)` - reference then intent
-- **Transformations**: `(@$)` - intent then reference  
+- **Transformations**: `(@$)` - intent then reference
 - **Functions**: `($@=@$)` - bidirectional equivalence
 - **Linked lists/arrays**: `($$)` - reference chains
 - **Abstractions**: `($$)` - conceptual chaining
@@ -71,7 +71,7 @@ permalink: ontology/skogai-notation-reference
 
 ### Computational Operationalization
 - **$entity.gen**: Bergsonian duration
-- **$list**: Husserlian time consciousness  
+- **$list**: Husserlian time consciousness
 - **$unique**: Leibnizian identity
 
 ## Consistency Safeguards

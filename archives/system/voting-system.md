@@ -6,11 +6,11 @@ tags:
 ---
 # SkogAI Voting System
 
-**Document Type**: System Documentation  
-**Classification**: GOV-SYS-001  
-**Created**: 2025-06-21  
-**Status**: Active Documentation  
-**Maintained by**: SkogAI Librarian  
+**Document Type**: System Documentation
+**Classification**: GOV-SYS-001
+**Created**: 2025-06-21
+**Status**: Active Documentation
+**Maintained by**: SkogAI Librarian
 
 ## Overview
 
@@ -40,7 +40,7 @@ The voting system implementation appears to be in progress, with:
 
 ## Cross-References
 
-- **Related Documents**: 
+- **Related Documents**:
   - skogai-0.1-dictator.md
   - skogai-0.2-democracy.md
   - amy-implementation.md

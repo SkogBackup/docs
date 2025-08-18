@@ -6,11 +6,11 @@ tags:
 ---
 # Librarian Task List
 
-**Document Type**: Task Tracking  
-**Classification**: ADM-TASK-001  
-**Created**: 2025-06-21  
-**Status**: Active  
-**Maintained by**: SkogAI Librarian  
+**Document Type**: Task Tracking
+**Classification**: ADM-TASK-001
+**Created**: 2025-06-21
+**Status**: Active
+**Maintained by**: SkogAI Librarian
 
 ## Current Tasks
 

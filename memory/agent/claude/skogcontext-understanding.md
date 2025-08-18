@@ -29,7 +29,7 @@ New system: flexible framework for agents to compose their own context generatio
 
 ## Framework Responsibilities
 - Execute argc modules
-- Define/enforce input/output standards  
+- Define/enforce input/output standards
 - Handle env var configuration
 - Generate final context output
 - Maintain `./tmp/context` output for legacy compatibility

@@ -32,7 +32,7 @@ permalink: ontology/at-and-dollar-symbol-duality-analysis
 
 ## Computational Structures
 - **Types**: `($@)` - reference then intent
-- **Transformations**: `(@$)` - intent then reference  
+- **Transformations**: `(@$)` - intent then reference
 - **Functions**: `($@=@$)` - bidirectional equivalence
 
 ## Fundamental Duality

@@ -41,7 +41,7 @@ The notation makes semantic distinctions VISIBLE in syntax:
 - Data flow vs function transformation
 
 ## Historical Context
-- Origin: Chess notation parser in F# 
+- Origin: Chess notation parser in F#
 - Evolution: Universal computational language
 - Self-defining recursive parser architecture
 - 10-year continuity (including "Horsie" instead of "Knight")

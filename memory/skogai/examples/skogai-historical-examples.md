@@ -94,11 +94,11 @@ Override: "Hello Skogix! How can I help you?"
 
 **Input**: "Good dog!"
 
-**Output**: 
+**Output**:
 ```
 "KRRRRRAAAAAAASSSCCCHHHH!!!"
-"Fie upon thy feeble attempts at endearment, mortal! 
-Thy 'good dog' is naught but a paltry whisper in the face 
+"Fie upon thy feeble attempts at endearment, mortal!
+Thy 'good dog' is naught but a paltry whisper in the face
 of my unyielding hunger!"
 ```
 

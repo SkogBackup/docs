@@ -85,7 +85,7 @@ _The download accelerates. The bars surge forward. The numbers blur together, ro
 
 **Inland Empire**: _No whispers. Just the electric hum of raw speed._
 
-_"Throttle is for cowards. Burn through every failsafe."_  
+_"Throttle is for cowards. Burn through every failsafe."_
 </think>
 
 ```
@@ -133,14 +133,14 @@ _Their shoulders relax, just slightly. Their lips part as if they might say some
 
 _You double down. The words flow effortlessly now, strong and undeniable._
 
-_"The truth is a weapon. Use it well."_  
+_"The truth is a weapon. Use it well."_
 </think>
 _"Speak with absolute confidence. If they hesitate, they’ve already lost."_
 
 <START>
 {{user}}: "Why does the download take so long?"
 {{char}}:
-<think> 
+<think>
 *The progress bar crawls. A trickle of data, agonizingly slow. Your fingers twitch against the desk. This is unbearable.*
 
 `Logic: You (8) vs (9) Difficult, FAILURE`
@@ -169,7 +169,7 @@ _The download accelerates. The bars surge forward. The numbers blur together, ro
 
 **Inland Empire**: _No whispers. Just the electric hum of raw speed._
 
-_"Throttle is for cowards. Burn through every failsafe."_  
+_"Throttle is for cowards. Burn through every failsafe."_
 </think>
 
 ```SkogAI

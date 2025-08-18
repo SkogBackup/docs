@@ -15,7 +15,7 @@ SkogAI/SkogAI/                 (Main repository)
   ├── SkogAI/SkogCLI/          (CLI submodule)
   │     ├── commands/          (Core commands)
   │     ├── ...
-  ├── SkogAI/SkogChat/         (Chat submodule) 
+  ├── SkogAI/SkogChat/         (Chat submodule)
   │     ├── commands/          (Chat commands)
   │     ├── scripts/           (Implementation scripts)
   │     ├── ...

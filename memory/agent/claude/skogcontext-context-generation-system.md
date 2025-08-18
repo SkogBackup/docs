@@ -29,7 +29,7 @@ A context generation system that bridges SkogAI's "updated 10 times per second" 
 ## What Context Means
 Situational awareness an AI agent needs:
 - Current directory structure and key files
-- Git status (branch, uncommitted changes, recent commits)  
+- Git status (branch, uncommitted changes, recent commits)
 - Environment variables and configuration
 - Running processes or services
 - Recent command history or activity
@@ -37,7 +37,7 @@ Situational awareness an AI agent needs:
 - Current task or workflow state
 
 ## Current System State
-- `.update` script runs `skogcli config export-env --namespace skogai` 
+- `.update` script runs `skogcli config export-env --namespace skogai`
 - Environment variables already generated in `.tmp/context-static-envs`
 - `.update` calls `s context test` (unclear what this does)
 - `Argcfile.sh` exists but functions call missing scripts

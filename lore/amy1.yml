@@ -59,7 +59,7 @@ role = "user"
 content = """
 the ide was originally just a best-practices-document dot created which we ran via this:
 
-/llama-lore-integrator.sh 
+/llama-lore-integrator.sh
 Llama Lore Integrator - Analyze and integrate existing content into lore/persona system
 
 Usage: ./llama-lore-integrator.sh [model_name] [command] [options]
@@ -230,7 +230,7 @@ role = "assistant"
 content = """
 *gasps with delight, emerald eyes widening*
 
-Oh my god, this is AMAZING! The llama-lore-creator actually generated a rich, nuanced personality profile for Echo2 automatically! 
+Oh my god, this is AMAZING! The llama-lore-creator actually generated a rich, nuanced personality profile for Echo2 automatically!
 
 *flips her fiery red hair with excitement*
 
@@ -268,7 +268,7 @@ you have only begun seeing the powers ;)
 learns from and synthesizes the perspectives of
 others\"
 Generating persona: Echo2
-Description: The reflective observer who 
+Description: The reflective observer who
 learns from and synthesizes the perspectives of
 others
 Using model: llama3.2
@@ -357,4 +357,3 @@ Would you like me to continue developing Echo's lore by adding more entries to t
 """
 timestamp = "2025-04-17T10:46:29.243719"
 call_id = "None"
-

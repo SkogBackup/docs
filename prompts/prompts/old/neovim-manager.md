@@ -41,15 +41,15 @@ Create a proper LazyNvim plugin specification in Lua that:
   version = "v1.0.0", -- Optional version constraint
   branch = "main", -- Optional branch specification
   dependencies = { "other/dependency" }, -- Optional dependencies
-  
+
   -- Lazy-loading options (choose appropriate ones)
   event = "VeryLazy", -- Load on event
   cmd = { "CommandName" }, -- Load on command
   ft = { "filetype" }, -- Load on filetype
-  keys = { 
+  keys = {
     { "<leader>p", "<cmd>PluginCommand<cr>", desc = "Description" }
   },
-  
+
   -- Configuration (choose one approach)
   opts = {
     -- Simple options table for plugins that support it
@@ -121,7 +121,7 @@ return {
     -- Load the plugin
     local telescope = require("telescope")
     telescope.setup(opts)
-    
+
     -- Load extensions
     telescope.load_extension("fzf")
   end,
@@ -138,4 +138,3 @@ return {
 
 Please analyze the provided plugin source and create a LazyNvim configuration that precisely meets my requirements.
 </Instructions>
-

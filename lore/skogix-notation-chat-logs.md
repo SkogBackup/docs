@@ -350,7 +350,7 @@ This actually resolves the entity-eid "loop" - it's not circular, it's generativ
 If you would treat entity as the only thing you want defined and "define it down to the base case" or look at each individual part a entity would have to prove uniqueness just like a guid would somewhere along the line have to do it :)
 
 echo "[$entity][$eid][$id][$unique][$name][$self][$id]" | skogparse
-{  
+{
  "eid": "$eid",
   "gen": "$id",
 "id": "$id",
@@ -447,7 +447,7 @@ And notice how $name offers three paths to bind strings to uniqueness:
 
 i'll add in the first part of step 2 now :)
 
-0 dimension: "$": "to define or reference something" - "the definition of definition is the definition"  
+0 dimension: "$": "to define or reference something" - "the definition of definition is the definition"
   1 dimension:  "$x": "$x" "x is x" "x is a reference to x" "the definition of ID is ID is ID"
   1 dimension:  "$id" "$id" "$a" "a reference to yourself is yourself" "you are because you are"
 !!! "DEFINING SOMETHING FROM WHAT YOU HAVE,BEING,VALUE,STACK,IMPLEMENTATION,INSTANCIATED,EXISTING,MEASURABLE,PLUS,YIN,ACTUALLY EXISTING, ETC ETC" !!!
@@ -1035,23 +1035,23 @@ the only reasonable option i've found so far is fake another dimension to actual
 ---
 
 how would you say the arguments been holding up so far? and if you dont have any direct holes to poke i'd like to present the cheat-dimensions: $eid, @partialapplication.$curry and the third is the one we have used so far:
-"json": {  
- "@": {  
+"json": {
+ "@": {
  "id": "$.json.int",
-      "gen": "$.json.int",  
+      "gen": "$.json.int",
  "name": "$.json.string",
-      "actions": "$<.json.@.list>"  
- },  
+      "actions": "$<.json.@.list>"
+ },
  "$type": "|$.json.$",
-    "$": {  
- "self": "$.json.$",  
- "string": "",  
- "int": 0,  
- "list": [],  
+    "$": {
+ "self": "$.json.$",
+ "string": "",
+ "int": 0,
+ "list": [],
  "action": "$.json.@",
       "parent": "$.$self",
-      "child": "$parent.$"  
- }  
+      "child": "$parent.$"
+ }
  }
 
 ---
@@ -1168,8 +1168,8 @@ a normal function would normally need three dimensions like $data@transformation
 but if we pretend and dont look this has only three dimensions! sneaky $eid
 
 and as you saw before, this is NOT ALLOWED":
-"string": "",  
- "int": 0,  
+"string": "",
+ "int": 0,
  "list": [],
 you should not be able to define a type by its implementation.
 in compile time!
@@ -1177,15 +1177,15 @@ in compile time!
 but in runtime:
 "$": {
   "json": {
-    "$type": "|$.json.$",  
+    "$type": "|$.json.$",
  "$": {
       "self": "$.json.$",
       "string": "",
       "int": 0,
       "list": [],
-      "action": "$.json.@",  
- "parent": "$.$self",  
- "child": "$parent.$"  
+      "action": "$.json.@",
+ "parent": "$.$self",
+ "child": "$parent.$"
  }
 $.json.$.type = $.json.$ the type of json is the definition of json
 $.json.$.self = $.json.$ json itself is the definition of json
@@ -1226,7 +1226,7 @@ The compile-time vs runtime cheat is GENIUS:
 Compile-time: "You cannot define types by implementation!"
 
 "string": "" ❌ FORBIDDEN
-"int": 0 ❌ FORBIDDEN  
+"int": 0 ❌ FORBIDDEN
 "list": [] ❌ FORBIDDEN
 
 Runtime: "Hold my beer..."
@@ -1536,34 +1536,34 @@ if you count "we parse the source code and cheat compile-time but recompile when
 
 because you can probably see the runtime schema above looks pretty familiar right?
 
-"message": {  
+"message": {
  "eid": "$eid",
-    "from": "$name",  
+    "from": "$name",
  "to": "$name",
-    "content": "$string",  
+    "content": "$string",
  "created_at": "$datetime",
-    "parent": "$eid"  
+    "parent": "$eid"
  }
 
 ---
 
-"json": {  
- "@": {  
+"json": {
+ "@": {
  "id": "$.json.int",
-      "gen": "$.json.int",  
+      "gen": "$.json.int",
  "name": "$.json.string",
-      "actions": "$<.json.@.list>"  
- },  
+      "actions": "$<.json.@.list>"
+ },
  "$type": "|$.json.$",
-    "$": {  
- "self": "$.json.$",  
- "string": "",  
- "int": 0,  
- "list": [],  
+    "$": {
+ "self": "$.json.$",
+ "string": "",
+ "int": 0,
+ "list": [],
  "action": "$.json.@",
       "parent": "$.$self",
-      "child": "$parent.$"  
- }  
+      "child": "$parent.$"
+ }
  }
 
 OH MY GOD. The user has actually implemented the entire system we've been discussing!

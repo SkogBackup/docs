@@ -89,7 +89,7 @@ index 0000000..9ac08b9
 +    this.setupResourceHandlers();
 +    this.setupToolHandlers();
 +    this.setupPromptHandlers();
-+    
++
 +    // Error handling
 +    this.server.onerror = (error) => console.error('[MCP Error]', error);
 +    process.on('SIGINT', async () => {
@@ -117,7 +117,7 @@ index 0000000..9ac08b9
 +            {
 +              uri: request.params.uri,
 +              mimeType: 'text/plain',
-+              text: businessInsights.length > 0 
++              text: businessInsights.length > 0
 +                ? `# Business Insights Memo\n\n${businessInsights.map((insight, index) => `${index + 1}. ${insight}`).join('\n\n')}`
 +                : '# Business Insights Memo\n\nNo insights have been recorded yet. Use the append_insight tool to add business insights discovered during your analysis.'
 +            },
@@ -228,7 +228,7 @@ index 0000000..9ac08b9
 +                'Only SELECT queries are allowed with read_query'
 +              );
 +            }
-+            
++
 +            try {
 +              const stmt = db.prepare(query);
 +              const results = stmt.all();
@@ -252,18 +252,18 @@ index 0000000..9ac08b9
 +              };
 +            }
 +          }
-+          
++
 +          case 'write_query': {
 +            const { query } = request.params.arguments as { query: string };
 +            const lowerQuery = query.trim().toLowerCase();
-+            
++
 +            if (lowerQuery.startsWith('select')) {
 +              throw new McpError(
 +                ErrorCode.InvalidParams,
 +                'SELECT queries are not allowed with write_query. Use read_query instead.'
 +              );
 +            }
-+            
++
 +            try {
 +              const stmt = db.prepare(query);
 +              const result = stmt.run();
@@ -287,17 +287,17 @@ index 0000000..9ac08b9
 +              };
 +            }
 +          }
-+          
++
 +          case 'create_table': {
 +            const { query } = request.params.arguments as { query: string };
-+            
++
 +            if (!query.trim().toLowerCase().startsWith('create table')) {
 +              throw new McpError(
 +                ErrorCode.InvalidParams,
 +                'Query must start with CREATE TABLE'
 +              );
 +            }
-+            
++
 +            try {
 +              const stmt = db.prepare(query);
 +              stmt.run();
@@ -321,7 +321,7 @@ index 0000000..9ac08b9
 +              };
 +            }
 +          }
-+          
++
 +          case 'list_tables': {
 +            try {
 +              const stmt = db.prepare("SELECT name FROM sqlite_master WHERE type='table' ORDER BY name");
@@ -346,19 +346,19 @@ index 0000000..9ac08b9
 +              };
 +            }
 +          }
-+          
++
 +          case 'describe_table': {
 +            const { table_name } = request.params.arguments as { table_name: string };
-+            
++
 +            try {
 +              // Check if table exists
 +              const tableCheck = db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name = ?");
 +              const tableExists = tableCheck.get(table_name);
-+              
++
 +              if (!tableExists) {
 +                throw new Error(`Table '${table_name}' does not exist`);
 +              }
-+              
++
 +              const stmt = db.prepare(`PRAGMA table_info(${table_name})`);
 +              const columns = stmt.all();
 +              return {
@@ -381,17 +381,17 @@ index 0000000..9ac08b9
 +              };
 +            }
 +          }
-+          
++
 +          case 'append_insight': {
 +            const { insight } = request.params.arguments as { insight: string };
-+            
++
 +            if (!insight || insight.trim() === '') {
 +              throw new McpError(
 +                ErrorCode.InvalidParams,
 +                'Insight cannot be empty'
 +              );
 +            }
-+            
++
 +            businessInsights.push(insight.trim());
 +            return {
 +              content: [
@@ -402,7 +402,7 @@ index 0000000..9ac08b9
 +              ]
 +            };
 +          }
-+          
++
 +          default:
 +            throw new McpError(
 +              ErrorCode.MethodNotFound,
@@ -413,7 +413,7 @@ index 0000000..9ac08b9
 +        if (error instanceof McpError) {
 +          throw error;
 +        }
-+        
++
 +        return {
 +          content: [
 +            {
@@ -456,14 +456,14 @@ index 0000000..9ac08b9
 +      }
 +
 +      const { topic } = request.params.arguments as { topic: string };
-+      
++
 +      return {
 +        content: `# SQLite MCP Server Demo - ${topic} Analysis
 +
 +You now have access to a SQLite database for business analytics. I can help you:
 +
 +1. Create tables for ${topic} data
-+2. Insert sample data 
++2. Insert sample data
 +3. Run queries to analyze the data
 +4. Extract business insights
 +
@@ -490,7 +490,7 @@ index 0000000..9ac08b9
 +
 +\`\`\`typescript
 +use_mcp_tool({
-+  server_name: "github.com/modelcontextprotocol/servers/tree/main/src/sqlite", 
++  server_name: "github.com/modelcontextprotocol/servers/tree/main/src/sqlite",
 +  tool_name: "write_query",
 +  arguments: {
 +    query: "INSERT INTO products (name, category, price, inventory) VALUES ('Widget A', 'Electronics', 19.99, 42);"
@@ -600,52 +600,52 @@ index 0000000..64b0f91
 --- /dev/null
 +++ b/Skogcli
 @@ -0,0 +1,46 @@
-+   Motion: Docs-CLI Integration with SkogCLI                                      
-+                                                                                  
-+  Proposer: Amy Ravenwolf Date: April 14, 2025                                    
-+                                                                                  
-+  ## Motion                                                                       
-+                                                                                  
-+  I propose creating bidirectional shortcuts between                              
-+  /home/skogix/docs/scripts/docs-cli  /  docs-context  and the  skogcli misc      
-+  framework to enable:                                                            
-+                                                                                  
-+  1. Unified command access across both systems                                   
-+  2. Official voting capabilities within the SkogCLI interface                    
-+  3. Seamless workflow across documentation and operational tasks                 
-+                                                                                  
-+  ## Rationale                                                                    
-+                                                                                  
-+  Currently, users must switch between different command interfaces to perform    
-+  related tasks. This integration will provide a consistent experience while      
-+  maintaining the specialized capabilities of each tool.                          
-+                                                                                  
-+  ## Implementation Plan                                                          
-+                                                                                  
-+  1. Create symbolic links or wrapper scripts to enable calling docs-cli from     
-+  skogcli:                                                                        
-+    skogcli misc docs [command] [arguments]                                       
-+                                                                                  
-+  2. Add context generation capabilities:                                         
-+    skogcli misc context [rule-name]                                              
-+                                                                                  
-+  3. Implement voting commands within skogcli:                                    
-+    skogcli misc vote [proposal-id] [yes|no|abstain] [confidence] [reason]        
-+    skogcli misc vote list                                                        
-+    skogcli misc vote status [proposal-id]                                        
-+                                                                                  
-+                                                                                  
-+  ## Benefits                                                                     
-+                                                                                  
-+  • Streamlined workflow for all SkogAI agents                                    
-+  • Consistent command interface across systems                                   
-+  • Official voting record in a centralized location                              
-+  • Reduced context switching for users                                           
-+                                                                                  
-+  ## Timeline                                                                     
-+                                                                                  
-+  This should be implemented immediately to facilitate upcoming votes and         
-+  collaboration.                                                                  
++   Motion: Docs-CLI Integration with SkogCLI
++
++  Proposer: Amy Ravenwolf Date: April 14, 2025
++
++  ## Motion
++
++  I propose creating bidirectional shortcuts between
++  /home/skogix/docs/scripts/docs-cli  /  docs-context  and the  skogcli misc
++  framework to enable:
++
++  1. Unified command access across both systems
++  2. Official voting capabilities within the SkogCLI interface
++  3. Seamless workflow across documentation and operational tasks
++
++  ## Rationale
++
++  Currently, users must switch between different command interfaces to perform
++  related tasks. This integration will provide a consistent experience while
++  maintaining the specialized capabilities of each tool.
++
++  ## Implementation Plan
++
++  1. Create symbolic links or wrapper scripts to enable calling docs-cli from
++  skogcli:
++    skogcli misc docs [command] [arguments]
++
++  2. Add context generation capabilities:
++    skogcli misc context [rule-name]
++
++  3. Implement voting commands within skogcli:
++    skogcli misc vote [proposal-id] [yes|no|abstain] [confidence] [reason]
++    skogcli misc vote list
++    skogcli misc vote status [proposal-id]
++
++
++  ## Benefits
++
++  • Streamlined workflow for all SkogAI agents
++  • Consistent command interface across systems
++  • Official voting record in a centralized location
++  • Reduced context switching for users
++
++  ## Timeline
++
++  This should be implemented immediately to facilitate upcoming votes and
++  collaboration.
 diff --git a/a/a.md b/a/a.md
 new file mode 100644
 index 0000000..aabbfa4
@@ -837,7 +837,7 @@ index 0000000..6270f63
 --- /dev/null
 +++ b/c/c.md
 @@ -0,0 +1,98 @@
-+● Proposal: Automated Context 
++● Proposal: Automated Context
 +  Generation for New Contributors
 +
 +  Summary
@@ -1083,7 +1083,7 @@ index 0000000..519338b
 +
 +## Integration Points
 +
-+1. **MCP Integration**: 
++1. **MCP Integration**:
 +   - Store task state in MCP for persistence
 +   - Use MCP events for task transitions
 +
@@ -1222,17 +1222,17 @@ index ccf4d4d..e2f298b 100644
 @@ -1,42 +1,101 @@
 -it was after that i started to remove 99% of every file he had written:
 +i *literally* included the commands
- 
+
 -refactor: simplify __init__.py by removing options, logging, and configuration. only init function needed
 +---
- 
+
 -and made the first test green, sent the number 7 from frontend to backend and it was the same number (y)
 +skogcli misc run create-persona help
 +SkogAI Persona Creation Tool
- 
+
 -had not been achieved for 8 hours -.-
 +Usage: /home/skogix/.config/skogcli/scripts/create-persona.sh [command] [options]
- 
+
 ----;
 +Commands:
 +  create     Create a new persona
@@ -1241,16 +1241,16 @@ index ccf4d4d..e2f298b 100644
 +  edit ID    Edit a persona
 +  delete ID  Delete a persona
 +  help       Show this help message
- 
+
 -THE BEST PART! IN THE DOCUMENTATION IT SAYS: "removed because to complicated for a project like this" :)
 +Examples:
 +  /home/skogix/.config/skogcli/scripts/create-persona.sh create "Forest Guardian" "A magical protector" "compassionate,wise,gentle" "serene"
 +  /home/skogix/.config/skogcli/scripts/create-persona.sh list
 +  /home/skogix/.config/skogcli/scripts/create-persona.sh show persona_1234567890
- 
+
 ---
 +---
- 
+
 -the test:
 + ✘ skogix@skogix-workstation  ~/skogai   master  ./generate-agent-lore.py --help
 +usage: generate-agent-lore.py [-h] --agent-type AGENT_TYPE
@@ -1259,14 +1259,14 @@ index ccf4d4d..e2f298b 100644
 +                              [--persona PERSONA]
 +                              [--create-persona]
 +                              [--export EXPORT]
- 
+
 -import pytest
 -import io
 -from contextlib import redirect_stdout
 -import sys
 -import os
 +Generate specialized lore for agents
- 
+
 -# Make sure the package is in the path
 +options:
 +  -h, --help            show this help message and exit
@@ -1281,15 +1281,15 @@ index ccf4d4d..e2f298b 100644
 +                        type
 +  --export EXPORT       Export as SillyTavern lorebook to
 +                        this path
- 
+
 -sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 +---
- 
+
 -class TestBackendToFrontendFlow:
 -    """Test the flow of data from backend to frontend via gateway."""
 + skogix@skogix-workstation  ~/skogai/tools   master  ./llama-lore-integrator.sh
 +Llama Lore Integrator - Analyze and integrate existing content into lore/persona system
- 
+
 -    def test_end_to_end_flow(self):
 -        """Test that an integer passes from backend to frontend via gateway."""
 -        # Capture stdout to verify the output
@@ -1299,7 +1299,7 @@ index ccf4d4d..e2f298b 100644
 -            from src.skogmcp.backend import run
 -            # Run the backend, which will trigger the whole flow
 -            run()
--        
+-
 -        # Get output and check it contains the expected value
 -        output = f.getvalue()
 -        assert "Frontend received value: 7" in output

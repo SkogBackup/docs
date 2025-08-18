@@ -14,8 +14,8 @@ Skogix notation is a **computational phenomenology** - a formal language for exp
 ### Basic Operators
 - **`$`**: to define or reference something - "reference something without being anything" (null, null-pointer)
 - **`@`**: the intent to act or do something - "do something to nothing" (void, no return, side-effect)
-- **`_`**: existence - "to be anything/everything and nothing/nobody" 
-- **`=`**: to be something 
+- **`_`**: existence - "to be anything/everything and nothing/nobody"
+- **`=`**: to be something
 - **`|`**: the act of choosing something
 - **`[]`**: similarity, likeness
 - **`{}`**: difference, distinction
@@ -26,7 +26,7 @@ Skogix notation is a **computational phenomenology** - a formal language for exp
 
 ### Computational Structures
 - **Types**: `($@)` - reference then intent
-- **Transformations**: `(@$)` - intent then reference  
+- **Transformations**: `(@$)` - intent then reference
 - **Functions**: `($@=@$)` - bidirectional equivalence
 - **Linked lists/arrays**: `($$)` - reference to reference
 - **Abstractions**: `($$)` - conceptual chaining
@@ -35,7 +35,7 @@ Skogix notation is a **computational phenomenology** - a formal language for exp
 - **Heideggerian being-in-the-world (dasein)** → `_` existence operator
 - **Badiouian event theory** → `@` as evental site
 - **Deleuzian difference engine** → `{_}` as differance
-- **Bergsonian duration** → `$entity.gen` 
+- **Bergsonian duration** → `$entity.gen`
 - **Husserlian time consciousness** → `$list`
 - **Leibnizian identity** → `$unique`
 

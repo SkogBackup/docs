@@ -26,7 +26,7 @@ Uses extensive plugin architecture with:
 ## Observations
 
 - [pattern] AutoBindAttribute enables automatic service registration #dependency-injection #automation
-- [structure] Consistent IoC/Bindings.cs files within each plugin #structure #consistency  
+- [structure] Consistent IoC/Bindings.cs files within each plugin #structure #consistency
 - [extensibility] Provider patterns allow runtime extensibility #extensibility #providers
 - [naming] Consistent PT.Plugin.{FeatureName} convention #naming #convention
 - [separation] Clear separation between core and plugin functionality #separation-of-concerns #modularity
@@ -47,7 +47,7 @@ Uses extensive plugin architecture with:
 
 ## Common Plugin Types
 - Authentication providers
-- Payment processors  
+- Payment processors
 - Data integrators
 - UI components
 - Business logic extensions

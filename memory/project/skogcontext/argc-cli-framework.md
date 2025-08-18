@@ -203,7 +203,7 @@ build() {
     echo "Building project..."
 }
 
-# @cmd Deploy the project  
+# @cmd Deploy the project
 # @arg environment! Target environment
 # @option --force Force deployment
 deploy() {
@@ -233,7 +233,7 @@ One of argc's most powerful features is automatic generation of multiple tool in
 
 1. **CLI Interface**: Standard --help and man pages
 2. **MCP Tools**: Automatic integration with Claude Code via MCP protocol
-3. **OpenAI Function Specs**: JSON schemas for ChatGPT and OpenAI API integration  
+3. **OpenAI Function Specs**: JSON schemas for ChatGPT and OpenAI API integration
 4. **REPL Interface**: Interactive command-line interface
 
 This means you write one argc script and automatically get compatibility across the entire AI tooling ecosystem - from command line usage to AI agent integration.
@@ -256,4 +256,3 @@ This means you write one argc script and automatically get compatibility across 
 - supports [[Plugin-Based Architecture Pattern]]
 - integrates_with [[SkogAI Extended Principles]]
 - relates_to [[Basic Memory Document Format]]
-

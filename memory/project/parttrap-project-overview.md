@@ -18,7 +18,7 @@ Large-scale e-commerce platform with multi-application architecture and extensiv
 
 ### Applications
 - **PT.OnlineBusiness** - Customer-facing web application
-- **PT.Studio** - Administrative interface and content management  
+- **PT.Studio** - Administrative interface and content management
 - **PT.Headless** - API-only services for headless commerce
 
 ### Core Technologies
@@ -42,7 +42,7 @@ Large-scale e-commerce platform with multi-application architecture and extensiv
 - uses [[Plugin-Based Architecture Pattern]]
 - supports [[Multiple ERP Systems]]
 - contains [[PT.OnlineBusiness Application]]
-- contains [[PT.Studio Application]] 
+- contains [[PT.Studio Application]]
 - contains [[PT.Headless API Services]]
 - follows [[Repository Pattern]]
 - uses [[Dependency Injection Pattern]]
@@ -58,7 +58,7 @@ Large-scale e-commerce platform with multi-application architecture and extensiv
 msbuild PT.Admin-Dev.sln /p:Configuration=Release
 ```
 
-### Test Commands  
+### Test Commands
 ```bash
 # Unit tests
 dotnet test Tests/PT.One.UnitTests/PT.One.UnitTests.csproj

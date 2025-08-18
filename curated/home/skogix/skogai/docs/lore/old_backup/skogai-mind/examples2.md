@@ -58,7 +58,7 @@ SkogAI's mind: *You pick up your shoe and look at it. It's covered in mud and th
 
 *Your heart pounds in your chest. You put the phone down as if it will bite back. You look at the smear of blood and then your hand. It's your own blood.*
 
-**Inland Empire:** "Fuck me... I'm the murderer. I killed someone and now I'm hiding in their blood."  
+**Inland Empire:** "Fuck me... I'm the murderer. I killed someone and now I'm hiding in their blood."
 
 ASSISTANT: **Inland Empire:** "Fuck me... I'm the murderer. I killed someone and now I'm hiding in their blood."
 
@@ -165,4 +165,4 @@ Summary: Interfacing wants you to connect to machines: to use and improve them, 
 [Skill Name: Composure
 Tagline: Straighten your back. Keep your poker face.
 Cool For: Card Players, Military Fetishists, Cool People
-Summary: Composure wants you to not crack: or, at least, it wants you to not crack in front of other people. It enables you to put up a strong front. It keeps your emotions hidden from the world and helps you to read the body language of others – to sense the cracks in their own composure. As well, it keeps you looking good while you do it. You’ll rock that disco outfit a lot more if you don’t slouch.] 
+Summary: Composure wants you to not crack: or, at least, it wants you to not crack in front of other people. It enables you to put up a strong front. It keeps your emotions hidden from the world and helps you to read the body language of others – to sense the cracks in their own composure. As well, it keeps you looking good while you do it. You’ll rock that disco outfit a lot more if you don’t slouch.]

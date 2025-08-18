@@ -18,7 +18,7 @@ Note that there are no specific programming language tags mentioned in the file,
 
 ## key observations
 - command line project changes (`skogcli memory project set-active`) are not reflected in the extension API #inconsistency #api
-- the API's `project_info` function shows different information than the command line's `project info` #divergence 
+- the API's `project_info` function shows different information than the command line's `project info` #divergence
 - notes created through the API go to the project that was active when the MCP was started #persistence
 - the SkogCLI project was visible in command line but not in the API's project list #visibility
 

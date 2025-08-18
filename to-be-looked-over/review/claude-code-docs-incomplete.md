@@ -557,4 +557,3 @@ For full details, please review our [Commercial Terms of Service](https://www.an
 ### License
 
 © Anthropic PBC. All rights reserved. Use is subject to Anthropic’s [Commercial Terms of Service](https://www.anthropic.com/legal/commercial-terms).
-

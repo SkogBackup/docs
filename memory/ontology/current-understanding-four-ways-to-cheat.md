@@ -33,7 +33,7 @@ Based on the pattern emerging, the four ways to "cheat in the universe" appear t
 
 ### Identity Components Identified
 
-- `"id": "$ int*$ unique"`  
+- `"id": "$ int*$ unique"`
 - `"unique": "a thing which there only exists one of"`
 - These are "scary" because they're foundational to how `$$` patterns work
 
@@ -44,4 +44,3 @@ Need to understand how `$id` and `$unique` work to grasp:
 - How `$$` reference chains function
 - Why `{$$}` is heavily used
 - The mechanics of reference-to-reference operations in both similarity and difference contexts
-

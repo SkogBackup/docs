@@ -117,4 +117,3 @@ $thread.messages = $message_id.$list
 # Messages can reply to other messages
 $message.parent_id = $message_id | $null
 ```
-

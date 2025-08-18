@@ -38,4 +38,3 @@ tags:
 - Restart the MCP server when switching between projects
 - Use the command line to verify which project is active before performing API operations
 - Be aware that the API's project_info may not reflect recent command line changes
-

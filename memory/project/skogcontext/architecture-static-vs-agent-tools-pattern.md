@@ -33,7 +33,7 @@ main() {
 - Generic, parameterized behavior
 - Examples: `tree --path X`, `read-env --file Y`, `git-status --repo Z`
 
-## Agent Tools Pattern  
+## Agent Tools Pattern
 
 **Think: Object with fields and methods**
 
@@ -43,7 +43,7 @@ main() {
 
 # Agent "knows" its own context
 PROJECT_ROOT="/home/user/my-agent"
-CONFIG_DIR="$PROJECT_ROOT/.config" 
+CONFIG_DIR="$PROJECT_ROOT/.config"
 
 # @cmd Show this agent's current context
 show_context() {
@@ -71,7 +71,7 @@ update_env() {
 Create generic tools that work with any parameters:
 
 - `tree-generator --path --depth --filter`
-- `env-reader --file --namespace`  
+- `env-reader --file --namespace`
 - `git-analyzer --repo --branch`
 - `file-scanner --directory --pattern`
 
@@ -89,7 +89,7 @@ Each agent gets its own `tools.sh` that acts as its "methods":
 Static Tool:     argc tree-gen --path /any/path
 Agent Tool:      argc my-agent show-my-tree  (internally: tree-gen --path $MY_PATH)
 
-Static Tool:     argc env-read --file /any/.env  
+Static Tool:     argc env-read --file /any/.env
 Agent Tool:      argc my-agent update-context  (internally: env-read --file $MY_ENV_FILE)
 ```
 
@@ -124,4 +124,3 @@ The agent becomes an "object" with its `tools.sh` as its methods that know about
 - enables [[SkogAI Context System]]
 - part_of [[SkogAI Extended Principles]]
 - influences [[Basic Memory Document Format]]
-
