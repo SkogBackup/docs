@@ -17,8 +17,8 @@ Note that the provided content does not explicitly mention software development,
 
 This file contains various special characters that might break parsing:
 
-## Unicode & Emoji Content 
-- Emoji test: 🚀 💻 🎨 🔥 ⚡ 
+## Unicode & Emoji Content
+- Emoji test: 🚀 💻 🎨 🔥 ⚡
 - Unicode: αβγδε ñáéíóú çüö
 - Math symbols: ∑∏∆∇∂∫ ≤≥≠±∞
 

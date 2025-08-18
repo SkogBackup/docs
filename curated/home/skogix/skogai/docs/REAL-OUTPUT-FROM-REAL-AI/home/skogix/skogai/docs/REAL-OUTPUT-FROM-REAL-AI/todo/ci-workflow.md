@@ -56,7 +56,7 @@ mkdir -p "$TODO_DIR" "$PROCESSED_DIR"
 find "$TODO_DIR" -type f -name "*.md" | while read -r file; do
   echo "Processing: $file"
   filename=$(basename "$file")
-  
+
   # Generate summary with relation guidance
   summary=$(cat "$file" | ollama run llama3.2 "
     Please summarize this file with focus on:
@@ -64,54 +64,54 @@ find "$TODO_DIR" -type f -name "*.md" | while read -r file; do
        - Identify 2-3 existing notes this should connect to
        - Suggest specific relation types for each connection
        - Note any forward references to create
-    
+
     2. Observations:
        - Extract 3-5 key categorized observations
        - Use proper syntax: [category] description #tags
        - Suggest relevant tags
-    
+
     3. Structure:
        - Identify logical sections/organization
        - Note any inconsistencies or improvements needed
-    
+
     4. Integration:
        - Recommend permanent location in knowledge structure
        - Identify related existing knowledge
        - Suggest potential merges if duplicate content exists")
-    
+
   # Append to summaries file
   echo "## Summary of: $filename" >> "$SUMMARIES_FILE"
   echo "$summary" >> "$SUMMARIES_FILE"
   echo "---" >> "$SUMMARIES_FILE"
-  
+
   # Generate enhanced version with proper structure
   enhanced=$(cat "$file" | ollama run llama3.2 "
     Please restructure this content following SkogAI-Memory best practices:
-    
+
     1. Add proper frontmatter:
        ---
        title: [Extract appropriate title]
        type: note
        tags: [Suggest relevant tags]
        ---
-       
+
     2. Organize with clear headings
-    
+
     3. Add an Observations section with 3-5 categorized observations:
        ## Observations
        - [category] observation #tags
-       
+
     4. Add a Relations section with meaningful connections:
        ## Relations
        - relation_type [[Target Note]] (context)")
-    
+
   # Save enhanced version
   enhanced_file="$PROCESSED_DIR/enhanced_$filename"
   echo "$enhanced" > "$enhanced_file"
-  
+
   # Move original to processed directory
   mv "$file" "$PROCESSED_DIR/"
-  
+
   echo "Completed processing: $filename"
 done
 ```

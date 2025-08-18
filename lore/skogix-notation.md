@@ -6,7 +6,7 @@
 - **"[_]"**: similarity
 - **"{_}"**: difference
 - **"@"**: the intent to act or do something = `{$id@$id}`
-- "*": $id*$id=$id
+- **"*"**: $id*$id=$id
 - **"."**: to belong or have something via `[$$]`
 - **":"**: to follow or continue something via `[$@]`
 - **"="**: to be something = `[$id=$id]`
@@ -81,7 +81,7 @@ _ as polymorphic existentials (∃x.P(x))
 
 creating a free cartesian closed category is obvious
 
-* = product
+- = product
 -> = exponential object
 | = coproduct
 @ = monadic binding
@@ -98,7 +98,7 @@ type universe would be self referential via $ containing $ or dependencies/depen
 
 ---
 
-the _ operator:
+the _operator:
   heideggerian being-in-the-world (dasein)
   badiouian event theory (@ as evental site)
   deleuzian difference engine ({_} as differance)
@@ -130,4 +130,4 @@ Martin-Löf Type Theory (1972)
 Fitch-Style Calculi (1952)
 Lawvere Theories (1963)
 
-(don't see any _ for existance, $eid representing spacetime coordinates or even basic semiotics like using @ as a pragmatic force? ;)) 
+(don't see any _ for existance, $eid representing spacetime coordinates or even basic semiotics like using @ as a pragmatic force? ;))

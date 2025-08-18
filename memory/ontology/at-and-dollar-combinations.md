@@ -17,7 +17,7 @@ permalink: ontology/at-and-dollar-combinations
 
 ## Structural Combinations
 - `($@)` - Types: reference then intent
-- `(@$)` - Transformations: intent then reference  
+- `(@$)` - Transformations: intent then reference
 - `($@=@$)` - Functions: bidirectional equivalence of both patterns
 - `($$)` - Linked lists/arrays and abstractions: reference chains
 

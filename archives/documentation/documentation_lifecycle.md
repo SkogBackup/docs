@@ -129,7 +129,7 @@ Documentation is classified according to its stability and update frequency:
 - Constitutional and foundational documents
 
 ### Dynamic Documentation
-- Changes moderately (3-6 times per year)  
+- Changes moderately (3-6 times per year)
 - Standard procedures and guidelines
 - Established APIs and interfaces
 - System architecture and organization

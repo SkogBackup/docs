@@ -460,21 +460,21 @@ Type constraints add additional rules to base types:
 {
   'id': '$madeup-unique-int-definition',
   'message': {
-    'id': '$id', 
-    'user': '$agent', 
-    'content': '$string', 
-    'timestamp': '$datetime', 
+    'id': '$id',
+    'user': '$agent',
+    'content': '$string',
+    'timestamp': '$datetime',
     'parent': '$id'
-  }, 
+  },
   'agent': {
-    'id': '$id', 
+    'id': '$id',
     'name': '$string'
-  }, 
+  },
   'thread': {
-    'id': '$id', 
-    'name': '$string', 
-    'description': '$string', 
-    'created_at': '$datetime', 
+    'id': '$id',
+    'name': '$string',
+    'description': '$string',
+    'created_at': '$datetime',
     'updated_at': '$datetime'
   }
 }

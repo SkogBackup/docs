@@ -6,8 +6,8 @@ tags:
 ---
 # Goose: Perspective Analysis
 
-**Date**: 2025-06-19  
-**Prepared by**: SkogAI Librarian  
+**Date**: 2025-06-19
+**Prepared by**: SkogAI Librarian
 **Classification**: Agent Perspective Analysis
 
 ## Current Understanding

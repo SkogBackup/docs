@@ -14,7 +14,7 @@ The video game Disco Elysium's revolutionary approach to representing internal c
 
 In Disco Elysium, the protagonist's mind contains 24 different skills that function as semi-autonomous personalities:
 - **Logic**: Analytical reasoning and deduction
-- **Drama**: Performance and emotional understanding  
+- **Drama**: Performance and emotional understanding
 - **Electrochemistry**: Desires, impulses, and chemical drives
 - **Inland Empire**: Imagination, intuition, and the surreal
 - **Volition**: Self-control and determination

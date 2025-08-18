@@ -265,7 +265,7 @@ else
   # Running job
   # Actual long-running processing here
   sleep 10
-  
+
   # Update job status
   echo "Job completed" > "/tmp/job_${job_id}.complete"
   exit 0

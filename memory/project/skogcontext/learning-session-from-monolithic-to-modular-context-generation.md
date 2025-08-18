@@ -61,7 +61,7 @@ show_library() {
 ```bash
 # /home/skogix/skogix/scripts/update
 $SKOGAI_DOT_FOLDER/scripts/context-readme.sh >>context
-$SKOGAI_DOT_FOLDER/scripts/context-git.sh >>context  
+$SKOGAI_DOT_FOLDER/scripts/context-git.sh >>context
 $SKOGAI_DOT_FOLDER/scripts/context-workspace.sh >>context
 # ...hardcoded script paths, sequential execution
 ```
@@ -80,7 +80,7 @@ We successfully converted `context-workspace.sh` from:
 ```bash
 # Old: Hardcoded, external dependencies
 $SKOGAI_DOT_FOLDER/scripts/context-start.sh "workspace"
-tree . --gitignore  
+tree . --gitignore
 $SKOGAI_DOT_FOLDER/scripts/context-end.sh "workspace"
 ```
 
@@ -88,13 +88,13 @@ To:
 
 ```bash
 # New: Self-contained, parameterized argc tool
-# @describe Generate workspace context with file tree  
+# @describe Generate workspace context with file tree
 # @option --section=workspace Context section name
 main() {
   printf "[@claude:context:%s]\n" "$argc_section" >>"$LLM_OUTPUT"
   printf "(generated: %s)\n" "$(date)" >>"$LLM_OUTPUT"
   tree . --gitignore >>"$LLM_OUTPUT"
-  printf "[@/claude:context:%s]\n" "$argc_section" >>"$LLM_OUTPUT"  
+  printf "[@/claude:context:%s]\n" "$argc_section" >>"$LLM_OUTPUT"
 }
 ```
 
@@ -118,12 +118,12 @@ main() {
 The orchestrator (`update`) handles context wrapping:
 
 ```bash
-# argc_section defaults to script basename (workspace.sh → workspace)  
+# argc_section defaults to script basename (workspace.sh → workspace)
 section_name="${argc_section:-$(basename "$script" .sh)}"
 agent_name="${SKOGAI_AGENT_NAME:-claude}"
 
 printf "[@%s:context:%s]\n" "$agent_name" "$section_name" >> "$CONTEXT_OUTPUT"
-LLM_OUTPUT="$CONTEXT_OUTPUT" argc --argc-run "$script" 
+LLM_OUTPUT="$CONTEXT_OUTPUT" argc --argc-run "$script"
 printf "[@/%s:context:%s]\n" "$agent_name" "$section_name" >> "$CONTEXT_OUTPUT"
 ```
 
@@ -141,7 +141,7 @@ done
 # Load from environment-specified paths
 env | grep '^SKOGAI_MODULE_' | while IFS='=' read -r var_name path; do
     for module in "$path"/*.sh; do
-        run_module "$module"  
+        run_module "$module"
     done
 done
 ```
@@ -155,7 +155,7 @@ skogcontext/
 ├── .context/
 │   └── modules/        # Default argc modules location
 │       ├── workspace.sh
-│       ├── git-status.sh  
+│       ├── git-status.sh
 │       └── readme.sh
 └── tmp/context         # Final output (legacy)
 ```
@@ -166,7 +166,7 @@ skogcontext/
 skogcontext/
 ├── update              # Orchestrator (environment-driven)
 ├── run                 # Entry point
-├── modules/            # Argc context generation modules  
+├── modules/            # Argc context generation modules
 │   ├── workspace.sh    # Self-contained argc tools
 │   ├── git-status.sh
 │   ├── readme.sh
@@ -178,7 +178,7 @@ skogcontext/
 
 ```bash
 MODULES_DIR="${SKOGAI_CONTEXT_MODULES:-./modules}"
-CONTEXT_OUTPUT="${SKOGAI_CONTEXT_OUTPUT:-./tmp/context}" 
+CONTEXT_OUTPUT="${SKOGAI_CONTEXT_OUTPUT:-./tmp/context}"
 AGENT_NAME="${SKOGAI_AGENT_NAME:-claude}"
 ```
 
@@ -196,7 +196,7 @@ done
 >
 > "When we want dynamic/agent-dependent behavior, we should think: 'let the agent provide an alternative executable' rather than making the static tool know about all possible agent contexts."
 
-### 2. Universal Deployment  
+### 2. Universal Deployment
 >
 > Each argc module becomes available across CLI, MCP, HTTP API, and OpenAI functions automatically
 
@@ -208,7 +208,7 @@ done
 >
 > New system must produce `./tmp/context` for existing workflows
 
-### 5. Environment-Driven Flexibility  
+### 5. Environment-Driven Flexibility
 >
 > `$ENV` variables control behavior rather than hardcoded paths
 
@@ -237,7 +237,6 @@ done
 ## Next Steps for Discussion
 
 - Finalize the modular architecture design
-- Decide on environment variable conventions  
+- Decide on environment variable conventions
 - Plan the migration strategy from old to new system
 - Identify which existing context scripts should become argc modules first
-

@@ -1,8 +1,8 @@
 # Dictator Decision 001: Foundation Bootstrap
 
-**Date**: 2025-06-07  
-**Authority**: skogix (Emergency Executive Powers)  
-**Status**: Active Implementation  
+**Date**: 2025-06-07
+**Authority**: skogix (Emergency Executive Powers)
+**Status**: Active Implementation
 **Environment**: $SKOGAI=/home/skogix/SkogAI
 
 ## Executive Order
@@ -116,4 +116,3 @@ $SKOGAI/
 
 ---
 *Dictator Decision 001 - Emergency infrastructure bootstrap by skogix*
-

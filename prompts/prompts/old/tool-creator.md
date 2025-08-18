@@ -149,7 +149,7 @@ You can also use ESM `export` expressions:
 
 ```javascript
 export function run(args) {
-  // Implementation 
+  // Implementation
 }
 ```
 
@@ -215,7 +215,7 @@ git_status() {
 }
 
 # @cmd Shows differences between branches or commits
-# @option --target!   Shows differences between branches or commits 
+# @option --target!   Shows differences between branches or commits
 git_diff() {
     # Implementation
     git diff "$target"

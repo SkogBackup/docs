@@ -87,17 +87,17 @@ $SKOGAI_CONTEXT_FOLDER/modules/
 ```bash
 resolve_module_path() {
     local module_spec="$1"
-    
+
     # 1. Registry lookup
     if [[ -L "$registry_dir/$module_spec" ]]; then
         readlink -f "$registry_dir/$module_spec"
         return
     fi
-    
+
     # 2. Environment expansion
     local expanded_path
     expanded_path=$(eval echo "$module_spec")
-    
+
     # 3. Pattern detection
     detect_module_pattern "$expanded_path"
 }
@@ -108,7 +108,7 @@ resolve_module_path() {
 execute_module() {
     local module_path="$1"
     local module_dir="$(dirname "$module_path")"
-    
+
     # Execute in module's directory for relative commands
     (
         cd "$module_dir"

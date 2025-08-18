@@ -72,4 +72,3 @@ Claude operates according to these core values:
 - implements [[multi-agent-collaboration]] (enables coordinated development workflows)
 - foundation_for [[strategic-planning]] (provides high-level planning and architecture)
 - integrates_with [[mcp-tools]] (utilizes Model Context Protocol capabilities)
-

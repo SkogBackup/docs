@@ -149,7 +149,7 @@ Organize observations by subtopic:
 - [method] Chemex uses thicker filter...
 - [technique] Circular pouring ensures...
 
-## Immersion Methods  
+## Immersion Methods
 - [method] French Press creates full body...
 - [method] AeroPress is versatile...
 - [technique] Ideal steep time is 4-5 minutes...
@@ -242,7 +242,7 @@ Example: `coffee-knowledge-base.md` acts as hub for all coffee topics
 ## Observations
 
 - [pattern] Consistent structure across documents enables predictable navigation #structure #consistency
-- [pattern] Semantic categories convey information type before content is read #categorization #semantics  
+- [pattern] Semantic categories convey information type before content is read #categorization #semantics
 - [pattern] Rich relations create navigable knowledge graph #relations #graph
 - [pattern] Progressive disclosure supports both quick reference and deep exploration #organization #usability
 - [pattern] Hub documents provide entry points and navigation aids #navigation #discovery

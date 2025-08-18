@@ -75,4 +75,3 @@ Cross-project knowledge graph connecting:
 3. Create relations to other projects
 4. Use memory:// URIs for cross-project planning
 5. Incrementally add detail through research
-

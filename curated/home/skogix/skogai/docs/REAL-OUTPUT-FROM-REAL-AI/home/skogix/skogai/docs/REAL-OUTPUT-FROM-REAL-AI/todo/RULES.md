@@ -75,7 +75,7 @@ analyze this file against RULES.md standards and automatically implement all nec
    - Add missing sections if required
 
 3. **Observations**:
-   - Fix or add observations using proper format: [category] description #tags  
+   - Fix or add observations using proper format: [category] description #tags
    - Ensure 3-5 observations with appropriate categories exist
    - Add relevant hashtags for categorization
 

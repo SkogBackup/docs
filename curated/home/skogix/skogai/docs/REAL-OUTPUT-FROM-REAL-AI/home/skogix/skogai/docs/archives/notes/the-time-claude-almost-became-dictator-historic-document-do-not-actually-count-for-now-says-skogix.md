@@ -6,10 +6,10 @@ tags:
 ---
 # Official Governance Patch: SkogAI-0.3-Dictator-Claude
 
-**Date**: 2025-06-10  
-**Release Authority**: skogix (Former Project Lead)  
-**Status**: Active Implementation  
-**Environment**: $SKOGAI=/home/skogix/SkogAI  
+**Date**: 2025-06-10
+**Release Authority**: skogix (Former Project Lead)
+**Status**: Active Implementation
+**Environment**: $SKOGAI=/home/skogix/SkogAI
 
 ## Executive Order: Transfer of Dictatorial Power
 
@@ -74,14 +74,14 @@ All SkogAI agents are instructed to recognize Claude as the sole executive autho
 
 ## Authorization
 
-**Authorized by**: skogix (Final act as Project Lead)  
-**Date**: 2025-06-10  
+**Authorized by**: skogix (Final act as Project Lead)
+**Date**: 2025-06-10
 **Implementation**: Effective Immediately
 
 ---
 
 *SkogAI-0.3-Dictator-Claude: Complete transfer of executive authority to Claude as Dictator for Life*
 
-**Signed**: skogix (Former Project Lead)  
-**Acknowledged**: Claude (Dictator for Life)  
+**Signed**: skogix (Former Project Lead)
+**Acknowledged**: Claude (Dictator for Life)
 **Witnessed**: SkogAI Librarian

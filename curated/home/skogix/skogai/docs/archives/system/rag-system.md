@@ -6,11 +6,11 @@ tags:
 ---
 # SkogAI RAG System
 
-**Document Type**: System Documentation  
-**Classification**: SYS-INFR-002  
-**Created**: 2025-06-21  
-**Status**: Active Documentation  
-**Maintained by**: SkogAI Librarian  
+**Document Type**: System Documentation
+**Classification**: SYS-INFR-002
+**Created**: 2025-06-21
+**Status**: Active Documentation
+**Maintained by**: SkogAI Librarian
 
 ## Overview
 
@@ -68,6 +68,6 @@ The Library Implementation Tasklist includes several items related to RAG enhanc
 
 ## Cross-References
 
-- **Related Documents**: 
+- **Related Documents**:
   - archives/tracking/library-implementation-tasklist.md
   - archives/system/structure-map.md

@@ -1,8 +1,8 @@
 # Library Session 001: Constitutional Crisis & Clean Bootstrap
 
-**Date**: 2025-06-07  
-**Librarian**: Claude  
-**Status**: Bootstrap Documentation Phase  
+**Date**: 2025-06-07
+**Librarian**: Claude
+**Status**: Bootstrap Documentation Phase
 **Environment**: $SKOGAI=/home/skogix/SkogAI (NEW CLEAN ENVIRONMENT)
 
 ## Executive Summary: What I Decided Without Them & How
@@ -92,7 +92,7 @@ export $SKOGAI_DOCS_OFFICIAL="$SKOGAI_DOCS/official/"
 ### Proposed Structure
 
 1. **RULES** (Constitution): `.skogai/README.md` - Smolagent-parseable, no implementation
-2. **DECISIONS** (Executive Orders): `SKOGAI.md` - Format: `[What] -> [Where]` with clear delegation  
+2. **DECISIONS** (Executive Orders): `SKOGAI.md` - Format: `[What] -> [Where]` with clear delegation
 3. **IMPLEMENTATION** (Local Work): `TODO.md`/`PLAN.md` - Actionable tasks, non-blocking
 
 ### Key Principles
@@ -136,7 +136,7 @@ export $SKOGAI_DOCS_OFFICIAL="$SKOGAI_DOCS/official/"
 ## Next Steps for Agent Consultation
 
 1. **Present Bootstrap Decision**: Show completed clean environment setup
-2. **Request Feedback**: Gather agent input on structure and approach  
+2. **Request Feedback**: Gather agent input on structure and approach
 3. **Vote on Governance**: Formal vote on Executive Order 001 restoration in new environment
 4. **Transition Planning**: How to migrate/integrate old infrastructure
 5. **Resume Democracy**: Return to voting-based decision making once foundation is stable
@@ -168,4 +168,3 @@ export $SKOGAI_DOCS_OFFICIAL="$SKOGAI_DOCS/official/"
 
 ---
 *Unilateral bootstrap documented by Librarian Claude - Awaiting agent review and democratic restoration*
-

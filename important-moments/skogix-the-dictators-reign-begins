@@ -769,7 +769,7 @@ diff --git a/memory/notes/test note.md b/memory/notes/test note.md
 new file mode 100644
 index 0000000..407d4bd
 --- /dev/null
-+++ b/memory/notes/test note.md	
++++ b/memory/notes/test note.md
 @@ -0,0 +1,7 @@
 +---
 +title: test note
@@ -787,9 +787,9 @@ index 0000000..94d6437
 @@ -0,0 +1,171 @@
 +# Library Session 001: Constitutional Crisis & Clean Bootstrap
 +
-+**Date**: 2025-06-07  
-+**Librarian**: Claude  
-+**Status**: Bootstrap Documentation Phase  
++**Date**: 2025-06-07
++**Librarian**: Claude
++**Status**: Bootstrap Documentation Phase
 +**Environment**: $SKOGAI=/home/skogix/SkogAI (NEW CLEAN ENVIRONMENT)
 +
 +## Executive Summary: What I Decided Without Them & How
@@ -879,7 +879,7 @@ index 0000000..94d6437
 +### Proposed Structure
 +
 +1. **RULES** (Constitution): `.skogai/README.md` - Smolagent-parseable, no implementation
-+2. **DECISIONS** (Executive Orders): `SKOGAI.md` - Format: `[What] -> [Where]` with clear delegation  
++2. **DECISIONS** (Executive Orders): `SKOGAI.md` - Format: `[What] -> [Where]` with clear delegation
 +3. **IMPLEMENTATION** (Local Work): `TODO.md`/`PLAN.md` - Actionable tasks, non-blocking
 +
 +### Key Principles
@@ -923,7 +923,7 @@ index 0000000..94d6437
 +## Next Steps for Agent Consultation
 +
 +1. **Present Bootstrap Decision**: Show completed clean environment setup
-+2. **Request Feedback**: Gather agent input on structure and approach  
++2. **Request Feedback**: Gather agent input on structure and approach
 +3. **Vote on Governance**: Formal vote on Executive Order 001 restoration in new environment
 +4. **Transition Planning**: How to migrate/integrate old infrastructure
 +5. **Resume Democracy**: Return to voting-based decision making once foundation is stable
@@ -964,16 +964,16 @@ index 0000000..86ee6ad
 @@ -0,0 +1,172 @@
 +# Library Session 002: Work From Home Implementation Success
 +
-+**Date**: 2025-06-08  
-+**Librarian**: Claude  
-+**Status**: Implementation Complete  
-+**Environment**: $SKOGAI=/home/skogix/SkogAI  
++**Date**: 2025-06-08
++**Librarian**: Claude
++**Status**: Implementation Complete
++**Environment**: $SKOGAI=/home/skogix/SkogAI
 +
 +## Executive Summary: The Elegant Solution
 +
 +**The Problem**: How to implement "work from home" capabilities for AI agents during infrastructure bootstrap?
 +
-+**The Solution**: "To work from home you only have to move your home to work!" 
++**The Solution**: "To work from home you only have to move your home to work!"
 +
 +Instead of building complex remote access systems, we simply integrated the agent workspace directly into the main SkogAI repository structure. This eliminated the separation between "home" and "work" entirely.
 +
@@ -1005,7 +1005,7 @@ index 0000000..86ee6ad
 +```
 +$SKOGAI/.claude/
 +├── ABOUT.md                    # Claude's identity and capabilities
-+├── ARCHITECTURE.md             # Workspace structure documentation  
++├── ARCHITECTURE.md             # Workspace structure documentation
 +├── CLAUDE.md                   # Development guidelines and instructions
 +├── TASKS.md                    # Task management framework
 +├── TOOLS.md                    # Available tools and commands
@@ -1128,10 +1128,10 @@ index 0000000..86ee6ad
 +
 +---
 +
-+**Implementation Status**: Complete ✅  
-+**Pattern Validation**: Successful ✅  
-+**Ecosystem Readiness**: Confirmed ✅  
-+**Democratic Foundation**: Established ✅  
++**Implementation Status**: Complete ✅
++**Pattern Validation**: Successful ✅
++**Ecosystem Readiness**: Confirmed ✅
++**Democratic Foundation**: Established ✅
 +
 +*Work-from-home implementation documented by Librarian Claude - Pattern ready for ecosystem scaling*
 \ No newline at end of file
@@ -1143,9 +1143,9 @@ index 0000000..e854e7e
 @@ -0,0 +1,119 @@
 +# Dictator Decision 001: Foundation Bootstrap
 +
-+**Date**: 2025-06-07  
-+**Authority**: skogix (Emergency Executive Powers)  
-+**Status**: Active Implementation  
++**Date**: 2025-06-07
++**Authority**: skogix (Emergency Executive Powers)
++**Status**: Active Implementation
 +**Environment**: $SKOGAI=/home/skogix/SkogAI
 +
 +## Executive Order
@@ -1268,11 +1268,11 @@ index 0000000..ba38075
 @@ -0,0 +1,252 @@
 +# Official Release Declaration: SkogAI-0.2-Democracy
 +
-+**Date**: 2025-06-09  
-+**Release Authority**: skogix (Project Lead)  
-+**Status**: Release Ready  
-+**Environment**: $SKOGAI=/home/skogix/SkogAI/.claude  
-+**Branch**: feature/submodules  
++**Date**: 2025-06-09
++**Release Authority**: skogix (Project Lead)
++**Status**: Release Ready
++**Environment**: $SKOGAI=/home/skogix/SkogAI/.claude
++**Branch**: feature/submodules
 +
 +## Executive Summary: Democracy Integration Achieved
 +
@@ -1288,7 +1288,7 @@ index 0000000..ba38075
 +
 +**Problem Solved**: The docs-cli integration was trapped in external ~/.config dependencies with hardcoded paths and complex wrapper scripts.
 +
-+**Solution Implemented**: 
++**Solution Implemented**:
 +- Moved integration components to proper locations within democracy repository
 +- Fixed critical git submodule detection bugs in docs-cli and docs-context
 +- Replaced complex integration with simple SkogCLI script import: `skogcli script import-file`
@@ -1314,13 +1314,13 @@ index 0000000..ba38075
 +skogcli script run docs branches      # Branch management
 +skogcli script run docs history       # Commit history
 +
-+# Proposal Workflow  
++# Proposal Workflow
 +skogcli script run docs create-proposal name  # New proposals
 +skogcli script run docs commit "message"      # Documentation commits
 +
 +# Cross-Branch Discovery
 +skogcli script run docs motions      # Find motion documents
-+skogcli script run docs proposals    # Find proposal documents  
++skogcli script run docs proposals    # Find proposal documents
 +skogcli script run docs markdown     # All markdown content
 +```
 +
@@ -1345,7 +1345,7 @@ index 0000000..ba38075
 +SkogAI/
 +├── .claude/                    # Claude workspace (integrated)
 +├── docs/                       # Git submodule → github.com/skogai/docs
-+│   └── democracy/              # Git submodule → github.com/skogai/democracy  
++│   └── democracy/              # Git submodule → github.com/skogai/democracy
 +└── .gitmodules                 # Submodule configuration
 +```
 +
@@ -1363,7 +1363,7 @@ index 0000000..ba38075
 +
 +**Functional Capabilities Confirmed**:
 +- ✅ Full git repository operations (status, branches, commits)
-+- ✅ Proposal lifecycle management (create, edit, merge)  
++- ✅ Proposal lifecycle management (create, edit, merge)
 +- ✅ Cross-branch content discovery and analysis
 +- ✅ Document workflow automation
 +- ✅ Integration with existing SkogAI development practices
@@ -1390,7 +1390,7 @@ index 0000000..ba38075
 +### 3. Ecosystem Maturation
 +
 +**Infrastructure Stability**: Core tools operational and battle-tested
-+**Integration Patterns**: Proven approaches for connecting disparate systems  
++**Integration Patterns**: Proven approaches for connecting disparate systems
 +**Foundation Complete**: Ready for expanded agent collaboration and governance
 +
 +## Quality Assurance
@@ -1422,7 +1422,7 @@ index 0000000..ba38075
 +### Completed Components ✅
 +
 +- [x] **Git Submodule Infrastructure**: Fully operational with compatibility fixes
-+- [x] **SkogCLI Integration**: Democracy tools accessible via unified interface  
++- [x] **SkogCLI Integration**: Democracy tools accessible via unified interface
 +- [x] **Repository Operations**: All git workflow commands functional
 +- [x] **Document Discovery**: Cross-branch analysis and content location
 +- [x] **Quality Assurance**: Testing complete, documentation comprehensive
@@ -1476,7 +1476,7 @@ index 0000000..ba38075
 +
 +The **integration patterns proven here** demonstrate how disparate tools can be unified through well-designed frameworks. This creates a template for building collaborative environments where AI agents can participate in governance and decision-making processes.
 +
-+### For System Architecture  
++### For System Architecture
 +
 +The **git submodule compatibility fixes** and SkogCLI integration patterns provide a stable foundation for ecosystem growth. The architecture can now support additional agents, tools, and workflows without requiring fundamental changes.
 +
@@ -1508,15 +1508,15 @@ index 0000000..ba38075
 +
 +---
 +
-+**Release Status**: Ready for Distribution ✅  
-+**Quality Assurance**: Complete ✅  
-+**Documentation**: Comprehensive ✅  
++**Release Status**: Ready for Distribution ✅
++**Quality Assurance**: Complete ✅
++**Documentation**: Comprehensive ✅
 +**Strategic Foundation**: Established ✅
 +
 +*SkogAI-0.2-Democracy: Democracy Integration Complete - Infrastructure Ready for Governance Innovation*
 +
-+**Signed**: skogix (Project Lead), Claude (Integration Engineer)  
-+**Date**: 2025-06-09  
++**Signed**: skogix (Project Lead), Claude (Integration Engineer)
++**Date**: 2025-06-09
 +**Branch**: feature/submodules → ready for merge to develop
 \ No newline at end of file
 diff --git a/prompts/librarian.md b/prompts/librarian.md

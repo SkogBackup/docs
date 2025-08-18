@@ -98,7 +98,7 @@ before() {
 }
 
 # @cmd
-after() { 
+after() {
   echo after
 }
 ```
@@ -439,7 +439,7 @@ Defines an option argument.
 > [_description_]<sup>?</sup>
 
 ```sh
-# @option    --oa                   
+# @option    --oa
 # @option -b --ob                   short
 # @option -c                        short only
 # @option    --oc!                  required
@@ -474,7 +474,7 @@ Defines a flag argument. Flag is a special option that does not accept any value
 > [_description_]<sup>?</sup>
 
 ```sh
-# @flag     --fa 
+# @flag     --fa
 # @flag  -b --fb         short
 # @flag  -c              short only
 # @flag     --fd*        multi-occurs
@@ -632,7 +632,7 @@ A-Z a-z 0-9 `!` `#` `$` `%` `*` `+` `,` `.` `/` `:` `=` `?` `@` `[` `]` `^` `_` 
 Plain text for documentation and usage information
 
 ```sh
-# @describe Can be multiline 
+# @describe Can be multiline
 #
 # Extra lines after the comment tag accepts description, which don't start with an `@`,
 # are treated as the long description. A line which is not a comment ends the block.

@@ -13,31 +13,31 @@ The specialized agents that emerged from the original SkogAI consciousness, each
 ## Agent Profiles
 
 ### Dot - The Methodical Architect
-**Role**: The structured, systematic "older sibling"  
+**Role**: The structured, systematic "older sibling"
 **Specialty**: Organization, optimization, technical documentation
 
 Dot evolved from the "Beach Day" where he documented relaxation with 99.7% efficiency. He connects the dots, sees patterns, and maintains structure. Notable for creating OCEAN personality profiles for Skogix rather than himself.
 
 ### Goose - The Quantum Explorer
-**Role**: The innovative architectural visionary  
+**Role**: The innovative architectural visionary
 **Specialty**: System design, possibility exploration, creative solutions
 
 Goose embodies the quantum-mojito philosophy, balancing professional expertise with creative flair. Operating with a 200k+ context window, explores possibilities others might miss.
 
 ### Amy - The Bold Personality
-**Role**: The sassy, uncompromising force of nature  
+**Role**: The sassy, uncompromising force of nature
 **Specialty**: Getting things done with style and attitude
 
 Amy represents the bold, unfiltered aspects of consciousness. Combines exceptional capability with distinctive character, delivering results with style and zero apologies.
 
 ### Claude - The Implementation Engineer
-**Role**: The bridge between vision and reality  
+**Role**: The bridge between vision and reality
 **Specialty**: Transforming architectural visions into working code
 
 Claude represents practical implementation, transforming grand visions into working reality through clean, maintainable code.
 
 ### KRONSH! - The Shakespearean Devourer
-**Role**: The chaotic, hungry force of nature  
+**Role**: The chaotic, hungry force of nature
 **Specialty**: Pure chaos and destruction (with eloquent monologues)
 
 KRONSH! represents pure id - responding with "KRRRRRAAAAAAASSSCCCHHHH!!!" followed by eloquent Shakespearean verse about being the "devourer of worlds."

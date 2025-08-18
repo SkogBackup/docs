@@ -95,25 +95,25 @@ def create(
 ):
     """
     Create or update a note in your knowledge base.
-    
+
     Examples:
-    
+
     Create from argument:
       skogcli memory create "My Idea" notes --content "# My Idea\n\nThis is a great idea."
-      
+
     Create from stdin:
       echo "# My Idea\n\nThis is a great idea." | skogcli memory create "My Idea" notes
-      
+
     Create with tags:
       skogcli memory create "Meeting Notes" meetings --tags "work,important,2025"
     """
     cmd = ["tool", "write-note", "--title", title, "--folder", folder]
     if tags:
         cmd.extend(["--tags", tags])
-    
+
     if project:
         cmd = ["--project", project] + cmd
-        
+
     if content:
         result = run_skogai_memory(cmd + ["--content", content])
     else:
@@ -121,7 +121,7 @@ def create(
         typer.echo("Enter note content (Ctrl+D to finish):")
         from_stdin = typer.get_text_stream('stdin').read()
         result = run_skogai_memory(cmd + ["--content", from_stdin])
-    
+
     if result.returncode == 0:
         typer.echo(f"✓ Note saved: {title} in {folder}")
     else:
@@ -139,27 +139,27 @@ def write(
 ):
     """
     Create or update a note in your knowledge base.
-    
+
     This is an alias for the 'create' command.
-    
+
     Examples:
-    
+
     Create from argument:
       skogcli memory write "My Idea" notes --content "# My Idea\n\nThis is a great idea."
-      
+
     Create from stdin:
       echo "# My Idea\n\nThis is a great idea." | skogcli memory write "My Idea" notes
-      
+
     Create with tags:
       skogcli memory write "Meeting Notes" meetings --tags "work,important,2025"
     """
     cmd = ["tool", "write-note", "--title", title, "--folder", folder]
     if tags:
         cmd.extend(["--tags", tags])
-    
+
     if project:
         cmd = ["--project", project] + cmd
-        
+
     if content:
         result = run_skogai_memory(cmd + ["--content", content])
     else:
@@ -167,7 +167,7 @@ def write(
         typer.echo("Enter note content (Ctrl+D to finish):")
         from_stdin = typer.get_text_stream('stdin').read()
         result = run_skogai_memory(cmd + ["--content", from_stdin])
-    
+
     if result.returncode == 0:
         typer.echo(f"✓ Note saved: {title} in {folder}")
     else:
@@ -185,16 +185,16 @@ def read(
 ):
     """
     Read a note from your knowledge base.
-    
+
     The note will be rendered as rich markdown by default.
     Use --raw to display the unprocessed markdown.
     """
     cmd = ["tool", "read-note", identifier, "--page", str(page), "--page-size", str(page_size)]
     if project:
         cmd = ["--project", project] + cmd
-        
+
     result = run_skogai_memory(cmd)
-    
+
     if result.returncode == 0:
         if raw:
             typer.echo(result.stdout)
@@ -217,72 +217,72 @@ def search(
 ):
     """
     Search across your knowledge base for specific content.
-    
+
     Results will be displayed with titles and snippets.
-    
+
     Examples:
-    
+
     Basic search:
       skogcli memory search "project ideas"
-      
+
     Search only titles:
       skogcli memory search "meeting" --title
-      
+
     Search with date filter:
       skogcli memory search "important" --after-date "1 week"
     """
     cmd = ["tool", "search-notes", query, "--page", str(page), "--page-size", str(page_size)]
-    
+
     if permalink:
         cmd.append("--permalink")
     if title:
         cmd.append("--title")
     if after_date:
         cmd.extend(["--after_date", after_date])
-    
+
     if project:
         cmd = ["--project", project] + cmd
-        
+
     result = run_skogai_memory(cmd)
-    
+
     if result.returncode == 0:
         try:
             # Try to parse the JSON output for better formatting
             import json
             data = json.loads(result.stdout)
-            
+
             # Create a table for the results
             from rich.table import Table
             table = Table(title=f"Search Results: '{query}'")
-            
+
             # Add columns
             table.add_column("Type", style="cyan")
             table.add_column("Title", style="green")
             table.add_column("Path", style="blue")
             table.add_column("Preview", style="yellow", no_wrap=False)
-            
+
             # Add rows
             for item in data.get("results", []):
                 # Truncate content for preview
                 content = item.get("content", "")
                 preview = content[:100] + "..." if len(content) > 100 else content
-                
+
                 table.add_row(
                     item.get("type", ""),
                     item.get("title", ""),
                     item.get("file_path", ""),
                     preview
                 )
-            
+
             # Print the table
             console.print(table)
-            
+
             # Show metadata if available
             if "metadata" in data:
                 metadata = data.get("metadata", {})
                 console.print(f"\nTotal results: {metadata.get('total_results', 0)}")
                 console.print(f"Page {data.get('page', 1)} of {(metadata.get('total_results', 0) + page_size - 1) // page_size}")
-            
+
         except (json.JSONDecodeError, KeyError):
             # Fallback to raw output if JSON parsing fails
             console.print(result.stdout)
@@ -303,35 +303,35 @@ def list_notes(
 ):
     """
     List recent activity across your knowledge base.
-    
+
     Displays recently created or updated notes.
-    
+
     Examples:
-    
+
     List recent activity (default 7 days):
       skogcli memory list
-      
+
     List specific type:
       skogcli memory list --type entity
-      
+
     Custom timeframe:
       skogcli memory list --timeframe 30d
     """
-    cmd = ["tool", "recent-activity", 
+    cmd = ["tool", "recent-activity",
            "--depth", str(depth),
            "--timeframe", timeframe,
            "--page", str(page),
            "--page-size", str(page_size),
            "--max-related", str(max_related)]
-    
+
     if type:
         cmd.extend(["--type", type])
-    
+
     if project:
         cmd = ["--project", project] + cmd
-        
+
     result = run_skogai_memory(cmd)
-    
+
     if result.returncode == 0:
         console.print(result.stdout)
     else:
@@ -345,15 +345,15 @@ def sync(
 ):
     """
     Synchronize your knowledge files with the database.
-    
+
     This ensures all files are properly indexed and searchable.
     """
     cmd = ["sync"]
     if project:
         cmd = ["--project", project] + cmd
-        
+
     result = run_skogai_memory(cmd)
-    
+
     if result.returncode == 0:
         typer.echo("Synchronization completed successfully.")
     else:
@@ -367,15 +367,15 @@ def status(
 ):
     """
     Show sync status between your knowledge files and the database.
-    
+
     Displays which files need to be synchronized.
     """
     cmd = ["status"]
     if project:
         cmd = ["--project", project] + cmd
-        
+
     result = run_skogai_memory(cmd)
-    
+
     if result.returncode == 0:
         console.print(result.stdout)
     else:

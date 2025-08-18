@@ -69,7 +69,7 @@ This document outlines the end-to-end flow of messages in the SkogChat system, f
 ./sessions/{session}/
 ├── messages/
 │   ├── raw/         # Original unprocessed messages
-│   │   └── {id}.txt 
+│   │   └── {id}.txt
 │   └── parsed/      # Messages after skogparse processing
 │       └── {id}.txt
 ├── logs/            # Message records in JSON format

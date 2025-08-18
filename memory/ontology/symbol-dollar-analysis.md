@@ -11,7 +11,7 @@ tags:
 
 # Symbol Dollar Analysis
 
-## Definition  
+## Definition
 The `$` symbol represents **reference to something without being anything** - a null pointer or reference mechanism that points to entities without having inherent identity.
 
 ## Core Properties
@@ -24,7 +24,7 @@ The `$` symbol represents **reference to something without being anything** - a 
 
 ### In Combinations
 - `"@$": [=]` - action stabilizing into reference (no transformation allowed)
-- `"$@": [!=]` - reference generating action/intent  
+- `"$@": [!=]` - reference generating action/intent
 - `"$*$=$"` - multiplication as relational equality
 - `"$id": "$int*$unique"` - identity construction through combination
 
@@ -43,7 +43,7 @@ The `$` symbol represents **reference to something without being anything** - a 
 ## Computational Context
 Functions as the basic reference mechanism in the notation system, enabling:
 - Variable binding and scoping
-- Identity tracking across transformations  
+- Identity tracking across transformations
 - Null-safe operations and pointer semantics
 - Memory reference patterns
 
@@ -57,6 +57,6 @@ Functions as the basic reference mechanism in the notation system, enabling:
 ## relations
 - contrasts_with [[Symbol @ Analysis]] (reference vs intent)
 - part_of [[Skogix Symbol System]] (core component of notation)
-- combines_with [[Symbol @ Analysis]] (creates $@ and @$ patterns)  
+- combines_with [[Symbol @ Analysis]] (creates $@ and @$ patterns)
 - enables [[Identity Construction]] (foundation for identity systems)
 - relates_to [[Variable Binding]] (computational variable mechanism)

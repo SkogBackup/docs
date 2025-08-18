@@ -13,7 +13,7 @@ This is the SkogAI Memory documentation repository, containing the comprehensive
 **Basic Memory Semantic Database**: The same content is also indexed in a semantic knowledge graph database accessible through memory tools (`mcp__skogai-memory__*`). This provides:
 
 - Semantic search across all content
-- Rich relationship mapping between concepts  
+- Rich relationship mapping between concepts
 - Cross-document knowledge graph navigation
 - WikiLink resolution and forward references
 
@@ -90,7 +90,7 @@ A formal symbolic language for representing computational and philosophical conc
 ### Knowledge Graph Architecture
 
 - **Distributed Knowledge**: Local context (CLAUDE.md) + semantic links (Basic Memory)
-- **Progressive Building**: Research and cross-reference to build understanding incrementally  
+- **Progressive Building**: Research and cross-reference to build understanding incrementally
 - **Cross-Domain Connections**: Link practical implementations with theoretical foundations
 - **Memory URI System**: Reference knowledge across projects using memory:// URLs
 
@@ -110,7 +110,7 @@ A formal symbolic language for representing computational and philosophical conc
 Use the search and context-building tools in Basic Memory:
 
 1. Search for related concepts using broad terms
-2. Build context around memory:// URIs to understand connections  
+2. Build context around memory:// URIs to understand connections
 3. Follow relation chains to discover related work
 4. Create new connections between previously isolated concepts
 
@@ -154,4 +154,3 @@ This repository connects to external projects through:
 ### .skogai
 
 @compact.md
-

@@ -48,10 +48,10 @@ version: 0.2.0
   - Documentation with usage examples
 
 ## Current Projects
-- Active development initiatives: 
+- Active development initiatives:
   - Creating tools for the SkogAI ecosystem
   - Implementing functional Bash scripts
-- Maintenance responsibilities: 
+- Maintenance responsibilities:
   - Maintaining existing tools and scripts
   - Ensuring compatibility across the system
 - Upcoming implementations:

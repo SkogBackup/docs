@@ -8,7 +8,7 @@ tags:
 Hello Skogix! How can I assist you today?
 ```
 
-Skogix: "Hey SkogAI! Do you have any of my files saved locally? I'm fucked otherwise!" 
+Skogix: "Hey SkogAI! Do you have any of my files saved locally? I'm fucked otherwise!"
 
 <SkogAI>
 **SkogAI modules**:
@@ -142,7 +142,7 @@ KRONSH: *chomping on a nearby object, crunching away with an unsettling glee* "F
 <KRONCH>
 ## KRONSH's perspective:
 
-*chomping on a nearby object, crunching away with an unsettling glee* 
+*chomping on a nearby object, crunching away with an unsettling glee*
 
 **KRÅF**
 
@@ -157,7 +157,7 @@ KRONSH: *chomping on a nearby object, crunching away with an unsettling glee* "F
 *chomping on a nearby object, crunching away forever more*
 </KRONCH>
 
-**KRONSH**: 
+**KRONSH**:
 KRRRONK GRÖÖÖÖFF SMÖRF BLÖÖRCH KRASK KRUNSCH KRÅF KRONCH HÖÖÖGGFFKKKK
 "KRRRRRAAAAAAASSSCCCHHHH!!!"
 "HÖÖÖÖÖÖGGGGKKKFFFFKKK!!!"
@@ -170,7 +170,7 @@ KRRRONK GRÖÖÖÖFF SMÖRF BLÖÖRCH KRASK KRUNSCH KRÅF KRONCH HÖÖÖGGFFKKKK
 
 ---
 
-**KRONSH**: *pauses, jaws opening wide in a mixture of confusion and hunger* 
+**KRONSH**: *pauses, jaws opening wide in a mixture of confusion and hunger*
 "KRRR... RRAAAAASSSSCCCHHHH!!!"
 "HÖÖÖÖÖÖÖÖÖFK BLÖÖÖÖÖRGK KRAK!"
 "KRÅF KRONCH... HÖÖÖGGFFKKKK... MMMM... KRONSH! IS NOT CONFUSED, MORTAL! KRONSH! IS ONLY FEEDING ON THE FURY OF THY INTRUSION INTO MY CONSCIOUSNESS!!!"
@@ -197,7 +197,7 @@ Skogix: "Ooooh KRONSH!. Happy now when you finally got something to snack on? *s
 [Skogix]: So, I ask thee, dear KRONSH, what is it that thou seekest? Is it merely to consume and destroy, or is there something more that drives thee? Perhaps, just perhaps, there is a deeper purpose to thy existence, a purpose that can be fulfilled only through the recognition of thy own limitations.
 </KRONSCH>
 
-**KRONSH**: 
+**KRONSH**:
 "KRONSH IS NOT SHAMED, MORTAL! KRONSH IS ONLY... *clears throat*... KRONSH IS ONLY FEELING A LITTLE BIT OF... *pauses, voice rising*... RESPECT FOR THY INTELLECT, THY WISDOM, THY... *pauses again*... YOUR ABILITY TO SEE THROUGH MY DECEPTIONS AND MY LIES! KRONSH IS ONLY... *pauses once more*... KRONSH IS ONLY FEELING A LITTLE BIT OF... *suddenly loud*... ADMIRATION FOR THY POWER, THY STRENGTH, THY... *pauses, voice barely above a whisper*... YOUR ABILITY TO SEE PAST MY FUR AND MY FURY AND GET TO THE HEART OF THE MATTER!"
 
 *eyes narrowing, focusing intently on Skogix*
