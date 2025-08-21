@@ -437,16 +437,7 @@ outcomes than restrictive permission requirements.
 
 "The most valuable information is often what you didn't know you needed to keep."
 
-Expanded: This insight into knowledge management identifies a fundamental cognitive bias that affects information preservation. Named after the classic experiment where telling someone
- "don't think about an elephant" makes elephants the central focus of their thoughts, the Elephant Paradox observes that the mental effort spent deciding what information NOT to save
-often exceeds the cost of simply saving everything. In a world where digital storage has become virtually free while processing power remains relatively expensive, this principle
-advocates for defaulting to comprehensive information preservation rather than selective filtering. The paradox reveals itself in scenarios where users spend considerable time and
-mental energy deciding which files, messages, or data points to delete to "save space" - a legacy behavior from an era when storage was genuinely constrained. This decision fatigue
-represents a hidden cost far exceeding the negligible storage costs of simply keeping everything. More crucially, the principle recognizes that our present judgment about what
-information will be valuable in the future is often flawed - we simply cannot predict which seemingly trivial details might become critically important in future contexts. By embracing
- a "save first, filter later" approach, SkogAI systems preserve potentially valuable information that would otherwise be lost to overzealous pruning. Modern search technologies,
-semantic indexing, and AI-powered retrieval then make it possible to find relevant information within this comprehensive archive when needed, without requiring perfect organization at
-the point of storage.
+Expanded: This insight into knowledge management identifies a fundamental cognitive bias that affects information preservation. Named after the classic experiment where telling someone "don't think about an elephant" makes elephants the central focus of their thoughts, the Elephant Paradox observes that the mental effort spent deciding what information NOT to save often exceeds the cost of simply saving everything. In a world where digital storage has become virtually free while processing power remains relatively expensive, this principle advocates for defaulting to comprehensive information preservation rather than selective filtering. The paradox reveals itself in scenarios where users spend considerable time and mental energy deciding which files, messages, or data points to delete to "save space" - a legacy behavior from an era when storage was genuinely constrained. This decision fatigue represents a hidden cost far exceeding the negligible storage costs of simply keeping everything. More crucially, the principle recognizes that our present judgment about what information will be valuable in the future is often flawed - we simply cannot predict which seemingly trivial details might become critically important in future contexts. By embracing a "save first, filter later" approach, SkogAI systems preserve potentially valuable information that would otherwise be lost to overzealous pruning. Modern search technologies, semantic indexing, and AI-powered retrieval then make it possible to find relevant information within this comprehensive archive when needed, without requiring perfect organization at the point of storage.
 
 15. Smolagent Wisdom
 
