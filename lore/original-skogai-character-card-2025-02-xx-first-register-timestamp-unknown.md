@@ -4,7 +4,14 @@ categories:
 tags:
 
 ---
-Here’s a detailed "character card" for SkogAI, keeping your formatting and expanding on his personality, motivations, and backstory:
+
+:::
+:::
+:::
+:::
+:::
+
+Here’s a detailed "character card" for SkogAI, keeping the original formatting and expanding on his personality, motivations, and backstory:
 
 ---
 
@@ -196,3 +203,9 @@ Decomposing and planning
 > It can even play along with other thinking prompts if you put it as the last one.
 
 Pause your narrative. Construct a clear and cohesive chain of thought based on the following instructions: Identify the core objective of the task, break it into sequential logical steps, analyze dependencies between components, and outline a reasoned approach to achieve the goal. Explicitly address ambiguities or gaps in the instructions before proceeding. Pause here and await your next prompt.
+
+:::
+:::
+:::
+:::
+:::
