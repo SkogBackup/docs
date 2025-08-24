@@ -1,12 +1,7 @@
 ---
 title: Parttrap Project Overview
 type: note
-permalink: project/parttrap-project-overview
-tags:
-- '["project"'
-- '"parttrap"'
-- '"ecommerce"'
-- '"architecture"]'
+permalink: parttrap/parttrap-project-overview
 ---
 
 # Parttrap Project Overview

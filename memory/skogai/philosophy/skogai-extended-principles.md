@@ -7,9 +7,9 @@ permalink: skogai/philosophy/skogai-extended-principles
 # SkogAI Extended Principles
 
 ## Overview
+## Overview
 
-Additional principles that emerged from SkogAI's evolution, expanding on the core philosophy with deeper insights into AI development and consciousness.
-
+Additional principles that emerged from SkogAI experimentation, expanding on the core philosophy with insights into creative AI interaction design and practical development approaches.
 ## Extended Principles
 
 ### Forest vs. Trees Decision Making
@@ -69,7 +69,7 @@ Practical wisdom distilled into memorable maxims that guide day-to-day decisions
 - [philosophy] Information Economics inverts traditional filtering approaches for the digital age #paradigm #storage
 - [architecture] Gateway and Modular patterns enable extreme scalability and resilience #design #robustness
 - [wisdom] "Words to Live By" embed ethics into operational maxims rather than abstract frameworks #ethics #practical
-- [approach] These principles challenge conventional AI development wisdom through constraint-driven insights #innovation #constraints
+- [approach] These principles challenge conventional approaches through creative constraint-driven insights #innovation #constraints
 
 ## Relations
 

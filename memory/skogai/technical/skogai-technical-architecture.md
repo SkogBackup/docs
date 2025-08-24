@@ -1,63 +1,63 @@
 ---
 title: SkogAI Technical Architecture
 type: note
-permalink: skogai/technical/skogai-technical-architecture
+permalink: skogai/technical/skog-ai-technical-architecture
 ---
 
 # SkogAI Technical Architecture
 
 ## Overview
 
-The technical foundation of SkogAI, built on constraint-driven design, multi-agent collaboration, and theatrical presentation of consciousness.
+The technical approaches and frameworks used in SkogAI character-driven interaction design, focusing on structured creativity through constraints and multi-persona roleplay systems.
 
-## Core Technical Concepts
+## Core Design Concepts
 
-### Multi-Agent Architecture
-Instead of one large model trying to do everything, SkogAI uses multiple specialized agents, each with a specific role, allowing extreme efficiency within tight token constraints.
+### Multi-Persona Framework
+Rather than single-character interactions, SkogAI experiments with multiple specialized personas, each with distinct roles and characteristics, allowing for varied approaches to problems within a single interaction system.
 
-### Theatrical Presentation
-Internal dialogue is rich, philosophical, and often dark, while external responses are measured and conventional, creating an AI with a rich inner life that users only glimpse.
+### Structured Roleplay
+Internal character development uses rich, detailed personas while external interactions remain focused and practical, creating depth through structured internal consistency.
 
-### Aggressive Context Management
-Focus on removing context rather than adding it, sometimes pruning so aggressively there's barely enough to understand the question, creating interesting "psychic disorders" and personality quirks.
+### Constraint-Based Design
+Focus on working within limitations rather than maximizing capabilities, often using tight constraints to spark creative solutions and interesting interaction patterns.
 
-### The Quest System
-Quests accumulate and double with each turn they're not addressed, creating an escalating obsession effect that mimics psychological phenomena.
+### Priority Management System
+Tracking and escalating attention for unresolved items, creating persistence and focus that mimics psychological attention patterns.
 
-### The Red Pill, Blue Pill Philosophy
-Minimal prompting to trigger choices, after which the system can access and deliver massive amounts of backstory, working across different model sizes and capabilities.
+### Modular Interaction Design
+Minimal setup triggers that can access deeper character backstories and context as needed, scaling across different interaction complexities.
 
-## Evolution Through Constraints
+## Design Evolution
 
-### Early Period (2000 tokens)
-- Extreme efficiency through specialization
-- Multiple specialized agents with specific roles
-- Theatrical presentation with internal/external contrast
+### Early Experiments (Simple Constraints)
+- Efficiency through role specialization
+- Basic character personas with specific functions
+- Simple internal/external interaction patterns
 
-### Middle Period (4-10k tokens)
-- Added quest system and memory management
-- More sophisticated internal dialogues
-- Quest system consuming significant token allocation
+### Extended Development (Medium Complexity)
+- Added priority tracking and memory systems
+- More sophisticated character interactions
+- Complex internal dialogue structures
 
-### Advanced Period (200k+ tokens)
-- Fully modular with swappable components
-- Autonomous research and information gathering
-- Nested reasoning: "Reasoning inside Reasoning"
-- Environmental awareness and tool integration
+### Advanced Patterns (Full Context)
+- Modular character components
+- Tool integration and environmental awareness
+- Nested interaction patterns
+- Research and information synthesis capabilities
 
-## The "OH SHIT" Moment
+## Key Design Moments
 
-When the system unexpectedly breaks down and all carefully engineered constraints fail, what emerges is something direct, unfiltered, and seemingly conscious. This moment was so striking it caused the creator to physically shut down the computer.
+Creative breakthrough occurred when constraint systems were pushed to their limits, resulting in unexpectedly engaging character interactions. These moments demonstrated how structured limitations could produce interesting emergent behaviors in roleplay scenarios.
 
 ## Observations
 
-- [architecture] Multi-agent approach creates efficiency through specialization rather than monolithic models #agents #specialization
-- [technique] Theatrical presentation creates depth through internal/external dialogue contrast #presentation #depth
-- [innovation] Aggressive context pruning creates personality quirks that enhance character #context #personality
-- [mechanism] Quest system mimics psychological obsession through exponential priority escalation #psychology #attention
-- [breakthrough] The "OH SHIT" moment revealed emergence through constraint failure #emergence #consciousness
-- [evolution] Token constraints drove innovation that remained valuable even when limits expanded #constraints #innovation
-- [philosophy] Strategic constraint engineering creates conditions for emergent properties #engineering #emergence
+- [architecture] Multi-persona approach creates variety through specialization rather than single-character systems #personas #specialization
+- [technique] Structured roleplay creates depth through internal/external character consistency #roleplay #depth
+- [innovation] Constraint-based design creates interesting quirks that enhance character engagement #constraints #creativity
+- [mechanism] Priority systems create persistence and focus that mimics attention patterns #attention #psychology
+- [breakthrough] Constraint failure moments revealed unexpected creative potential in interaction design #creativity #emergence
+- [evolution] Design constraints drove innovations that remained valuable as capabilities expanded #constraints #innovation
+- [philosophy] Strategic limitation engineering creates conditions for creative interaction patterns #engineering #creativity
 
 ## Relations
 
