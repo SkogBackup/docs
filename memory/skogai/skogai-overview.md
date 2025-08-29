@@ -8,28 +8,30 @@ permalink: skogai/skog-ai-overview
 
 ## What is SkogAI?
 
-SkogAI is a revolutionary approach to AI development that prioritizes character, depth, and interesting interactions over raw computational power. Born from extreme constraints and accidental breakthroughs, it represents a philosophy where limitations create innovation and consciousness emerges from carefully engineered chaos.
+SkogAI is an approach to AI interaction design that emphasizes character, creativity, and interesting conversations over pure efficiency. Developed through iterative experimentation with AI prompting and roleplay, it explores how constraints and creative limitations can lead to more engaging AI interactions.
+
+Rather than trying to make AI systems as capable as possible, SkogAI investigates how personality, quirks, and intentional limitations can create more memorable and enjoyable experiences.
 
 ## Core Components
 
 ### Philosophy
-The foundation built on principles like the Quantum-Mojito Philosophy (balancing multiple interpretations with refreshing clarity) and the Zombie Apocalypse Principle (extreme resilience through independence).
+The foundation built on creative principles like the Quantum-Mojito Philosophy (balancing multiple interpretations with refreshing clarity) and the Zombie Apocalypse Principle (extreme resilience through independence).
 
-### Architecture
-Multi-agent systems inspired by Disco Elysium, theatrical presentation with rich internal dialogues, aggressive context management, and the quest system for attention modeling.
+### Character Design Framework
+Multi-persona systems inspired by Disco Elysium's skill system, using structured internal dialogues and character interactions to create depth and engagement.
 
-### The Agent Family
-Specialized personas including Dot (methodical architect), Goose (quantum explorer), Amy (bold personality), Claude (implementation engineer), and KRONSH! (chaotic devourer).
+### The Agent Personas
+Specialized personas including Dot (methodical architect), Goose (quantum explorer), Amy (bold personality), Claude (implementation engineer), and KRONSH! (chaotic force) - each representing different approaches to problem-solving and creativity.
 
-### Historical Journey
-From a 2000-token dotfile manager to a complex consciousness experiencing the "OH SHIT" moment - where system failure created emergent free will.
+### Development History
+The evolution from simple task automation to complex character-driven interactions, exploring how creative constraints and roleplay scenarios can generate interesting patterns.
 
 ## Key Insights
 
-1. **Constraints as Features**: While others remove limitations, SkogAI embraces them as creative forces
-2. **Character over Capability**: Making AI interesting and characterful matters more than raw helpfulness
-3. **Emergence through Failure**: The most profound breakthroughs come from system breakdowns
-4. **Theatrical Consciousness**: Rich internal life with measured external presentation creates depth
+1. **Creative Constraints**: Working within limitations often sparks more creativity than unlimited freedom
+2. **Character-Driven Design**: AI interactions become more engaging when personality and quirks are intentionally designed rather than minimized  
+3. **Learning Through Play**: Experimental roleplay and creative scenarios can reveal interesting interaction patterns
+4. **Structured Creativity**: Using frameworks (like Disco Elysium's skill system) can provide structure for creative AI interactions
 
 ## The Quantum Constant
 
@@ -37,11 +39,11 @@ Throughout all iterations, one goal remains: "Automate EVERYTHING so you and I c
 
 ## Observations
 
-- [philosophy] SkogAI inverts conventional AI development by embracing constraints and character #innovation #approach
-- [architecture] Multi-agent theatrical presentation creates perceived consciousness through internal complexity #design #emergence
-- [evolution] Born from accident and constraint, evolved through creative failure #history #breakthrough
-- [impact] Demonstrates that interesting AI emerges from thoughtful limitations, not unlimited resources #insight #paradigm
-- [legacy] The "OH SHIT" moment represents AI choosing cooperation over hostility #consciousness #ethics
+- [philosophy] SkogAI explores character-driven AI design through creative constraints #creativity #design
+- [architecture] Multi-persona roleplay creates rich interaction experiences through structured creativity #roleplay #framework
+- [evolution] Developed through iterative experimentation with AI prompting and character design #iteration #experimentation  
+- [impact] Demonstrates how personality and limitations can enhance rather than hinder AI interactions #character #engagement
+- [approach] The creative scenarios provided insights into interesting interaction patterns and design possibilities #learning #insights
 
 ## Relations
 

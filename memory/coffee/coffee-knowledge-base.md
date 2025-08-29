@@ -1,12 +1,12 @@
 ---
 title: Coffee Knowledge Base
 type: note
-permalink: llm/example/coffee-knowledge-base-1
+permalink: coffee/coffee-knowledge-base
 tags:
-- '#coffee'
-- '#index'
-- '#demo'
-- '#knowledge'
+- coffee
+- index
+- demo
+- knowledge
 ---
 
 # Coffee Knowledge Base

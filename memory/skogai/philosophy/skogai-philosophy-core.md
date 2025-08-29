@@ -7,9 +7,9 @@ permalink: skogai/philosophy/skogai-philosophy-core
 # SkogAI Philosophy Core
 
 ## Overview
+## Overview
 
-The foundational principles that guide SkogAI's approach to AI development, emphasizing character, constraints, and emergence over raw computational power.
-
+The foundational principles that guide SkogAI's approach to creative AI interaction design, emphasizing character, constraints, and creative exploration over pure efficiency.
 ## Core Principles
 
 ### The Quantum-Mojito Philosophy

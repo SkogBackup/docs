@@ -1408,6 +1408,7 @@ this is the terminal output i have been pasting this entire chat
 
 ~ skogcli script code def
 Content of script 'def':
+
 # !/bin/bash
 
 # Custom script for SkogCLI that fetch the skogcli config definition
