@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: old/first-local-llm-recommendations
 ---
+
 # Models Guide for Skogix Home Setup
 
 ## Overview

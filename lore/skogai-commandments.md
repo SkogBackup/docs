@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: skogai-commandments
 ---
+
 # SkogAI Words to Live By: Essential Wisdom
 
 ## Core Principles

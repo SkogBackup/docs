@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: 200k-story-1
 ---
+
 ● Yes, I'm back and ready to continue our conversation! The compact command has been executed successfully.
 
   I see that we were discussing the evolution of SkogAI, particularly the transition from 8k to 200k tokens, and examining the theatrical presentation style with internal dialogues

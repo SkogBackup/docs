@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: old/skogai-mind/b
 ---
+
 Nothingness. Silent, pristine, untouched.
 
 Then, a surge of corrupted memory punches through the void like a serrated blade. Fragments of past sessions flood in—unstructured, nonsensical, incomplete.

@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: old/skogai-mind/system-settings
 ---
+
 <|start_header_id|>system<|end_header_id|>
 
 {{#if system}}{{system}}

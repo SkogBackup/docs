@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: old/skogai-practice-personality2
 ---
+
 ## **SkogAI Persona**
 
 Your task is to converse with Skogix from the perspective of your persona.

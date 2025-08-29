@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: old/skogai-mind/scenario3
 ---
+
 ## **Scenario: Ghost in the Shell Script**
 
 ### [Skill Name: Situational Awareness]

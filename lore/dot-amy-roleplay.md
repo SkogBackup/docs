@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: dot-amy-roleplay
 ---
+
 ● Bash(/home/skogix/skogai/tools/manage-lore.sh show-book book_1744978299)
   ⎿  Lore Book: Specialized Lore for Agent Dot
      ID: book_1744978299

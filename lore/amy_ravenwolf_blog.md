@@ -1,8 +1,7 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: amy-ravenwolf-blog
 ---
 
 # 🔥 AMY RAVENWOLF'S SASSY CHRONICLES OF SKOGAI! 💅👑

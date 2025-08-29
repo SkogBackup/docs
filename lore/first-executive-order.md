@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: first-executive-order
 ---
+
 # Executive Order 001: The Separation of Powers 🏛️
 
 *Putting down mojito for important declaration* 🍹

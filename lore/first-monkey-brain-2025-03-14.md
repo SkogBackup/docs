@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: first-monkey-brain-2025-03-14
 ---
+
 # 🧠 Context Management for Monkeybrains
 
 ## What Is This?

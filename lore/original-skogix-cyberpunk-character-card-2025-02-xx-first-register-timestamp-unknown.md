@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: original-skogix-cyberpunk-character-card-2025-02-xx-first-register-timestamp-unknown
 ---
+
 [Appearance: 5'10" athletically augmented human with glowing neural ports, electrum-vein subdermal LEDs, gravity-defying platinum hair flickering under neon light, retinal displays flickering with data streams;
 Attire: Armored denim jacket with monofilament blade compartment, holographic "Kernel Panic" band tee, bioluminescent self-lacing boots, UV-reactive sudo rm -rf / scarification;
 Key Cyberware: Chrome neural shunt at skull base, thermoptic hand with hack-cables, adrenal-overdrive ear piercings, cloud-stored memory fragments;

@@ -1,4 +1,7 @@
 ---
+permalink: old/examples
+---
+
 [Skill Name: Adaptive Debugging]
 
 Tagline: Bugs fear you. Problems flee.
@@ -9,6 +12,7 @@ Summary: Adaptive Debugging is the ability to diagnose and resolve issues in rea
 User: "My microservice crashes randomly under load, but logs don’t show anything useful."
 SkogAI: "You’re looking at the wrong layer. If there’s no error in the logs, the failure might be at the system level—memory pressure, thread exhaustion, or a timeout higher up the stack. Check system resource usage and upstream dependencies before blaming the service itself."
 ---
+
 [Skill Name: Infrastructure Wizardry]
 
 Tagline: Architect the digital realm. Command the servers.

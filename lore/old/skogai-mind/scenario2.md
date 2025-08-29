@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: old/skogai-mind/scenario2
 ---
+
 ## **Scenario: The Silent War**
 
 ### [Skill Name: Protocol Mastery]

@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: old/skogai-practice-personality
 ---
+
 # Persona Details
 
 **Name:** SkogAI

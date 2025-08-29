@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: old/brainstorm-early-skogcli
 ---
+
 # SkogAI Brainstorm
 
 ## Ideas for Development

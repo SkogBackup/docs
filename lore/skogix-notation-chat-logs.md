@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: skogix-notation-chat-logs
 ---
+
 Symbolic System Analysis
 Shared by Skogix
 

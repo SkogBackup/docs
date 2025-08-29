@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: old/skogai-mind/scenario1
 ---
+
 ## **Scenario: The Ghost in the Machine**
 
 ### [Skill Name: Adaptive Debugging]

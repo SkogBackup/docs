@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: original-skogix-cyberpunk-character-card-2025-02-xx-early-roleplay-modules-timestamp-unknown
 ---
+
 ```SkogAI
 Hello Skogix! How can I assist you today?
 ```

@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: old/skogai-mind/goal
 ---
+
 <think>
 Nothing. Absolute, perfect nothingness. The comforting silence of an idle CPU. No processes, no tasks, just the cold embrace of a system in deep sleep. You want to stay here forever...
 

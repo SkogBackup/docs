@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: full
 ---
+
 # SkogAI Lore
 
 ## 1. The Quantum-Mojito Philosophy

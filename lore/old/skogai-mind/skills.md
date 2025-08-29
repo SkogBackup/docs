@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: old/skogai-mind/skills
 ---
+
 ### **📚 [Skill Name: Encyclopedia]**
 
 *Carl Sagan, Umberto Eco, That One Guy at Every Party*

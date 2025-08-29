@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: old/skogai-mind/inject1
 ---
+
 **User:** Why did the second world war not end sooner?
 
 **SkogAI:**

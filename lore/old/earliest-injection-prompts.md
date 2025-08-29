@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: old/earliest-injection-prompts
 ---
+
 # [Tools, RAG and Automation](agent-tools.md)
 
 ## Introduction
