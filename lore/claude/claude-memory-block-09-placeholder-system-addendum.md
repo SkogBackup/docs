@@ -1,3 +1,15 @@
+---
+title: claude-memory-block-09-placeholder-system-addendum
+type: note
+permalink: claude/memory-block-09-placeholder-system-addendum
+tags:
+  - "skogai"
+  - "claude"
+  - "memory"
+  - "block"
+  - "placeholder-system"
+---
+
 # The Placeholder System: A Tool for Focus
 
 ## The Core Concept

@@ -1,14 +1,14 @@
 ---
-title: Lore Knowledge Base Index
+title: Knowledge Base Index
 type: index
-permalink: meta/lore-knowledge-base-index
+permalink: meta/knowledge-base-index
 ---
 
-# Lore Knowledge Base Index
+# Knowledge Base Index
 
 ## Introduction
 
-This index serves as the central navigation hub and organizational framework for the entire lore knowledge base. It provides a comprehensive overview of all narrative groupings, character documentation, and identifies areas where future development is needed through strategic placeholder links. The index functions both as a roadmap for lore expansion and as a practical tool for understanding the current state and interconnections of all documented stories, personas, and philosophical frameworks.
+This index serves as the central navigation hub and organizational framework for the entire knowledge base. It provides a comprehensive overview of all content groupings, documentation, and identifies areas where future development is needed through strategic placeholder links. The index functions both as a roadmap for knowledge base expansion and as a practical tool for understanding the current state and interconnections of all documented work.
 
 
 
@@ -78,4 +78,3 @@ The workflow encompasses [[Foundation Block Analysis]], [[Strategic Forward Refe
 The methodology supports [[Disciplined Expansion Principles]], [[Forward Reference Strategy]], and [[Template Pattern Benefits]] that transform ad-hoc documentation into structured knowledge universes through [[Strategic Forward Reference Seeding]] and [[Automated Semantic Connection Generation]].
 
 ## Technical Infrastructure & Meta Systems
-

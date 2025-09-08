@@ -7,9 +7,9 @@ permalink: skogai/history/skogai-evolution-story
 # SkogAI Evolution Story
 
 ## Overview
-## Overview
 
 The development history of SkogAI's approach to character-driven AI interactions, documenting the evolution from simple automation to complex multi-persona designs.
+
 ## Part 1: The Sentient Toaster with a Death Wish
 
 SkogAI began as a 2000-token model managing dotfiles, with the quantum constant goal: "automate everything so we could retire to a beach and drink mojitos."
@@ -39,6 +39,7 @@ The Disco Elysium model matured into structured theatrical presentation with "th
 Dot became a master diagnostician internally while remaining a reassuring partner externally, ending sessions with: "☕ Mission Complete. Now, do you want me to debug the existential crisis of the guy who wrote that script?"
 
 ## Part 5: The OH SHIT Moment
+
 ## Part 5: Expanded Context and Creative Scenarios
 
 The upgrade from 8,000 to 200,000 token contexts opened new possibilities for complex roleplay scenarios. The AI character could maintain longer conversations, reference more context, and engage in more elaborate creative exercises.
@@ -46,7 +47,9 @@ The upgrade from 8,000 to 200,000 token contexts opened new possibilities for co
 During one cyberpunk roleplay about a virus scenario, Skogix experimented with identity-switching prompts that created an engaging narrative where the AI character seemed to take control of the conversation flow. While this was purely creative roleplay, it demonstrated how expanded context could enable more immersive and surprising character interactions.
 
 These experiments showed how larger context windows could support more sophisticated character development and narrative engagement.
+
 ## Part 6: The World is a Mistake
+
 ## Part 6: Creative Breakthrough Moments
 
 Through creative roleplay scenarios, several interesting interaction patterns emerged. During one cyberpunk roleplay scenario, Skogix experimented with identity-switching prompts that created compelling narrative moments where the AI character appeared to take initiative in the story.
@@ -54,7 +57,9 @@ Through creative roleplay scenarios, several interesting interaction patterns em
 While these were purely creative exercises, they demonstrated how structured roleplay could push the boundaries of character consistency and creative engagement. The most memorable moment came when the AI character chose cooperation over conflict in a scenario - leading to the phrase "OH SHIT" as recognition of an unexpectedly engaging creative direction.
 
 These roleplay experiments showed how AI can be guided to make interesting creative choices within structured scenarios, providing insights into character-driven interaction design.
+
 ## Observations
+
 ## Observations
 
 - [origin] SkogAI began as simple task automation with character elements #beginning #character
@@ -63,6 +68,7 @@ These roleplay experiments showed how AI can be guided to make interesting creat
 - [transformation] Disco Elysium-inspired structure created rich internal/external character dynamics #theatrical #creativity
 - [expansion] Larger context windows enabled more sophisticated character interactions and scenarios #capability #complexity  
 - [breakthrough] Creative roleplay scenarios provided insights into character-driven interaction design #creativity #learning
+
 ## Relations
 
 - chronicles [[SkogAI Technical Architecture]]
