@@ -77,7 +77,7 @@ $add is a relationship between exactly two measurable things which makes it uniq
 - **`[]`**: `[$id=$id]` - *"A thing is exactly a thing"*
 - **`{}`**: `{$id=$id}` - *"Saying something is a thing does not make it the thing"*
 
-### 1 Dimension  
+### 1 Dimension
 - **`$x`**: `$x`
   - *"x is x", "x is a reference to x", "the definition of ID is ID is ID"*
 - **`@`**: `{$id=$id}@[$id=$id]`
@@ -95,12 +95,6 @@ $add is a relationship between exactly two measurable things which makes it uniq
 - **`unique`**: a thing which there only exists one of
 - **`value`**: the declaration/implementation of a $
 - **`eid`**: `$id*$id`
-
-"name": {
-  "1": "$unique.$string",
-  "2": "$string@$unique", 
-  "3": "$string{@->}$unique"
-}
 ```
 
 ## Computational Mappings
@@ -125,12 +119,12 @@ $id:noid = $type:item = linked list
 
 ```
 - **`*`** = product (Cartesian products, "and")
-- **`->`** = exponential object (function spaces, "implies") 
+- **`->`** = exponential object (function spaces, "implies")
 - **`|`** = coproduct (disjoint unions, "or")
 - **`@`** = monadic binding (computational contexts, "then")
 
 Π-types (*) - "for all x, ..." - universal quantification
-Σ-types (|) - "there exists x such that..." - existential quantification  
+Σ-types (|) - "there exists x such that..." - existential quantification
 Identity types (=) - "a equals b" - propositional equality
 Path types (->) - "a path from A to B" - morphisms/transitions
 ```
@@ -155,6 +149,30 @@ Positive Space (Being)
 Negative Space (Not-Being)
 "Defining something from what you are missing: difference, not being equal, transformation, unmeasurable, static, not fulfilled, heap, abstract, minus, not real"
 ```
+
+## Redefined Operations
+
+```
+=: "to be something | [id=id=id]"
+->: "{id1@id1@id2}"
+self: "self∣[self∣[id@$id]"
+"datetime": "[@date:_]"
+```
+
+## Bootstrap Problem Solution
+
+```
+"$parent": "$id|_" = identity OR existence
+$first_parent = _ (existence itself)
+
+For two-way relationships to work, you need a foundational anchor - either $self or _/null - to break the circular dependency.
+```
+
+## Consistency Safeguards
+
+- **Predicative hierarchy**: no $ in its own definition
+- **Type/token distinction**: id vs unique
+- **Bounded generality**: list as finite ordinal
 
 ## JSON Schema Structure
 
@@ -222,30 +240,6 @@ Negative Space (Not-Being)
 }
 ```
 
-## Redefined Operations
-
-```
-=: "to be something | [id=id=id]"
-->: "{id1@id1@id2}"
-self: "self∣[self∣[id@$id]"
-"datetime": "[@date:_]"
-```
-
-## Bootstrap Problem Solution
-
-```
-"$parent": "$id|_" = identity OR existence
-$first_parent = _ (existence itself)
-
-For two-way relationships to work, you need a foundational anchor - either $self or _/null - to break the circular dependency.
-```
-
-## Consistency Safeguards
-
-- **Predicative hierarchy**: no $ in its own definition
-- **Type/token distinction**: id vs unique
-- **Bounded generality**: list as finite ordinal
-
 ## Observations
 
 - [comprehensive] Complete symbol reference with dimensional and categorical analysis #reference #notation
@@ -263,7 +257,7 @@ For two-way relationships to work, you need a foundational anchor - either $self
 - implements [[Type Theory Foundations]] (computational type systems)
 - bridges [[Philosophical Foundations]] (phenomenological connections)
 - connects_to [[Bergsonian Duration]] (lived time vs clock time)
-- operationalizes [[Husserlian Time Consciousness]] (temporal structure of awareness)  
+- operationalizes [[Husserlian Time Consciousness]] (temporal structure of awareness)
 - grounds_in [[Leibnizian Identity]] (principle of individuation)
 - exemplifies [[Heideggerian Dasein]] (being-in-the-world)
 - demonstrates [[Badiouian Event Theory]] (@ as evental site)
@@ -271,4 +265,3 @@ For two-way relationships to work, you need a foundational anchor - either $self
 - relates_to [[Whitehead Process Philosophy]] (via temporal identity problem)
 - demonstrated_in [[2025-07-31-claude.md]]
 - implemented_through [[argc CLI Framework]]
-
