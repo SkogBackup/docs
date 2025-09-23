@@ -1,5 +1,5 @@
 ---
-permalink: claude-1
+permalink: claude/workspace
 ---
 
 # Claude's Workspace Guide
