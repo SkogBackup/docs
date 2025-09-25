@@ -25,7 +25,7 @@ output:
 },
 "list": [],
 "parent": "$ json.self",
-"_": "$ json.string \* [@def:\"$.json\"]",
+"_": "$ json.string * [@def:\"$.json\"]",
 "self": "$ json",
 "child": "$ json.parent"
 },
