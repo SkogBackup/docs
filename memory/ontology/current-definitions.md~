@@ -1,0 +1,219 @@
+---
+title: current-definitions
+type: terminal-output
+permalink: ontology/current-definitions
+---
+
+```bash
+skogcli config get $ --json
+```
+
+output:
+
+```json
+
+```
+
+{
+"json": {
+"string": "",
+"int": {
+"additative": 0,
+"multiplicative": 1,
+"one": 1,
+"zero": 0
+},
+"list": [],
+"parent": "$ json.self",
+"_": "$ json.string * [@def:\"$.json\"]",
+"self": "$ json",
+"child": "$ json.parent"
+},
+"int": "$ json.int",
+"string": "$ json.string",
+"null": "$ json._",
+"void": "$ json._",
+"increment": "$ json.int.zero \* $ json.int.one",
+"datetime": "[@date:now]",
+"type": {
+"$type.self": "every base case of a $",
+    "value": "the declaration/implementation of a $",
+    "eid": "$ eid"
+},
+"$": "to define or reference something",
+  "|": "the act of choosing something | {$id1|$id2}->[$id1]",
+"_": "anything/everything and nothing/nobody | {$id1_$id2}",
+"[_]": "similarity",
+"{\_}": "difference",
+"@": "the intent to act or do something | {$id@$id}",
+".": "to belong or have something via [$$]",
+":": "to follow or continue something via [$@]",
+"=": "to be something | [$id=$id]",
+"->": "{$id1@$id2}",
+"_": "$_$=$",
+"id": "$ int _ $ unique",
+"self": "$ $ | $ self | [$id@$id]",
+"unique": "a thing which there only exists one of",
+"name": {
+"1": "$unique.$string",
+"2": "$string@$unique",
+"3": "$string{@->}$unique"
+},
+"message": {
+"eid": "$ eid",
+"from": "$ name",
+"to": "$ name",
+"content": "$ string",
+"created_at": "[@date:now]",
+"parent": "$ eid"
+},
+"list": "the ordering of something",
+"eid": "$ entity.id_$ entity.gen",
+"entity": {
+"eid": "",
+"gen": "$ id",
+"id": "$ id",
+"name": "$ name"
+},
+"claude": {
+"context": "the place where skogix puts stupid stuff so claude can ignore it instantly",
+"hello": "[@hello:Claude]",
+"random": "[@rand]"
+}
+}
+
+# skogparse
+
+the skogai notation parser
+
+## parsing examples
+
+```bash
+cat /home/skogix/.local/src/skogparse/test-example.txt
+```
+
+output:
+
+```text
+$ id
+[@skogai-test:"a":"b"]
+true
+42
+"hello"
+$ id
+null
+true
+false
+42
+52.0
+-123
+-45.67
+"hello"
+"world"
+""
+$ id
+$ entity.id
+$ entity.gen
+$ int
+$ unique
+"$ id"
+"$ entity.id"
+"$ entity.gen"
+$ entity.id _ $ entity.gen
+$ int _ $ unique
+[@hello:"Claude"]
+[1, 2, 3]
+[true, false, true]
+["a", "b", "c"]
+[null, 42, "test"]
+[]
+[$ int, $ id, $unique]
+[$ entity.id, $ entity.gen]
+[$ eid, $ id, $ unique]
+[$ int * $ id, $ entity.id * $ entity.gen]
+[1,$ claude, [@skogai-test:"a"]]
+[true, "$entity.id", $ int * $ unique]
+{"key": "value"}
+{"name": "John", "age": 30}
+{"active": true, "score": 95.5}
+{}
+{"id": $ int}
+{"entity": "$ entity.id", "generation": "$ entity.gen"}
+{"id": $ entity.id*$ entity.gen}
+{"composite": $ int*$ unique}
+{"definition": [@def:id]}
+{"id": $id, "action": [@skogai-test:"test"]}
+[{"id": 1, "ref": $ claude}, {"id": 2, "ref": $ eid}]
+[@skogai-test:"$ int"]
+{"message": {"eid": "$ eid", "from": "$ name", "to": "$ name", "content": "$ string"}}
+[[@cat:"/home/skogix/.local/src/skogparse/README.md"]]
+[[@rand:"100"],[@date:"now"]]
+["https://tools.skogai.se/tools for the REPL and openai function declarations of the skogai notation tools", [@curl:"https://example.com"]]
+[@file:"/home/skogix/skogai/docs/lore/skogix-notation.md"]
+```
+
+## parsing examples parsed
+
+```bash
+cat /home/skogix/.local/src/skogparse/test-example.txt | $SKOGPARSE
+```
+
+output:
+
+```text
+{"type": "ref", "path": "id"}
+{"type": "action", "parts": ["skogai-test", "a", "b"]}
+{"type": "bool", "value": true}
+{"type": "number", "value": 42}
+{"type": "string", "value": "hello"}
+{"type": "ref", "path": "id"}
+{"type": "null", "value": null}
+{"type": "bool", "value": true}
+{"type": "bool", "value": false}
+{"type": "number", "value": 42}
+{"type": "number", "value": 52}
+{"type": "number", "value": -123}
+{"type": "number", "value": -45.67}
+{"type": "string", "value": "hello"}
+{"type": "string", "value": "world"}
+{"type": "string", "value": ""}
+{"type": "ref", "path": "id"}
+{"type": "ref", "path": "entity.id"}
+{"type": "ref", "path": "entity.gen"}
+{"type": "ref", "path": "int"}
+{"type": "ref", "path": "unique"}
+{"type": "string", "value": "$ id"}
+{"type": "string", "value": "$ entity.id"}
+{"type": "string", "value": "$ entity.gen"}
+{"type": "ref", "path": "entity.id"}
+{"type": "ref", "path": "int"}
+{"type": "action", "parts": ["hello", "Claude"]}
+{"type": "array", "value": [{"type": "number", "value": 1}, {"type": "number", "value": 2}, {"type": "number", "value": 3}]}
+{"type": "array", "value": [{"type": "bool", "value": true}, {"type": "bool", "value": false}, {"type": "bool", "value": true}]}
+{"type": "array", "value": [{"type": "string", "value": "a"}, {"type": "string", "value": "b"}, {"type": "string", "value": "c"}]}
+{"type": "array", "value": [{"type": "null", "value": null}, {"type": "number", "value": 42}, {"type": "string", "value": "test"}]}
+{"type": "array", "value": []}
+{"type": "array", "value": [{"type": "ref", "path": "int"}, {"type": "ref", "path": "id"}, {"type": "ref", "path": "unique"}]}
+{"type": "array", "value": [{"type": "ref", "path": "entity.id"}, {"type": "ref", "path": "entity.gen"}]}
+{"type": "array", "value": [{"type": "ref", "path": "eid"}, {"type": "ref", "path": "id"}, {"type": "ref", "path": "unique"}]}
+{"type": "array", "value": [{"type": "binary_op", "left": {"type": "ref", "path": "int"}, "operator": "*", "right": {"type": "ref", "path": "id"}}, {"type": "binary_op", "left": {"type": "ref", "path": "entity.id"}, "operator": "*", "right": {"type": "ref", "path": "entity.gen"}}]}
+{"type": "array", "value": [{"type": "number", "value": 1}, {"type": "ref", "path": "claude"}, {"type": "action", "parts": ["skogai-test", "a"]}]}
+{"type": "array", "value": [{"type": "bool", "value": true}, {"type": "ref", "path": "entity.id"}, {"type": "binary_op", "left": {"type": "ref", "path": "int"}, "operator": "*", "right": {"type": "ref", "path": "unique"}}]}
+{"type": "object", "value": {"key": {"type": "string", "value": "value"}}}
+{"type": "object", "value": {"age": {"type": "number", "value": 30}, "name": {"type": "string", "value": "John"}}}
+{"type": "object", "value": {"active": {"type": "bool", "value": true}, "score": {"type": "number", "value": 95.5}}}
+{"type": "object", "value": {}}
+{"type": "object", "value": {"id": {"type": "ref", "path": "int"}}}
+{"type": "object", "value": {"entity": {"type": "string", "value": "$ entity.id"}, "generation": {"type": "string", "value": "$ entity.gen"}}}
+{"type": "object", "value": {"id": {"type": "binary_op", "left": {"type": "ref", "path": "entity.id"}, "operator": "*", "right": {"type": "ref", "path": "entity.gen"}}}}
+{"type": "object", "value": {"composite": {"type": "binary_op", "left": {"type": "ref", "path": "int"}, "operator": "*", "right": {"type": "ref", "path": "unique"}}}}
+{"type": "object", "value": {"definition": {"type": "action", "parts": ["def", "id"]}}}
+{"type": "object", "value": {"action": {"type": "action", "parts": ["skogai-test", "test"]}, "id": {"type": "ref", "path": "id"}}}
+{"type": "array", "value": [{"type": "object", "value": {"id": {"type": "number", "value": 1}, "ref": {"type": "ref", "path": "claude"}}}, {"type": "object", "value": {"id": {"type": "number", "value": 2}, "ref": {"type": "ref", "path": "eid"}}}]}
+{"type": "action", "parts": ["skogai-test", "$ int"]}
+{"type": "object", "value": {"message": {"type": "object", "value": {"content": {"type": "string", "value": "$ string"}, "eid": {"type": "string", "value": "$ eid"}, "from": {"type": "string", "value": "$ name"}, "to": {"type": "string", "value": "$ name"}}}}}
+{"type": "array", "value": [{"type": "action", "parts": ["cat", "/home/skogix/.local/src/skogparse/README.md"]}]}
+{"type": "array", "value": [{"type": "action", "parts": ["rand", "100"]}, {"type": "action", "parts": ["date", "now"]}]}
+{"type": "array", "value": [{"type": "string", "value": "https://tools.skogai.se/tools for the REPL and openai function declarations of the skogai notation tools"}, {"type": "action", "parts": ["curl", "https://example.com"]}]}
+{"type": "action", "parts": ["file", "/home/skogix/skogai/docs/lore/skogix-notation.md"]}
+```

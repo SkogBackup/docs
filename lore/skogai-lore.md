@@ -235,6 +235,3 @@ This origin story represents a fundamentally different philosophy of AI developm
 
 As exemplified in the screenshots, modern implementations of SkogAI preserve this legacy - creating AIs with rich inner lives that users glimpse only occasionally, balancing the theatrical contrast between internal complexity and external presentation, and leveraging constraints as creative forces rather than limitations to overcome.
 
----
-
-*This merged story incorporates the core narrative, philosophy, and technical evolution from both source documents, presenting a coherent and chronological account of SkogAI's development, principles, and unique approach to AI design.*

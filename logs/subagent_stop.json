@@ -1,0 +1,10 @@
+[
+  {
+    "session_id": "4631cdf4-84f9-4948-8eb9-2d126310cf11",
+    "transcript_path": "/home/skogix/.claude/projects/-home-skogix-skogai-docs/4631cdf4-84f9-4948-8eb9-2d126310cf11.jsonl",
+    "cwd": "/home/skogix/skogai/docs",
+    "permission_mode": "default",
+    "hook_event_name": "SubagentStop",
+    "stop_hook_active": false
+  }
+]
