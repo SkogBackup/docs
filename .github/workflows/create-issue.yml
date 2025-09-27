@@ -1,0 +1,211 @@
+name: Create Issue
+
+on:
+  # Manual trigger with inputs
+  workflow_dispatch:
+    inputs:
+      title:
+        description: 'Issue title'
+        required: true
+        type: string
+      body:
+        description: 'Issue description/body'
+        required: false
+        type: string
+        default: ''
+      labels:
+        description: 'Comma-separated list of labels'
+        required: false
+        type: string
+        default: ''
+      assignees:
+        description: 'Comma-separated list of assignees'
+        required: false
+        type: string
+        default: ''
+      milestone:
+        description: 'Milestone number or title'
+        required: false
+        type: string
+        default: ''
+      project:
+        description: 'Project name or number'
+        required: false
+        type: string
+        default: ''
+  
+  # Repository dispatch for API calls
+  repository_dispatch:
+    types: [create-issue]
+
+jobs:
+  create-issue:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up environment variables
+      run: |
+        echo "ISSUE_TITLE=${{ github.event.inputs.title || github.event.client_payload.title }}" >> $GITHUB_ENV
+        echo "ISSUE_BODY=${{ github.event.inputs.body || github.event.client_payload.body || '' }}" >> $GITHUB_ENV
+        echo "ISSUE_LABELS=${{ github.event.inputs.labels || github.event.client_payload.labels || '' }}" >> $GITHUB_ENV
+        echo "ISSUE_ASSIGNEES=${{ github.event.inputs.assignees || github.event.client_payload.assignees || '' }}" >> $GITHUB_ENV
+        echo "ISSUE_MILESTONE=${{ github.event.inputs.milestone || github.event.client_payload.milestone || '' }}" >> $GITHUB_ENV
+        echo "ISSUE_PROJECT=${{ github.event.inputs.project || github.event.client_payload.project || '' }}" >> $GITHUB_ENV
+        echo "CREATION_TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")" >> $GITHUB_ENV
+        
+    - name: Validate inputs
+      run: |
+        echo "🔍 Validating issue creation inputs..."
+        
+        # Check if title is provided
+        if [ -z "$ISSUE_TITLE" ]; then
+          echo "❌ Error: Issue title is required"
+          exit 1
+        fi
+        
+        # Validate title length (GitHub limit is 256 characters)
+        if [ ${#ISSUE_TITLE} -gt 256 ]; then
+          echo "❌ Error: Issue title too long (max 256 characters)"
+          exit 1
+        fi
+        
+        # Validate body length (GitHub API limit is ~65536 characters)
+        if [ ${#ISSUE_BODY} -gt 65000 ]; then
+          echo "❌ Error: Issue body too long (max ~65000 characters)"
+          exit 1
+        fi
+        
+        echo "✅ Input validation passed"
+        echo "📝 Title: $ISSUE_TITLE"
+        echo "📄 Body length: ${#ISSUE_BODY} characters"
+        echo "🏷️  Labels: $ISSUE_LABELS"
+        echo "👥 Assignees: $ISSUE_ASSIGNEES"
+        echo "🎯 Milestone: $ISSUE_MILESTONE"
+        echo "📋 Project: $ISSUE_PROJECT"
+        
+    - name: Rate limiting check
+      run: |
+        echo "⏱️  Checking GitHub API rate limits..."
+        
+        # Get current rate limit status
+        RATE_LIMIT=$(gh api rate_limit --jq '.rate.remaining')
+        echo "📊 Remaining API calls: $RATE_LIMIT"
+        
+        if [ "$RATE_LIMIT" -lt 10 ]; then
+          echo "⚠️  Warning: Low API rate limit remaining ($RATE_LIMIT calls)"
+          echo "🕐 Consider waiting before making more requests"
+        fi
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: Create issue
+      id: create-issue
+      run: |
+        echo "🚀 Creating GitHub issue..."
+        
+        # Build gh issue create command
+        CMD="gh issue create --title \"$ISSUE_TITLE\""
+        
+        # Add body if provided
+        if [ -n "$ISSUE_BODY" ]; then
+          # Create temporary file for body content to handle multiline text
+          echo "$ISSUE_BODY" > /tmp/issue_body.txt
+          CMD="$CMD --body-file /tmp/issue_body.txt"
+        fi
+        
+        # Add labels if provided
+        if [ -n "$ISSUE_LABELS" ]; then
+          # Convert comma-separated labels to space-separated for gh CLI
+          FORMATTED_LABELS=$(echo "$ISSUE_LABELS" | tr ',' ' ')
+          CMD="$CMD --label $FORMATTED_LABELS"
+        fi
+        
+        # Add assignees if provided
+        if [ -n "$ISSUE_ASSIGNEES" ]; then
+          # Convert comma-separated assignees to space-separated for gh CLI
+          FORMATTED_ASSIGNEES=$(echo "$ISSUE_ASSIGNEES" | tr ',' ' ')
+          CMD="$CMD --assignee $FORMATTED_ASSIGNEES"
+        fi
+        
+        # Add milestone if provided
+        if [ -n "$ISSUE_MILESTONE" ]; then
+          CMD="$CMD --milestone \"$ISSUE_MILESTONE\""
+        fi
+        
+        echo "📋 Executing command: $CMD"
+        
+        # Execute the command and capture the issue URL
+        ISSUE_URL=$(eval $CMD)
+        EXIT_CODE=$?
+        
+        if [ $EXIT_CODE -eq 0 ]; then
+          echo "✅ Issue created successfully!"
+          echo "🔗 Issue URL: $ISSUE_URL"
+          echo "issue-url=$ISSUE_URL" >> $GITHUB_OUTPUT
+          
+          # Extract issue number from URL
+          ISSUE_NUMBER=$(echo "$ISSUE_URL" | grep -o '[0-9]*$')
+          echo "issue-number=$ISSUE_NUMBER" >> $GITHUB_OUTPUT
+          
+          # Log successful creation
+          echo "📝 Issue #$ISSUE_NUMBER created at $CREATION_TIMESTAMP"
+          echo "📊 Title: $ISSUE_TITLE"
+          echo "👤 Created by: ${{ github.actor }}"
+          echo "🔄 Triggered by: ${{ github.event_name }}"
+          
+        else
+          echo "❌ Failed to create issue (exit code: $EXIT_CODE)"
+          exit $EXIT_CODE
+        fi
+        
+        # Clean up temporary file
+        rm -f /tmp/issue_body.txt
+        
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: Add to project (if specified)
+      if: env.ISSUE_PROJECT != ''
+      run: |
+        echo "📋 Adding issue to project: $ISSUE_PROJECT"
+        
+        ISSUE_NUMBER="${{ steps.create-issue.outputs.issue-number }}"
+        
+        # Try to add to project (this may fail if project doesn't exist or no permissions)
+        if gh project item-add "$ISSUE_PROJECT" --owner "${{ github.repository_owner }}" --url "${{ steps.create-issue.outputs.issue-url }}" 2>/dev/null; then
+          echo "✅ Successfully added issue #$ISSUE_NUMBER to project $ISSUE_PROJECT"
+        else
+          echo "⚠️  Warning: Could not add issue to project $ISSUE_PROJECT"
+          echo "   This may be due to project not existing or insufficient permissions"
+        fi
+        
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: Log creation summary
+      if: always()
+      run: |
+        echo "📈 Issue Creation Summary"
+        echo "========================"
+        echo "🕐 Timestamp: $CREATION_TIMESTAMP"
+        echo "👤 Actor: ${{ github.actor }}"
+        echo "🔄 Event: ${{ github.event_name }}"
+        
+        if [ "${{ steps.create-issue.outcome }}" = "success" ]; then
+          echo "✅ Status: SUCCESS"
+          echo "🔗 Issue URL: ${{ steps.create-issue.outputs.issue-url }}"
+          echo "🔢 Issue Number: ${{ steps.create-issue.outputs.issue-number }}"
+        else
+          echo "❌ Status: FAILED"
+        fi
+        
+        echo "📝 Inputs:"
+        echo "   Title: $ISSUE_TITLE"
+        echo "   Body length: ${#ISSUE_BODY} chars"
+        echo "   Labels: $ISSUE_LABELS"
+        echo "   Assignees: $ISSUE_ASSIGNEES"
+        echo "   Milestone: $ISSUE_MILESTONE"
+        echo "   Project: $ISSUE_PROJECT"

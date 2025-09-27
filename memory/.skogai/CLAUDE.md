@@ -151,6 +151,47 @@ This repository connects to external projects through:
 - Shared technical approaches and design decisions
 - Learning transfer between different implementation contexts
 
+### GitHub Actions Integration
+
+This repository includes automated workflows for issue management:
+
+**Create Issue Workflow** (`.github/workflows/create-issue.yml`):
+
+- **Manual Trigger**: Use GitHub's workflow dispatch interface with parameters:
+  - `title` (required): Issue title
+  - `body` (optional): Issue description/body 
+  - `labels` (optional): Comma-separated labels
+  - `assignees` (optional): Comma-separated assignees
+  - `milestone` (optional): Milestone number or title
+  - `project` (optional): Project name or number
+
+- **API Trigger**: Use repository dispatch for programmatic access:
+  ```bash
+  # Example with gh CLI
+  gh api repos/SkogAI/docs/dispatches \
+    -f event_type=create-issue \
+    -f client_payload='{"title":"Automated Issue","body":"Created via API"}'
+  ```
+
+- **argc CLI Integration**: Compatible with argc-based scripts:  
+  ```bash
+  # Example argc script integration
+  create_issue() {
+    gh workflow run create-issue.yml \
+      -f title="$1" \
+      -f body="${2:-}" \
+      -f labels="${3:-}"
+  }
+  ```
+
+- **Security Features**:
+  - Input validation (title length, body size limits)
+  - Rate limiting checks  
+  - GitHub token authentication
+  - Comprehensive logging of all creation attempts
+
+- **Basic Memory Integration**: Issues created can reference memory:// URIs in body content for semantic linking to knowledge graph entities.
+
 ### .skogai
 
 @compact.md
