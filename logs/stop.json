@@ -54,5 +54,13 @@
     "permission_mode": "default",
     "hook_event_name": "Stop",
     "stop_hook_active": false
+  },
+  {
+    "session_id": "6340413a-10ed-4115-bc9f-e036c812102e",
+    "transcript_path": "/home/skogix/.claude/projects/-home-skogix-skogai-docs/6340413a-10ed-4115-bc9f-e036c812102e.jsonl",
+    "cwd": "/home/skogix/skogai/docs",
+    "permission_mode": "default",
+    "hook_event_name": "Stop",
+    "stop_hook_active": false
   }
 ]

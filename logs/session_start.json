@@ -33,5 +33,19 @@
     "cwd": "/home/skogix/skogai/docs",
     "hook_event_name": "SessionStart",
     "source": "resume"
+  },
+  {
+    "session_id": "d4493d34-63b9-496e-b03e-e3c22d366705",
+    "transcript_path": "/home/skogix/.claude/projects/-home-skogix-skogai-docs/d4493d34-63b9-496e-b03e-e3c22d366705.jsonl",
+    "cwd": "/home/skogix/skogai/docs",
+    "hook_event_name": "SessionStart",
+    "source": "startup"
+  },
+  {
+    "session_id": "6340413a-10ed-4115-bc9f-e036c812102e",
+    "transcript_path": "/home/skogix/.claude/projects/-home-skogix-skogai-docs/6340413a-10ed-4115-bc9f-e036c812102e.jsonl",
+    "cwd": "/home/skogix/skogai/docs",
+    "hook_event_name": "SessionStart",
+    "source": "startup"
   }
 ]

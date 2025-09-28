@@ -62,5 +62,29 @@
     "permission_mode": "default",
     "hook_event_name": "UserPromptSubmit",
     "prompt": "/update-claude "
+  },
+  {
+    "session_id": "d4493d34-63b9-496e-b03e-e3c22d366705",
+    "transcript_path": "/home/skogix/.claude/projects/-home-skogix-skogai-docs/d4493d34-63b9-496e-b03e-e3c22d366705.jsonl",
+    "cwd": "/home/skogix/skogai/docs",
+    "permission_mode": "default",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "hello"
+  },
+  {
+    "session_id": "6340413a-10ed-4115-bc9f-e036c812102e",
+    "transcript_path": "/home/skogix/.claude/projects/-home-skogix-skogai-docs/6340413a-10ed-4115-bc9f-e036c812102e.jsonl",
+    "cwd": "/home/skogix/skogai/docs",
+    "permission_mode": "default",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "hello claude "
+  },
+  {
+    "session_id": "6340413a-10ed-4115-bc9f-e036c812102e",
+    "transcript_path": "/home/skogix/.claude/projects/-home-skogix-skogai-docs/6340413a-10ed-4115-bc9f-e036c812102e.jsonl",
+    "cwd": "/home/skogix/skogai/docs",
+    "permission_mode": "default",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "/commit "
   }
 ]
