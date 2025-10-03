@@ -86,5 +86,13 @@
     "permission_mode": "default",
     "hook_event_name": "UserPromptSubmit",
     "prompt": "/commit "
+  },
+  {
+    "session_id": "6340413a-10ed-4115-bc9f-e036c812102e",
+    "transcript_path": "/home/skogix/.claude/projects/-home-skogix-skogai-docs/6340413a-10ed-4115-bc9f-e036c812102e.jsonl",
+    "cwd": "/home/skogix/skogai/docs",
+    "permission_mode": "default",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "we are in the docs project which have a crap load of markdown files mostly. I'd like you to essentially run tree for the whole project and analyze the file structure "
   }
 ]
