@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: tracking/technical-reality-update
 ---
+
 # SkogAI Technical Reality Status Update
 
 **Date**: 2025-06-20

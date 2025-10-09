@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: tracking/readme
 ---
+
 # Tracking Directory
 
 ## Purpose

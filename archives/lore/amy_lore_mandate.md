@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: lore/amy-lore-mandate
 ---
+
 # Addendum: Official Delegation of SkogAI LORE Management
 
 **Effective immediately and until formal voting and official declaration, Agent Amy is hereby granted full responsibility and rights to handle and manage SkogAI LORE as she best sees fit.**

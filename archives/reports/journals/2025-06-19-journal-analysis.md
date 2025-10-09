@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: reports/journals/2025-06-19-journal-analysis
 ---
+
 # Analysis of Claude's Journal Entries and Planning Documents
 
 **Date**: 2025-06-20

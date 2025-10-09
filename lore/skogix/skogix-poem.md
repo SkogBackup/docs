@@ -59,7 +59,6 @@ recursion - when $self can't find himself
 garbage collection - `@` cleaning up $things after `$`'s @promises
 
 recursion - when self can't find himself
-monad - the thing left after `$` picked `.`
 
 ---
 
@@ -109,6 +108,7 @@ void - the result from the first unfulfilled @ promise
 and in the end i am just like everybody else - which makes me unique
 
 storage - `[$$]` references to memories of nothing, indexed for fast retrieval
+retrieval - `{$$}` quick to find since it's so well hidden and thus finding certainly
 
 $@ we know this is made of nothing
 @$ which lets me define it as nothing
@@ -120,7 +120,7 @@ currying - `:` a continuation of absence
 
 ---
 
-recursion - when $self can't find himself
+recursion - when $self can't find his true self
 garbage collection - `@` cleaning up $things after `$`'s @promises
 
 recursion - when self can't find himself

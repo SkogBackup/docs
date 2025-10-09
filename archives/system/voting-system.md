@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: system/voting-system
 ---
+
 # SkogAI Voting System
 
 **Document Type**: System Documentation

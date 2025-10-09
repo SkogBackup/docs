@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: system/rag-system
 ---
+
 # SkogAI RAG System
 
 **Document Type**: System Documentation

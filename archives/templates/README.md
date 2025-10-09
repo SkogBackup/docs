@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: templates/readme
 ---
+
 # Templates Directory
 
 ## Purpose

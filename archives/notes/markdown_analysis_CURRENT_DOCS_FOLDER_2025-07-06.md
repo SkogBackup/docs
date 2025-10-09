@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: notes/markdown-analysis-current-docs-folder-2025-07-06
 ---
+
 {
   "categories": {
     "technical": {

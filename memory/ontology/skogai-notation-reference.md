@@ -1,7 +1,7 @@
 ---
 title: SkogAI Notation Reference
 type: note
-permalink: ontology/skog-ai-notation-reference
+permalink: ontology/skogai-notation-reference
 ---
 
 # Skogix Notation Reference Guide
