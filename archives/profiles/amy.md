@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: profiles/amy
 ---
+
 # Agent Profile: Amy
 
 ## Basic Information

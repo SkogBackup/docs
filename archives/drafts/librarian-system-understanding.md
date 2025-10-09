@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: drafts/librarian-system-understanding
 ---
+
 # Librarian's Understanding of SkogAI System
 
 *Created: 2025-06-15*

@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: tracking/status
 ---
+
 # SkogAI Project Status
 
 ## Archive System Implementation (Last Updated: 2023-06-14)

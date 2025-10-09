@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: logs/2025-06-09-user-profiles-creation
 ---
+
 # User Profiles Creation
 
 **Date:** 2025-06-09

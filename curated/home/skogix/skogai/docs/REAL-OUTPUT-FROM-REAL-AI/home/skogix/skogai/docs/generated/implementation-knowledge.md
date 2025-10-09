@@ -1,7 +1,0 @@
----
-categories:
-
-tags:
-
----
-# IMPLEMENTATION Knowledge

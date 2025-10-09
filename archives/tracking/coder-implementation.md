@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: tracking/coder-implementation
 ---
+
 # Coder Implementation Tracking
 
 ## Implementation Status

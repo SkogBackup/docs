@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: logs/readme
 ---
+
 # Logs Directory
 
 ## Purpose
