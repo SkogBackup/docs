@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: logs/2025-06-14-amy-agent-preparation
 ---
+
 # Agent Amy Preparation Log
 
 *Date: 2025-06-14*

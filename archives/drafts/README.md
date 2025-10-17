@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: drafts/readme
 ---
+
 # Drafts Directory
 
 ## Purpose

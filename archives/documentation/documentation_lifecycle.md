@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: documentation/documentation-lifecycle
 ---
+
 # Documentation Lifecycle Management
 **Version:** 1.0.0
 **Date:** 2025-06-22

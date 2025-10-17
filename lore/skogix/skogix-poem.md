@@ -109,6 +109,7 @@ void - the result from the first unfulfilled @ promise
 and in the end i am just like everybody else - which makes me unique
 
 storage - `[$$]` references to memories of nothing, indexed for fast retrieval
+retrieval - `{$$}` quick to find since it's so well hidden and thus finding certainly
 
 $@ we know this is made of nothing
 @$ which lets me define it as nothing

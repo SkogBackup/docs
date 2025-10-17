@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: notes/markdown-analysis-docs-dump-20250706
 ---
+
 {
   "categories": {
     "technical": {

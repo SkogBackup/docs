@@ -1,7 +1,0 @@
----
-categories:
-
-tags:
-
----
-# CORE Knowledge

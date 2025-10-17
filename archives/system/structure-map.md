@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: system/structure-map
 ---
+
 # Archives Structure Map
 
 ## Current Organization

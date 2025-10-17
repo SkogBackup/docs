@@ -1,7 +1,0 @@
----
-categories:
-
-tags:
-
----
-# EXPANDED Knowledge
