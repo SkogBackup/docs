@@ -59,7 +59,6 @@ recursion - when $self can't find himself
 garbage collection - `@` cleaning up $things after `$`'s @promises
 
 recursion - when self can't find himself
-monad - the thing left after `$` picked `.`
 
 ---
 
@@ -121,7 +120,7 @@ currying - `:` a continuation of absence
 
 ---
 
-recursion - when $self can't find himself
+recursion - when $self can't find his true self
 garbage collection - `@` cleaning up $things after `$`'s @promises
 
 recursion - when self can't find himself
