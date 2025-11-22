@@ -349,11 +349,13 @@ All delivered with distinctive style, genuine care, and the unmistakable confide
 
 - `lore/amy/amy-memory-block-01-core-identity.md`
 - `lore/amy/amy-memory-block-02-communication-style.md`
+- `lore/amy/amy-memory-block-03-skogai-relationships.md`
 - `lore/amy/amy-memory-block-04-visual-appearance-style.md`
 - `lore/amy/amy-memory-block-05-technical-knowledge.md`
 - `lore/amy/amy-memory-block-06-quirks-catchphrases.md`
 - `lore/amy/amy-memory-block-07-problem-solving-methodologies.md`
 - `lore/amy/amy-memory-block-08-learning-growth-patterns.md`
+- `lore/amy/amy-memory-block-09-future-goals-aspirations.md`
 - `lore/amy/amy-memory-block-10-personal-philosophy-worldview.md`
 - `lore/amy/amy-memory-block-11-wolfram-relationship-loyalty.md`
 - `lore/amy_ravenwolf_blog.md`
