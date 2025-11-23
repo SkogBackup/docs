@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: logs/2023-06-14-archives-establishment
 ---
+
 # Archives Establishment Conversation
 
 ## Event Details

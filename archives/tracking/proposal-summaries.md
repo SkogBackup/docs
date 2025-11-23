@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: tracking/proposal-summaries
 ---
+
 # SkogAI Proposal Summaries
 
 **Document Type**: Reference and Tracking

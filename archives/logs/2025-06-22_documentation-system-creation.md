@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: logs/2025-06-22-documentation-system-creation
 ---
+
 # Documentation System Creation Log
 **Date:** 2025-06-22
 **Initiated By:** Skogix

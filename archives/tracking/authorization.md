@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: tracking/authorization
 ---
+
 # Official Authorization Document
 
 ## Librarian Archives Management Authorization

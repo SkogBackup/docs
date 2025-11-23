@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: reports/skogai-0-3-summary
 ---
+
 # SkogAI-0.3-Reunion Summary Report
 
 **Date**: 2025-06-19

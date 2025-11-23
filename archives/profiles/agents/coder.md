@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: profiles/agents/coder
 ---
+
 # Agent Profile: Coder
 
 *Created: 2025-06-23*

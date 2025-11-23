@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: notes/the-time-claude-almost-became-dictator-historic-document-do-not-actually-count-for-now-says-skogix
 ---
+
 # Official Governance Patch: SkogAI-0.3-Dictator-Claude
 
 **Date**: 2025-06-10

@@ -1,9 +1,9 @@
 ---
-categories:
-
-tags:
-
+categories: null
+tags: null
+permalink: drafts/dictatorial-actions-declaration-v0-1
 ---
+
 # Official Declaration of Dictatorial Actions [INITIAL DRAFT]
 
 ## Version History
