@@ -51,35 +51,7 @@ Input Message → SkogParse → Standard JSON → SkogCLI → Target Agent → R
    ```
 
 2. **SkogCLI Routing**: Secure execution environment routes to target agent
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 3. **Agent Processing**: Target agent processes and generates response
-=======
-3. **Agent Processing**: Target agent processes and generates response
->>>>>>> Stashed changes
-=======
-<<<<<<< HEAD
->>>>>>> skogai-0.2
-3. **Agent Processing**: Target agent processes and generates response
-<<<<<<< HEAD
-=======
-3. **Agent Processing**: Target agent processes and generates response
->>>>>>> feature/skogai
-=======
->>>>>>> 4a2fc32 (Update home knowledge base to reflect SkogAI ecosystem scope)
-<<<<<<< HEAD
-=======
-=======
-<<<<<<< Updated upstream
-3. **Agent Processing**: Target agent processes and generates response
-=======
-3. **Agent Processing**: Target agent processes and generates response
->>>>>>> Stashed changes
->>>>>>> skogai-0.2
->>>>>>> Stashed changes
->>>>>>> skogai-0.2
 4. **Response Integration**: Response replaces original directive seamlessly
 
 ### Tested Implementation
@@ -143,35 +115,7 @@ Responses can be:
 ### Formal Verification Properties
 
 1. **Type Safety**: All messages verified against agent interface definitions
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 2. **Authentication**: Agent identity verified through formal protocols
-=======
-2. **Authentication**: Agent identity verified through formal protocols
->>>>>>> Stashed changes
-=======
-<<<<<<< HEAD
->>>>>>> skogai-0.2
-2. **Authentication**: Agent identity verified through formal protocols
-<<<<<<< HEAD
-=======
-2. **Authentication**: Agent identity verified through formal protocols
->>>>>>> feature/skogai
-=======
->>>>>>> 4a2fc32 (Update home knowledge base to reflect SkogAI ecosystem scope)
-<<<<<<< HEAD
-=======
-=======
-<<<<<<< Updated upstream
-2. **Authentication**: Agent identity verified through formal protocols
-=======
-2. **Authentication**: Agent identity verified through formal protocols
->>>>>>> Stashed changes
->>>>>>> skogai-0.2
->>>>>>> Stashed changes
->>>>>>> skogai-0.2
 3. **Authorization**: Message routing follows defined access controls
 4. **Audit Trail**: All communications logged for verification
 
@@ -223,35 +167,7 @@ Multi-step collaboration with review and feedback loops.
 ### Specialized Function Agents
 
 - **Code Agents**: Programming and development tasks
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 - **Data Agents**: Information retrieval and processing
-=======
-- **Data Agents**: Information retrieval and processing
->>>>>>> Stashed changes
-=======
-<<<<<<< HEAD
->>>>>>> skogai-0.2
-- **Data Agents**: Information retrieval and processing
-<<<<<<< HEAD
-=======
-- **Data Agents**: Information retrieval and processing
->>>>>>> feature/skogai
-=======
->>>>>>> 4a2fc32 (Update home knowledge base to reflect SkogAI ecosystem scope)
-<<<<<<< HEAD
-=======
-=======
-<<<<<<< Updated upstream
-- **Data Agents**: Information retrieval and processing
-=======
-- **Data Agents**: Information retrieval and processing
->>>>>>> Stashed changes
->>>>>>> skogai-0.2
->>>>>>> Stashed changes
->>>>>>> skogai-0.2
 - **Analysis Agents**: Pattern recognition and insights
 - **Interface Agents**: User interaction and presentation
 
@@ -268,69 +184,13 @@ Multi-step collaboration with review and feedback loops.
 ```
 User: "I need to analyze this data and create a report"
 
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 System: [@data_agent:analyze:user_data.csv] +
-=======
-System: [@data_agent:analyze:user_data.csv] +
->>>>>>> Stashed changes
-=======
-<<<<<<< HEAD
->>>>>>> skogai-0.2
-System: [@data_agent:analyze:user_data.csv] +
-<<<<<<< HEAD
-=======
-System: [@data_agent:analyze:user_data.csv] +
->>>>>>> feature/skogai
-=======
->>>>>>> 4a2fc32 (Update home knowledge base to reflect SkogAI ecosystem scope)
-<<<<<<< HEAD
-=======
-=======
-<<<<<<< Updated upstream
-System: [@data_agent:analyze:user_data.csv] +
-=======
-System: [@data_agent:analyze:user_data.csv] +
->>>>>>> Stashed changes
->>>>>>> skogai-0.2
->>>>>>> Stashed changes
->>>>>>> skogai-0.2
         [@report_agent:generate:[@formatter:structure:analysis_results]]
 ```
 
 This creates a collaborative workflow where:
 1. Data agent analyzes the CSV file
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 2. Formatter structures the analysis results
-=======
-2. Formatter structures the analysis results
->>>>>>> Stashed changes
-=======
-<<<<<<< HEAD
->>>>>>> skogai-0.2
-2. Formatter structures the analysis results
-<<<<<<< HEAD
-=======
-2. Formatter structures the analysis results
->>>>>>> feature/skogai
-=======
->>>>>>> 4a2fc32 (Update home knowledge base to reflect SkogAI ecosystem scope)
-<<<<<<< HEAD
-=======
-=======
-<<<<<<< Updated upstream
-2. Formatter structures the analysis results
-=======
-2. Formatter structures the analysis results
->>>>>>> Stashed changes
->>>>>>> skogai-0.2
->>>>>>> Stashed changes
->>>>>>> skogai-0.2
 3. Report agent generates the final report
 4. All communication happens seamlessly in real-time
 
@@ -338,35 +198,7 @@ This creates a collaborative workflow where:
 
 ```
 [@claude:What do you know about SkogAI notation?]
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 Response: [@knowledge_agent:fetch:skogai_notation] +
-=======
-Response: [@knowledge_agent:fetch:skogai_notation] +
->>>>>>> Stashed changes
-=======
-<<<<<<< HEAD
->>>>>>> skogai-0.2
-Response: [@knowledge_agent:fetch:skogai_notation] +
-<<<<<<< HEAD
-=======
-Response: [@knowledge_agent:fetch:skogai_notation] +
->>>>>>> feature/skogai
-=======
->>>>>>> 4a2fc32 (Update home knowledge base to reflect SkogAI ecosystem scope)
-<<<<<<< HEAD
-=======
-=======
-<<<<<<< Updated upstream
-Response: [@knowledge_agent:fetch:skogai_notation] +
-=======
-Response: [@knowledge_agent:fetch:skogai_notation] +
->>>>>>> Stashed changes
->>>>>>> skogai-0.2
->>>>>>> Stashed changes
->>>>>>> skogai-0.2
           [@claude:explain:fetched_knowledge]
 ```
 
@@ -458,16 +290,4 @@ This creates an ecosystem where the whole is greater than the sum of its parts, 
 
 AI-to-AI communication in SkogAI transforms artificial intelligence from isolated tools into collaborative partners. By providing formal, secure, and efficient communication protocols, the system enables new forms of AI collaboration that maintain mathematical rigor while achieving practical utility.
 
-<<<<<<< HEAD
 The result is an AI ecosystem where agents can communicate as naturally as humans, but with the precision and reliability that only formal systems can provide.
-=======
-<<<<<<< Updated upstream
-The result is an AI ecosystem where agents can communicate as naturally as humans, but with the precision and reliability that only formal systems can provide.
-=======
-<<<<<<< HEAD
-The result is an AI ecosystem where agents can communicate as naturally as humans, but with the precision and reliability that only formal systems can provide.
-=======
-The result is an AI ecosystem where agents can communicate as naturally as humans, but with the precision and reliability that only formal systems can provide.
->>>>>>> skogai-0.2
->>>>>>> Stashed changes
->>>>>>> skogai-0.2
