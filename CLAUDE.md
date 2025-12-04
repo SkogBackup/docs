@@ -21,10 +21,6 @@ Both representations reflect the same underlying knowledge - the filesystem prov
 - **Governance Records**: Democratic decision-making, library sessions, and official proceedings
 - **Reference Materials**: Comprehensive specifications, principles, and workflow patterns
 
-### Relationship to Parent Repository
-
-The parent repository (`/home/skogix/skogai/`) contains the LLM-Functions framework (tools, agents, MCP servers). See `/home/skogix/skogai/CLAUDE.md` for guidance on that codebase. This CLAUDE.md focuses specifically on working with the documentation and knowledge base.
-
 ## Directory Structure
 
 ### Core Documentation Directories
