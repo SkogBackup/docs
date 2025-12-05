@@ -1,8 +1,0 @@
-{
-  "session_id": "6340413a-10ed-4115-bc9f-e036c812102e",
-  "prompts": [
-    "hello claude ",
-    "/commit ",
-    "we are in the docs project which have a crap load of markdown files mostly. I'd like you to essentially run tree for the whole project and analyze the file structure "
-  ]
-}

@@ -1,8 +1,0 @@
-{
-  "session_id": "4631cdf4-84f9-4948-8eb9-2d126310cf11",
-  "prompts": [
-    "/init ",
-    "/add-command worktree \"an agent which manages git worktrees. will first and foremost be called by other agents and handle the chores such as \"prune the old and stale ones. check if any issues or other requests exists which would benifit from having a worktree setup already.",
-    "/gh-issue We need a issue creation workflow @.github/workflow which helps the user or other agents to create issues via github"
-  ]
-}
