@@ -1,4 +1,8 @@
 ---
+permalink: todo/curated/home/skogix/skogai/docs/real-output-from-real-ai/todo/skogai-schema
+---
+
+---
 categories:
 
 1. Software Development

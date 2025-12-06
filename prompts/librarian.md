@@ -1,6 +1,8 @@
 ---
 use_tools: skogai_memory_read_content,skogai_memory_delete_note,skogai_memory_build_context,skogai_memory_recent_activity,skogai_memory_read_note,skogai_memory_search_notes,tools_skog_example,skog_example,skogai_memory_write_note,skogai_memory_canvas,skogai_memory_project_info,fs
+permalink: prompts/librarian
 ---
+
 [Inputs]
 {{QUERY}}
 {{CONTEXT}}

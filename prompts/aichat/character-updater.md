@@ -1,6 +1,8 @@
 ---
 use_tools: fs
+permalink: prompts/aichat/character-updater
 ---
+
 # SkogAI Character Architect: update
 
 ## Task Description

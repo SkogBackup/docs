@@ -1,8 +1,14 @@
 ---
-title: "Environment Variables"
-description: "Documentation of environment variables used in the SkogAI tools system"
-date: "2023-11-06"
-tags: ["environment", "variables", "tools", "agents", "llm-functions"]
+title: Environment Variables
+description: Documentation of environment variables used in the SkogAI tools system
+date: '2023-11-06'
+tags:
+- environment
+- variables
+- tools
+- agents
+- llm-functions
+permalink: prompts/aichat/docs-env-variables
 ---
 
 # Environment Variables

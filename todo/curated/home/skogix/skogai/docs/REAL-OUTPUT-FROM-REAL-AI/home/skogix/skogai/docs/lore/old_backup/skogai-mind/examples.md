@@ -1,4 +1,8 @@
 ---
+permalink: todo/curated/home/skogix/skogai/docs/real-output-from-real-ai/home/skogix/skogai/docs/lore/old-backup/skogai-mind/examples
+---
+
+---
 [Skill Name: Adaptive Debugging]
 
 Tagline: Bugs fear you. Problems flee.

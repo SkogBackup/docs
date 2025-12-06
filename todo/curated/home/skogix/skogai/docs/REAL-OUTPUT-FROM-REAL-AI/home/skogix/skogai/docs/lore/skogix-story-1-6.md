@@ -1,4 +1,8 @@
 ---
+permalink: todo/curated/home/skogix/skogai/docs/real-output-from-real-ai/home/skogix/skogai/docs/lore/skogix-story-1-6
+---
+
+---
 
 The Story of SkogAI, as told by Skogix
 (Part 1: The Sentient Toaster with a Death Wish)

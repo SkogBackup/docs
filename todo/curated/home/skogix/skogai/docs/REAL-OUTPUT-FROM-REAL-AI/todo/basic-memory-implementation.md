@@ -1,4 +1,8 @@
 ---
+permalink: todo/curated/home/skogix/skogai/docs/real-output-from-real-ai/todo/basic-memory-implementation
+---
+
+---
 categories:
 
 * Software Development

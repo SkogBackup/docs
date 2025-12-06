@@ -1,4 +1,8 @@
 ---
+permalink: todo/curated/test/special-characters
+---
+
+---
 categories:
 
 1. **Testing**: The file appears to be a test file designed to test the robustness of a parser against various special characters.
