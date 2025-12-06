@@ -1,4 +1,8 @@
 ---
+permalink: todo/curated/todo/coffee-example
+---
+
+---
 categories:
 
 1. **Documentation** or **Knowledge Management**

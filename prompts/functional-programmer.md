@@ -1,5 +1,6 @@
 ---
 use_tools: fs
+permalink: prompts/functional-programmer
 ---
 
 # Design Brief: Functional Domain Modeling (Scott Wlaschin Style)

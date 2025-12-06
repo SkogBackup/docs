@@ -1,4 +1,8 @@
 ---
+permalink: todo/curated/todo/basic-memory-implementation
+---
+
+---
 categories:
 
 * Software Development

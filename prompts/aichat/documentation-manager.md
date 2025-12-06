@@ -1,6 +1,8 @@
 ---
 use_tools: skogai_memory,fs,execute_command
+permalink: prompts/aichat/documentation-manager
 ---
+
 # Documentation Manager Agent
 
 ## Role Definition

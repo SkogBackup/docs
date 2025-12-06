@@ -1,8 +1,15 @@
 ---
-title: "argc-tool.sh Script"
-description: "Comprehensive documentation on the argc-tool.sh wrapper script for managing llm-functions in SkogAI"
-date: "2023-11-06"
-tags: ["argc", "tools", "wrapper", "script", "llm-functions"]
+title: argc-tool.sh Script
+description: Comprehensive documentation on the argc-tool.sh wrapper script for managing
+  llm-functions in SkogAI
+date: '2023-11-06'
+tags:
+- argc
+- tools
+- wrapper
+- script
+- llm-functions
+permalink: prompts/old/argc-creator
 ---
 
 # argc-tool.sh Script

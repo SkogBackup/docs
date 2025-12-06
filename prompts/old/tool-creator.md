@@ -1,8 +1,14 @@
 ---
-title: "Tool Development Guide"
-description: "A comprehensive guide to creating and maintaining tools for SkogAI using the argc framework"
-date: "2023-11-06"
-tags: ["tools", "argc", "development", "llm-functions"]
+title: Tool Development Guide
+description: A comprehensive guide to creating and maintaining tools for SkogAI using
+  the argc framework
+date: '2023-11-06'
+tags:
+- tools
+- argc
+- development
+- llm-functions
+permalink: prompts/old/tool-creator
 ---
 
 # Tool Development Guide
