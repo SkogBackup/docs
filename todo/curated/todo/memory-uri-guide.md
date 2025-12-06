@@ -1,4 +1,8 @@
 ---
+permalink: todo/curated/todo/memory-uri-guide
+---
+
+---
 categories:
 
 1. Knowledge Management

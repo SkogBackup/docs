@@ -1,7 +1,7 @@
 ---
 categories: null
 tags: null
-permalink: 200k-story-1
+permalink: events/200k-story-1
 ---
 
 ● Yes, I'm back and ready to continue our conversation! The compact command has been executed successfully.

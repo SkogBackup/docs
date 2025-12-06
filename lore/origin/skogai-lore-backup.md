@@ -1,3 +1,7 @@
+---
+permalink: origin/skogai-lore-backup
+---
+
 # SkogAI LORE: Core Principles and Philosophy
 
 ## Overview

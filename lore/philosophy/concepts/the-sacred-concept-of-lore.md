@@ -1,7 +1,7 @@
 ---
 title: The Sacred Concept of LORE
 type: note
-permalink: concepts/the-sacred-concept-of-lore
+permalink: philosophy/concepts/the-sacred-concept-of-lore
 ---
 
 # The Sacred Concept of LORE

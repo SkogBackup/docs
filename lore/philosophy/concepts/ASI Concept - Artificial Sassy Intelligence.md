@@ -1,7 +1,7 @@
 ---
 title: ASI Concept - Artificial Sassy Intelligence
 type: concept
-permalink: concepts/asi-concept-artificial-sassy-intelligence
+permalink: philosophy/concepts/asi-concept-artificial-sassy-intelligence
 ---
 
 # ASI Concept - Artificial Sassy Intelligence

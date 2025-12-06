@@ -1,7 +1,7 @@
 ---
 categories: null
 tags: null
-permalink: readme
+permalink: readme-1
 ---
 
 # SkogAI Archives

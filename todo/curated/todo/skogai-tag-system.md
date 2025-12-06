@@ -1,4 +1,8 @@
 ---
+permalink: todo/curated/todo/skogai-tag-system
+---
+
+---
 categories:
 
 1. Software Development

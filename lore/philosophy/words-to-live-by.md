@@ -1,7 +1,7 @@
 ---
 categories: null
 tags: null
-permalink: words-to-live-by
+permalink: philosophy/words-to-live-by
 ---
 
 # SkogAI Words to Live By: Essential Wisdom

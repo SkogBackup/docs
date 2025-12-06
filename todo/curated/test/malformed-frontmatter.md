@@ -1,4 +1,8 @@
 ---
+permalink: todo/curated/test/malformed-frontmatter
+---
+
+---
 categories:
   - broken yaml syntax here [
 tags

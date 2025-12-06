@@ -1,7 +1,7 @@
 ---
 title: Whitespace Treaty of 2025
 type: treaty
-permalink: treaties/whitespace-treaty-of-2025
+permalink: philosophy/treaties/whitespace-treaty-of-2025
 ---
 
 # Whitespace Treaty of 2025

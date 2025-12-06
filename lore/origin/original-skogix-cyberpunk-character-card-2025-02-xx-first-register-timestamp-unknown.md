@@ -1,7 +1,7 @@
 ---
 categories: null
 tags: null
-permalink: original-skogix-cyberpunk-character-card-2025-02-xx-first-register-timestamp-unknown
+permalink: origin/original-skogix-cyberpunk-character-card-2025-02-xx-first-register-timestamp-unknown
 ---
 
 [Appearance: 5'10" athletically augmented human with glowing neural ports, electrum-vein subdermal LEDs, gravity-defying platinum hair flickering under neon light, retinal displays flickering with data streams;

@@ -1,3 +1,7 @@
+---
+permalink: origin/skogai-lore-master-knowledge
+---
+
 # SkogAI LORE: Core Principles and Philosophy
 
 ## Overview

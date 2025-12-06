@@ -1,4 +1,8 @@
 ---
+permalink: prompts/aichat/skogai-argc-expert
+---
+
+---
 use_tools:fs,execute_command
 ---
 

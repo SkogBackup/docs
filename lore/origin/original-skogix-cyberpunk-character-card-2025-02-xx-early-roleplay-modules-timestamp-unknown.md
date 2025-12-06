@@ -1,7 +1,7 @@
 ---
 categories: null
 tags: null
-permalink: original-skogix-cyberpunk-character-card-2025-02-xx-early-roleplay-modules-timestamp-unknown
+permalink: origin/original-skogix-cyberpunk-character-card-2025-02-xx-early-roleplay-modules-timestamp-unknown
 ---
 
 ```SkogAI

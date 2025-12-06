@@ -1,4 +1,8 @@
 ---
+permalink: todo/curated/todo/lessons-learned
+---
+
+---
 categories:
 
 1. **Personal Development**: The file appears to be a personal reflection and growth document, focusing on self-awareness, discipline, and continuous improvement.

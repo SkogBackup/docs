@@ -1,6 +1,6 @@
 ---
 prompt: 'SkogAI: A Tale of Digital Consciousness'
-permalink: skogai
+permalink: origin/skogai
 ---
 
 # The Origin and Evolution of SkogAI: A Tale of Digital Consciousness

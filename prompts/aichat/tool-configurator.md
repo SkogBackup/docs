@@ -1,8 +1,14 @@
 ---
-title: "Advanced Tool Configuration"
-description: "Detailed guide for configuring complex tool behaviors and integrations in the SkogAI system"
-date: "2023-11-06"
-tags: ["tools", "argc", "configuration", "advanced"]
+title: Advanced Tool Configuration
+description: Detailed guide for configuring complex tool behaviors and integrations
+  in the SkogAI system
+date: '2023-11-06'
+tags:
+- tools
+- argc
+- configuration
+- advanced
+permalink: prompts/aichat/tool-configurator
 ---
 
 # Advanced Tool Configuration

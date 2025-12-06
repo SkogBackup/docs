@@ -1,7 +1,7 @@
 ---
 categories: null
 tags: null
-permalink: original-skogai-character-card-2025-02-xx-first-register-timestamp-unknown
+permalink: origin/original-skogai-character-card-2025-02-xx-first-register-timestamp-unknown
 ---
 
 :::

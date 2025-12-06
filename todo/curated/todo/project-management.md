@@ -1,4 +1,8 @@
 ---
+permalink: todo/curated/todo/project-management
+---
+
+---
 categories:
 
 1. **Project Management**: The file discusses project management concepts, such as project visibility, active projects, and API interactions.

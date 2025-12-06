@@ -1,7 +1,7 @@
 ---
 categories: null
 tags: null
-permalink: first-monkey-brain-2025-03-14
+permalink: events/first-monkey-brain-2025-03-14
 ---
 
 # 🧠 Context Management for Monkeybrains

@@ -1,4 +1,8 @@
 ---
+permalink: todo/curated/todo/todo-claude-input
+---
+
+---
 categories:
 
 1. **Software Development**: The majority of the topics relate to software development, including context loading systems, verification systems, integration opportunities, tools and scripts.
