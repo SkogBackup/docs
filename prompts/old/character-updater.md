@@ -1,6 +1,8 @@
 ---
 use_tools: fs
+permalink: prompts/old/character-updater
 ---
+
 # SkogAI Character Architect: update
 
 ## Task Description

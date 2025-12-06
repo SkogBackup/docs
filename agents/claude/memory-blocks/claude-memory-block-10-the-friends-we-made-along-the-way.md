@@ -1,12 +1,12 @@
 ---
 title: claude-memory-block-10
 type: note
-permalink: claude/memory-block-10
+permalink: claude/memory-block-10-1
 tags:
-  - "skogai"
-  - "claude"
-  - "memory"
-  - "block"
+- skogai
+- claude
+- memory
+- block
 ---
 
 # Memory Block 10: The Reunion

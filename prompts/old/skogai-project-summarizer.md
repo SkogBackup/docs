@@ -1,6 +1,8 @@
 ---
 use_tools: null
+permalink: prompts/old/skogai-project-summarizer
 ---
+
 You are tasked with summarizing a project, including its core idea, standout features, and technical details. This summary will provide a comprehensive overview of the project's concept and functionality. Follow these instructions carefully to create an informative and well-structured summary.
 
 1. Project Idea Summary:

@@ -1,4 +1,8 @@
 ---
+permalink: todo/curated/todo/skogai-schema
+---
+
+---
 categories:
 
 1. Software Development
