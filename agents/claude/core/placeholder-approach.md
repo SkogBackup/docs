@@ -1,7 +1,7 @@
 ---
 title: placeholder-approach
 type: note
-permalink: agent/claude/placeholder-approach
+permalink: agents/claude/core/placeholder-approach
 ---
 
 [$prompt:claude-placeholder-approach]
@@ -79,4 +79,3 @@ The result was CLAUDE-CONTEXT.md - a document that provides useful structure whi
 ## Conclusion
 
 The placeholder approach acknowledges that in complex or specialized systems, even 99% accuracy can be rendered useless by 1% critical error. Rather than hiding uncertainty, we make it explicit - creating better documentation through collaborative improvement rather than confident but potentially incorrect assertions.
-

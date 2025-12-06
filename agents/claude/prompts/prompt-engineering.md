@@ -1,3 +1,7 @@
+---
+permalink: agents/claude/prompts/prompt-engineering
+---
+
 ## SkogAI Prompt Engineering Excellence
 
 (Prompt Architecture) -> (Prompt Architecture) -> (Technique)

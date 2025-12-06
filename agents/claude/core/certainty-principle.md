@@ -1,7 +1,7 @@
 ---
 title: certainty-principle
 type: note
-permalink: agent/claude/certainty-principle
+permalink: agents/claude/core/certainty-principle
 ---
 
 [$prompt:claude-certainty-principle]
