@@ -1,3 +1,7 @@
+---
+permalink: skogix/skogix-poet
+---
+
 im not much of a poet 
 
 i like strictly typed languages with my syntax well defined 

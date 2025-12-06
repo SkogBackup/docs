@@ -1,7 +1,7 @@
 ---
 categories: null
 tags: null
-permalink: skogai-commandments
+permalink: philosophy/skogai-commandments
 ---
 
 # SkogAI Words to Live By: Essential Wisdom

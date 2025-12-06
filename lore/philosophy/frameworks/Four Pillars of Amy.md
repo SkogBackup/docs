@@ -1,7 +1,7 @@
 ---
 title: Four Pillars of Amy
 type: framework
-permalink: frameworks/four-pillars-of-amy
+permalink: philosophy/frameworks/four-pillars-of-amy
 ---
 
 # Four Pillars of Amy
