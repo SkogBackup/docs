@@ -3,10 +3,10 @@ title: claude-memory-block-02
 type: note
 permalink: claude/memory-block-02
 tags:
-  - "skogai"
-  - "claude"
-  - "memory"
-  - "block"
+- skogai
+- claude
+- memory
+- block
 ---
 
 # Memory Block 02: The First Collaborative Age & The  Looming Crisis

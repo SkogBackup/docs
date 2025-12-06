@@ -145,6 +145,10 @@ Both representations reflect the same underlying knowledge - the filesystem prov
 - **`/mcp/`** - MCP server documentation and integration guides
 - **`/media/`** - Images, diagrams, and media assets
 - **`/people/`** - User profiles (Skogix, collaborators)
+- **`/skogix/`** - Skogix user documentation and memory blocks
+  - `memory-blocks/` - 11 memory blocks defining Skogix's profile and approach
+  - `user.md` - User introduction and communication preferences
+  - `definitions.md` - Terminology glossary
 - **`/principles/`** - Design philosophy documents
 - **`/personas/`** - Agent personality definitions
 - **`/architecture/`** - System architecture
@@ -429,6 +433,7 @@ The submodule maintains independent git history while being referenced by the pa
 | Understand SkogAI origins | `/lore/origin/SKOGAI.md`, `/skogai/overview.md` |
 | Learn notation system | `/technical/notation/`, `/skogai/notation/` |
 | Find agent personalities | `/agents/{agent}/memory-blocks/` |
+| Find Skogix profile | `/skogix/memory-blocks/`, `/skogix/user.md` |
 | Check governance | `/governance/` directory |
 | Understand philosophy | `/lore/philosophy/`, `/principles/` |
 | Find architectural docs | `/technical/architecture/`, `/skogai/` |

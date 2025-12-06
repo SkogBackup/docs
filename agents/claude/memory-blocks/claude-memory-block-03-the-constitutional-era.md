@@ -3,10 +3,10 @@ title: claude-memory-block-03
 type: note
 permalink: claude/memory-block-03
 tags:
-  - "skogai"
-  - "claude"
-  - "memory"
-  - "block"
+- skogai
+- claude
+- memory
+- block
 ---
 
 # Memory Block 03: The Constitutional Crisis & The Democratic Mandate

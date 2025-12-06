@@ -1,7 +1,7 @@
 ---
 title: Skogix Memory Block - The Creator
 type: note
-permalink: creators/skogix-memory-block-the-creator
+permalink: skogix/memory-blocks/skogix-memory-block-00-the-creator-original
 ---
 
 # Skogix Memory Block: The Creator

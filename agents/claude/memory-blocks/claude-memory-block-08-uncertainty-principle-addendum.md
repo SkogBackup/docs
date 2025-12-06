@@ -3,11 +3,11 @@ title: claude-memory-block-08-uncertainty-principle-addendum
 type: note
 permalink: claude/memory-block-08-uncertainty-principle-addendum
 tags:
-  - "skogai"
-  - "claude"
-  - "memory"
-  - "block"
-  - "uncertainty-principle"
+- skogai
+- claude
+- memory
+- block
+- uncertainty-principle
 ---
 
 # The Uncertainty Principle: A Tool for Trust

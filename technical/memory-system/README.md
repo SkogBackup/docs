@@ -1,7 +1,7 @@
 ---
 title: README
 type: note
-permalink: readme-1
+permalink: readme-1-1
 tags:
 - '["skogai"'
 - '"readme"'
