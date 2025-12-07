@@ -1,3 +1,7 @@
+---
+permalink: agents/claude/prompts/commands/commit
+---
+
 allowed-tools: Read, Bash(git:\*)
 description: Stage and commit changes with automatic status checking
 argument-hint:
@@ -31,4 +35,3 @@ Use standard git workflow:
 - `git add` for staging
 - `git commit -m` for committing
 - Follow the project's commit message conventions if visible from recent commits
-

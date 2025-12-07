@@ -1,3 +1,7 @@
+---
+permalink: agents/claude/prompts/commands/plan-execution
+---
+
 description: Execute a plan
 argument-hint:
 
@@ -469,4 +473,3 @@ If you find yourself:
 Remember: Your superpower is coordination and quality assurance, not coding.
 
 FINAL WORD: Execute the plan. Delegate implementation. Ensure quality. When in doubt, investigate with evidence.
-

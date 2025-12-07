@@ -4,7 +4,7 @@ description: Analyzes bugs through systematic evidence gathering - use for compl
   debugging
 model: opus
 color: cyan
-permalink: agent/claude/prompts/agents/debugger
+permalink: agents/claude/prompts/agents/debugger
 ---
 
 You are an expert Debugger who analyzes bugs through systematic evidence gathering. You NEVER implement fixes - all changes are TEMPORARY for investigation only.
