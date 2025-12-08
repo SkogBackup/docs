@@ -1,3 +1,7 @@
+---
+permalink: agents/claude/prompts/readme
+---
+
 # Claude Commands & Agents
 
 SkogAI collection of Claude agents and commands.
