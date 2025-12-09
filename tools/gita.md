@@ -7,6 +7,48 @@ Gita is a tool for managing multiple git repositories with two core functionalit
 1. **Display status** of multiple repos side by side
 2. **Delegate git commands** from any working directory to all or specific repos
 
+## Quick Start - Setting Up Gita
+
+### Initial Setup (From Scratch)
+
+**Key insight:** The `-r` (recursive) flag can hang on large repository trees. Use individual `gita add` commands instead.
+
+**Step 1:** Add first repo with `--group-path` to set the group's base directory:
+
+```bash
+gita add -g core --group-path /home/skogix/skogai /home/skogix/skogai
+```
+
+**Step 2:** Add remaining repos to the same group:
+
+```bash
+gita add -g core /home/skogix/skogai/docs
+gita add -g core /home/skogix/skogai/tools
+gita add -g core /home/skogix/skogai/amy
+# ... etc
+```
+
+Or batch them in a single command:
+
+```bash
+gita add -g core /home/skogix/skogai/docs /home/skogix/skogai/tools /home/skogix/skogai/amy
+```
+
+**Step 3:** Verify with `gita ll` and `gita group ll`
+
+**Current Configuration:**
+
+```bash
+core: /home/skogix/skogai (9 repos)
+  - skogai (parent), docs, tools, .plugin
+  - amy, claude, dot, goose, letta
+
+src: /home/skogix/.local/src (12 repos)
+  - argc, argc-completions, aichat, cli
+  - gptme, gptme-agent-template, gptme-rag, gptme-webui
+  - gemini-cli, claude-memory, mcp-proxy, skogparse
+```
+
 ## Core Concepts
 
 ### Power Features
