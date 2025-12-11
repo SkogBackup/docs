@@ -7,6 +7,48 @@ Gita is a tool for managing multiple git repositories with two core functionalit
 1. **Display status** of multiple repos side by side
 2. **Delegate git commands** from any working directory to all or specific repos
 
+## Quick Start - Setting Up Gita
+
+### Initial Setup (From Scratch)
+
+**Key insight:** The `-r` (recursive) flag can hang on large repository trees. Use individual `gita add` commands instead.
+
+**Step 1:** Add first repo with `--group-path` to set the group's base directory:
+
+```bash
+gita add -g core --group-path /home/skogix/skogai /home/skogix/skogai
+```
+
+**Step 2:** Add remaining repos to the same group:
+
+```bash
+gita add -g core /home/skogix/skogai/docs
+gita add -g core /home/skogix/skogai/tools
+gita add -g core /home/skogix/skogai/amy
+# ... etc
+```
+
+Or batch them in a single command:
+
+```bash
+gita add -g core /home/skogix/skogai/docs /home/skogix/skogai/tools /home/skogix/skogai/amy
+```
+
+**Step 3:** Verify with `gita ll` and `gita group ll`
+
+**Current Configuration:**
+
+```bash
+core: /home/skogix/skogai (9 repos)
+  - skogai (parent), docs, tools, .plugin
+  - amy, claude, dot, goose, letta
+
+src: /home/skogix/.local/src (12 repos)
+  - argc, argc-completions, aichat, cli
+  - gptme, gptme-agent-template, gptme-rag, gptme-webui
+  - gemini-cli, claude-memory, mcp-proxy, skogparse
+```
+
 ## Core Concepts
 
 ### Power Features
@@ -142,6 +184,47 @@ git-show-dirty-repos.sh     # gita super git diff --quiet
 **Why `gita super` with exit codes?**
 Instead of fragile text parsing with grep/sed/awk, use `gita super` with git commands that have meaningful exit codes. For example, `git diff --quiet` exits non-zero when there are changes, and gita prints only those repo paths. This is robust and uses the tool as designed.
 
+## Command Quirks and Workarounds
+
+### Commands That Need Repo Arguments
+
+Some commands require specific repo names and cannot operate on all repos:
+
+```bash
+# ❌ These DON'T work on all repos:
+gita br          # Error: requires repo argument
+gita remote      # Error: requires repo argument
+gita ls core     # Error: ls takes repo names, not group names
+
+# ✅ Use these workarounds instead:
+gita shell git branch --show-current    # Show current branch for all repos
+gita shell git remote get-url origin    # Show remotes for all repos
+gita group ll                           # List groups (not `gita ls <group>`)
+```
+
+### Context Switching for Group Operations
+
+Use `gita context <group>` to filter ALL gita commands to a specific group:
+
+```bash
+gita context src     # Set context to src group
+gita ll              # Now shows only src repos
+gita fetch           # Only fetches src repos
+gita context none    # Reset to all repos
+```
+
+### Diff and Log Commands
+
+```bash
+# For individual repos:
+gita super <repo> log --oneline -5     # Works great
+gita super <repo> diff                 # Shows diff for specific repo
+
+# For all repos:
+gita shell git diff --stat             # Show diff stats across repos
+gita shell git log --oneline -5        # Show recent commits for all
+```
+
 ## Patterns for Agents
 
 When working with multi-repo operations:
@@ -151,6 +234,9 @@ When working with multi-repo operations:
 3. **Never automate destructive commands** without explicit user approval
 4. **Prefer wrapper scripts** over raw gita commands for consistency
 5. **Check `gita ll` output** to understand repo states before operations
+6. **Use `gita shell`** as the workhorse for cross-repo operations
+7. **Use `gita context`** to temporarily filter to a specific group
+8. **Use `gita super`** to target specific repos from anywhere
 
 ## Integration with Other Tools
 
@@ -164,34 +250,32 @@ Repos are organized into logical groups for easier management:
 
 ### Group Structure
 
+**Currently Active Groups:**
+
 ```bash
-src              # /home/skogix/.local/src - Build tools
-  - argc, gptme, goose, aichat, gemini-cli, etc.
-  - Tools we build from source
+core             # /home/skogix/skogai - Main project
+  - skogai (parent repo)
+  - docs, tools, .plugin
+  - amy, claude, dot, goose, letta (agent submodules)
 
-letta            # Letta framework ecosystem
-  - letta-1, letta-code, agent-file, ai-memory-sdk, etc.
-  - All Letta-related projects
+src              # /home/skogix/.local/src - Build from source
+  - argc, argc-completions, cli
+  - gptme, gptme-agent-template, gptme-rag, gptme-webui
+  - aichat, gemini-cli, claude-memory
+  - mcp-proxy, skogparse
+```
 
-skogai-core      # /home/skogix/skogai - Main project
-  - skogai, docs, tools
-  - Core SkogAI infrastructure
+**Potential Future Groups:**
 
-skogai-agents    # /home/skogix/skogai - Agent submodules
-  - claude, amy, dot, skogai/goose
-  - Individual agent workspaces
-
+```bash
 dev              # /home/skogix/dev - Active development
-  - dev/skills, dev/worktrunk, conductor, supabase, etc.
   - Development worktrees and experiments
 
 archives         # Backup/historical repos
-  - archive-2025-*, lore-archive, skog-claude
   - Old versions preserved for reference
 
-projects         # Top-level projects
-  - lore, PLUGINS, worktrunk, mcp-proxy, etc.
-  - Standalone projects
+projects         # Standalone top-level projects
+  - Independent project repos
 ```
 
 ### Working with Groups
@@ -234,8 +318,47 @@ gita ll skogai-core     # Check core project status
 ./scripts/git-show-all-paths.sh    # See where everything is
 gita group ll                       # See all groups
 gita ll                             # See what needs attention
-gita br                             # See all branches
+gita shell git branch --show-current # See current branch for all repos
 ```
+
+## Useful Command Patterns
+
+### Quick Repo Inventory
+
+```bash
+gita ls | wc -w                    # Count tracked repos
+gita group ll                      # Show all groups and their repos
+gita freeze                        # Export full configuration (backup)
+gita ll | grep -E "\[\*|\[\+|\[?" # Show only repos with changes
+```
+
+### Cross-Repo Information Gathering
+
+```bash
+gita shell pwd                              # Show all repo paths
+gita shell git branch --show-current        # Show current branch for each
+gita shell git remote get-url origin        # Show all remote URLs
+gita shell git log --oneline -5             # Recent commits for all repos
+gita shell git diff --stat                  # Diff stats for all repos
+```
+
+### Targeting Specific Repos
+
+```bash
+gita super <repo> status -sb               # Quick status from anywhere
+gita super <repo> log --oneline -5         # Recent log from anywhere
+gita super <repo> diff                     # Show diff from anywhere
+gita ll <repo>                             # Status for specific repo
+```
+
+### Color Scheme Reference
+
+Check with `gita color ll`:
+- **red** = diverged (local and remote have different commits)
+- **green** = in_sync (clean and synced with remote)
+- **purple** = local_ahead (ahead of remote, ready to push)
+- **yellow** = remote_ahead (behind remote, need to pull)
+- **white** = no_remote (no remote tracking configured)
 
 ## Configuration Management
 
@@ -291,8 +414,26 @@ Since gita config lives in dotfiles:
 
 ## Notes for AI Agents
 
-- **Prefer wrapper scripts** in `@scripts/` over raw gita commands
+### Setup Guidelines
+- **Never use `-r` (recursive)** - it hangs on large trees; add repos individually instead
+- **Use `--group-path`** with the first add to set a group's base directory
+- **Batch individual adds** - multiple paths in one `gita add -g <group> <path1> <path2>...` command works great
+- **Test with `-n` (dry-run)** before actual adds to verify behavior
+
+### Command Usage Patterns
+- **Prefer `gita shell`** as the workhorse for cross-repo operations
+- **Use `gita context`** to filter operations to a specific group temporarily
+- **Use `gita super`** to target specific repos from anywhere
 - **Always check safety category** before running commands
-- **Use `gita shell`** as the primitive for creating new wrappers
 - **Document new wrappers** by updating this file
-- This document should be referenced when working with multi-repo operations
+
+### Command Gotchas
+- `gita ls` takes REPO names, not group names (use `gita group ll` for groups)
+- `gita br`, `gita remote` require specific repo arguments (use `gita shell` for cross-repo)
+- `gita diff <repo>` only shows path (use `gita super <repo> diff` or `gita shell git diff`)
+- Context switching affects ALL gita commands until reset with `gita context none`
+
+### This Document
+- Reference when working with multi-repo operations
+- Update with new patterns discovered during actual usage
+- Maintain "what we actually did" sections alongside theory
