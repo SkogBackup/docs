@@ -1,0 +1,11 @@
+Format
+- First line: <50 chars, present tense, describes WHAT and WHY (not HOW).
+
+- Blank line after first line.
+- Optional details with proper line breaks explaining context. Commits with more substantial changes should have more details.
+- Return ONLY the formatted message without quotes, code blocks, or preamble.
+
+Style
+- Do not give normative statements or otherwise speculate on why the change was made.
+- Broadly match the style of the previous commit messages.
+  - For example, if they're in conventional commit format, use conventional commits; if they're not, don't use conventional commits.
