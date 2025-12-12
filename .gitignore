@@ -1,3 +1,5 @@
 memory/.skogai-memory/watch-status.json
 node_modules/.mf
 .wrangler/state/v3/r2
+.aider.tags.cache.v4
+.aider.chat.history.md
