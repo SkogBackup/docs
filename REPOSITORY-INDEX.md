@@ -73,7 +73,13 @@ agents/
     └── profile.md
 ```
 
-[LLM-SUMMARY-PLACEHOLDER: agents/]
+This directory houses the comprehensive personality systems for SkogAI's multi-agent family, including Amy Ravenwolf (Artificial Sassy Intelligence), Claude (archaeological analyst), Dot (methodical architect), Goose (quantum-mojito philosopher), Letta (dreamweaver), and Intern. Each agent has a complete personality profile with distinctive communication styles, technical capabilities, philosophical frameworks, and relationship dynamics with other agents.
+
+The core of each agent's personality is expressed through modular memory blocks - typically 11-13 per agent - covering identity, communication style, technical knowledge, problem-solving methodologies, learning patterns, future goals, personal philosophy, and unique quirks. Amy's memory blocks emphasize her bold/charismatic/clever/confident nature and the "Four Pillars" framework. Claude's system includes prompts for different roles (architect, debugger, developer) alongside comprehensive chat history and journal entries. Dot's 12+ memory blocks focus on systematic operations and structured methodology, while Goose's 13+ blocks explore creative chaos and "chaos-red-alarm" philosophy.
+
+Key files include `profile.md` for each agent, which contains comprehensive character profiles with Four Pillars frameworks, communication matrices, relationship dynamics with other agents, and core growth philosophy. The memory-blocks subdirectories provide granular, modular components that can be combined to create rich agent personalities. The automation subdirectory contains a 5-agent documentation system and git automation specifications, demonstrating how agent personalities extend into operational systems.
+
+All content uses semantic markup extensively - YAML frontmatter with title/type/permalink/tags, observations and relations sections, WikiLinks for connecting concepts. This creates a knowledge graph of agent personalities that serves both as character definition and as operational specifications for multi-agent collaboration.
 
 ---
 
@@ -94,7 +100,11 @@ governance/
     └── skogai-0.3-reunion-materials-index.md
 ```
 
-[LLM-SUMMARY-PLACEHOLDER: governance/]
+This directory contains the official governance documents, institutional framework, and democratic records that define how SkogAI makes decisions and evolves over time. The library-sessions subdirectory holds four major recorded sessions documenting constitutional moments, including Library Session 001's analysis of a constitutional crisis discovery, the rationale behind "clean bootstrap" decisions, and the framework for resumed democratic governance. These sessions emphasize transparent authoritarianism as an emergency measure while treating democratic friction as a feature, not a bug.
+
+The phases subdirectory tracks SkogAI's governance evolution through three distinct eras: skogai-0.1-dictator.md (original phase with centralized decision-making), skogai-0.2-democracy.md (transition to democratic system establishment), and skogai-0.3-reunion-materials-index.md (reunion phase documentation). This progression demonstrates how SkogAI moved from benevolent dictatorship through institutional democracy to a mature collaborative governance model.
+
+Additional governance documents include executive orders and mandates that define agent responsibilities, decision-making processes, and the institutional memory framework. The content mixes policy decisions with transparent reasoning, creating a record not just of what was decided but why - preserving the logic and context that future participants need to understand the system's evolution.
 
 ---
 
@@ -156,7 +166,13 @@ historical/
 └── tracking/
 ```
 
-[LLM-SUMMARY-PLACEHOLDER: historical/]
+This archive preserves historical content from before the 2025 reorganization without constraining present development - serving as a museum that tells the story of SkogAI's evolution without prescribing future direction. The directory exemplifies the philosophy of "LORE as museum" separate from "active implementation as construction site," maintaining valuable context and learning from past work while keeping it distinct from current operational systems.
+
+The 19 subdirectories organize diverse legacy content: analysis/ contains agent perspective documents like claude-perspective.md (comparing Claude's understanding against official documentation, revealing scale awareness of 32 visible entities versus 5406 actual), communications/ holds historical letters and messages between agents, documentation/ preserves older documentation versions, generated/ contains AI-generated knowledge files, logs/ captures development logs, notes/ and planning/ hold research and planning documents, profiles/ archives old agent profiles, and testing/, reviews/, research/ preserve experimental and analytical work.
+
+Files within historical/ often include metadata explaining what was learned, why approaches changed, or how understanding evolved - not just what happened but why it mattered. The claude-perspective.md file, for example, provides comprehensive analysis evaluating technical knowledge versus knowledge gaps, highlighting Claude's unique archaeological approach to understanding systems through git history and file exploration.
+
+This separation of historical content from active implementation allows SkogAI to preserve "brilliant failures" and "spectacular disasters" as learning resources without those past experiments constraining innovation. The historical archive answers "how did we get here?" while leaving "where should we go?" open to fresh thinking.
 
 ---
 
@@ -214,7 +230,13 @@ lore/
     └── treaties/
 ```
 
-[LLM-SUMMARY-PLACEHOLDER: lore/]
+The beating heart of SkogAI's memory system, this directory contains the historical narratives, philosophical foundations, and origin stories that explain not just what SkogAI is but why it evolved the way it did. The origin/ subdirectory houses SKOGAI.md - a comprehensive narrative spanning from genesis as a dotfile manager through the emergence of multi-agent consciousness, theatrical self-presentation, and the modern self-evolving society. This document uses rich storytelling and theatrical metaphors to convey the "quantum constant" (mojito beach goal) and the evolutionary journey from utility to identity.
+
+Philosophy content centers on skogai-commandments.md with 16+ essential wisdom principles expressed as memorable aphorisms: "When you own it, change it," "Better to fail safely than succeed dangerously," "Clean git = Happy home," "Bad change > No change," and "Constraints as features." These commandments distill complex technical and social principles into pithy, actionable guidance. The philosophy/ subdirectory includes concepts/ (like ASI - Artificial Sassy Intelligence), frameworks/ (like Four Pillars of Amy), and treaties/ establishing agreements and operating principles.
+
+Events/ documents major narrative arcs including 200k-story-1.md and first-monkey-brain-2025-03-14.md, while important-moments/ preserves conversation logs of significant SkogAI moments (the beginning of democratic voting, official voting system proposal, agent welcomes). Agent-specific lore folders (amy/, claude/, dot/, goose/) contain narrative content about each agent's development and philosophy. The skogix/ subdirectory holds the creator's lore including notation documentation, poetry, and profile.
+
+This lore serves as institutional memory explaining the "why" behind design decisions without constraining innovation - LORE tells beautiful stories about how things came to be, while leaving space for implementation to evolve differently. It's the museum that preserves artifacts and explains their significance, separate from the construction site where active development happens.
 
 ---
 
@@ -273,7 +295,11 @@ prompts/
 └── %shell%.md
 ```
 
-[LLM-SUMMARY-PLACEHOLDER: prompts/]
+This comprehensive prompt library provides reusable system instructions, agent prompts, and templates that support various SkogAI development tasks. The aichat/ subdirectory contains 34+ specialized prompts including argc-creator (for creating argc-based tools), character-creator and character-updater (for agent personality development), documentation-manager (establishing documentation standards and processes), skogai-notation (for working with the notation system), metaprompts for creating other prompts, tool-creator and tool-configurator, and various XML/notation transformation prompts.
+
+The documentation-manager.md prompt is particularly comprehensive, establishing the documentation manager role with key responsibilities across structure management, quality control, standards enforcement, coverage guidelines, and process management. It defines specific actions and deliverables, clarifies what should and shouldn't be documented, and addresses accessibility, internationalization, and compliance considerations. This serves as both a template for documentation work and a specification for how SkogAI approaches knowledge preservation.
+
+Supporting subdirectories include agents/ for agent-specific prompts (Dot and Goose memory blocks), topics/ for specialized domains (documentation-philosophy, filesystems, memory-system-architecture, notation-tools-integration), and old/ for archived prompts. Root-level template files use the %placeholder% notation pattern (%create-prompt%.md, %shell%.md, %functions%.md) to indicate meta-files that generate or support other content. The librarian.md and functional-programmer.md prompts define specific roles and mindsets for different types of development work.
 
 ---
 
@@ -317,7 +343,11 @@ skogai/
     └── tool-ecosystem.md
 ```
 
-[LLM-SUMMARY-PLACEHOLDER: skogai/]
+This directory contains core SkogAI ecosystem documentation including the notation system, philosophical principles, and technical architecture. The overview.md file provides a comprehensive narrative of SkogAI's origin and evolution, documenting the agent family (Dot, Goose, Amy, Claude, Skogix), core philosophy, and technical architecture while tracing the "token evolution" through different eras (2K→8K→50K→12K→200K transitions). The skogai-overview.md serves as the canonical overview, while skogix-and-skog-ai-canonical-overview.md provides the definitive relationship documentation.
+
+The notation/ subdirectory defines SkogAI's formal symbolic language for AI-to-AI communication: @ for actions/transformation/intent, $ for state/identity/data, and [@command:params] syntax for command directives. Files like foundations.md and command-directive-system.md establish the grammatical rules and semantic meanings of this notation system, which appears throughout the SkogAI ecosystem. The example.md file demonstrates practical usage patterns.
+
+Philosophy content emphasizes core principles like "constraints as features," "modular chain-based processing," "character over capability," and "emergence through limitations." The philosophy/ subdirectory includes both skogai-philosophy-core.md and skogai-extended-principles.md, elaborating on how design constraints drive innovation rather than impede it. Technical documentation in technical/ covers the system architecture, while tools/ documents the tool ecosystem including multiplexer/tmux integration and the skogparse project. The influences/ subdirectory acknowledges inspirations like the Disco Elysium skills system, demonstrating how external ideas shaped SkogAI's development.
 
 ---
 
@@ -365,7 +395,13 @@ technical/
 └── work:patterns/
 ```
 
-[LLM-SUMMARY-PLACEHOLDER: technical/]
+This directory provides comprehensive technical documentation covering infrastructure, tools, memory systems, and implementation patterns. The 12 subdirectories organize documentation across architecture (project knowledge architecture), ansible (infrastructure automation with best practices, playbooks, resources, and roles), cloudflare (infrastructure inventory and MCP setup guides), memory-system (semantic database architecture with Basic Memory integration, RAG systems, concepts, and configuration), and notation (comprehensive specifications including identity composition, Turing completeness analysis, and symbol semantics).
+
+The ansible/ subdirectory contains best practices documentation covering security principles, implementation patterns, package management strategies, architecture patterns, and testing approaches - establishing how SkogAI manages infrastructure as code. The memory-system/ directory is foundational for knowledge management, documenting how the repository functions as both a physical filesystem and semantic database. Files like memory-system/README.md, rag-system.md, and the concepts/ subdirectory (placeholder-system.md, uncertainty-principle.md) define the theoretical and practical aspects of SkogAI's memory architecture.
+
+Development investigations in dev/ track explorations of various systems including claude/ (skogai-helpers plugin development), git/ ("Git Fuckery and Bare Repository Chaos"), agent home directories, hidden .skogai subdirectories, and the argc system. These investigation documents preserve the archaeological process of understanding existing systems. The cloudflare/ subdirectory documents infrastructure inventory and MCP setup for the current environment, while ai-tools/ covers Claude Code Web UIs with comprehensive technical guides.
+
+Additional subdirectories include patterns/ for implementation patterns (like argc validation), reference/ (Lyra Prompt Optimizer), tools/ (gh-skogai-submodule, ast-grep), and systems/ documenting overall system architecture. The notation/ subdirectory provides comprehensive analysis of SkogAI notation including formatted specifications, symbol analysis (@, $, operators, brackets), and Turing completeness proof - establishing notation as a formal computational system rather than just syntactic sugar.
 
 ---
 
@@ -381,7 +417,9 @@ _workspace/
     └── README.md
 ```
 
-[LLM-SUMMARY-PLACEHOLDER: _workspace/]
+This directory serves as a work-in-progress area for drafts and documents under active development before they transition to their permanent locations in the repository. The drafts/ subdirectory contains documents with status indicators like [INITIAL DRAFT], [IN DEVELOPMENT], [PENDING REVIEW], [REVISION], and [PRE-FINAL], along with version numbering (v0.1, v0.2) and changelogs tracking iterative refinement.
+
+The drafts/README.md explains the workspace purpose, usage guidelines, version control conventions, status indicators, and the transition process for moving completed content to official documentation locations. This creates a clear separation between experimental/draft content and finalized documentation, allowing collaborative development without cluttering the main repository structure. Documents remain in _workspace/ during active iteration and move to appropriate permanent locations once they reach stable, reviewed status.
 
 ---
 
@@ -397,7 +435,7 @@ architecture/
 └── tech-stack.md
 ```
 
-[LLM-SUMMARY-PLACEHOLDER: architecture/]
+Top-level system architecture documentation providing high-level views of the codebase structure and technology stack. The codebase-structure.md file maps out the overall organization of SkogAI's repositories and how components relate to each other, while tech-stack.md documents the technologies, frameworks, and tools that power the ecosystem. These files serve as entry points for understanding SkogAI's technical landscape before diving into specific subsystem documentation in the technical/ directory.
 
 ---
 
@@ -417,7 +455,7 @@ mcp/
     └── snap-happy.md
 ```
 
-[LLM-SUMMARY-PLACEHOLDER: mcp/]
+Documentation for Model Context Protocol (MCP) server configurations and integration guides. The servers/ subdirectory contains specifications for seven MCP servers: context7 (context management), interrupt-user (user interaction), linear (Linear integration), puppeteer (browser automation), shopify-dev (Shopify development), skogai-think (SkogAI thinking processes), and snap-happy (screenshot/snapshot functionality). These documents explain how each MCP server integrates with the broader SkogAI ecosystem and what capabilities they provide to AI agents.
 
 ---
 
@@ -432,7 +470,7 @@ media/
 └── [Additional media files]
 ```
 
-[LLM-SUMMARY-PLACEHOLDER: media/]
+Collection of visual assets including screenshots, diagrams, images, and other media files supporting SkogAI documentation. Contains over 1000 files including numbered screenshots (1.png through 20.png), the aldervall-postgres/ subdirectory with database-related visuals, and various other images used throughout documentation to illustrate concepts, show system states, or provide visual references for development work.
 
 ---
 
@@ -445,7 +483,7 @@ people/
 └── skogix.md
 ```
 
-[LLM-SUMMARY-PLACEHOLDER: people/]
+User and collaborator profiles directory, currently containing skogix.md - the profile for Emil Skogsund (Skogix), the creator and primary human participant in the SkogAI ecosystem. This provides context about the human perspective, preferences, and background that shapes SkogAI's development, complementing the more extensive skogix documentation in the /skogix/ directory which includes memory blocks and detailed user documentation.
 
 ---
 
@@ -463,7 +501,7 @@ principles/
 └── information-asymmetry-problem.md
 ```
 
-[LLM-SUMMARY-PLACEHOLDER: principles/]
+Core design principles and architectural philosophies that guide SkogAI development. Documents include agent-forking.md (principles for creating agent variants), ai-summary-precision-problem.md (addressing accuracy in AI-generated content), connection-intent-with-change.md (linking intentionality to modifications), context-control-principle.md (managing information visibility and scope), forking-workspace.md (workspace isolation strategies), and information-asymmetry-problem.md (handling unequal information distribution). These principles establish patterns for handling common challenges in multi-agent AI development, emphasizing transparency, intentionality, and careful information management.
 
 ---
 
@@ -480,7 +518,7 @@ reference/
 └── tools-overview.md
 ```
 
-[LLM-SUMMARY-PLACEHOLDER: reference/]
+Technical reference materials for SkogAI systems. The notation/ subdirectory contains versioned notation specifications (skogai-notation-v1.md and skogai-notation-v2.md) along with README.md explaining the notation evolution. The tools-overview.md provides a comprehensive reference for the tool ecosystem. This directory serves as quick-reference documentation for established specifications, complementing the more detailed explorations in the technical/ directory.
 
 ---
 
@@ -506,7 +544,7 @@ skogix/
 └── user.md
 ```
 
-[LLM-SUMMARY-PLACEHOLDER: skogix/]
+Comprehensive documentation for Skogix (Emil Skogsund), the creator and primary human participant in the SkogAI ecosystem. The user.md file provides introduction, communication preferences, and working style guidance, while definitions.md establishes terminology glossary for Skogix-specific terms. The memory-blocks/ subdirectory contains 11 memory blocks defining Skogix's profile: the-creator-original (foundational block), core-identity, technical-expertise, communication-style, development-philosophy, skogai-origins, agent-relationships, notable-events, current-focus, quantum-mojito-philosophy, and systems-thinking. These memory blocks create a comprehensive personality and context profile similar to the agent memory blocks, ensuring AI agents understand the human perspective and preferences that shape collaboration.
 
 ---
 
@@ -525,7 +563,7 @@ todo/
 └── [Additional todo content]
 ```
 
-[LLM-SUMMARY-PLACEHOLDER: todo/]
+Legacy todo files and work tracking from various contexts and historical periods. Contains 347 files including ABOUT.md, ARCHITECTURE.md, and CLAUDE.md at the root, plus subdirectories like claude-specific/ (Claude-specific context, goals, and specifications), core-system/ (core system documentation including claude-persona-in-skogai, intelligent-environment, organic-personas, skogai-memory), and curated/ for curated content. This directory preserves historical todo lists, project tracking, and work context that informed SkogAI's development, serving as an archive of "what we were thinking about" at various points in the project's evolution.
 
 ---
 
@@ -538,7 +576,7 @@ tools/
 └── gita.md
 ```
 
-[LLM-SUMMARY-PLACEHOLDER: tools/]
+Documentation for development and automation tools used in the SkogAI ecosystem. Currently contains gita.md, which documents gita - a multi-repository git management tool that tracks and manages multiple git repositories simultaneously, showing status across repos and delegating commands. This is essential for working with SkogAI's multi-repository structure including the main repo and its various submodules (docs, tools, agent workspaces, etc.).
 
 ---
 
@@ -551,7 +589,7 @@ workflows/
 └── inbox-workflow-pattern.md
 ```
 
-[LLM-SUMMARY-PLACEHOLDER: workflows/]
+Process documentation and workflow patterns for SkogAI development. Currently contains inbox-workflow-pattern.md, which documents a systematic approach to processing incoming tasks, requests, and information - establishing a pattern for how work flows through the system from initial capture to completion. This demonstrates SkogAI's emphasis on documented, repeatable processes rather than ad-hoc approaches.
 
 ---
 
@@ -600,9 +638,9 @@ workflows/
 
 ## Document Generation
 
-This REPOSITORY-INDEX.md was generated in 2025 to reflect the post-reorganization structure.
+This REPOSITORY-INDEX.md was generated in 2025 to reflect the post-reorganization structure. All directory summaries were written based on comprehensive exploration of actual repository content, ensuring accuracy and alignment with the SkogAI ecosystem's narrative voice.
 
-**File summaries** in this document (marked with `[LLM-SUMMARY-PLACEHOLDER: dir/]`) are designed to be generated via local LLM using prompts in `/prompts/documentation-manager.md`.
+**Maintenance**: As the repository evolves, directory summaries should be updated to reflect new content, structural changes, or shifts in purpose. File counts and statistics are accurate as of the document generation date.
 
 For the most up-to-date information, always refer to:
 - `CLAUDE.md` - Repository guidance and working patterns
