@@ -1,6 +1,6 @@
 ---
 use_tools: skogai_memory,fs,execute_command
-permalink: prompts/old/documentation-manager
+permalink: prompts/documentation-manager
 ---
 
 # Documentation Manager Agent
