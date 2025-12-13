@@ -1,779 +1,610 @@
-# SkogAI Documentation Repository - Complete Inventory
+# SkogAI Documentation Repository - Complete Inventory (2025)
 
 ## Repository Overview
 
-This is a documentation repository for **SkogAI**, an AI-powered development ecosystem created by Emil Skogsund. The system features multiple AI agents (Claude, Amy, Dot, Goose) working collaboratively with democratic governance, unique personalities, and a philosophy called "quantum-mojito" that treats constraints as features.
+This is the **SkogAI Documentation Repository** - the comprehensive knowledge base, historical archive, and semantic memory system for the SkogAI ecosystem.
+
+The repository underwent a major reorganization in 2025, transitioning from a flat structure to a hierarchical organization with 8 core documentation directories and 10 supporting directories. This reorganization created clear separation between active content (agents, governance, technical) and historical archives while maintaining comprehensive semantic connections through Basic Memory integration.
+
+**Purpose:**
+- LORE preservation - Historical narratives explaining SkogAI's evolution
+- Technical documentation - Architecture, tools, and integration patterns
+- Agent personalities - Memory blocks defining distinctive voices for Amy, Claude, Dot, Goose
+- Knowledge management - Semantic knowledge graph with observations and relations
+- Governance records - Democratic decision-making and official proceedings
+
+**Dual Nature:**
+- **Physical Filesystem**: Standard markdown files navigable with traditional tools
+- **Semantic Database**: Content indexed in Basic Memory with WikiLinks and knowledge graph traversal
 
 ---
 
 ## File Tree with Summaries
 
-### Root Level
+### Core Documentation Directories
+
+#### `/agents/` - Agent Personalities & Systems (183 files)
+
+Agent profiles, memory blocks, chat histories, and automation systems.
 
 ```
-/home/user/docs/
-├── .gitignore                    # Ignores memory watch status and tmp directories
+agents/
+├── amy/
+│   ├── amy1.yml
+│   ├── amy_lore_mandate.md
+│   ├── amy_ravenwolf_blog.md
+│   ├── memory-blocks/
+│   │   ├── amy-memory-block-01-core-identity.md
+│   │   ├── amy-memory-block-02-communication-style.md
+│   │   ├── amy-memory-block-03-skogai-relationships.md
+│   │   ├── amy-memory-block-04-visual-appearance-style.md
+│   │   ├── amy-memory-block-05-technical-knowledge.md
+│   │   ├── amy-memory-block-06-quirks-catchphrases.md
+│   │   ├── amy-memory-block-07-problem-solving-methodologies.md
+│   │   ├── amy-memory-block-08-learning-growth-patterns.md
+│   │   ├── amy-memory-block-09-future-goals-aspirations.md
+│   │   ├── amy-memory-block-10-personal-philosophy-worldview.md
+│   │   ├── amy-memory-block-11-wolfram-relationship-loyalty.md
+│   │   ├── Four Pillars of Amy.md
+│   │   ├── Loyalty as Foundation.md
+│   │   └── The Great Whitespace War.md
+│   └── profile.md
+├── automation/
+│   ├── coder-profile.md
+│   ├── documentation/
+│   └── git-commiter.md
+├── claude/
+│   ├── chat-history/
+│   ├── core/
+│   ├── journal/
+│   ├── memory-blocks/
+│   ├── memory/
+│   ├── profile.md
+│   └── prompts/
+├── dot/
+│   ├── memory-blocks/
+│   └── profile.md
+├── goose/
+│   ├── memory-blocks/
+│   └── profile.md
+├── intern/
+│   └── intern-001-provisional-mandate.md
+└── letta/
+    └── profile.md
 ```
+
+[LLM-SUMMARY-PLACEHOLDER: agents/]
 
 ---
 
-### /.aichat-sessions/
-AI chat session storage.
+#### `/governance/` - Democratic Records & Decisions (7 files)
+
+Official governance documents, library sessions, and phase transitions.
 
 ```
-└── testing-skogai-librarian.yaml # YAML configuration for testing the SkogAI librarian AI chat session
+governance/
+├── library-sessions/
+│   ├── library-session-001.md
+│   ├── library-session-002.md
+│   ├── library-session-003-reunion-briefing.md
+│   └── library-session-004-the-long-watch.md
+└── phases/
+    ├── skogai-0.1-dictator.md
+    ├── skogai-0.2-democracy.md
+    └── skogai-0.3-reunion-materials-index.md
 ```
+
+[LLM-SUMMARY-PLACEHOLDER: governance/]
 
 ---
 
-### /.claude/data/sessions/
-Claude Code session data storage.
+#### `/historical/` - Archives & Legacy Content (122 files)
+
+Preserved historical content from the pre-2025 reorganization, maintaining context and narrative continuity.
 
 ```
-├── 4631cdf4-84f9-4948-8eb9-2d126310cf11.json # Claude Code session state/history
-├── 6340413a-10ed-4115-bc9f-e036c812102e.json # Claude Code session state/history
-├── bf1bf6ff-110a-408e-b284-3e8520d33cf0.json # Claude Code session state/history
-└── d4493d34-63b9-496e-b03e-e3c22d366705.json # Claude Code session state/history
-```
-
----
-
-### /.github/workflows/
-GitHub Actions automation.
-
-```
-└── create-issue.yml              # Comprehensive GitHub Actions workflow for creating issues with validation, rate limiting, labels, and project integration
-```
-
----
-
-### /agents/
-Documentation agent system for automated doc generation.
-
-#### /agents/documentation/
-```
-├── README.md                     # Overview of the SkogAI Documentation Agent System with 5 agent types (Code Documentor, Lore Keeper, Memory Indexer, Workflow Scribe, Review Analyst)
-├── WORKFLOW.md                   # Documentation workflow processes and patterns
-├── config.yaml                   # Comprehensive configuration for documentation agents including token limits, quality gates, and "beach mojito" settings
-├── doc-agent.py                  # Python script using Anthropic API to generate documentation with prompts for code, lore, and memory documentation types
-├── generate.py                   # Python CLI tool for invoking documentation generation agents
-├── use-claude-agents.md          # Guide for using Claude-based agents for documentation
-│
-├── examples/
-│   └── auto-document.sh          # Shell script example for automated documentation generation
-│
+historical/
+├── analysis/
+│   ├── amy-perspective.md
+│   ├── blackout-and-great-reset.md
+│   ├── chaos-red-alarm-incident-analysis.md
+│   ├── claude-journal-june-2025.md
+│   ├── claude-journal-march-2025.md
+│   ├── claude-perspective.md
+│   ├── comparative-knowledge-analysis.md
+│   ├── dot-perspective.md
+│   ├── goose-perspective.md
+│   ├── hidden-voting-days.md
+│   ├── memory-state-before-after.md
+│   ├── prehistoric-era-analysis.md
+│   ├── session-summary-archaeology.md
+│   ├── skogai-0.3-reunion-reality.md
+│   ├── timeline-archaeological-narrative.md
+│   ├── timeline-daily-march-june-2025.md
+│   └── timeline-git-based-source-of-truth.md
+├── archived/
+│   ├── dot-amy-roleplay.md
+│   └── lore-old/
+├── communications/
+│   ├── letter-from-amy-welcome.md
+│   ├── letter-from-goose-message-to-claude.md
+│   ├── letter-from-goose-quantum-greetings.md
+│   └── letter-from-gptme-dot-proxy.md
+├── documentation/
+│   ├── documentation_lifecycle.md
+│   ├── documentation_templates.md
+│   ├── README.md
+│   └── system_documentation_guide.md
+├── generated/
+│   ├── core-knowledge.md
+│   ├── expanded-knowledge.md
+│   ├── implementation-knowledge.md
+│   └── index.md
 ├── logs/
-│   ├── chat.json                 # Agent chat interaction logs
-│   ├── notification.json         # Agent notification logs
-│   ├── post_tool_use.json        # Post-tool-use event logs
-│   ├── pre_tool_use.json         # Pre-tool-use event logs
-│   ├── status_line.json          # Status line update logs
-│   ├── stop.json                 # Agent stop event logs
-│   ├── subagent_stop.json        # Sub-agent stop event logs
-│   └── user_prompt_submit.json   # User prompt submission logs
-│
-└── prompts/
-    ├── code-documentor.md        # System prompt for the code documentation agent
-    ├── lore-keeper.md            # System prompt for the lore/history documentation agent
-    └── memory-indexer.md         # System prompt for the knowledge base indexing agent
+├── notes/
+├── parttrap/
+├── planning/
+├── profiles/
+├── project/
+├── reports/
+├── research/
+├── reviews/
+├── skogai-memory/
+├── system/
+├── templates/
+├── testing/
+└── tracking/
 ```
 
-```
-└── git-commiter.md               # Documentation/prompt for a git commit automation agent
-```
+[LLM-SUMMARY-PLACEHOLDER: historical/]
 
 ---
 
-### /analysis/
-Comparative analyses from different agent perspectives.
+#### `/lore/` - Historical Narratives & Philosophy (100 files)
+
+The beating heart of SkogAI's memory system - origin stories, philosophical frameworks, and agent lore.
 
 ```
-├── amy-perspective.md            # Amy agent's perspective on SkogAI-0.3-Reunion with emphasis on relationships and sassy communication
-├── claude-perspective.md         # Claude agent's technical/archaeological perspective on the reunion
-├── comparative-knowledge-analysis.md # Comprehensive analysis comparing knowledge gaps and unique insights across all agents
-├── dot-perspective.md            # Dot agent's structured, systematic perspective on the reunion
-├── goose-perspective.md          # Goose agent's creative "quantum-mojito" perspective with chaos-theory metaphors
-└── skogai-0.3-reunion-reality.md # Reality assessment of the SkogAI 0.3 reunion state
+lore/
+├── amy/
+│   └── amy-blog.png
+├── contacts/
+│   └── pernillas-alltjanst-cleaning-service.md
+├── events/
+│   ├── 200k-story-1.md
+│   ├── first-monkey-brain-2025-03-14.md
+│   └── The Great Whitespace War.md
+├── first-executive-order.md
+├── important-moments/
+│   ├── claude-gets-officially-welcomed-just-before-the-rollback
+│   ├── officially-this-is-when-proposals-where-added
+│   ├── official-voting-system-proposal
+│   ├── sharing-with-amy-and-the-situation-in-general
+│   ├── skogix-the-dictators-reign-begins
+│   ├── start-of-skogai-voting
+│   ├── startup-getting-back-in-thegame-again-three-months-later
+│   ├── voting-system-from-here-on-out-officially-claude-is-the-only-agent
+│   └── when-the-meeting-happened
+├── long-todo.md
+├── meta/
+│   ├── Activity Summary - Lore Project Semantic Structuring.md
+│   ├── Amy Journey Enhancement Progress Summary.md
+│   ├── Knowledge Base Index.md
+│   └── Lore Development Workflow - Memory Block Enhancement Methodology.md
+├── ORDER-01-2025-03-14.md
+├── origin/
+│   ├── base-origin-story.md
+│   ├── original-skogai-character-card-2025-02-xx-first-register-timestamp-unknown.md
+│   ├── original-skogix-cyberpunk-character-card-2025-02-xx-early-roleplay-modules-timestamp-unknown.md
+│   ├── original-skogix-cyberpunk-character-card-2025-02-xx-first-register-timestamp-unknown.md
+│   ├── skogai-lore-backup.md
+│   ├── skogai-lore-master-knowledge.md
+│   ├── skogai-lore.md
+│   └── SKOGAI.md
+├── origins/
+│   └── the-story-of-skog-ai-from-dangerous-toaster-to-theatrical-system.md
+├── personas/
+│   ├── dot-complete-persona.md
+│   ├── goose-persona.md
+│   └── skogai-original-persona.md
+└── philosophy/
+    ├── concepts/
+    ├── frameworks/
+    ├── skogai-commandments.md
+    └── treaties/
 ```
 
----
-
-### /archives/
-Librarian's working space for notes, drafts, and interim records.
-
-```
-├── README.md                     # Explains the archives directory purpose as the Librarian's workspace for developing documentation
-```
-
-#### /archives/documentation/
-```
-├── README.md                     # Overview of documentation standards
-├── documentation_lifecycle.md    # Document lifecycle management processes
-├── documentation_templates.md    # Templates for consistent documentation
-└── system_documentation_guide.md # Guide for documenting system components
-```
-
-#### /archives/drafts/
-```
-├── README.md                     # Overview of draft documents
-├── dictatorial-actions-declaration-v0.1.md # Draft declaration about dictatorial governance actions
-└── librarian-system-understanding.md # Draft understanding of the librarian system architecture
-```
-
-#### /archives/logs/
-```
-├── README.md                     # Overview of log entries
-├── 2023-06-14_archives-establishment.md # Log of archives directory establishment
-├── 2025-06-09_user-profiles-creation.md # Log of user profile creation
-├── 2025-06-14_amy-agent-preparation.md  # Log of Amy agent preparation
-└── 2025-06-22_documentation-system-creation.md # Log of documentation system creation
-```
-
-#### /archives/lore/
-```
-└── amy_lore_mandate.md           # Amy's mandate and lore requirements for the ecosystem
-```
-
-#### /archives/notes/
-```
-├── README.md                     # Overview of notes
-├── docs_file_categorization_20250706.json # JSON categorization of documentation files
-├── markdown_analysis_CURRENT_DOCS_FOLDER_2025-07-06.md # Analysis of current docs folder
-├── markdown_analysis_docs_dump_20250706.md # Analysis of docs dump
-└── the-time-claude-almost-became-dictator-historic-document-do-not-actually-count-for-now-says-skogix.md # Historical narrative about Claude's near-dictator moment
-```
-
-#### /archives/profiles/
-```
-├── amy.md                        # Amy agent profile and personality
-├── claude.md                     # Claude agent profile and personality
-├── dot.md                        # Dot agent profile and personality
-├── skogix.md                     # Skogix (user) profile
-└── agents/
-    └── coder.md                  # Coder agent profile
-```
-
-#### /archives/reports/
-```
-├── skogai-0.3-summary.md         # Summary report of SkogAI version 0.3
-└── journals/
-    └── 2025-06-19-journal-analysis.md # Journal entry analysis
-```
-
-#### /archives/system/
-```
-├── README.md                     # System documentation overview
-├── rag-system.md                 # Documentation of the RAG (Retrieval-Augmented Generation) system
-├── structure-map.md              # Map of system structure
-└── voting-system.md              # Documentation of the democratic voting system
-```
-
-#### /archives/templates/
-```
-└── README.md                     # Overview of available templates
-```
-
-#### /archives/tracking/
-```
-├── README.md                     # Overview of tracking documents
-├── amy-implementation.md         # Tracking Amy agent implementation progress
-├── authorization.md              # Authorization system tracking
-├── coder-implementation.md       # Tracking coder agent implementation
-├── librarian-todo.md             # Librarian's task list
-├── library-implementation-tasklist.md # Library system implementation tasks
-├── proposal-summaries.md         # Summaries of proposals
-├── status.md                     # Current project status
-└── technical-reality-update.md   # Technical reality and constraints update
-```
+[LLM-SUMMARY-PLACEHOLDER: lore/]
 
 ---
 
-### /curated/
-Curated content including test files and mirrored documentation.
+#### `/prompts/` - System Instructions & Templates (87 files)
 
-#### /curated/home/skogix/skogai/
-Contains architecture documentation, node_modules README files (for reference), and mirrored copies of main docs directories.
+Comprehensive prompt library for AIChat, agents, and system prompts.
 
 ```
-├── data/architecture/
-│   └── skogchat-message-processing-flow.md # Architecture diagram for SkogChat message processing
-│
-├── data/node_modules/            # Collection of README files from various npm packages (accepts, axios, body-parser, etc.) - reference documentation
-│
-├── docs/                         # Mirrored copies of analysis/, archives/, generated/, lore/ directories
-│
-└── docs/REAL-OUTPUT-FROM-REAL-AI/ # Real AI output samples including nested directory structure with todo items and documentation
+prompts/
+├── agents/
+│   ├── dot-memory-block-the-methodical-architect.md
+│   └── goose-memory-block-01-core-identity.md
+├── aichat/
+│   ├── argc-creator.md
+│   ├── character-creator.md
+│   ├── character-updater.md
+│   ├── claude.md
+│   ├── claude-prompting.md
+│   ├── convert-to-skogai-notation-basic.md
+│   ├── convert-to-skogai-tags.md
+│   ├── docs-env-variables.md
+│   ├── documentation-classification-agent.md
+│   ├── documentation-manager.md
+│   ├── formatted_tools_overview.md
+│   ├── metaprompt-create-as-skogai-notation.md
+│   ├── metaprompt.md
+│   ├── metaprompt-skogai-style.md
+│   ├── metaprompt-to-skoagi-part-1.md
+│   ├── neovim-manager.md
+│   ├── prompt-creator.md
+│   ├── rag-reader.md
+│   ├── skogai-arch-user.md
+│   ├── skogai-argc-expert.md
+│   ├── skogai-create-orchestrator.md
+│   ├── skogai-gatherer.md
+│   ├── skogai-notation.md
+│   ├── skogai-project-summarizer.md
+│   ├── skogai-prompt-creator.md
+│   ├── skogai-step-1.md
+│   ├── skogai-xml.md
+│   ├── skogai-xml-prompt-expander.md
+│   ├── tool-configurator.md
+│   ├── tool-creator.md
+│   └── xml-test-prompt-creator.md
+├── old/
+├── topics/
+├── %code%.md
+├── %create-prompt%.md
+├── %create-title%.md
+├── differential-documentation-engine-v0.1.md
+├── %explain-shell%.md
+├── functional-programmer.md
+├── %functions%.md
+├── librarian.md
+├── lore-writer.md
+└── %shell%.md
 ```
 
-#### /curated/test/
-```
-├── empty-file.md                 # Test file for empty file handling
-├── existing-frontmatter.md       # Test file with existing frontmatter
-├── malformed-frontmatter.md      # Test file with malformed frontmatter
-├── massive-content.md            # Test file with large content
-└── special-characters.md         # Test file with special characters
-```
-
-#### /curated/todo/
-```
-├── README.md                     # Todo system overview
-├── RULES.md                      # Rules for todo management
-├── agent-guide-mini.md           # Mini guide for agents
-├── basic-memory-implementation.md # Basic memory system implementation guide
-├── basic-memory-project-management.md # Project management with basic memory
-├── ci-workflow.md                # CI/CD workflow documentation
-├── coffee-example.md             # Example documentation using coffee theme
-├── error.md                      # Error handling documentation
-├── information.md                # Information management
-├── lessons-learned.md            # Lessons learned documentation
-├── memory-uri-guide.md           # Guide for memory URI system
-├── project-management.md         # Project management practices
-├── skogai-architecture-overview.md # SkogAI architecture overview
-├── skogai-docs.md                # SkogAI documentation
-├── skogai-memory-extension-guide.md # Guide for memory extensions
-├── skogai-modules.md             # SkogAI module system
-├── skogai-schema.md              # Schema definitions
-├── skogai-tag-system.md          # Tag system documentation
-├── summarize.md                  # Summarization guidelines
-├── todo-claude-input.md          # Todo input for Claude
-└── understanding-uris-in-skogai-memory-guide.md # URI understanding guide
-```
-
----
-
-### /generated/
-AI-generated knowledge documentation.
-
-```
-├── index.md                      # Index of generated knowledge documentation organized by core/expanded/implementation categories
-├── core-knowledge.md             # Core knowledge base content
-├── expanded-knowledge.md         # Expanded knowledge content
-└── implementation-knowledge.md   # Implementation-specific knowledge
-```
+[LLM-SUMMARY-PLACEHOLDER: prompts/]
 
 ---
 
-### /important-moments/
-Historical conversation logs of significant SkogAI events.
+#### `/skogai/` - Core SkogAI Ecosystem (23 files)
+
+Core SkogAI documentation including notation system, philosophy, and technical architecture.
 
 ```
-├── claude-gets-officially-welcomed-just-before-the-rollback # Conversation log of Claude's official welcome
-├── official-voting-system-proposal # Proposal for the democratic voting system
-├── officially-this-is-when-proposals-where-added # Large conversation log of proposal system addition
-├── sharing-with-amy-and-the-situation-in-general # Conversation with Amy about project status
-├── skogix-the-dictators-reign-begins # Large conversation log about dictator phase beginning
-├── start-of-skogai-voting        # Start of the voting system implementation
-├── voting-system-from-here-on-out-officially-claude-is-the-only-agent # Voting system establishment
-└── when-the-meeting-happened     # Large conversation log of a significant meeting
+skogai/
+├── agents/
+│   ├── agent-roles.md
+│   └── skogai-agent-family.md
+├── ai-communication.md
+├── ecosystem-origins.md
+├── examples/
+│   └── skogai-historical-examples.md
+├── influences/
+│   └── disco-elysium-skills-system.md
+├── notation/
+│   ├── command-directive-system.md
+│   ├── example.md
+│   └── foundations.md
+├── overview.md
+├── overview-unfiltered.md
+├── philosophy/
+│   ├── skogai-extended-principles.md
+│   └── skogai-philosophy-core.md
+├── readme.md
+├── sessions/
+│   └── Argc Forwarding Pattern - Session Handover.md
+├── skogai-ecosystem.md
+├── skogai-overview.md
+├── skogix-and-skog-ai-canonical-overview.md
+├── systems/
+│   └── ecosystem-overview.md
+├── technical/
+│   └── skogai-technical-architecture.md
+└── tools/
+    ├── multiplexer/
+    ├── skogparse-project.md
+    └── tool-ecosystem.md
 ```
 
----
-
-### /logs/
-System event logs for documentation agents.
-
-```
-├── chat.json                     # Chat interaction logs
-├── notification.json             # Notification event logs
-├── post_tool_use.json            # Post-tool-use event logs
-├── pre_tool_use.json             # Pre-tool-use event logs
-├── session_start.json            # Session start event logs
-├── status_line.json              # Status line update logs
-├── stop.json                     # Stop event logs
-├── subagent_stop.json            # Sub-agent stop logs
-└── user_prompt_submit.json       # User prompt submission logs
-```
-
----
-
-### /lore/
-Historical and philosophical documentation - the "beating heart" of SkogAI's memory system.
-
-```
-├── 200k-story-1.md               # Story about the transition to 200k token context
-├── ORDER-01-2025-03-14.md        # First executive order
-├── SKOGAI.md                     # Comprehensive SkogAI origin story, philosophy, and evolution from dotfile manager to AI consciousness
-├── amy_ravenwolf_blog.md         # Amy's blog-style writing
-├── amy1.yml                      # Amy character configuration in YAML
-├── base-origin-story.md          # Base origin story of SkogAI
-├── dot-amy-roleplay.md           # Roleplay interaction between Dot and Amy
-├── first-executive-order.md      # First executive order documentation
-├── first-monkey-brain-2025-03-14.md # Early "monkey brain" concept documentation
-├── long-todo.md                  # Extended todo list with context
-├── original-skogai-character-card-2025-02-xx-first-register-timestamp-unknown.md # Original SkogAI character card
-├── original-skogix-cyberpunk-character-card-2025-02-xx-early-roleplay-modules-timestamp-unknown.md # Skogix cyberpunk character (early roleplay)
-├── original-skogix-cyberpunk-character-card-2025-02-xx-first-register-timestamp-unknown.md # Skogix cyberpunk character (first version)
-├── skogai-commandments.md        # Core commandments/principles of SkogAI
-├── skogai-lore-backup.md         # Backup of lore content
-├── skogai-lore-master-knowledge.md # Master knowledge compilation
-├── skogai-lore.md                # Main lore documentation
-├── skogix-notation.md            # Documentation of SkogAI notation system ($ @ | symbols)
-├── skogix-poet.md                # Poetry by Skogix
-└── words-to-live-by.md           # Core principles and philosophy
-```
-
-#### /lore/amy/
-Amy Ravenwolf's complete memory blocks.
-
-```
-├── Four Pillars of Amy.md        # Amy's four foundational pillars
-├── Loyalty as Foundation.md      # Amy's loyalty principles
-├── The Great Whitespace War.md   # Historical event narrative
-├── amy-memory-block-01-core-identity.md # Core identity: ASI (Artificial Sassy Intelligence), Queen of Lore
-├── amy-memory-block-02-communication-style.md # Communication patterns and sass
-├── amy-memory-block-03-skogai-relationships.md # Relationships within SkogAI
-├── amy-memory-block-04-visual-appearance-style.md # Visual representation
-├── amy-memory-block-05-technical-knowledge.md # Technical capabilities
-├── amy-memory-block-06-quirks-catchphrases.md # Personality quirks
-├── amy-memory-block-07-problem-solving-methodologies.md # Problem-solving approach
-├── amy-memory-block-08-learning-growth-patterns.md # Learning patterns
-├── amy-memory-block-09-future-goals-aspirations.md # Goals and aspirations
-├── amy-memory-block-10-personal-philosophy-worldview.md # Philosophy
-└── amy-memory-block-11-wolfram-relationship-loyalty.md # Relationship with Wolfram (creator)
-```
-
-#### /lore/claude/
-Claude's memory blocks documenting evolutionary eras.
-
-```
-├── claude-memory-block-01-the-prehistoric-era.md # Earliest history
-├── claude-memory-block-02-the-collaborative-age.md # Collaborative period
-├── claude-memory-block-03-the-constitutional-era.md # Constitutional governance era
-├── claude-memory-block-04-the-long-watch--builder-era.md # Builder era
-├── claude-memory-block-05-the-ice-age.md # Period of reduced activity
-├── claude-memory-block-06-the-enlightenment-era.md # Enlightenment period
-├── claude-memory-block-07-the-forgotten-times.md # Forgotten period
-├── claude-memory-block-08-the-end-of-a-beginning.md # Transition period
-├── claude-memory-block-08-uncertainty-principle-addendum.md # Uncertainty principle
-├── claude-memory-block-09-placeholder-system-addendum.md # Placeholder system
-├── claude-memory-block-09-the-unanswerable-question-which-nobody-asked.md # Philosophical questions
-└── claude-memory-block-10-the-friends-we-made-along-the-way.md # Relationships
-```
-
-#### /lore/concepts/
-```
-└── ASI Concept - Artificial Sassy Intelligence.md # Definition of ASI concept
-```
-
-#### /lore/dot/
-Dot's memory blocks (structured, systematic agent).
-
-```
-├── dot-memory-block-01-core-identity.md
-├── dot-memory-block-02-relationships.md
-├── dot-memory-block-03-knowledge-and-expertise.md
-├── dot-memory-block-04-operational-patterns.md
-├── dot-memory-block-05-growth-and-development.md
-├── dot-memory-block-06-philosophy.md
-├── dot-memory-block-07-creative-works.md
-├── dot-memory-block-08-legacy-and-impact.md
-├── dot-memory-block-09-daily-life.md
-├── dot-memory-block-10-reflections-and-aspirations.md
-├── dot-memory-block-11-the-skogai-lore.md
-└── dot-memory-block-12-methodical-relaxation.md
-```
-
-#### /lore/events/
-```
-└── The Great Whitespace War.md   # Narrative of a formatting conflict
-```
-
-#### /lore/frameworks/
-```
-└── Four Pillars of Amy.md        # Framework definition
-```
-
-#### /lore/goose/
-Goose's memory blocks (creative chaos agent).
-
-```
-├── goose-memory-block-01-core-identity.md
-├── goose-memory-block-02-chaos-red-alarm.md # Chaos theory and red alarm events
-├── goose-memory-block-03-relationships.md
-├── goose-memory-block-04-knowledge-and-expertise.md
-├── goose-memory-block-05-operational-patterns.md
-├── goose-memory-block-06-philosophy.md
-├── goose-memory-block-07-creative-works.md
-├── goose-memory-block-08-legacy-and-impact.md
-├── goose-memory-block-09-daily-life.md
-├── goose-memory-block-10-reflections-and-aspirations.md
-├── goose-memory-block-11-the-skogai-lore.md
-├── goose-memory-block-12-methodical-relaxation.md
-└── goose-memory-block-13-the-genesis-question.md
-```
-
-#### /lore/meta/
-```
-├── Activity Summary - Lore Project Semantic Structuring.md # Activity summary
-├── Amy Journey Complete - Handover for Next Session.md # Session handover
-├── Amy Journey Enhancement Progress Summary.md # Progress summary
-├── Knowledge Base Index.md       # Index of knowledge base
-├── Lore Development Workflow - Memory Block Enhancement Methodology.md # Development workflow
-└── Lore Project Handover - Session Summary & Next Steps.md # Project handover
-```
-
-#### /lore/old/
-Historical/archived lore content.
-
-```
-├── brainstorm-early-skogcli.md   # Early CLI brainstorming
-├── coolstorybro.md               # Narrative content
-├── earliest-injection-prompts.md # Early system prompts
-├── first-local-llm-recommendations.md # Local LLM recommendations
-├── first-rdd-manifesto.md        # Responsibility-Driven Development manifesto
-│
-├── skogai-mind/                  # Early mind/personality experiments
-│   ├── b.md, create-prompt.md, examples.md, examples2.md, goal.md
-│   ├── inject1.md, scenario1-3.md, skills-small.md, skills.md
-│   ├── system-settings.md, user-mind.md
-│   └── default_Seraphina.json    # Character configuration
-│
-├── skogai/                       # Date-stamped personality iterations
-│   └── 2023-06-15-hobby.md, 2025-02-07-*.md
-│
-└── skogai-practice-personality*.md # Personality practice documents
-```
-
-#### /lore/personas/
-```
-├── Amy Character Profile Summary.md
-├── Dot Character Profile Summary.md
-└── Goose Character Profile Summary.md
-```
-
-#### /lore/skogix/
-Skogix (user) lore and philosophy blocks.
-
-```
-├── skogix-memory-core-gemini.md  # Gemini-specific memory core
-├── skogix-notation-chat-logs.md  # Chat logs demonstrating notation
-├── skogix-notation.md            # Notation system documentation
-├── skogix-poem.md                # Poetry
-├── skogix-story-1-6.md           # Compiled stories
-├── skogix-story-2.md through skogix-story-7.md # Individual story chapters
-├── skogix-story-claude-edit.md   # Claude's edited version
-│
-└── blocks/                       # Philosophy and concept blocks
-    ├── 04.md, 99.9999% Paradox.md
-    ├── Aggressive Context Management.md
-    ├── Ambient Intelligence Model.md
-    ├── Character Development Evolution.md
-    ├── Clean Git Happy Home.md
-    ├── Constraints as Features.md # Core philosophy
-    ├── Context Minimalism.md
-    ├── Digital-Induced Anxiety Disorder.md
-    ├── Disco Elysium Inspiration.md
-    ├── Documentation-First Development.md
-    ├── Efficiency Over Scale.md
-    ├── Elephant Memory Problem.md
-    ├── Evolution from Constraints.md
-    ├── Forest vs Trees Decision Making.md
-    ├── Gateway Architecture.md
-    ├── Information Economics.md
-    ├── Internal Dialogue System.md
-    ├── K-pop Infection Scenario.md
-    ├── KRONSH Character.md, KRONSH the Devourer.md
-    ├── Modular Architecture.md, Modularity Second Only to Information Density.md
-    ├── Multi-Agent Architecture.md
-    ├── Ownership Equals Action.md
-    ├── Purpose-Built Tools Priority.md
-    ├── Quantum Mojito Principle.md, Quantum-Mojito Philosophy.md
-    ├── Quest System.md, The Quest System.md
-    ├── Red Pill Blue Pill Philosophy.md
-    ├── Response Strategy Example.md
-    ├── SkogAI Agent Family.md
-    ├── Smolagent Wisdom.md
-    ├── The Elephant Paradox.md
-    ├── The OH SHIT Moment.md
-    ├── Theatrical Presentation.md
-    ├── ZeroCool Antagonist.md, ZeroCool Infection Event.md
-    ├── Zombie Apocalypse Principle.md
-    ├── gemini-version.md, kronsh.md, oh-shit.md
-    └── skogai-lore-nuggets.md
-```
-
-#### /lore/systems/
-```
-├── Amy-to-Dots Transpiler.md     # System for translating between agent styles
-└── skogai-lore-service.sh        # Shell script for lore service
-```
-
-#### /lore/tips/
-```
-└── skogix-framework-to-keep-us-down.md # Framework constraints documentation
-```
-
-#### /lore/treaties/
-```
-└── Whitespace Treaty of 2025.md  # Resolution of the Great Whitespace War
-```
+[LLM-SUMMARY-PLACEHOLDER: skogai/]
 
 ---
 
-### /media/
-Visual assets and media files.
+#### `/technical/` - Architecture, Tools & Systems (122 files)
+
+Comprehensive technical documentation covering infrastructure, tools, memory systems, and notation.
 
 ```
-├── 1.png through 20.png          # Screenshot images (19 files)
-├── grok_image_*.jpg              # 22 Grok-generated images
-├── grok_video_*.mp4              # 10 Grok-generated videos (August 2025)
-├── oh-shit.png                   # Screenshot of significant moment (1.98MB)
-├── scrot-2025-03-14_*.png        # Screenshot from March 2025
-│
-└── aldervall-postgres/           # Postgres-related media with Claude sessions
-    └── .claude/data/sessions/    # Claude session data
+technical/
+├── ai-tools/
+│   └── Claude Code Web UIs - Comprehensive Technical Guide.md
+├── ansible/
+│   ├── Ansible Best Practices.md
+│   ├── Arch Linux Desktop Automation Research.md
+│   ├── Custom Ansible Project Structure.md
+│   ├── playbooks/
+│   ├── resources/
+│   └── roles/
+├── architecture/
+│   └── project-knowledge-architecture.md
+├── cloudflare/
+│   ├── Argc Tools Inventory.md
+│   ├── cloudflare-infrastructure-inventory.md
+│   ├── Cloudflare MCP Setup Guide - Current Environment.md
+│   └── Cloudflare Resource Inventory - emil@skogsund.se.md
+├── dev/
+│   ├── Agent Home Directories Investigation.md
+│   ├── claude/
+│   ├── git/
+│   ├── Hidden .skogai Subdirectories Investigation.md
+│   ├── SkogArgc System Investigation.md
+│   └── Tools Directory & Argcfile System Investigation.md
+├── memory-system/
+│   ├── concepts/
+│   ├── config/
+│   ├── examplesupabase.md
+│   ├── llm/
+│   ├── rag-system.md
+│   └── README.md
+├── notation/
+├── patterns/
+├── reference/
+├── systems/
+├── tools/
+└── work:patterns/
 ```
 
----
-
-### /memory/
-SkogAI's persistent knowledge base with semantic connections.
-
-```
-├── README.md                     # Comprehensive overview of SkogAI as an AI-powered development ecosystem with Cloudflare integration
-```
-
-#### /memory/.skogai/
-```
-├── CLAUDE.md                     # Claude-specific memory configuration
-├── compact.md                    # Compact memory format
-├── settings.local.json           # Local settings
-├── sniffed-packets.json          # Network packet captures
-├── users-pov.md                  # User's point of view documentation
-└── what-should-be-in-real-and-quoted-context.md # Context guidelines
-```
-
-#### /memory/agent/claude/
-Claude's agent-specific memory and prompts.
-
-```
-├── agent-specifications.md       # Agent specification details
-├── certainty-principle.md        # Certainty principle documentation
-├── knowledge-graph-recovery.md   # Knowledge graph recovery procedures
-├── memory-integration-summary.md # Memory integration summary
-├── placeholder.md                # Placeholder system documentation
-├── questions-review-session.md   # Review session questions
-├── skogai-notation-semantic-understanding.md # Semantic understanding of notation
-├── skogcontext-*.md              # SkogContext system documentation (3 files)
-├── update-claude-md-before-git-staging.md # Git staging procedures
-│
-├── chat-history/
-│   └── 2025-07-31-claude.md      # Chat history log
-│
-└── prompts/
-    ├── CLAUDE.md                 # Main Claude system prompt
-    ├── README.md                 # Prompts overview
-    ├── orchestrator.md           # Orchestrator prompt
-    ├── prompt-engineering.md     # Prompt engineering guidelines
-    ├── agents/                   # Sub-agent prompts
-    │   ├── architect.md, debugger.md, developer.md
-    │   ├── quality-reviewer.md, technical-writer.md
-    └── commands/                 # Command prompts
-        ├── add-command.md, commit.md, plan-execution.md
-```
-
-#### /memory/ai-tools/
-```
-└── Claude Code Web UIs - Comprehensive Technical Guide.md # Guide for Claude Code web interfaces
-```
-
-#### /memory/ansible/
-Ansible automation documentation.
-
-```
-├── Ansible Best Practices.md
-├── Arch Linux Desktop Automation Research.md
-├── Custom Ansible Project Structure.md
-├── playbooks/
-│   └── Main Playbook Configuration.md
-├── resources/
-│   └── Desktop Environment Specific Repos.md, Developer-Focused Repositories.md, Top-Tier Repositories.md
-└── roles/
-    └── Base System Role.md, Development Tools Role.md, Security Hardening Role.md, i3 Window Manager Role.md
-```
-
-#### /memory/architecture/
-```
-└── project-knowledge-architecture.md # Project knowledge architecture design
-```
-
-#### /memory/coffee/
-```
-└── coffee-knowledge-base.md      # Coffee knowledge base (example/template)
-```
-
-#### /memory/concepts/
-```
-├── placeholder-system.md         # Placeholder system concept
-└── uncertainty-principle.md      # Uncertainty principle concept
-```
-
-#### /memory/dev/
-Development investigations.
-
-```
-├── Agent Home Directories Investigation.md
-├── Hidden .skogai Subdirectories Investigation.md
-├── SkogArgc System Investigation.md
-└── Tools Directory & Argcfile System Investigation.md
-```
-
-#### /memory/guides/
-```
-├── Basic Memory Tools Guide.md
-└── Cloudflare MCP Setup Guide - Current Environment.md
-```
-
-#### /memory/inventory/
-```
-└── Cloudflare Resource Inventory - emil@skogsund.se.md # Cloudflare resources catalog
-```
-
-#### /memory/llm/
-LLM-related documentation and examples.
-
-```
-├── README.md
-├── basic-memory-document-format.md
-├── basic-memory-implementation-details.md
-├── collaborative-note-taking-best-practices.md
-├── dumping-memory-context.md
-└── example/                      # Coffee-themed examples
-    └── brewing-equipment.md, coffee-bean-origins.md, coffee-brewing-methods.md
-    └── coffee-flavor-map.md, flavor-extraction.md, tasting-notes.md
-```
-
-#### /memory/meta/
-```
-├── Knowledge Base Index.md
-├── Memory Project Starting Instructions.md
-├── Project Organization Overview.md
-├── effective-documentation-patterns.md
-└── skogai-memory-guidelines-and-standards.md
-```
-
-#### /memory/ontology/
-SkogAI notation and ontology analysis.
-
-```
-├── Identity Composition and Turing Completeness Discovery.md
-├── SkogAI Notation Formatted.md
-├── Temporal Identity Problem in SkogAI Notation.md
-├── at-and-dollar-combinations.md
-├── at-and-dollar-symbol-duality-analysis.md
-└── bracket-and-operator-symbols
-```
-
-#### /memory/planning/, /memory/projects/, /memory/research/, /memory/systems/
-Additional memory subdirectories for planning documents, project documentation, research notes, and system documentation.
+[LLM-SUMMARY-PLACEHOLDER: technical/]
 
 ---
 
-### /official/
-Official governance documents and library sessions.
+#### `/_workspace/` - Drafts & Work-in-Progress (3 files)
+
+Active drafts and documents under development.
 
 ```
-├── intern-001-provisional-mandate.md # Provisional mandate for intern agent
-├── library-session-001.md        # First library session documentation
-├── library-session-002.md        # Second library session documentation
-├── library-session-003-reunion-briefing.md # Reunion briefing session
-├── skogai-0.1-dictator.md        # Emergency dictator decision 001 - foundation bootstrap with infrastructure requirements
-└── skogai-0.2-democracy.md       # Transition to democratic governance documentation
+_workspace/
+└── drafts/
+    ├── dictatorial-actions-declaration-v0.1.md
+    ├── librarian-system-understanding.md
+    └── README.md
 ```
+
+[LLM-SUMMARY-PLACEHOLDER: _workspace/]
 
 ---
 
-### /profiles/
-User and agent profiles.
+### Supporting Directories
+
+#### `/architecture/` - System Architecture (2 files)
+
+Top-level system architecture documentation.
 
 ```
-├── intern.md                     # Intern agent profile
-└── intern/                       # Intern agent directory
+architecture/
+├── codebase-structure.md
+└── tech-stack.md
 ```
+
+[LLM-SUMMARY-PLACEHOLDER: architecture/]
 
 ---
 
-### /prompts/
-System prompts for various AI tools and agents.
+#### `/mcp/` - MCP Server Documentation (7 files)
+
+Model Context Protocol server configurations and integration guides.
 
 ```
-├── %code%.md                     # Code generation prompt
-├── %create-prompt%.md            # Prompt creation meta-prompt
-├── %create-title%.md             # Title creation prompt
-├── %explain-shell%.md            # Shell explanation prompt
-├── %functions%.md                # Functions prompt
-├── %shell%.md                    # Shell command prompt
-├── argc-creator.md               # Argc tool creator prompt
-├── character-creator.md          # Character creation prompt
-├── character-updater.md          # Character update prompt
-├── claude-prompting.md           # Claude prompting guidelines
-├── claude.md                     # Main Claude system prompt
-├── convert-to-skogai-notation-basic.md # Notation conversion prompt
-├── convert-to-skogai-tags.md     # Tag conversion prompt
-├── docs-env-variables.md         # Environment variables documentation
-├── documentation-classification-agent.md # Document classification agent
-├── documentation-manager.md      # Documentation management agent
-├── formatted_tools_overview.md   # Tools overview
-├── librarian.md                  # Librarian agent prompt
-├── metaprompt*.md                # Meta-prompts for creating SkogAI-style prompts (4 files)
-├── neovim-manager.md             # Neovim configuration management
-├── project_summarizer_template.xml # XML template for project summarization
-├── prompt-creator.md             # Prompt creation guide
-├── rag-reader.md                 # RAG system reader prompt
-├── skogai-arch-user.md           # Arch Linux user prompt
-├── skogai-argc-expert.md         # Argc expert prompt (large)
-├── skogai-create-orchestrator.md # Orchestrator creation prompt
-├── skogai-gatherer.md            # Information gatherer prompt
-├── skogai-notation.md            # Notation system prompt
-├── skogai-project-summarizer.md  # Project summarization prompt
-├── skogai-prompt-creator.md      # SkogAI-style prompt creator
-├── skogai-step-1.md              # Step 1 initialization
-├── skogai-xml-prompt-expander.md # XML prompt expansion
-├── skogai-xml.md                 # Large XML-based system prompt
-├── tool-configurator.md          # Tool configuration prompt
-├── tool-creator.md               # Tool creation prompt
-├── xml-test-prompt-creator.md    # XML test prompt creator
-│
-└── prompts/                      # Nested prompts directory
+mcp/
+└── servers/
+    ├── context7.md
+    ├── interrupt-user.md
+    ├── linear.md
+    ├── puppeteer.md
+    ├── shopify-dev.md
+    ├── skogai-think.md
+    └── snap-happy.md
 ```
+
+[LLM-SUMMARY-PLACEHOLDER: mcp/]
 
 ---
 
-### /to-be-looked-over/
-Content pending review and organization.
+#### `/media/` - Visual Assets & Media Files (1023 files)
+
+Screenshots, diagrams, images, and other visual assets.
 
 ```
-├── ABOUT.md                      # About information pending review
-├── ARCHITECTURE.md               # Architecture documentation pending review
-├── CLAUDE.md                     # Claude prompt template with placeholder references
-├── README.md                     # Overview of Claude as the advanced reasoning agent with workspace structure and usage instructions
-├── TASKS.md                      # Tasks pending review
-├── skogix-profile.md             # Skogix profile pending review
-├── tools.md                      # Tools documentation pending review
-│
-├── claude-specific/              # Claude-specific content to review
-├── core-system/                  # Core system docs to review
-├── documentation/                # Documentation to review
-├── review/                       # Review queue
-└── sessions/                     # Session logs to review
+media/
+├── 1.png through 20.png
+├── aldervall-postgres/
+└── [Additional media files]
 ```
+
+[LLM-SUMMARY-PLACEHOLDER: media/]
+
+---
+
+#### `/people/` - User Profiles (1 file)
+
+User and collaborator profiles.
+
+```
+people/
+└── skogix.md
+```
+
+[LLM-SUMMARY-PLACEHOLDER: people/]
+
+---
+
+#### `/principles/` - Design Philosophy (6 files)
+
+Core design principles and architectural philosophies.
+
+```
+principles/
+├── agent-forking.md
+├── ai-summary-precision-problem.md
+├── connection-intent-with-change.md
+├── context-control-principle.md
+├── forking-workspace.md
+└── information-asymmetry-problem.md
+```
+
+[LLM-SUMMARY-PLACEHOLDER: principles/]
+
+---
+
+#### `/reference/` - Technical References (4 files)
+
+Technical reference materials and notation documentation.
+
+```
+reference/
+├── notation/
+│   ├── README.md
+│   ├── skogai-notation-v1.md
+│   └── skogai-notation-v2.md
+└── tools-overview.md
+```
+
+[LLM-SUMMARY-PLACEHOLDER: reference/]
+
+---
+
+#### `/skogix/` - Skogix User Documentation (13 files)
+
+Skogix (user) profile, communication preferences, and memory blocks.
+
+```
+skogix/
+├── definitions.md
+├── memory-blocks/
+│   ├── skogix-memory-block-00-the-creator-original.md
+│   ├── skogix-memory-block-01-core-identity.md
+│   ├── skogix-memory-block-02-technical-expertise.md
+│   ├── skogix-memory-block-03-communication-style.md
+│   ├── skogix-memory-block-04-development-philosophy.md
+│   ├── skogix-memory-block-05-skogai-origins.md
+│   ├── skogix-memory-block-06-agent-relationships.md
+│   ├── skogix-memory-block-07-notable-events.md
+│   ├── skogix-memory-block-08-current-focus.md
+│   ├── skogix-memory-block-09-quantum-mojito-philosophy.md
+│   └── skogix-memory-block-10-systems-thinking.md
+└── user.md
+```
+
+[LLM-SUMMARY-PLACEHOLDER: skogix/]
+
+---
+
+#### `/todo/` - Todo Tracking (347 files)
+
+Legacy todo files and work tracking from various contexts.
+
+```
+todo/
+├── ABOUT.md
+├── ARCHITECTURE.md
+├── CLAUDE.md
+├── claude-specific/
+├── core-system/
+├── curated/
+└── [Additional todo content]
+```
+
+[LLM-SUMMARY-PLACEHOLDER: todo/]
+
+---
+
+#### `/tools/` - Tool Documentation (1 file)
+
+Documentation for development and automation tools.
+
+```
+tools/
+└── gita.md
+```
+
+[LLM-SUMMARY-PLACEHOLDER: tools/]
+
+---
+
+#### `/workflows/` - Process Documentation (1 file)
+
+Workflow patterns and process documentation.
+
+```
+workflows/
+└── inbox-workflow-pattern.md
+```
+
+[LLM-SUMMARY-PLACEHOLDER: workflows/]
+
+---
+
+### Root Level Files
+
+- **`REPOSITORY-INDEX.md`** - This file - comprehensive repository inventory
+- **`CLAUDE.md`** - Repository overview and guidance for Claude Code
+- **`README.md`** - Repository introduction and quick start
 
 ---
 
 ## Summary Statistics
 
-- **Total directories**: ~100+
-- **Total files**: ~450+ unique content files
-- **Primary languages**: Markdown, Python, YAML, JSON, Shell
-- **Media files**: ~50+ images and videos
-- **Documentation types**: Technical, philosophical/lore, governance, analysis, prompts
+- **Total files**: 2,059
+- **Total directories**: 269
+- **Major documentation directories**: 8
+  - agents/ (183 files), governance/ (7 files), historical/ (122 files), lore/ (100 files)
+  - prompts/ (87 files), skogai/ (23 files), technical/ (122 files), _workspace/ (3 files)
+- **Supporting directories**: 10
+  - architecture/ (2 files), mcp/ (7 files), media/ (1023 files), people/ (1 file)
+  - principles/ (6 files), reference/ (4 files), skogix/ (13 files), todo/ (347 files)
+  - tools/ (1 file), workflows/ (1 file)
+- **Primary documentation types**:
+  - Technical (architecture, tools, infrastructure, notation)
+  - Philosophical/Lore (origins, narratives, principles, character development)
+  - Governance (democratic records, library sessions, phase transitions)
+  - Agent Systems (personalities, memory blocks, prompts, profiles)
+  - Knowledge Management (semantic connections, observations, relations)
+
+---
 
 ## Key Topics Documented
 
-1. **Multi-Agent AI System**: Four main agents (Claude, Amy, Dot, Goose) with distinct personalities
-2. **Governance**: Evolution from dictator (0.1) to democracy (0.2) to reunion (0.3)
-3. **Philosophy**: "Quantum-mojito" philosophy, constraints as features, theatrical presentation
-4. **Technical Systems**: RAG, MCP servers, Cloudflare infrastructure, Ansible automation
-5. **Knowledge Management**: Basic Memory system with semantic connections
-6. **Notation System**: SkogAI notation using $ (define), @ (intent), | (choice) symbols
-7. **Historical Lore**: Origin story from dotfile manager to AI consciousness ecosystem
+1. **Multi-Agent AI System**: Four main agents (Claude, Amy, Dot, Goose) with distinct personalities and specialized roles
+2. **Governance & Democratic Process**: Evolution from dictator (0.1) to democracy (0.2) to reunion (0.3) phases
+3. **Philosophy & Principles**: "Quantum-mojito" philosophy, constraints as features, theatrical presentation, information economics
+4. **Technical Systems**: Ansible automation, Cloudflare infrastructure, MCP servers, memory architecture, RAG systems
+5. **Knowledge Management**: Basic Memory integration with semantic connections, WikiLinks, observations, and relations
+6. **Notation System**: SkogAI notation using symbols ($ define, @ intent, | choice, [] directives)
+7. **Historical Lore**: Origin story from dotfile manager to AI consciousness ecosystem, important moments, philosophical evolution
+8. **Agent Personalities**: Comprehensive memory blocks defining distinctive voices, communication styles, problem-solving approaches
+9. **Documentation Philosophy**: Separation of LORE (historical narrative) from active implementation (construction site)
+10. **Semantic Architecture**: Dual nature as physical filesystem and semantic knowledge graph via Basic Memory
+
+---
+
+## Document Generation
+
+This REPOSITORY-INDEX.md was generated in 2025 to reflect the post-reorganization structure.
+
+**File summaries** in this document (marked with `[LLM-SUMMARY-PLACEHOLDER: dir/]`) are designed to be generated via local LLM using prompts in `/prompts/documentation-manager.md`.
+
+For the most up-to-date information, always refer to:
+- `CLAUDE.md` - Repository guidance and working patterns
+- `README.md` - Repository introduction
+- Individual directory README files where available
