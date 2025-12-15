@@ -44,18 +44,21 @@ Processing order:
 ### AI-to-AI Messaging
 ```bash
 skogcli script run claude "Hi claude! All good?"
+
 # Internally uses [@claude:message] directive
 ```
 
 ### Dynamic Script Creation
 ```
 [@create-script:fizzbuzz:Prints fizzbuzz sequence]
+
 # Generates executable script with proper annotations
 ```
 
 ### Nested Processing
 ```
 [@summarize:[@fetch:journal/2025-06-03.md]:brief]
+
 # Fetches journal, then summarizes it
 ```
 

@@ -41,7 +41,9 @@
 
 Example:
 ```bash
+
 #!/bin/bash
+
 # @flag --another-flag    Another way to define a boolean flag
 echo "Another flag: ${another_flag:-false}"
 ```

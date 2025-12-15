@@ -29,9 +29,7 @@ permalink: ontology/skogai-notation-reference
 
 - **`@$`**: `[==]` - action stabilizing into being | identical things are always similar
 - **`$@`**: `{!=}` - reference generating action | different things are always different
-
 ** "what makes a unique thing measurable is that it is the only one of its kind" **
-
 ** "what makes a measurable thing unique is that it cannot be the only one of its kind" **
 
 * $ID is $ID is $ID *

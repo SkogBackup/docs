@@ -13,7 +13,7 @@ Traditional commit messages focus only on what changed. This approach connects t
 ## Why This Matters
 - **Context preservation**: Future collaborators understand the reasoning behind changes
 - **Decision tracking**: Links specific changes to the problems they solve
-- **Continuity**: Maintains the "why" alongside the "what" 
+- **Continuity**: Maintains the "why" alongside the "what"
 - **Collaborative transparency**: Makes the decision-making process visible
 
 ## Implementation

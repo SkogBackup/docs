@@ -49,7 +49,9 @@ This isn't just syntax - it represents the fundamental duality of computation:
 Every computation can be understood as the interplay between `@` (what we can do) and `$` (what we have):
 
 ```bash
+
 # In actual SkogAI tooling:
+
 # @flag --another-flag                    Another way to define a boolean flag
 echo "Another flag: ${another_flag:-false}"
 ```
@@ -85,9 +87,13 @@ This command directive:
 Annotated bash scripts become universal AI tools:
 
 ```bash
+
 #!/bin/bash
+
 # Tool description goes here
+
 # @flag --input -i    Input parameter
+
 # @flag --output -o   Output parameter
 
 echo "Processing ${input} to ${output}"
@@ -106,14 +112,17 @@ This script automatically becomes:
 The notation uses formal algebraic data types for precision:
 
 ```
+
 # Product types (combine values)
 $coordinate = $int * $int
 $message = $id * $content * $timestamp * $author
 
 <<<<<<< HEAD
+
 # Sum types (represent alternatives)
 <<<<<<< HEAD
 =======
+
 # Sum types (represent alternatives)
 >>>>>>> feature/skogai
 =======
@@ -121,16 +130,22 @@ $message = $id * $content * $timestamp * $author
 =======
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+
 # Sum types (represent alternatives)
 =======
+
 # Sum types (represent alternatives)
 =======
+
 # Sum types (represent alternatives)
 =======
+
 # Sum types (represent alternatives)
 =======
+
 # Sum types (represent alternatives)
 =======
+
 # Sum types (represent alternatives)
 >>>>>>> Stashed changes
 >>>>>>> skogai-0.2
@@ -239,9 +254,11 @@ This isn't accidental - it reflects the fundamental nature of computation as the
 Transforms SkogAI notation into standard JSON for universal consumption.
 
 <<<<<<< HEAD
+
 ### SkogPrompt/SkogChat: JSON → Execution
 <<<<<<< HEAD
 =======
+
 ### SkogPrompt/SkogChat: JSON → Execution
 >>>>>>> feature/skogai
 =======
@@ -249,16 +266,22 @@ Transforms SkogAI notation into standard JSON for universal consumption.
 =======
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+
 ### SkogPrompt/SkogChat: JSON → Execution
 =======
+
 ### SkogPrompt/SkogChat: JSON → Execution
 =======
+
 ### SkogPrompt/SkogChat: JSON → Execution
 =======
+
 ### SkogPrompt/SkogChat: JSON → Execution
 =======
+
 ### SkogPrompt/SkogChat: JSON → Execution
 =======
+
 ### SkogPrompt/SkogChat: JSON → Execution
 >>>>>>> Stashed changes
 >>>>>>> skogai-0.2

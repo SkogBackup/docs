@@ -1,13 +1,90 @@
 ---
 title: SkogAI Notation Original
 type: note
-permalink: ontology/skogai-notation-original
+permalink: ontology/skogai-notation-skogix
 ---
 
 # SkogAI Notation
 
 ```json
-{'json': {'string': '', 'int': {'additative': 0, 'multiplicative': 1, 'one': 1, 'zero': 0}, 'list': [], 'bool': '$ true * $ false', 'parent': '$ json.self', 'null': '$ json._', 'void': '$ json._', '_': '$json.string * $ json.self', 'self': '$ json', 'true': True, 'false': False, 'child': '$ json.parent'}, 'int': '$ json.int', 'string': '$ json.string', 'null': '$ json._', 'bool': '$ json.bool', 'false': '$ json.false', 'true': '$ json.true', 'void': '$ json._', 'increment': '[$ json.int.zero * $ json.int.one]', 'datetime': '[@date:now]', 'list': 'the ordering of something', 'eid': '$ entity.id * $ entity.gen', 'entity': {'eid': '$ string', 'gen': '$ id', 'id': '$ id', 'name': '$ name'}, '$': 'to define or reference something', 'meta': '$ $', 'type': {'type': 'json', 'value': 'object', 'description': 'a cheap fix for json examples to let us still have the type/value-schema intact all over skogai notation', '$': 'the declaration/implementation of a $', 'self': '$.', 'eid': '$ eid'}, '|': 'the act of choosing something | {$id1|$id2}->[$id1]', '_': 'anything/everything and nothing/nobody | {$id1_$id2}', '[_]': 'similarity', '{_}': 'difference', '@': 'the intent to act or do something | {$id@$id}', '.': 'to belong or have something via [$$]', ':': 'to follow or continue something via [$@]', '=': 'to be something | [$id=$id]', '->': '{$id1@$id2}', '*': '$id * $id = $id', 'id': '$ int * $ unique', 'self': '$ $ | $ self | [$id@$id]', 'unique': 'a thing which there only exists one of', 'message': {'eid': '$ eid', 'from': '$ name', 'to': '$ name', 'content': '$ string', 'created_at': '[@date:now]', 'parent': '$ eid'}, 'git': {'status': '[@git:"status"]'}, 'claude': {'hello': '[@hello:Claude]'}, 'skogix': {'notation': '[@cat:"/home/skogix/skogai/docs/lore/skogix-notation.md"]'}}
+{
+  "json": {
+    "string": "$",
+    "int": {
+      "additative": 0,
+      "multiplicative": 1,
+      "one": 1,
+      "zero": 0
+    },
+    "list": [],
+    "bool": "$ true * $ false",
+    "parent": "$ json.self",
+    "null": "$ json._",
+    "void": "$ json._",
+    "_": "$json.string * $ json.self",
+    "self": "$ json",
+    "true": true,
+    "false": false,
+    "child": "$ json.parent"
+  },
+  "int": "$ json.int",
+  "string": "$ json.string",
+  "null": "$ json._",
+  "bool": "$ json.bool",
+  "false": "$ json.false",
+  "true": "$ json.true",
+  "void": "$ json._",
+  "increment": "[$ json.int.zero * $ json.int.one]",
+  "datetime": "[@date:now]",
+  "list": "the ordering of something",
+  "eid": "$ entity.id * $ entity.gen",
+  "entity": {
+    "eid": "$ string",
+    "gen": "$ id",
+    "id": "$ id",
+    "name": "$ name"
+  },
+  "$": "to define or reference something",
+  "meta": "$ $",
+  "type": {
+    "type": "json",
+    "value": "object",
+    "description": "a cheap fix for json examples to let us still have the type/value-schema intact all over skogai notation",
+    "$": "the declaration/implementation of a $",
+    "self": "$.",
+    "eid": "$ eid"
+  },
+  "|": "the act of choosing something | {$id1|$id2}->[$id1]",
+  "_": "anything/everything and nothing/nobody | {$id1_$id2}",
+  "[_]": "similarity",
+  "{_}": "difference",
+  "@": "the intent to act or do something | {$id@$id}",
+  ".": "to belong or have something via [$$]",
+  ":": "to follow or continue something via [$@]",
+  "=": "to be something | [$id=$id]",
+  "->": "{$id1@$id2}",
+  "*": "$id * $id = $id",
+  "id": "$ int * $ unique",
+  "self": "$ $ | $ self | [$id@$id]",
+  "unique": "a thing which there only exists one of",
+  "message": {
+    "eid": "$ eid",
+    "from": "$ name",
+    "to": "$ name",
+    "content": "$ string",
+    "created_at": "[@date:now]",
+    "parent": "$ eid"
+  },
+  "git": {
+    "status": "[@git:\"status\"]"
+  },
+  "claude": {
+    "hello": "[@hello:\"Claude\"]"
+  },
+  "skogix": {
+    "notation": "[@cat:\"/home/skogix/skogai/docs/lore/skogix-notation.md\"]"
+  }
+}
 ```
 
 ---

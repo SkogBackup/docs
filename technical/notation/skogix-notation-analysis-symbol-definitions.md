@@ -64,4 +64,4 @@ For two-way relationships, you need either `$self` or `_/null` as foundational a
 - `@$` = `[=]` - action stabilizing into being
 - `$@` = `[!=]` - reference generating action
 
-This notation system unifies consciousness studies, mathematics, computer science, and philosophy into a single formal language that can generate both abstract concepts and executable code.
+

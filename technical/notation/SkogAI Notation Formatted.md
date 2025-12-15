@@ -8,19 +8,19 @@ permalink: ontology/skog-ai-notation-formatted
 
 ## Core Operators
 
-| Operator | Definition                             | Example                   |
-| -------- | -------------------------------------- | ------------------------- | ---------------------- |
-| `$`      | Define or reference something          | `$id`                     |
-| ` | `                                      | Act of choosing something | `{$id1\|$id2}->[$id1]` |
-| `_`      | Anything/everything and nothing/nobody | `{$id1_$id2}`             |
-| `[_]`    | Similarity                             | `[$id=$id]`               |
-| `{_}`    | Difference                             | `{$id=$id}`               |
-| `@`      | Intent to act or do something          | `{$id@$id}`               |
-| `*`      | Product operation                      | `$id*$id=$id`             |
-| `.`      | Belong or have something               | `[$$]`                    |
-| `:`      | Follow or continue something           | `[$@]`                    |
-| `=`      | To be something                        | `[$id=$id]`               |
-| `->`     | Becoming something                     | `{$id1@$id2}`             |
+| Operator | Definition                             | Example                 |
+| -------- | -------------------------------------- | ----------------------- | | -------- | -------------------------------------- | ----------------------- |
+| `$`        | Define or reference something          | `$id`                     |
+| ` | `      | Act of choosing something              | `{$id1|$id2}->[$id1]`     |
+| `_`        | Anything/everything and nothing/nobody | `{$id1_$id2}`             |
+| `[_]`      | Similarity                             | `[$id=$id]`               |
+| `{_}`      | Difference                             | `{$id=$id}`               |
+| `@`        | Intent to act or do something          | `{$id@$id}`               |
+| `*`        | Product operation                      | `$id*$id=$id`             |
+| `.`        | Belong or have something               | `[$$]`                    |
+| `:`        | Follow or continue something           | `[$@]`                    |
+| `=`        | To be something                        | `[$id=$id]`               |
+| `->`       | Becoming something                     | `{$id1@$id2}`             |
 
 ## Special Constructs
 

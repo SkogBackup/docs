@@ -116,7 +116,9 @@ This creates an instant messaging system between AI agents that processes throug
 SkogParse processes tool annotations to create universal AI capabilities:
 
 ```bash
+
 # @flag --input -i    Input parameter
+
 # @flag --output -o   Output parameter
 echo "Processing ${input} to ${output}"
 ```

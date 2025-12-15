@@ -660,7 +660,6 @@ Fitch-Style Calculi (1952)
 Lawvere Theories (1963)
 
 (don't see any \_ for existance, $eid representing spacetime coordinates or even basic semiotics like using @ as a pragmatic force? ;))"}
-
 ```
 
 ```

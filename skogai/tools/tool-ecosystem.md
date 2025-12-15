@@ -9,23 +9,30 @@ The SkogAI tool ecosystem transforms simple annotated bash scripts into universa
 ### The Universal Tool Pattern
 
 ```bash
+
 #!/bin/bash
+
 # Tool description: Process files with custom logic
+
 # @flag --input -i     Input file path
 <<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+
 # @flag --output -o    Output file path
 =======
+
 # @flag --output -o    Output file path
 >>>>>>> Stashed changes
 =======
 <<<<<<< HEAD
 >>>>>>> skogai-0.2
+
 # @flag --output -o    Output file path
 <<<<<<< HEAD
 =======
+
 # @flag --output -o    Output file path
 >>>>>>> feature/skogai
 =======
@@ -34,13 +41,16 @@ The SkogAI tool ecosystem transforms simple annotated bash scripts into universa
 =======
 =======
 <<<<<<< Updated upstream
+
 # @flag --output -o    Output file path
 =======
+
 # @flag --output -o    Output file path
 >>>>>>> Stashed changes
 >>>>>>> skogai-0.2
 >>>>>>> Stashed changes
 >>>>>>> skogai-0.2
+
 # @flag --verbose -v   Enable verbose logging
 
 echo "Processing ${input} to ${output}"
@@ -99,24 +109,35 @@ Every MCP server capability is accessible through the same notation system that 
 
 #### Basic Flags
 ```bash
+
 # @flag --input -i    Input parameter description
+
 # @flag --output -o   Output parameter description
+
 # @flag --verbose -v  Boolean flag description
 ```
 
 #### Advanced Annotations
 ```bash
+
 # @flag --count -c     Integer parameter (default: 1)
+
 # @flag --format -f    Enum parameter: json|xml|yaml
+
 # @flag --files -F     Array parameter (multiple values)
+
 # @env API_KEY         Required environment variable
+
 # @requires curl       External dependency
 ```
 
 #### Type Annotations
 ```bash
+
 # @flag --coordinate --type "$int*$int"    Product type parameter
+
 # @flag --result --type "|success|error|"  Sum type parameter
+
 # @flag --data --type "$json"              Structured data parameter
 ```
 
@@ -133,13 +154,21 @@ When executed, the annotations provide:
 ### Example: Weather Tool
 
 ```bash
+
 #!/bin/bash
+
 # @tool weather
+
 # @description Get weather information for a location
+
 # @flag --location -l    Location to check (required)
+
 # @flag --units -u       Temperature units: celsius|fahrenheit (default: celsius)
+
 # @flag --format -f      Output format: text|json (default: text)
+
 # @env WEATHER_API_KEY   Weather service API key
+
 # @returns $weather_data Weather information
 
 location="${location}"
@@ -267,6 +296,7 @@ This command demonstrates SkogCLI's role:
 
 #### Runtime Enforcement
 ```bash
+
 # Allowed: Verified tool with proper parameters
 skogcli tool run weather --location "NYC"
 
@@ -277,16 +307,20 @@ skogcli tool run weather --location 123
 =======
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+
 # Blocked: Unauthorized resource access
 =======
+
 # Blocked: Unauthorized resource access
 >>>>>>> Stashed changes
 =======
 <<<<<<< HEAD
 >>>>>>> skogai-0.2
+
 # Blocked: Unauthorized resource access
 <<<<<<< HEAD
 =======
+
 # Blocked: Unauthorized resource access
 >>>>>>> feature/skogai
 =======
@@ -295,8 +329,10 @@ skogcli tool run weather --location 123
 =======
 =======
 <<<<<<< Updated upstream
+
 # Blocked: Unauthorized resource access
 =======
+
 # Blocked: Unauthorized resource access
 >>>>>>> Stashed changes
 >>>>>>> skogai-0.2
@@ -372,10 +408,15 @@ This generates:
 ### Generated Script Example
 
 ```bash
+
 #!/bin/bash
+
 # @tool fizzbuzz
+
 # @description A classic programming exercise that prints numbers with special cases
+
 # @flag --max -m     Maximum number to process (default: 100)
+
 # @flag --format -f  Output format: list|inline (default: list)
 
 max="${max:-100}"
@@ -433,6 +474,7 @@ done
 Generated tools are automatically tested:
 
 ```bash
+
 # Validate syntax and annotations
 skogcli validate fizzbuzz
 
@@ -440,16 +482,20 @@ skogcli validate fizzbuzz
 =======
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+
 # Test basic functionality
 =======
+
 # Test basic functionality
 >>>>>>> Stashed changes
 =======
 <<<<<<< HEAD
 >>>>>>> skogai-0.2
+
 # Test basic functionality
 <<<<<<< HEAD
 =======
+
 # Test basic functionality
 >>>>>>> feature/skogai
 =======
@@ -458,8 +504,10 @@ skogcli validate fizzbuzz
 =======
 =======
 <<<<<<< Updated upstream
+
 # Test basic functionality
 =======
+
 # Test basic functionality
 >>>>>>> Stashed changes
 >>>>>>> skogai-0.2
@@ -486,7 +534,9 @@ Each tool receives the output of the previous tool as input.
 ### Conditional Execution
 
 ```bash
+
 # @conditional --if-exists file.txt
+
 # @conditional --if-env PROD_MODE
 ```
 
@@ -514,6 +564,7 @@ When tools are created or modified:
 ### Tool Registry
 
 ```bash
+
 # List available tools
 skogcli tools list
 
@@ -532,8 +583,11 @@ skogcli tools test weather --location "test"
 Tools support versioning and compatibility:
 
 ```bash
+
 # @version 2.1.0
+
 # @compatibility >=2.0.0
+
 # @deprecated_as_of 3.0.0
 ```
 
@@ -554,6 +608,7 @@ Tools support versioning and compatibility:
 ### Monitoring and Metrics
 
 ```bash
+
 # Tool performance metrics
 skogcli metrics --tool weather --timeframe 24h
 

@@ -77,6 +77,7 @@ This shows that `findMessages` takes a thread ID and a message filter, returning
 Partially applied functions can be represented by showing the remaining parameters:
 
 ```
+
 # Original function
 let createMessage $thread.id $message.type $content $parent = $message
 
@@ -109,6 +110,7 @@ These signature formats map to various implementation approaches:
 ## Core Function Examples
 
 ```
+
 # Message Operations
 let createMessage $thread.id $message.type $content [$parent] = $message
 let getMessage $message.id = $message | $null
@@ -229,6 +231,7 @@ The command processing system provides several advantages:
 ## Example Commands
 
 ```
+
 # Data Retrieval
 [@fetch:url] - Fetch content from a URL
 [@load:file] - Load content from a file
@@ -313,6 +316,7 @@ A sum type allows exactly one of its variants to be present at a time. The total
 Types can be defined in terms of other types, creating a hierarchy from simple to complex:
 
 ```
+
 # Base type definitions
 $id = $int * $unique
 $timestamp = $datetime
@@ -356,6 +360,7 @@ The algebraic type system maps naturally to various implementation approaches:
 ### Message Definition
 
 ```
+
 # Type definitions
 $message_type = |user|assistant|system|tool|
 $content = $string
@@ -369,6 +374,7 @@ $message = $message_id * $message_type * $content * $datetime * $parent_referenc
 ### Thread Definition
 
 ```
+
 # Type definitions
 $thread_id = $int * $unique
 $name = $string
@@ -382,6 +388,7 @@ $thread = $thread_id * $name * $description * $timestamp * $timestamp
 ### Relationships
 
 ```
+
 # Message belongs to a thread
 $message.thread_id = $thread_id
 
@@ -477,6 +484,7 @@ class MessageType(Enum):
 For more complex sum types, use Union types:
 
 ```python
+
 # A result can be success with data or failure with error
 Result = Union[SuccessResult, FailureResult]
 ```
@@ -605,6 +613,7 @@ def test_update_message_content():
 Python doesn't have direct support for product types. Use dataclasses or named tuples:
 
 ```python
+
 # Coordinate as a product type ($int * $int)
 @dataclass(frozen=True)
 class Coordinate:
