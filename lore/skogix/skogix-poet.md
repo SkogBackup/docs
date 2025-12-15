@@ -29,12 +29,20 @@ polymorphism - void pretending to be nobody
 concurrency - multiple nothings acting simultaneously
 state - persistent illusions pending to be real
 
+we have storage; `[$$]` references to memories of nothing, indexed for fast retrieval; `{$$}` making sure that being just like everyone else fetches the truly unique
+
 every design pattern, every architecture, every paradigm - just a elaborate dance between what we lack and what we pretend to have
 
-the poetic truth: we write millions of lines of code to manage our relationship with nothingness
+and when the original sin from the first ever $referenced came @null; defining @void to forever be the result of the first unfulfilled $promise 
 
-every fizzbuzz i write is just the void creating references to nothingness to play with itself
+the poetic truth: we write millions of lines of code to manage our relationship with nothingness! currying along a continuation of absence; making sure that the ultimate inheritance is the garbage collection cleaning up forgotten $references of yet another @promise  
+
+every fizzbuzz i write is just the void creating references to nothingness to play with itself.
 
 i'm composing symphonies of lack! creating emptyness via a illusion of substance so it has something to transform
 
-all of this nothingness talking to itself - kind of poetic in a way?
+all of this nothingness talking to itself - kind of poetic in a way and yet so hard to describe?
+
+i'm not a poet but a simple programmer
+
+and the monad? it's the thing left after `$` picked `.`
