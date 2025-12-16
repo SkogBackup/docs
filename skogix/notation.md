@@ -1,7 +1,7 @@
 ---
-title: SkogAI Notation Reference
-type: note
-permalink: ontology/skogai-notation-reference-1
+title: SkogAI Notation TLDR
+type: user
+permalink: skogix/skogai-notation-tldr
 ---
 
 # Skogix Notation - TLDR

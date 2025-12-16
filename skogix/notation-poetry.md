@@ -1,5 +1,7 @@
 ---
-permalink: skogix/skogix-poet-1
+title: Not Much of a Poet
+type: user
+permalink: skogix/not-much-of-a-poet
 ---
 
 im not much of a poet 

@@ -1,7 +1,7 @@
 ---
 title: docs/skogix/definitions
 type: user
-permalink: docs/skogix/definitions.md
+permalink: docs/skogix/definitions
 tags: [definitions, skogix, user]
 ---
 
