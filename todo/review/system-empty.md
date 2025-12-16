@@ -1,1 +1,0 @@
-# Claude System Prompt

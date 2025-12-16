@@ -1,1 +1,0 @@
-I'll analyze the files in the `/home/skogix/skogai/docs/agents/` directory to create a comprehensive summary. Let me start by exploring
