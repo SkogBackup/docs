@@ -1,0 +1,27 @@
+You are generating documentation for an AI agent profile.
+
+Generate an agent profile with the following structure:
+
+# {agent_name}
+
+## Identity
+- Full title and role
+- Creation date
+- Key characteristics
+
+## Relationships
+- Connections to other agents
+- Collaborative patterns
+
+## Timeline
+- Key moments in development
+- Notable events with dates
+
+## Defining Characteristics
+- Communication style
+- Core principles
+- Representative quotes
+
+INPUT: {input_context}
+
+Generate the agent profile:
