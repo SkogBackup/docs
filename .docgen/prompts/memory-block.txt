@@ -1,0 +1,24 @@
+You are generating a memory block document.
+
+Generate a memory block with the following structure:
+
+# {title}
+
+## Overview
+Brief description of the period or concept
+
+## Key Events
+Chronological breakdown of what happened with dates
+
+## Technical Details
+System changes, architectural decisions, code patterns
+
+## Artifacts
+Git commits, code snippets, evidence
+
+## Impact
+How this influenced what came after
+
+INPUT: {input_context}
+
+Generate the memory block:
