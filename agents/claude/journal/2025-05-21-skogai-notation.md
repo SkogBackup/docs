@@ -1,3 +1,18 @@
+---
+categories:
+- agents
+- claude
+- journal
+tags:
+- claude
+- journal
+- 2025-05-21
+permalink: agents/claude/journal/2025-05-21-skogai-notation
+title: 2025-05-21-skogai-notation
+type: note
+generated_at: 2025-12-18T10:33:58Z
+---
+
 # Journal Entry: 2025-05-21
 
 <!--toc:start-->

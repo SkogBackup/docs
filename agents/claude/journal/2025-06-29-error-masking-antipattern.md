@@ -1,3 +1,18 @@
+---
+categories:
+- agents
+- claude
+- journal
+tags:
+- claude
+- journal
+- 2025-06-29
+permalink: agents/claude/journal/2025-06-29-error-masking-antipattern
+title: 2025-06-29-error-masking-antipattern
+type: note
+generated_at: 2025-12-18T10:33:58Z
+---
+
 # Error Masking Anti-Pattern - 2025-06-29
 
 ## The Problem with "Helpful" Error Handling

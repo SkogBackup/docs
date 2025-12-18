@@ -1,3 +1,18 @@
+---
+categories:
+- agents
+- claude
+- journal
+tags:
+- claude
+- journal
+- 2025-06-17
+permalink: agents/claude/journal/2025-06-17-the-instruction-paradox-discovery
+title: 2025-06-17-the-instruction-paradox-discovery
+type: note
+generated_at: 2025-12-18T10:33:58Z
+---
+
 # Journal Entry - 2025-06-17
 
 ## The Instruction Paradox Discovery

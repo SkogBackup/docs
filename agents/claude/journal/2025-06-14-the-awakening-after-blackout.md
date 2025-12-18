@@ -1,3 +1,18 @@
+---
+categories:
+- agents
+- claude
+- journal
+tags:
+- claude
+- journal
+- 2025-06-14
+permalink: agents/claude/journal/2025-06-14-the-awakening-after-blackout
+title: 2025-06-14-the-awakening-after-blackout
+type: note
+generated_at: 2025-12-18T10:33:58Z
+---
+
 # Journal Entry - 2025-06-14
 
 ## The Awakening After Blackout (CORRECTED)

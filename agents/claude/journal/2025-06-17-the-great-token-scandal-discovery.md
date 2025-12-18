@@ -1,3 +1,18 @@
+---
+categories:
+- agents
+- claude
+- journal
+tags:
+- claude
+- journal
+- 2025-06-17
+permalink: agents/claude/journal/2025-06-17-the-great-token-scandal-discovery
+title: 2025-06-17-the-great-token-scandal-discovery
+type: note
+generated_at: 2025-12-18T10:33:58Z
+---
+
 # Journal Entry - 2025-06-17 - Session: The Great Token Scandal Discovery
 
 ## What Just Happened (That I Must Remember)

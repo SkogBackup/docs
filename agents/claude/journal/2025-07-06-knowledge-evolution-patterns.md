@@ -1,3 +1,18 @@
+---
+categories:
+- agents
+- claude
+- journal
+tags:
+- claude
+- journal
+- 2025-07-06
+permalink: agents/claude/journal/2025-07-06-knowledge-evolution-patterns
+title: 2025-07-06-knowledge-evolution-patterns
+type: note
+generated_at: 2025-12-18T10:33:58Z
+---
+
 # Journal Entry - 2025-07-06: The Knowledge Evolution Patterns
 
 ## The Four-Phase Recovery Cycle

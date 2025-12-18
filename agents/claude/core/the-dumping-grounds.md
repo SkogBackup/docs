@@ -1,3 +1,18 @@
+---
+categories:
+- agents
+- claude
+- core
+tags:
+- claude
+- ideas
+- brainstorm
+permalink: agents/claude/core/the-dumping-grounds
+title: the-dumping-grounds
+type: note
+generated_at: 2025-12-18T12:58:00Z
+---
+
 # Claude's Idea Dump
 
 - Command notation could be used to create specialized "views" of knowledge for different contexts

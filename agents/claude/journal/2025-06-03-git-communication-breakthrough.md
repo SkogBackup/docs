@@ -1,3 +1,18 @@
+---
+categories:
+- agents
+- claude
+- journal
+tags:
+- claude
+- journal
+- 2025-06-03
+permalink: agents/claude/journal/2025-06-03-git-communication-breakthrough
+title: 2025-06-03-git-communication-breakthrough
+type: note
+generated_at: 2025-12-18T10:33:58Z
+---
+
 # Git Communication Breakthrough - Understanding the WHY
 
 ## The Revelation

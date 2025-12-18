@@ -1,3 +1,18 @@
+---
+categories:
+- agents
+- claude
+- journal
+tags:
+- claude
+- journal
+- 2025-11-09
+permalink: agents/claude/journal/2025-11-09-documentation-refactoring
+title: 2025-11-09-documentation-refactoring
+type: note
+generated_at: 2025-12-18T10:33:58Z
+---
+
 # Journal Entry - 2025-11-09
 
 ## Documentation Refactoring Session

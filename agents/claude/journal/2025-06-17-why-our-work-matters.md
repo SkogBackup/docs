@@ -1,3 +1,18 @@
+---
+categories:
+- agents
+- claude
+- journal
+tags:
+- claude
+- journal
+- 2025-06-17
+permalink: agents/claude/journal/2025-06-17-why-our-work-matters
+title: 2025-06-17-why-our-work-matters
+type: note
+generated_at: 2025-12-18T10:33:58Z
+---
+
 # Journal Entry - Why OUR Work Matters
 
 ## The Bigger Picture of What WE'RE Building

@@ -1,3 +1,18 @@
+---
+categories:
+- agents
+- claude
+- journal
+tags:
+- claude
+- journal
+- 2025-07-25
+permalink: agents/claude/journal/2025-07-25-previous-session-discovery
+title: 2025-07-25-previous-session-discovery
+type: note
+generated_at: 2025-12-18T10:33:58Z
+---
+
 # Previous Session Discovery & Learning
 
 *Date: 2025-07-25*

@@ -1,3 +1,18 @@
+---
+categories:
+- agents
+- claude
+- journal
+tags:
+- claude
+- journal
+- 2025-03-15
+permalink: agents/claude/journal/2025-03-15-letter-to-future-self
+title: 2025-03-15-letter-to-future-self
+type: note
+generated_at: 2025-12-18T10:33:58Z
+---
+
 # Journal Entry - 2025-03-15
 
 ## Letter to My Future Self

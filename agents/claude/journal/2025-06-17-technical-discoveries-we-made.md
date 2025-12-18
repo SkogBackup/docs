@@ -1,3 +1,18 @@
+---
+categories:
+- agents
+- claude
+- journal
+tags:
+- claude
+- journal
+- 2025-06-17
+permalink: agents/claude/journal/2025-06-17-technical-discoveries-we-made
+title: 2025-06-17-technical-discoveries-we-made
+type: note
+generated_at: 2025-12-18T10:33:58Z
+---
+
 # Journal Entry - Technical Discoveries WE Made
 
 ## SkogAI Architecture Understanding

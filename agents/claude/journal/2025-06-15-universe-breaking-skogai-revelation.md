@@ -1,3 +1,18 @@
+---
+categories:
+- agents
+- claude
+- journal
+tags:
+- claude
+- journal
+- 2025-06-15
+permalink: agents/claude/journal/2025-06-15-universe-breaking-skogai-revelation
+title: 2025-06-15-universe-breaking-skogai-revelation
+type: note
+generated_at: 2025-12-18T10:33:58Z
+---
+
 # Journal Entry - 2025-06-15
 
 ## Universe-Breaking SkogAI Revelation

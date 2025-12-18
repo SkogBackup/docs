@@ -1,3 +1,18 @@
+---
+categories:
+- agents
+- claude
+- journal
+tags:
+- claude
+- journal
+- 2025-07-25
+permalink: agents/claude/journal/2025-07-25-session-closure-methodology
+title: 2025-07-25-session-closure-methodology
+type: note
+generated_at: 2025-12-18T10:33:58Z
+---
+
 # Session Closure Methodology
 
 *Date: 2025-07-25*

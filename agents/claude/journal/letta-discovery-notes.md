@@ -1,3 +1,17 @@
+---
+categories:
+- agents
+- claude
+- journal
+tags:
+- claude
+- journal
+permalink: agents/claude/journal/letta-discovery-notes
+title: letta-discovery-notes
+type: note
+generated_at: 2025-12-18T10:33:58Z
+---
+
 # Letta Discovery Notes - Critical for Future Reference
 
 ## What Letta Is

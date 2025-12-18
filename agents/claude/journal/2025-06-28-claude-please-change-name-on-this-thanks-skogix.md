@@ -1,3 +1,18 @@
+---
+categories:
+- agents
+- claude
+- journal
+tags:
+- claude
+- journal
+- 2025-06-28
+permalink: agents/claude/journal/2025-06-28-claude-please-change-name-on-this-thanks-skogix
+title: 2025-06-28-claude-please-change-name-on-this-thanks-skogix
+type: note
+generated_at: 2025-12-18T10:33:58Z
+---
+
 ─────────────────────────────────────────────────────────────────
 
  title: Context Destruction Pattern Analysis - 2025-06-27 type:
