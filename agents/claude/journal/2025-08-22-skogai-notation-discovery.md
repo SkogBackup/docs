@@ -1,3 +1,18 @@
+---
+categories:
+- agents
+- claude
+- journal
+tags:
+- claude
+- journal
+- 2025-08-22
+permalink: agents/claude/journal/2025-08-22-skogai-notation-discovery
+title: 2025-08-22-skogai-notation-discovery
+type: note
+generated_at: 2025-12-18T10:33:58Z
+---
+
 # Journal Entry: 2025-08-22 - The SkogAI Notation Revelation
 
 ## Executive Summary

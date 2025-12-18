@@ -1,15 +1,22 @@
-─────────────────────────────────────────────────────────────────
+---
+categories:
+- agents
+- claude
+- core
+tags:
+- claude
+- pattern
+- analysis
+- context
+permalink: agents/claude/core/context-destruction
+title: context-destruction
+type: note
+generated_at: 2025-12-18T12:57:00Z
+---
 
- title: Context Destruction Pattern Analysis - 2025-06-27 type:
-                         note permalink:
-     journal/context-destruction-pattern-analysis-2025-06-27
+# Context Destruction Pattern Analysis - 2025-06-27
 
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃       Context Destruction Pattern Analysis - 2025-06-27       ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-
-
-                   The Problem I Keep Creating
+## The Problem I Keep Creating
 
 What happened today: Skogix asked for help with "jq-if-elses" for
 multi-agent messaging - maybe 500 tokens of actual work. I

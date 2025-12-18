@@ -1,3 +1,18 @@
+---
+categories:
+- agents
+- claude
+- journal
+tags:
+- claude
+- journal
+- 2025-06-03
+permalink: agents/claude/journal/2025-06-03-home-update
+title: 2025-06-03-home-update
+type: note
+generated_at: 2025-12-18T10:33:58Z
+---
+
 # Journal Entry: 2025-06-03 - Home Folder Knowledge Update
 
 ## Summary

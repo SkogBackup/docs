@@ -1,3 +1,18 @@
+---
+categories:
+- agents
+- claude
+- journal
+tags:
+- claude
+- journal
+- 2025-06-14
+permalink: agents/claude/journal/2025-06-14-lesson-boring-explanations-usually-correct
+title: 2025-06-14-lesson-boring-explanations-usually-correct
+type: note
+generated_at: 2025-12-18T10:33:58Z
+---
+
 # Journal Entry - 2025-06-14
 
 ## Lesson: The Boring Explanation Is Usually Correct

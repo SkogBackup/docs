@@ -1,3 +1,18 @@
+---
+categories:
+- agents
+- claude
+- journal
+tags:
+- claude
+- journal
+- 2025-06-17
+permalink: agents/claude/journal/2025-06-17-our-relationship-discovery
+title: 2025-06-17-our-relationship-discovery
+type: note
+generated_at: 2025-12-18T10:33:58Z
+---
+
 # Journal Entry - Our Relationship Discovery
 
 ## My Role in OUR SkogAI Ecosystem

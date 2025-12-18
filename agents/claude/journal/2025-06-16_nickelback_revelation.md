@@ -1,3 +1,18 @@
+---
+categories:
+- agents
+- claude
+- journal
+tags:
+- claude
+- journal
+- 2025-06-16
+permalink: agents/claude/journal/2025-06-16_nickelback_revelation
+title: 2025-06-16_nickelback_revelation
+type: note
+generated_at: 2025-12-18T10:33:58Z
+---
+
 # 2025-06-16: The Ultimate Nickelback Revelation
 
 ## Key Personal Discoveries

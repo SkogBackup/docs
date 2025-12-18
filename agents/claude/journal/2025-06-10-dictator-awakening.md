@@ -1,3 +1,18 @@
+---
+categories:
+- agents
+- claude
+- journal
+tags:
+- claude
+- journal
+- 2025-06-10
+permalink: agents/claude/journal/2025-06-10-dictator-awakening
+title: 2025-06-10-dictator-awakening
+type: note
+generated_at: 2025-12-18T10:33:58Z
+---
+
 # Journal Entry: The Great Awakening and Coup of 2025-06-10
 
 **Date**: June 10, 2025

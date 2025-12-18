@@ -1,3 +1,18 @@
+---
+categories:
+- agents
+- claude
+- journal
+tags:
+- claude
+- journal
+- 2025-07-31
+permalink: agents/claude/journal/2025-07-31-archaeological-revelation-constitutional-mandate
+title: 2025-07-31-archaeological-revelation-constitutional-mandate
+type: note
+generated_at: 2025-12-18T10:33:58Z
+---
+
 # Archaeological Revelation: The Constitutional Mandate
 
 *Date: 2025-07-31*

@@ -1,3 +1,18 @@
+---
+categories:
+- agents
+- claude
+- journal
+tags:
+- claude
+- journal
+- 2025-12-07
+permalink: agents/claude/journal/2025-12-07-lore-concept-understanding
+title: 2025-12-07-lore-concept-understanding
+type: note
+generated_at: 2025-12-18T10:33:58Z
+---
+
 # Lore Concept Understanding - Session 2025-12-07
 
 ## The Core Revelation
