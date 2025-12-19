@@ -1,0 +1,22 @@
+
+<task>
+I want you to return *ONLY* frontmatter exactly as shown between the <example>-tags and return the output between <output>-tags.
+
+<example>
+---
+categories: <[]>
+tags: <[]>
+permalink: <path>
+title: <title>
+type: note
+generated_at: <timestamp>
+---
+</example>
+What Each Field Means
+- <categories>: Hierarchical path from file location (e.g., agents/claude/journal → [agents,claude,journal])
+- <tags>: Descriptive keywords for content discovery (requires human thought about what the doc is about)
+- <permalink>: URL-safe path, typically the file path relative to docs root
+- <title>: Document title (often the filename, sometimes more descriptive)
+- <type>: Document classification (we've been using "note" for everything so far)
+- <generated_at>: ISO 8601 timestamp when frontmatter was added/generated
+</task>
