@@ -1,20 +1,3 @@
----
-categories:
-- tools
-- gh
-permalink: tools/gh/release
-generated_at: '2025-12-19T12:58:42Z'
-title: '# gh - Release Management'
-tags:
-- github-releases
-- release-management
-- gh-release-create
-- gh-release-list
-- gh-release-view
-- gh-release-download
-type: note
----
-
 # gh - Release Management
 
 ## When to Use

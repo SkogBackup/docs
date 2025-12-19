@@ -1,17 +1,3 @@
----
-categories:
-- tools
-- gh
-permalink: tools/gh/repo
-generated_at: '2025-12-19T12:59:15Z'
-title: gh - Repository Operations
-tags:
-- repository-operations
-- github-actions
-- repo-management
-type: note
----
-
 # gh - Repository Operations
 
 ## When to Use

@@ -1,21 +1,3 @@
----
-categories:
-- tools
-- gh
-permalink: tools/gh/pr
-generated_at: '2025-12-19T12:58:07Z'
-title: '# gh - Pull Request Operations'
-tags:
-- pull-request-operations
-- github
-- gh-pr-create
-- gh-pr-checkout
-- gh-pr-view
-- gh-pr-list
-- gh-pr-status
-type: note
----
-
 # gh - Pull Request Operations
 
 ## When to Use

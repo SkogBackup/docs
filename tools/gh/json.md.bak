@@ -1,18 +1,3 @@
----
-categories:
-- tools
-- gh
-permalink: tools/gh/json
-generated_at: '2025-12-19T12:57:26Z'
-title: gh - JSON Output and Formatting
-tags:
-- github
-- json
-- formatting
-- gh-issues
-type: note
----
-
 # gh - JSON Output and Formatting
 
 ## When to Use

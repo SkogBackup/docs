@@ -1,17 +1,3 @@
----
-categories:
-- tools
-- gh
-permalink: tools/gh/workflows
-generated_at: '2025-12-19T12:59:50Z'
-title: '# gh - GitHub Actions Workflows'
-tags:
-- github-actions
-- workflow
-- actions
-type: note
----
-
 # gh - GitHub Actions Workflows
 
 ## When to Use
