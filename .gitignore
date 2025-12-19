@@ -1,1 +1,3 @@
 .aider*
+.docgen/scripts/__pycache__
+.docgen/scripts/__init__.py
