@@ -12,18 +12,32 @@ This system:
 
 ## Quick Start
 
-### 1. Setup Database
+### Batch Processing (Recommended - NEW!)
+
+Process all markdown files with frontmatter generation queue:
+
+```bash
+# 1. Queue files for processing
+python3 .docgen/scripts/enqueue_files.py --dir agents/
+python3 .docgen/scripts/enqueue_files.py --dir skogix/
+
+# 2. Check queue status
+python3 .docgen/scripts/queue_status.py
+
+# 3. Process queue (run overnight!)
+python3 .docgen/scripts/process_queue.py
+```
+
+See [QUICKSTART.md](QUICKSTART.md) or [QUEUE_SYSTEM.md](QUEUE_SYSTEM.md) for full details.
+
+### Database-Driven Generation
+
+Generate documents from stored metadata:
 
 ```bash
 # Initialize database with schema
 python3 .docgen/scripts/init_db.py --sample-data
 
-# This creates .docgen/docs.db
-```
-
-### 2. Generate Documents
-
-```bash
 # Generate all documents
 python3 .docgen/scripts/generate_docs.py
 
