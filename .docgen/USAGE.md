@@ -1,198 +1,362 @@
-# Usage Guide: Markdown Input & Model Hookup
+# Usage Guide: SkogAI Documentation Generator
 
-## Where Things Go
+## Overview
 
+This system provides **automatic frontmatter generation** for markdown documentation files using local LLM via Ollama. It supports both:
+
+1. **Real-time automation** - Watch directories for new/modified files and generate frontmatter automatically
+2. **Batch processing** - Process existing files manually
+
+## Quick Start (Real-Time Mode)
+
+```bash
+# 1. Install dependencies
+cd /home/skogix/docs
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r .docgen/requirements.txt
+
+# 2. Pull the recommended model
+ollama pull qwen3:4b
+
+# 3. Start the daemon
+python -m .docgen.scripts.frontmatter-daemon
+
+# Files added to ./agents, ./skogix, or ./tools will get frontmatter automatically!
 ```
-your-project/
-├── input/                    # PUT YOUR MARKDOWN FILES HERE
-│   └── *.md                 # Existing docs to use as input
-├── .docgen/
-│   ├── prompts/             # OLLAMA PROMPTS HERE
-│   │   ├── agent-profile.txt
-│   │   └── ...
-│   └── scripts/
-│       ├── generate_docs.py      # DATABASE METHOD
-│       └── generate_from_files.py # DIRECT FILE METHOD
-└── generated/               # OUTPUT GOES HERE
-    └── *.md                 # Generated docs with frontmatter
-```
-
-## Model Hookup Point
-
-The Ollama call is in `generate_docs.py` line 62-67:
-
-```python
-def call_ollama(self, prompt):
-    result = subprocess.run(
-        ['ollama', 'run', self.ollama_model, prompt],  # ← MODEL CALLED HERE
-        capture_output=True,
-        text=True,
-        check=True
-    )
-    return result.stdout.strip()
-```
-
-Change model with: `--model mistral` or edit the default in the script.
 
 ---
 
-## Method 1: Database Method (Recommended for Many Docs)
+## Method 1: Real-Time Automation (Recommended)
 
-### Step 1: Put markdown files anywhere
-```bash
-mkdir input
-# Copy your existing markdown files to input/
+### How It Works
+
+```
+┌──────────────────────────────────────────────────────────────────┐
+│                    docs/ repository                              │
+│    agents/ │ skogix/ │ tools/                                   │
+└──────────────────────────────────────────────────────────────────┘
+                           │
+                           │ File events (create/modify)
+                           ▼
+┌──────────────────────────────────────────────────────────────────┐
+│                   File Watcher (watchdog)                        │
+│    - Monitors for *.md files                                     │
+│    - Debounces rapid saves (500ms)                              │
+│    - Ignores .git, .docgen/input, node_modules                  │
+└──────────────────────────────────────────────────────────────────┘
+                           │
+                           │ Queued file paths
+                           ▼
+┌──────────────────────────────────────────────────────────────────┐
+│                   LLM Worker Pool (2-4 workers)                  │
+│    - Async processing                                            │
+│    - Retry with exponential backoff                             │
+│    - Structured output via Pydantic                             │
+└──────────────────────────────────────────────────────────────────┘
+                           │
+                           │ Generated frontmatter
+                           ▼
+┌──────────────────────────────────────────────────────────────────┐
+│                   File Writer                                    │
+│    - Injects frontmatter                                         │
+│    - Preserves content                                          │
+│    - Creates .bak backup                                        │
+└──────────────────────────────────────────────────────────────────┘
 ```
 
-### Step 2: Import to database
+### Setup
+
 ```bash
-# Import single file
+# Run the automated setup script
+.docgen/scripts/setup.sh
+
+# Or manually:
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r .docgen/requirements.txt
+ollama pull qwen3:4b
+```
+
+### Running the Daemon
+
+**Manual run:**
+```bash
+source .venv/bin/activate
+python -m .docgen.scripts.frontmatter-daemon
+
+# With options:
+python -m .docgen.scripts.frontmatter-daemon \
+  --dirs "./agents,./skogix,./tools" \
+  --model qwen3:4b \
+  --workers 2 \
+  --scan-existing
+```
+
+**As a systemd service (24/7 operation):**
+```bash
+# Enable and start
+systemctl --user enable docgen-watcher
+systemctl --user start docgen-watcher
+
+# Check status
+systemctl --user status docgen-watcher
+
+# View logs
+journalctl --user -u docgen-watcher -f
+
+# Stop
+systemctl --user stop docgen-watcher
+```
+
+### Daemon Options
+
+| Option | Description | Default |
+|--------|-------------|---------|
+| `--dirs`, `-d` | Comma-separated directories to watch | `./agents,./skogix,./tools` |
+| `--model`, `-m` | Ollama model to use | `qwen3:4b` |
+| `--workers`, `-w` | Number of concurrent workers | `2` |
+| `--debounce` | Debounce delay in seconds | `0.5` |
+| `--scan-existing` | Process existing files on startup | `false` |
+| `--debug` | Enable debug logging | `false` |
+
+### Environment Variables
+
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `DOCGEN_MODEL` | Ollama model | `qwen3:4b` |
+| `DOCGEN_WORKERS` | Worker count | `2` |
+| `DOCGEN_DEBOUNCE` | Debounce delay | `0.5` |
+| `DOCGEN_DIRS` | Directories to watch | `./agents,./skogix,./tools` |
+| `OLLAMA_HOST` | Ollama API endpoint | `http://localhost:11434` |
+
+---
+
+## Method 2: Manual/Batch Processing
+
+For processing files on-demand rather than real-time.
+
+### Single File Processing
+
+```bash
+python3 .docgen/scripts/generate-frontmatter.py agents/claude/profile.md
+```
+
+### Queue-Based Processing
+
+```bash
+# Add files to queue
+cp new-doc.md .docgen/input/
+
+# Process queue
+.docgen/scripts/process-queue.sh
+```
+
+### Database-Driven Generation
+
+```bash
+# Import markdown to database
 python3 .docgen/scripts/import_markdown.py \
   --file input/my-doc.md \
   --output agents/my-agent/profile.md \
-  --template agent-profile \
-  --categories agents,profiles \
-  --tags agent,profile
+  --template agent-profile
 
-# Import entire directory
-python3 .docgen/scripts/import_markdown.py \
-  --dir input/ \
-  --template memory-block \
-  --categories memory \
-  --tags history,lore
-```
-
-This reads your markdown, extracts the content, and stores it in the database as "input context".
-
-### Step 3: Generate
-```bash
-# Generate all docs from database
+# Generate from database
 python3 .docgen/scripts/generate_docs.py --model llama3.2
-
-# Output goes to ./generated/
 ```
 
 ---
 
-## Method 2: Direct File Method (No Database)
+## Frontmatter Structure
 
-### Step 1: Put markdown files in input folder
-```bash
-mkdir input
-# Copy markdown files here
+Generated frontmatter includes:
+
+```yaml
+---
+categories: [agents, claude]      # Auto-generated from path
+permalink: agents/claude/profile  # Auto-generated from path
+generated_at: 2025-12-19T12:00:00Z # Auto-generated timestamp
+title: Claude Agent Profile       # LLM-generated
+tags: [agent, profile, skogai]    # LLM-generated (3-7)
+type: note                        # LLM-generated (note|guide|reference)
+---
 ```
 
-### Step 2: Generate directly from files
-```bash
-# Process single file
-python3 .docgen/scripts/generate_from_files.py \
-  --input input/my-doc.md \
-  --output generated/my-doc.md \
-  --template agent-profile \
-  --model llama3.2
+### Field Types
 
-# Process entire directory
-python3 .docgen/scripts/generate_from_files.py \
-  --input input/ \
-  --output generated/ \
-  --template memory-block \
-  --model llama3.2
-```
-
-This reads markdown files directly, sends to Ollama, adds frontmatter, saves output.
+| Field | Source | Description |
+|-------|--------|-------------|
+| `categories` | Auto | Derived from file path directories |
+| `permalink` | Auto | File path without extension |
+| `generated_at` | Auto | UTC timestamp of generation |
+| `title` | LLM | Concise document title (3-8 words) |
+| `tags` | LLM | Content keywords (3-7, kebab-case) |
+| `type` | LLM | Classification: note, guide, or reference |
 
 ---
 
-## What Happens
+## Model Selection
 
-### Input Markdown File (`input/example.md`)
-```markdown
----
-title: My Agent
-categories: agents
-tags: profile
----
+### Recommended Models
 
-This agent is responsible for X, Y, Z.
-Created in 2025.
-Known for being helpful.
-```
+| Model | Size | Speed | Use Case |
+|-------|------|-------|----------|
+| `qwen3:4b` | 4B | Fast | **Recommended** - Best balance |
+| `llama3.1:8b` | 8B | Medium | Higher quality for complex docs |
+| `tinyllama:1.1b` | 1.1B | Very Fast | Minimal resources |
 
-### Ollama Receives
-```
-You are generating documentation for an AI agent profile.
-...
-INPUT: This agent is responsible for X, Y, Z.
-Created in 2025.
-Known for being helpful.
-
-Generate the agent profile:
-```
-
-### Output File (`generated/example.md`)
-```markdown
----
-categories:
-- agents
-tags:
-- profile
-permalink: example
-title: My Agent
-type: note
-generated_at: 2025-12-17T02:00:00
----
-
-# My Agent
-
-## Identity
-- Full title: My Agent
-- Creation date: 2025
-- Key characteristics: Helpful, responsible for X, Y, Z
-
-...
-[rest of generated content]
-```
-
----
-
-## Quick Examples
-
-**Example 1: Import existing agent profile**
-```bash
-python3 .docgen/scripts/import_markdown.py \
-  --file agents/claude/profile.md \
-  --output agents/claude/regenerated-profile.md \
-  --template agent-profile \
-  --categories agents,claude \
-  --tags agent,profile
-
-python3 .docgen/scripts/generate_docs.py
-```
-
-**Example 2: Generate from folder of notes**
-```bash
-python3 .docgen/scripts/generate_from_files.py \
-  --input agents/claude/memory-blocks/ \
-  --output generated/memory-blocks/ \
-  --template memory-block \
-  --model llama3.2
-```
-
----
-
-## Different Models
-
-Change the Ollama model:
+### Changing Models
 
 ```bash
-# List available models
+# Pull new model
+ollama pull llama3.1:8b
+
+# Use in daemon
+python -m .docgen.scripts.frontmatter-daemon --model llama3.1:8b
+
+# Or set environment variable
+export DOCGEN_MODEL=llama3.1:8b
+```
+
+---
+
+## Troubleshooting
+
+### Ollama Connection Issues
+
+```bash
+# Check if Ollama is running
+curl http://localhost:11434/api/tags
+
+# Start Ollama if needed
+ollama serve
+
+# Check model availability
 ollama list
-
-# Use different model
-python3 .docgen/scripts/generate_docs.py --model mistral
-python3 .docgen/scripts/generate_from_files.py --model llama3.2:latest
 ```
 
-Or edit the default in the scripts:
-- `generate_docs.py` line 156: `default='llama3.2'`
-- `generate_from_files.py` line 176: `default='llama3.2'`
+### Service Not Starting
+
+```bash
+# Check logs
+journalctl --user -u docgen-watcher -n 50
+
+# Verify paths in service file
+cat ~/.config/systemd/user/docgen-watcher.service
+
+# Reload after changes
+systemctl --user daemon-reload
+systemctl --user restart docgen-watcher
+```
+
+### Files Not Being Processed
+
+1. Check if file is in a watched directory (`agents/`, `skogix/`, `tools/`)
+2. Ensure file has `.md` extension
+3. Check if file already has frontmatter (skipped by default)
+4. Look for errors in daemon output
+
+### Performance Tuning
+
+```bash
+# More workers for faster processing
+--workers 4
+
+# Shorter debounce for quicker response
+--debounce 0.2
+
+# Keep model loaded (in systemd service)
+Environment=OLLAMA_KEEP_ALIVE=24h
+```
+
+---
+
+## Directory Structure
+
+```
+.docgen/
+├── docs.db               # SQLite metadata database
+├── requirements.txt      # Python dependencies
+├── schema.sql           # Database schema
+├── README.md            # System overview
+├── USAGE.md             # This file
+├── input/               # Queue for manual processing
+├── output/              # Generated output
+├── prompts/             # LLM prompt templates
+│   ├── create-frontmatter.txt
+│   ├── agent-profile.txt
+│   └── memory-block.txt
+├── scripts/
+│   ├── __init__.py      # Package init
+│   ├── models.py        # Pydantic schemas
+│   ├── llm.py           # Ollama client
+│   ├── watcher.py       # File watcher
+│   ├── workers.py       # Async workers
+│   ├── writer.py        # Frontmatter injector
+│   ├── frontmatter-daemon.py  # Main daemon
+│   ├── setup.sh         # Setup script
+│   ├── generate-frontmatter.py  # Manual processing
+│   └── process-queue.sh  # Queue processor
+└── templates/
+    └── frontmatter.yaml  # Structure template
+```
+
+---
+
+## Examples
+
+### Example 1: Process existing documentation
+
+```bash
+# Start daemon with scan-existing flag
+python -m .docgen.scripts.frontmatter-daemon --scan-existing
+
+# This will:
+# 1. Start watching directories
+# 2. Queue all existing .md files without frontmatter
+# 3. Process them through the LLM
+```
+
+### Example 2: Watch only specific directory
+
+```bash
+python -m .docgen.scripts.frontmatter-daemon --dirs "./agents/claude"
+```
+
+### Example 3: High-throughput processing
+
+```bash
+# Use more workers and faster model
+python -m .docgen.scripts.frontmatter-daemon \
+  --model qwen3:4b \
+  --workers 4 \
+  --debounce 0.2 \
+  --scan-existing
+```
+
+---
+
+## Integration with Other Tools
+
+### Git Pre-commit Hook
+
+```bash
+# .git/hooks/pre-commit
+#!/bin/bash
+# Ensure frontmatter exists on committed markdown files
+for file in $(git diff --cached --name-only | grep '\.md$'); do
+    if ! head -1 "$file" | grep -q "^---$"; then
+        echo "Warning: $file has no frontmatter"
+    fi
+done
+```
+
+### CI/CD Integration
+
+```yaml
+# .github/workflows/docs.yml
+- name: Generate Frontmatter
+  run: |
+    pip install -r .docgen/requirements.txt
+    python -m .docgen.scripts.frontmatter-daemon --scan-existing --no-watch
+```

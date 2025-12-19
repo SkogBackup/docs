@@ -1,3 +1,19 @@
+---
+categories:
+- tools
+- gh
+permalink: tools/gh/filtering
+generated_at: '2025-12-19T12:56:06Z'
+title: '# gh - Filtering Issues and PRs'
+tags:
+- filtering
+- issues
+- pr
+- github
+- gh
+type: note
+---
+
 # gh - Filtering Issues and PRs
 
 ## When to Use

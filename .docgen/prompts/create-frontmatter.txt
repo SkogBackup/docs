@@ -1,22 +1,37 @@
 
 <task>
-I want you to return *ONLY* frontmatter exactly as shown between the <example>-tags and return the output between <output>-tags.
+Read the document content and generate YAML frontmatter.
+
+You must generate: tags, title, type
+
+Return ONLY the complete frontmatter between <output> tags.
 
 <example>
 ---
-categories: <[]>
-tags: <[]>
-permalink: <path>
-title: <title>
+categories: [tools, path]
+permalink: tools/path/what-we-currently-know
+generated_at: 2025-12-19T00:50:00Z
+tags: [SKOGAI_PATH, environment-variables, path-management, nvm, node]
+title: path - what we currently know
 type: note
-generated_at: <timestamp>
 ---
 </example>
-What Each Field Means
-- <categories>: Hierarchical path from file location (e.g., agents/claude/journal → [agents,claude,journal])
-- <tags>: Descriptive keywords for content discovery (requires human thought about what the doc is about)
-- <permalink>: URL-safe path, typically the file path relative to docs root
-- <title>: Document title (often the filename, sometimes more descriptive)
-- <type>: Document classification (we've been using "note" for everything so far)
-- <generated_at>: ISO 8601 timestamp when frontmatter was added/generated
+
+## Field Guidelines
+
+[TAGS] (you generate): 3-7 specific keywords about the content
+- Use kebab-case for multi-word tags
+- Focus on: main topics, tools mentioned, concepts explained
+- Example: [git, hooks, pre-commit, validation, yaml]
+
+<TITLE> (you generate): Document title
+- Extract from first # heading if meaningful
+- Or use filename if heading is generic
+- Keep concise (3-8 words)
+
+<TYPE> (you generate): Document classification
+- note: general documentation, explanations, learnings
+- guide: step-by-step instructions, how-tos
+- reference: command lists, API docs, quick lookup
+- Default to "note" if unsure
 </task>
