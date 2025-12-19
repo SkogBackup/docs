@@ -9,7 +9,7 @@ while IFS= read -r -d '' inputfile; do
 
     # Generate prompt and call LLM
     .docgen/scripts/make-prompt.sh "$targetfile" > /tmp/prompt.txt
-    aichat --model openrouter:qwen/qwen-2.5-coder-32b-instruct --file /tmp/prompt.txt -- > /tmp/llm-output.txt
+    aichat --model openrouter:qwen/qwen-2.5-coder-32b-instruct --code --file /tmp/prompt.txt > /tmp/llm-output.txt
 
     # Extract LLM generated fields (between <output> tags)
     llm_fields=$(sed -n '/<output>/,/<\/output>/p' /tmp/llm-output.txt | grep -v '<output>' | grep -v '</output>')
