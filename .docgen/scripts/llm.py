@@ -27,7 +27,8 @@ except ImportError:
 logger = logging.getLogger(__name__)
 
 # Default model - good balance of speed and quality for frontmatter
-DEFAULT_MODEL = os.environ.get("DOCGEN_MODEL", "qwen3:4b")
+# qwen3:8b is available locally, use it as default
+DEFAULT_MODEL = os.environ.get("DOCGEN_MODEL", "qwen3:8b")
 
 # System prompt for frontmatter generation
 SYSTEM_PROMPT = """You are a documentation metadata generator for the SkogAI ecosystem.

@@ -54,10 +54,11 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Default configuration
+# Paths relative to parent docs/ directory (daemon runs from .docgen/)
 DEFAULT_WATCH_DIRS = [
-    "./agents",
-    "./skogix",
-    "./tools",
+    "../agents",
+    "../skogix",
+    "../tools",
 ]
 DEFAULT_NUM_WORKERS = 2
 DEFAULT_DEBOUNCE_DELAY = 0.5
