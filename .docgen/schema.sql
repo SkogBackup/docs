@@ -48,3 +48,21 @@ AFTER UPDATE ON documents
 BEGIN
     UPDATE documents SET updated_at = CURRENT_TIMESTAMP WHERE id = NEW.id;
 END;
+
+-- Queue table for batch processing
+CREATE TABLE IF NOT EXISTS processing_queue (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    file_path TEXT NOT NULL,
+    prompt TEXT NOT NULL,
+    status TEXT DEFAULT 'pending' CHECK(status IN ('pending', 'processing', 'completed', 'failed')),
+    priority INTEGER DEFAULT 0,
+    retries INTEGER DEFAULT 0,
+    max_retries INTEGER DEFAULT 3,
+    error_message TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    started_at TIMESTAMP,
+    completed_at TIMESTAMP
+);
+
+CREATE INDEX IF NOT EXISTS idx_queue_status ON processing_queue(status);
+CREATE INDEX IF NOT EXISTS idx_queue_priority ON processing_queue(priority DESC, created_at ASC);
