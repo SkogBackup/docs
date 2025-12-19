@@ -1,3 +1,18 @@
+---
+categories:
+- tools
+- gh
+permalink: tools/gh/api
+generated_at: '2025-12-19T12:56:46Z'
+title: Direct API Access
+tags:
+- gh-api
+- direct-access
+- api-automation
+- graphql
+type: note
+---
+
 # gh - Direct API Access
 
 ## When to Use
