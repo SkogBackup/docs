@@ -132,6 +132,8 @@ async def generate_frontmatter(
         )
 
         # Parse and validate response
+        if response.message.content is None:
+            raise LLMError("LLM returned empty response")
         return Frontmatter.model_validate_json(response.message.content)
 
     except ollama.ResponseError as e:

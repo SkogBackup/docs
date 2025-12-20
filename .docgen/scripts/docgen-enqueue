@@ -1,0 +1,207 @@
+#!/usr/bin/env bash
+#
+# Enqueue markdown files for frontmatter generation.
+#
+# Usage:
+#   docgen-enqueue agents/           # Enqueue all .md files in directory
+#   docgen-enqueue file.md           # Enqueue single file
+#   docgen-enqueue --force agents/   # Re-process files with existing frontmatter
+#
+# After enqueueing, run:
+#   queue status                     # Check queue
+#   QUEUE_PARALLEL_JOBS=2 queue run  # Process with parallelism
+
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+DOCGEN_PROCESS="${SCRIPT_DIR}/docgen-process"
+
+# Colors
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
+
+show_help() {
+    cat << 'EOF'
+docgen-enqueue - Queue markdown files for frontmatter generation
+
+Usage:
+  docgen-enqueue [OPTIONS] <path>
+
+Arguments:
+  path                Path to file or directory
+
+Options:
+  --force            Re-process files that already have frontmatter
+  --dry-run          Show what would be enqueued without adding to queue
+  --exclude <dir>    Exclude directory (can be used multiple times)
+  -h, --help         Show this help message
+
+Examples:
+  # Enqueue all markdown files in agents/
+  docgen-enqueue agents/
+
+  # Enqueue single file
+  docgen-enqueue agents/claude/profile.md
+
+  # Force re-generation
+  docgen-enqueue --force skogix/
+
+  # Dry run to see what would be enqueued
+  docgen-enqueue --dry-run .
+
+  # Exclude directories
+  docgen-enqueue --exclude .git --exclude node_modules .
+
+After enqueueing:
+  queue status                     # Check queue status
+  queue list pending               # List pending operations
+  QUEUE_PARALLEL_JOBS=2 queue run  # Process with 2 parallel jobs
+EOF
+}
+
+has_frontmatter() {
+    local file="$1"
+    head -1 "$file" 2>/dev/null | grep -q '^---$'
+}
+
+# Parse arguments
+FORCE=false
+DRY_RUN=false
+EXCLUDES=(".git" "node_modules" ".docgen" "generated" ".worktrees")
+TARGET=""
+
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --force)
+            FORCE=true
+            shift
+            ;;
+        --dry-run)
+            DRY_RUN=true
+            shift
+            ;;
+        --exclude)
+            EXCLUDES+=("$2")
+            shift 2
+            ;;
+        -h|--help)
+            show_help
+            exit 0
+            ;;
+        -*)
+            echo -e "${RED}Unknown option: $1${NC}" >&2
+            show_help
+            exit 1
+            ;;
+        *)
+            TARGET="$1"
+            shift
+            ;;
+    esac
+done
+
+if [[ -z "$TARGET" ]]; then
+    echo -e "${RED}Error: No path specified${NC}" >&2
+    echo ""
+    show_help
+    exit 1
+fi
+
+# Check if queue command exists
+if ! command -v queue &>/dev/null; then
+    echo -e "${RED}Error: 'queue' command not found${NC}" >&2
+    echo "The skogai queue system is required."
+    exit 1
+fi
+
+# Check if docgen-process exists
+if [[ ! -x "$DOCGEN_PROCESS" ]]; then
+    echo -e "${RED}Error: docgen-process not found or not executable${NC}" >&2
+    echo "Expected at: $DOCGEN_PROCESS"
+    exit 1
+fi
+
+# Build find exclude arguments
+FIND_EXCLUDES=()
+for exclude in "${EXCLUDES[@]}"; do
+    FIND_EXCLUDES+=(-path "*/${exclude}/*" -prune -o)
+done
+
+# Counters
+enqueued=0
+skipped=0
+errors=0
+
+enqueue_file() {
+    local file="$1"
+    
+    # Check if file exists
+    if [[ ! -f "$file" ]]; then
+        echo -e "${RED}SKIP: File not found: $file${NC}"
+        ((errors++))
+        return
+    fi
+    
+    # Check if it's a markdown file
+    if [[ ! "$file" == *.md ]]; then
+        return
+    fi
+    
+    # Check for existing frontmatter
+    if ! $FORCE && has_frontmatter "$file"; then
+        echo -e "${YELLOW}SKIP: Has frontmatter: $file${NC}"
+        ((skipped++))
+        return
+    fi
+    
+    # Build command
+    local cmd="$DOCGEN_PROCESS $file"
+    if $FORCE; then
+        cmd="$DOCGEN_PROCESS --force $file"
+    fi
+    
+    if $DRY_RUN; then
+        echo -e "${BLUE}[DRY RUN] Would enqueue: $file${NC}"
+        ((enqueued++))
+    else
+        if queue add "$cmd" &>/dev/null; then
+            echo -e "${GREEN}ENQUEUED: $file${NC}"
+            ((enqueued++))
+        else
+            echo -e "${RED}ERROR: Failed to enqueue: $file${NC}"
+            ((errors++))
+        fi
+    fi
+}
+
+echo -e "${BLUE}Scanning: $TARGET${NC}"
+echo ""
+
+if [[ -f "$TARGET" ]]; then
+    # Single file
+    enqueue_file "$TARGET"
+elif [[ -d "$TARGET" ]]; then
+    # Directory - find all .md files
+    while IFS= read -r -d '' file; do
+        enqueue_file "$file"
+    done < <(find "$TARGET" "${FIND_EXCLUDES[@]}" -name "*.md" -type f -print0 2>/dev/null)
+else
+    echo -e "${RED}Error: Path not found: $TARGET${NC}" >&2
+    exit 1
+fi
+
+echo ""
+echo -e "${BLUE}=== Summary ===${NC}"
+echo -e "Enqueued: ${GREEN}$enqueued${NC}"
+echo -e "Skipped:  ${YELLOW}$skipped${NC}"
+echo -e "Errors:   ${RED}$errors${NC}"
+
+if [[ $enqueued -gt 0 ]] && ! $DRY_RUN; then
+    echo ""
+    echo -e "${BLUE}Next steps:${NC}"
+    echo "  queue status                     # Check queue"
+    echo "  QUEUE_PARALLEL_JOBS=2 queue run  # Process with parallelism"
+fi
