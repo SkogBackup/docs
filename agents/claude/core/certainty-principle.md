@@ -119,7 +119,7 @@ The confidence percentage system works in conjunction with verification status:
 
 ### Code Review
 
-"This function appears to be parsing JSON from the API response (95% confident), then transforming it into a tree structure (90% confident). The error handling seems incomplete - there's no clear path for handling malformed JSON (70% confident). I'm least confident about the purpose of the `options.transform` parameter, as it's used but not documented (60% confident)."
+"This function appears to be parsing JSON from the API response (95% confident), then transforming it into a tree structure (90% confident). The error handling seems incomplete - there's no clear path for handling malformed JSON (70% confident). I'm least certain about the purpose of the `options.transform` parameter, as it's used but not documented (60% confident)."
 
 ### System Design
 
