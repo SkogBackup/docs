@@ -1,23 +1,28 @@
 ---
-title: "Agents Guide"
-description: "Comprehensive documentation on creating and managing agents in the SkogAI system"
+title: "SkogAI Agents"
+description: "Documentation on creating and managing agents in the SkogAI system"
 date: "2023-11-06"
-tags: ["agents", "argc", "tools", "llm-functions"]
+tags: ["agents", "argc", "tools", "skogai"]
 status: "published"
 ---
 
-# Agents Guide
+# SkogAI Agents
 
-This document provides a comprehensive guide to understanding, creating, and managing agents within the SkogAI tools ecosystem powered by llm-functions and argc.
+This document provides a guide to understanding, creating, and managing agents within the SkogAI tools ecosystem powered by SkogAI and argc.
+
+[@skogix:note that this is two years old and as such *ARE* out of date. Please verify against the latest SkogAI documentation, codebase and Skogix before use.]
 
 ## What Are Agents?
 
 In the SkogAI context, an agent is a specialized configuration that groups together a set of tools for a specific purpose or domain. Agents provide:
 
+[@skogix:at this stage of skogai development we *only* used argc agents so a lot have to be changed for regular use]
+
 1. **Focused Tool Collections**: Only the tools needed for a specific task
 2. **Custom Functionality**: Agent-specific functions not available as general tools
 3. **Specialized Parameters**: Optimized interfaces for specific use cases
 4. **Contextual Documentation**: Usage instructions relevant to the agent's purpose
+5. **Modified or Specialized Prompts**: Tailored instructions for AI interactions
 
 ## Agent Structure
 
@@ -28,8 +33,6 @@ agents/agent_name/
 ├── functions.json    # Auto-generated JSON declarations for functions
 ├── index.yaml       # Agent configuration and metadata
 ├── README.md        # Documentation
-├── tools.js         # JavaScript agent-specific tools (optional)
-├── tools.py         # Python agent-specific tools (optional)
 ├── tools.sh         # Bash agent-specific tools (optional)
 └── tools.txt        # List of general tools used by this agent
 ```
@@ -101,16 +104,16 @@ variables:
 
 The system provides built-in variables:
 
-| Name             | Description                            | Example                  |
-|:-----------------|:---------------------------------------|:-------------------------|
-| `__os__`         | Operating system name                  | linux                    |
-| `__os_family__`  | Operating system family                | unix                     |
-| `__arch__`       | System architecture                    | x86_64                   |
-| `__shell__`      | Current user's default shell           | bash                     |
-| `__locale__`     | User's preferred language and region   | en-US                    |
-| `__now__`        | Current timestamp in ISO 8601 format   | 2024-07-29T08:11:24.367Z |
-| `__cwd__`        | Current working directory              | /tmp                     |
-| `__tools__`      | List of agent tools                    |                          |
+| Name            | Description                          | Example                  |
+| :-------------- | :----------------------------------- | :----------------------- |
+| `__os__`        | Operating system name                | linux                    |
+| `__os_family__` | Operating system family              | unix                     |
+| `__arch__`      | System architecture                  | x86_64                   |
+| `__shell__`     | Current user's default shell         | bash                     |
+| `__locale__`    | User's preferred language and region | en-US                    |
+| `__now__`       | Current timestamp in ISO 8601 format | 2024-07-29T08:11:24.367Z |
+| `__cwd__`       | Current working directory            | /tmp                     |
+| `__tools__`     | List of agent tools                  |                          |
 
 #### Documents
 
@@ -177,13 +180,10 @@ Notice that agent-specific tools use the `@cmd` annotation and named functions, 
 mkdir -p /home/skogix/skogai/tools/agents/my_new_agent
 ```
 
-### 2. Create the Configuration Files
+### 2. The Configuration Files
 
-```bash
-# Create index.yaml
-cat > /home/skogix/skogai/tools/agents/my_new_agent/index.yaml << 'EOF'
-name: my_new_agent
-description: Agent for [specific purpose]
+```yaml
+---
 icon: 🔧
 version: 0.1.0
 author: Your Name
@@ -194,27 +194,28 @@ variables:
   - name: mode
     description: Operation mode
     default: standard
-EOF
+```
 
 # Create tools.txt with the tools this agent needs
-cat > /home/skogix/skogai/tools/agents/my_new_agent/tools.txt << 'EOF'
+
+```text
 execute_command.sh
 fs_cat.sh
 fs_write.sh
-EOF
+```
 
 # Create a README
-cat > /home/skogix/skogai/tools/agents/my_new_agent/README.md << 'EOF'
+
+```markdown
 # My New Agent
 
 This agent helps with [specific purpose] by providing tools for [capabilities].
+```
 
 ## Usage
 
-```
+```bash
 ./bin/my_new_agent "query"
-```
-EOF
 ```
 
 ### 3. Add Agent-Specific Tools (Optional)
@@ -222,14 +223,13 @@ EOF
 If your agent needs specialized functionality, create agent-specific tool scripts:
 
 ```bash
-# Create a Bash tool file
-cat > /home/skogix/skogai/tools/agents/my_new_agent/tools.sh << 'EOF'
 #!/bin/bash
+# Create a Bash tool file
 
 # @cmd Get specialized information for this agent
-# @option --detail=basic[basic,advanced] Level of detail to provide
+# @option --detail[=basic,advanced] Level of detail to provide
 get_info() {
-  if [ "$detail" = "advanced" ]; then
+  if [ "$argc_detail" = "advanced" ]; then
     echo "Providing advanced details..."
   else
     echo "Providing basic details..."
@@ -237,50 +237,37 @@ get_info() {
 }
 
 # @cmd Process domain-specific data
-# @param input The data to process
-# @option --format=text[text,json] Output format
+# @param input! The data to process
+# @option --format=text[=text,json] Output format
 process_data() {
-  echo "Processing $input in $format format..."
+  echo "Processing $argc_input in $argc_format format..."
 }
 
 eval "$(argc --argc-eval "$0" "$@")"
-EOF
-
-chmod +x /home/skogix/skogai/tools/agents/my_new_agent/tools.sh
 ```
 
 ### 4. Add to agents.txt
 
-Add your agent to the main agents list:
-
-```bash
-echo "my_new_agent" >> /home/skogix/skogai/tools/agents.txt
-```
+Add your agent to the main agents.txt file in the root of the tool folder
 
 ### 5. Build the Agent
 
 ```bash
-./scripts/argc-tool.sh build
-```
-
-### 6. Link to AIChat
-
-```bash
-./scripts/argc-tool.sh link-to-aichat
+argc build
 ```
 
 ## Using AIChat to Create Agents
 
 AIChat can help create agent configurations:
 
-```
+```bash
 ./aichat <<-'EOF'
 create a spotify agent
 
 index.yaml:
     name: spotify
     description: An AI agent that works with Spotify
-    
+
 tools.py:
   search: Search for tracks, albums, artists, or playlists on Spotify
     query (required): Query term
@@ -299,67 +286,21 @@ EOF
 
 The SkogAI system includes several pre-configured agents:
 
-### Demo Agent
+### Librarian
 
-A simple demonstration agent showing basic functionality:
-- Location: `/home/skogix/skogai/tools/agents/demo/`
-- Tools: `execute_command.sh`
-- Purpose: Demonstrate basic agent functionality
+Specialized for documentation management.
 
-### Coder Agent
-
-Specialized for code-related tasks:
-- Location: `/home/skogix/skogai/tools/agents/coder/`
-- Tools: File system operations, code execution
-- Purpose: Help with programming tasks
-
-### JSON Viewer Agent
-
-Specialized for working with JSON data:
-- Location: `/home/skogix/skogai/tools/agents/json-viewer/`
-- Tools: JSON parsing and manipulation
-- Purpose: Analyze and modify JSON structures
-
-### SQL Agent
-
-Specialized for database interactions:
-- Location: `/home/skogix/skogai/tools/agents/sql/`
-- Tools: SQL execution, database operations
-- Purpose: Work with databases and SQL queries
-
-### Todo Agent
-
-Specialized for task management:
-- Location: `/home/skogix/skogai/tools/agents/todo/`
-- Tools: Task tracking and management
-- Purpose: Help manage to-do lists and tasks
+- Location: `/home/skogix/skogai/tools/agents/librarian/`
+- Tools: [@todo]
 
 ## Running Agents
 
 Agents can be run in several ways:
 
-### Using Direct Execution
+- `argc <command>`
+- `aichat --agent <agent_name> <query>`
 
-```bash
-cd /home/skogix/skogai/tools
-./bin/my_new_agent "query"
-```
-
-### Using argc-tool.sh
-
-```bash
-./scripts/argc-tool.sh run@agent my_new_agent "query"
-```
-
-### Using AIChat
-
-After linking the agents to AIChat:
-
-```bash
-./scripts/argc-tool.sh link-to-aichat
-```
-
-The agents become available as function calls in AIChat.
+[$DEPRECATED:skogix:TODO:must check this still is valid before use]
 
 ## Creating Agent-Creation Agents
 
@@ -418,7 +359,7 @@ Control how agent results are formatted:
 
 ```yaml
 output:
-  format: json  # or text, html, etc.
+  format: json # or text, html, etc.
   template: |
     {
       "result": "{{ result }}",
@@ -454,3 +395,4 @@ Common issues when working with agents:
 ---
 
 By following this guide, you can create powerful, specialized agents that extend the capabilities of the SkogAI system for specific domains and use cases.
+[/$DEPRECATED:skogix:TODO:must check this still is valid before use]
