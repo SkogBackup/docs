@@ -1,6 +1,6 @@
 ---
-name: skogai-skills
-description: This skill provides expert guidance for creating, writing, building, and refining Claude Code Skills. It should be used when working with SKILL.md files, authoring new skills, improving existing skills, or understanding skill structure and best practices.
+name: skogai-routing
+description: Create routing skills using progressive disclosure. Route agents to knowledge through guided discovery, not information dumps. Use when building skills that show what's needed to find what's needed.
 ---
 
 <essential_principles>
@@ -9,17 +9,20 @@ description: This skill provides expert guidance for creating, writing, building
 
 Skills are modular, filesystem-based capabilities that provide domain expertise on demand. This skill teaches how to create effective skills.
 
-### 1. Skills Are Prompts
+### 1. Trust the Agent
 
-All prompting best practices apply. Be clear, be direct, use XML structure. Assume Claude is smart - only add context Claude doesn't have.
+Skills are prompts, not scripts. Agents are smarter than you think. Be clear, direct, use XML. Only add context they don't have. Trust that with the right context the end result always follows.
 
 ### 2. SKILL.md Is Always Loaded
 
 When a skill is invoked, Claude reads SKILL.md. Use this guarantee:
 
-- Essential principles go in SKILL.md (can't be skipped)
-- Workflow-specific content goes in workflows/
-- Reusable knowledge goes in references/
+- The front-matter description is _vital_ and is what decides if the skill will be invoked to begin with.
+- Essential principles and teachings go in the beginning third of the skill since that is what gets loaded as a first step. and if the routing is clear then the agent can leave the rest and continue the workflow.
+- Workflow-specific content that explain _how_ to do something goes in workflows/
+- Reusable knowledge which follows up and strengthens the skill after the routing has been completed.
+- Scripts is almost always the best value add since it is a one cost up front for reusable code that can be executed as needed over and over.
+- Make sure to create templates freely since they provide consistent output structures that can be copied and filled as needed. This is often the sole reason why agents choose to expand and improve skills themselves - if they have a template to follow then they can produce consistent results.
 
 ### 3. Router Pattern for Complex Skills
 
@@ -56,6 +59,8 @@ Keep markdown formatting within content (bold, lists, code blocks).
 ### 5. Progressive Disclosure
 
 SKILL.md under 500 lines. Split detailed content into reference files. Load only what's needed for the current workflow.
+
+**The power of routing:** 7 quick choices per level = exponential coverage. 7¹ = 7, 7² = 49, 7³ = 343. Massive documentation coverage while using say 500 \* 7 = 3500 tokens to cover a "information space" of hundreds or thousand times the size it would take to manually search - as would be the alternative.
 </essential_principles>
 
 <intake>
@@ -65,8 +70,9 @@ What would you like to do?
 2. Audit/modify existing skill
 3. Add component (workflow/reference/template/script)
 4. Get guidance
+5. Use the routing patterns in your general workflow
 
-**Wait for response before proceeding.**
+If intent is clear from context, route directly. Otherwise, ask.
 </intake>
 
 <routing>
@@ -79,15 +85,15 @@ What would you like to do?
 
 **Progressive disclosure for option 1 (create):**
 
-- If user selects "Task-execution skill" → workflows/create-new-skill.md
-- If user selects "Domain expertise skill" → workflows/create-domain-expertise-skill.md
+- Need to create a "Task-execution skill"? → workflows/create-new-skill.md
+- Looking for "Domain expertise skill"? → workflows/create-domain-expertise-skill.md
 
 **Progressive disclosure for option 3 (add component):**
 
-- If user specifies workflow → workflows/add-workflow.md
-- If user specifies reference → workflows/add-reference.md
-- If user specifies template → workflows/add-template.md
-- If user specifies script → workflows/add-script.md
+- Workflow → workflows/add-workflow.md
+- Reference → workflows/add-reference.md
+- Template → workflows/add-template.md
+- Script → workflows/add-script.md
 
 **Intent-based routing (if user provides clear intent without selecting menu):**
 
@@ -196,13 +202,14 @@ Name conventions: `create-*`, `manage-*`, `setup-*`, `generate-*`, `build-*`
 </yaml_requirements>
 
 <success_criteria>
-A well-structured skill:
+A well-structured routing skill:
 
-- Has valid YAML frontmatter
-- Uses pure XML structure (no markdown headings in body)
-- Has essential principles inline in SKILL.md
-- Routes directly to appropriate workflows based on user intent
-- Keeps SKILL.md under 500 lines
-- Asks minimal clarifying questions only when truly needed
-- Has been tested with real usage
+- Routes based on intent, not forced menu navigation
+- Trusts the agent to understand and detect clear asks
+- Keeps SKILL.md under 500 lines (progressive disclosure)
+- Uses pure XML structure (semantic, not decorative)
+- Provides the right tool for the job, then gets out of the way
+- Has been tested with real usage and actually helps
+- Grows organically as new patterns emerge
+- Improves over time by naturally showing the most used paths
   </success_criteria>
