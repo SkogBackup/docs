@@ -3,8 +3,8 @@
   "examples": [
     {
       "description": "Test number zero",
-      "input": {"count": 0},
-      "args": {"field": "count"},
+      "input": { "count": 0 },
+      "args": { "field": "count" },
       "output": 0
     }
   ]

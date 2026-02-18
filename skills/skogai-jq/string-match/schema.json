@@ -25,20 +25,20 @@
   "examples": [
     {
       "description": "Test if email field matches email pattern",
-      "input": {"user": {"email": "test@example.com"}},
-      "args": {"path": "user.email", "pattern": "^[^@]+@[^@]+\\.[^@]+$"},
+      "input": { "user": { "email": "test@example.com" } },
+      "args": { "path": "user.email", "pattern": "^[^@]+@[^@]+\\.[^@]+$" },
       "output": true
     },
     {
       "description": "Test if field contains only digits",
-      "input": {"data": {"code": "12345"}},
-      "args": {"path": "data.code", "pattern": "^[0-9]+$"},
+      "input": { "data": { "code": "12345" } },
+      "args": { "path": "data.code", "pattern": "^[0-9]+$" },
       "output": true
     },
     {
       "description": "Test pattern that doesn't match",
-      "input": {"name": "John123"},
-      "args": {"path": "name", "pattern": "^[a-zA-Z]+$"},
+      "input": { "name": "John123" },
+      "args": { "path": "name", "pattern": "^[a-zA-Z]+$" },
       "output": false
     }
   ],

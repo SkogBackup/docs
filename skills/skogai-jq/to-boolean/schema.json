@@ -20,45 +20,45 @@
   "examples": [
     {
       "description": "Convert null to false",
-      "input": {"user": {"enabled": null}},
-      "args": {"path": "user.enabled"},
-      "output": {"user": {"enabled": false}}
+      "input": { "user": { "enabled": null } },
+      "args": { "path": "user.enabled" },
+      "output": { "user": { "enabled": false } }
     },
     {
       "description": "Convert non-zero number to true",
-      "input": {"count": 42},
-      "args": {"path": "count"},
-      "output": {"count": true}
+      "input": { "count": 42 },
+      "args": { "path": "count" },
+      "output": { "count": true }
     },
     {
       "description": "Convert zero to false",
-      "input": {"count": 0},
-      "args": {"path": "count"},
-      "output": {"count": false}
+      "input": { "count": 0 },
+      "args": { "path": "count" },
+      "output": { "count": false }
     },
     {
       "description": "Convert non-empty string to true",
-      "input": {"name": "skogix"},
-      "args": {"path": "name"},
-      "output": {"name": true}
+      "input": { "name": "skogix" },
+      "args": { "path": "name" },
+      "output": { "name": true }
     },
     {
       "description": "Convert empty string to false",
-      "input": {"name": ""},
-      "args": {"path": "name"},
-      "output": {"name": false}
+      "input": { "name": "" },
+      "args": { "path": "name" },
+      "output": { "name": false }
     },
     {
       "description": "Convert non-empty array to true",
-      "input": {"items": [1, 2, 3]},
-      "args": {"path": "items"},
-      "output": {"items": true}
+      "input": { "items": [1, 2, 3] },
+      "args": { "path": "items" },
+      "output": { "items": true }
     },
     {
       "description": "Convert empty array to false",
-      "input": {"items": []},
-      "args": {"path": "items"},
-      "output": {"items": false}
+      "input": { "items": [] },
+      "args": { "path": "items" },
+      "output": { "items": false }
     }
   ],
   "tags": ["conversion", "boolean", "truthy", "falsy", "type-conversion"]

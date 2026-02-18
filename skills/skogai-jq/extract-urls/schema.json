@@ -20,26 +20,26 @@
   "examples": [
     {
       "description": "Extract single HTTP URL from text",
-      "input": {"text": "Visit http://example.com for more info"},
-      "args": {"path": "text"},
+      "input": { "text": "Visit http://example.com for more info" },
+      "args": { "path": "text" },
       "output": ["http://example.com"]
     },
     {
       "description": "Extract multiple URLs from text",
-      "input": {"content": "Check https://google.com and http://github.com"},
-      "args": {"path": "content"},
+      "input": { "content": "Check https://google.com and http://github.com" },
+      "args": { "path": "content" },
       "output": ["https://google.com", "http://github.com"]
     },
     {
       "description": "Extract URLs with query parameters",
-      "input": {"data": "API: https://api.example.com/v1?key=abc&id=123"},
-      "args": {"path": "data"},
+      "input": { "data": "API: https://api.example.com/v1?key=abc&id=123" },
+      "args": { "path": "data" },
       "output": ["https://api.example.com/v1?key=abc&id=123"]
     },
     {
       "description": "No URLs in text returns empty array",
-      "input": {"text": "No links here, just plain text"},
-      "args": {"path": "text"},
+      "input": { "text": "No links here, just plain text" },
+      "args": { "path": "text" },
       "output": []
     }
   ],

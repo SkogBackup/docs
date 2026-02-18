@@ -20,32 +20,36 @@
   "examples": [
     {
       "description": "All fields match types",
-      "input": {"name": "Alice", "age": 30, "active": true},
-      "args": {"type_rules": "{\"name\":\"string\",\"age\":\"number\",\"active\":\"boolean\"}"},
+      "input": { "name": "Alice", "age": 30, "active": true },
+      "args": {
+        "type_rules": "{\"name\":\"string\",\"age\":\"number\",\"active\":\"boolean\"}"
+      },
       "output": true
     },
     {
       "description": "One field has wrong type",
-      "input": {"name": "Alice", "age": "30"},
-      "args": {"type_rules": "{\"name\":\"string\",\"age\":\"number\"}"},
+      "input": { "name": "Alice", "age": "30" },
+      "args": { "type_rules": "{\"name\":\"string\",\"age\":\"number\"}" },
       "output": false
     },
     {
       "description": "Nested field validation",
-      "input": {"user": {"name": "Bob", "profile": {"age": 25}}},
-      "args": {"type_rules": "{\"user.name\":\"string\",\"user.profile.age\":\"number\"}"},
+      "input": { "user": { "name": "Bob", "profile": { "age": 25 } } },
+      "args": {
+        "type_rules": "{\"user.name\":\"string\",\"user.profile.age\":\"number\"}"
+      },
       "output": true
     },
     {
       "description": "Array type validation",
-      "input": {"items": [1, 2, 3]},
-      "args": {"type_rules": "{\"items\":\"array\"}"},
+      "input": { "items": [1, 2, 3] },
+      "args": { "type_rules": "{\"items\":\"array\"}" },
       "output": true
     },
     {
       "description": "Empty type rules returns true",
-      "input": {"any": "data"},
-      "args": {"type_rules": "{}"},
+      "input": { "any": "data" },
+      "args": { "type_rules": "{}" },
       "output": true
     }
   ],

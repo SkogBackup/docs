@@ -25,52 +25,62 @@
   "examples": [
     {
       "description": "Valid email format",
-      "input": {"user": {"email": "test@example.com"}},
-      "args": {"path": "user.email", "format": "email"},
+      "input": { "user": { "email": "test@example.com" } },
+      "args": { "path": "user.email", "format": "email" },
       "output": true
     },
     {
       "description": "Invalid email format",
-      "input": {"user": {"email": "not-an-email"}},
-      "args": {"path": "user.email", "format": "email"},
+      "input": { "user": { "email": "not-an-email" } },
+      "args": { "path": "user.email", "format": "email" },
       "output": false
     },
     {
       "description": "Valid URL format",
-      "input": {"site": "https://example.com/path"},
-      "args": {"path": "site", "format": "url"},
+      "input": { "site": "https://example.com/path" },
+      "args": { "path": "site", "format": "url" },
       "output": true
     },
     {
       "description": "Valid UUID format",
-      "input": {"id": "550e8400-e29b-41d4-a716-446655440000"},
-      "args": {"path": "id", "format": "uuid"},
+      "input": { "id": "550e8400-e29b-41d4-a716-446655440000" },
+      "args": { "path": "id", "format": "uuid" },
       "output": true
     },
     {
       "description": "Valid ISO 8601 timestamp",
-      "input": {"created": "2024-01-15T10:30:00Z"},
-      "args": {"path": "created", "format": "timestamp"},
+      "input": { "created": "2024-01-15T10:30:00Z" },
+      "args": { "path": "created", "format": "timestamp" },
       "output": true
     },
     {
       "description": "Valid date format",
-      "input": {"date": "2024-01-15"},
-      "args": {"path": "date", "format": "date"},
+      "input": { "date": "2024-01-15" },
+      "args": { "path": "date", "format": "date" },
       "output": true
     },
     {
       "description": "Field doesn't exist returns false",
-      "input": {"name": "test"},
-      "args": {"path": "email", "format": "email"},
+      "input": { "name": "test" },
+      "args": { "path": "email", "format": "email" },
       "output": false
     },
     {
       "description": "Non-string value returns false",
-      "input": {"email": 123},
-      "args": {"path": "email", "format": "email"},
+      "input": { "email": 123 },
+      "args": { "path": "email", "format": "email" },
       "output": false
     }
   ],
-  "tags": ["validation", "format", "email", "url", "uuid", "timestamp", "date", "pattern", "regex"]
+  "tags": [
+    "validation",
+    "format",
+    "email",
+    "url",
+    "uuid",
+    "timestamp",
+    "date",
+    "pattern",
+    "regex"
+  ]
 }

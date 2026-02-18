@@ -25,20 +25,20 @@
   "examples": [
     {
       "description": "Join array of strings with comma",
-      "input": {"items": ["a", "b", "c"]},
-      "args": {"path": "items", "delimiter": ","},
+      "input": { "items": ["a", "b", "c"] },
+      "args": { "path": "items", "delimiter": "," },
       "output": "a,b,c"
     },
     {
       "description": "Join array of numbers with space",
-      "input": {"data": {"scores": [1, 2, 3]}},
-      "args": {"path": "data.scores", "delimiter": " "},
+      "input": { "data": { "scores": [1, 2, 3] } },
+      "args": { "path": "data.scores", "delimiter": " " },
       "output": "1 2 3"
     },
     {
       "description": "Join array with multi-character delimiter",
-      "input": {"tags": ["foo", "bar", "baz"]},
-      "args": {"path": "tags", "delimiter": " :: "},
+      "input": { "tags": ["foo", "bar", "baz"] },
+      "args": { "path": "tags", "delimiter": " :: " },
       "output": "foo :: bar :: baz"
     }
   ],

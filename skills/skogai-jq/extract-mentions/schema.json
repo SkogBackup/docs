@@ -20,20 +20,20 @@
   "examples": [
     {
       "description": "Extract single mention",
-      "input": {"message": "Hello @skogix"},
-      "args": {"path": "message"},
+      "input": { "message": "Hello @skogix" },
+      "args": { "path": "message" },
       "output": ["@skogix"]
     },
     {
       "description": "Extract multiple mentions",
-      "input": {"comment": "@alice and @bob, please review"},
-      "args": {"path": "comment"},
+      "input": { "comment": "@alice and @bob, please review" },
+      "args": { "path": "comment" },
       "output": ["@alice", "@bob"]
     },
     {
       "description": "No mentions returns empty array",
-      "input": {"text": "No mentions here"},
-      "args": {"path": "text"},
+      "input": { "text": "No mentions here" },
+      "args": { "path": "text" },
       "output": []
     }
   ],

@@ -30,33 +30,59 @@
   "examples": [
     {
       "description": "Sort by name ascending",
-      "input": {"users": [{"name": "charlie"}, {"name": "alice"}, {"name": "bob"}]},
-      "args": {"array_path": "users", "field_name": "name"},
-      "output": {"users": [{"name": "alice"}, {"name": "bob"}, {"name": "charlie"}]}
+      "input": {
+        "users": [{ "name": "charlie" }, { "name": "alice" }, { "name": "bob" }]
+      },
+      "args": { "array_path": "users", "field_name": "name" },
+      "output": {
+        "users": [{ "name": "alice" }, { "name": "bob" }, { "name": "charlie" }]
+      }
     },
     {
       "description": "Sort by age descending",
-      "input": {"users": [{"age": 25}, {"age": 35}, {"age": 20}]},
-      "args": {"array_path": "users", "field_name": "age", "order": "desc"},
-      "output": {"users": [{"age": 35}, {"age": 25}, {"age": 20}]}
+      "input": { "users": [{ "age": 25 }, { "age": 35 }, { "age": 20 }] },
+      "args": { "array_path": "users", "field_name": "age", "order": "desc" },
+      "output": { "users": [{ "age": 35 }, { "age": 25 }, { "age": 20 }] }
     },
     {
       "description": "Sort with missing fields (sort first in asc)",
-      "input": {"users": [{"name": "alice"}, {"other": "x"}, {"name": "bob"}]},
-      "args": {"array_path": "users", "field_name": "name"},
-      "output": {"users": [{"other": "x"}, {"name": "alice"}, {"name": "bob"}]}
+      "input": {
+        "users": [{ "name": "alice" }, { "other": "x" }, { "name": "bob" }]
+      },
+      "args": { "array_path": "users", "field_name": "name" },
+      "output": {
+        "users": [{ "other": "x" }, { "name": "alice" }, { "name": "bob" }]
+      }
     },
     {
       "description": "Sort by nested field",
-      "input": {"users": [{"profile": {"score": 90}}, {"profile": {"score": 75}}]},
-      "args": {"array_path": "users", "field_name": "profile.score", "order": "desc"},
-      "output": {"users": [{"profile": {"score": 90}}, {"profile": {"score": 75}}]}
+      "input": {
+        "users": [
+          { "profile": { "score": 90 } },
+          { "profile": { "score": 75 } }
+        ]
+      },
+      "args": {
+        "array_path": "users",
+        "field_name": "profile.score",
+        "order": "desc"
+      },
+      "output": {
+        "users": [
+          { "profile": { "score": 90 } },
+          { "profile": { "score": 75 } }
+        ]
+      }
     },
     {
       "description": "Sort booleans (false < true)",
-      "input": {"items": [{"active": true}, {"active": false}, {"active": true}]},
-      "args": {"array_path": "items", "field_name": "active"},
-      "output": {"items": [{"active": false}, {"active": true}, {"active": true}]}
+      "input": {
+        "items": [{ "active": true }, { "active": false }, { "active": true }]
+      },
+      "args": { "array_path": "items", "field_name": "active" },
+      "output": {
+        "items": [{ "active": false }, { "active": true }, { "active": true }]
+      }
     }
   ],
   "tags": ["array", "sort", "order", "ascending", "descending"]

@@ -1,1 +1,1 @@
-{"source": {"x": "new"}, "target": {"x": "old", "y": "kept"}}
+{ "source": { "x": "new" }, "target": { "x": "old", "y": "kept" } }

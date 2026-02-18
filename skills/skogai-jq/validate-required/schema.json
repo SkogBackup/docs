@@ -20,32 +20,32 @@
   "examples": [
     {
       "description": "All required fields exist",
-      "input": {"name": "skogix", "email": "test@example.com"},
-      "args": {"required_fields": "[\"name\",\"email\"]"},
+      "input": { "name": "skogix", "email": "test@example.com" },
+      "args": { "required_fields": "[\"name\",\"email\"]" },
       "output": true
     },
     {
       "description": "Missing one required field",
-      "input": {"name": "skogix"},
-      "args": {"required_fields": "[\"name\",\"email\"]"},
+      "input": { "name": "skogix" },
+      "args": { "required_fields": "[\"name\",\"email\"]" },
       "output": false
     },
     {
       "description": "Nested field validation",
-      "input": {"user": {"name": "skogix", "profile": {"age": 30}}},
-      "args": {"required_fields": "[\"user.name\",\"user.profile.age\"]"},
+      "input": { "user": { "name": "skogix", "profile": { "age": 30 } } },
+      "args": { "required_fields": "[\"user.name\",\"user.profile.age\"]" },
       "output": true
     },
     {
       "description": "Field exists with null value (validation passes)",
-      "input": {"name": null, "email": "test@example.com"},
-      "args": {"required_fields": "[\"name\",\"email\"]"},
+      "input": { "name": null, "email": "test@example.com" },
+      "args": { "required_fields": "[\"name\",\"email\"]" },
       "output": true
     },
     {
       "description": "Empty required fields list (always passes)",
-      "input": {"anything": "value"},
-      "args": {"required_fields": "[]"},
+      "input": { "anything": "value" },
+      "args": { "required_fields": "[]" },
       "output": true
     }
   ],

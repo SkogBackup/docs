@@ -20,21 +20,32 @@
   "examples": [
     {
       "description": "Remove duplicate numbers",
-      "input": {"items": [1, 2, 2, 3, 1, 4, 3]},
+      "input": { "items": [1, 2, 2, 3, 1, 4, 3] },
       "args": {},
-      "output": {"items": [1, 2, 3, 4]}
+      "output": { "items": [1, 2, 3, 4] }
     },
     {
       "description": "Remove duplicate strings",
-      "input": {"items": ["apple", "banana", "apple", "cherry", "banana"]},
+      "input": { "items": ["apple", "banana", "apple", "cherry", "banana"] },
       "args": {},
-      "output": {"items": ["apple", "banana", "cherry"]}
+      "output": { "items": ["apple", "banana", "cherry"] }
     },
     {
       "description": "Remove duplicate objects",
-      "input": {"users": [{"id": 1, "name": "alice"}, {"id": 2, "name": "bob"}, {"id": 1, "name": "alice"}]},
-      "args": {"array": "users"},
-      "output": {"users": [{"id": 1, "name": "alice"}, {"id": 2, "name": "bob"}]}
+      "input": {
+        "users": [
+          { "id": 1, "name": "alice" },
+          { "id": 2, "name": "bob" },
+          { "id": 1, "name": "alice" }
+        ]
+      },
+      "args": { "array": "users" },
+      "output": {
+        "users": [
+          { "id": 1, "name": "alice" },
+          { "id": 2, "name": "bob" }
+        ]
+      }
     }
   ],
   "tags": ["array", "unique", "deduplicate", "distinct"]

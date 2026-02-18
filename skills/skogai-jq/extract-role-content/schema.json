@@ -27,35 +27,35 @@
       "description": "Extract user messages",
       "input": {
         "messages": [
-          {"role": "user", "content": "Hello"},
-          {"role": "assistant", "content": "Hi there"},
-          {"role": "user", "content": "How are you?"}
+          { "role": "user", "content": "Hello" },
+          { "role": "assistant", "content": "Hi there" },
+          { "role": "user", "content": "How are you?" }
         ]
       },
-      "args": {"array_path": "messages", "role": "user"},
+      "args": { "array_path": "messages", "role": "user" },
       "output": ["Hello", "How are you?"]
     },
     {
       "description": "Extract assistant messages",
       "input": {
         "messages": [
-          {"role": "user", "content": "Hello"},
-          {"role": "assistant", "content": "Hi there"},
-          {"role": "assistant", "content": "I'm doing well"}
+          { "role": "user", "content": "Hello" },
+          { "role": "assistant", "content": "Hi there" },
+          { "role": "assistant", "content": "I'm doing well" }
         ]
       },
-      "args": {"array_path": "messages", "role": "assistant"},
+      "args": { "array_path": "messages", "role": "assistant" },
       "output": ["Hi there", "I'm doing well"]
     },
     {
       "description": "Extract system messages",
       "input": {
         "messages": [
-          {"role": "system", "content": "You are a helpful assistant"},
-          {"role": "user", "content": "Hello"}
+          { "role": "system", "content": "You are a helpful assistant" },
+          { "role": "user", "content": "Hello" }
         ]
       },
-      "args": {"array_path": "messages", "role": "system"},
+      "args": { "array_path": "messages", "role": "system" },
       "output": ["You are a helpful assistant"]
     }
   ],

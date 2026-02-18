@@ -30,21 +30,25 @@
   "examples": [
     {
       "description": "Add field to root level object",
-      "input": {"user": {"name": "alice"}},
-      "args": {"path": "", "field_name": "status", "value": "active"},
-      "output": {"user": {"name": "alice"}, "status": "active"}
+      "input": { "user": { "name": "alice" } },
+      "args": { "path": "", "field_name": "status", "value": "active" },
+      "output": { "user": { "name": "alice" }, "status": "active" }
     },
     {
       "description": "Add field to nested object",
-      "input": {"user": {"name": "alice"}},
-      "args": {"path": "user", "field_name": "email", "value": "alice@example.com"},
-      "output": {"user": {"name": "alice", "email": "alice@example.com"}}
+      "input": { "user": { "name": "alice" } },
+      "args": {
+        "path": "user",
+        "field_name": "email",
+        "value": "alice@example.com"
+      },
+      "output": { "user": { "name": "alice", "email": "alice@example.com" } }
     },
     {
       "description": "Create intermediate objects and add field",
       "input": {},
-      "args": {"path": "user.profile", "field_name": "age", "value": "30"},
-      "output": {"user": {"profile": {"age": "30"}}}
+      "args": { "path": "user.profile", "field_name": "age", "value": "30" },
+      "output": { "user": { "profile": { "age": "30" } } }
     }
   ],
   "tags": ["crud", "write", "object", "mutation", "field"]

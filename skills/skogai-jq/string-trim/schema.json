@@ -20,21 +20,21 @@
   "examples": [
     {
       "description": "Trim leading and trailing spaces",
-      "input": {"message": "  hello world  "},
-      "args": {"path": "message"},
-      "output": {"message": "hello world"}
+      "input": { "message": "  hello world  " },
+      "args": { "path": "message" },
+      "output": { "message": "hello world" }
     },
     {
       "description": "Trim nested string with tabs and newlines",
-      "input": {"user": {"name": "\t\n  skogix  \n\t"}},
-      "args": {"path": "user.name"},
-      "output": {"user": {"name": "skogix"}}
+      "input": { "user": { "name": "\t\n  skogix  \n\t" } },
+      "args": { "path": "user.name" },
+      "output": { "user": { "name": "skogix" } }
     },
     {
       "description": "Preserve internal whitespace",
-      "input": {"data": {"text": "  hello   world  "}},
-      "args": {"path": "data.text"},
-      "output": {"data": {"text": "hello   world"}}
+      "input": { "data": { "text": "  hello   world  " } },
+      "args": { "path": "data.text" },
+      "output": { "data": { "text": "hello   world" } }
     }
   ],
   "tags": ["string", "trim", "whitespace", "cleanup"]

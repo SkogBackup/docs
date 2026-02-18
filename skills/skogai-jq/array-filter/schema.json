@@ -30,21 +30,36 @@
   "examples": [
     {
       "description": "Filter items by boolean field",
-      "input": {"items": [{"name": "a", "active": true}, {"name": "b", "active": false}]},
-      "args": {"array_field": "items", "field": "active", "value": "true"},
-      "output": {"items": [{"name": "a", "active": true}]}
+      "input": {
+        "items": [
+          { "name": "a", "active": true },
+          { "name": "b", "active": false }
+        ]
+      },
+      "args": { "array_field": "items", "field": "active", "value": "true" },
+      "output": { "items": [{ "name": "a", "active": true }] }
     },
     {
       "description": "Filter items by string field",
-      "input": {"users": [{"id": 1, "status": "active"}, {"id": 2, "status": "inactive"}]},
-      "args": {"array_field": "users", "field": "status", "value": "active"},
-      "output": {"users": [{"id": 1, "status": "active"}]}
+      "input": {
+        "users": [
+          { "id": 1, "status": "active" },
+          { "id": 2, "status": "inactive" }
+        ]
+      },
+      "args": { "array_field": "users", "field": "status", "value": "active" },
+      "output": { "users": [{ "id": 1, "status": "active" }] }
     },
     {
       "description": "Filter items by numeric field",
-      "input": {"products": [{"id": 1, "price": 100}, {"id": 2, "price": 50}]},
-      "args": {"array_field": "products", "field": "price", "value": "100"},
-      "output": {"products": [{"id": 1, "price": 100}]}
+      "input": {
+        "products": [
+          { "id": 1, "price": 100 },
+          { "id": 2, "price": 50 }
+        ]
+      },
+      "args": { "array_field": "products", "field": "price", "value": "100" },
+      "output": { "products": [{ "id": 1, "price": 100 }] }
     }
   ],
   "tags": ["array", "filter", "select", "field-match"]

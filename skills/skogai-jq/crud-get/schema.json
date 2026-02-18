@@ -25,20 +25,20 @@
   "examples": [
     {
       "description": "Get existing nested value",
-      "input": {"user": {"name": "skogix"}},
-      "args": {"path": "user.name"},
+      "input": { "user": { "name": "skogix" } },
+      "args": { "path": "user.name" },
       "output": "skogix"
     },
     {
       "description": "Get with default when path doesn't exist",
-      "input": {"user": {}},
-      "args": {"path": "user.email", "default": "unknown"},
+      "input": { "user": {} },
+      "args": { "path": "user.email", "default": "unknown" },
       "output": "unknown"
     },
     {
       "description": "Get deeply nested value",
-      "input": {"data": {"user": {"profile": {"age": 30}}}},
-      "args": {"path": "data.user.profile.age"},
+      "input": { "data": { "user": { "profile": { "age": 30 } } } },
+      "args": { "path": "data.user.profile.age" },
       "output": 30
     }
   ],

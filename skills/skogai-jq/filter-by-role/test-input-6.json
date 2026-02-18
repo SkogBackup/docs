@@ -1,6 +1,6 @@
 {
   "messages": [
-    {"role": "user", "content": "Hello"},
-    {"role": "assistant", "content": "Hi"}
+    { "role": "user", "content": "Hello" },
+    { "role": "assistant", "content": "Hi" }
   ]
 }

@@ -27,9 +27,9 @@
       "description": "Group by status field",
       "input": {
         "items": [
-          {"name": "alice", "status": "active"},
-          {"name": "bob", "status": "active"},
-          {"name": "charlie", "status": "inactive"}
+          { "name": "alice", "status": "active" },
+          { "name": "bob", "status": "active" },
+          { "name": "charlie", "status": "inactive" }
         ]
       },
       "args": {
@@ -38,12 +38,10 @@
       },
       "output": {
         "active": [
-          {"name": "alice", "status": "active"},
-          {"name": "bob", "status": "active"}
+          { "name": "alice", "status": "active" },
+          { "name": "bob", "status": "active" }
         ],
-        "inactive": [
-          {"name": "charlie", "status": "inactive"}
-        ]
+        "inactive": [{ "name": "charlie", "status": "inactive" }]
       }
     },
     {
@@ -51,9 +49,9 @@
       "input": {
         "data": {
           "results": [
-            {"name": "alice", "score": 100},
-            {"name": "bob", "score": 85},
-            {"name": "charlie", "score": 100}
+            { "name": "alice", "score": 100 },
+            { "name": "bob", "score": 85 },
+            { "name": "charlie", "score": 100 }
           ]
         }
       },
@@ -63,21 +61,19 @@
       },
       "output": {
         "100": [
-          {"name": "alice", "score": 100},
-          {"name": "charlie", "score": 100}
+          { "name": "alice", "score": 100 },
+          { "name": "charlie", "score": 100 }
         ],
-        "85": [
-          {"name": "bob", "score": 85}
-        ]
+        "85": [{ "name": "bob", "score": 85 }]
       }
     },
     {
       "description": "Group with missing fields",
       "input": {
         "items": [
-          {"name": "alice", "status": "active"},
-          {"name": "bob"},
-          {"name": "charlie", "status": "active"}
+          { "name": "alice", "status": "active" },
+          { "name": "bob" },
+          { "name": "charlie", "status": "active" }
         ]
       },
       "args": {
@@ -86,12 +82,10 @@
       },
       "output": {
         "active": [
-          {"name": "alice", "status": "active"},
-          {"name": "charlie", "status": "active"}
+          { "name": "alice", "status": "active" },
+          { "name": "charlie", "status": "active" }
         ],
-        "null": [
-          {"name": "bob"}
-        ]
+        "null": [{ "name": "bob" }]
       }
     }
   ],

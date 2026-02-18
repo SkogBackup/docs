@@ -1,8 +1,8 @@
 {
   "messages": [
     "not-an-object",
-    {"role": "user", "content": "Hello"},
+    { "role": "user", "content": "Hello" },
     123,
-    {"role": "assistant", "content": "Hi"}
+    { "role": "assistant", "content": "Hi" }
   ]
 }

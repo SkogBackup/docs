@@ -3,5 +3,5 @@
   "title": "test",
   "description": "test description",
   "tags": ["a", "b", "c"],
-  "metadata": {"key": "value"}
+  "metadata": { "key": "value" }
 }

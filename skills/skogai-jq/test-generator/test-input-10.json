@@ -3,8 +3,8 @@
   "examples": [
     {
       "description": "Test without args",
-      "input": {"data": "test"},
-      "output": {"data": "test"}
+      "input": { "data": "test" },
+      "output": { "data": "test" }
     }
   ]
 }

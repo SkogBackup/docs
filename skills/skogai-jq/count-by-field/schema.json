@@ -27,9 +27,9 @@
       "description": "Count by status field",
       "input": {
         "items": [
-          {"name": "alice", "status": "active"},
-          {"name": "bob", "status": "active"},
-          {"name": "charlie", "status": "inactive"}
+          { "name": "alice", "status": "active" },
+          { "name": "bob", "status": "active" },
+          { "name": "charlie", "status": "inactive" }
         ]
       },
       "args": {
@@ -45,11 +45,7 @@
       "description": "Count by numeric field",
       "input": {
         "data": {
-          "results": [
-            {"score": 100},
-            {"score": 85},
-            {"score": 100}
-          ]
+          "results": [{ "score": 100 }, { "score": 85 }, { "score": 100 }]
         }
       },
       "args": {
@@ -65,9 +61,9 @@
       "description": "Count with missing fields",
       "input": {
         "items": [
-          {"name": "alice", "status": "active"},
-          {"name": "bob"},
-          {"name": "charlie", "status": "active"}
+          { "name": "alice", "status": "active" },
+          { "name": "bob" },
+          { "name": "charlie", "status": "active" }
         ]
       },
       "args": {

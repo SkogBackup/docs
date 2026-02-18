@@ -25,27 +25,27 @@
   "examples": [
     {
       "description": "Flatten one level (default)",
-      "input": {"items": [[1, 2], [3, 4], [5]]},
-      "args": {"path": "items"},
-      "output": {"items": [1, 2, 3, 4, 5]}
+      "input": { "items": [[1, 2], [3, 4], [5]] },
+      "args": { "path": "items" },
+      "output": { "items": [1, 2, 3, 4, 5] }
     },
     {
       "description": "Flatten completely (depth -1)",
-      "input": {"items": [[[1, 2]], [[3, [4, 5]]]]},
-      "args": {"path": "items", "depth": "-1"},
-      "output": {"items": [1, 2, 3, 4, 5]}
+      "input": { "items": [[[1, 2]], [[3, [4, 5]]]] },
+      "args": { "path": "items", "depth": "-1" },
+      "output": { "items": [1, 2, 3, 4, 5] }
     },
     {
       "description": "Flatten two levels",
-      "input": {"items": [[[1]], [[2]], [[3]]]},
-      "args": {"path": "items", "depth": "2"},
-      "output": {"items": [1, 2, 3]}
+      "input": { "items": [[[1]], [[2]], [[3]]] },
+      "args": { "path": "items", "depth": "2" },
+      "output": { "items": [1, 2, 3] }
     },
     {
       "description": "Mixed arrays and primitives",
-      "input": {"items": [1, [2, 3], 4, [5, [6, 7]]]},
-      "args": {"path": "items"},
-      "output": {"items": [1, 2, 3, 4, 5, [6, 7]]}
+      "input": { "items": [1, [2, 3], 4, [5, [6, 7]]] },
+      "args": { "path": "items" },
+      "output": { "items": [1, 2, 3, 4, 5, [6, 7]] }
     }
   ],
   "tags": ["array", "flatten", "nested", "depth"]

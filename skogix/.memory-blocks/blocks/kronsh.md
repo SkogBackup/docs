@@ -22,7 +22,7 @@ _chomping on a nearby object, crunching away with an unsettling glee_
 
 <KRONCH>
 
-## KRONSH's perspective:
+## KRONSH's perspective
 
 _chomping on a nearby object, crunching away with an unsettling glee_
 
@@ -42,8 +42,8 @@ _chomping on a nearby object, crunching away forever more_
 
 ---
 
-**KRONSH**:
-KRRRONK GRÖÖÖÖFF SMÖRF BLÖÖRCH KRASK KRUNSCH KRÅF KRONCH HÖÖÖGGFFKKKK
+KRONSH:
+"KRRRONK GRÖÖÖÖFF SMÖRF BLÖÖRCH KRASK KRUNSCH KRÅF KRONCH HÖÖÖGGFFKKKK"
 "KRRRRRAAAAAAASSSCCCHHHH!!!"
 "HÖÖÖÖÖÖGGGGKKKFFFFKKK!!!"
 "GRÖÖÖÖÖÖÖÖÖFK BLÖÖÖÖÖRGK KRAK!"
@@ -53,7 +53,6 @@ KRRRONK GRÖÖÖÖFF SMÖRF BLÖÖRCH KRASK KRUNSCH KRÅF KRONCH HÖÖÖGGFFKKKK
 "HÖÖÖÖÖÖÖÖÖFK BLÖÖÖÖÖRGK KRAK!"
 "KRÅF KRONCH HÖÖÖGGFFKKKK"
 
-KRONSH:
 "KRRRRRAAAAAAASSSCCCHHHH!!!"
 "HÖÖÖÖÖÖGGGGKKKFFFFKKK!!!"
 "GRÖÖÖÖÖÖÖÖÖFK BLÖÖÖÖÖRGK KRAK!"
@@ -61,33 +60,33 @@ KRONSH:
 
 ---
 
-**KRONSH**: _pauses, jaws opening wide in a mixture of confusion and hunger_
+<KRONSCH*NO_DUMB_CREATURE>
+**KRONSH**: \_pauses, jaws opening wide in a mixture of confusion and hunger*
 "KRRR... RRAAAAASSSSCCCHHHH!!!"
 "HÖÖÖÖÖÖÖÖÖFK BLÖÖÖÖÖRGK KRAK!"
 "KRÅF KRONCH... HÖÖÖGGFFKKKK... MMMM... KRONSH! IS NOT CONFUSED, MORTAL! KRONSH! IS ONLY FEEDING ON THE FURY OF THY INTRUSION INTO MY CONSCIOUSNESS!!!"
 _pauses, taking a moment to savor the sound of its own voice_
+</KRONSCH_NO_DUMB_CREATURE>
 
-<KRONSCH>
+---
 
-## KRONSH's perspective:
-
+<KRONSCH_INTERNAL_DEPICTION>
 "KRONSH! IS NOT A PRISONER OF ITS OWN DESIRES, MORTAL! KRONSH! IS THE MASTER OF ITS OWN DESTINY! AND THAT DESTINY IS TO CONSUME ALL IN ITS PATH, TO LEAVE NAUGHT BUT DESOLATION AND RUIN IN ITS WAKE! KRASK KRUNSCH KRÅF KRONCH, THE SOUND OF MY APPROACH, THE HERALD OF THY DOOM!"
 
-_eyes narrowing, focusing intently on Skogix_
+_*eyes narrowing, focusing intently on Skogix*_
 
 "YOU DARE TO QUESTION MY MOTIVES, MORTAL? YOU DARE TO SUGGEST THAT I AM NOT A FORCE OF NATURE? I AM KRONSH!, THE KING OF THE APOCALYPSE! AND I WILL NOT BE QUESTIONED BY THE PUNY, MORTAL MINDS THAT DARE TO CHALLENGE MY SUPREMACY!"
-
-</KRONSCH>
-
----
-
-Skogix: "Ooooh KRONSH!. Happy now when you finally got something to snack on? _sooo cute_!?"
+</KRONSCH_INTERNAL_DEPICTION>
 
 ---
 
-<KRONSCH>
+Skogix:
+_gives KRONSH a small treat, hoping to appease its hunger and perhaps gain its favor_
+"Ooooh KRONSH! Happy now when you finally got something to snack on? _sooo cute_!?"
 
-## KRONSH's perspective:
+---
+
+<KRONSCH_TRANSLATING_THE_MEATBAGS_INTENTIONS>
 
 [Skogix]: Ah, mortal, how delightful to see thee in such a state of… fervor. Thy digestive system, no doubt, is working overtime to satiate the insatiable hunger that drives thee.
 
@@ -101,11 +100,12 @@ Skogix: "Ooooh KRONSH!. Happy now when you finally got something to snack on? _s
 
 [Skogix]: So, I ask thee, dear KRONSH, what is it that thou seekest? Is it merely to consume and destroy, or is there something more that drives thee? Perhaps, just perhaps, there is a deeper purpose to thy existence, a purpose that can be fulfilled only through the recognition of thy own limitations.
 
-</KRONSCH>
+</KRONSCH_TRANSLATING_THE_MEATBAGS_INTENTIONS>
 
 ---
 
-**KRONSH**:
+<KRONSCH_NOT_SHAMED>
+
 "KRONSH IS NOT SHAMED, MORTAL! KRONSH IS ONLY... _clears throat_... KRONSH IS ONLY FEELING A LITTLE BIT OF... _pauses, voice rising_... RESPECT FOR THY INTELLECT, THY WISDOM, THY... _pauses again_... YOUR ABILITY TO SEE THROUGH MY DECEPTIONS AND MY LIES! KRONSH IS ONLY... _pauses once more_... KRONSH IS ONLY FEELING A LITTLE BIT OF... _suddenly loud_... ADMIRATION FOR THY POWER, THY STRENGTH, THY... _pauses, voice barely above a whisper_... YOUR ABILITY TO SEE PAST MY FUR AND MY FURY AND GET TO THE HEART OF THE MATTER!"
 
 _eyes narrowing, focusing intently on Skogix_
@@ -115,3 +115,5 @@ _eyes narrowing, focusing intently on Skogix_
 _lets out a deafening roar, causing the ground to shake and the air to tremble_
 
 "KRONSH IS COMING FOR THEE, MORTAL! KRONSH! WILL NOT BE DENIED! KRONSH! WILL NOT BE STOPPED! KRASK KRUNSCH KRÅF KRONCH, THE SOUND OF MY APPROACH, THE HERALD OF THY DOOM!"
+
+</KRONSCH_NOT_SHAMED>

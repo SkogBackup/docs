@@ -9,6 +9,7 @@
 1. **Return original object on invalid input** - When array_path doesn't exist or field isn't an array, return the original object unchanged (matches pattern from other transformations)
 
 2. **Handle edge cases gracefully:**
+
    - Size <= 0: Return original object unchanged
    - Empty array: Return object with empty array
    - Size larger than array: Return single chunk containing entire array
@@ -20,18 +21,22 @@
 ## Test Coverage (13 tests = 100%+ coverage)
 
 ### Happy Path (3 tests)
+
 - ✅ Test 1: Chunk array evenly (size divides length)
 - ✅ Test 2: Chunk with remainder (last chunk smaller)
 - ✅ Test 11: Nested path (data.items)
 
 ### Falsy Values (1 test)
+
 - ✅ Test 10: Array contains null, false, 0, "", true (preserve all)
 
 ### Type Safety (2 tests)
+
 - ✅ Test 6: Array path doesn't exist
 - ✅ Test 7: Array field is not an array
 
 ### Boundary Conditions (5 tests)
+
 - ✅ Test 3: Chunk size 1 (each element separate)
 - ✅ Test 4: Chunk size larger than array
 - ✅ Test 5: Empty array
@@ -40,12 +45,14 @@
 - ✅ Test 13: Single element array
 
 ### Data Type Coverage (2 tests)
+
 - ✅ Test 12: Chunk array of objects
 - ✅ Tests 1-3: Numbers, strings, mixed types
 
 ## Pattern Used from array-reduce
 
 Borrowed from array-reduce:
+
 - Type checking pattern: `if ($array | type) != "array" then ... end`
 - Empty array handling
 - Path splitting: `($array_path | split(".")) as $keys`
@@ -60,6 +67,7 @@ Borrowed from array-reduce:
 ## Implementation Verification
 
 To run tests:
+
 ```bash
 cd /home/skogix/dev/skogix/src/jq-transforms
 chmod +x array-chunk/test.sh

@@ -20,26 +20,26 @@
   "examples": [
     {
       "description": "Format chat message with role and content",
-      "input": {"role": "user", "content": "Hello world"},
-      "args": {"template": "{role}: {content}"},
+      "input": { "role": "user", "content": "Hello world" },
+      "args": { "template": "{role}: {content}" },
       "output": "user: Hello world"
     },
     {
       "description": "Format nested field path",
-      "input": {"user": {"name": "skogix"}, "message": "test"},
-      "args": {"template": "[{user.name}] {message}"},
+      "input": { "user": { "name": "skogix" }, "message": "test" },
+      "args": { "template": "[{user.name}] {message}" },
       "output": "[skogix] test"
     },
     {
       "description": "Missing field replaced with empty string",
-      "input": {"role": "assistant"},
-      "args": {"template": "{role}: {content}"},
+      "input": { "role": "assistant" },
+      "args": { "template": "{role}: {content}" },
       "output": "assistant: "
     },
     {
       "description": "Number value converted to string",
-      "input": {"count": 42, "item": "messages"},
-      "args": {"template": "{count} {item}"},
+      "input": { "count": 42, "item": "messages" },
+      "args": { "template": "{count} {item}" },
       "output": "42 messages"
     }
   ],

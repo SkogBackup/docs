@@ -35,27 +35,32 @@
   "examples": [
     {
       "description": "Extract field from each element",
-      "input": {"items": [{"name": "alice", "age": 30}, {"name": "bob", "age": 25}]},
-      "args": {"field": "name"},
-      "output": {"items": ["alice", "bob"]}
+      "input": {
+        "items": [
+          { "name": "alice", "age": 30 },
+          { "name": "bob", "age": 25 }
+        ]
+      },
+      "args": { "field": "name" },
+      "output": { "items": ["alice", "bob"] }
     },
     {
       "description": "Apply multiplication to prices",
-      "input": {"items": [{"price": 10}, {"price": 20}]},
-      "args": {"field": "price", "operation": "multiply", "operand": "1.1"},
-      "output": {"items": [11, 22]}
+      "input": { "items": [{ "price": 10 }, { "price": 20 }] },
+      "args": { "field": "price", "operation": "multiply", "operand": "1.1" },
+      "output": { "items": [11, 22] }
     },
     {
       "description": "Convert strings to uppercase",
-      "input": {"items": [{"name": "alice"}, {"name": "bob"}]},
-      "args": {"field": "name", "operation": "uppercase"},
-      "output": {"items": ["ALICE", "BOB"]}
+      "input": { "items": [{ "name": "alice" }, { "name": "bob" }] },
+      "args": { "field": "name", "operation": "uppercase" },
+      "output": { "items": ["ALICE", "BOB"] }
     },
     {
       "description": "Transform with nested array path",
-      "input": {"data": {"users": [{"id": 1}, {"id": 2}]}},
-      "args": {"array_path": "data.users", "field": "id"},
-      "output": {"data": {"users": [1, 2]}}
+      "input": { "data": { "users": [{ "id": 1 }, { "id": 2 }] } },
+      "args": { "array_path": "data.users", "field": "id" },
+      "output": { "data": { "users": [1, 2] } }
     }
   ],
   "tags": ["array", "transform", "map", "meta-transformation", "operation"]

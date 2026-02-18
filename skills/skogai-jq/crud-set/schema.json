@@ -25,21 +25,21 @@
   "examples": [
     {
       "description": "Set existing nested value",
-      "input": {"user": {"name": "old"}},
-      "args": {"path": "user.name", "value": "new"},
-      "output": {"user": {"name": "new"}}
+      "input": { "user": { "name": "old" } },
+      "args": { "path": "user.name", "value": "new" },
+      "output": { "user": { "name": "new" } }
     },
     {
       "description": "Create nested path and set value",
       "input": {},
-      "args": {"path": "user.profile.age", "value": "30"},
-      "output": {"user": {"profile": {"age": "30"}}}
+      "args": { "path": "user.profile.age", "value": "30" },
+      "output": { "user": { "profile": { "age": "30" } } }
     },
     {
       "description": "Update deeply nested value",
-      "input": {"data": {"items": [1, 2, 3]}},
-      "args": {"path": "data.count", "value": "3"},
-      "output": {"data": {"items": [1, 2, 3], "count": "3"}}
+      "input": { "data": { "items": [1, 2, 3] } },
+      "args": { "path": "data.count", "value": "3" },
+      "output": { "data": { "items": [1, 2, 3], "count": "3" } }
     }
   ],
   "tags": ["crud", "write", "object", "mutation"]

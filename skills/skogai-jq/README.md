@@ -9,6 +9,7 @@ A library of JSON transformations with clear input/output contracts designed to 
 ## Philosophy
 
 This library is built **for AI agents**, not humans. Each transformation:
+
 - Has a clear schema (input/output contract)
 - Is tested directly
 - Is minimal and readable
@@ -38,43 +39,52 @@ apt-get install jq
 ### CRUD Operations
 
 #### crud-get
+
 Get value at a nested path with optional default.
 
 **Usage:**
+
 ```bash
 jq -f crud-get/transform.jq --arg path "user.name" input.json
 jq -f crud-get/transform.jq --arg path "user.email" --arg default "unknown" input.json
 ```
 
 **Example:**
+
 ```bash
 echo '{"user":{"name":"skogix"}}' | jq -f crud-get/transform.jq --arg path "user.name"
 # Output: "skogix"
 ```
 
 #### crud-set
+
 Set value at a nested path, creating intermediate objects as needed.
 
 **Usage:**
+
 ```bash
 jq -f crud-set/transform.jq --arg path "user.name" --arg value "newname" input.json
 ```
 
 **Example:**
+
 ```bash
 echo '{}' | jq -f crud-set/transform.jq --arg path "user.profile.age" --arg value "30"
 # Output: {"user":{"profile":{"age":"30"}}}
 ```
 
 #### crud-delete
+
 Delete value at a nested path.
 
 **Usage:**
+
 ```bash
 jq -f crud-delete/transform.jq --arg path "user.email" input.json
 ```
 
 **Example:**
+
 ```bash
 echo '{"user":{"name":"skogix","email":"test@example.com"}}' | \
   jq -f crud-delete/transform.jq --arg path "user.email"
@@ -191,6 +201,7 @@ See existing transformations for examples.
 ## Future Transformations
 
 See [backlog.md](../../todo/jq-transforms/backlog.md) for planned transformations including:
+
 - Array operations (map, filter, reduce)
 - String operations (split, join, replace)
 - Validation operations (schema, type, format)

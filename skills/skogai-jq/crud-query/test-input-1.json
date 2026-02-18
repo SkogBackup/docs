@@ -1,1 +1,7 @@
-{"users": [{"name": "alice", "status": "active"}, {"name": "bob", "status": "inactive"}, {"name": "charlie", "status": "active"}]}
+{
+  "users": [
+    { "name": "alice", "status": "active" },
+    { "name": "bob", "status": "inactive" },
+    { "name": "charlie", "status": "active" }
+  ]
+}

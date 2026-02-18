@@ -3,8 +3,8 @@
   "examples": [
     {
       "description": "Test empty string",
-      "input": {"text": ""},
-      "args": {"path": "text"},
+      "input": { "text": "" },
+      "args": { "path": "text" },
       "output": ""
     }
   ]

@@ -4,7 +4,7 @@
     {
       "description": "Test empty object",
       "input": {},
-      "args": {"path": "anything"},
+      "args": { "path": "anything" },
       "output": {}
     }
   ]

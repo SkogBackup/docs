@@ -3,5 +3,5 @@
   "number": 42,
   "boolean": true,
   "null_value": null,
-  "object": {"key": "value"}
+  "object": { "key": "value" }
 }

@@ -1,1 +1,1 @@
-{"data": {"nested": {"user": {"name": "test", "age": 25}}}}
+{ "data": { "nested": { "user": { "name": "test", "age": 25 } } } }

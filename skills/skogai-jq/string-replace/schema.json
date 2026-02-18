@@ -30,21 +30,25 @@
   "examples": [
     {
       "description": "Replace all digits with X",
-      "input": {"data": "Phone: 123-456-7890"},
-      "args": {"path": "data", "pattern": "\\d", "replacement": "X"},
-      "output": {"data": "Phone: XXX-XXX-XXXX"}
+      "input": { "data": "Phone: 123-456-7890" },
+      "args": { "path": "data", "pattern": "\\d", "replacement": "X" },
+      "output": { "data": "Phone: XXX-XXX-XXXX" }
     },
     {
       "description": "Replace word in nested string",
-      "input": {"user": {"message": "Hello world!"}},
-      "args": {"path": "user.message", "pattern": "world", "replacement": "universe"},
-      "output": {"user": {"message": "Hello universe!"}}
+      "input": { "user": { "message": "Hello world!" } },
+      "args": {
+        "path": "user.message",
+        "pattern": "world",
+        "replacement": "universe"
+      },
+      "output": { "user": { "message": "Hello universe!" } }
     },
     {
       "description": "Delete matches with empty replacement",
-      "input": {"text": "Remove123all456numbers789"},
-      "args": {"path": "text", "pattern": "\\d+", "replacement": ""},
-      "output": {"text": "Removeallnumbers"}
+      "input": { "text": "Remove123all456numbers789" },
+      "args": { "path": "text", "pattern": "\\d+", "replacement": "" },
+      "output": { "text": "Removeallnumbers" }
     }
   ],
   "tags": ["string", "replace", "regex", "gsub", "substitution"]

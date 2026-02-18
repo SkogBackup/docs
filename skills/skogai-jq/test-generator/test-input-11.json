@@ -3,8 +3,8 @@
   "examples": [
     {
       "description": "Test number output",
-      "input": {"count": 42},
-      "args": {"path": "count"},
+      "input": { "count": 42 },
+      "args": { "path": "count" },
       "output": 42
     }
   ]

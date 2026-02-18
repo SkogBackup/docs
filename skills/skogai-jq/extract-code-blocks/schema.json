@@ -20,20 +20,22 @@
   "examples": [
     {
       "description": "Extract single code block",
-      "input": {"content": "text ```js\\ncode\\n``` more"},
-      "args": {"path": "content"},
+      "input": { "content": "text ```js\\ncode\\n``` more" },
+      "args": { "path": "content" },
       "output": ["```js\\ncode\\n```"]
     },
     {
       "description": "Extract multiple code blocks",
-      "input": {"content": "```python\\nprint()\\n``` and ```js\\nconsole.log()\\n```"},
-      "args": {"path": "content"},
+      "input": {
+        "content": "```python\\nprint()\\n``` and ```js\\nconsole.log()\\n```"
+      },
+      "args": { "path": "content" },
       "output": ["```python\\nprint()\\n```", "```js\\nconsole.log()\\n```"]
     },
     {
       "description": "No code blocks returns empty array",
-      "input": {"content": "just plain text"},
-      "args": {"path": "content"},
+      "input": { "content": "just plain text" },
+      "args": { "path": "content" },
       "output": []
     }
   ],

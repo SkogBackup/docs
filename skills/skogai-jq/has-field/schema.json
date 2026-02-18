@@ -20,32 +20,32 @@
   "examples": [
     {
       "description": "Check for existing field",
-      "input": {"user": {"name": "skogix"}},
-      "args": {"path": "user.name"},
+      "input": { "user": { "name": "skogix" } },
+      "args": { "path": "user.name" },
       "output": true
     },
     {
       "description": "Check for non-existent field",
-      "input": {"user": {"name": "test"}},
-      "args": {"path": "user.email"},
+      "input": { "user": { "name": "test" } },
+      "args": { "path": "user.email" },
       "output": false
     },
     {
       "description": "Check for deeply nested field",
-      "input": {"data": {"user": {"profile": {"age": 30}}}},
-      "args": {"path": "data.user.profile.age"},
+      "input": { "data": { "user": { "profile": { "age": 30 } } } },
+      "args": { "path": "data.user.profile.age" },
       "output": true
     },
     {
       "description": "Field exists with null value",
-      "input": {"user": {"name": null}},
-      "args": {"path": "user.name"},
+      "input": { "user": { "name": null } },
+      "args": { "path": "user.name" },
       "output": true
     },
     {
       "description": "Field exists with false value",
-      "input": {"settings": {"enabled": false}},
-      "args": {"path": "settings.enabled"},
+      "input": { "settings": { "enabled": false } },
+      "args": { "path": "settings.enabled" },
       "output": true
     }
   ],

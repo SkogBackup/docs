@@ -3,8 +3,8 @@
   "examples": [
     {
       "description": "Test empty array",
-      "input": {"items": []},
-      "args": {"array_field": "items"},
+      "input": { "items": [] },
+      "args": { "array_field": "items" },
       "output": []
     }
   ]

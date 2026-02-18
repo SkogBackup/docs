@@ -25,20 +25,35 @@
   "examples": [
     {
       "description": "Extract names from array of objects",
-      "input": {"items": [{"name": "alice", "age": 30}, {"name": "bob", "age": 25}]},
-      "args": {"field": "name"},
+      "input": {
+        "items": [
+          { "name": "alice", "age": 30 },
+          { "name": "bob", "age": 25 }
+        ]
+      },
+      "args": { "field": "name" },
       "output": ["alice", "bob"]
     },
     {
       "description": "Extract ages from array of objects",
-      "input": {"items": [{"name": "alice", "age": 30}, {"name": "bob", "age": 25}]},
-      "args": {"field": "age"},
+      "input": {
+        "items": [
+          { "name": "alice", "age": 30 },
+          { "name": "bob", "age": 25 }
+        ]
+      },
+      "args": { "field": "age" },
       "output": [30, 25]
     },
     {
       "description": "Extract from custom array field name",
-      "input": {"users": [{"id": 1, "name": "alice"}, {"id": 2, "name": "bob"}]},
-      "args": {"field": "id", "array": "users"},
+      "input": {
+        "users": [
+          { "id": 1, "name": "alice" },
+          { "id": 2, "name": "bob" }
+        ]
+      },
+      "args": { "field": "id", "array": "users" },
       "output": [1, 2]
     }
   ],

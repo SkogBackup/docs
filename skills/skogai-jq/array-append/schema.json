@@ -25,33 +25,33 @@
   "examples": [
     {
       "description": "Append object to existing array",
-      "input": {"items": [{"id": 1}, {"id": 2}]},
-      "args": {"array_path": "items", "value": "{\"id\":3}"},
-      "output": {"items": [{"id": 1}, {"id": 2}, {"id": 3}]}
+      "input": { "items": [{ "id": 1 }, { "id": 2 }] },
+      "args": { "array_path": "items", "value": "{\"id\":3}" },
+      "output": { "items": [{ "id": 1 }, { "id": 2 }, { "id": 3 }] }
     },
     {
       "description": "Append string to array",
-      "input": {"tags": ["red", "blue"]},
-      "args": {"array_path": "tags", "value": "\"green\""},
-      "output": {"tags": ["red", "blue", "green"]}
+      "input": { "tags": ["red", "blue"] },
+      "args": { "array_path": "tags", "value": "\"green\"" },
+      "output": { "tags": ["red", "blue", "green"] }
     },
     {
       "description": "Append to empty array",
-      "input": {"items": []},
-      "args": {"array_path": "items", "value": "\"first\""},
-      "output": {"items": ["first"]}
+      "input": { "items": [] },
+      "args": { "array_path": "items", "value": "\"first\"" },
+      "output": { "items": ["first"] }
     },
     {
       "description": "Append to non-existent path (creates array)",
       "input": {},
-      "args": {"array_path": "new_array", "value": "\"item\""},
-      "output": {"new_array": ["item"]}
+      "args": { "array_path": "new_array", "value": "\"item\"" },
+      "output": { "new_array": ["item"] }
     },
     {
       "description": "Append nested path",
-      "input": {"data": {"items": [1, 2]}},
-      "args": {"array_path": "data.items", "value": "3"},
-      "output": {"data": {"items": [1, 2, 3]}}
+      "input": { "data": { "items": [1, 2] } },
+      "args": { "array_path": "data.items", "value": "3" },
+      "output": { "data": { "items": [1, 2, 3] } }
     }
   ],
   "tags": ["array", "append", "push", "add", "crud"]

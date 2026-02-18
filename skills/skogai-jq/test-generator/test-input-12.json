@@ -3,8 +3,8 @@
   "examples": [
     {
       "description": "Test array output",
-      "input": {"data": [1, 2, 3]},
-      "args": {"path": "data"},
+      "input": { "data": [1, 2, 3] },
+      "args": { "path": "data" },
       "output": [1, 2, 3]
     }
   ]

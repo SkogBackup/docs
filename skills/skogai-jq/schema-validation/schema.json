@@ -20,39 +20,57 @@
   "examples": [
     {
       "description": "Valid object passing all checks",
-      "input": {"name": "Alice", "age": 30},
-      "args": {"schema": "{\"required\":[\"name\",\"age\"],\"types\":{\"name\":\"string\",\"age\":\"number\"}}"},
-      "output": {"valid": true, "errors": []}
+      "input": { "name": "Alice", "age": 30 },
+      "args": {
+        "schema": "{\"required\":[\"name\",\"age\"],\"types\":{\"name\":\"string\",\"age\":\"number\"}}"
+      },
+      "output": { "valid": true, "errors": [] }
     },
     {
       "description": "Missing required field",
-      "input": {"name": "Bob"},
-      "args": {"schema": "{\"required\":[\"name\",\"email\"]}"},
-      "output": {"valid": false, "errors": ["Required field 'email' is missing"]}
+      "input": { "name": "Bob" },
+      "args": { "schema": "{\"required\":[\"name\",\"email\"]}" },
+      "output": {
+        "valid": false,
+        "errors": ["Required field 'email' is missing"]
+      }
     },
     {
       "description": "Wrong type for field",
-      "input": {"name": "Charlie", "age": "30"},
-      "args": {"schema": "{\"types\":{\"age\":\"number\"}}"},
-      "output": {"valid": false, "errors": ["Field 'age' has type 'string', expected 'number'"]}
+      "input": { "name": "Charlie", "age": "30" },
+      "args": { "schema": "{\"types\":{\"age\":\"number\"}}" },
+      "output": {
+        "valid": false,
+        "errors": ["Field 'age' has type 'string', expected 'number'"]
+      }
     },
     {
       "description": "Nested field validation",
-      "input": {"user": {"name": "Dave", "profile": {"age": 25}}},
-      "args": {"schema": "{\"required\":[\"user.name\",\"user.profile.age\"],\"types\":{\"user.name\":\"string\",\"user.profile.age\":\"number\"}}"},
-      "output": {"valid": true, "errors": []}
+      "input": { "user": { "name": "Dave", "profile": { "age": 25 } } },
+      "args": {
+        "schema": "{\"required\":[\"user.name\",\"user.profile.age\"],\"types\":{\"user.name\":\"string\",\"user.profile.age\":\"number\"}}"
+      },
+      "output": { "valid": true, "errors": [] }
     },
     {
       "description": "Multiple validation errors",
-      "input": {"name": 123},
-      "args": {"schema": "{\"required\":[\"email\"],\"types\":{\"name\":\"string\"}}"},
-      "output": {"valid": false, "errors": ["Required field 'email' is missing", "Field 'name' has type 'number', expected 'string'"]}
+      "input": { "name": 123 },
+      "args": {
+        "schema": "{\"required\":[\"email\"],\"types\":{\"name\":\"string\"}}"
+      },
+      "output": {
+        "valid": false,
+        "errors": [
+          "Required field 'email' is missing",
+          "Field 'name' has type 'number', expected 'string'"
+        ]
+      }
     },
     {
       "description": "Empty schema always passes",
-      "input": {"anything": "goes"},
-      "args": {"schema": "{}"},
-      "output": {"valid": true, "errors": []}
+      "input": { "anything": "goes" },
+      "args": { "schema": "{}" },
+      "output": { "valid": true, "errors": [] }
     }
   ],
   "tags": ["validation", "schema", "type", "required", "check", "verify"]

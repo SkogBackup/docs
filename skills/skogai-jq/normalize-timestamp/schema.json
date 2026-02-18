@@ -20,39 +20,39 @@
   "examples": [
     {
       "description": "ISO 8601 already normalized (pass through)",
-      "input": {"created_at": "2024-01-15T10:30:00Z"},
-      "args": {"path": "created_at"},
-      "output": {"created_at": "2024-01-15T10:30:00Z"}
+      "input": { "created_at": "2024-01-15T10:30:00Z" },
+      "args": { "path": "created_at" },
+      "output": { "created_at": "2024-01-15T10:30:00Z" }
     },
     {
       "description": "Unix timestamp in seconds",
-      "input": {"timestamp": 1705314600},
-      "args": {"path": "timestamp"},
-      "output": {"timestamp": "2024-01-15T10:30:00Z"}
+      "input": { "timestamp": 1705314600 },
+      "args": { "path": "timestamp" },
+      "output": { "timestamp": "2024-01-15T10:30:00Z" }
     },
     {
       "description": "Unix timestamp in milliseconds",
-      "input": {"timestamp": 1705314600000},
-      "args": {"path": "timestamp"},
-      "output": {"timestamp": "2024-01-15T10:30:00Z"}
+      "input": { "timestamp": 1705314600000 },
+      "args": { "path": "timestamp" },
+      "output": { "timestamp": "2024-01-15T10:30:00Z" }
     },
     {
       "description": "Date-only format (adds time component)",
-      "input": {"date": "2024-01-15"},
-      "args": {"path": "date"},
-      "output": {"date": "2024-01-15T00:00:00Z"}
+      "input": { "date": "2024-01-15" },
+      "args": { "path": "date" },
+      "output": { "date": "2024-01-15T00:00:00Z" }
     },
     {
       "description": "Invalid timestamp returns null",
-      "input": {"timestamp": "not-a-timestamp"},
-      "args": {"path": "timestamp"},
-      "output": {"timestamp": "not-a-timestamp"}
+      "input": { "timestamp": "not-a-timestamp" },
+      "args": { "path": "timestamp" },
+      "output": { "timestamp": "not-a-timestamp" }
     },
     {
       "description": "Nested path",
-      "input": {"user": {"created_at": 1705314600}},
-      "args": {"path": "user.created_at"},
-      "output": {"user": {"created_at": "2024-01-15T10:30:00Z"}}
+      "input": { "user": { "created_at": 1705314600 } },
+      "args": { "path": "user.created_at" },
+      "output": { "user": { "created_at": "2024-01-15T10:30:00Z" } }
     }
   ],
   "tags": ["string", "timestamp", "date", "normalize", "iso8601", "unix"]

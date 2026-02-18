@@ -20,50 +20,50 @@
   "examples": [
     {
       "description": "Set two fields in sequence",
-      "input": {"user": {"name": "alice"}},
+      "input": { "user": { "name": "alice" } },
       "args": {
         "steps": [
-          {"op": "set", "path": "user.age", "value": 30},
-          {"op": "set", "path": "user.active", "value": true}
+          { "op": "set", "path": "user.age", "value": 30 },
+          { "op": "set", "path": "user.active", "value": true }
         ]
       },
-      "output": {"user": {"name": "alice", "age": 30, "active": true}}
+      "output": { "user": { "name": "alice", "age": 30, "active": true } }
     },
     {
       "description": "Set then delete (order matters)",
-      "input": {"data": {"x": 1}},
+      "input": { "data": { "x": 1 } },
       "args": {
         "steps": [
-          {"op": "set", "path": "data.y", "value": 2},
-          {"op": "delete", "path": "data.x"}
+          { "op": "set", "path": "data.y", "value": 2 },
+          { "op": "delete", "path": "data.x" }
         ]
       },
-      "output": {"data": {"y": 2}}
+      "output": { "data": { "y": 2 } }
     },
     {
       "description": "Nested modifications",
       "input": {},
       "args": {
         "steps": [
-          {"op": "set", "path": "a.b.c", "value": "deep"},
-          {"op": "set", "path": "a.b.d", "value": "also deep"}
+          { "op": "set", "path": "a.b.c", "value": "deep" },
+          { "op": "set", "path": "a.b.d", "value": "also deep" }
         ]
       },
-      "output": {"a": {"b": {"c": "deep", "d": "also deep"}}}
+      "output": { "a": { "b": { "c": "deep", "d": "also deep" } } }
     },
     {
       "description": "Empty pipeline returns input unchanged",
-      "input": {"test": "data"},
-      "args": {"steps": []},
-      "output": {"test": "data"}
+      "input": { "test": "data" },
+      "args": { "steps": [] },
+      "output": { "test": "data" }
     },
     {
       "description": "Single operation",
-      "input": {"old": "value"},
+      "input": { "old": "value" },
       "args": {
-        "steps": [{"op": "set", "path": "new", "value": "different"}]
+        "steps": [{ "op": "set", "path": "new", "value": "different" }]
       },
-      "output": {"old": "value", "new": "different"}
+      "output": { "old": "value", "new": "different" }
     }
   ],
   "tags": ["pipe", "chain", "sequence", "pipeline", "compose", "meta"]

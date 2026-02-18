@@ -32,45 +32,45 @@
       "description": "Filter users by status",
       "input": {
         "users": [
-          {"name": "alice", "status": "active"},
-          {"name": "bob", "status": "inactive"},
-          {"name": "charlie", "status": "active"}
+          { "name": "alice", "status": "active" },
+          { "name": "bob", "status": "inactive" },
+          { "name": "charlie", "status": "active" }
         ]
       },
-      "args": {"path": "users", "field": "status", "value": "\"active\""},
+      "args": { "path": "users", "field": "status", "value": "\"active\"" },
       "output": [
-        {"name": "alice", "status": "active"},
-        {"name": "charlie", "status": "active"}
+        { "name": "alice", "status": "active" },
+        { "name": "charlie", "status": "active" }
       ]
     },
     {
       "description": "Filter by boolean value",
       "input": {
         "items": [
-          {"id": 1, "enabled": true},
-          {"id": 2, "enabled": false},
-          {"id": 3, "enabled": true}
+          { "id": 1, "enabled": true },
+          { "id": 2, "enabled": false },
+          { "id": 3, "enabled": true }
         ]
       },
-      "args": {"path": "items", "field": "enabled", "value": "true"},
+      "args": { "path": "items", "field": "enabled", "value": "true" },
       "output": [
-        {"id": 1, "enabled": true},
-        {"id": 3, "enabled": true}
+        { "id": 1, "enabled": true },
+        { "id": 3, "enabled": true }
       ]
     },
     {
       "description": "Filter by number",
       "input": {
         "scores": [
-          {"player": "alice", "score": 100},
-          {"player": "bob", "score": 50},
-          {"player": "charlie", "score": 100}
+          { "player": "alice", "score": 100 },
+          { "player": "bob", "score": 50 },
+          { "player": "charlie", "score": 100 }
         ]
       },
-      "args": {"path": "scores", "field": "score", "value": "100"},
+      "args": { "path": "scores", "field": "score", "value": "100" },
       "output": [
-        {"player": "alice", "score": 100},
-        {"player": "charlie", "score": 100}
+        { "player": "alice", "score": 100 },
+        { "player": "charlie", "score": 100 }
       ]
     }
   ],

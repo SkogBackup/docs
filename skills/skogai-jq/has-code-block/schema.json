@@ -20,32 +20,34 @@
   "examples": [
     {
       "description": "String with code block returns true",
-      "input": {"content": "text ```js\\ncode\\n``` more"},
-      "args": {"path": "content"},
+      "input": { "content": "text ```js\\ncode\\n``` more" },
+      "args": { "path": "content" },
       "output": true
     },
     {
       "description": "String with multiple code blocks returns true",
-      "input": {"content": "```python\\nprint()\\n``` and ```js\\nconsole.log()\\n```"},
-      "args": {"path": "content"},
+      "input": {
+        "content": "```python\\nprint()\\n``` and ```js\\nconsole.log()\\n```"
+      },
+      "args": { "path": "content" },
       "output": true
     },
     {
       "description": "String without code blocks returns false",
-      "input": {"content": "just plain text with `inline code`"},
-      "args": {"path": "content"},
+      "input": { "content": "just plain text with `inline code`" },
+      "args": { "path": "content" },
       "output": false
     },
     {
       "description": "Empty string returns false",
-      "input": {"content": ""},
-      "args": {"path": "content"},
+      "input": { "content": "" },
+      "args": { "path": "content" },
       "output": false
     },
     {
       "description": "Non-existent path returns false",
-      "input": {"other": "data"},
-      "args": {"path": "content"},
+      "input": { "other": "data" },
+      "args": { "path": "content" },
       "output": false
     }
   ],

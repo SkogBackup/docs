@@ -4,5 +4,5 @@
   "bool_field": true,
   "null_field": null,
   "array_field": [1, 2],
-  "object_field": {"key": "value"}
+  "object_field": { "key": "value" }
 }

@@ -5,6 +5,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## What is this?
 
 Schema-driven JSON transformation library built **for AI agents**. Each transformation is a standalone jq script with:
+
 - Clear input/output contract (schema.json)
 - Self-contained test suite (test.sh)
 - Minimal, readable implementation (transform.jq)
@@ -63,16 +64,20 @@ transformation-name/
 
 ### Categories of Transformations
 
-**CRUD Operations** (crud-*): Path-based object manipulation
+**CRUD Operations** (crud-\*): Path-based object manipulation
+
 - `crud-get`, `crud-set`, `crud-delete`, `crud-has`, `crud-merge`, `crud-query`
 
-**Array Operations** (array-*): Array transformations
+**Array Operations** (array-\*): Array transformations
+
 - `array-filter`, `array-map`, `array-reduce`, `array-unique`, `array-flatten`
 
-**String Operations** (string-*): String manipulation
+**String Operations** (string-\*): String manipulation
+
 - `string-split`, `string-join`
 
 **Object Operations**: Field selection
+
 - `pick-fields`
 
 ### How Transformations Work
@@ -104,6 +109,7 @@ Every transformation MUST test:
 ### Common jq Pitfalls to Avoid
 
 1. **`// fallback` with falsy values**:
+
    ```jq
    # WRONG - breaks for null/false
    ($value | fromjson? // $value)
@@ -113,6 +119,7 @@ Every transformation MUST test:
    ```
 
 2. **`!= null` for existence checks**:
+
    ```jq
    # WRONG - confuses "exists" with "non-null"
    getpath($keys) != null
@@ -122,6 +129,7 @@ Every transformation MUST test:
    ```
 
 3. **Type checking before array operations**:
+
    ```jq
    # WRONG - crashes if not array
    .items | map(...)

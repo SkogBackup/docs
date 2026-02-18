@@ -12,7 +12,7 @@
           }
         }
       },
-      "args": {"path": "level1.level2.level3.data"},
+      "args": { "path": "level1.level2.level3.data" },
       "output": [1, 2, 3]
     }
   ]

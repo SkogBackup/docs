@@ -20,27 +20,29 @@
   "examples": [
     {
       "description": "Remove existing field from nested object",
-      "input": {"user": {"name": "skogix", "email": "test@example.com"}},
-      "args": {"path": "user.email"},
-      "output": {"user": {"name": "skogix"}}
+      "input": { "user": { "name": "skogix", "email": "test@example.com" } },
+      "args": { "path": "user.email" },
+      "output": { "user": { "name": "skogix" } }
     },
     {
       "description": "Remove deeply nested field",
-      "input": {"data": {"user": {"profile": {"age": 30, "location": "sweden"}}}},
-      "args": {"path": "data.user.profile.age"},
-      "output": {"data": {"user": {"profile": {"location": "sweden"}}}}
+      "input": {
+        "data": { "user": { "profile": { "age": 30, "location": "sweden" } } }
+      },
+      "args": { "path": "data.user.profile.age" },
+      "output": { "data": { "user": { "profile": { "location": "sweden" } } } }
     },
     {
       "description": "Remove non-existent field (no change)",
-      "input": {"user": {"name": "skogix"}},
-      "args": {"path": "user.phone"},
-      "output": {"user": {"name": "skogix"}}
+      "input": { "user": { "name": "skogix" } },
+      "args": { "path": "user.phone" },
+      "output": { "user": { "name": "skogix" } }
     },
     {
       "description": "Remove field with null value",
-      "input": {"user": {"name": null, "age": 30}},
-      "args": {"path": "user.name"},
-      "output": {"user": {"age": 30}}
+      "input": { "user": { "name": null, "age": 30 } },
+      "args": { "path": "user.name" },
+      "output": { "user": { "age": 30 } }
     }
   ],
   "tags": ["object", "delete", "remove", "mutation", "field"]

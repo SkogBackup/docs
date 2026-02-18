@@ -20,45 +20,45 @@
   "examples": [
     {
       "description": "Pass through existing string",
-      "input": {"name": "skogix"},
-      "args": {"path": "name"},
-      "output": {"name": "skogix"}
+      "input": { "name": "skogix" },
+      "args": { "path": "name" },
+      "output": { "name": "skogix" }
     },
     {
       "description": "Convert number to string",
-      "input": {"age": 42},
-      "args": {"path": "age"},
-      "output": {"age": "42"}
+      "input": { "age": 42 },
+      "args": { "path": "age" },
+      "output": { "age": "42" }
     },
     {
       "description": "Convert boolean true to string",
-      "input": {"active": true},
-      "args": {"path": "active"},
-      "output": {"active": "true"}
+      "input": { "active": true },
+      "args": { "path": "active" },
+      "output": { "active": "true" }
     },
     {
       "description": "Convert boolean false to string",
-      "input": {"enabled": false},
-      "args": {"path": "enabled"},
-      "output": {"enabled": "false"}
+      "input": { "enabled": false },
+      "args": { "path": "enabled" },
+      "output": { "enabled": "false" }
     },
     {
       "description": "Convert null to string 'null'",
-      "input": {"value": null},
-      "args": {"path": "value"},
-      "output": {"value": "null"}
+      "input": { "value": null },
+      "args": { "path": "value" },
+      "output": { "value": "null" }
     },
     {
       "description": "Convert array to JSON string",
-      "input": {"items": [1, 2, 3]},
-      "args": {"path": "items"},
-      "output": {"items": "[1,2,3]"}
+      "input": { "items": [1, 2, 3] },
+      "args": { "path": "items" },
+      "output": { "items": "[1,2,3]" }
     },
     {
       "description": "Convert object to JSON string",
-      "input": {"user": {"name": "test"}},
-      "args": {"path": "user"},
-      "output": {"user": "{\"name\":\"test\"}"}
+      "input": { "user": { "name": "test" } },
+      "args": { "path": "user" },
+      "output": { "user": "{\"name\":\"test\"}" }
     }
   ],
   "tags": ["conversion", "string", "stringify", "type-conversion"]

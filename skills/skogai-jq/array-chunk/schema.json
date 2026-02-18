@@ -25,39 +25,45 @@
   "examples": [
     {
       "description": "Chunk array evenly",
-      "input": {"items": [1, 2, 3, 4, 5, 6]},
-      "args": {"array_path": "items", "size": "2"},
-      "output": {"items": [[1, 2], [3, 4], [5, 6]]}
+      "input": { "items": [1, 2, 3, 4, 5, 6] },
+      "args": { "array_path": "items", "size": "2" },
+      "output": {
+        "items": [
+          [1, 2],
+          [3, 4],
+          [5, 6]
+        ]
+      }
     },
     {
       "description": "Chunk with remainder",
-      "input": {"items": [1, 2, 3, 4, 5]},
-      "args": {"array_path": "items", "size": "2"},
-      "output": {"items": [[1, 2], [3, 4], [5]]}
+      "input": { "items": [1, 2, 3, 4, 5] },
+      "args": { "array_path": "items", "size": "2" },
+      "output": { "items": [[1, 2], [3, 4], [5]] }
     },
     {
       "description": "Chunk size 1",
-      "input": {"items": ["a", "b", "c"]},
-      "args": {"array_path": "items", "size": "1"},
-      "output": {"items": [["a"], ["b"], ["c"]]}
+      "input": { "items": ["a", "b", "c"] },
+      "args": { "array_path": "items", "size": "1" },
+      "output": { "items": [["a"], ["b"], ["c"]] }
     },
     {
       "description": "Chunk size larger than array",
-      "input": {"items": [1, 2]},
-      "args": {"array_path": "items", "size": "10"},
-      "output": {"items": [[1, 2]]}
+      "input": { "items": [1, 2] },
+      "args": { "array_path": "items", "size": "10" },
+      "output": { "items": [[1, 2]] }
     },
     {
       "description": "Empty array",
-      "input": {"items": []},
-      "args": {"array_path": "items", "size": "3"},
-      "output": {"items": []}
+      "input": { "items": [] },
+      "args": { "array_path": "items", "size": "3" },
+      "output": { "items": [] }
     },
     {
       "description": "Nested path",
-      "input": {"data": {"items": [1, 2, 3, 4, 5, 6, 7]}},
-      "args": {"array_path": "data.items", "size": "3"},
-      "output": {"data": {"items": [[1, 2, 3], [4, 5, 6], [7]]}}
+      "input": { "data": { "items": [1, 2, 3, 4, 5, 6, 7] } },
+      "args": { "array_path": "data.items", "size": "3" },
+      "output": { "data": { "items": [[1, 2, 3], [4, 5, 6], [7]] } }
     }
   ],
   "tags": ["array", "chunk", "split", "group", "batch"]

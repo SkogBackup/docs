@@ -20,28 +20,37 @@
   "examples": [
     {
       "description": "Has HTTP URL",
-      "input": {"text": "Visit http://example.com for more info"},
-      "args": {"path": "text"},
+      "input": { "text": "Visit http://example.com for more info" },
+      "args": { "path": "text" },
       "output": true
     },
     {
       "description": "Has HTTPS URL",
-      "input": {"content": "Check out https://github.com"},
-      "args": {"path": "content"},
+      "input": { "content": "Check out https://github.com" },
+      "args": { "path": "content" },
       "output": true
     },
     {
       "description": "No URLs in text",
-      "input": {"text": "Just plain text, no links"},
-      "args": {"path": "text"},
+      "input": { "text": "Just plain text, no links" },
+      "args": { "path": "text" },
       "output": false
     },
     {
       "description": "URL in markdown link",
-      "input": {"markdown": "See [docs](https://example.com/docs)"},
-      "args": {"path": "markdown"},
+      "input": { "markdown": "See [docs](https://example.com/docs)" },
+      "args": { "path": "markdown" },
       "output": true
     }
   ],
-  "tags": ["string", "url", "validation", "check", "boolean", "http", "https", "ftp"]
+  "tags": [
+    "string",
+    "url",
+    "validation",
+    "check",
+    "boolean",
+    "http",
+    "https",
+    "ftp"
+  ]
 }

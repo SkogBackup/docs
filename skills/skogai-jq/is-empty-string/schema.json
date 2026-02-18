@@ -20,26 +20,26 @@
   "examples": [
     {
       "description": "Check if name field is empty string",
-      "input": {"user": {"name": ""}},
-      "args": {"path": "user.name"},
+      "input": { "user": { "name": "" } },
+      "args": { "path": "user.name" },
       "output": true
     },
     {
       "description": "Whitespace string is not empty",
-      "input": {"text": " "},
-      "args": {"path": "text"},
+      "input": { "text": " " },
+      "args": { "path": "text" },
       "output": false
     },
     {
       "description": "Null value is not empty string",
-      "input": {"value": null},
-      "args": {"path": "value"},
+      "input": { "value": null },
+      "args": { "path": "value" },
       "output": false
     },
     {
       "description": "Missing field returns false",
-      "input": {"other": "data"},
-      "args": {"path": "missing"},
+      "input": { "other": "data" },
+      "args": { "path": "missing" },
       "output": false
     }
   ],

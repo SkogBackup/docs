@@ -1,1 +1,7 @@
-{"data": [["name", "skogix"], ["age", "30"], ["active", "true"]]}
+{
+  "data": [
+    ["name", "skogix"],
+    ["age", "30"],
+    ["active", "true"]
+  ]
+}

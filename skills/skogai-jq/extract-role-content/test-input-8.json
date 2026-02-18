@@ -1,5 +1,3 @@
 {
-  "messages": [
-    {"role": "user", "content": null}
-  ]
+  "messages": [{ "role": "user", "content": null }]
 }

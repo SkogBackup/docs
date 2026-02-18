@@ -26,25 +26,25 @@
     {
       "description": "Merge nested objects",
       "input": {
-        "source": {"a": 1, "b": {"c": 2}},
-        "target": {"b": {"d": 3}, "e": 4}
+        "source": { "a": 1, "b": { "c": 2 } },
+        "target": { "b": { "d": 3 }, "e": 4 }
       },
-      "args": {"source_path": "source", "target_path": "target"},
+      "args": { "source_path": "source", "target_path": "target" },
       "output": {
-        "source": {"a": 1, "b": {"c": 2}},
-        "target": {"a": 1, "b": {"c": 2, "d": 3}, "e": 4}
+        "source": { "a": 1, "b": { "c": 2 } },
+        "target": { "a": 1, "b": { "c": 2, "d": 3 }, "e": 4 }
       }
     },
     {
       "description": "Merge with conflicting keys (source wins)",
       "input": {
-        "source": {"x": "new"},
-        "target": {"x": "old", "y": "kept"}
+        "source": { "x": "new" },
+        "target": { "x": "old", "y": "kept" }
       },
-      "args": {"source_path": "source", "target_path": "target"},
+      "args": { "source_path": "source", "target_path": "target" },
       "output": {
-        "source": {"x": "new"},
-        "target": {"x": "new", "y": "kept"}
+        "source": { "x": "new" },
+        "target": { "x": "new", "y": "kept" }
       }
     }
   ],

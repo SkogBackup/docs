@@ -1,1 +1,1 @@
-{"array": [true, false, null, "text", 42, {"key": "val"}]}
+{ "array": [true, false, null, "text", 42, { "key": "val" }] }

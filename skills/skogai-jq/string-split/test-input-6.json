@@ -3,5 +3,5 @@
   "boolean": true,
   "null_value": null,
   "array": ["a", "b"],
-  "object": {"key": "value"}
+  "object": { "key": "value" }
 }

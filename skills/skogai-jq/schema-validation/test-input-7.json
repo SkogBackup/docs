@@ -4,5 +4,5 @@
   "bool": true,
   "nil": null,
   "arr": [1, 2, 3],
-  "obj": {"key": "value"}
+  "obj": { "key": "value" }
 }

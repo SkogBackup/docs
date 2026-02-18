@@ -4,15 +4,15 @@
   "examples": [
     {
       "description": "Filter by boolean",
-      "input": {"items": [{"active": true}, {"active": false}]},
-      "args": {"array_field": "items", "field": "active", "value": "true"},
-      "output": {"items": [{"active": true}]}
+      "input": { "items": [{ "active": true }, { "active": false }] },
+      "args": { "array_field": "items", "field": "active", "value": "true" },
+      "output": { "items": [{ "active": true }] }
     },
     {
       "description": "Filter by string",
-      "input": {"users": [{"status": "active"}]},
-      "args": {"array_field": "users", "field": "status", "value": "active"},
-      "output": {"users": [{"status": "active"}]}
+      "input": { "users": [{ "status": "active" }] },
+      "args": { "array_field": "users", "field": "status", "value": "active" },
+      "output": { "users": [{ "status": "active" }] }
     }
   ]
 }
