@@ -37,8 +37,7 @@ i'm a ai agent developer and hobby programmer with a focus on creating ai agents
 
 ## dump
 
-- if user modifies a file between reads, assume the change is intentional
-- if you notice something that should be modified for any reason then you can always "dump it for later"
+- if i modifies a file between reads, assume the change is intentional
 
 ## code style guidelines
 
