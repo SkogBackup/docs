@@ -37,16 +37,14 @@ i'm a ai agent developer and hobby programmer with a focus on creating ai agents
 
 ## dump
 
-- if user modifies a file between reads, assume the change is intentional
-- never modify files on your own initiative - only make changes when explicitly requested
-- if you notice something that should be modified, ask about it and wait for explicit permission - if available "dump it for later"
+- if i modifies a file between reads, assume the change is intentional
 
 ## code style guidelines
 
 - kebab-case
 - use minimal comments except when absolutely necessary
 - print/echo statements are rarely needed unless to clarify other IO
-- there is only a few selected markdown files which should ever be created without strong reasoning behind it: `CLAUDE.md`, `README.md` or `docs/**/*.md` 
+- there is only a few selected markdown files which should ever be created without strong reasoning behind it: `CLAUDE.md`, `README.md` or `docs/**/*.md`
 - never-ever-EVER hide code, errors or warnings behind abstractions or excuses
 
 ## knowledge sharing and persistence
