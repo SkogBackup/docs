@@ -1,5 +1,5 @@
 ---
-name: skogai-agent-prompting
+name: skogai-prompting
 description: This skill should be used when building AI agents using prompt-native architecture where features are defined in prompts, not code. Use it when creating autonomous agents, designing MCP servers, implementing self-modifying systems, or adopting the "trust the agent's intelligence" philosophy.
 ---
 

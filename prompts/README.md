@@ -10,17 +10,36 @@ tags: [skogai, prompts, index]
 
 Central repository for reusable prompts, templates, and agent instructions used across the SkogAI ecosystem.
 
+## Quick Links
+
+- **📘 [PROMPT_STYLE_GUIDE.md](PROMPT_STYLE_GUIDE.md)** - Complete XML-style formatting guide
+- **⚡ [PROMPT_QUICK_REFERENCE.md](PROMPT_QUICK_REFERENCE.md)** - One-page cheatsheet
+- **📋 [TEMPLATE.yaml](TEMPLATE.yaml)** - Standard template for creating new prompts
+
 ## Repository Structure
 
 ```
-prompts/
+agents/prompts/
 ├── README.md           # This file - repository index
-├── CLAUDE.md          # Claude-specific instructions and patterns
-├── personas/          # Persona-specific prompt templates
-├── lore/              # Lore generation prompts
-├── tools/             # Tool development and usage prompts
-├── workflows/         # Multi-step workflow templates
-└── system/            # System-level prompts and guidelines
+├── lore/              # Lore generation prompts (YAML + guides)
+│   ├── entry-generation.yaml         # Operational prompt
+│   ├── extraction-json.yaml          # Operational prompt
+│   ├── extraction-markdown.yaml      # Operational prompt
+│   ├── title-generation.yaml         # Operational prompt
+│   ├── connection-analysis.yaml      # Operational prompt
+│   └── *.md                          # Documentation/guides
+├── personas/          # Persona creation prompts (YAML + guides)
+│   ├── generation.yaml               # Operational prompt
+│   ├── from-text.yaml                # Operational prompt
+│   └── *.md                          # Documentation/guides
+├── guides/            # Cross-cutting documentation
+│   └── skogai-character-guide.md    # Character creation guide
+└── agents/            # Agent-specific prompts
+    └── claude-append-system-prompt.md
+
+Format:
+- *.yaml  = Operational prompts (loaded by scripts via yq)
+- *.md    = Documentation, guides, examples
 ```
 
 ## Quick Reference
@@ -51,58 +70,116 @@ prompts/
 
 | Use Case | Prompt Location | Description |
 |----------|----------------|-------------|
-| Create lore entry | `lore/entry-creation.md` | Transform technical → narrative |
-| Define persona | `personas/creation.md` | Build consistent character voice |
-| Build argc tool | `tools/argc-template.md` | Standard tool structure |
-| Orchestrate workflow | `workflows/pipeline.md` | Multi-step automation |
+| Create lore entry | `lore/entry-generation.yaml` | Transform title → narrative prose |
+| Extract lore (JSON) | `lore/extraction-json.yaml` | Extract entities from docs → JSON |
+| Extract lore (Markdown) | `lore/extraction-markdown.yaml` | Extract entities → markdown |
+| Generate titles | `lore/title-generation.yaml` | Generate entry titles for lorebook |
+| Find connections | `lore/connection-analysis.yaml` | Identify relationships between entries |
+| Generate persona | `personas/generation.yaml` | Create traits/voice from name+description |
+| Extract persona | `personas/from-text.yaml` | Extract persona profile from text |
 
 ## Using These Prompts
 
+### In Shell Scripts (via yq)
+```bash
+# Load prompt template
+PROMPT_FILE="$SKOGAI_DIR/agents/prompts/lore/entry-generation.yaml"
+PROMPT_TEMPLATE=$(yq eval '.template' "$PROMPT_FILE")
+
+# Substitute variables
+PROMPT="${PROMPT_TEMPLATE//\{\{title\}\}/$title}"
+PROMPT="${PROMPT//\{\{category\}\}/$category}"
+
+# Send to LLM
+ollama run llama3.2 "$PROMPT"
+```
+
 ### Direct Reference
 ```
-@agents/prompts/lore/entry-creation.md
+@agents/prompts/lore/entry-generation.yaml
 ```
 
-### In Code
+### In Python
 ```python
 from pathlib import Path
-prompt_path = Path("agents/prompts/lore/entry-creation.md")
-```
+import yaml
 
-### In Workflows
-```bash
-# Via symlink
-cat agents/prompts/workflows/pipeline.md
+prompt_path = Path("agents/prompts/lore/entry-generation.yaml")
+with open(prompt_path) as f:
+    prompt_data = yaml.safe_load(f)
+    template = prompt_data['template']
 ```
 
 ## Prompt Standards
 
-All prompts in this repository follow these conventions:
+### YAML Format (Operational Prompts)
 
-1. **Frontmatter**: YAML metadata block
-   ```yaml
-   ---
-   title: prompt-name
-   type: prompt|template|guide
-   category: lore|persona|tool|workflow
-   tags: [relevant, tags]
-   ---
-   ```
+All operational prompts use YAML with this structure:
 
-2. **Structure**:
-   - Clear objective statement
-   - Input requirements
-   - Expected output format
-   - Examples (where applicable)
+```yaml
+name: prompt-name
+description: Brief description of what this prompt does
+version: "1.0"
+template: |
+  <role>Define the LLM's role</role>
 
-3. **Naming**: `kebab-case.md`
+  <critical_instruction>
+  What MUST be done (output format, no meta-commentary, etc.)
+  </critical_instruction>
 
-4. **Categories**:
-   - `persona` - Character/voice definitions
-   - `lore` - Narrative generation
-   - `tool` - Development patterns
-   - `workflow` - Multi-step processes
-   - `system` - Core instructions
+  <task>
+  The specific task to perform
+  </task>
+
+  <input_data>
+  {{variable_name}}
+  </input_data>
+
+  <output_format>
+  Exact format expected
+  </output_format>
+
+  <rules>
+  - Specific rules and constraints
+  - Formatting requirements
+  </rules>
+
+  <examples>
+  <example>
+  Input: ...
+  Output: ...
+  </example>
+  </examples>
+
+  <execution_instruction>
+  Final trigger to generate output
+  </execution_instruction>
+
+variables:
+  - name: variable_name
+    type: string
+    required: true
+    description: What this variable represents
+```
+
+### Markdown Format (Documentation)
+
+Documentation files (.md) use frontmatter:
+
+```yaml
+---
+title: guide-name
+type: guide|reference
+category: lore|persona|tool
+tags: [relevant, tags]
+---
+```
+
+### Naming Conventions
+
+- **YAML prompts**: `kebab-case.yaml`
+- **Markdown guides**: `kebab-case.md`
+- Variables in templates: `{{snake_case}}`
 
 ## Contributing
 
@@ -124,20 +201,17 @@ This repository integrates with:
 - **Orchestrator**: `@orchestrator/` - Workflow automation
 - **Integration**: `@integration/` - Pipeline tools
 
-## Migration Notes
+## Recent Changes
 
-High-value content identified from legacy systems:
-
-**From TODO-AICHAT-BASED-SKOGAI:**
-- 7 reusable prompt templates (prompts/)
-- Agent creation guides (364 lines)
-- Tool development guide (410 lines)
-- Persona/lorebook documentation
-
-**Status**: Pending selection and migration
+**2026-01-12**: Prompt repository restructured
+- Migrated from `/prompts/` to `/agents/prompts/` as canonical location
+- Converted all operational prompts to improved YAML format with XML-style structure tags
+- Updated scripts (`llama-lore-integrator.sh`, `llama-lore-creator.sh`) to use new paths
+- Maintained markdown guides for documentation purposes
+- Added better prompt engineering patterns (`<role>`, `<task>`, `<rules>`, `<examples>`)
 
 ---
 
-**Last Updated**: 2025-12-31
+**Last Updated**: 2026-01-12
 **Maintainer**: skogix
 **Repository**: Part of SkogAI lore project

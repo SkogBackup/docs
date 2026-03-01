@@ -1,152 +1,147 @@
-# Pruning to Production
+# Workflow: Pruning to Production
 
-<objective>
-Transform working explosive-phase code into production-ready implementation through systematic pruning and refinement.
-</objective>
+## Entry Criteria
 
-<when_to_use>
-- MVP works, but code is messy
-- Ready to remove failed experiments
-- Need to extract the 50% that actually matters
-- Preparing for .skogai/claude/ migration
-</when_to_use>
+You should be here if:
 
-<mindset_shift>
+- [x] You have a working MVP from the explosive phase
+- [x] The feature/skill/tool does what it's supposed to do
+- [x] You're ready to pay down the "token debt" from rapid iteration
 
-**Explosive Phase:** "Does it work?"
-**Pruning Phase:** "What can I remove while keeping it working?"
+## The Pruning Process
 
-The goal is SUBTRACTION, not addition.
+### Step 1: Identify What You Have
 
-</mindset_shift>
+List everything created during the explosive phase:
 
-<process>
+- Files created
+- Documentation written
+- Comments added
+- Config options exposed
 
-## 1. Identify What Actually Works
+Don't judge yet. Just inventory.
 
-Map out which parts of the explosive code are:
-- Actually used vs theoretical
-- Core functionality vs nice-to-have
-- Simple effective solutions vs over-engineered attempts
+### Step 2: Apply the Starved Context Test
 
-Ask: "If I removed this, would core functionality break?"
-- Yes → keep
-- No → candidate for removal
+For each item, ask: **"Could Claude recreate this knowing nothing about our project?"**
 
-## 2. Remove Failed Experiments
+| If Claude could...         | Then...                         |
+| -------------------------- | ------------------------------- |
+| Write it verbatim          | Delete it                       |
+| Write something equivalent | Delete it                       |
+| Write most of it           | Keep only the non-obvious parts |
+| Not write it at all        | Keep it (this is the value)     |
 
-Delete:
-- Approaches that didn't work
-- Duplicate implementations
-- Over-abstracted code that added complexity
-- Verbose docs explaining failed approaches
-- Theoretical features never actually needed
+### Step 3: Run the Differential Documentation Engine
 
-Be ruthless. If you're not sure it's needed, it probably isn't.
+For any substantial documentation:
 
-## 3. Consolidate
+1. Use the prompt template from `@../references/differential-documentation-engine.md`
+2. Provide your current docs as `{$PROJECT_CONTEXT}`
+3. Provide the topic as `{$TOPIC}`
+4. Replace your docs with the `[differential_doc]` output
 
-Merge similar patterns:
-- Multiple similar functions → one well-designed function
-- Scattered docs → focused single-source-of-truth
-- Redundant files → minimal essential structure
+Expected results: 60-80% reduction in size, 100% signal preserved.
 
-## 4. Simplify
+### Step 4: Validate the Pruning
 
-Apply anti-bloat principles:
-- Remove unnecessary abstractions
-- Inline single-use functions
-- Cut verbose explanations down to essence
-- Remove "just in case" code
+**The reconstruction test:**
 
-## 5. Test Coverage
+1. Start a fresh Claude session (no project context)
+2. Give it only your pruned documentation
+3. Ask it to implement/explain the feature
+4. Compare to what you actually built
 
-Now add tests:
-- Only for functionality that stayed
-- Focus on core workflows
-- Don't test removed experiments
+If Claude reconstructs it correctly → pruning successful
+If Claude gets confused → you pruned something essential (restore it)
 
-## 6. Document Minimally
+### Step 5: Check Production Standards
 
-Write docs that:
-- Explain WHY, not WHAT (code should be self-documenting)
-- Focus on non-obvious decisions
-- Point to related concepts (progressive disclosure)
-- Remove step-by-step explanations for obvious code
+Before moving to `.skogai/claude/`:
 
-</process>
+- [ ] All generic content removed
+- [ ] Only project-specific decisions documented
+- [ ] No redundant explanations
+- [ ] Passes the reconstruction test
+- [ ] Follows production conventions (F# where applicable, etc.)
 
-<anti_patterns>
+## Common Pruning Targets
 
-**Don't do this:**
-- Keep "just in case" code "because it might be useful later"
-- Add more features during pruning
-- Try to make failed experiments work
-- Document everything comprehensively
-- Preserve all historical approaches
+### Documentation Bloat
 
-**Do this:**
-- Delete failed experiments completely
-- Focus on what works
-- Trust git history for archeology
-- Minimal targeted docs
-- Preserve only successful patterns
+**Before (explosive):**
 
-</anti_patterns>
+```markdown
+## Database Setup
 
-<concrete_example>
+We use PostgreSQL as our database. PostgreSQL is a powerful,
+open-source object-relational database system. It has a strong
+reputation for reliability, feature robustness, and performance.
 
-**Before pruning (explosive):**
-```
-.skogai/skogix/src/routing/
-├── attempt-1-tree-structure.md (failed - unreadable)
-├── attempt-2-flat-list.md (failed - too long)
-├── attempt-3-progressive.md (works!)
-├── helpers.sh (unused)
-├── experimental-viz.py (interesting but not needed)
-└── docs/
-    ├── design-decisions.md (verbose, historical)
-    ├── api-reference.md (over-documented)
-    └── examples/ (10 examples, 2 actually useful)
+To connect, use the following configuration:
+
+- Host: localhost
+- Port: 5432
+- Database: myapp_dev
 ```
 
-**After pruning (production-ready):**
+**After (pruned):**
+
+```markdown
+## Database
+
+- Non-default: `statement_timeout=30s` (compliance requirement)
+- Schema: Uses `department_id` partitioning for row-level security
+- Connection pool: 20 (increased from default 10, see incident #234)
 ```
-.skogai/claude/skills/skogai-routing/
-├── SKILL.md (progressive disclosure pattern only)
-└── references/
-    └── routing-examples.md (2 key examples)
+
+### Code Comment Bloat
+
+**Before:**
+
+```python
+# Initialize the database connection
+# This creates a new connection to PostgreSQL using the config
+db = Database(config)  # Create database instance
 ```
 
-Reduced from 10 files to 2. Lost nothing of value.
+**After:**
 
-</concrete_example>
+```python
+# Pool size 20 required - see incident #234
+db = Database(config)
+```
 
-<functional_first>
+### Skill/Prompt Bloat
 
-Apply F# principles:
-- Pure functions over stateful objects
-- Immutable data structures
-- Function composition
-- Type signatures as documentation
-- Simple data transformations
+**Before:**
 
-If code is getting complex, simplify the data model.
+```markdown
+You are a helpful assistant. Be accurate and thorough.
+Think step by step before answering. Consider multiple
+perspectives. Be concise but complete.
 
-</functional_first>
+When analyzing code, look for:
 
-<success_criteria>
+- Bugs
+- Performance issues
+- Security vulnerabilities
+  ...
+```
 
-You've successfully pruned when:
-- Code is 30-50% smaller but functionality unchanged
-- Can explain every remaining line's purpose
-- No "just in case" code remains
-- Tests cover core workflows
-- Docs are minimal but sufficient
-- Ready to move to .skogai/claude/
+**After:**
 
-</success_criteria>
+```markdown
+Use skogai-notation for types. Flag any direct /atoms writes.
+```
 
-<next_step>
-When pruned and polished: `@workflows/migration-path.md`
-</next_step>
+## Exit Criteria
+
+Ready to move to production when:
+
+- [ ] Documentation passes differential engine (>50% reduction)
+- [ ] Code passes reconstruction test
+- [ ] No generic content remains
+- [ ] Follows `.skogai/claude/` conventions
+
+Next: `@../workflows/migration-path.md`
