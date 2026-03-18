@@ -1,17 +1,17 @@
 # Critical Pattern Template
 
-Use this template when adding a pattern to `docs/solutions/patterns/cora-critical-patterns.md`:
+Use this template when adding a pattern to `docs/solutions/patterns/critical-patterns.md`:
 
 ---
 
 ## N. [Pattern Name] (ALWAYS REQUIRED)
 
-### ❌ WRONG ([Will cause X error])
+### WRONG ([Will cause X error])
 ```[language]
 [code showing wrong approach]
 ```
 
-### ✅ CORRECT
+### CORRECT
 ```[language]
 [code showing correct approach]
 ```

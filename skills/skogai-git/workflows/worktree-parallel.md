@@ -29,7 +29,7 @@ wt switch --create feature/my-feature --base develop
 
 This:
 - Creates new branch
-- Creates worktree in configured path (default: `~/.worktrees/<branch>`)
+- Creates worktree in configured path (default: `.worktrees/<branch>` in repo root)
 - Runs `post-create` hooks (npm install, etc.)
 - Switches to new worktree
 
@@ -37,7 +37,7 @@ This:
 
 ```bash
 # You're now in the worktree
-pwd  # ~/.worktrees/feature/my-feature
+pwd  # <repo-root>/.worktrees/feature/my-feature
 
 # Work normally
 git status
@@ -143,9 +143,76 @@ wt remove review/pr-123 --force-delete
 
 </common_patterns>
 
+<worktree_setup>
+
+## Environment and Gitignore Setup
+
+When creating worktrees, ensure these are handled (wt handles this automatically via hooks):
+
+### .gitignore Management
+
+The `.worktrees/` directory should be in your repo's `.gitignore`. If not already present, add it:
+
+```
+.worktrees
+```
+
+### .env File Copying
+
+Worktrees do not inherit `.env` files from the main repo (they are gitignored). After creating a worktree, copy environment files:
+
+```bash
+# Copy all .env files (skip .env.example which is committed)
+cp .env .env.local .env.test .worktrees/<branch>/  2>/dev/null
+```
+
+Configure this as a `post-create` hook in `.config/wt.toml` to automate it:
+
+```toml
+post-create = ["npm install", "cp .env* .worktrees/$WT_BRANCH/ 2>/dev/null || true"]
+```
+
+</worktree_setup>
+
+<troubleshooting>
+
+## Troubleshooting
+
+### "Worktree already exists"
+
+Use `wt list` to see existing worktrees. Switch to it with `wt switch <branch>`.
+
+### "Cannot remove worktree: it is the current worktree"
+
+Switch out of the worktree first, then remove:
+
+```bash
+wt switch ^           # switch to default branch
+wt remove <branch>    # now remove it
+```
+
+### Lost in a worktree?
+
+```bash
+wt list               # shows all worktrees with paths
+git rev-parse --show-toplevel  # shows current repo/worktree root
+```
+
+### .env files missing in worktree?
+
+If a worktree was created without .env files, copy them manually from the main repo root:
+
+```bash
+cp $(git worktree list | head -1 | awk '{print $1}')/.env* . 2>/dev/null
+```
+
+</troubleshooting>
+
 <success_criteria>
 - Worktree created and hooks ran
 - Can switch between worktrees freely
+- .env files present in worktree
+- .worktrees/ in .gitignore
 - Changes merged cleanly
 - Worktree cleaned up after merge
 </success_criteria>

@@ -222,7 +222,7 @@ Skills still in explosive/validation:
 
 - `skogai-developing-for-claude-code` - being validated
 - `skogai-skill-creator` - being validated
-- `skogai-git-worktree` - being validated
+- `skogai-git` (worktree workflows) - being validated
 
 **Graduation criteria**: Can a context-starved Claude still use the skill effectively? If yes, it's been pruned enough for production.
 

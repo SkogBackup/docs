@@ -1,15 +1,15 @@
-# CORA Documentation Schema
+# Documentation Schema
 # This schema MUST be validated before writing any documentation file
 
 required_fields:
   module:
     type: string
-    description: "Module/area of CORA (e.g., 'Email Processing', 'Brief System', 'Authentication')"
+    description: "Module/area of the project (e.g., 'Email Processing', 'User Service', 'Authentication')"
     examples:
       - "Email Processing"
-      - "Brief System"
-      - "Assistant"
+      - "User Service"
       - "Authentication"
+      - "Data Pipeline"
 
   date:
     type: string
@@ -19,13 +19,13 @@ required_fields:
   problem_type:
     type: enum
     values:
-      - build_error          # Rails, bundle, compilation errors
+      - build_error          # Build, bundle, compilation errors
       - test_failure         # Test failures, flaky tests
       - runtime_error        # Exceptions, crashes during execution
       - performance_issue    # Slow queries, memory issues, N+1 queries
       - database_issue       # Migration, query, schema problems
       - security_issue       # Authentication, authorization, XSS, SQL injection
-      - ui_bug               # Frontend, Stimulus, Turbo issues
+      - ui_bug               # Frontend rendering, interaction issues
       - integration_issue    # External service, API integration problems
       - logic_error          # Business logic bugs
       - developer_experience # DX issues: workflow, tooling, seed data, dev setup
@@ -37,24 +37,21 @@ required_fields:
   component:
     type: enum
     values:
-      - rails_model          # ActiveRecord models
-      - rails_controller     # ActionController
-      - rails_view           # ERB templates, ViewComponent
-      - service_object       # Custom service classes
-      - background_job       # Sidekiq, Active Job
-      - database             # PostgreSQL, migrations, schema
-      - frontend_stimulus    # Stimulus JS controllers
-      - hotwire_turbo        # Turbo Streams, Turbo Drive
-      - email_processing     # Email handling, mailers
-      - brief_system         # Brief generation, summarization
-      - assistant            # AI assistant, prompts
-      - authentication       # Devise, user auth
-      - payments             # Stripe, billing
-      - development_workflow # Dev process, seed data, tooling
-      - testing_framework    # Test setup, fixtures, VCR
+      - api                  # API endpoints, REST/GraphQL
+      - database             # Database, migrations, schema, queries
+      - authentication       # Auth, user sessions, permissions
+      - frontend             # UI components, templates, client-side rendering
+      - backend              # Server-side logic, services, models
+      - config               # Configuration, environment, settings
+      - integration          # External services, third-party APIs
+      - testing              # Test setup, fixtures, test utilities
+      - deployment           # CI/CD, hosting, release process
+      - infrastructure       # Servers, containers, networking
+      - middleware           # Request processing, interceptors, plugins
+      - cli                  # Command-line tools, scripts, generators
       - documentation        # README, guides, inline docs
-      - tooling              # Scripts, generators, CLI tools
-    description: "CORA component involved"
+      - other                # Anything not covered above
+    description: "Project component involved"
 
   symptoms:
     type: array[string]
@@ -62,19 +59,19 @@ required_fields:
     max_items: 5
     description: "Observable symptoms (error messages, visual issues, crashes)"
     examples:
-      - "N+1 query detected in brief generation"
-      - "Brief emails not appearing in summary"
-      - "Turbo Stream response returns 404"
+      - "N+1 query detected in user listing"
+      - "API response returns 404 for valid resource"
+      - "Authentication token expires prematurely"
 
   root_cause:
     type: enum
     values:
-      - missing_association  # Incorrect Rails associations
+      - missing_association  # Incorrect data associations
       - missing_include      # Missing eager loading (N+1)
       - missing_index        # Database performance issue
-      - wrong_api            # Using deprecated/incorrect Rails API
+      - wrong_api            # Using deprecated/incorrect API
       - scope_issue          # Incorrect query scope or filtering
-      - thread_violation     # Real-time unsafe operation
+      - thread_violation     # Thread-unsafe operation
       - async_timing         # Async/background job timing
       - memory_leak          # Memory leak or excessive allocation
       - config_error         # Configuration or environment issue
@@ -95,12 +92,12 @@ required_fields:
       - migration            # Fixed by database migration
       - config_change        # Fixed by changing configuration
       - test_fix             # Fixed by correcting tests
-      - dependency_update    # Fixed by updating gem/dependency
+      - dependency_update    # Fixed by updating dependency
       - environment_setup    # Fixed by environment configuration
       - workflow_improvement # Improved development workflow or process
       - documentation_update # Added or updated documentation
       - tooling_addition     # Added helper script or automation
-      - seed_data_update     # Updated db/seeds.rb or fixtures
+      - seed_data_update     # Updated seed data or fixtures
     description: "Type of fix applied"
 
   severity:
@@ -113,10 +110,10 @@ required_fields:
     description: "Impact severity"
 
 optional_fields:
-  rails_version:
+  framework_version:
     type: string
-    pattern: '^\d+\.\d+\.\d+$'
-    description: "Rails version where this was encountered (e.g., '7.1.0')"
+    pattern: '^\d+\.\d+(\.\d+)?$'
+    description: "Framework version where this was encountered (e.g., '7.1.2', '3.4')"
 
   related_components:
     type: array[string]
@@ -130,10 +127,10 @@ optional_fields:
       - "n-plus-one"
       - "eager-loading"
       - "test-isolation"
-      - "turbo-stream"
+      - "api-versioning"
 
 validation_rules:
-  - "module must be a valid CORA module name"
+  - "module must be a recognized project module name"
   - "date must be in YYYY-MM-DD format"
   - "problem_type must match one of the enum values"
   - "component must match one of the enum values"
@@ -148,12 +145,12 @@ validation_rules:
 # module: Email Processing
 # date: 2025-11-12
 # problem_type: performance_issue
-# component: rails_model
+# component: database
 # symptoms:
-#   - N+1 query when loading email threads
-#   - Brief generation taking >5 seconds
+#   - N+1 query when loading associated records
+#   - Listing page taking >5 seconds
 # root_cause: missing_include
-# rails_version: 7.1.2
+# framework_version: 7.1.2
 # resolution_type: code_fix
 # severity: high
 # tags: [n-plus-one, eager-loading, performance]
@@ -164,12 +161,12 @@ validation_rules:
 # module: Development Workflow
 # date: 2025-11-13
 # problem_type: developer_experience
-# component: development_workflow
+# component: config
 # symptoms:
 #   - No example data for new feature in development
-#   - Rails db:seed doesn't demonstrate new capabilities
+#   - Seed script doesn't demonstrate new capabilities
 # root_cause: incomplete_setup
-# rails_version: 7.1.2
+# framework_version: 3.4.1
 # resolution_type: seed_data_update
 # severity: low
 # tags: [seed-data, dx, workflow]

@@ -61,7 +61,7 @@ Extract from conversation history:
 
 **Required information:**
 
-- **Module name**: Which CORA module had the problem
+- **Module name**: Which project module had the problem
 - **Symptom**: Observable error/behavior (exact error messages)
 - **Investigation attempts**: What didn't work and why
 - **Root cause**: Technical explanation of actual problem
@@ -70,19 +70,17 @@ Extract from conversation history:
 
 **Environment details:**
 
-- Rails version
-- Stage (0-6 or post-implementation)
+- Framework version
 - OS version
 - File/line references
 
-**BLOCKING REQUIREMENT:** If critical context is missing (module name, exact error, stage, or resolution steps), ask user and WAIT for response before proceeding to Step 3:
+**BLOCKING REQUIREMENT:** If critical context is missing (module name, exact error, or resolution steps), ask user and WAIT for response before proceeding to Step 3:
 
 ```
 I need a few details to document this properly:
 
 1. Which module had this issue? [ModuleName]
 2. What was the exact error message or symptom?
-3. What stage were you in? (0-6 or post-implementation)
 
 [Continue after user provides details]
 ```
@@ -156,7 +154,7 @@ Load `schema.yaml` and classify the problem against the enum values defined in [
 **BLOCK if validation fails:**
 
 ```
-❌ YAML validation failed
+YAML validation failed
 
 Errors:
 - problem_type: must be one of schema enums, got "compilation_error"
@@ -240,20 +238,20 @@ EOF
 If this issue has automatic indicators suggesting it might be critical:
 
 - Severity: `critical` in YAML
-- Affects multiple modules OR foundational stage (Stage 2 or 3)
+- Affects multiple modules OR foundational component
 - Non-obvious solution
 
 Then in the decision menu (Step 8), add a note:
 
 ```
-💡 This might be worth adding to Required Reading (Option 2)
+This might be worth adding to Required Reading (Option 2)
 ```
 
 But **NEVER auto-promote**. User decides via decision menu (Option 2).
 
 **Template for critical pattern addition:**
 
-When user selects Option 2 (Add to Required Reading), use the template from `assets/critical-pattern-template.md` to structure the pattern entry. Number it sequentially based on existing patterns in `docs/solutions/patterns/cora-critical-patterns.md`.
+When user selects Option 2 (Add to Required Reading), use the template from `assets/critical-pattern-template.md` to structure the pattern entry. Number it sequentially based on existing patterns in `docs/solutions/patterns/critical-patterns.md`.
 </step>
 
 </critical_sequence>
@@ -267,16 +265,16 @@ When user selects Option 2 (Add to Required Reading), use the template from `ass
 After successful documentation, present options and WAIT for user response:
 
 ```
-✓ Solution documented
+Solution documented
 
 File created:
 - docs/solutions/[category]/[filename].md
 
 What's next?
 1. Continue workflow (recommended)
-2. Add to Required Reading - Promote to critical patterns (cora-critical-patterns.md)
+2. Add to Required Reading - Promote to critical patterns (critical-patterns.md)
 3. Link related issues - Connect to similar problems
-4. Add to existing skill - Add to a learning skill (e.g., hotwire-native)
+4. Add to existing skill - Add to a learning skill
 5. Create new skill - Extract into new learning skill
 6. View documentation - See what was captured
 7. Other
@@ -289,28 +287,28 @@ What's next?
 - Return to calling skill/workflow
 - Documentation is complete
 
-**Option 2: Add to Required Reading** ⭐ PRIMARY PATH FOR CRITICAL PATTERNS
+**Option 2: Add to Required Reading** PRIMARY PATH FOR CRITICAL PATTERNS
 
 User selects this when:
 
 - System made this mistake multiple times across different modules
 - Solution is non-obvious but must be followed every time
-- Foundational requirement (Rails, Rails API, threading, etc.)
+- Foundational requirement (framework, threading, etc.)
 
 Action:
 
 1. Extract pattern from the documentation
-2. Format as ❌ WRONG vs ✅ CORRECT with code examples
-3. Add to `docs/solutions/patterns/cora-critical-patterns.md`
+2. Format as WRONG vs CORRECT with code examples
+3. Add to `docs/solutions/patterns/critical-patterns.md`
 4. Add cross-reference back to this doc
-5. Confirm: "✓ Added to Required Reading. All subagents will see this pattern before code generation."
+5. Confirm: "Added to Required Reading. All subagents will see this pattern before code generation."
 
 **Option 3: Link related issues**
 
 - Prompt: "Which doc to link? (provide filename or describe)"
 - Search docs/solutions/ for the doc
 - Add cross-reference to both docs
-- Confirm: "✓ Cross-reference added"
+- Confirm: "Cross-reference added"
 
 **Option 4: Add to existing skill**
 
@@ -321,11 +319,11 @@ Action:
 1. Prompt: "Which skill? (hotwire-native, etc.)"
 2. Determine which reference file to update (resources.md, patterns.md, or examples.md)
 3. Add link and brief description to appropriate section
-4. Confirm: "✓ Added to [skill-name] skill in [file]"
+4. Confirm: "Added to [skill-name] skill in [file]"
 
-Example: For Hotwire Native Tailwind variants solution:
+Example: For a Hotwire Native Tailwind variants solution:
 
-- Add to `hotwire-native/references/resources.md` under "CORA-Specific Resources"
+- Add to `hotwire-native/references/resources.md` under "Project-Specific Resources"
 - Add to `hotwire-native/references/examples.md` with link to solution doc
 
 **Option 5: Create new skill**
@@ -337,7 +335,7 @@ Action:
 1. Prompt: "What should the new skill be called? (e.g., stripe-billing, email-processing)"
 2. Run `python3 .claude/skills/skill-creator/scripts/init_skill.py [skill-name]`
 3. Create initial reference files with this solution as first example
-4. Confirm: "✓ Created new [skill-name] skill with this solution as first example"
+4. Confirm: "Created new [skill-name] skill with this solution as first example"
 
 **Option 6: View documentation**
 
@@ -379,12 +377,12 @@ All context needed for documentation should be present in conversation history b
 
 Documentation is successful when ALL of the following are true:
 
-- ✅ YAML frontmatter validated (all required fields, correct formats)
-- ✅ File created in docs/solutions/[category]/[filename].md
-- ✅ Enum values match schema.yaml exactly
-- ✅ Code examples included in solution section
-- ✅ Cross-references added if related issues found
-- ✅ User presented with decision menu and action confirmed
+- YAML frontmatter validated (all required fields, correct formats)
+- File created in docs/solutions/[category]/[filename].md
+- Enum values match schema.yaml exactly
+- Code examples included in solution section
+- Cross-references added if related issues found
+- User presented with decision menu and action confirmed
 
 </success_criteria>
 
@@ -408,11 +406,11 @@ Documentation is successful when ALL of the following are true:
 - Present multiple matches
 - Let user choose: new doc, update existing, or link as duplicate
 
-**Module not in CORA-MODULES.md:**
+**Module not recognized:**
 
 - Warn but don't block
 - Proceed with documentation
-- Suggest: "Add [Module] to CORA-MODULES.md if not there"
+- Suggest: "Consider adding [Module] to the project module list if it's new"
 
 ---
 
@@ -438,23 +436,23 @@ Documentation is successful when ALL of the following are true:
 
 **Good documentation has:**
 
-- ✅ Exact error messages (copy-paste from output)
-- ✅ Specific file:line references
-- ✅ Observable symptoms (what you saw, not interpretations)
-- ✅ Failed attempts documented (helps avoid wrong paths)
-- ✅ Technical explanation (not just "what" but "why")
-- ✅ Code examples (before/after if applicable)
-- ✅ Prevention guidance (how to catch early)
-- ✅ Cross-references (related issues)
+- Exact error messages (copy-paste from output)
+- Specific file:line references
+- Observable symptoms (what you saw, not interpretations)
+- Failed attempts documented (helps avoid wrong paths)
+- Technical explanation (not just "what" but "why")
+- Code examples (before/after if applicable)
+- Prevention guidance (how to catch early)
+- Cross-references (related issues)
 
 **Avoid:**
 
-- ❌ Vague descriptions ("something was wrong")
-- ❌ Missing technical details ("fixed the code")
-- ❌ No context (which version? which file?)
-- ❌ Just code dumps (explain why it works)
-- ❌ No prevention guidance
-- ❌ No cross-references
+- Vague descriptions ("something was wrong")
+- Missing technical details ("fixed the code")
+- No context (which version? which file?)
+- Just code dumps (explain why it works)
+- No prevention guidance
+- No cross-references
 
 ---
 
@@ -466,46 +464,46 @@ Documentation is successful when ALL of the following are true:
 
 1. **Detect confirmation:** "That worked!" triggers auto-invoke
 2. **Gather context:**
-   - Module: Brief System
-   - Symptom: Brief generation taking >5 seconds, N+1 query when loading email threads
+   - Module: User Service
+   - Symptom: User listing taking >5 seconds, N+1 query when loading associated records
    - Failed attempts: Added pagination (didn't help), checked background job performance
-   - Solution: Added eager loading with `includes(:emails)` on Brief model
-   - Root cause: Missing eager loading causing separate database query per email thread
+   - Solution: Added eager loading with `includes(:records)` on the query
+   - Root cause: Missing eager loading causing separate database query per associated record
 3. **Check existing:** No similar issue found
-4. **Generate filename:** `n-plus-one-brief-generation-BriefSystem-20251110.md`
+4. **Generate filename:** `n-plus-one-user-listing-UserService-20251110.md`
 5. **Validate YAML:**
 
    ```yaml
-   module: Brief System
+   module: User Service
    date: 2025-11-10
    problem_type: performance_issue
-   component: rails_model
+   component: database
    symptoms:
-     - "N+1 query when loading email threads"
-     - "Brief generation taking >5 seconds"
+     - "N+1 query when loading associated records"
+     - "User listing taking >5 seconds"
    root_cause: missing_include
    severity: high
    tags: [n-plus-one, eager-loading, performance]
    ```
 
-   ✅ Valid
+   Valid
 6. **Create documentation:**
-   - `docs/solutions/performance-issues/n-plus-one-brief-generation-BriefSystem-20251110.md`
+   - `docs/solutions/performance-issues/n-plus-one-user-listing-UserService-20251110.md`
 7. **Cross-reference:** None needed (no similar issues)
 
 **Output:**
 
 ```
-✓ Solution documented
+Solution documented
 
 File created:
-- docs/solutions/performance-issues/n-plus-one-brief-generation-BriefSystem-20251110.md
+- docs/solutions/performance-issues/n-plus-one-user-listing-UserService-20251110.md
 
 What's next?
 1. Continue workflow (recommended)
-2. Add to Required Reading - Promote to critical patterns (cora-critical-patterns.md)
+2. Add to Required Reading - Promote to critical patterns (critical-patterns.md)
 3. Link related issues - Connect to similar problems
-4. Add to existing skill - Add to a learning skill (e.g., hotwire-native)
+4. Add to existing skill - Add to a learning skill
 5. Create new skill - Extract into new learning skill
 6. View documentation - See what was captured
 7. Other
@@ -515,7 +513,7 @@ What's next?
 
 ## Future Enhancements
 
-**Not in Phase 7 scope, but potential:**
+**Not in current scope, but potential:**
 
 - Search by date range
 - Filter by severity

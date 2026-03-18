@@ -136,7 +136,8 @@ Location: `~/.config/worktrunk/config.toml`
 command = "llm"
 
 [worktree]
-path-template = "~/dev/{branch}"
+# Convention: .worktrees/ in repo root (not ~/.worktrees/)
+path-template = ".worktrees/{branch}"
 ```
 
 ### Project Config
@@ -164,7 +165,7 @@ pre-merge = "npm test"
 wt switch --create feature/my-feature
 
 # Work in worktree
-cd ~/dev/feature/my-feature
+cd .worktrees/feature/my-feature
 # ... make changes ...
 git commit -m "feat: add feature"
 
