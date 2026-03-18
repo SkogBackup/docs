@@ -3,8 +3,8 @@
 Create and manage worktrees for parallel development on multiple branches.
 
 <required_reading>
-- references/wt-commands.md (if unfamiliar with wt)
-- references/hook-types.md (if setting up automation)
+- skogai-worktrunk/SKILL.md (if unfamiliar with wt commands)
+- skogai-worktrunk/reference/hook-types-reference.md (if setting up automation)
 </required_reading>
 
 <process>

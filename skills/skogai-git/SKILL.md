@@ -1,6 +1,6 @@
 ---
 name: skogai-git
-description: Unified git workflows using wt (worktrees), gita (multi-repo), gh (GitHub), and semantic commits. Use for parallel development, multi-repo management, PR workflows, branch operations, and commit best practices.
+description: "What should I do?" — Git workflows, commit philosophy, PR workflows, branch management, tool selection routing. Orchestration across wt, gita, gh, and raw git. For tool configuration details ("How does this tool work?"), see skogai-worktrunk.
 ---
 
 <essential_principles>
@@ -116,10 +116,10 @@ gh pr list                   # List open PRs
 
 All in `references/`:
 
-- **Commands:** wt-commands.md, gita-commands.md
-- **Philosophy:** commit-philosophy.md
-- **Configuration:** hook-types.md
-- **Guidance:** tool-selection.md
+- **Philosophy:** commit-philosophy.md — commit outcomes, atomic commits, style detection
+- **Guidance:** tool-selection.md — decision tree for wt vs gita vs gh vs raw git
+- **Commands:** wt-commands.md, gita-commands.md — *cross-references to skogai-worktrunk*
+- **Hooks:** hook-types.md — *cross-reference to skogai-worktrunk*
 
 </reference_index>
 
@@ -151,6 +151,15 @@ All in `templates/`:
 - **pr-body.md:** Pull request description template
 
 </templates_index>
+
+<see_also>
+
+## Related Skills
+
+- **skogai-worktrunk** — "How does this tool work?" Tool configuration, operation details, hooks, permission models, submodule patterns, LLM commit setup. Use when you need to configure wt/gita or understand tool internals.
+- **skogai-git** (this skill) — "What should I do?" Git workflows, commit philosophy, PR workflows, branch management, tool selection routing.
+
+</see_also>
 
 <success_criteria>
 

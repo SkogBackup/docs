@@ -1,6 +1,6 @@
 ---
 name: worktrunk
-description: Use when working with git worktrees (wt), managing submodules across branches, git-flow workflows, or multi-repo management (gita). Covers worktrunk configuration, hook automation, and when to use wt vs gita for different scenarios.
+description: "How does this tool work?" — wt and gita tool configuration, operation details, hooks, permission models, submodule patterns, LLM commit setup. For workflow guidance ("What should I do?"), see skogai-git.
 ---
 
 # Worktrunk + Gita
@@ -80,44 +80,17 @@ gita shell <shell-command>      # Run shell command on all repos
 - Main project with submodules (wt for main, gita for overview)
 - Monorepo ecosystem (wt for features, gita for related services)
 
-## Basic Workflows
+## Workflows
 
-### Worktrunk: Feature Branch Workflow
-
-```bash
-# Start new feature
-wt switch --create feature/my-feature
-
-# Work is isolated in new worktree (typically ~/dev/feature/my-feature)
-cd ~/dev/feature/my-feature
-# ... make changes ...
-git commit -m "changes"
-
-# Merge back to develop
-wt merge develop
-
-# Clean up merged worktrees
-wt remove feature/my-feature
-```
-
-### Gita: Multi-Repo Status Check
-
-```bash
-# Add repos to gita
-gita add ~/projects/main-app ~/projects/lib1 ~/projects/lib2
-
-# Check status of all
-gita ll
-
-# Pull all repos
-gita pull
-
-# Check which have uncommitted changes
-gita st
-
-# Run custom command across all
-gita super git log -1 --oneline
-```
+> For complete git workflow guidance (feature branch flows, PR workflows, commit philosophy, branch management), see **skogai-git**. This skill covers tool configuration and operation details.
+>
+> - `skogai-git/workflows/worktree-parallel.md` — parallel worktree development workflow
+> - `skogai-git/workflows/worktree-review.md` — isolated PR review workflow
+> - `skogai-git/workflows/multi-repo.md` — gita multi-repo workflow
+> - `skogai-git/workflows/commit-push.md` — semantic commit workflow
+> - `skogai-git/workflows/branch-management.md` — branch lifecycle
+> - `skogai-git/workflows/pr-workflow.md` — PR creation and review
+> - `skogai-git/references/commit-philosophy.md` — commit outcomes, not process
 
 ## Available Documentation
 
@@ -332,33 +305,10 @@ pre-merge = "git submodule deinit --all"
 
 ### Git-Flow Integration
 
-Worktrunk integrates naturally with git-flow workflows (develop/feature/release/hotfix).
+Worktrunk integrates naturally with git-flow workflows. For the complete git-flow workflow (feature/release/hotfix branch patterns), see **skogai-git** `workflows/branch-management.md`.
 
-**Standard git-flow setup:**
-- **Main branch**: `develop` (not `main` or `master`)
-- **Feature branches**: `feature/*`
-- **Release branches**: `release/*`
-- **Hotfix branches**: `hotfix/*`
-
-**Complete workflow:**
-```bash
-# Create feature branch from develop
-wt switch --create feature/my-feature --force
-
-# Work in isolated worktree (typically $HOME/dev/feature/my-feature)
-cd ~/dev/feature/my-feature
-# ... make changes ...
-git commit -m "feat: add feature"
-
-# Merge back to develop (runs pre-merge hooks)
-wt merge develop
-
-# Clean up merged worktrees
-wt remove feature/my-feature
-```
-
-**With submodules:**
-The hooks handle everything automatically:
+**Hook integration with submodules in git-flow:**
+The hooks handle the submodule lifecycle automatically:
 1. `post-create` initializes submodules in new worktree
 2. Work normally (submodules already initialized)
 3. `pre-merge` deinits submodules (clean merge)

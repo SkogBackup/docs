@@ -1,5 +1,12 @@
 # Claude Code Plugin Guidelines
 
+## Skill Boundary
+
+- **skogai-worktrunk** (this skill) = "How does this tool work?" — wt and gita tool configuration, operation details, hooks, permission models, submodule patterns, LLM commit setup.
+- **skogai-git** = "What should I do?" — git workflows, commit philosophy, PR workflows, branch management, tool selection routing.
+
+When a user asks about *workflow* (e.g. "how do I do a feature branch flow?"), route to skogai-git. When they ask about *configuration* (e.g. "how do I set up hooks?" or "what does wt config do?"), handle it here.
+
 ## Skills Directory Location
 
 **Working solution**: Using `source: "./.claude-plugin"` in `marketplace.json` allows skills to remain in `.claude-plugin/skills/` ✅

@@ -3,7 +3,7 @@
 Manage multiple repositories as a unified ecosystem.
 
 <required_reading>
-- references/gita-commands.md (if unfamiliar with gita)
+- skogai-worktrunk/SKILL.md (if unfamiliar with gita commands)
 - references/tool-selection.md (to understand when to use gita vs wt)
 </required_reading>
 

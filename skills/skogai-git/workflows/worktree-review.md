@@ -3,7 +3,7 @@
 Isolated PR review in separate worktree to avoid disrupting current work.
 
 <required_reading>
-- references/wt-commands.md (if unfamiliar with wt)
+- skogai-worktrunk/SKILL.md (if unfamiliar with wt commands)
 </required_reading>
 
 <process>
