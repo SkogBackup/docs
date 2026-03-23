@@ -2,3 +2,5 @@
 .docgen/scripts/__pycache__
 .docgen/scripts/__init__.py
 /claude-code
+/.data
+/chroma.sqlite3
