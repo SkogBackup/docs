@@ -1,4 +1,5 @@
 ---
+<<<<<<<< HEAD:docs-merge-todo/prompts/old/tool-configurator.md
 title: Advanced Tool Configuration
 description: Detailed guide for configuring complex tool behaviors and integrations
   in the SkogAI system
@@ -9,6 +10,18 @@ tags:
 - configuration
 - advanced
 permalink: prompts/old/tool-configurator
+|||||||| parent of 080afdc (more add):prompts/prompts/old/tool-configurator.md
+title: "Advanced Tool Configuration"
+description: "Detailed guide for configuring complex tool behaviors and integrations in the SkogAI system"
+date: "2023-11-06"
+tags: ["tools", "argc", "configuration", "advanced"]
+========
+title: "Advanced Tool Configuration"
+description: "Detailed guide for configuring complex tool behaviors and integrations in the SkogAI system"
+date: "2023-11-06"
+tags: ["tools", "argc", "configuration", "advanced"]
+status: "published"
+>>>>>>>> 080afdc (more add):todo/intefaces/aichat/advanced-tool-configuration.md
 ---
 
 # Advanced Tool Configuration
@@ -117,7 +130,6 @@ Make tools work in Unix pipelines:
 ```
 
 Usage:
-
 ```bash
 echo "input" | ./bin/tool1 | ./bin/tool2
 ```
@@ -131,7 +143,6 @@ Tools can execute other tools:
 ```
 
 With subprocess execution in the script:
-
 ```bash
 result=$(./bin/child_tool "$processed_input")
 ```
@@ -271,7 +282,7 @@ else
   # Running job
   # Actual long-running processing here
   sleep 10
-
+  
   # Update job status
   echo "Job completed" > "/tmp/job_${job_id}.complete"
   exit 0
@@ -279,7 +290,6 @@ fi
 ```
 
 Checking job status:
-
 ```bash
 #!/bin/bash
 # @description Check job status
