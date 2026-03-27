@@ -1,4 +1,5 @@
 ---
+<<<<<<<< HEAD:docs-merge-todo/prompts/old/docs-env-variables.md
 title: Environment Variables
 description: Documentation of environment variables used in the SkogAI tools system
 date: '2023-11-06'
@@ -9,6 +10,18 @@ tags:
 - agents
 - llm-functions
 permalink: prompts/old/docs-env-variables
+|||||||| parent of 080afdc (more add):prompts/prompts/old/docs-env-variables.md
+title: "Environment Variables"
+description: "Documentation of environment variables used in the SkogAI tools system"
+date: "2023-11-06"
+tags: ["environment", "variables", "tools", "agents", "llm-functions"]
+========
+title: "Environment Variables"
+description: "Documentation of environment variables used in the SkogAI tools system"
+date: "2023-11-06"
+tags: ["environment", "variables", "tools", "agents", "llm-functions"]
+status: "published"
+>>>>>>>> 080afdc (more add):todo/intefaces/aichat/environment-variables.md
 ---
 
 # Environment Variables
@@ -111,19 +124,16 @@ console.log(`Tool cache directory: ${process.env.LLM_TOOL_CACHE_DIR}`);
 To set environment variables when using AIChat:
 
 1. **Command-line for a single session**:
-
    ```bash
    LLM_DUMP_RESULTS="fs_.*" aichat
    ```
 
 2. **In your shell profile (e.g., `.bashrc`) for all sessions**:
-
    ```bash
    export LLM_DUMP_RESULTS="fs_.*"
    ```
 
 3. **Using a `.env` file in the current directory**:
-
    ```
    LLM_DUMP_RESULTS=fs_.*
    LLM_MCP_NEED_CONFIRM=fs_rm|fs_write
@@ -153,7 +163,6 @@ These become accessible in:
 ### Debugging Tool Output
 
 To see all file system tools' output:
-
 ```bash
 export LLM_DUMP_RESULTS="fs_.*"
 ```
@@ -161,7 +170,6 @@ export LLM_DUMP_RESULTS="fs_.*"
 ### Adding Safety Confirmations
 
 To require confirmation for potentially dangerous operations:
-
 ```bash
 export LLM_MCP_NEED_CONFIRM="fs_rm|fs_write|execute_command"
 ```
@@ -169,7 +177,6 @@ export LLM_MCP_NEED_CONFIRM="fs_rm|fs_write|execute_command"
 ### Using Agent Variables
 
 Setting specific behavior for an agent:
-
 ```yaml
 # In agent's index.yaml
 variables:
@@ -179,7 +186,6 @@ variables:
 ```
 
 Then in an agent tool:
-
 ```bash
 # @cmd Process data with configured detail level
 process_data() {

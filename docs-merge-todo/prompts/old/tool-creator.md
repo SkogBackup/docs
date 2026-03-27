@@ -1,4 +1,5 @@
 ---
+<<<<<<<< HEAD:docs-merge-todo/prompts/old/tool-creator.md
 title: Tool Development Guide
 description: A comprehensive guide to creating and maintaining tools for SkogAI using
   the argc framework
@@ -9,6 +10,18 @@ tags:
 - development
 - llm-functions
 permalink: prompts/old/tool-creator
+|||||||| parent of 080afdc (more add):prompts/prompts/old/tool-creator.md
+title: "Tool Development Guide"
+description: "A comprehensive guide to creating and maintaining tools for SkogAI using the argc framework"
+date: "2023-11-06"
+tags: ["tools", "argc", "development", "llm-functions"]
+========
+title: "Tool Development Guide"
+description: "A comprehensive guide to creating and maintaining tools for SkogAI using the argc framework"
+date: "2023-11-06"
+tags: ["tools", "argc", "development", "llm-functions"]
+status: "published"
+>>>>>>>> 080afdc (more add):todo/tools/tool-development-guide.md
 ---
 
 # Tool Development Guide
@@ -75,18 +88,18 @@ To define the parameters that your tool accepts, you'll use specially formatted 
 
 Use `# @describe`, `# @option`, and `# @flag` comments to define your tool's parameters.
 
-- `# @describe <description>`: A brief description of your tool's functionality. This is required.
+* `# @describe <description>`: A brief description of your tool's functionality. This is required.
 
-- `# @option --<option-name>[!<type>][<constraints>] <description>`: Defines an option.
-  - `--<option-name>`: The name of the option (use kebab-case).
-  - `!`: Indicates a required option.
-  - `<type>`: The data type (e.g., `INT`, `NUM`, `<enum>`). If omitted, defaults to `STRING`.
-  - `<constraints>`: Any constraints (e.g., `[foo|bar]` for an enum).
-  - `<description>`: A description of the option.
+* `# @option --<option-name>[!<type>][<constraints>] <description>`: Defines an option.
+    * `--<option-name>`: The name of the option (use kebab-case).
+    * `!`: Indicates a required option.
+    * `<type>`: The data type (e.g., `INT`, `NUM`, `<enum>`). If omitted, defaults to `STRING`.
+    * `<constraints>`: Any constraints (e.g., `[foo|bar]` for an enum).
+    * `<description>`: A description of the option.
 
-- `# @flag --<flag-name> <description>`: Defines a boolean flag.
-  - `--<flag-name>`: The name of the flag (use kebab-case).
-  - `<description>`: A description of the flag.
+* `# @flag --<flag-name> <description>`: Defines a boolean flag.
+    * `--<flag-name>`: The name of the flag (use kebab-case).
+    * `<description>`: A description of the flag.
 
 **Example:**
 
@@ -120,13 +133,13 @@ eval "$(argc --argc-eval "$0" "$@")"
 
 Use JSDoc-style comments to define your tool's parameters. The `@typedef` block defines the argument object, and each property within that object represents a parameter.
 
-- `/** ... */`: JSDoc comment block containing the description and parameter definitions.
-- `@typedef {Object} Args`: Defines the type of the argument object.
-- `@property {<type>} <n> <description>`: Defines a property (parameter) of the `Args` object.
-  - `<type>`: The data type (e.g., `string`, `boolean`, `number`, `string[]`, `{foo|bar}`).
-  - `<n>`: The name of the parameter.
-  - `<description>`: A description of the parameter.
-  - `[]`: Indicates an optional parameter.
+* `/** ... */`: JSDoc comment block containing the description and parameter definitions.
+* `@typedef {Object} Args`: Defines the type of the argument object.
+* `@property {<type>} <n> <description>`: Defines a property (parameter) of the `Args` object.
+    * `<type>`: The data type (e.g., `string`, `boolean`, `number`, `string[]`, `{foo|bar}`).
+    * `<n>`: The name of the parameter.
+    * `<description>`: A description of the parameter.
+    * `[]`: Indicates an optional parameter.
 
 **Example:**
 
@@ -152,10 +165,9 @@ exports.run = function (args) {
 ```
 
 You can also use ESM `export` expressions:
-
 ```javascript
 export function run(args) {
-  // Implementation
+  // Implementation 
 }
 ```
 
@@ -163,12 +175,12 @@ export function run(args) {
 
 Use type hints and docstrings to define your tool's parameters.
 
-- `def run(...)`: Function definition.
-- `<type> <parameter_name>: <description>`: Type hints with descriptions in the docstring.
-  - `<type>`: The data type (e.g., `str`, `bool`, `int`, `float`, `List[str]`, `Literal["foo", "bar"]`).
-  - `<parameter_name>`: The name of the parameter.
-  - `<description>`: Description of the parameter.
-- `Optional[...]`: Indicates an optional parameter.
+* `def run(...)`: Function definition.
+* `<type> <parameter_name>: <description>`: Type hints with descriptions in the docstring.
+    * `<type>`: The data type (e.g., `str`, `bool`, `int`, `float`, `List[str]`, `Literal["foo", "bar"]`).
+    * `<parameter_name>`: The name of the parameter.
+    * `<description>`: Description of the parameter.
+* `Optional[...]`: Indicates an optional parameter.
 
 **Example:**
 
@@ -221,7 +233,7 @@ git_status() {
 }
 
 # @cmd Shows differences between branches or commits
-# @option --target!   Shows differences between branches or commits
+# @option --target!   Shows differences between branches or commits 
 git_diff() {
     # Implementation
     git diff "$target"
@@ -244,7 +256,6 @@ The argc system provides a tool creation helper:
 ```
 
 The suffixes attached to the parameters define their characteristics:
-
 - `!`: Indicates that the parameter is required.
 - `*`: Specifies that the parameter value should be an array.
 - `+`: Marks the parameter as required, with the value also needing to be an array.
@@ -279,13 +290,11 @@ cd /home/skogix/skogai/tools
 To include your tool in an agent:
 
 1. Add your tool's name to the agent's `tools.txt` file:
-
    ```
    my_new_tool.sh
    ```
 
 2. Rebuild the agent:
-
    ```bash
    ./scripts/argc-tool.sh build
    ```

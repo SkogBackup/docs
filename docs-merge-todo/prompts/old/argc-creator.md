@@ -1,4 +1,5 @@
 ---
+<<<<<<<< HEAD:docs-merge-todo/prompts/old/argc-creator.md
 title: argc-tool.sh Script
 description: Comprehensive documentation on the argc-tool.sh wrapper script for managing
   llm-functions in SkogAI
@@ -10,6 +11,18 @@ tags:
 - script
 - llm-functions
 permalink: prompts/old/argc-creator
+|||||||| parent of 080afdc (more add):prompts/prompts/old/argc-creator.md
+title: "argc-tool.sh Script"
+description: "Comprehensive documentation on the argc-tool.sh wrapper script for managing llm-functions in SkogAI"
+date: "2023-11-06"
+tags: ["argc", "tools", "wrapper", "script", "llm-functions"]
+========
+title: "argc-tool.sh Script"
+description: "Comprehensive documentation on the argc-tool.sh wrapper script for managing llm-functions in SkogAI"
+date: "2023-11-06"
+tags: ["argc", "tools", "wrapper", "script", "llm-functions"]
+status: "published"
+>>>>>>>> 080afdc (more add):todo/tools/argc-tool.md
 ---
 
 # argc-tool.sh Script
@@ -222,19 +235,16 @@ Multiple commands can be chained for complex workflows:
 When executing tools via AIChat function calls, there are important considerations:
 
 1. **Streaming Mode**: Disable streaming mode to avoid interruptions
-
    ```yaml
    stream: false
    ```
 
 2. **Function Calling**: Ensure function calling is enabled
-
    ```yaml
    function_calling: true
    ```
 
 3. **Tool Permission**: Verify the tool is allowed in the role configuration
-
    ```yaml
    roles:
      default:
@@ -250,7 +260,6 @@ When executing tools via AIChat function calls, there are important consideratio
 
 **Problem**: `argc: command not found`
 **Solution**: Ensure you're in the correct directory or check node modules installation:
-
 ```bash
 cd "$SKOGAI_HOME/tools"
 npm install
@@ -260,7 +269,6 @@ npm install
 
 **Problem**: Build process fails
 **Solution**:
-
 - Check that `tools.txt` and `agents.txt` exist and have correct content
 - Verify tool scripts have proper permissions
 - Look for syntax errors in tool annotations
@@ -269,11 +277,9 @@ npm install
 
 **Problem**: Tools not appearing in AIChat
 **Solution**:
-
 - Re-run the link-to-aichat command
 - Check AIChat configuration has tools enabled
 - Verify symbolic links are correctly created:
-
   ```bash
   ls -la ~/.aichat/functions/
   ```
