@@ -1,7 +1,7 @@
 ---
 title: skogix/user
 type: user
-permalink: docs/skogix/user.md
+permalink: docs/skogix/introduction.md
 tags: [skogix, user, introduction]
 ---
 
