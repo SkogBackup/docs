@@ -64,7 +64,7 @@ From `skogcli config get '$'`:
 - `$.$` = to define or reference something
   - Example: `$claude` is a reference to the definition of what `claude` is
   - Even when `claude` is not in the configuration, `$claude` is still a valid reference (points to void/null)
-- `$.*` = $id \* $id = $id
+- `$.*` = $id * $id = $id
   - The `*` operator uses multiplicative identity (like `x * 1 = x`)
   - Works with types that have multiple identity functions
   - Example: `$ int * $ unique` works because int has identity elements (0, 1) to generate from
@@ -77,7 +77,7 @@ From `skogcli config get '$'`:
   - Example: `{$mode.verbose | $mode.quiet}` - choosing between different modes collapses into one selected mode
   - The pattern shows: difference (choice space) collapses via choosing into similarity (single result)
   - In programming: similar to union types or disjoint union
-- `$._` = anything/everything and nothing/nobody | {$id1_$id2}
+- `$._` = anything/everything and nothing/nobody | {$id1\_$id2}
   - Example: `$user._` - no user (null) or any user (wildcard)
   - Example: `$type._` - no type (void) or all types (any)
   - In JSON implementation: `json.string * json` = empty string (nothing) and all json types (everything)
@@ -138,12 +138,12 @@ This duality explains why:
 - `$.json.string` = ""
 - `$.json.int` = { additative: 0, multiplicative: 1, one: 1, zero: 0 }
 - `$.json.list` = []
-- `$.json.bool` = $ true \* $ false
+- `$.json.bool` = $ true * $ false
 - `$.json.true` = true
 - `$.json.false` = false
 - `$.json.null` = $ json.\_
 - `$.json.void` = $ json.\_
-- `$.json._` = $json.string \* $ json.self
+- `$.json._` = $json.string * $ json.self
 - `$.json.self` = $ json
 - `$.json.parent` = $ json.self
 - `$.json.child` = $ json.parent
@@ -160,7 +160,7 @@ This duality explains why:
 
 #### Core Definitions
 
-- `$.id` = $ int \* $ unique
+- `$.id` = $ int * $ unique
   - More generally: `$measurable * $unique` or `$measurable _ $like-everyone-else`
   - The paradox: having at least two identity functions is what allows uniqueness
   - `$int` works because it has multiple identity elements (additative: 0, multiplicative: 1)
@@ -173,7 +173,7 @@ This duality explains why:
 - `$.list` = the ordering of something
 - `$.increment` = [$ json.int.zero * $ json.int.one]
 - `$.datetime` = [@date:now]
-- `$.eid` = $ entity.id \* $ entity.gen
+- `$.eid` = $ entity.id * $ entity.gen
 
 #### Structures
 

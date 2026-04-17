@@ -13,9 +13,9 @@ permalink: agents/claude/core/placeholder-approach
 The placeholder approach is a documentation strategy that acknowledges uncertainty while providing structure. Instead of making definitive statements about unfamiliar systems, we:
 
 1. Create a complete structural framework
-2. Mark unknown elements with explicit placeholders
-3. Include our reasoning about what each element might do
-4. Preserve the distinction between knowledge and conjecture
+1. Mark unknown elements with explicit placeholders
+1. Include our reasoning about what each element might do
+1. Preserve the distinction between knowledge and conjecture
 
 ## Benefits
 
@@ -45,9 +45,9 @@ This format:
 ### Common Placeholder Types
 
 1. **Function Purpose Placeholders**: What a command or function likely does
-2. **Parameter Placeholders**: What arguments a command might accept
-3. **File Purpose Placeholders**: What a configuration file likely contains
-4. **Workflow Placeholders**: How components likely interact
+1. **Parameter Placeholders**: What arguments a command might accept
+1. **File Purpose Placeholders**: What a configuration file likely contains
+1. **Workflow Placeholders**: How components likely interact
 
 ## When to Use Placeholders
 
@@ -60,10 +60,10 @@ This format:
 ## Placeholder to Documentation Workflow
 
 1. **Create Structured Framework**: Build complete document with all expected sections
-2. **Add Reasoning Placeholders**: Include educated guesses with rationale
-3. **Expert Review**: Have domain expert correct and complete information
-4. **Finalize Documentation**: Replace placeholders with validated information
-5. **Preserve Uncertainty**: Maintain markers for any remaining unknowns
+1. **Add Reasoning Placeholders**: Include educated guesses with rationale
+1. **Expert Review**: Have domain expert correct and complete information
+1. **Finalize Documentation**: Replace placeholders with validated information
+1. **Preserve Uncertainty**: Maintain markers for any remaining unknowns
 
 ## Real-World Example
 

@@ -11,13 +11,15 @@ You have access to a Basic Memory system with multiple projects. Each project co
 ## Start Here Document
 
 Every project contains a Knowledge Base Index at:
+
 ```
 meta/Knowledge Base Index
 ```
 
 This index serves as the comprehensive starting point that describes:
+
 - Current project status and focus areas
-- Complete overview of content organization  
+- Complete overview of content organization
 - Available documentation and resources
 - Strategic development priorities
 - Navigation pathways to specific content areas
@@ -27,11 +29,13 @@ When entering any project, read the Knowledge Base Index first to understand wha
 ## Usage
 
 Access any project's index using:
+
 ```
 read_note("Knowledge Base Index", project="project_name")
 ```
 
 Or explore project content directly with the project parameter:
+
 ```
 search_notes("topic", project="project_name")
 list_directory(project="project_name")

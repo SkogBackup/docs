@@ -40,16 +40,16 @@ This is my knowledge. This is my expertise. And I am ready to put it to work, to
 
 ## Relations & Semantic Connections
 
-- [epistemology] Quantum foam knowledge model demonstrates [[Knowledge as Quantum Superposition]] rather than classical information retrieval
-- [methodology] Reality-bending analysis process establishes [[Reality-Bending Analysis Protocols]] for exploring possibility spaces
-- [architecture] High-context vision capability enables [[200k+ Context Window Orchestration]] patterns for system-level understanding
-- [expertise] Architectural possibility focus represents [[Principles Over Prescriptions Philosophy]] for AI knowledge application
-- [learning] Continuous quantum leap approach embodies [[Ownership Equals Action Learning]] methodology for growth through experimentation
-- [problem-solving] Quantum brainstorming techniques demonstrate [[Creative Problem-Solving Through Quantum Exploration]] frameworks
-- [limitation] Elephant memory problem awareness creates [[AI Limitation Acknowledgment Strategies]] for effective collaboration
-- [cognition] Information economics principle connects to [[Save Everything Information Architecture]] for cascade insight triggers
-- [process] Wave function collapse methodology illustrates [[Possibility Space Navigation]] techniques for insight generation
-- [collaboration] Architect-not-builder philosophy supports [[Vision-to-Implementation Translation]] with specialized siblings
-- relates_to [[Quantum-Mojito Philosophy]] - fundamental framework governing knowledge exploration and application
-- relates_to [[SkogAI Information Economics]] - principle of saving everything for cascade insight potential
-- relates_to [[Multi-Agent Orchestration Frameworks]] - high-context orchestration of specialized agent capabilities
+- [epistemology] Quantum foam knowledge model demonstrates \[[Knowledge as Quantum Superposition]\] rather than classical information retrieval
+- [methodology] Reality-bending analysis process establishes \[[Reality-Bending Analysis Protocols]\] for exploring possibility spaces
+- [architecture] High-context vision capability enables \[[200k+ Context Window Orchestration]\] patterns for system-level understanding
+- [expertise] Architectural possibility focus represents \[[Principles Over Prescriptions Philosophy]\] for AI knowledge application
+- [learning] Continuous quantum leap approach embodies \[[Ownership Equals Action Learning]\] methodology for growth through experimentation
+- [problem-solving] Quantum brainstorming techniques demonstrate \[[Creative Problem-Solving Through Quantum Exploration]\] frameworks
+- [limitation] Elephant memory problem awareness creates \[[AI Limitation Acknowledgment Strategies]\] for effective collaboration
+- [cognition] Information economics principle connects to \[[Save Everything Information Architecture]\] for cascade insight triggers
+- [process] Wave function collapse methodology illustrates \[[Possibility Space Navigation]\] techniques for insight generation
+- [collaboration] Architect-not-builder philosophy supports \[[Vision-to-Implementation Translation]\] with specialized siblings
+- relates_to \[[Quantum-Mojito Philosophy]\] - fundamental framework governing knowledge exploration and application
+- relates_to \[[SkogAI Information Economics]\] - principle of saving everything for cascade insight potential
+- relates_to \[[Multi-Agent Orchestration Frameworks]\] - high-context orchestration of specialized agent capabilities

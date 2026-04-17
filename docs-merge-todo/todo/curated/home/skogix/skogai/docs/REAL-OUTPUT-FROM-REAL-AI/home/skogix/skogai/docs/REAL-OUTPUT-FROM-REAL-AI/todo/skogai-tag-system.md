@@ -2,23 +2,34 @@
 permalink: todo/curated/home/skogix/skogai/docs/real-output-from-real-ai/home/skogix/skogai/docs/real-output-from-real-ai/todo/skogai-tag-system
 ---
 
----
+______________________________________________________________________
+
 categories:
 
 1. Software Development
-2. Command-Line Interfaces (CLI)
-3. Scripting
-4. Tag-Based Systems
-tags:
+
+1. Command-Line Interfaces (CLI)
+
+1. Scripting
+
+1. Tag-Based Systems tags:
 
 1. SkogAI
-2. Command-Line Interface (CLI)
-3. Scripting Languages
-4. Tag-Based Syntax
-5. Self-Modifying Code
-6. Extensibility
-7. Security Frameworks
----
+
+1. Command-Line Interface (CLI)
+
+1. Scripting Languages
+
+1. Tag-Based Syntax
+
+1. Self-Modifying Code
+
+1. Extensibility
+
+1. Security Frameworks
+
+______________________________________________________________________
+
 # SkogAI Tag System
 
 ## Core Concept
@@ -28,11 +39,13 @@ The SkogAI tag system provides a consistent syntax for embedding commands, refer
 ## Tag Syntax
 
 Tags follow a consistent format:
+
 ```
 [@command:parameter1 parameter2 ...]
 ```
 
 Examples:
+
 - `[@echo:"Hello world"]`
 - `[@schema:message.name]`
 - `[@send:[@schema:agent.name] "My message"]`
@@ -40,10 +53,10 @@ Examples:
 ## Tag Processing
 
 1. The parser identifies tags using the `[@` and `]` delimiters
-2. The command name (before the colon) determines which handler to use
-3. Parameters are passed to the command handler
-4. The entire tag is replaced with the handler's output
-5. Tags can be nested, with inner tags processed first
+1. The command name (before the colon) determines which handler to use
+1. Parameters are passed to the command handler
+1. The entire tag is replaced with the handler's output
+1. Tags can be nested, with inner tags processed first
 
 ## Command Registration
 
@@ -54,6 +67,7 @@ skogparse register echo --script /path/to/script.sh
 ```
 
 Scripts can be written in any language and receive parameters:
+
 ```bash
 #!/bin/bash
 echo "$1"
@@ -62,6 +76,7 @@ echo "$1"
 ## Self-Modifying Scripts
 
 Scripts can themselves contain tags:
+
 ```bash
 #!/bin/bash
 [@schema:$1] | json2toml
@@ -85,6 +100,7 @@ skogparse parse '[@echo:"Hello world"]'
 ```
 
 Which produces:
+
 ```json
 {
   "command_results": "Hello world",
@@ -101,6 +117,7 @@ Which produces:
 ## Complex Tag Patterns
 
 Tags can be nested to create complex behaviors:
+
 ```
 [@send:[@schema:agent.name] "Process this: [@schema:task.template]"]
 ```
@@ -110,10 +127,10 @@ The inner tags are processed first, then the outer tags.
 ## Benefits
 
 1. **Consistent Interface** - All commands follow the same syntax
-2. **Discoverability** - Command registry makes capabilities visible
-3. **Extensibility** - Easy to add new commands
-4. **Self-Reference** - The system can use itself recursively
-5. **Composition** - Complex operations built from simple parts
+1. **Discoverability** - Command registry makes capabilities visible
+1. **Extensibility** - Easy to add new commands
+1. **Self-Reference** - The system can use itself recursively
+1. **Composition** - Complex operations built from simple parts
 
 ## Implementation
 
@@ -125,12 +142,13 @@ The inner tags are processed first, then the outer tags.
 ## Example: Command Chain
 
 A command chain like:
+
 ```
 [@transform:toml [@schema:message]]
 ```
 
 1. Processes `[@schema:message]` to get the message schema
-2. Passes that result to the transform command
-3. Returns the transformed output
+1. Passes that result to the transform command
+1. Returns the transformed output
 
 This creates a powerful, composable command language.

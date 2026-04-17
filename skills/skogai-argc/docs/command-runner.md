@@ -1,10 +1,16 @@
+---
+title: command-runner
+type: note
+permalink: skogai/skills/skogai-argc/docs/command-runner
+---
+
 # Command runner
 
 Argc is a also command runner built for those who love the efficiency and flexibility of Bash scripting.
 
 This guide provides instructions on how to effectively use `argc` for this purpose.
 
-## Create an Argcfile.sh 
+## Create an Argcfile.sh
 
 Commands, called recipes, are stored in a file called argcfile .
 
@@ -136,6 +142,7 @@ test() {
 ```
 
 Now you can run the `test` recipe using the alias `t`:
+
 ```
 $ argc t
 ```
@@ -269,6 +276,7 @@ build() {
 ```
 
 Run the build in the project dir:
+
 ```
 $ argc build
 /tmp/project
@@ -276,11 +284,11 @@ $ argc build
 ```
 
 Change directory (cd) into the subdirectory and run the build:
+
 ```
 $ cd src && argc build
 /tmp/project
 /tmp/project/src
 ```
 
-When running argc under the subdirectory other than project root,
-`PWD` points to the project root, while `ARGC_PWD` points to the current directory.
+When running argc under the subdirectory other than project root, `PWD` points to the project root, while `ARGC_PWD` points to the current directory.

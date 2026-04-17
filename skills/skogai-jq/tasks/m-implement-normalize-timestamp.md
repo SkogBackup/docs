@@ -3,7 +3,9 @@ name: m-implement-normalize-timestamp
 branch: feature/m-implement-normalize-timestamp
 status: pending
 created: 2025-11-14
-submodules: [list of git submodules affected (delete if not super-repo)]
+submodules:
+  - list of git submodules affected (delete if not super-repo)
+permalink: skogai/skills/skogai-jq/tasks/m-implement-normalize-timestamp
 ---
 
 # [Human-Readable Title]

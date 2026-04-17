@@ -3,11 +3,11 @@ title: Coffee Bean Origins
 type: note
 permalink: llm/example/coffee-bean-origins-1
 tags:
-- '#coffee'
-- '#origins'
-- '#beans'
-- '#regions'
-- '#demo'
+  - '#coffee'
+  - '#origins'
+  - '#beans'
+  - '#regions'
+  - '#demo'
 ---
 
 # Coffee Bean Origins
@@ -71,8 +71,8 @@ Coffee beans are grown in various regions around the world, primarily in what's 
 
 ## Relations
 
-- influences [[Flavor Extraction]]
-- pairs_with [[Coffee Brewing Methods]]
-- affects [[Tasting Notes]]
-- relates_to [[Specialty Coffee]]
-- part_of [[Coffee Knowledge Base]]
+- influences \[[Flavor Extraction]\]
+- pairs_with \[[Coffee Brewing Methods]\]
+- affects \[[Tasting Notes]\]
+- relates_to \[[Specialty Coffee]\]
+- part_of \[[Coffee Knowledge Base]\]

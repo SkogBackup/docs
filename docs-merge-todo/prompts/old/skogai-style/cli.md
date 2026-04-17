@@ -1,7 +1,12 @@
+---
+title: cli
+type: note
+permalink: skogai/docs-merge-todo/prompts/old/skogai-style/cli
+---
+
 # CLI UX Improver
 
-This prompt helps you improve the UX of your command-line application by
-following the [Command Line Interface Guidelines](https://clig.dev/).
+This prompt helps you improve the UX of your command-line application by following the [Command Line Interface Guidelines](https://clig.dev/).
 
 ## Prompt
 
@@ -1263,9 +1268,7 @@ How can I improve the UX of this command-line application?
 ]/code]
 ```
 
-The content of `{{CODE}}` is omitted for brevity, but it's basically the
-entire output of the [bonk repository](https://sr.ht/~jamesponddotco/bonk/) processed through
-[llmctx](https://sr.ht/~jamesponddotco/llmctx).
+The content of `{{CODE}}` is omitted for brevity, but it's basically the entire output of the [bonk repository](https://sr.ht/~jamesponddotco/bonk/) processed through [llmctx](https://sr.ht/~jamesponddotco/llmctx).
 
 ## Example output
 

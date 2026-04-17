@@ -1,3 +1,9 @@
+---
+title: quick-start
+type: note
+permalink: skogai/docs-merge-todo/technical/memory-system/memory-extraction-epistemic-framework/guides/quick-start
+---
+
 # Quick Start Guide
 
 Get Claude Memory running in 5 minutes.
@@ -45,6 +51,7 @@ claude-memory extract --since="2025-09-27T00:00:00"
 ```
 
 You'll see output like:
+
 ```
 🚀 Starting memory extraction...
 📂 Processing session 1: abc123...
@@ -99,28 +106,32 @@ data structures in both paths before attempting fixes.
 ## Common Issues
 
 **"Command failed: claude"**
+
 - Ensure Claude CLI is installed: `brew install claude` or similar
 - Authenticate: `claude auth login`
 
 **"No sessions found"**
+
 - Check your projects directory: `ls ~/.claude/projects/`
 - Adjust date range: older conversations might be before your `--since` date
 
 **"Agent extraction error"**
+
 - Large conversations sometimes timeout
 - Try extracting smaller date ranges
 - Check `/tmp/extraction-log.txt` for details
 
 **Low quality extractions**
+
 - The system works best on conversations with corrections, debugging, or learnable moments
 - Pure Q&A conversations may not extract meaningful lessons
 
 ## Next Steps
 
 1. **[Read the research](../research/research-summary.md)** to understand how this was built
-2. **[Understand the architecture](../guides/initial-design.md)**
-3. **[Contribute improvements](../../README.md#contributing)**
+1. **[Understand the architecture](../guides/initial-design.md)**
+1. **[Contribute improvements](../../README.md#contributing)**
 
----
+______________________________________________________________________
 
 The system is designed to learn from your working relationship with Claude. The more conversations you extract from, the better it captures your preferences and working style.

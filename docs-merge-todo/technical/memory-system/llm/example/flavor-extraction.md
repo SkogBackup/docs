@@ -3,11 +3,11 @@ title: Flavor Extraction
 type: note
 permalink: llm/example/flavor-extraction-1
 tags:
-- '#coffee'
-- '#extraction'
-- '#brewing'
-- '#science'
-- '#demo'
+  - '#coffee'
+  - '#extraction'
+  - '#brewing'
+  - '#science'
+  - '#demo'
 ---
 
 # Flavor Extraction
@@ -71,9 +71,9 @@ Coffee extraction is the process of dissolving flavor compounds from ground coff
 
 ## Relations
 
-- affected_by [[Coffee Brewing Methods]]
-- influenced_by [[Coffee Bean Origins]]
-- enhanced_by [[Brewing Equipment]]
-- determines [[Tasting Notes]]
-- requires [[Water Quality]]
-- part_of [[Coffee Knowledge Base]]
+- affected_by \[[Coffee Brewing Methods]\]
+- influenced_by \[[Coffee Bean Origins]\]
+- enhanced_by \[[Brewing Equipment]\]
+- determines \[[Tasting Notes]\]
+- requires \[[Water Quality]\]
+- part_of \[[Coffee Knowledge Base]\]

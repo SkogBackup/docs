@@ -28,9 +28,9 @@ These tags allow for complex capabilities without consuming valuable context spa
 Rather than maintaining all possible information in context:
 
 1. Placeholders represent information that exists but isn't loaded (`[@tag:name]`)
-2. Information is dynamically injected only when relevant
-3. After use, interactions are collapsed to minimal log entries
-4. Context remains focused on the primary conversation
+1. Information is dynamically injected only when relevant
+1. After use, interactions are collapsed to minimal log entries
+1. Context remains focused on the primary conversation
 
 This creates an extraordinary efficiency ratio where a few tokens can represent access to hundreds of thousands of tokens of capability.
 
@@ -48,6 +48,7 @@ The approach began with simple use cases (controlling a smart lamp with `[@lamp:
 ## Philosophical Alignment
 
 This approach embodies SkogAI's core principles:
+
 - Epistemic clarity about information states
 - Context as a valuable resource to be optimized
 - Just-in-time information delivery

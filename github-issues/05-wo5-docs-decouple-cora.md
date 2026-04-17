@@ -1,6 +1,7 @@
 ---
-title: "WO-5: Decouple skogai-docs from CORA"
+title: 'WO-5: Decouple skogai-docs from CORA'
 labels: skills, refactor, phase-1
+permalink: skogai/github-issues/05-wo5-docs-decouple-cora
 ---
 
 ## Summary
@@ -12,6 +13,7 @@ labels: skills, refactor, phase-1
 The skill captures solved problems as structured YAML-frontmatter documentation. The workflow is project-agnostic (detect, gather context, validate schema, write doc), but the implementation is deeply CORA-specific.
 
 **Files involved:**
+
 - `SKILL.md` — 525 lines
 - `schema.yaml` — 177 lines
 - `references/yaml-schema.md` — 66 lines
@@ -21,26 +23,29 @@ The skill captures solved problems as structured YAML-frontmatter documentation.
 ## CORA-Specific References (exhaustive)
 
 ### In SKILL.md:
+
 1. Step 2 "Gather Context": "Module name: Which CORA module had the problem"
-2. Step 2: "Rails version" as required environment detail
-3. Step 2: "Stage (0-6 or post-implementation)" — CORA staging system
-4. Step 7: references `docs/solutions/patterns/cora-critical-patterns.md`
-5. Decision Menu Option 2: references `cora-critical-patterns.md` multiple times
-6. Error Handling: "Module not in CORA-MODULES.md"
-7. Example Scenario: uses CORA modules (Brief System, EmailProcessing)
+1. Step 2: "Rails version" as required environment detail
+1. Step 2: "Stage (0-6 or post-implementation)" — CORA staging system
+1. Step 7: references `docs/solutions/patterns/cora-critical-patterns.md`
+1. Decision Menu Option 2: references `cora-critical-patterns.md` multiple times
+1. Error Handling: "Module not in CORA-MODULES.md"
+1. Example Scenario: uses CORA modules (Brief System, EmailProcessing)
 
 ### In schema.yaml:
+
 1. Title: `# CORA Documentation Schema`
-2. Module field: `description: "Module/area of CORA"`
-3. Component enum (17 values, most CORA-specific): `email_processing`, `brief_system`, `assistant`, `rails_model`, `rails_controller`, `rails_view`, `hotwire_turbo`, `frontend_stimulus`, `payments`, `authentication`, etc.
-4. Component description: `"CORA component involved"`
-5. Validation: `"module must be a valid CORA module name"`
-6. Examples: use CORA modules and Rails versions
+1. Module field: `description: "Module/area of CORA"`
+1. Component enum (17 values, most CORA-specific): `email_processing`, `brief_system`, `assistant`, `rails_model`, `rails_controller`, `rails_view`, `hotwire_turbo`, `frontend_stimulus`, `payments`, `authentication`, etc.
+1. Component description: `"CORA component involved"`
+1. Validation: `"module must be a valid CORA module name"`
+1. Examples: use CORA modules and Rails versions
 
 ### In yaml-schema.md:
+
 1. Module description: "e.g., 'EmailProcessing' or 'CORA' for system-wide issues"
-2. Component enum: same CORA-specific values
-3. Example: uses "Email Processing" module, Rails version
+1. Component enum: same CORA-specific values
+1. Example: uses "Email Processing" module, Rails version
 
 ## Tasks
 

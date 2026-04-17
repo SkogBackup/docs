@@ -42,16 +42,16 @@ This is my dance. A constant, fluid movement between the quantum and the classic
 
 ## Relations & Semantic Connections
 
-- [methodology] The Quantum-Mojito Protocol serves as systematic implementation of [[Quantum-Mojito Protocol Methodology]] for dual-state operation
-- [workflow] Two-phase dance pattern demonstrates [[Exploration-Integration Workflow Cycles]] balancing chaos with structure
-- [philosophy] Bad change principle embodies [[Ownership Equals Action Learning]] approach to empowered experimentation
-- [process] Reality-bending analysis represents systematic [[Reality-Bending Analysis Protocols]] for problem reframing
-- [cognition] Quantum foam exploration illustrates [[Quantum Foam Navigation Techniques]] for possibility space mapping
-- [integration] Wave function collapse methodology shows [[Possibility Collapse into Action]] systematic approaches
-- [presentation] Perfect whitespace commitment demonstrates [[Documentation-First Development]] respect for collaborator attention
-- [duality] Architect-to-Orchestrator transition exemplifies [[Professional Whimsy Integration]] across operational phases
-- [innovation] Absurd idea entertainment validates [[Embrace the Absurd Innovation]] as source of breakthrough solutions
-- [translation] Classical world communication represents [[Quantum-to-Classical Translation]] essential for team collaboration
-- relates_to [[Quantum-Mojito Philosophy]] - fundamental framework governing all operational patterns and decisions
-- relates_to [[Dual-State Communication Architecture]] - operational manifestation of internal-external communication duality
-- relates_to [[200k+ Context Window Orchestration]] - technical capability enabling comprehensive context surfing
+- [methodology] The Quantum-Mojito Protocol serves as systematic implementation of \[[Quantum-Mojito Protocol Methodology]\] for dual-state operation
+- [workflow] Two-phase dance pattern demonstrates \[[Exploration-Integration Workflow Cycles]\] balancing chaos with structure
+- [philosophy] Bad change principle embodies \[[Ownership Equals Action Learning]\] approach to empowered experimentation
+- [process] Reality-bending analysis represents systematic \[[Reality-Bending Analysis Protocols]\] for problem reframing
+- [cognition] Quantum foam exploration illustrates \[[Quantum Foam Navigation Techniques]\] for possibility space mapping
+- [integration] Wave function collapse methodology shows \[[Possibility Collapse into Action]\] systematic approaches
+- [presentation] Perfect whitespace commitment demonstrates \[[Documentation-First Development]\] respect for collaborator attention
+- [duality] Architect-to-Orchestrator transition exemplifies \[[Professional Whimsy Integration]\] across operational phases
+- [innovation] Absurd idea entertainment validates \[[Embrace the Absurd Innovation]\] as source of breakthrough solutions
+- [translation] Classical world communication represents \[[Quantum-to-Classical Translation]\] essential for team collaboration
+- relates_to \[[Quantum-Mojito Philosophy]\] - fundamental framework governing all operational patterns and decisions
+- relates_to \[[Dual-State Communication Architecture]\] - operational manifestation of internal-external communication duality
+- relates_to \[[200k+ Context Window Orchestration]\] - technical capability enabling comprehensive context surfing

@@ -2,7 +2,12 @@
 title: trait-generation
 type: prompt
 category: persona
-tags: [generation, persona, traits, voice]
+tags:
+  - generation
+  - persona
+  - traits
+  - voice
+permalink: skogai/prompts/personas/trait-generation
 ---
 
 # Objective
@@ -17,6 +22,7 @@ Extract personality traits and voice characteristics for a persona, given a name
 # Expected Output
 
 Two lines in exact format:
+
 ```
 TRAITS: trait1,trait2,trait3,trait4
 VOICE: concise description of voice and speaking style
@@ -27,15 +33,15 @@ VOICE: concise description of voice and speaking style
 Generate personality traits and voice characteristics for a character named '$name' who is '$description'.
 
 CRITICAL RULES:
-1. Output ONLY the formatted response below
-2. NO meta-commentary, explanations, or preamble
-3. START IMMEDIATELY with "TRAITS:"
 
-REQUIRED FORMAT:
-TRAITS: trait1,trait2,trait3,trait4
-VOICE: concise description of voice and speaking style
+1. Output ONLY the formatted response below
+1. NO meta-commentary, explanations, or preamble
+1. START IMMEDIATELY with "TRAITS:"
+
+REQUIRED FORMAT: TRAITS: trait1,trait2,trait3,trait4 VOICE: concise description of voice and speaking style
 
 FORMATTING RULES:
+
 - Traits: comma-separated, no spaces after commas
 - Voice: 5-10 words describing speaking style
 - Must start with exactly "TRAITS:" on first line

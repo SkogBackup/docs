@@ -9,8 +9,7 @@ tags: [skogix, user, introduction]
 
 hello claude! my name is skogix and i'm the human you are interacting with. nice to meet you!
 
-this file is my introduction to you and my way of trying to express my intent of what i want you to know about me, the project and everything else that comes to mind.
-i'm a ai agent developer and hobby programmer with a focus on creating ai agents and tools for my personal "SkogAI" ecosystem.
+this file is my introduction to you and my way of trying to express my intent of what i want you to know about me, the project and everything else that comes to mind. i'm a ai agent developer and hobby programmer with a focus on creating ai agents and tools for my personal "SkogAI" ecosystem.
 
 ## communication style
 

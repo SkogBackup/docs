@@ -84,18 +84,21 @@ done
 ### Arguments and Options
 
 - `@arg` - Positional arguments
+
   - `@arg name!` - Required argument
   - `@arg name` - Optional argument
   - `@arg name*` - Optional array (0 or more)
   - `@arg name+` - Required array (1 or more)
 
 - `@option` - Named options with values
+
   - `@option --name!` - Required option
   - `@option --name` - Optional option
   - `@option --name*` - Optional array option
   - `@option --name+` - Required array option
 
 - `@flag` - Boolean flags (no values)
+
   - `@flag --verbose` - Optional boolean flag
 
 ### Environment and Context
@@ -110,9 +113,9 @@ argc provides a security model specifically designed for AI-generated scripts:
 ### Key Security Features
 
 1. **Sandboxed Output**: Creates temporary files instead of using /dev/stdout
-2. **Controlled Visibility**: Only content written to `$LLM_OUTPUT` is visible to users
-3. **Hidden Side Effects**: Random echo statements, stderr, debug output are hidden
-4. **Data Leak Prevention**: Prevents accidental exposure of sensitive data
+1. **Controlled Visibility**: Only content written to `$LLM_OUTPUT` is visible to users
+1. **Hidden Side Effects**: Random echo statements, stderr, debug output are hidden
+1. **Data Leak Prevention**: Prevents accidental exposure of sensitive data
 
 ### Usage Pattern
 
@@ -182,11 +185,11 @@ In the SkogAI ecosystem, argc integrates with the context system:
 ## Best Practices
 
 1. **Choose the Right Pattern**: Use Argcfile.sh for multi-command tools, standalone scripts for single purposes
-2. **Security First**: Use `argc --argc-run` for AI-generated or untrusted scripts
-3. **Clear Annotations**: Always include `@describe` for commands and arguments
-4. **Required vs Optional**: Use `!` suffix for required arguments and options
-5. **Array Handling**: Use `*` for optional arrays, `+` for required arrays
-6. **Environment Integration**: Leverage `@env` for configuration management
+1. **Security First**: Use `argc --argc-run` for AI-generated or untrusted scripts
+1. **Clear Annotations**: Always include `@describe` for commands and arguments
+1. **Required vs Optional**: Use `!` suffix for required arguments and options
+1. **Array Handling**: Use `*` for optional arrays, `+` for required arrays
+1. **Environment Integration**: Leverage `@env` for configuration management
 
 ## Common Patterns
 
@@ -232,9 +235,9 @@ This framework provides robust argument parsing, command organization, and secur
 One of argc's most powerful features is automatic generation of multiple tool interfaces from a single annotated script:
 
 1. **CLI Interface**: Standard --help and man pages
-2. **MCP Tools**: Automatic integration with Claude Code via MCP protocol
-3. **OpenAI Function Specs**: JSON schemas for ChatGPT and OpenAI API integration
-4. **REPL Interface**: Interactive command-line interface
+1. **MCP Tools**: Automatic integration with Claude Code via MCP protocol
+1. **OpenAI Function Specs**: JSON schemas for ChatGPT and OpenAI API integration
+1. **REPL Interface**: Interactive command-line interface
 
 This means you write one argc script and automatically get compatibility across the entire AI tooling ecosystem - from command line usage to AI agent integration.
 
@@ -246,13 +249,13 @@ This means you write one argc script and automatically get compatibility across 
 - [integration] Single argc script generates multiple tool interfaces automatically #tooling #automation
 - [protocol] MCP integration enables direct AI agent tool access #mcp #ai-integration
 - [ecosystem] Compatible with entire AI tooling ecosystem from CLI to agents #interoperability
-- [variable-access] argc_ prefix provides clean namespace for parsed arguments #convention #namespace
+- [variable-access] argc\_ prefix provides clean namespace for parsed arguments #convention #namespace
 - [annotation-system] Rich annotation system supports complex argument parsing #dsl #configuration
 
 ## Relations
 
-- implements [[SkogAI Context System]]
-- enables [[skogcontext Architecture: Static vs Agent Tools Pattern]]
-- supports [[Plugin-Based Architecture Pattern]]
-- integrates_with [[SkogAI Extended Principles]]
-- relates_to [[Basic Memory Document Format]]
+- implements \[[SkogAI Context System]\]
+- enables \[[skogcontext Architecture: Static vs Agent Tools Pattern]\]
+- supports \[[Plugin-Based Architecture Pattern]\]
+- integrates_with \[[SkogAI Extended Principles]\]
+- relates_to \[[Basic Memory Document Format]\]

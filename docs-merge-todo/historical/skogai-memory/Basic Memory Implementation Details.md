@@ -3,10 +3,10 @@ title: Basic Memory Implementation Details
 type: note
 permalink: skogai-memory/basic-memory-implementation-details
 tags:
-- implementation
-- technical
-- data-model
-- parsing
+  - implementation
+  - technical
+  - data-model
+  - parsing
 ---
 
 # Basic Memory Implementation Details
@@ -16,12 +16,15 @@ tags:
 Knowledge in Basic Memory is organized as a semantic graph:
 
 ### Entities
+
 Distinct concepts represented by Markdown documents
 
 ### Observations
+
 Categorized facts and information about entities
 
 ### Relations
+
 Connections between entities that form the knowledge graph
 
 This structure emerges from simple text patterns in standard Markdown:
@@ -135,15 +138,19 @@ Basic Memory understands how to build context via its semantic graph.
 Basic Memory's core data model consists of:
 
 ### Entities
+
 Documents in your knowledge base
 
 ### Observations
+
 Facts or statements about entities
 
 ### Relations
+
 Connections between entities
 
 ### Tags
+
 Additional categorization for entities and observations
 
 The system parses Markdown files to extract this structured information while preserving the human-readable format.
@@ -153,6 +160,7 @@ The system parses Markdown files to extract this structured information while pr
 Plain Markdown files store all knowledge, making it accessible with any text editor and easy to version with git.
 
 ## observations
+
 - [technical] System parses markdown into structured JSON for semantic processing #parsing #json
 - [architecture] Files remain source of truth while enabling rich semantic queries #architecture #files
 - [model] Core entities are documents, observations, relations, and tags #data-model #structure
@@ -160,7 +168,8 @@ Plain Markdown files store all knowledge, making it accessible with any text edi
 - [accessibility] Plain markdown ensures content works with any text editor #accessibility #portability
 
 ## relations
-- implements [[Basic Memory Document Format]] (technical implementation of format specification)
-- enables [[Knowledge Graph Construction]] (underlying mechanism for graph building)
-- supports [[AI Assistant Guide for Basic Memory]] (technical foundation for assistant usage)
-- complements [[Memory URI System]] (technical details of addressing system)
+
+- implements \[[Basic Memory Document Format]\] (technical implementation of format specification)
+- enables \[[Knowledge Graph Construction]\] (underlying mechanism for graph building)
+- supports \[[AI Assistant Guide for Basic Memory]\] (technical foundation for assistant usage)
+- complements \[[Memory URI System]\] (technical details of addressing system)

@@ -1,5 +1,5 @@
 ---
-title: "@ and $ Combinations"
+title: '@ and $ Combinations'
 type: note
 permalink: ontology/at-and-dollar-combinations
 ---
@@ -37,7 +37,7 @@ permalink: ontology/at-and-dollar-combinations
 
 ## relations
 
-- part_of [[Skogix Symbol System]] (symbol combination patterns)
-- uses [[Symbol @ Analysis]] (intent symbol)
-- uses [[Symbol Dollar Analysis]] (reference symbol)
-- relates_to [[Bracket System Analysis]] (bracket usage patterns)
+- part_of \[[Skogix Symbol System]\] (symbol combination patterns)
+- uses \[[Symbol @ Analysis]\] (intent symbol)
+- uses \[[Symbol Dollar Analysis]\] (reference symbol)
+- relates_to \[[Bracket System Analysis]\] (bracket usage patterns)

@@ -1,3 +1,9 @@
+---
+title: proposals
+type: note
+permalink: skogai/skills/skogai-jq/proposals
+---
+
 # proposals
 
 ideas under consideration. not committed to any of these yet.
@@ -16,9 +22,7 @@ ai agents might generate this wrong (flag order, quoting, etc).
 
 ### option 1: no runner
 
-document the pattern, trust ai to get it right.
-pros: simple, no abstraction
-cons: ai will make mistakes
+document the pattern, trust ai to get it right. pros: simple, no abstraction cons: ai will make mistakes
 
 ### option 2: minimal runner
 
@@ -26,8 +30,7 @@ cons: ai will make mistakes
 transform run crud-get input.json --path "user.name" --default ""
 ```
 
-pros: simpler interface, validates args
-cons: another layer, need to maintain
+pros: simpler interface, validates args cons: another layer, need to maintain
 
 ### option 3: schema-aware runner
 
@@ -35,15 +38,13 @@ cons: another layer, need to maintain
 transform run crud-get input.json '{"path":"user.name","default":""}'
 ```
 
-reads schema, validates input, runs transform, validates output.
-pros: catches errors early
-cons: complex, slow
+reads schema, validates input, runs transform, validates output. pros: catches errors early cons: complex, slow
 
 ### decision
 
 start with no runner. add minimal runner if ai consistently fails.
 
----
+______________________________________________________________________
 
 ## proposal: schema format
 
@@ -61,9 +62,7 @@ custom json format:
 
 ### option 1: json schema
 
-use standard json schema for everything.
-pros: tooling exists (ajv), well-documented
-cons: verbose, complex for simple cases
+use standard json schema for everything. pros: tooling exists (ajv), well-documented cons: verbose, complex for simple cases
 
 ### option 2: simplified custom format
 
@@ -75,8 +74,7 @@ cons: verbose, complex for simple cases
 }
 ```
 
-pros: concise, easy for ai to read
-cons: need to write validator, less standard
+pros: concise, easy for ai to read cons: need to write validator, less standard
 
 ### option 3: typescript-style types
 
@@ -84,14 +82,13 @@ cons: need to write validator, less standard
 (input: object, args: {path: string, default?: string}) => string | null
 ```
 
-pros: familiar to developers, very concise
-cons: not json, need parser
+pros: familiar to developers, very concise cons: not json, need parser
 
 ### decision
 
 stick with current approach. test with ajv. refine if too verbose.
 
----
+______________________________________________________________________
 
 ## proposal: composition helpers
 
@@ -131,7 +128,7 @@ show examples of composition, let users figure it out.
 
 start with option 3. build helpers if pattern emerges clearly.
 
----
+______________________________________________________________________
 
 ## proposal: transformation discovery
 
@@ -164,7 +161,7 @@ transformations are well-named, schemas are readable.
 
 option 4 first. ai can read directory structure easily.
 
----
+______________________________________________________________________
 
 ## proposal: versioning
 
@@ -200,7 +197,7 @@ use git for versioning.
 
 option 1 for now. reconsider if multiple projects depend on this.
 
----
+______________________________________________________________________
 
 ## proposal: transformation categories
 
@@ -250,7 +247,7 @@ flexible, searchable, still flat directory.
 
 flat directory while small. categorize if >20 transformations.
 
----
+______________________________________________________________________
 
 ## proposal: error messages
 
@@ -264,13 +261,11 @@ jq: error (at <stdin>:1): Cannot index string with string "name"
 
 ### option 1: wrap transformations with better errors
 
-add error checking jq code to each transformation.
-cons: bloats transformations, slow.
+add error checking jq code to each transformation. cons: bloats transformations, slow.
 
 ### option 2: validate schemas pre/post
 
-runner validates input matches schema, output matches schema.
-gives clear "input must be object" message.
+runner validates input matches schema, output matches schema. gives clear "input must be object" message.
 
 ### option 3: documentation
 
@@ -280,7 +275,7 @@ document common errors and solutions.
 
 option 3 + maybe option 2 if we build a runner.
 
----
+______________________________________________________________________
 
 ## proposal: testing strategy
 
@@ -309,7 +304,7 @@ read schema, generate basic tests automatically.
 
 current approach works. reconsider at 10+ transformations.
 
----
+______________________________________________________________________
 
 ## proposal: documentation
 
@@ -350,7 +345,7 @@ read schema + test files, generate usage docs.
 
 option 4 (already doing this) + option 2 for complex transformations.
 
----
+______________________________________________________________________
 
 ## proposal: mcp integration
 
@@ -385,7 +380,7 @@ ai agent calls tool, gets transformation result.
 
 interesting, but after we have 20+ transformations working.
 
----
+______________________________________________________________________
 
 ## proposal: transformation generator
 
@@ -394,10 +389,10 @@ interesting, but after we have 20+ transformations working.
 creating new transformation requires:
 
 1. create directory
-2. write transform.jq
-3. write schema.json
-4. create test files
-5. update test.sh
+1. write transform.jq
+1. write schema.json
+1. create test files
+1. update test.sh
 
 tedious, easy to forget steps.
 
@@ -421,7 +416,7 @@ generates template with:
 
 build this after pattern is solid and we've created 5+ manually.
 
----
+______________________________________________________________________
 
 ## proposal: performance benchmarks
 
@@ -431,14 +426,13 @@ no idea if transformations are fast or slow.
 
 ### approach
 
-benchmark each transformation with varying input sizes.
-document performance characteristics in schema.
+benchmark each transformation with varying input sizes. document performance characteristics in schema.
 
 ### decision
 
 premature. jq is generally fast enough.
 
----
+______________________________________________________________________
 
 ## proposal: streaming support
 
@@ -448,59 +442,52 @@ large json files don't fit in memory.
 
 ### approach
 
-use jq --stream mode for transformations that support it.
-document which transformations work with streaming.
+use jq --stream mode for transformations that support it. document which transformations work with streaming.
 
 ### decision
 
 not needed yet. revisit when we hit file size issues.
 
----
+______________________________________________________________________
 
 ## wild ideas
 
 ### transformation algebra
 
-compose transformations symbolically before execution.
-optimize pipelines automatically.
-probably overkill.
+compose transformations symbolically before execution. optimize pipelines automatically. probably overkill.
 
 ### visual transformation builder
 
-drag-and-drop transformations, generates jq.
-fun idea, but not our use case.
+drag-and-drop transformations, generates jq. fun idea, but not our use case.
 
 ### ai generates transformations
 
-describe what you want, ai writes the jq + schema + tests.
-could work, but need solid examples first.
+describe what you want, ai writes the jq + schema + tests. could work, but need solid examples first.
 
 ### transformation marketplace
 
-community-contributed transformations.
-nice long-term vision.
+community-contributed transformations. nice long-term vision.
 
 ### type inference
 
-infer output schema from input schema + transformation.
-hard problem, probably not worth it.
+infer output schema from input schema + transformation. hard problem, probably not worth it.
 
----
+______________________________________________________________________
 
 ## questions to explore
 
 1. can we generate schemas from jq code?
-2. can we validate jq syntax before running?
-3. how to handle side effects (file i/o, network)?
-4. should transformations be pure functions only?
-5. what about stateful transformations?
-6. how to handle secrets in transformations?
-7. caching transformation results?
-8. parallel execution of independent transformations?
-9. transformation dependencies (one requires another)?
-10. how to test composition patterns?
+1. can we validate jq syntax before running?
+1. how to handle side effects (file i/o, network)?
+1. should transformations be pure functions only?
+1. what about stateful transformations?
+1. how to handle secrets in transformations?
+1. caching transformation results?
+1. parallel execution of independent transformations?
+1. transformation dependencies (one requires another)?
+1. how to test composition patterns?
 
----
+______________________________________________________________________
 
 ## rejected ideas
 

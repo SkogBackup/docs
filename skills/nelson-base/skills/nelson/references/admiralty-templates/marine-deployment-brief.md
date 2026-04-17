@@ -1,3 +1,9 @@
+---
+title: marine-deployment-brief
+type: note
+permalink: skogai/skills/nelson-base/skills/nelson/references/admiralty-templates/marine-deployment-brief
+---
+
 # Marine Deployment Brief Template
 
 ```text

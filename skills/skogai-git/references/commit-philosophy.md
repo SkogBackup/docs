@@ -1,3 +1,9 @@
+---
+title: commit-philosophy
+type: note
+permalink: skogai/skills/skogai-git/references/commit-philosophy
+---
+
 # Commit Philosophy
 
 ## Core Principle
@@ -8,15 +14,15 @@ The git log should read like a changelog of what shipped, not a diary of plannin
 
 ## What to Commit
 
-| Event | Commit? | Why |
-|-------|---------|-----|
-| Project initialization | YES | Marks project start |
-| Feature completed | YES | Actual code shipped |
-| Bug fixed | YES | Problem resolved |
-| Handoff/WIP state | YES | Preserves context for resume |
-| Plan created | NO | Intermediate - commit with completion |
-| Research notes | NO | Intermediate |
-| Minor tweaks | NO | Noise |
+| Event                  | Commit? | Why                                   |
+| ---------------------- | ------- | ------------------------------------- |
+| Project initialization | YES     | Marks project start                   |
+| Feature completed      | YES     | Actual code shipped                   |
+| Bug fixed              | YES     | Problem resolved                      |
+| Handoff/WIP state      | YES     | Preserves context for resume          |
+| Plan created           | NO      | Intermediate - commit with completion |
+| Research notes         | NO      | Intermediate                          |
+| Minor tweaks           | NO      | Noise                                 |
 
 ## Commit Formats
 
@@ -79,6 +85,7 @@ git log --oneline -10
 ```
 
 Match the existing convention:
+
 - Conventional commits: `feat:`, `fix:`, `docs:`
 - Simple messages: "Add feature X"
 - Ticket references: "[JIRA-123] Add feature"
@@ -86,6 +93,7 @@ Match the existing convention:
 ## Anti-Patterns
 
 Avoid committing:
+
 - "Fixed typo"
 - "WIP"
 - "Updates"

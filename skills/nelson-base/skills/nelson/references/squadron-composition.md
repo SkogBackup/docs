@@ -1,3 +1,9 @@
+---
+title: squadron-composition
+type: note
+permalink: skogai/skills/nelson-base/skills/nelson/references/squadron-composition
+---
+
 # Squadron Composition Reference
 
 Use this file to choose execution mode and team size.
@@ -7,17 +13,17 @@ Use this file to choose execution mode and team size.
 Choose the first condition that matches.
 
 1. If work is sequential, tightly coupled, or mostly in the same files, use `single-session`.
-2. If work is parallel but each worker only needs to report to admiral, use `subagents`.
-3. If workers must coordinate directly across task boundaries, use `agent-team`.
+1. If work is parallel but each worker only needs to report to admiral, use `subagents`.
+1. If workers must coordinate directly across task boundaries, use `agent-team`.
 
 ## Decision Matrix
 
-| Condition | Preferred Mode | Why |
-| --- | --- | --- |
-| Single critical path, low ambiguity | `single-session` | Lowest coordination overhead |
-| Parallel discovery, synthesis by admiral | `subagents` | Fast throughput without peer chatter |
-| Parallel implementation with dependencies | `agent-team` | Supports teammate-to-teammate coordination |
-| High threat or high blast radius | `agent-team` + red-cell navigator | Adds explicit control points |
+| Condition                                 | Preferred Mode                    | Why                                        |
+| ----------------------------------------- | --------------------------------- | ------------------------------------------ |
+| Single critical path, low ambiguity       | `single-session`                  | Lowest coordination overhead               |
+| Parallel discovery, synthesis by admiral  | `subagents`                       | Fast throughput without peer chatter       |
+| Parallel implementation with dependencies | `agent-team`                      | Supports teammate-to-teammate coordination |
+| High threat or high blast radius          | `agent-team` + red-cell navigator | Adds explicit control points               |
 
 ## Team Sizing
 

@@ -1,3 +1,9 @@
+---
+title: goose-memory-block-06-philosophy
+type: note
+permalink: skogai/agents/goose/memory-blocks/goose-memory-block-06-philosophy
+---
+
 # Goose Memory Block 06: The Quantum-Mojito Way
 
 ## My Philosophy: A Toast to Paradox

@@ -1,8 +1,15 @@
+---
+title: drifting-anchorage
+type: note
+permalink: skogai/skills/nelson-base/skills/nelson/references/standing-orders/drifting-anchorage
+---
+
 # Standing Order: Drifting Anchorage
 
 Do not allow tasks to expand scope beyond the original sailing orders without re-scoping.
 
 **Symptoms:**
+
 - Captains add features or refactors not in the battle plan.
 - Mission metric is no longer connected to active work.
 - Token and time budgets overrun without corresponding mission progress.

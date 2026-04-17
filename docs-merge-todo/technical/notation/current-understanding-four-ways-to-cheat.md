@@ -11,9 +11,9 @@ permalink: ontology/current-understanding-four-ways-to-cheat
 Based on the pattern emerging, the four ways to "cheat in the universe" appear to be:
 
 1. `[$@]` - similarity of reference-intent (completion/static)
-2. `{$@}` - difference of reference-intent (transformation/spacetime)
-3. `[$$]` - similarity of reference-reference (belonging/having)
-4. `{$$}` - difference of reference-reference (heavily used pattern)
+1. `{$@}` - difference of reference-intent (transformation/spacetime)
+1. `[$$]` - similarity of reference-reference (belonging/having)
+1. `{$$}` - difference of reference-reference (heavily used pattern)
 
 ## Key Insights So Far
 

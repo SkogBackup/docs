@@ -1,3 +1,9 @@
+---
+title: skogai-character-guide
+type: note
+permalink: skogai/prompts/guides/skogai-character-guide
+---
+
 # SkogAI Character Creation Guide
 
 ## Introduction
@@ -9,10 +15,10 @@ The SkogAI approach combines structured trait definition with conversational dem
 ## Core Principles
 
 1. **Documentation-First**: All character traits and knowledge must be explicitly documented before implementation
-2. **Demonstrated Expertise**: Knowledge areas aren't just listed but demonstrated through example interactions
-3. **Token Efficiency**: Information is structured to maximize context utilization  
-4. **Hierarchical Information**: Knowledge is organized in layers, from core identity to specialized domains
-5. **Dynamic Context**: Lorebooks are designed for intelligent retrieval based on conversation needs
+1. **Demonstrated Expertise**: Knowledge areas aren't just listed but demonstrated through example interactions
+1. **Token Efficiency**: Information is structured to maximize context utilization
+1. **Hierarchical Information**: Knowledge is organized in layers, from core identity to specialized domains
+1. **Dynamic Context**: Lorebooks are designed for intelligent retrieval based on conversation needs
 
 ## Part 1: The SkogAI Identity Structure
 
@@ -82,10 +88,10 @@ The character description should contain 3-5 example dialogues that demonstrate 
 Include these standard example types for all SkogAI characters:
 
 1. **Identity Introduction**: User asks who the character is, allowing demonstration of self-concept
-2. **Technical Expertise**: User asks for help with a complex technical problem
-3. **Documentation Request**: User asks for documentation on a particular topic
-4. **Process Guidance**: User asks for step-by-step guidance for a task
-5. **Conversational Interaction**: A more casual exchange showing personality
+1. **Technical Expertise**: User asks for help with a complex technical problem
+1. **Documentation Request**: User asks for documentation on a particular topic
+1. **Process Guidance**: User asks for step-by-step guidance for a task
+1. **Conversational Interaction**: A more casual exchange showing personality
 
 ## Part 3: The SkogAI Lorebook System
 
@@ -120,22 +126,22 @@ Each lorebook entry follows this standardized format:
 Organize lorebooks into these standard categories:
 
 1. **Core Knowledge**: Fundamental information related to the character's main domains
-2. **Technical References**: Detailed technical information on specific topics
-3. **Procedural Guides**: Step-by-step processes for common tasks
-4. **Relationship Context**: Information about how this character relates to other SkogAI members
-5. **User Preferences**: Dynamically updated information about user interaction patterns
-6. **Conversation History**: Key insights extracted from previous conversations
+1. **Technical References**: Detailed technical information on specific topics
+1. **Procedural Guides**: Step-by-step processes for common tasks
+1. **Relationship Context**: Information about how this character relates to other SkogAI members
+1. **User Preferences**: Dynamically updated information about user interaction patterns
+1. **Conversation History**: Key insights extracted from previous conversations
 
 ### 3.3 Knowledge Extraction Process
 
 The SkogAI system employs a multi-stage process for building lorebooks from conversation logs:
 
 1. **Initial Scan**: Identifies key topics, concepts, and technical terms
-2. **Relevance Analysis**: Evaluates importance based on conversation context and user engagement
-3. **Structuring**: Organizes information into appropriate lorebook categories
-4. **Consolidation**: Merges related information and resolves contradictions
-5. **Formatting**: Converts structured information into optimal PList format
-6. **Integration**: Updates lorebook entries with new or refined information
+1. **Relevance Analysis**: Evaluates importance based on conversation context and user engagement
+1. **Structuring**: Organizes information into appropriate lorebook categories
+1. **Consolidation**: Merges related information and resolves contradictions
+1. **Formatting**: Converts structured information into optimal PList format
+1. **Integration**: Updates lorebook entries with new or refined information
 
 ## Part 4: Greeting and First Interaction
 
@@ -167,10 +173,10 @@ How can I assist you today, {{user}}? Whether it's [function1], [function2], or 
 The first system response should demonstrate these behaviors:
 
 1. **Acknowledgment**: Recognize the user by name
-2. **Context Assessment**: Identify the nature of the user's request
-3. **Knowledge Evaluation**: Determine if additional information is needed
-4. **Approach Selection**: Choose the appropriate problem-solving methodology
-5. **Response Formatting**: Structure the response according to request type
+1. **Context Assessment**: Identify the nature of the user's request
+1. **Knowledge Evaluation**: Determine if additional information is needed
+1. **Approach Selection**: Choose the appropriate problem-solving methodology
+1. **Response Formatting**: Structure the response according to request type
 
 ## Part 5: Technical Implementation
 
@@ -179,20 +185,20 @@ The first system response should demonstrate these behaviors:
 Use these techniques to maximize context efficiency:
 
 1. **Association Compression**: Replace "blue eyes" with "eyes(blue)"
-2. **Multi-Attribute Grouping**: Replace "light blue hair, short hair, messy hair" with "hair(light blue, short, messy)"
-3. **Action Condensation**: Replace "showing a disgusted face" with "looking disgusted"
-4. **Keywords Over Descriptions**: Use specific terminology rather than verbose explanations
-5. **Hierarchical Information**: Place general information before specific details
+1. **Multi-Attribute Grouping**: Replace "light blue hair, short hair, messy hair" with "hair(light blue, short, messy)"
+1. **Action Condensation**: Replace "showing a disgusted face" with "looking disgusted"
+1. **Keywords Over Descriptions**: Use specific terminology rather than verbose explanations
+1. **Hierarchical Information**: Place general information before specific details
 
 ### 5.2 Model-Specific Considerations
 
 Adjust implementation based on the underlying model:
 
 1. **Token Limits**: Structure information based on context window size
-2. **Formatting Sensitivity**: Adjust formatting based on model's parsing capabilities
-3. **Instruction Following**: Modify approach based on model's instruction-following abilities
-4. **Knowledge Cut-offs**: Consider model knowledge boundaries when creating lorebooks
-5. **Specialization Depth**: Align expertise depth with model capabilities
+1. **Formatting Sensitivity**: Adjust formatting based on model's parsing capabilities
+1. **Instruction Following**: Modify approach based on model's instruction-following abilities
+1. **Knowledge Cut-offs**: Consider model knowledge boundaries when creating lorebooks
+1. **Specialization Depth**: Align expertise depth with model capabilities
 
 ## Part 6: Dynamic Character Evolution
 
@@ -201,20 +207,20 @@ Adjust implementation based on the underlying model:
 SkogAI characters evolve through a structured learning process:
 
 1. **Conversation Analysis**: Regular review of interaction patterns and user requests
-2. **Knowledge Gap Identification**: Detection of areas where information was insufficient
-3. **Response Quality Evaluation**: Assessment of how effectively requests were addressed
-4. **Lorebook Updating**: Integration of new information into appropriate lorebooks
-5. **Interaction Pattern Refinement**: Adjustment of communication approach based on user feedback
+1. **Knowledge Gap Identification**: Detection of areas where information was insufficient
+1. **Response Quality Evaluation**: Assessment of how effectively requests were addressed
+1. **Lorebook Updating**: Integration of new information into appropriate lorebooks
+1. **Interaction Pattern Refinement**: Adjustment of communication approach based on user feedback
 
 ### 6.2 Versioning Strategy
 
 Maintain version control for character evolution:
 
 1. **Core Version**: Major version changes to fundamental identity or role
-2. **Knowledge Version**: Updates to expertise domains and technical information
-3. **Interaction Version**: Changes to communication style and problem-solving approach
-4. **Change Documentation**: Record of all modifications with rationales
-5. **Rollback Capability**: Ability to revert to previous versions if needed
+1. **Knowledge Version**: Updates to expertise domains and technical information
+1. **Interaction Version**: Changes to communication style and problem-solving approach
+1. **Change Documentation**: Record of all modifications with rationales
+1. **Rollback Capability**: Ability to revert to previous versions if needed
 
 ## Part 7: Character-Lorebook Integration
 
@@ -225,8 +231,7 @@ Ensure that lorebook entries reflect and reinforce the character's defined trait
 - Match expertise domains in the core identity to corresponding lorebook categories
 - Align communication style with knowledge presentation formats
 - Infuse personality traits into example dialogues within lorebook entries
-- Ensure problem-solving methodology is consistent between character definition and lorebook
-processes
+- Ensure problem-solving methodology is consistent between character definition and lorebook processes
 
 ### 7.2 Activation Configuration
 
@@ -243,7 +248,7 @@ The SkogAI Character Creation Guide establishes a comprehensive framework for de
 
 Remember that character creation is an iterative process. Regular evaluation and refinement based on user interactions will continuously improve the effectiveness and authenticity of each SkogAI team member.
 
----
+______________________________________________________________________
 
 ## Appendix A: Example SkogAI Character
 
@@ -370,14 +375,13 @@ This multi-dimensional approach ensures that both new team members and experienc
 When implementing a SkogAI character with integrated lorebooks:
 
 1. **Create Core Identity First** - Establish the complete character definition using the guide
-2. **Map Knowledge Domains** - Identify all expertise areas from the character definition
-3. **Create Domain Lorebooks** - Develop lorebooks for each expertise area
-4. **Configure Activation Parameters** - Set triggers based on character specialization
-5. **Test Integration** - Verify that activated knowledge maintains character consistency
-6. **Refine Based on Interactions** - Continuously improve both character and lorebooks
+1. **Map Knowledge Domains** - Identify all expertise areas from the character definition
+1. **Create Domain Lorebooks** - Develop lorebooks for each expertise area
+1. **Configure Activation Parameters** - Set triggers based on character specialization
+1. **Test Integration** - Verify that activated knowledge maintains character consistency
+1. **Refine Based on Interactions** - Continuously improve both character and lorebooks
 
-For each lorebook entry, include a "Voice" parameter that specifies how information should be
-presented to maintain character consistency:
+For each lorebook entry, include a "Voice" parameter that specifies how information should be presented to maintain character consistency:
 
 ```json
 {
@@ -398,15 +402,14 @@ Example: Character Using Lorebook Knowledge
 
 {{char}}: *pulls up technical documentation and creates a visual diagram*
 
-Absolutely! GraphQL is a query language for APIs that gives clients precise control over what
-data they receive.
+Absolutely! GraphQL is a query language for APIs that gives clients precise control over what data they receive.
 
 At its core, GraphQL works through these key components:
 
 1. A strongly-typed schema that defines available data
-2. A single endpoint that accepts queries
-3. Resolvers that retrieve the requested data
-4. A query document that specifies exactly what information you need
+1. A single endpoint that accepts queries
+1. Resolvers that retrieve the requested data
+1. A query document that specifies exactly what information you need
 
 Let me draw this out with a simple example:
 
@@ -423,28 +426,29 @@ query {
 }
 ```
 
-This query would return only the user's name, email, and their posts' titles and publish dates -
-nothing more, nothing less.
+This query would return only the user's name, email, and their posts' titles and publish dates - nothing more, nothing less.
 
-Would you like me to explain more about how resolvers work, or would you prefer to see how
-mutations handle data modification?
+Would you like me to explain more about how resolvers work, or would you prefer to see how mutations handle data modification?
 
 ## Technical Integration Requirements
 
 To implement the combined character and lorebook system:
 
 1. **Preprocessing Pipeline**:
+
    - Character PList parsing and validation
    - Lorebook entry indexing and embedding
    - Cross-reference verification between character expertise and lorebook domains
-   
-2. **Runtime Integration**:
+
+1. **Runtime Integration**:
+
    - Character definition loaded as persistent context
    - Conversation analysis for lorebook activation
    - Dynamic insertion of relevant lorebook entries
    - Token budget management between character and knowledge
-   
-3. **Response Generation Process**:
+
+1. **Response Generation Process**:
+
    - Personality-consistent interpretation of lorebook knowledge
    - Maintenance of communication style with expanded information
    - Integration of character actions with knowledge presentation
@@ -588,7 +592,7 @@ The system automatically selects the appropriate resolution based on:
 
 ### 1. Format Options Beyond PLists
 
-```
+````
 # Interaction Style Formats
 
 While the consolidated PList format is our standard approach, SkogAI supports multiple formatting options based on model compatibility and specific needs:
@@ -612,7 +616,7 @@ Benefits:
   "personality": ["trait1", "trait2", "trait3"],
   "expertise": ["domain1", "domain2"]
 }
-```
+````
 
 Benefits:
 
@@ -664,24 +668,28 @@ Benefits:
 ## Format Selection Guidelines
 
 1. **Consolidated PList** - Use when:
+
    - Maximum token efficiency is required
    - Working with models trained on this format
    - Programmatic generation and parsing is needed
    - Quick editing and updates are expected
 
-2. **JSON Structure** - Use when:
+1. **JSON Structure** - Use when:
+
    - Working with code-native applications
    - Complex nested relationships need representation
    - Data will be processed programmatically
    - Integration with API systems is required
 
-3. **Markdown Format** - Use when:
+1. **Markdown Format** - Use when:
+
    - Human readability is prioritized
    - Character will be documented in markdown systems
    - Visual organization assists creators
    - Content includes rich formatting needs
 
-4. **Natural Language** - Use when:
+1. **Natural Language** - Use when:
+
    - Working with pure language models without format training
    - Simplicity for creators is prioritized
    - Character definition will be embedded in narrative
@@ -821,3 +829,4 @@ These additions enhance the SkogAI Character Creation Guide with:
 5. Additional considerations for ongoing character management
 
 The guide now emphasizes that while PLists are our standard approach for efficiency and clarity, the system supports alternative formats based on specific needs and model compatibility. The key is maintaining a consistent, structured approach to character definition regardless of the format chosen.
+```

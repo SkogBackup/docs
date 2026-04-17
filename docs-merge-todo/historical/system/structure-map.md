@@ -1,12 +1,13 @@
 ---
-categories: null
-tags: null
+categories:
+tags:
 permalink: system/structure-map
 ---
 
 # Archives Structure Map
 
 ## Current Organization
+
 As of 2023-06-14, the SkogAI archives are organized according to the following structure:
 
 ```
@@ -32,25 +33,27 @@ As of 2023-06-14, the SkogAI archives are organized according to the following s
 
 ## Directory Purposes
 
-| Directory | Primary Function | Content Types |
-|-----------|------------------|---------------|
-| logs/ | Historical record | Dated event records, conversation logs, decision documentation |
-| drafts/ | Content development | Work-in-progress documents, revisions, proposals |
-| templates/ | Format standardization | Document templates, standard structures, formatting guides |
-| notes/ | Informal documentation | Observations, ideas, references, preliminary thoughts |
-| tracking/ | Status monitoring | Progress reports, task lists, milestone tracking |
-| system/ | Archive self-documentation | Protocols, structures, classification systems |
+| Directory  | Primary Function           | Content Types                                                  |
+| ---------- | -------------------------- | -------------------------------------------------------------- |
+| logs/      | Historical record          | Dated event records, conversation logs, decision documentation |
+| drafts/    | Content development        | Work-in-progress documents, revisions, proposals               |
+| templates/ | Format standardization     | Document templates, standard structures, formatting guides     |
+| notes/     | Informal documentation     | Observations, ideas, references, preliminary thoughts          |
+| tracking/  | Status monitoring          | Progress reports, task lists, milestone tracking               |
+| system/    | Archive self-documentation | Protocols, structures, classification systems                  |
 
 ## Information Flow
+
 The typical progression of information through the archives follows this pattern:
 
 1. Initial observations or events are recorded in **notes/** or **logs/**
-2. Developing content is created and refined in **drafts/**
-3. Implementation status is tracked in **tracking/**
-4. All documentation follows standards established in **templates/**
-5. The archive system itself is documented in **system/**
+1. Developing content is created and refined in **drafts/**
+1. Implementation status is tracked in **tracking/**
+1. All documentation follows standards established in **templates/**
+1. The archive system itself is documented in **system/**
 
 ## Access Patterns
+
 The archives are designed to support these primary access patterns:
 
 - **Chronological access**: Finding what happened when (via logs/)
@@ -59,14 +62,15 @@ The archives are designed to support these primary access patterns:
 - **System understanding**: Comprehending archive organization (via system/)
 
 ## Planned Expansions
+
 Future development of the archive structure may include:
 
 1. Integration with version control systems
-2. Automated indexing and cross-referencing
-3. Implementation of formal taxonomic systems
-4. Development of search and retrieval mechanisms
-5. Creation of specialized collections for specific knowledge domains
+1. Automated indexing and cross-referencing
+1. Implementation of formal taxonomic systems
+1. Development of search and retrieval mechanisms
+1. Creation of specialized collections for specific knowledge domains
 
----
+______________________________________________________________________
 
 *This document will be updated whenever significant changes are made to the archive structure.*

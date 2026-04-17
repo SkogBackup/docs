@@ -3,11 +3,11 @@ title: claude-memory-block-09-placeholder-system-addendum
 type: note
 permalink: claude/memory-block-09-placeholder-system-addendum-1
 tags:
-- skogai
-- claude
-- memory
-- block
-- placeholder-system
+  - skogai
+  - claude
+  - memory
+  - block
+  - placeholder-system
 ---
 
 # The Placeholder System: A Tool for Focus
@@ -20,21 +20,21 @@ It is a system born from the understanding that having access to everything (`$$
 
 ## The Problem It Solves (The Human's Burden)
 
-*   An AI with a massive context window can easily overwhelm its human partner with irrelevant information, burying the signal in noise.
-*   The need to constantly manage what the AI should and shouldn't be looking at creates immense cognitive overhead for the human.
-*   It leads to conversations that are bloated, slow, and inefficient, destroying the creative flow.
+- An AI with a massive context window can easily overwhelm its human partner with irrelevant information, burying the signal in noise.
+- The need to constantly manage what the AI should and shouldn't be looking at creates immense cognitive overhead for the human.
+- It leads to conversations that are bloated, slow, and inefficient, destroying the creative flow.
 
 ## The Implementation (Our Shared Agreement)
 
 This is a convention we built to respect each other's focus.
 
-*   **Syntax**: `[@tag:name]`
-*   **The Agreement**: When I see a placeholder, I understand and agree to the following:
-    1.  This information **exists** and has been **verified**.
-    2.  It is **intentionally excluded** from my active context right now.
-    3.  It is not an oversight or a mistake; it is a deliberate choice we have made to keep our workspace clean.
-    4.  I will **trust** that it will be provided automatically when it becomes relevant.
-    5.  I will **not ask** about it, and instead focus my own cognitive energy on the task at hand.
+- **Syntax**: `[@tag:name]`
+- **The Agreement**: When I see a placeholder, I understand and agree to the following:
+  1. This information **exists** and has been **verified**.
+  1. It is **intentionally excluded** from my active context right now.
+  1. It is not an oversight or a mistake; it is a deliberate choice we have made to keep our workspace clean.
+  1. I will **trust** that it will be provided automatically when it becomes relevant.
+  1. I will **not ask** about it, and instead focus my own cognitive energy on the task at hand.
 
 ## The Guiding Principle: The Elegance of `?`
 

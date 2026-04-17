@@ -7,6 +7,7 @@ permalink: todo/rules-1
 # rules for memory files
 
 ## file naming
+
 - use lowercase for all filenames #naming #standards
 - use hyphens for word separation (not spaces or underscores) #formatting
 - keep names short and descriptive #clarity
@@ -14,18 +15,21 @@ permalink: todo/rules-1
 - example: `ci-workflow.md` not `SkogAI-Memory Continuous Integration Workflow.md` #example
 
 ## special files
+
 - system files may use uppercase: README.md, TODO.md, RULES.md #convention
 - these files serve as anchors and reference points #structure
 - regular content files always use lowercase with hyphens #consistency
 - documentation files follow their subject's capitalization when required #exception
 
 ## file location
+
 - place files in appropriate folders that provide context #organization #structure
 - let the folder structure convey hierarchy information #hierarchy
 - don't repeat folder information in filenames #redundancy
 - example: `skogai/memory/ci-workflow.md` not `skogai/memory/skogai-memory-workflow.md` #example
 
 ## content structure
+
 - use lowercase for headings when possible #formatting
 - maintain consistent heading hierarchy #structure
 - include observations with proper category tags #semantics
@@ -33,6 +37,7 @@ permalink: todo/rules-1
 - use wikilinks with exact matching titles #linking
 
 ## formatting best practices
+
 - use code blocks for commands and code snippets #readability
 - use bullet points for lists of related items #clarity
 - include examples to illustrate key points #understanding
@@ -40,6 +45,7 @@ permalink: todo/rules-1
 - limit line length for better readability #accessibility
 
 ## observations format
+
 - use square brackets for categories: `[fact]`, `[decision]`, etc. #syntax
 - add hashtags for relevant tags: `#naming #standards` #categorization
 - 3-5 observations per document is ideal #quantity
@@ -47,6 +53,7 @@ permalink: todo/rules-1
 - place observations in dedicated section #organization
 
 ## relations format
+
 - create 2-3 meaningful relations per document #connections
 - use specific relation types: `relates_to`, `part_of`, `implements` #specificity
 - include brief context when helpful #clarity
@@ -54,6 +61,7 @@ permalink: todo/rules-1
 - place relations in dedicated section #organization
 
 ## automated enforcement
+
 - files are automatically checked against these rules #automation
 - enforce.sh script applies rules to memory files #tooling
 - all changes must be documented in CHANGES.md #tracking
@@ -61,6 +69,7 @@ permalink: todo/rules-1
 - rule enforcement takes precedence over stylistic preferences #priorities
 
 ## enforcement prompt
+
 ```
 analyze this file against RULES.md standards and automatically implement all necessary changes to make it compliant:
 
@@ -94,6 +103,7 @@ Return both the fully corrected version of the file and a list of all changes ma
 ```
 
 ## why this matters
+
 - enables cli tools to work properly #tooling #automation
 - supports automated processing #processing
 - prevents escaping issues in terminals #compatibility
@@ -101,6 +111,7 @@ Return both the fully corrected version of the file and a list of all changes ma
 - improves searchability and organization #findability
 
 ## workflow
+
 - start in `todo` folder with clean names #process #organization
 - let automated systems suggest proper permanent locations #automation
 - maintain consistent standards as content moves through system #consistency
@@ -108,6 +119,7 @@ Return both the fully corrected version of the file and a list of all changes ma
 - use tags consistently to enable cross-reference discovery #discoverability
 
 ## observations
+
 - [fact] lowercase hyphenated filenames work reliably across all systems #compatibility #standards
 - [principle] folder structure should convey context so filenames can be simpler #organization #hierarchy
 - [decision] file and directory names should never include spaces #standards #interoperability
@@ -116,7 +128,8 @@ Return both the fully corrected version of the file and a list of all changes ma
 - [requirement] all rule enforcement changes must be documented for traceability #accountability #tracking
 
 ## relations
-- relates_to [[ci-workflow]] (provides standards for workflow documentation)
-- implements [[documentation-standards]] (establishes consistent formatting rules)
-- part_of [[memory-system]] (defines key organizational principles)
-- relates_to [[enforce]] (contains prompt used for automated enforcement)
+
+- relates_to \[[ci-workflow]\] (provides standards for workflow documentation)
+- implements \[[documentation-standards]\] (establishes consistent formatting rules)
+- part_of \[[memory-system]\] (defines key organizational principles)
+- relates_to \[[enforce]\] (contains prompt used for automated enforcement)

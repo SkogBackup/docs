@@ -1,3 +1,9 @@
+---
+title: yaml-schema
+type: note
+permalink: skogai/skills/skogai-docs/references/yaml-schema
+---
+
 # YAML Frontmatter Schema
 
 **See `skills/skogai-docs/schema.yaml` for the complete schema specification.**
@@ -21,11 +27,11 @@
 ## Validation Rules
 
 1. All required fields must be present
-2. Enum fields must match allowed values exactly (case-sensitive)
-3. symptoms must be YAML array with 1-5 items
-4. date must match YYYY-MM-DD format
-5. framework_version (if provided) must match X.Y.Z or X.Y format
-6. tags should be lowercase, hyphen-separated
+1. Enum fields must match allowed values exactly (case-sensitive)
+1. symptoms must be YAML array with 1-5 items
+1. date must match YYYY-MM-DD format
+1. framework_version (if provided) must match X.Y.Z or X.Y format
+1. tags should be lowercase, hyphen-separated
 
 ## Example
 

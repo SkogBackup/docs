@@ -1,6 +1,6 @@
 ---
-categories: null
-tags: null
+categories:
+tags:
 permalink: lore/amy-lore-mandate
 ---
 

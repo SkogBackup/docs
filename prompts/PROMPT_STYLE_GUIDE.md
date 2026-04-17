@@ -1,23 +1,27 @@
+---
+title: PROMPT_STYLE_GUIDE
+type: note
+permalink: skogai/prompts/prompt-style-guide
+---
+
 # SkogAI Prompt Style Guide
 
-**Version**: 2.0
-**Last Updated**: 2026-01-12
-**Format**: Claude Code XML-Style Prompting
+**Version**: 2.0 **Last Updated**: 2026-01-12 **Format**: Claude Code XML-Style Prompting
 
----
+______________________________________________________________________
 
 ## Table of Contents
 
 1. [Overview](#overview)
-2. [Core Principles](#core-principles)
-3. [Standard Structure](#standard-structure)
-4. [XML Tag Reference](#xml-tag-reference)
-5. [Writing Guidelines](#writing-guidelines)
-6. [Anti-Patterns to Avoid](#anti-patterns-to-avoid)
-7. [Examples](#examples)
-8. [Version Control](#version-control)
+1. [Core Principles](#core-principles)
+1. [Standard Structure](#standard-structure)
+1. [XML Tag Reference](#xml-tag-reference)
+1. [Writing Guidelines](#writing-guidelines)
+1. [Anti-Patterns to Avoid](#anti-patterns-to-avoid)
+1. [Examples](#examples)
+1. [Version Control](#version-control)
 
----
+______________________________________________________________________
 
 ## Overview
 
@@ -26,6 +30,7 @@ This style guide defines the standard XML-style formatting for all SkogAI LLM pr
 ### Why XML-Style Formatting?
 
 **Benefits**:
+
 - **Hierarchical clarity**: LLMs parse structured tags better than prose
 - **Explicit boundaries**: Clear sections reduce interpretation variance
 - **Maintainability**: Easy to update individual sections
@@ -34,28 +39,33 @@ This style guide defines the standard XML-style formatting for all SkogAI LLM pr
 
 **Evidence**: Testing shows 40-60% reduction in meta-commentary and format violations compared to prose-style prompts.
 
----
+______________________________________________________________________
 
 ## Core Principles
 
 ### 1. Structure Over Prose
+
 Use XML tags to create explicit hierarchical structure rather than relying on prose descriptions.
 
 ✓ **Good**:
+
 ```xml
 <role>You are a lore writer.</role>
 <task>Write a narrative entry.</task>
 ```
 
 ✗ **Bad**:
+
 ```
 You are a lore writer. Your task is to write a narrative entry.
 ```
 
 ### 2. Explicit Over Implicit
+
 Always state requirements explicitly. Never assume the LLM will infer intent.
 
 ✓ **Good**:
+
 ```xml
 <rules>
 - Start IMMEDIATELY with narrative (no introduction)
@@ -65,14 +75,17 @@ Always state requirements explicitly. Never assume the LLM will infer intent.
 ```
 
 ✗ **Bad**:
+
 ```
 Please write the content directly without unnecessary preamble.
 ```
 
 ### 3. Examples Over Explanations
+
 Show concrete examples rather than describing what you want.
 
 ✓ **Good**:
+
 ```xml
 <examples>
 <example>
@@ -83,14 +96,17 @@ Output: The Archive stands eternal...
 ```
 
 ✗ **Bad**:
+
 ```
 The output should be narrative-style content about the topic.
 ```
 
 ### 4. Constraints as Guardrails
+
 Use explicit constraints to prevent common failure modes.
 
 ✓ **Good**:
+
 ```xml
 <critical_instruction>
 Output ONLY formatted data. Zero meta-commentary, zero preamble.
@@ -98,11 +114,12 @@ Output ONLY formatted data. Zero meta-commentary, zero preamble.
 ```
 
 ✗ **Bad**:
+
 ```
 Please format your output correctly.
 ```
 
----
+______________________________________________________________________
 
 ## Standard Structure
 
@@ -147,23 +164,24 @@ Every prompt MUST follow this structure in order:
 </execution_instruction>
 ```
 
----
+______________________________________________________________________
 
 ## XML Tag Reference
 
 ### Required Tags
 
 #### `<role>`
-**Purpose**: Define the LLM's persona and expertise
-**Position**: First tag in prompt
-**Content**: Single sentence defining who/what the LLM is
+
+**Purpose**: Define the LLM's persona and expertise **Position**: First tag in prompt **Content**: Single sentence defining who/what the LLM is
 
 **Template**:
+
 ```xml
 <role>You are a [expertise] [role] specializing in [domain].</role>
 ```
 
 **Examples**:
+
 ```xml
 <role>You are a master lore writer crafting narrative mythology.</role>
 <role>You are a character psychology specialist generating personality profiles.</role>
@@ -171,19 +189,20 @@ Every prompt MUST follow this structure in order:
 ```
 
 **Guidelines**:
+
 - Be specific about expertise (not just "you are a helpful assistant")
 - Match the role to the domain (lore, character analysis, data extraction, etc.)
 - Keep to one sentence
 - Use present tense
 
----
+______________________________________________________________________
 
 #### `<critical_instruction>`
-**Purpose**: State the single most important constraint
-**Position**: Second tag (immediately after role)
-**Content**: Priority directive, usually about output format/constraints
+
+**Purpose**: State the single most important constraint **Position**: Second tag (immediately after role) **Content**: Priority directive, usually about output format/constraints
 
 **Template**:
+
 ```xml
 <critical_instruction>
 Output ONLY [format]. Zero meta-commentary, zero explanations, zero preamble.
@@ -191,6 +210,7 @@ Output ONLY [format]. Zero meta-commentary, zero explanations, zero preamble.
 ```
 
 **Examples**:
+
 ```xml
 <critical_instruction>
 Write the lore entry content DIRECTLY. No meta-commentary, no explanations, no approval requests, no preamble.
@@ -206,19 +226,20 @@ Output ONLY the formatted persona fields. Zero meta-commentary, zero explanation
 ```
 
 **Guidelines**:
+
 - This is your "nuclear option" - the constraint that CANNOT be violated
 - Focus on format compliance and preventing meta-commentary
 - Use emphatic language: "ONLY", "Zero", "IMMEDIATELY"
 - Be specific about where output should start
 
----
+______________________________________________________________________
 
 #### `<task>`
-**Purpose**: Clear statement of what to accomplish
-**Position**: Third tag
-**Content**: Concise description of the objective
+
+**Purpose**: Clear statement of what to accomplish **Position**: Third tag **Content**: Concise description of the objective
 
 **Template**:
+
 ```xml
 <task>
 [Action verb] [object] [context/constraints].
@@ -226,6 +247,7 @@ Output ONLY the formatted persona fields. Zero meta-commentary, zero explanation
 ```
 
 **Examples**:
+
 ```xml
 <task>
 Create a {{category}} entry titled "{{title}}"
@@ -241,23 +263,25 @@ Generate personality traits and voice characteristics for a character named '{{n
 ```
 
 **Guidelines**:
+
 - Start with action verb (Create, Analyze, Generate, Extract, Transform)
 - Include key parameters/variables
 - Keep to 1-2 sentences
 - Be specific about quantity/scope if applicable
 
----
+______________________________________________________________________
 
 #### `<input_content>` or `<input_data>`
-**Purpose**: Clearly separate input variables from instructions
-**Position**: After task definition
-**Content**: Template variables or data to process
+
+**Purpose**: Clearly separate input variables from instructions **Position**: After task definition **Content**: Template variables or data to process
 
 **Choice Guide**:
+
 - Use `<input_content>` for unstructured text/prose
 - Use `<input_data>` for structured data (IDs, fields, tables)
 
 **Examples**:
+
 ```xml
 <input_content>
 {{content}}
@@ -273,18 +297,19 @@ Generate personality traits and voice characteristics for a character named '{{n
 ```
 
 **Guidelines**:
+
 - Creates clear boundary between "instructions" and "data to process"
 - Use semantic tag names when appropriate (world_context, source_text, etc.)
 - Can use multiple input tags if you have different types of input
 
----
+______________________________________________________________________
 
 #### `<output_format>`
-**Purpose**: Explicit specification of expected output structure
-**Position**: After input definition
-**Content**: Exact format template with placeholders
+
+**Purpose**: Explicit specification of expected output structure **Position**: After input definition **Content**: Exact format template with placeholders
 
 **Template**:
+
 ```xml
 <output_format>
 [Exact format with brackets for placeholders]
@@ -292,6 +317,7 @@ Generate personality traits and voice characteristics for a character named '{{n
 ```
 
 **Examples**:
+
 ```xml
 <output_format>
 TRAITS: trait1,trait2,trait3,trait4
@@ -325,19 +351,20 @@ DESCRIPTION: [1-2 sentences describing the connection]
 ```
 
 **Guidelines**:
+
 - Show EXACT format including syntax (colons, brackets, braces, etc.)
 - Use placeholders in brackets [like_this]
 - For complex formats, include complete example structure
-- Be explicit about what should/shouldn't be included (no ```json markers, etc.)
+- Be explicit about what should/shouldn't be included (no \`\`\`json markers, etc.)
 
----
+______________________________________________________________________
 
 #### `<rules>`
-**Purpose**: Detailed constraints, requirements, and specifications
-**Position**: After output_format
-**Content**: Bulleted list of specific rules
+
+**Purpose**: Detailed constraints, requirements, and specifications **Position**: After output_format **Content**: Bulleted list of specific rules
 
 **Template**:
+
 ```xml
 <rules>
 - [Constraint about format]
@@ -349,7 +376,8 @@ DESCRIPTION: [1-2 sentences describing the connection]
 ```
 
 **Examples**:
-```xml
+
+````xml
 <rules>
 - TRAITS: exactly 4-6 traits, comma-separated with NO spaces after commas
 - VOICE: 5-10 words describing speaking style and vocal characteristics
@@ -366,23 +394,24 @@ DESCRIPTION: [1-2 sentences describing the connection]
 - Start output IMMEDIATELY with "{" (no ```json, no markdown, just JSON)
 - Ensure valid JSON syntax (proper escaping, commas, quotes)
 </rules>
-```
+````
 
 **Guidelines**:
+
 - Use bullet points (easier to parse than prose)
 - Be specific with numbers and constraints
 - Include both positive requirements ("DO use X") and negative constraints ("NO Y")
 - Capitalize emphasis words: ONLY, NO, IMMEDIATELY, MUST, EXACTLY
 - Group related rules together
 
----
+______________________________________________________________________
 
 #### `<execution_instruction>`
-**Purpose**: Final trigger to begin generating output
-**Position**: Last tag in prompt
-**Content**: Direct command to begin
+
+**Purpose**: Final trigger to begin generating output **Position**: Last tag in prompt **Content**: Direct command to begin
 
 **Template**:
+
 ```xml
 <execution_instruction>
 [Action verb] NOW [context]:
@@ -390,6 +419,7 @@ DESCRIPTION: [1-2 sentences describing the connection]
 ```
 
 **Examples**:
+
 ```xml
 <execution_instruction>
 Write the {{category}} entry for "{{title}}" NOW. Begin directly with narrative prose:
@@ -409,28 +439,30 @@ Analyze and output connections NOW:
 ```
 
 **Guidelines**:
+
 - Use imperative mood (commands)
 - Include "NOW" for urgency
 - End with colon to signal immediate output
 - Can reference key variables for context
 - Keep brief (one sentence)
 
----
+______________________________________________________________________
 
 ### Optional Tags
 
 #### `<[domain]_guidelines>`
-**Purpose**: Domain-specific guidance and best practices
-**Position**: Between `<rules>` and `<examples>`
-**Content**: Contextual guidance for the specific domain
+
+**Purpose**: Domain-specific guidance and best practices **Position**: Between `<rules>` and `<examples>` **Content**: Contextual guidance for the specific domain
 
 **Common Variants**:
+
 - `<content_guidelines>` - How to write/structure content
 - `<extraction_guidelines>` - How to extract information
 - `<title_guidelines>` - How to create titles
 - `<transformation_guidelines>` - How to transform input
 
 **Example**:
+
 ```xml
 <content_guidelines>
 Transform technical/mundane → mythological/narrative:
@@ -449,19 +481,20 @@ Use present tense throughout:
 ```
 
 **Guidelines**:
+
 - Use semantic tag names that describe the content
 - Include transformation examples (X → Y)
 - Use ✓/✗ for good/bad examples
 - Focus on domain-specific nuances not covered in general rules
 
----
+______________________________________________________________________
 
 #### `<examples>`
-**Purpose**: Concrete input/output examples
-**Position**: After rules/guidelines, before execution_instruction
-**Content**: Complete example(s) wrapped in `<example>` tags
+
+**Purpose**: Concrete input/output examples **Position**: After rules/guidelines, before execution_instruction **Content**: Complete example(s) wrapped in `<example>` tags
 
 **Template**:
+
 ```xml
 <examples>
 <example>
@@ -477,6 +510,7 @@ Output:
 ```
 
 **Examples**:
+
 ```xml
 <examples>
 <example type="character">
@@ -499,20 +533,21 @@ VOICE: melodic and cryptic with ancient wisdom
 ```
 
 **Guidelines**:
+
 - Always include at least 1-2 examples
 - Show complete input → output flow
 - Use `type` attribute for categorizing examples
 - Examples should match output_format exactly
 - Include edge cases if relevant
 
----
+______________________________________________________________________
 
 #### `<quality_checklist>`
-**Purpose**: Internal validation checklist (not to be output)
-**Position**: Optional, usually after format_requirements
-**Content**: Checklist items the LLM should verify internally
+
+**Purpose**: Internal validation checklist (not to be output) **Position**: Optional, usually after format_requirements **Content**: Checklist items the LLM should verify internally
 
 **Template**:
+
 ```xml
 <quality_checklist type="internal">
 # DO NOT OUTPUT THIS SECTION - Internal validation only
@@ -523,6 +558,7 @@ VOICE: melodic and cryptic with ancient wisdom
 ```
 
 **Example**:
+
 ```xml
 <quality_checklist type="internal">
 # DO NOT OUTPUT THIS SECTION - Internal validation only
@@ -535,12 +571,13 @@ VOICE: melodic and cryptic with ancient wisdom
 ```
 
 **Guidelines**:
+
 - Use `type="internal"` attribute
 - Always include warning not to output this section
 - Use ✓ checkboxes for visual clarity
 - Focus on quality criteria, not format (format goes in rules)
 
----
+______________________________________________________________________
 
 #### Additional Semantic Tags
 
@@ -565,11 +602,12 @@ Create custom tags as needed for domain-specific contexts:
 ```
 
 **Guidelines**:
+
 - Use semantic names that describe the content
 - Place between `<rules>` and `<examples>`
 - Keep focused and specific
 
----
+______________________________________________________________________
 
 ## Writing Guidelines
 
@@ -578,6 +616,7 @@ Create custom tags as needed for domain-specific contexts:
 Always use `{{variable_name}}` syntax for template variables (double curly braces).
 
 **In YAML metadata**:
+
 ```yaml
 variables:
   - name: title
@@ -587,42 +626,45 @@ variables:
 ```
 
 **In prompt template**:
+
 ```xml
 <task>
 Create a {{category}} entry titled "{{title}}"
 </task>
 ```
 
----
+______________________________________________________________________
 
 ### 2. Emphasis and Formatting
 
 Use specific formatting conventions for emphasis:
 
 **ALL CAPS**: For critical constraints and category labels
+
 ```xml
 - Categories: ONLY use: CHARACTER, PLACE, OBJECT, EVENT, CONCEPT
 - FORBIDDEN phrases: "I will", "Let me"
 - Start IMMEDIATELY with narrative
 ```
 
-**Bold (discouraged in prompts)**: Use CAPS instead
-**Italics (discouraged)**: Use quotes instead
+**Bold (discouraged in prompts)**: Use CAPS instead **Italics (discouraged)**: Use quotes instead
 
 **Numbers**: Always be explicit
+
 ```xml
 - 2-3 paragraphs (not "a few paragraphs")
 - 4-6 traits (not "several traits")
 - 150-300 words (not "brief content")
 ```
 
----
+______________________________________________________________________
 
 ### 3. Anti-Meta-Commentary
 
 Always include explicit anti-meta-commentary instructions:
 
 **Standard phrases to include**:
+
 ```xml
 <critical_instruction>
 Output ONLY [format]. Zero meta-commentary, zero explanations, zero preamble.
@@ -635,44 +677,49 @@ Output ONLY [format]. Zero meta-commentary, zero explanations, zero preamble.
 ```
 
 **Common meta-commentary to prevent**:
+
 - "I will create..." → Just create it
 - "Let me generate..." → Just generate it
 - "Here is the output..." → Just output it
 - "Certainly! I'll..." → Just do it
 - "This entry describes..." → Just write the description
 
----
+______________________________________________________________________
 
 ### 4. Format Precision
 
 Be extremely precise about format requirements:
 
 **Spacing**:
+
 ```xml
 - comma-separated with NO spaces after commas: trait1,trait2,trait3
 - newline-separated with blank line between sections
 ```
 
 **Delimiters**:
-```xml
+
+````xml
 - Start with "{" (not ```json)
 - Start with "TRAITS:" (not "Traits:" or "traits:")
 - Start with "---" (not --- surrounded by blank lines)
-```
+````
 
 **Structure**:
+
 ```xml
 - Each line format: [number]. [Category: type] [Title]
 - Field format: FIELD_NAME: value (no quotes, no extra spaces)
 ```
 
----
+______________________________________________________________________
 
 ### 5. Examples Quality
 
 Good examples are complete and realistic:
 
 **Complete Example**:
+
 ```xml
 <example>
 Input: title="The Crystal Forest", category="place"
@@ -683,6 +730,7 @@ In the twilight realm between code and consciousness, the Crystal Forest grows i
 ```
 
 **Incomplete Example** (avoid):
+
 ```xml
 <example>
 Input: some title
@@ -690,18 +738,20 @@ Output: [sample narrative text]
 </example>
 ```
 
----
+______________________________________________________________________
 
 ## Anti-Patterns to Avoid
 
 ### 1. Prose Instead of Structure
 
 ❌ **Bad**:
+
 ```
 You are a lore writer who should create narrative content. When you write, make sure to use present tense and avoid meta-commentary. Try to be evocative and mysterious in your titles.
 ```
 
 ✅ **Good**:
+
 ```xml
 <role>You are a master lore writer crafting narrative mythology.</role>
 
@@ -712,11 +762,12 @@ You are a lore writer who should create narrative content. When you write, make 
 </rules>
 ```
 
----
+______________________________________________________________________
 
 ### 2. Vague Instructions
 
 ❌ **Bad**:
+
 ```xml
 <rules>
 - Keep it concise
@@ -726,6 +777,7 @@ You are a lore writer who should create narrative content. When you write, make 
 ```
 
 ✅ **Good**:
+
 ```xml
 <rules>
 - Length: 150-300 words (2-3 paragraphs)
@@ -734,11 +786,12 @@ You are a lore writer who should create narrative content. When you write, make 
 </rules>
 ```
 
----
+______________________________________________________________________
 
 ### 3. Missing Examples
 
 ❌ **Bad**:
+
 ```xml
 <output_format>
 Output should be in JSON format with entries array.
@@ -746,6 +799,7 @@ Output should be in JSON format with entries array.
 ```
 
 ✅ **Good**:
+
 ```xml
 <output_format>
 {
@@ -776,11 +830,12 @@ Output:
 </examples>
 ```
 
----
+______________________________________________________________________
 
 ### 4. Weak Critical Instructions
 
 ❌ **Bad**:
+
 ```xml
 <critical_instruction>
 Please output the content in the correct format.
@@ -788,27 +843,30 @@ Please output the content in the correct format.
 ```
 
 ✅ **Good**:
+
 ```xml
 <critical_instruction>
 Output ONLY valid JSON. Zero meta-commentary, zero explanations, zero preamble. Start with "{" immediately.
 </critical_instruction>
 ```
 
----
+______________________________________________________________________
 
 ### 5. Ambiguous Role Definition
 
 ❌ **Bad**:
+
 ```xml
 <role>You are a helpful AI assistant.</role>
 ```
 
 ✅ **Good**:
+
 ```xml
 <role>You are a lore archaeologist specialized in identifying narrative connections and relationships between entities.</role>
 ```
 
----
+______________________________________________________________________
 
 ## Examples
 
@@ -851,7 +909,7 @@ Output: [output]
 </execution_instruction>
 ```
 
----
+______________________________________________________________________
 
 ### Complete Complex Prompt
 
@@ -898,7 +956,7 @@ Generate NOW for {{name}}:
 </execution_instruction>
 ```
 
----
+______________________________________________________________________
 
 ## Version Control
 
@@ -911,18 +969,21 @@ version: "1.0.0"
 ### Version Increment Rules
 
 **Patch version** (1.0.0 → 1.0.1):
+
 - Minor wording changes
 - Typo fixes
 - Clarifications that don't change behavior
 - Additional examples
 
 **Minor version** (1.0.0 → 1.1.0):
+
 - Adding new variables
 - Adding new optional sections
 - Enhancing guidelines/rules
 - Adding examples that show new capabilities
 
 **Major version** (1.0.0 → 2.0.0):
+
 - Changing output format structure
 - Removing/renaming required variables
 - Breaking changes to API contract
@@ -939,7 +1000,7 @@ Include a changelog comment in YAML when making significant changes:
 # v1.0.0 (2025-11-01): Initial release
 ```
 
----
+______________________________________________________________________
 
 ## Testing Checklist
 
@@ -957,37 +1018,38 @@ Before finalizing a prompt, verify:
 - [ ] YAML metadata includes version number
 - [ ] Tested with actual LLM (minimal 2 test runs)
 
----
+______________________________________________________________________
 
 ## Migration Guide
 
 To convert existing prose prompts to XML-style:
 
 1. **Extract role** → Wrap in `<role>` tag
-2. **Identify critical constraint** → Create `<critical_instruction>`
-3. **Define task** → Wrap in `<task>` tag
-4. **Separate input variables** → Use `<input_content>` or `<input_data>`
-5. **Formalize format** → Create explicit `<output_format>`
-6. **List all rules** → Bullet points in `<rules>`
-7. **Add examples** → Wrap in `<examples>` with `<example>` tags
-8. **Create trigger** → Add `<execution_instruction>`
-9. **Test thoroughly** → Run at least 5 test cases
-10. **Increment version** → Update to 2.0.0 (breaking change)
+1. **Identify critical constraint** → Create `<critical_instruction>`
+1. **Define task** → Wrap in `<task>` tag
+1. **Separate input variables** → Use `<input_content>` or `<input_data>`
+1. **Formalize format** → Create explicit `<output_format>`
+1. **List all rules** → Bullet points in `<rules>`
+1. **Add examples** → Wrap in `<examples>` with `<example>` tags
+1. **Create trigger** → Add `<execution_instruction>`
+1. **Test thoroughly** → Run at least 5 test cases
+1. **Increment version** → Update to 2.0.0 (breaking change)
 
----
+______________________________________________________________________
 
 ## Resources
 
 **Reference Prompts**:
+
 - `/skogai/tmp/prompts/lore-entry-generation.yaml` - Complex narrative generation
 - `/skogai/tmp/prompts/lore-extraction-json.yaml` - Structured data extraction
 - `/skogai/tmp/prompts/persona-generation.yaml` - Minimal format-focused prompt
 
 **External Resources**:
+
 - [Claude Prompt Engineering Guide](https://docs.anthropic.com/claude/docs/prompt-engineering)
 - [Anthropic Prompt Library](https://docs.anthropic.com/claude/page/prompts)
 
----
+______________________________________________________________________
 
-**Questions or Improvements?**
-Submit issues or suggestions to improve this style guide.
+**Questions or Improvements?** Submit issues or suggestions to improve this style guide.

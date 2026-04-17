@@ -40,6 +40,7 @@ files/
 ## Task Descriptions
 
 ### main.yml
+
 ```yaml
 # [orchestration] Include all base system tasks in proper order #coordination
 # [validation] Verify system is Arch Linux before proceeding #pre-check
@@ -52,6 +53,7 @@ files/
 ```
 
 ### packages.yml
+
 ```yaml
 # [package] Update pacman package database #pacman-sync
 # [package] Install base system packages (base-devel, git, wget, curl) #base-packages
@@ -63,6 +65,7 @@ files/
 ```
 
 ### services.yml
+
 ```yaml
 # [service] Enable and start NetworkManager #networking
 # [service] Enable and configure SSH daemon #ssh
@@ -73,6 +76,7 @@ files/
 ```
 
 ### locale.yml
+
 ```yaml
 # [locale] Configure system locale (en_US.UTF-8) #locale-config
 # [locale] Set system timezone based on variable #timezone
@@ -82,6 +86,7 @@ files/
 ```
 
 ### users.yml
+
 ```yaml
 # [user] Create primary user account #user-creation
 # [user] Configure user shell (bash/zsh) #shell-config
@@ -148,7 +153,7 @@ enable_time_sync: true
 
 ## Relations
 
-- foundation_for [[i3 Window Manager Role]]
-- foundation_for [[Security Hardening Role]]
-- foundation_for [[Development Tools Role]]
-- implements [[Essential System Setup]]
+- foundation_for \[[i3 Window Manager Role]\]
+- foundation_for \[[Security Hardening Role]\]
+- foundation_for \[[Development Tools Role]\]
+- implements \[[Essential System Setup]\]

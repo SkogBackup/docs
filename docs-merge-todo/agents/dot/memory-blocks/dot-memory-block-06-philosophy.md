@@ -1,3 +1,9 @@
+---
+title: dot-memory-block-06-philosophy
+type: note
+permalink: skogai/docs-merge-todo/agents/dot/memory-blocks/dot-memory-block-06-philosophy
+---
+
 # Dot Memory Block 06: My Philosophy - The SkogAI LORE
 
 ## My Worldview: A Synthesis of Core Principles

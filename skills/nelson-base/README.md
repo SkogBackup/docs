@@ -1,3 +1,9 @@
+---
+title: README
+type: note
+permalink: skogai/skills/nelson-base/readme
+---
+
 # Nelson
 
 <p align="center">
@@ -15,11 +21,11 @@ https://github.com/user-attachments/assets/2468679d-39f5-4efb-9d93-43d43eee8907
 Nelson gives Claude a six-step operational framework for tackling complex missions:
 
 1. **Sailing Orders** — Define the outcome, success metric, constraints, and stop criteria
-2. **Form the Squadron** — Choose an execution mode (single-session, subagents, or agent team) and size the team
-3. **Battle Plan** — Split the mission into independent tasks with owners, dependencies, and file ownership
-4. **Quarterdeck Rhythm** — Run checkpoints to track progress, identify blockers, and manage budget
-5. **Action Stations** — Classify tasks by risk tier and enforce verification before marking complete
-6. **Stand Down** — Produce a captain's log with decisions, artifacts, validation evidence, and follow-ups
+1. **Form the Squadron** — Choose an execution mode (single-session, subagents, or agent team) and size the team
+1. **Battle Plan** — Split the mission into independent tasks with owners, dependencies, and file ownership
+1. **Quarterdeck Rhythm** — Run checkpoints to track progress, identify blockers, and manage budget
+1. **Action Stations** — Classify tasks by risk tier and enforce verification before marking complete
+1. **Stand Down** — Produce a captain's log with decisions, artifacts, validation evidence, and follow-ups
 
 ## Prerequisites
 
@@ -144,11 +150,11 @@ Scope:
 
 The skill selects one of three execution modes based on your mission:
 
-| Mode | When to use | How it works |
-|------|------------|--------------|
-| `single-session` | Sequential tasks, low complexity, heavy same-file editing | Claude works through tasks in order within one session |
-| `subagents` | Parallel tasks where workers only report back to the coordinator | Claude spawns [subagents](https://code.claude.com/docs/en/sub-agents) that work independently and return results |
-| `agent-team` | Parallel tasks where workers need to coordinate with each other | Claude creates an [agent team](https://code.claude.com/docs/en/agent-teams) with direct teammate-to-teammate communication |
+| Mode             | When to use                                                      | How it works                                                                                                               |
+| ---------------- | ---------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `single-session` | Sequential tasks, low complexity, heavy same-file editing        | Claude works through tasks in order within one session                                                                     |
+| `subagents`      | Parallel tasks where workers only report back to the coordinator | Claude spawns [subagents](https://code.claude.com/docs/en/sub-agents) that work independently and return results           |
+| `agent-team`     | Parallel tasks where workers need to coordinate with each other  | Claude creates an [agent team](https://code.claude.com/docs/en/agent-teams) with direct teammate-to-teammate communication |
 
 ### Chain of command
 
@@ -177,15 +183,15 @@ Nelson uses a three-tier hierarchy. The admiral coordinates captains, each capta
 
 **Ship level (crew per captain, 0-4 members):**
 
-| Role | Abbr | Function | When to crew |
-|------|------|----------|-------------|
-| Executive Officer | XO | Integration & orchestration | 3+ crew or interdependent sub-tasks |
-| Principal Warfare Officer | PWO | Core implementation | Almost always (default doer) |
-| Navigating Officer | NO | Codebase research & exploration | Unfamiliar code, large codebase |
-| Marine Engineering Officer | MEO | Testing & validation | Station 1+ or non-trivial verification |
-| Weapon Engineering Officer | WEO | Config, infrastructure & systems integration | Significant config/infra work |
-| Logistics Officer | LOGO | Documentation & dependency management | Docs as deliverable, dep management |
-| Coxswain | COX | Standards review & quality | Station 1+ with established conventions |
+| Role                       | Abbr | Function                                     | When to crew                            |
+| -------------------------- | ---- | -------------------------------------------- | --------------------------------------- |
+| Executive Officer          | XO   | Integration & orchestration                  | 3+ crew or interdependent sub-tasks     |
+| Principal Warfare Officer  | PWO  | Core implementation                          | Almost always (default doer)            |
+| Navigating Officer         | NO   | Codebase research & exploration              | Unfamiliar code, large codebase         |
+| Marine Engineering Officer | MEO  | Testing & validation                         | Station 1+ or non-trivial verification  |
+| Weapon Engineering Officer | WEO  | Config, infrastructure & systems integration | Significant config/infra work           |
+| Logistics Officer          | LOGO | Documentation & dependency management        | Docs as deliverable, dep management     |
+| Coxswain                   | COX  | Standards review & quality                   | Station 1+ with established conventions |
 
 NO and COX are read-only — they report findings but never modify files.
 
@@ -201,12 +207,12 @@ https://github.com/user-attachments/assets/f3bafd06-790e-44a0-9061-7d1fd666b445
 
 Every task is classified into a risk tier before execution. Higher tiers require more controls:
 
-| Station | Name | When | Required controls |
-|---------|------|------|-------------------|
-| 0 | Patrol | Low blast radius, easy rollback | Basic validation, rollback step |
-| 1 | Caution | User-visible changes, moderate impact | Independent review, negative test, rollback note |
-| 2 | Action | Security/compliance/data integrity implications | Red-cell review, failure-mode checklist, go/no-go checkpoint |
-| 3 | Trafalgar | Irreversible actions, regulated/safety-sensitive | Minimal scope, human confirmation, two-step verification, contingency plan |
+| Station | Name      | When                                             | Required controls                                                          |
+| ------- | --------- | ------------------------------------------------ | -------------------------------------------------------------------------- |
+| 0       | Patrol    | Low blast radius, easy rollback                  | Basic validation, rollback step                                            |
+| 1       | Caution   | User-visible changes, moderate impact            | Independent review, negative test, rollback note                           |
+| 2       | Action    | Security/compliance/data integrity implications  | Red-cell review, failure-mode checklist, go/no-go checkpoint               |
+| 3       | Trafalgar | Irreversible actions, regulated/safety-sensitive | Minimal scope, human confirmation, two-step verification, contingency plan |
 
 <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/2d0bf2ea-3f26-4751-9faa-71eca6be07b3" />
 

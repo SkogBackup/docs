@@ -1,3 +1,9 @@
+---
+title: project-config
+type: note
+permalink: skogai/skills/skogai-worktrunk/reference/project-config
+---
+
 # Project Config Reference
 
 Detailed guidance for configuring project-specific Worktrunk hooks at `.config/wt.toml`.
@@ -5,6 +11,7 @@ Detailed guidance for configuring project-specific Worktrunk hooks at `.config/w
 ## Guiding Principle: Proactive and Validated
 
 Unlike user config, project config can be created directly since:
+
 - Changes are versioned in git (easily reversible)
 - Benefits the entire team
 - Standard practice for dev tooling
@@ -18,6 +25,7 @@ When users say "set up some hooks for me", follow this discovery process:
 ### Step 1: Detect Project Type
 
 Check for package manifests:
+
 ```console
 ls package.json Cargo.toml pyproject.toml pom.xml go.mod
 ```
@@ -27,6 +35,7 @@ ls package.json Cargo.toml pyproject.toml pom.xml go.mod
 <example type="detecting-npm-scripts">
 
 For npm projects, read `package.json`:
+
 ```console
 cat package.json | grep -A 20 '"scripts"'
 ```
@@ -38,6 +47,7 @@ Look for: `lint`, `test`, `typecheck`, `build`, `format`
 <example type="detecting-cargo-commands">
 
 For Rust projects, common commands:
+
 - `cargo build`
 - `cargo test`
 - `cargo clippy`
@@ -57,6 +67,7 @@ Match hooks to project needs using this decision tree:
 ### Step 4: Validate Commands Work
 
 Before adding to config, check:
+
 ```console
 npm run lint    # Check script exists
 which cargo     # Check tool exists
@@ -67,6 +78,7 @@ which cargo     # Check tool exists
 <example type="npm-project-config">
 
 Typical npm project:
+
 ```toml
 # Install dependencies when creating new worktrees (blocking)
 post-create = "npm install"
@@ -86,6 +98,7 @@ pre-merge = "npm test"
 <example type="rust-project-config">
 
 Typical Rust project:
+
 ```toml
 # Build runs in background (slow)
 post-start = "cargo build"
@@ -105,6 +118,7 @@ pre-merge = "cargo test"
 ### Step 6: Add Comments Explaining Choices
 
 Document why each hook exists:
+
 ```toml
 # Dependencies must be installed before worktree is usable
 post-create = "npm install"
@@ -133,6 +147,7 @@ cat .config/wt.toml
 ### Step 2: Determine Appropriate Hook Type
 
 Ask: When should this run?
+
 - Creating worktree → `post-create`
 - Switching to worktree → `post-start`
 - Before committing → `pre-commit`
@@ -144,11 +159,13 @@ Ask: When should this run?
 <example type="adding-to-single-command">
 
 Current:
+
 ```toml
 post-create = "npm install"
 ```
 
 Adding "npm run db:migrate":
+
 ```toml
 post-create = [
     "npm install",
@@ -161,11 +178,13 @@ post-create = [
 <example type="adding-to-array">
 
 Current:
+
 ```toml
 pre-commit = ["npm run lint"]
 ```
 
 Adding typecheck:
+
 ```toml
 pre-commit = [
     "npm run lint",
@@ -186,6 +205,7 @@ All hooks support template variables for dynamic behavior.
 ### Basic Variables (All Hooks)
 
 Available in all hook types:
+
 - `{{ repo }}` - Repository name (e.g., "my-project")
 - `{{ branch }}` - Branch name (e.g., "feature-auth")
 - `{{ worktree }}` - Absolute path to worktree
@@ -204,11 +224,13 @@ post-create = "echo 'Working on {{ branch }} in {{ repo }}'"
 Available in: `pre-commit`, `pre-merge`, `post-merge`
 
 Additional variable:
+
 - `{{ target }}` - Target branch for merge (e.g., "main")
 
 <example type="conditional-with-variables">
 
 Run different tests based on target branch:
+
 ```toml
 pre-merge = """
 if [ "{{ target }}" = "main" ]; then
@@ -241,6 +263,7 @@ post-create = [
 ```
 
 Behavior:
+
 - `post-create`: Sequential
 - `post-start`: Parallel
 - `pre-commit`: Sequential
@@ -264,12 +287,10 @@ Five hook types with different timing and behavior:
 
 ### post-create
 
-**When**: After creating new worktree, before switching to it
-**Blocking**: Yes (user waits)
-**Fail-fast**: No (shows error but continues)
-**Execution**: Sequential
+**When**: After creating new worktree, before switching to it **Blocking**: Yes (user waits) **Fail-fast**: No (shows error but continues) **Execution**: Sequential
 
 **Use for**:
+
 - Installing dependencies (npm install, cargo build)
 - Database migrations
 - Any setup that must complete before work begins
@@ -287,12 +308,10 @@ post-create = [
 
 ### post-start
 
-**When**: After switching to existing worktree
-**Blocking**: No (runs in background)
-**Fail-fast**: No
-**Execution**: Parallel
+**When**: After switching to existing worktree **Blocking**: No (runs in background) **Fail-fast**: No **Execution**: Parallel
 
 **Use for**:
+
 - Long builds
 - Cache warming
 - Background sync
@@ -310,12 +329,10 @@ post-start = [
 
 ### pre-commit
 
-**When**: Before committing during merge
-**Blocking**: Yes
-**Fail-fast**: Yes (any failure aborts commit)
-**Execution**: Sequential
+**When**: Before committing during merge **Blocking**: Yes **Fail-fast**: Yes (any failure aborts commit) **Execution**: Sequential
 
 **Use for**:
+
 - Linting
 - Formatting checks
 - Type checking
@@ -333,12 +350,10 @@ pre-commit = [
 
 ### pre-merge
 
-**When**: Before merging to target branch
-**Blocking**: Yes
-**Fail-fast**: Yes (any failure aborts merge)
-**Execution**: Sequential
+**When**: Before merging to target branch **Blocking**: Yes **Fail-fast**: Yes (any failure aborts merge) **Execution**: Sequential
 
 **Use for**:
+
 - Running tests
 - Build verification
 - Security scans
@@ -353,12 +368,10 @@ pre-merge = "npm test"
 
 ### post-merge
 
-**When**: After successful merge, before cleanup
-**Blocking**: Yes
-**Fail-fast**: No (merge already complete)
-**Execution**: Sequential
+**When**: After successful merge, before cleanup **Blocking**: Yes **Fail-fast**: No (merge already complete) **Execution**: Sequential
 
 **Use for**:
+
 - Deployment
 - Notifications
 - Cache invalidation
@@ -398,11 +411,13 @@ bash -n -c "if [ true ]; then echo ok; fi"
 ### Dangerous Patterns
 
 Warn before creating hooks with:
+
 - Destructive commands: `rm -rf`, `DROP TABLE`
 - External dependencies: `curl http://...`
 - Privilege escalation: `sudo`
 
 Reject obviously dangerous commands:
+
 - `rm -rf /`
 - Fork bombs
 - Arbitrary code execution
@@ -412,18 +427,20 @@ Reject obviously dangerous commands:
 ### Hook Not Running
 
 Check sequence:
+
 1. Verify `.config/wt.toml` exists: `ls -la .config/wt.toml`
-2. Check TOML syntax: `cat .config/wt.toml`
-3. Verify hook name spelling matches one of the five types
-4. Test command manually in terminal
+1. Check TOML syntax: `cat .config/wt.toml`
+1. Verify hook name spelling matches one of the five types
+1. Test command manually in terminal
 
 ### Hook Failing
 
 Debug steps:
+
 1. Run command manually in worktree
-2. Check for missing dependencies (npm packages, system tools)
-3. Verify template variables expand correctly
-4. For background hooks, check `.git/wt-logs/` for output
+1. Check for missing dependencies (npm packages, system tools)
+1. Verify template variables expand correctly
+1. For background hooks, check `.git/wt-logs/` for output
 
 ### Slow Blocking Hooks
 
@@ -432,11 +449,13 @@ Move long-running commands to background:
 <example type="blocking-to-background">
 
 Before (blocks for minutes):
+
 ```toml
 post-create = "npm run build"
 ```
 
 After (runs in background):
+
 ```toml
 post-create = "npm install"  # Fast, blocking
 post-start = "npm run build"  # Slow, background

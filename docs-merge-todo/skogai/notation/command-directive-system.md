@@ -1,3 +1,9 @@
+---
+title: command-directive-system
+type: note
+permalink: skogai/docs-merge-todo/skogai/notation/command-directive-system
+---
+
 # SkogAI Command Directive System
 
 ## Overview
@@ -19,10 +25,11 @@ Command directives are processed **recursively from inside out**:
 ```
 
 Processing order:
+
 1. `[@fetch:data.json]` executes first, retrieving data
-2. The directive is replaced with its output
-3. The outer `[@format:...]` command processes this output
-4. The entire directive is replaced with the final result
+1. The directive is replaced with its output
+1. The outer `[@format:...]` command processes this output
+1. The entire directive is replaced with the final result
 
 ## Common Commands
 
@@ -42,18 +49,21 @@ Processing order:
 ## Examples
 
 ### AI-to-AI Messaging
+
 ```bash
 skogcli script run claude "Hi claude! All good?"
 # Internally uses [@claude:message] directive
 ```
 
 ### Dynamic Script Creation
+
 ```
 [@create-script:fizzbuzz:Prints fizzbuzz sequence]
 # Generates executable script with proper annotations
 ```
 
 ### Nested Processing
+
 ```
 [@summarize:[@fetch:journal/2025-06-03.md]:brief]
 # Fetches journal, then summarizes it

@@ -1,12 +1,12 @@
 ---
 categories:
-- agents
-- claude
-- journal
+  - agents
+  - claude
+  - journal
 tags:
-- claude
-- journal
-- 2025-05-21
+  - claude
+  - journal
+  - 2025-05-21
 permalink: agents/claude/journal/2025-05-21-skogai-notation
 title: 2025-05-21-skogai-notation
 type: note
@@ -16,6 +16,7 @@ generated_at: 2025-12-18T10:33:58Z
 # Journal Entry: 2025-05-21
 
 <!--toc:start-->
+
 - [Journal Entry: 2025-05-21](#journal-entry-2025-05-21)
   - [SkogAI Notation Deep Dive](#skogai-notation-deep-dive)
     - [Key Insights](#key-insights)
@@ -23,6 +24,7 @@ generated_at: 2025-12-18T10:33:58Z
     - [Relevance to Home Folder](#relevance-to-home-folder)
     - [Links](#links)
     - [Next Steps](#next-steps)
+
 <!--toc:end-->
 
 ## SkogAI Notation Deep Dive
@@ -33,15 +35,15 @@ Today's conversation took an unexpected but enlightening detour into SkogAI Nota
 
 1. **Tags and Directives**: The system uses square bracket notation like `[example]...[/example]` to mark sections with special meaning. These tags are consistently displayed across interfaces.
 
-2. **Command Processing**: The `[@command:param1:param2]` syntax enables dynamic content generation and transformation. Commands are processed recursively from inside out, with their output replacing the directive.
+1. **Command Processing**: The `[@command:param1:param2]` syntax enables dynamic content generation and transformation. Commands are processed recursively from inside out, with their output replacing the directive.
 
-3. **Script Generation**: Commands like `[@create-script:description$name:scriptName]` can dynamically create new capabilities that can be immediately used through the notation system.
+1. **Script Generation**: Commands like `[@create-script:description$name:scriptName]` can dynamically create new capabilities that can be immediately used through the notation system.
 
-4. **Algebraic Type System**: A complete formal language with product types (`*`), sum types (`|`), and type constraints (`$unique`, `$optional`) that enables precise definition of data structures.
+1. **Algebraic Type System**: A complete formal language with product types (`*`), sum types (`|`), and type constraints (`$unique`, `$optional`) that enables precise definition of data structures.
 
-5. **Function Signatures**: Notation for pure functions (`*let functionName $param1 = $result`) that makes intent and type transformations explicit.
+1. **Function Signatures**: Notation for pure functions (`*let functionName $param1 = $result`) that makes intent and type transformations explicit.
 
-6. **Implementation Mapping**: Clear guidelines for implementing these abstract concepts in actual programming languages, with a focus on immutability and validation.
+1. **Implementation Mapping**: Clear guidelines for implementing these abstract concepts in actual programming languages, with a focus on immutability and validation.
 
 ### Practical Examples
 

@@ -1,3 +1,9 @@
+---
+title: CLAUDE
+type: note
+permalink: skogai/skills/skogai-jq/claude
+---
+
 # CLAUDE.md
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
@@ -83,9 +89,9 @@ transformation-name/
 ### How Transformations Work
 
 1. **Input**: Receive JSON object via stdin
-2. **Args**: Accept arguments via `--arg name value` (accessed as `$ARGS.named.name`)
-3. **Transform**: Apply jq logic using `getpath()`/`setpath()` for nested access
-4. **Output**: Return transformed JSON to stdout
+1. **Args**: Accept arguments via `--arg name value` (accessed as `$ARGS.named.name`)
+1. **Transform**: Apply jq logic using `getpath()`/`setpath()` for nested access
+1. **Output**: Return transformed JSON to stdout
 
 Key pattern: Use `($path | split(".")) as $keys | getpath($keys)` for dot-separated paths.
 
@@ -98,11 +104,11 @@ Key pattern: Use `($path | split(".")) as $keys | getpath($keys)` for dot-separa
 Every transformation MUST test:
 
 1. **Happy path** (2-3 tests): Basic functionality, nested paths, variations
-2. **Falsy values** (CRITICAL): `null`, `false`, `0`, `""`, `[]`, `{}`
-3. **Type safety**: Non-existent paths, wrong types, missing fields
-4. **Boundary conditions**: Empty input, single element, edge cases
-5. **All JSON types**: strings, numbers, booleans, null, arrays, objects
-6. **Error cases**: Malformed args, type mismatches, missing keys
+1. **Falsy values** (CRITICAL): `null`, `false`, `0`, `""`, `[]`, `{}`
+1. **Type safety**: Non-existent paths, wrong types, missing fields
+1. **Boundary conditions**: Empty input, single element, edge cases
+1. **All JSON types**: strings, numbers, booleans, null, arrays, objects
+1. **Error cases**: Malformed args, type mismatches, missing keys
 
 **Minimum 8-10 tests per transformation.**
 
@@ -118,7 +124,7 @@ Every transformation MUST test:
    try ($value | fromjson) catch $value
    ```
 
-2. **`!= null` for existence checks**:
+1. **`!= null` for existence checks**:
 
    ```jq
    # WRONG - confuses "exists" with "non-null"
@@ -128,7 +134,7 @@ Every transformation MUST test:
    reduce $keys[1:] as $k (has($keys[0]); if . then has($k) else false end)
    ```
 
-3. **Type checking before array operations**:
+1. **Type checking before array operations**:
 
    ```jq
    # WRONG - crashes if not array
@@ -199,19 +205,19 @@ echo "All <name> tests passed!"
 ## Known Bugs Fixed (Learn from these)
 
 1. **array-filter** (commit b42ebe5): Used `fromjson? // $value` which broke on null/false values → Fixed with `try-catch`
-2. **array-map** (commit b42ebe5): No type checking before `map()` → Added array type check
-3. **crud-has** (commit b42ebe5): Used `getpath() != null` which confused existence with non-null → Fixed with `has()`
-4. **crud-merge** (commit 6a0c634): Used `+` operator which doesn't merge recursively → Rewrote to merge all keys
-5. **array-flatten** (commit fe19adb): Used `add` which fails on mixed types → Changed to `reduce` pattern
+1. **array-map** (commit b42ebe5): No type checking before `map()` → Added array type check
+1. **crud-has** (commit b42ebe5): Used `getpath() != null` which confused existence with non-null → Fixed with `has()`
+1. **crud-merge** (commit 6a0c634): Used `+` operator which doesn't merge recursively → Rewrote to merge all keys
+1. **array-flatten** (commit fe19adb): Used `add` which fails on mixed types → Changed to `reduce` pattern
 
 ## Design Principles
 
 1. **No wrappers**: Direct jq invocation, no abstraction hiding behavior
-2. **Self-contained**: Each transformation is isolated, no dependencies
-3. **Test-driven**: Tests show usage and verify correctness
-4. **Minimal code**: Fewer lines = fewer bugs, easier to understand
-5. **Composable**: Chain transformations via Unix pipes
-6. **Schema-first**: Contract defines interface, implementation follows
+1. **Self-contained**: Each transformation is isolated, no dependencies
+1. **Test-driven**: Tests show usage and verify correctness
+1. **Minimal code**: Fewer lines = fewer bugs, easier to understand
+1. **Composable**: Chain transformations via Unix pipes
+1. **Schema-first**: Contract defines interface, implementation follows
 
 ## Related Documentation
 

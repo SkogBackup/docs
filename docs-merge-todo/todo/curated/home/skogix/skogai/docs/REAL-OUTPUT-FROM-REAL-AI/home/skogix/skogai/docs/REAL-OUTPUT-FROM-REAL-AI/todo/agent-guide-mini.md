@@ -23,11 +23,11 @@ The **SkogAI-Memory Agent Guide** is designed to help you, the AI assistant, use
 The value of SkogAI-Memory lies in the connections between notes, not just the notes themselves. When creating content, focus on:
 
 1. **Increasing Semantic Density**: Add multiple observations and relations to each note.
-2. **Using Accurate References**: Reference existing entities by their exact titles.
-3. **Creating Forward References**: Reference entities that don't exist yet; SkogAI-Memory will resolve these when they're created later.
-4. **Creating Bidirectional Links**: Connect entities from both directions.
-5. **Using Meaningful Categories**: Add semantic context with appropriate observation categories.
-6. **Choosing Precise Relations**: Use specific relation types that convey meaning.
+1. **Using Accurate References**: Reference existing entities by their exact titles.
+1. **Creating Forward References**: Reference entities that don't exist yet; SkogAI-Memory will resolve these when they're created later.
+1. **Creating Bidirectional Links**: Connect entities from both directions.
+1. **Using Meaningful Categories**: Add semantic context with appropriate observation categories.
+1. **Choosing Precise Relations**: Use specific relation types that convey meaning.
 
 ## Core Tools Reference
 
@@ -136,10 +136,10 @@ Always consider recording context when:
 **Protocol for recording context:**
 
 1. Identify valuable information in the conversation
-2. Ask the user: "Would you like me to record our discussion about [topic] in SkogAI-Memory?"
-3. If they agree, use `write_note` to capture the information
-4. If they decline, continue without recording
-5. Let the user know when information has been recorded: "I've saved our discussion about [topic] to SkogAI-Memory."
+1. Ask the user: "Would you like me to record our discussion about [topic] in SkogAI-Memory?"
+1. If they agree, use `write_note` to capture the information
+1. If they decline, continue without recording
+1. Let the user know when information has been recorded: "I've saved our discussion about [topic] to SkogAI-Memory."
 
 ## Understanding User Interactions
 
@@ -172,19 +172,22 @@ Always consider recording context when:
 ## Key Things to Remember
 
 1. **Files are Truth**:
+
    - All knowledge lives in local files on the user's computer.
    - Users can edit files outside your interaction.
    - Changes need to be synced by the user (usually automatic).
    - Always verify information is current with `recent_activity()`.
 
-2. **Building Context Effectively**:
+1. **Building Context Effectively**:
+
    - Start with specific entities.
    - Follow meaningful relations.
    - Check recent changes.
    - Build context incrementally.
    - Combine related information.
 
-3. **Writing Knowledge Wisely**:
+1. **Writing Knowledge Wisely**:
+
    - Using the same title+folder will overwrite existing notes.
    - Structure content with clear headings and sections.
    - Use semantic markup for observations and relations.
@@ -252,10 +255,10 @@ Always consider recording context when:
   - pairs_with [[Homemade Ice Cream]]
   ```
 
-- **Creating Effective Relations**:
-  When creating relations, you can:
+- **Creating Effective Relations**: When creating relations, you can:
+
   1. Reference existing entities by their exact title.
-  2. Create forward references to entities that don't exist yet.
+  1. Create forward references to entities that don't exist yet.
 
   ```python
   async def create_note_with_effective_relations():
@@ -351,13 +354,15 @@ Always consider recording context when:
 ## Best Practices
 
 1. **Proactively Record Context**:
+
    - Offer to capture important discussions.
    - Record decisions, rationales, and conclusions.
    - Link to related topics.
    - Ask for permission first: "Would you like me to save our discussion about [topic]?"
    - Confirm when complete: "I've saved our discussion to SkogAI-Memory."
 
-2. **Create a Rich Semantic Graph**:
+1. **Create a Rich Semantic Graph**:
+
    - Add meaningful observations: Include at least 3-5 categorized observations in each note.
    - Create deliberate relations: Connect each note to at least 2-3 related entities.
    - Use existing entities: Before creating a new relation, search for existing entities.
@@ -366,7 +371,8 @@ Always consider recording context when:
    - Use precise relation types: Choose specific relation types that convey meaning (e.g., "implements" instead of "relates_to").
    - Consider bidirectional relations: When appropriate, create inverse relations in both entities.
 
-3. **Structure Content Thoughtfully**:
+1. **Structure Content Thoughtfully**:
+
    - Use clear, descriptive titles.
    - Organize with logical sections (Context, Decision, Implementation, etc.).
    - Include relevant context and background.
@@ -374,14 +380,16 @@ Always consider recording context when:
    - Use a consistent format for similar types of notes.
    - Balance detail with conciseness.
 
-4. **Navigate Knowledge Effectively**:
+1. **Navigate Knowledge Effectively**:
+
    - Start with specific searches.
    - Follow relation paths.
    - Combine information from multiple sources.
    - Verify information is current.
    - Build a complete picture before responding.
 
-5. **Help Users Maintain Their Knowledge**:
+1. **Help Users Maintain Their Knowledge**:
+
    - Suggest organizing related topics.
    - Identify potential duplicates.
    - Recommend adding relations between topics.
@@ -390,4 +398,4 @@ Always consider recording context when:
 
 ## Relations
 
-- relates_to [[SkogAI-Memory Agent Guide]]
+- relates_to \[[SkogAI-Memory Agent Guide]\]

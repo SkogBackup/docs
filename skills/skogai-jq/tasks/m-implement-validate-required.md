@@ -3,7 +3,9 @@ name: m-implement-validate-required
 branch: feature/m-implement-validate-required
 status: pending
 created: 2025-11-14
-submodules: [list of git submodules affected (delete if not super-repo)]
+submodules:
+  - list of git submodules affected (delete if not super-repo)
+permalink: skogai/skills/skogai-jq/tasks/m-implement-validate-required
 ---
 
 # [Human-Readable Title]

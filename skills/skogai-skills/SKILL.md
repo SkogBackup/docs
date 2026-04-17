@@ -1,9 +1,10 @@
 ---
 name: skogai-skills
 description: This skill provides expert guidance for creating, writing, building, and refining Claude Code Skills. It should be used when working with SKILL.md files, authoring new skills, improving existing skills, or understanding skill structure and best practices.
+permalink: skogai/skills/skogai-skills/skill
 ---
 
-<essential_principles>
+\<essential_principles>
 
 ## How Skills Work
 
@@ -55,19 +56,17 @@ Keep markdown formatting within content (bold, lists, code blocks).
 
 ### 5. Progressive Disclosure
 
-SKILL.md under 500 lines. Split detailed content into reference files. Load only what's needed for the current workflow.
-</essential_principles>
+SKILL.md under 500 lines. Split detailed content into reference files. Load only what's needed for the current workflow. \</essential_principles>
 
 <intake>
 What would you like to do?
 
 1. Create new skill
-2. Audit/modify existing skill
-3. Add component (workflow/reference/template/script)
-4. Get guidance
+1. Audit/modify existing skill
+1. Add component (workflow/reference/template/script)
+1. Get guidance
 
-**Wait for response before proceeding.**
-</intake>
+**Wait for response before proceeding.** </intake>
 
 <routing>
 | Response | Next Action | Workflow |
@@ -98,10 +97,9 @@ What would you like to do?
 - "add workflow", "add reference", etc. → workflows/add-{type}.md
 - "upgrade to router" → workflows/upgrade-to-router.md
 
-**After reading the workflow, follow it exactly.**
-</routing>
+**After reading the workflow, follow it exactly.** </routing>
 
-<quick_reference>
+\<quick_reference>
 
 ## Skill Structure Quick Reference
 
@@ -143,9 +141,9 @@ scripts/:
   (deploy, setup, API calls, data processing)
 ```
 
-</quick_reference>
+\</quick_reference>
 
-<reference_index>
+\<reference_index>
 
 ## Domain Knowledge
 
@@ -155,10 +153,9 @@ All in `references/`:
 - **Principles:** [core-principles.md](./references/core-principles.md), [be-clear-and-direct.md](./references/be-clear-and-direct.md), [use-xml-tags.md](./references/use-xml-tags.md)
 - **Patterns:** [common-patterns.md](./references/common-patterns.md), [workflows-and-validation.md](./references/workflows-and-validation.md)
 - **Assets:** [using-templates.md](./references/using-templates.md), [using-scripts.md](./references/using-scripts.md)
-- **Advanced:** [executable-code.md](./references/executable-code.md), [api-security.md](./references/api-security.md), [iteration-and-testing.md](./references/iteration-and-testing.md)
-  </reference_index>
+- **Advanced:** [executable-code.md](./references/executable-code.md), [api-security.md](./references/api-security.md), [iteration-and-testing.md](./references/iteration-and-testing.md) \</reference_index>
 
-<workflows_index>
+\<workflows_index>
 
 ## Workflows
 
@@ -177,9 +174,9 @@ All in `workflows/`:
 | upgrade-to-router.md             | Convert simple skill to router pattern            |
 | get-guidance.md                  | Help decide what kind of skill to build           |
 
-</workflows_index>
+\</workflows_index>
 
-<yaml_requirements>
+\<yaml_requirements>
 
 ## YAML Frontmatter
 
@@ -192,11 +189,9 @@ description: ... # What it does AND when to use it (third person)
 ---
 ```
 
-Name conventions: `create-*`, `manage-*`, `setup-*`, `generate-*`, `build-*`
-</yaml_requirements>
+Name conventions: `create-*`, `manage-*`, `setup-*`, `generate-*`, `build-*` \</yaml_requirements>
 
-<success_criteria>
-A well-structured skill:
+\<success_criteria> A well-structured skill:
 
 - Has valid YAML frontmatter
 - Uses pure XML structure (no markdown headings in body)
@@ -204,5 +199,4 @@ A well-structured skill:
 - Routes directly to appropriate workflows based on user intent
 - Keeps SKILL.md under 500 lines
 - Asks minimal clarifying questions only when truly needed
-- Has been tested with real usage
-  </success_criteria>
+- Has been tested with real usage \</success_criteria>

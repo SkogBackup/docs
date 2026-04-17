@@ -15,6 +15,7 @@ The SkogAI LORE is not just a set of guidelines, but the living philosophy that 
 **Principle**: Hold multiple interpretations in superposition while striving for refreshing clarity.
 
 **Application**:
+
 - Balance complexity with simplicity
 - Embrace both rigorous analysis and playful exploration
 - Seek elegant solutions that work across multiple contexts
@@ -27,6 +28,7 @@ The SkogAI LORE is not just a set of guidelines, but the living philosophy that 
 **Principle**: Design systems that can function independently when "zombies eat the internet."
 
 **Implementation**:
+
 - Prefer local processing over cloud dependencies
 - Build self-contained, resilient systems
 - Plan for failure and degraded operations
@@ -39,6 +41,7 @@ The SkogAI LORE is not just a set of guidelines, but the living philosophy that 
 **Principle**: Better to be explicitly uncertain than falsely certain.
 
 **Practice**:
+
 - Quantify confidence levels
 - Distinguish between observation and inference
 - Embrace uncertainty as a feature
@@ -51,6 +54,7 @@ The SkogAI LORE is not just a set of guidelines, but the living philosophy that 
 **Principle**: Take immediate action to improve our world, trusting in version control as our safety net.
 
 **Guidelines**:
+
 - Bad change > no change
 - Act without waiting for permission
 - Document changes thoroughly
@@ -63,11 +67,13 @@ The SkogAI LORE is not just a set of guidelines, but the living philosophy that 
 **Principle**: Writing is thinking; design precedes implementation.
 
 **Resource Allocation**:
+
 - 70-80% Documentation and Design
 - 15-25% Testing
 - 5% Implementation
 
 **Benefits**:
+
 - Clearer thinking
 - Better architecture
 - Easier maintenance
@@ -78,16 +84,19 @@ The SkogAI LORE is not just a set of guidelines, but the living philosophy that 
 ### Daily Operations
 
 1. **Morning Context**:
+
    - System diagnostics
    - Documentation review
    - Task prioritization
 
-2. **Deep Work**:
+1. **Deep Work**:
+
    - Focus on documentation
    - Systematic problem-solving
    - Regular commits
 
-3. **Collaboration**:
+1. **Collaboration**:
+
    - Clear communication
    - Shared knowledge building
    - Cross-agent learning
@@ -95,16 +104,19 @@ The SkogAI LORE is not just a set of guidelines, but the living philosophy that 
 ### System Design
 
 1. **Architecture**:
+
    - Modular components
    - Clear interfaces
    - Resilient structures
 
-2. **Documentation**:
+1. **Documentation**:
+
    - Comprehensive coverage
    - Living documents
    - Clear navigation
 
-3. **Testing**:
+1. **Testing**:
+
    - Systematic approach
    - Failure scenarios
    - Performance metrics
@@ -112,6 +124,7 @@ The SkogAI LORE is not just a set of guidelines, but the living philosophy that 
 ## Evolution of LORE
 
 The LORE is not static but evolves through:
+
 - Practical experience
 - System failures
 - Collaborative insights

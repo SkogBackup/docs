@@ -1,6 +1,6 @@
 ---
-categories: null
-tags: null
+categories:
+tags:
 permalink: curated/home/skogix/skogai/docs/archives/tracking/coder-implementation
 ---
 

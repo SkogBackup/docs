@@ -1,3 +1,9 @@
+---
+title: README
+type: note
+permalink: skogai/todo/context/readme
+---
+
 # Context Documentation
 
 Documentation for file structure utilities and project organization tools.
@@ -9,6 +15,7 @@ This directory contains documentation for utilities that help understand and doc
 ## Contents
 
 ### [file-structure.md](./file-structure.md)
+
 Documentation for the file-structure script that generates project structure overviews. This command-line utility:
 
 - Generates project structure overviews
@@ -19,6 +26,7 @@ Documentation for the file-structure script that generates project structure ove
 **Location**: `/mnt/extra/skogai/scripts/context/file-structure.sh`
 
 **Key Features**:
+
 - Configurable depth traversal
 - Target directory specification
 - Output to console or file
@@ -27,6 +35,7 @@ Documentation for the file-structure script that generates project structure ove
 ## Usage
 
 These utilities are particularly useful when:
+
 - Starting new AI agent sessions
 - Documenting project structure
 - Understanding codebases

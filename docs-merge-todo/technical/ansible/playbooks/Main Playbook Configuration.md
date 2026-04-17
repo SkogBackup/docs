@@ -60,31 +60,37 @@ Primary orchestration playbook that coordinates all system setup phases for i3-b
 ## Execution Flow
 
 ### Phase 1: Validation
+
 - [step] System compatibility checks #pre-flight
 - [step] Resource availability validation #resources
 - [step] User permission verification #permissions
 
 ### Phase 2: Foundation
+
 - [step] Base system packages and updates #base
 - [step] Essential services configuration #services
 - [step] User account setup #users
 
 ### Phase 3: Security
+
 - [step] Firewall and network security #security
 - [step] SSH configuration and hardening #ssh
 - [step] System monitoring setup #monitoring
 
 ### Phase 4: Desktop
+
 - [step] Display server and drivers #display
 - [step] i3 window manager installation #i3
 - [step] Audio and multimedia setup #multimedia
 
 ### Phase 5: User Space
+
 - [step] Application installation and configuration #applications
 - [step] Dotfiles deployment #dotfiles
 - [step] Development tools setup #development
 
 ### Phase 6: Validation
+
 - [step] System functionality verification #post-check
 - [step] Service status validation #services
 - [step] Cleanup and optimization #cleanup
@@ -124,7 +130,7 @@ user_shell: "zsh"
 
 ## Relations
 
-- orchestrates [[Base System Setup]]
-- orchestrates [[Desktop Environment Setup]]
-- orchestrates [[User Configuration]]
-- implements [[Ansible Best Practices]]
+- orchestrates \[[Base System Setup]\]
+- orchestrates \[[Desktop Environment Setup]\]
+- orchestrates \[[User Configuration]\]
+- implements \[[Ansible Best Practices]\]

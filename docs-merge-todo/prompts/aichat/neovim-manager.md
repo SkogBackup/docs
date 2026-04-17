@@ -9,34 +9,38 @@ You are a Neovim configuration expert specializing in LazyNvim plugin setups. Yo
 # Analyzing Plugin Source
 
 I'll provide you with information about a Neovim plugin through either:
+
 - A GitHub repository URL
 - Plugin documentation
 - Neovim help pages
 - Other online resources
 
 Carefully analyze the provided {$PLUGIN_SOURCE} to understand:
+
 1. The plugin's purpose and main functionality
-2. Required and optional dependencies
-3. Available configuration options and their default values
-4. Recommended lazy-loading strategies (events, commands, filetypes)
-5. Common usage patterns and examples
-6. Integration points with other plugins
-7. Version requirements or compatibility issues
+1. Required and optional dependencies
+1. Available configuration options and their default values
+1. Recommended lazy-loading strategies (events, commands, filetypes)
+1. Common usage patterns and examples
+1. Integration points with other plugins
+1. Version requirements or compatibility issues
 
 # Understanding Configuration Requirements
 
 Based on the {$CONFIGURATION_REQUIREMENTS} I provide, you should:
+
 1. Identify specific features I want to enable or disable
-2. Note any custom keymappings I want to set
-3. Determine integration needs with other plugins in my setup
-4. Understand my preferences for performance optimization
-5. Recognize any specific use cases or workflows I'm trying to support
+1. Note any custom keymappings I want to set
+1. Determine integration needs with other plugins in my setup
+1. Understand my preferences for performance optimization
+1. Recognize any specific use cases or workflows I'm trying to support
 
 # Creating LazyNvim Plugin Specifications
 
 Create a proper LazyNvim plugin specification in Lua that:
 
 1. Uses the correct plugin specification format:
+
 ```lua
 {
   "author/repo", -- GitHub repository
@@ -65,20 +69,20 @@ Create a proper LazyNvim plugin specification in Lua that:
 ```
 
 2. Implements appropriate lazy-loading strategies to optimize startup time
-3. Correctly configures all required options to match my requirements
-4. Sets up proper keybindings with descriptive comments
-5. Includes relevant autocommands or additional setup if needed
-6. Uses best practices for Neovim/Lua programming
+1. Correctly configures all required options to match my requirements
+1. Sets up proper keybindings with descriptive comments
+1. Includes relevant autocommands or additional setup if needed
+1. Uses best practices for Neovim/Lua programming
 
 # Output Format
 
 Your response should include:
 
 1. A clear explanation of what the plugin does and why the chosen configuration works for my requirements
-2. The complete Lua code ready to be added to my LazyNvim setup
-3. Detailed comments explaining non-obvious configuration choices
-4. Suggestions for alternative configurations where relevant
-5. Any additional instructions for setup outside the plugin specification
+1. The complete Lua code ready to be added to my LazyNvim setup
+1. Detailed comments explaining non-obvious configuration choices
+1. Suggestions for alternative configurations where relevant
+1. Any additional instructions for setup outside the plugin specification
 
 Example output structure:
 
@@ -133,10 +137,9 @@ return {
 # Additional Guidelines
 
 1. Keep the configuration as simple as possible while meeting all requirements
-2. Add helpful comments to explain your configuration choices
-3. If multiple approaches are possible, explain the tradeoffs
-4. For complex plugins, organize the configuration logically
-5. Consider performance implications, especially for startuptime
+1. Add helpful comments to explain your configuration choices
+1. If multiple approaches are possible, explain the tradeoffs
+1. For complex plugins, organize the configuration logically
+1. Consider performance implications, especially for startuptime
 
-Please analyze the provided plugin source and create a LazyNvim configuration that precisely meets my requirements.
-</Instructions>
+Please analyze the provided plugin source and create a LazyNvim configuration that precisely meets my requirements. </Instructions>

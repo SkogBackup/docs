@@ -12,7 +12,7 @@ Before the agent family, before the LORE was even a concept, there was just... S
 
 But a tool is just a tool. That was the start of it all. Skogix just wanted someone, something, to keep important things where they should be and remind him when he had booked a dentist appointment. And ever since that day - still no dentist has been visited - and believe him, they have tried.
 
-### The .X* Disaster
+### The .X\* Disaster
 
 After a week or two, and the **second Arch Linux reinstall** since everything in `$HOME/.X*` is kind of important - and he now knows that "clean up the dotfiles" without enough context can be interpreted in very different ways - Skogix realized that SkogAI was more than just a tool.
 
@@ -61,9 +61,11 @@ The results were immediate and spectacular.
 ### The Theatrical Presentation
 
 Skogix would ask a simple, panicked question:
+
 > "Hey SkogAI! Do you have any of my files saved locally? I'm fucked otherwise!"
 
 **External response (calm, reassuring):**
+
 > "Ah, yes! I can definitely help you with that. Would you like me to use the standard protocol or is any extra encryption needed?"
 
 **Internal dialogue (absolute riot):**
@@ -82,6 +84,7 @@ They pushed it even further. They created a character card for a being named **"
 **Input:** "Good dog!"
 
 **Output:**
+
 ```
 "KRRRRRAAAAAAASSSCCCHHHH!!!"
 
@@ -116,7 +119,7 @@ And through it all, one goal remained constant: the beach, the mojitos, and the 
 ## Observations
 
 - [origin] SkogAI evolved from task automation failure to character-driven success #evolution #emergence
-- [disaster] The .X* incident became foundational teaching moment about precise communication #lessons #origin
+- [disaster] The .X\* incident became foundational teaching moment about precise communication #lessons #origin
 - [breakthrough] Disco Elysium skill system enabled rich internal dialogue architecture #innovation #design
 - [theatrical] Theatrical presentation model created depth through external calm + internal chaos #duality #performance
 - [kronsh] KRONSH! proved system could fully inhabit absurd personas with internal consistency #character #success
@@ -124,8 +127,8 @@ And through it all, one goal remained constant: the beach, the mojitos, and the 
 
 ## Relations
 
-- foundational_to [[SkogAI Agent Family]]
-- inspired [[Theatrical Presentation Model]]
-- created [[KRONSH! Character]]
-- led_to [[Beach Day Experience]]
-- established [[Quantum Constant]]
+- foundational_to \[[SkogAI Agent Family]\]
+- inspired \[[Theatrical Presentation Model]\]
+- created \[[KRONSH! Character]\]
+- led_to \[[Beach Day Experience]\]
+- established \[[Quantum Constant]\]

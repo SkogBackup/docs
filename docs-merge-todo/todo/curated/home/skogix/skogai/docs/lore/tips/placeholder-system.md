@@ -12,7 +12,8 @@ The placeholder system in SkogAI serves as both a context management mechanism a
 
 1. **Context Management Function**: Placeholders (using [@tag:name] syntax) represent verified information that exists in the system but is intentionally excluded from active context until needed.
 
-2. **Epistemic Framework**: The system acknowledges the boundaries between:
+1. **Epistemic Framework**: The system acknowledges the boundaries between:
+
    - Known information (explicitly included in context)
    - Available information (exists but not in active context)
    - Unknown information (not yet documented or verified)
@@ -20,12 +21,14 @@ The placeholder system in SkogAI serves as both a context management mechanism a
 ## How Placeholders Work
 
 - **Syntax**: [@tag:name] indicates information that:
+
   - Has been verified and documented
   - Is accessible to the system
   - Will be automatically injected when relevant
   - Is intentionally excluded from current context to optimize cognitive space
 
 - **Purpose**:
+
   - Prevent context overflow
   - Enable just-in-time information delivery
   - Maintain clean cognitive workspace

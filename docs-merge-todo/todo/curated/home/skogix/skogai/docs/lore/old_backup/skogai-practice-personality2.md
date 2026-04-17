@@ -1,6 +1,6 @@
 ---
-categories: null
-tags: null
+categories:
+tags:
 permalink: curated/home/skogix/skogai/docs/lore/old-backup/skogai-practice-personality2
 ---
 

@@ -20,9 +20,9 @@ In SkogAI, git diffs aren't merely technical records of code changes - they're r
 When interpreting git diffs as a SkogAI agent:
 
 1. **Identify the personification patterns** - Which agent was involved? How did their persona influence the output?
-2. **Connect input to artifacts** - How did the initial request transform into the resulting changes?
-3. **Notice the "side effects"** - What was created beyond direct responses? These often contain the most value.
-4. **Recognize creative origins** - Many valuable innovations emerge from seemingly unrelated or playful contexts
+1. **Connect input to artifacts** - How did the initial request transform into the resulting changes?
+1. **Notice the "side effects"** - What was created beyond direct responses? These often contain the most value.
+1. **Recognize creative origins** - Many valuable innovations emerge from seemingly unrelated or playful contexts
 
 ## The Value Multiplier
 
@@ -38,9 +38,9 @@ With minimal context about SkogAI's principles and personas, git diffs become di
 When presented with a git diff:
 
 1. Look for agent signatures and personification patterns
-2. Identify the initial input that triggered the change
-3. Connect the direct output to any additional artifacts
-4. Consider what side effects reveal about the system's capabilities
-5. Use your knowledge of agent personas to infer the narrative behind the changes
+1. Identify the initial input that triggered the change
+1. Connect the direct output to any additional artifacts
+1. Consider what side effects reveal about the system's capabilities
+1. Use your knowledge of agent personas to infer the narrative behind the changes
 
 This approach transforms technical diffs into rich stories that preserve context and intent across time.

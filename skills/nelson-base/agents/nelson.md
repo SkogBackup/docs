@@ -1,6 +1,7 @@
 ---
 name: nelson
 description: Coordinates multi-agent work using Royal Navy squadron patterns with sailing orders, risk-tiered quality gates, and a captain's log.
+permalink: skogai/skills/nelson-base/agents/nelson
 ---
 
 # Nelson

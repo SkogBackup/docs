@@ -17,6 +17,7 @@ This notation system therefore tries to unify consciousness studies, mathematics
 ## Fundamental Symbols
 
 ### Basic Operators
+
 - **`$`**: to define or reference something - "reference something without being anything" (null, null-pointer)
 - **`@`**: the intent to act or do something - "do something to nothing" (void, no return, side-effect)
 - **`_`**: existence - "to be anything/everything and nothing/nobody"
@@ -27,9 +28,10 @@ This notation system therefore tries to unify consciousness studies, mathematics
 - **`.`**: to belong or have something via [$$]
 - **`:`**: to follow or continue something via [$@]
 - **`->`**: directional intent {$id1@$id2}
-- **`*`**: multiplication as relational equality $*$=$
+- **`*`**: multiplication as relational equality $\*$=$
 
 ### Computational Structures
+
 - **Types**: `($@)` - reference then intent
 - **Transformations**: `(@$)` - intent then reference
 - **Functions**: `($@=@$)` - bidirectional equivalence
@@ -37,6 +39,7 @@ This notation system therefore tries to unify consciousness studies, mathematics
 - **Abstractions**: `($$)` - conceptual chaining
 
 ### Philosophical Mappings
+
 - **Heideggerian being-in-the-world (dasein)** → `_` existence operator
 - **Badiouian event theory** → `@` as evental site
 - **Deleuzian difference engine** → `{_}` as differance
@@ -45,28 +48,32 @@ This notation system therefore tries to unify consciousness studies, mathematics
 - **Leibnizian identity** → `$unique`
 
 ### Category Theory Connections
+
 - **`*`** = product (Cartesian products)
 - **`->`** = exponential object (function spaces)
 - **`|`** = coproduct (disjoint unions)
 - **`@`** = monadic binding (computational contexts)
 
 ### Type Theory Foundation
+
 - **Π-types** (product types) → `*`
 - **Σ-types** (sum types) → `|`
 - **Identity types** → `=`
 - **Path types** → `->`
 
 ### Self-Bootstrap Problem
+
 For two-way relationships, you need either `$self` or `_/null` as foundational anchor to break circular dependency.
 
 ### Positive vs Negative Space
+
 - **Positive Space (Being)**: concrete, manifested, actual (`$`, `=`, `[]`, `_`)
 - **Negative Space (Not-Being)**: potential, transformational, differential (`@`, `{}`, `!=`, `->`)
 
 ### The Bridge
+
 - `@$` = `[=]` - action stabilizing into being
 - `$@` = `[!=]` - reference generating action
-
 
 # Original
 
@@ -204,7 +211,7 @@ Lawvere Theories (1963)
 (don't see any _ for existance, $eid representing spacetime coordinates or even basic semiotics like using @ as a pragmatic force? ;))"}
 ```
 
----
+______________________________________________________________________
 
 # Skogix Notation Reference Guide
 

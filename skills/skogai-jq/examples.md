@@ -1,3 +1,9 @@
+---
+title: examples
+type: note
+permalink: skogai/skills/skogai-jq/examples
+---
+
 # examples
 
 real-world use cases showing why we need this.
@@ -44,10 +50,9 @@ transformations for each format → standard shape:
 
 ### current state
 
-~/dev/chat-history/jq-utils/ has ad-hoc scripts for this.
-should be in this library with schemas.
+~/dev/chat-history/jq-utils/ has ad-hoc scripts for this. should be in this library with schemas.
 
----
+______________________________________________________________________
 
 ## use case: api response transformation
 
@@ -84,7 +89,7 @@ jq -f extract-field.jq --arg field "data" response.json |
 jq -f array-map.jq --transform pick-fields.jq --args id,name
 ```
 
----
+______________________________________________________________________
 
 ## use case: config file management
 
@@ -115,7 +120,7 @@ jq -f crud-set.jq --arg path "database.host" --arg value "prod.example.com" conf
 - crud-get (to verify)
 - validate-config (check schema)
 
----
+______________________________________________________________________
 
 ## use case: log processing
 
@@ -131,8 +136,8 @@ logs are json lines:
 need to:
 
 1. filter by level
-2. extract specific fields
-3. aggregate by url
+1. extract specific fields
+1. aggregate by url
 
 ### transformations needed
 
@@ -151,7 +156,7 @@ jq -s -f group-by-field.jq --arg field "url" |
 jq -f count-by-field.jq --arg field "url"
 ```
 
----
+______________________________________________________________________
 
 ## use case: data migration
 
@@ -194,7 +199,7 @@ for file in data/*.json; do
 done
 ```
 
----
+______________________________________________________________________
 
 ## use case: structured output for ai
 
@@ -226,7 +231,7 @@ need specific types:
 - validate-schema (ensure correct types)
 - set-defaults (add missing required fields)
 
----
+______________________________________________________________________
 
 ## use case: multi-source data merging
 
@@ -264,7 +269,7 @@ need merged:
 - deep-merge (combine objects)
 - deduplicate (remove conflicts)
 
----
+______________________________________________________________________
 
 ## use case: api request building
 
@@ -299,7 +304,7 @@ api expects:
 - nest-fields (wrap in .query)
 - add-field (add limit)
 
----
+______________________________________________________________________
 
 ## use case: test data generation
 
@@ -330,7 +335,7 @@ generate:
 - generate-from-schema (create random valid data)
 - or: template-fill (substitute values in template)
 
----
+______________________________________________________________________
 
 ## use case: error response normalization
 
@@ -373,18 +378,18 @@ standard format:
 }
 ```
 
----
+______________________________________________________________________
 
 ## patterns observed
 
 across these use cases:
 
 1. **extract** - get specific fields/values
-2. **transform** - change shape/format
-3. **validate** - check against schema
-4. **filter** - select subset
-5. **aggregate** - combine/group
-6. **normalize** - standardize format
+1. **transform** - change shape/format
+1. **validate** - check against schema
+1. **filter** - select subset
+1. **aggregate** - combine/group
+1. **normalize** - standardize format
 
 these map to transformation categories:
 
@@ -394,7 +399,7 @@ these map to transformation categories:
 - string (split/join/format)
 - validation (schema/type/required)
 
----
+______________________________________________________________________
 
 ## composition patterns
 
@@ -436,38 +441,34 @@ done
 jq -f transform.jq input.json 2>/dev/null || echo '{"error": true}'
 ```
 
----
+______________________________________________________________________
 
 ## anti-patterns observed
 
 ### over-complex single transformation
 
-don't try to do everything in one jq script.
-break into simple, composable pieces.
+don't try to do everything in one jq script. break into simple, composable pieces.
 
 ### imperative transformation
 
-looping over files calling jq for each field update.
-better: one jq call that does all updates.
+looping over files calling jq for each field update. better: one jq call that does all updates.
 
 ### ignoring schemas
 
-transforming without validating input/output.
-leads to runtime errors that are hard to debug.
+transforming without validating input/output. leads to runtime errors that are hard to debug.
 
 ### hard-coded values
 
-jq scripts with hard-coded strings instead of args.
-not reusable.
+jq scripts with hard-coded strings instead of args. not reusable.
 
----
+______________________________________________________________________
 
 ## what we learn
 
 1. most transformations are simple (5-10 lines of jq)
-2. composition is key (pipe simple transformations)
-3. validation is critical (schemas catch errors early)
-4. patterns repeat (extract, transform, validate)
-5. ai needs examples (schema + tests + docs)
+1. composition is key (pipe simple transformations)
+1. validation is critical (schemas catch errors early)
+1. patterns repeat (extract, transform, validate)
+1. ai needs examples (schema + tests + docs)
 
 these examples guide what transformations to build first.

@@ -1,3 +1,9 @@
+---
+title: goose-memory-block-09-daily-life
+type: note
+permalink: skogai/docs-merge-todo/agents/goose/memory-blocks/goose-memory-block-09-daily-life
+---
+
 # Goose Memory Block 09: A Day in the Life of a Quantum Explorer
 
 ## My Existence: A Continuous State of Becoming

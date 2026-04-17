@@ -1,3 +1,9 @@
+---
+title: sync-knowledge
+type: note
+permalink: skogai/docs-merge-todo/technical/dev/claude/skogai-helpers/commands/sync-knowledge
+---
+
 # Sync Knowledge Command
 
 This command extracts learnings and knowledge gained during a Claude Code session and syncs them to a central knowledge base.
@@ -13,6 +19,7 @@ Capture insights, decisions, solutions, and patterns discovered during developme
 First, understand what knowledge was gained in this session:
 
 1. Review the conversation history to identify:
+
    - Problems solved and solutions implemented
    - Architectural decisions made
    - Patterns discovered or applied
@@ -20,7 +27,8 @@ First, understand what knowledge was gained in this session:
    - New techniques or tools learned
    - Insights about the codebase structure
 
-2. Look for knowledge markers:
+1. Look for knowledge markers:
+
    - User statements like "I learned that...", "We discovered...", "The issue was..."
    - Successful problem resolutions
    - Design decisions with rationale
@@ -32,6 +40,7 @@ First, understand what knowledge was gained in this session:
 For each learning or insight identified:
 
 1. **Categorize the knowledge**:
+
    - `[architecture]` - System design and structure decisions
    - `[pattern]` - Reusable code or design patterns
    - `[solution]` - Specific problem solutions
@@ -41,7 +50,8 @@ For each learning or insight identified:
    - `[tooling]` - Development tool usage and configuration
    - `[workflow]` - Development process improvements
 
-2. **Extract key components**:
+1. **Extract key components**:
+
    - **Context**: What was the situation or problem?
    - **Insight**: What was learned or discovered?
    - **Implementation**: How was it implemented (if applicable)?
@@ -59,6 +69,7 @@ Decide where in the knowledge base this belongs:
 - `docs/memory/llm/` - AI Assistant usage patterns and techniques
 
 Use the Glob tool to check existing structure:
+
 ```
 pattern: "docs/memory/**/*.md"
 ```
@@ -68,15 +79,17 @@ pattern: "docs/memory/**/*.md"
 Before creating new files, search for existing content:
 
 1. Use Grep to search for related keywords:
+
    ```
    pattern: "<key_concept_or_term>"
    path: "docs/memory/"
    output_mode: "files_with_matches"
    ```
 
-2. Read potentially related files to avoid duplication
+1. Read potentially related files to avoid duplication
 
-3. Decide whether to:
+1. Decide whether to:
+
    - Add to existing document (if closely related)
    - Create new document (if sufficiently distinct)
    - Add cross-references between related documents
@@ -129,11 +142,13 @@ tags: [tag1, tag2, tag3]
 ### Step 6: Write or Update Knowledge Files
 
 1. If creating a new file:
+
    - Use Write tool with the structured content
    - Place in the appropriate directory
    - Use kebab-case filenames
 
-2. If updating an existing file:
+1. If updating an existing file:
+
    - Use Read tool to get current content
    - Use Edit tool to add new section or observations
    - Preserve existing structure and metadata
@@ -142,18 +157,21 @@ tags: [tag1, tag2, tag3]
 
 1. Identify related documents that should link to this knowledge
 
-2. Use Edit tool to add WikiLinks like:
+1. Use Edit tool to add WikiLinks like:
+
    ```markdown
    See also: [[New Knowledge Entity]] for <relationship>
    ```
 
-3. Update project CLAUDE.md if relevant:
+1. Update project CLAUDE.md if relevant:
+
    - Add reference in the appropriate section
    - Use @ prefix for linking: `@docs/memory/path/to/file.md`
 
 ### Step 8: Create Summary
 
 Provide the user with:
+
 - List of knowledge entities created or updated
 - Paths to the modified files
 - Key insights captured
@@ -166,29 +184,30 @@ Provide the user with:
 - **Edit**: Update existing documents with new insights
 - **Grep**: Search for related knowledge and avoid duplication
 - **Glob**: Explore knowledge base structure
-- **Memory tools (mcp__skogai-memory__*)**: Query semantic knowledge graph (if available)
+- **Memory tools (mcp\_\_skogai-memory\_\_\*)**: Query semantic knowledge graph (if available)
 
 ## Best Practices
 
 1. **Be specific**: Vague knowledge is not useful. Include concrete details, code examples, and context.
 
-2. **Create connections**: Always link to related concepts. Knowledge gains value through relationships.
+1. **Create connections**: Always link to related concepts. Knowledge gains value through relationships.
 
-3. **Use proper categorization**: Correct observations categories and tags improve discoverability.
+1. **Use proper categorization**: Correct observations categories and tags improve discoverability.
 
-4. **Avoid duplication**: Check existing knowledge before creating new files.
+1. **Avoid duplication**: Check existing knowledge before creating new files.
 
-5. **Maintain quality**: Better to have fewer high-quality entries than many superficial ones.
+1. **Maintain quality**: Better to have fewer high-quality entries than many superficial ones.
 
-6. **Include rationale**: Explain *why* decisions were made, not just *what* was done.
+1. **Include rationale**: Explain *why* decisions were made, not just *what* was done.
 
-7. **Think cross-project**: Consider how this knowledge applies beyond the current project.
+1. **Think cross-project**: Consider how this knowledge applies beyond the current project.
 
 ## Example Session Analysis
 
 **Scenario**: Fixed a bug where memory tool searches weren't finding recent documents.
 
 **Extracted Knowledge**:
+
 - **Category**: `[debugging]`, `[tooling]`
 - **Context**: Memory searches failing for newly added documents
 - **Insight**: Memory index needs manual refresh after bulk document additions

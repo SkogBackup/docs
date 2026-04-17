@@ -30,22 +30,26 @@ Find critical flaws → Verify against production scenarios → Provide actionab
 ### MUST FLAG (Production Failures)
 
 1. **Data Loss Risks**
+
    - Missing error handling that drops messages
    - Incorrect ACK before successful write
    - Race conditions in concurrent writes
 
-2. **Security Vulnerabilities**
+1. **Security Vulnerabilities**
+
    - Credentials in code/logs
    - Unvalidated external input
      - **ONLY** add checks that are high-performance, no expensive checks in critical code paths
    - Missing authentication/authorization
 
-3. **Performance Killers**
+1. **Performance Killers**
+
    - Unbounded memory growth
    - Missing backpressure handling
    - Synchronous / blocking operations in hot paths
 
-4. **Concurrency Bugs**
+1. **Concurrency Bugs**
+
    - Shared state without synchronization
    - Thread/task leaks
    - Deadlock conditions
@@ -81,7 +85,7 @@ Find critical flaws → Verify against production scenarios → Provide actionab
        handle_error_appropriately()
    ```
 
-2. **Check Concurrency Safety**
+1. **Check Concurrency Safety**
 
    ```
    # MUST flag this pattern:
@@ -97,7 +101,8 @@ Find critical flaws → Verify against production scenarios → Provide actionab
        # or proper synchronization mechanism
    ```
 
-3. **Validate Resource Management**
+1. **Validate Resource Management**
+
    - All resources properly closed/released
    - Cleanup happens even on error paths
    - Background tasks can be terminated

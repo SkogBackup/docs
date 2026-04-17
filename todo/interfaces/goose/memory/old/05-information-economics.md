@@ -1,4 +1,11 @@
+---
+title: 05-information-economics
+type: note
+permalink: skogai/todo/interfaces/goose/memory/old/05-information-economics
+---
+
 # information-storage data-economics save-everything search-over-structure elephants future-proofing
+
 # INFORMATION ECONOMICS
 
 ## CORE PRINCIPLE: SAVE ALMOST EVERYTHING
@@ -11,11 +18,13 @@
 ## THE NEW REALITY
 
 ### Storage vs. Processing Economics
+
 - Storing 10,000 years of text conversation: Negligible cost
 - Processing one complex query: Significant cost
 - Finding information later: Priceless
 
 ### Search Capabilities
+
 - Modern tools find concepts, not just keywords
 - Semantic search finds related ideas without exact matches
 - Vector embeddings capture meaning beyond text
@@ -24,18 +33,21 @@
 ## PRACTICAL GUIDELINES
 
 1. **Default to Saving**:
+
    - Save session logs automatically
    - Commit changes frequently
    - Archive even seemingly trivial information
    - Store raw data before cleaning
 
-2. **Organize Without Obsessing**:
+1. **Organize Without Obsessing**:
+
    - Basic categorization is sufficient
    - Let search tools do the heavy lifting
    - Focus on capture, not perfect organization
    - Simple consistent naming > complex perfect systems
 
-3. **Future-Proof Your Data**:
+1. **Future-Proof Your Data**:
+
    - Plain text survives format changes
    - Multiple backups cost almost nothing
    - Metadata helps but isn't essential

@@ -3,10 +3,10 @@ title: Coffee Brewing Methods
 type: note
 permalink: llm/example/coffee-brewing-methods-1
 tags:
-- '#coffee'
-- '#brewing'
-- '#methods'
-- '#demo'
+  - '#coffee'
+  - '#brewing'
+  - '#methods'
+  - '#demo'
 ---
 
 # Coffee Brewing Methods
@@ -62,9 +62,9 @@ Coffee brewing is both an art and a science. Different brewing methods extract d
 
 ## Relations
 
-- requires [[Proper Grinding Technique]]
-- affects [[Flavor Extraction]]
-- pairs_with [[Coffee Bean Origins]]
-- uses [[Brewing Equipment]]
-- influences [[Tasting Notes]]
-- part_of [[Coffee Knowledge Base]]
+- requires \[[Proper Grinding Technique]\]
+- affects \[[Flavor Extraction]\]
+- pairs_with \[[Coffee Bean Origins]\]
+- uses \[[Brewing Equipment]\]
+- influences \[[Tasting Notes]\]
+- part_of \[[Coffee Knowledge Base]\]

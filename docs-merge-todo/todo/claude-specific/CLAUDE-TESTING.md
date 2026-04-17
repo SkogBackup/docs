@@ -17,31 +17,37 @@ permalink: claude-testing
 ## Testing Workflow
 
 1. **Review Existing Documentation**
+
    - Consult testing-strategy.md for project-specific testing guidance
    - Check test_planning.md if it exists for test objectives
    - Review existing test files to understand patterns and conventions
 
-2. **Understand Test Requirements**
+1. **Understand Test Requirements**
+
    - Define what behaviors need verification
    - Identify expected outputs and success criteria
    - Document edge cases and error scenarios
 
-3. **Examine Existing Tests**
+1. **Examine Existing Tests**
+
    - Study similar tests for patterns and approaches
    - Identify reusable fixtures and utilities
    - Understand how components are typically mocked
 
-4. **Plan Test Implementation**
+1. **Plan Test Implementation**
+
    - Focus on behavioral verification rather than implementation validation
    - Create isolated tests for individual components
    - Plan for proper test setup and teardown
 
-5. **Implement Tests**
+1. **Implement Tests**
+
    - Follow established patterns from existing tests
    - Keep tests focused on specific behaviors
    - Use appropriate fixtures and utilities
 
-6. **Verify and Refine**
+1. **Verify and Refine**
+
    - Run tests to ensure they pass with correct implementations
    - Verify they fail appropriately with incorrect implementations
    - Refine tests for clarity and maintainability
@@ -51,15 +57,18 @@ permalink: claude-testing
 For testing MCP gateway functionality:
 
 1. **Establish Baseline Behavior**
+
    - Run servers directly and document exact responses
    - Record exact request/response patterns for reference
 
-2. **Validate Gateway Behavior**
+1. **Validate Gateway Behavior**
+
    - Test identical inputs through the gateway
    - Verify responses match the baseline exactly
    - Check that all tools and resources are properly exposed
 
-3. **Test Error Handling**
+1. **Test Error Handling**
+
    - Verify errors are properly propagated
    - Ensure error formats match direct connection results
    - Test connection failure scenarios

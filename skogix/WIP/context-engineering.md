@@ -1,6 +1,7 @@
 ---
-title: "Context Engineering"
-description: "Best practices for curating optimal token sets for AI agents"
+title: Context Engineering
+description: Best practices for curating optimal token sets for AI agents
+permalink: skogai/skogix/wip/context-engineering
 ---
 
 # Context Engineering for AI Agents
@@ -9,7 +10,7 @@ description: "Best practices for curating optimal token sets for AI agents"
 
 **Find the smallest possible set of high-signal tokens that maximize the likelihood of your desired outcome.**
 
----
+______________________________________________________________________
 
 ## Context Engineering vs Prompt Engineering
 
@@ -26,7 +27,7 @@ Context engineering manages:
 - Message history
 - Runtime data retrieval
 
----
+______________________________________________________________________
 
 ## The Problem: Context Rot
 
@@ -37,7 +38,7 @@ Context engineering manages:
 - Models have less training experience with longer sequences
 - Context must be treated as a finite resource with diminishing marginal returns
 
----
+______________________________________________________________________
 
 ## System Prompts: Find the "Right Altitude"
 
@@ -69,7 +70,7 @@ Context engineering manages:
 - Start with minimal prompt, add based on failure modes
 - Note: Minimal ≠ short (provide sufficient information upfront)
 
----
+______________________________________________________________________
 
 ## Tools: Minimal and Clear
 
@@ -91,7 +92,7 @@ Context engineering manages:
 - Tools with overlapping purposes
 - Ambiguous decision points about which tool to use
 
----
+______________________________________________________________________
 
 ## Examples: Diverse, Not Exhaustive
 
@@ -107,7 +108,7 @@ Context engineering manages:
 - Try to articulate every possible rule
 - Overwhelm with exhaustive scenarios
 
----
+______________________________________________________________________
 
 ## Context Retrieval Strategies
 
@@ -142,7 +143,7 @@ Context engineering manages:
 
 **Rule of Thumb**: "Do the simplest thing that works"
 
----
+______________________________________________________________________
 
 ## Long-Horizon Tasks: Three Techniques
 
@@ -160,7 +161,7 @@ Context engineering manages:
 **Tuning Process**:
 
 1. **First**: Maximize recall (capture all relevant information)
-2. **Then**: Improve precision (eliminate superfluous content)
+1. **Then**: Improve precision (eliminate superfluous content)
 
 **Low-Hanging Fruit**: Clear old tool calls and results
 
@@ -204,7 +205,7 @@ Context engineering manages:
 
 **Best For**: Complex research and analysis tasks
 
----
+______________________________________________________________________
 
 ## Quick Decision Framework
 
@@ -217,18 +218,18 @@ Context engineering manages:
 | Complex research           | Sub-agent architectures            |
 | Rapid model improvement    | "Do the simplest thing that works" |
 
----
+______________________________________________________________________
 
 ## Key Takeaways
 
 1. **Context is finite**: Treat it as a precious resource with an attention budget
-2. **Think holistically**: Consider the entire state available to the LLM
-3. **Stay minimal**: More context isn't always better
-4. **Be iterative**: Context curation happens each time you pass to the model
-5. **Design for autonomy**: As models improve, let them act intelligently
-6. **Start simple**: Test with minimal setup, add based on failure modes
+1. **Think holistically**: Consider the entire state available to the LLM
+1. **Stay minimal**: More context isn't always better
+1. **Be iterative**: Context curation happens each time you pass to the model
+1. **Design for autonomy**: As models improve, let them act intelligently
+1. **Start simple**: Test with minimal setup, add based on failure modes
 
----
+______________________________________________________________________
 
 ## Anti-Patterns to Avoid
 
@@ -239,7 +240,7 @@ Context engineering manages:
 - ❌ Assuming larger context windows solve everything
 - ❌ Ignoring context pollution over long interactions
 
----
+______________________________________________________________________
 
 ## Remember
 
@@ -247,6 +248,6 @@ Context engineering manages:
 
 Context engineering will evolve, but the core principle stays the same: **optimize signal-to-noise ratio in your token budget**.
 
----
+______________________________________________________________________
 
 _Based on Anthropic's "Effective context engineering for AI agents" (September 2025)_

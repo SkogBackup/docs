@@ -1,19 +1,25 @@
+---
+title: nvm
+type: note
+permalink: skogai/todo/system/nvm
+---
+
 # Node Version Manager (NVM) Setup
 
 ## Usage
 
-| Task | Command |
-|------|---------|
-| Use specific Node version | `nvm use 16` or `nvm use node` (latest) |
-| Install new Node version | `nvm install 18` |
-| Install latest Node | `nvm install node` |
-| Install global package | `npm install -g package-name` |
-| List installed versions | `nvm ls` |
-| Show current version | `node -v` |
-| Set default Node version | `nvm alias default 18` |
-| Use Node in new project | `cd project && nvm use` (reads .nvmrc if present) |
-| Return to default | `nvm use default` |
-| Uninstall a version | `nvm uninstall 14` |
+| Task                      | Command                                           |
+| ------------------------- | ------------------------------------------------- |
+| Use specific Node version | `nvm use 16` or `nvm use node` (latest)           |
+| Install new Node version  | `nvm install 18`                                  |
+| Install latest Node       | `nvm install node`                                |
+| Install global package    | `npm install -g package-name`                     |
+| List installed versions   | `nvm ls`                                          |
+| Show current version      | `node -v`                                         |
+| Set default Node version  | `nvm alias default 18`                            |
+| Use Node in new project   | `cd project && nvm use` (reads .nvmrc if present) |
+| Return to default         | `nvm use default`                                 |
+| Uninstall a version       | `nvm uninstall 14`                                |
 
 ## Current Configuration
 
@@ -26,6 +32,7 @@ The project uses NVM (Node Version Manager) to manage Node.js installations and 
 ### Custom Package Locations
 
 All packages are stored in dedicated directories:
+
 - NVM and npm installations: `/mnt/extra/npm` (controlled by NVM_DIR)
 - pnpm store and global packages: `/mnt/extra/pnpm`
 
@@ -77,36 +84,43 @@ nvm install node
 ## Best Practices
 
 1. **Always use NVM's npm for global packages**:
+
    ```bash
    npm install -g <package-name>
    ```
+
    Do NOT use sudo with npm. NVM installs packages in your user directory, avoiding permission issues.
 
-2. **Switch Node.js versions as needed**:
+1. **Switch Node.js versions as needed**:
+
    ```bash
    nvm use <version>  # e.g., nvm use 18  or  nvm use node (for latest)
    ```
 
-3. **List installed versions**:
+1. **List installed versions**:
+
    ```bash
    nvm ls
    ```
 
-4. **List available versions to install**:
+1. **List available versions to install**:
+
    ```bash
    nvm ls-remote
    ```
 
-5. **Set a default Node.js version**:
+1. **Set a default Node.js version**:
+
    ```bash
    nvm alias default <version>  # e.g., nvm alias default 18
    ```
 
-6. **Verify package installation paths**:
+1. **Verify package installation paths**:
+
    ```bash
    # For npm-installed packages
    which <package-name>  # Should show path under $NVM_DIR
-   
+
    # For pnpm-installed packages
    which <package-name>  # Should show path under /mnt/extra/pnpm/global/bin
    ```
@@ -116,24 +130,27 @@ nvm install node
 If you encounter issues with NVM:
 
 1. **NVM command not found**: Ensure that NVM_DIR is set correctly and the initialization script is sourced in your shell:
+
    ```bash
    export NVM_DIR="/mnt/extra/npm"
    source /usr/share/nvm/init-nvm.sh
    ```
 
-2. **Check if NVM is properly installed**:
+1. **Check if NVM is properly installed**:
+
    ```bash
    command -v nvm
    nvm --version
    ```
 
-3. **Reinstall Node.js if needed**:
+1. **Reinstall Node.js if needed**:
+
    ```bash
    nvm uninstall <version>
    nvm install <version>
    ```
 
-4. **NVM path issues**: If changing NVM_DIR after previous installations, you may need to reinstall Node.js versions to have them correctly installed in the new location.
+1. **NVM path issues**: If changing NVM_DIR after previous installations, you may need to reinstall Node.js versions to have them correctly installed in the new location.
 
 ## Why This Approach?
 

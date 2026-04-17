@@ -1,8 +1,15 @@
+---
+title: split-keel
+type: note
+permalink: skogai/skills/nelson-base/skills/nelson/references/standing-orders/split-keel
+---
+
 # Standing Order: Split Keel
 
 Do not assign the same file to multiple captains.
 
 **Symptoms:**
+
 - Captains overwrite each other's changes.
 - Frequent merge conflicts on the same artifact.
 - Admiral spends coordination time reconciling divergent edits.

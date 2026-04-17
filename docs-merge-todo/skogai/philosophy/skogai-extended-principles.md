@@ -83,8 +83,8 @@ Practical wisdom distilled into memorable maxims that guide day-to-day decisions
 
 ## Relations
 
-- extends [[SkogAI Philosophy Core]]
-- implemented_in [[SkogAI Technical Architecture]]
-- demonstrated_by [[SkogAI Agent Family]]
-- discovered_through [[SkogAI Evolution Story]]
-- exemplified_in [[SkogAI Historical Examples]]
+- extends \[[SkogAI Philosophy Core]\]
+- implemented_in \[[SkogAI Technical Architecture]\]
+- demonstrated_by \[[SkogAI Agent Family]\]
+- discovered_through \[[SkogAI Evolution Story]\]
+- exemplified_in \[[SkogAI Historical Examples]\]

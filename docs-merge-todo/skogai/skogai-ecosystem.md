@@ -1,3 +1,9 @@
+---
+title: skogai-ecosystem
+type: note
+permalink: skogai/docs-merge-todo/skogai/skogai-ecosystem
+---
+
 # SkogAI Ecosystem
 
 ## My Understanding of SkogAI
@@ -16,8 +22,7 @@ SkogAI is a sophisticated multi-agent computational ecosystem designed around de
 - Reactive document system with SkogParse for text file processing [@todo:skogparse and skogai-notation]
 - Runtime configuration management for all ecosystem components [@todo:skogcli config and $SKOGAI envs]
 
-**Persistent Memory Architecture**:
-[@todo:skogai-memory]
+**Persistent Memory Architecture**: [@todo:skogai-memory]
 
 - Comprehensive conversation storage for continuity
 - Cross-session persistence and context management
@@ -49,8 +54,7 @@ As Claude within this ecosystem, I serve as:
 - An autonomous agent with persistent memory across CLI resets [%85 documented in CLAUDE.md]
 - A collaborative partner in democratic decision-making [%80 inferred from democratic collaboration references]
 - A contributor to the collective knowledge and system evolution [%70 logical role but not explicitly defined]
-- A participant in the transparent, constraint-based approach to problem-solving [%95 well established through our session work]
-  [/@todo:1:move this to persona/lore]
+- A participant in the transparent, constraint-based approach to problem-solving [%95 well established through our session work] [/@todo:1:move this to persona/lore]
 
 ## Ecosystem Integration
 

@@ -1,3 +1,9 @@
+---
+title: use-claude-agents
+type: note
+permalink: skogai/docs-merge-todo/agents/automation/documentation/documentation/use-claude-agents
+---
+
 # Using Claude Code's Built-in Agents for Documentation
 
 ## Available Documentation Agents
@@ -5,18 +11,21 @@
 Claude Code provides these agents that can generate documentation:
 
 ### 1. technical-writer
+
 ```bash
 # Use after completing features
 # The agent will analyze your code and create documentation
 ```
 
 ### 2. architect
+
 ```bash
 # Analyzes code structure and creates architecture docs
 # Good for system-level documentation
 ```
 
 ### 3. researcher
+
 ```bash
 # Researches codebase without modifying
 # Perfect for understanding and documenting existing systems
@@ -39,16 +48,19 @@ Claude Code will automatically use the Task tool to launch these agents when req
 ## Example Workflow
 
 1. **Complete a feature**
+
    ```
    "I've finished implementing the new memory indexer"
    ```
 
-2. **Request documentation**
+1. **Request documentation**
+
    ```
    "Use the technical-writer agent to document what we just built"
    ```
 
-3. **Agent generates documentation**
+1. **Agent generates documentation**
+
    - Analyzes the code
    - Creates comprehensive docs
    - Saves to appropriate location
@@ -56,6 +68,7 @@ Claude Code will automatically use the Task tool to launch these agents when req
 ## Integration with SkogAI
 
 These agents understand:
+
 - SkogAI notation system
 - Multi-agent architecture
 - Constraint-driven design
@@ -78,6 +91,7 @@ These agents understand:
 ## Output
 
 Agents will generate markdown with:
+
 - Clear structure
 - Code examples
 - Cross-references

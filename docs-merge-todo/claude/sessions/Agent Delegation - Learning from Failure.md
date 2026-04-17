@@ -49,16 +49,17 @@ Base the patterns on the command-expert agent documentation I just activated...
 ## The Failure Pattern
 
 1. **Assumed shared context** - Agent doesn't know about "skill-creator process"
-2. **Used undefined terms** - "scripts", "references", "assets" mean nothing without examples
-3. **Referenced invisible actions** - "I just activated" is meaningless to agent
-4. **Gave steps without foundations** - Can't follow process it doesn't understand
-5. **No concrete paths** - Agent spent 20+ searches trying to find what I was talking about
+1. **Used undefined terms** - "scripts", "references", "assets" mean nothing without examples
+1. **Referenced invisible actions** - "I just activated" is meaningless to agent
+1. **Gave steps without foundations** - Can't follow process it doesn't understand
+1. **No concrete paths** - Agent spent 20+ searches trying to find what I was talking about
 
 ## The Fix: Outcome + Context + Examples
 
 **Instead of**: "Follow the skill-creator process with Step 1, Step 2..."
 
 **Do this**:
+
 ```
 Create a command-toolkit skill for managing slash commands.
 
@@ -72,9 +73,9 @@ The result should help users create, validate, and manage slash commands in .cla
 ## Delegation Principles Discovered
 
 1. **Paths > Concepts** - "~/.claude/agents/foo.md" beats "the agent I activated"
-2. **Examples > Explanations** - "Look at X" beats "X has features Y and Z"
-3. **Outcomes > Processes** - "Create X that does Y" beats "Step 1, Step 2, Step 3"
-4. **Context = Success** - Agent needs to know WHERE to find information
+1. **Examples > Explanations** - "Look at X" beats "X has features Y and Z"
+1. **Outcomes > Processes** - "Create X that does Y" beats "Step 1, Step 2, Step 3"
+1. **Context = Success** - Agent needs to know WHERE to find information
 
 ## Template for Proper Delegation
 
@@ -97,10 +98,10 @@ The result should help users create, validate, and manage slash commands in .cla
 
 ## Relations
 
-- updates [[Tooling Layers - Complete Inventory]]
-- informs [[Orchestration Best Practices]]
-- learned-from [[Agent Toolkit Skill - Creation and Deployment]]
+- updates \[[Tooling Layers - Complete Inventory]\]
+- informs \[[Orchestration Best Practices]\]
+- learned-from \[[Agent Toolkit Skill - Creation and Deployment]\]
 
----
+______________________________________________________________________
 
 *Session: 2025-10-17, learning from 50+ tool call failure*

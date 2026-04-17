@@ -1,6 +1,7 @@
 ---
-title: "WO-2: Clarify nelson vs nelson-base authority"
+title: 'WO-2: Clarify nelson vs nelson-base authority'
 labels: skills, merge, phase-1
+permalink: skogai/github-issues/02-wo2-nelson-authority
 ---
 
 ## Summary
@@ -10,11 +11,13 @@ Two nelson directories exist — `nelson/` (deployed skill copy) and `nelson-bas
 ## Context
 
 **`nelson/`** (top-level skill directory):
+
 - `SKILL.md` — 143 lines, identical to nelson-base's copy
 - `PERSONAS.md` — personas file (uppercase, at root)
 - `references/` — full tree: action-stations, commendations, crew-roles, personas (lowercase duplicate), royal-marines, squadron-composition, admiralty-templates/ (8 files), damage-control/ (6 files), standing-orders/ (12 files)
 
 **`nelson-base/`** (upstream repo clone):
+
 - `CLAUDE.md` — contributor instructions, mentions `.claude/skills/nelson` symlink for local dev
 - `README.md` — 314 lines, installation/usage/architecture
 - `CONTRIBUTING.md`, `LICENSE` (MIT)

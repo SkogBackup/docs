@@ -1,8 +1,14 @@
+---
+title: PROMPT_QUICK_REFERENCE
+type: note
+permalink: skogai/prompts/prompt-quick-reference
+---
+
 # Prompt Style Quick Reference
 
 **One-page cheatsheet for XML-style prompt formatting**
 
----
+______________________________________________________________________
 
 ## Standard Structure (In Order)
 
@@ -43,28 +49,29 @@ Output: [complete output]
 </execution_instruction>
 ```
 
----
+______________________________________________________________________
 
 ## Tag Quick Reference
 
-| Tag | Purpose | Required | Example |
-|-----|---------|----------|---------|
-| `<role>` | Define LLM persona | ✅ Yes | You are a lore writer |
-| `<critical_instruction>` | Top priority constraint | ✅ Yes | Output ONLY JSON. Zero preamble. |
-| `<task>` | What to accomplish | ✅ Yes | Generate 5 lore titles |
-| `<input_content>` | Input variables | ✅ Yes | {{content}} |
-| `<output_format>` | Exact format spec | ✅ Yes | FIELD: value |
-| `<rules>` | Detailed constraints | ✅ Yes | - Length: 150-300 words |
-| `<examples>` | Concrete examples | ⚠️ Recommended | Input → Output |
-| `<execution_instruction>` | Final trigger | ✅ Yes | Generate NOW: |
-| `<[domain]_guidelines>` | Domain guidance | ❌ Optional | Transform X → Y |
-| `<quality_checklist>` | Internal validation | ❌ Optional | ✓ No preamble |
+| Tag                       | Purpose                 | Required       | Example                          |
+| ------------------------- | ----------------------- | -------------- | -------------------------------- |
+| `<role>`                  | Define LLM persona      | ✅ Yes         | You are a lore writer            |
+| `<critical_instruction>`  | Top priority constraint | ✅ Yes         | Output ONLY JSON. Zero preamble. |
+| `<task>`                  | What to accomplish      | ✅ Yes         | Generate 5 lore titles           |
+| `<input_content>`         | Input variables         | ✅ Yes         | {{content}}                      |
+| `<output_format>`         | Exact format spec       | ✅ Yes         | FIELD: value                     |
+| `<rules>`                 | Detailed constraints    | ✅ Yes         | - Length: 150-300 words          |
+| `<examples>`              | Concrete examples       | ⚠️ Recommended | Input → Output                   |
+| `<execution_instruction>` | Final trigger           | ✅ Yes         | Generate NOW:                    |
+| `<[domain]_guidelines>`   | Domain guidance         | ❌ Optional    | Transform X → Y                  |
+| `<quality_checklist>`     | Internal validation     | ❌ Optional    | ✓ No preamble                    |
 
----
+______________________________________________________________________
 
 ## Key Patterns
 
 ### Anti-Meta-Commentary
+
 ```xml
 <critical_instruction>
 Output ONLY [format]. Zero meta-commentary, zero explanations, zero preamble.
@@ -77,6 +84,7 @@ Output ONLY [format]. Zero meta-commentary, zero explanations, zero preamble.
 ```
 
 ### Format Precision
+
 ```xml
 <output_format>
 FIELD: value
@@ -91,6 +99,7 @@ OTHER: value
 ```
 
 ### Variable Usage
+
 ```xml
 <task>
 Create a {{category}} entry titled "{{title}}"
@@ -100,27 +109,33 @@ Create a {{category}} entry titled "{{title}}"
 {{content}}
 </input_content>
 ```
+
 Always use `{{double_braces}}`
 
 ### Emphasis Words
+
 Use ALL CAPS for critical constraints:
+
 - `ONLY`, `ZERO`, `NO`, `IMMEDIATELY`, `EXACTLY`, `MUST`, `FORBIDDEN`
 
 Example: `Start IMMEDIATELY with "TRAITS:" (NO introduction)`
 
----
+______________________________________________________________________
 
 ## Common Sections
 
 ### Role Templates
+
 ```xml
 <role>You are a [expertise] [role] specializing in [domain].</role>
 ```
+
 - Be specific, not generic
 - Match role to domain
 - One sentence
 
 ### Critical Instruction Templates
+
 ```xml
 <!-- For formatted output -->
 <critical_instruction>
@@ -139,6 +154,7 @@ Write content DIRECTLY. No meta-commentary, no approval requests, no preamble.
 ```
 
 ### Task Templates
+
 ```xml
 <task>
 Generate [quantity] [objects] [context/constraints]
@@ -154,6 +170,7 @@ Extract [information] from [source] and transform to [format]
 ```
 
 ### Rules Templates
+
 ```xml
 <rules>
 - Length: [min]-[max] [units] ([detail])
@@ -165,6 +182,7 @@ Extract [information] from [source] and transform to [format]
 ```
 
 ### Example Templates
+
 ```xml
 <examples>
 <example>
@@ -180,7 +198,7 @@ Output:
 </examples>
 ```
 
----
+______________________________________________________________________
 
 ## Do's and Don'ts
 
@@ -204,11 +222,12 @@ Output:
 - Use generic role ("helpful assistant")
 - Leave format ambiguous
 
----
+______________________________________________________________________
 
 ## Testing Checklist
 
 Before finalizing:
+
 - [ ] All required tags present
 - [ ] Role is domain-specific
 - [ ] Critical instruction prevents meta-commentary
@@ -218,7 +237,7 @@ Before finalizing:
 - [ ] Variables use `{{double_braces}}`
 - [ ] Tested with LLM (2+ runs)
 
----
+______________________________________________________________________
 
 ## Version Control
 
@@ -227,23 +246,24 @@ version: "1.0.0"
 ```
 
 **Increment**:
+
 - **Patch** (1.0.1): Wording fixes, typos
 - **Minor** (1.1.0): New variables, enhanced rules
 - **Major** (2.0.0): Format changes, breaking changes
 
----
+______________________________________________________________________
 
 ## Quick Conversion (Prose → XML)
 
 1. Extract role → `<role>`
-2. Identify top constraint → `<critical_instruction>`
-3. Define objective → `<task>`
-4. Separate inputs → `<input_content>`
-5. Formalize format → `<output_format>`
-6. List rules → `<rules>` (bullets)
-7. Add examples → `<examples>` + `<example>`
-8. Create trigger → `<execution_instruction>`
+1. Identify top constraint → `<critical_instruction>`
+1. Define objective → `<task>`
+1. Separate inputs → `<input_content>`
+1. Formalize format → `<output_format>`
+1. List rules → `<rules>` (bullets)
+1. Add examples → `<examples>` + `<example>`
+1. Create trigger → `<execution_instruction>`
 
----
+______________________________________________________________________
 
 **Full Guide**: See [PROMPT_STYLE_GUIDE.md](PROMPT_STYLE_GUIDE.md) for complete documentation

@@ -1,27 +1,29 @@
 ---
 categories:
-- tools
-- gh
+  - tools
+  - gh
 permalink: tools/gh/api
 generated_at: '2025-12-19T12:56:46Z'
 title: Direct API Access
 tags:
-- gh-api
-- direct-access
-- api-automation
-- graphql
+  - gh-api
+  - direct-access
+  - api-automation
+  - graphql
 type: note
 ---
 
 # gh - Direct API Access
 
 ## When to Use
+
 - Need endpoint not covered by gh subcommands
 - Need raw API response
 - Building automation scripts
 - Working with GraphQL
 
 ## Key Facts
+
 - `gh api` handles authentication automatically
 - Supports both REST and GraphQL
 - Has built-in --jq and --template flags
@@ -30,16 +32,19 @@ type: note
 ## Basic Usage
 
 ### GET Request
+
 ```bash
 gh api /repos/{owner}/{repo}/issues
 ```
 
 ### POST Request
+
 ```bash
 gh api /repos/{owner}/{repo}/issues -f title="Bug" -f body="Description"
 ```
 
 ### With Field Parameters
+
 ```bash
 gh api /repos/{owner}/{repo}/issues -F assignees[]=username -f title="Title"
 ```
@@ -47,21 +52,25 @@ gh api /repos/{owner}/{repo}/issues -F assignees[]=username -f title="Title"
 ## Common Patterns
 
 ### Get Current User
+
 ```bash
 gh api /user
 ```
 
 ### Get Repository Info
+
 ```bash
 gh api /repos/{owner}/{repo}
 ```
 
 ### List Repo Issues with API
+
 ```bash
 gh api /repos/OWNER/REPO/issues --jq '.[] | {number, title}'
 ```
 
 ### Create Issue via API
+
 ```bash
 gh api /repos/OWNER/REPO/issues \
   -f title="Issue title" \
@@ -70,16 +79,19 @@ gh api /repos/OWNER/REPO/issues \
 ```
 
 ### Pagination
+
 ```bash
 gh api /repos/OWNER/REPO/issues --paginate
 ```
 
 ### Get PR Review Comments
+
 ```bash
 gh api /repos/OWNER/REPO/pulls/123/comments
 ```
 
 ### GraphQL Query
+
 ```bash
 gh api graphql -f query='
   query {
@@ -92,6 +104,7 @@ gh api graphql -f query='
 ```
 
 ### GraphQL with Variables
+
 ```bash
 gh api graphql \
   -f query='query($owner:String!, $repo:String!) {
@@ -124,11 +137,13 @@ gh api graphql \
 ## Field Types (-f vs -F)
 
 ### -f (raw string)
+
 ```bash
 gh api /repos/owner/repo/issues -f title="Title"
 ```
 
 ### -F (typed - interprets as JSON)
+
 ```bash
 gh api /repos/owner/repo/issues \
   -F labels[]="bug" \
@@ -149,11 +164,13 @@ HTTP/2.0 200 OK
 ```
 
 ## Don't Use When
+
 - gh has a specific subcommand (use `gh issue`, `gh pr`, etc.)
 - You just need to view data (use gh subcommands with --json)
 - Not working with GitHub API
 
 ## See Also
+
 - GitHub REST API docs: https://docs.github.com/en/rest
 - GitHub GraphQL API docs: https://docs.github.com/en/graphql
 - @skogai/gh/json.md - JSON formatting

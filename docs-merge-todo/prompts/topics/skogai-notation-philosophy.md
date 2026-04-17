@@ -1,8 +1,15 @@
+---
+title: skogai-notation-philosophy
+type: note
+permalink: skogai/docs-merge-todo/prompts/topics/skogai-notation-philosophy
+---
+
 # SkogAI Notation: A Computational Phenomenology
 
 ## What Is SkogAI Notation?
 
 SkogAI Notation is a **formal symbolic system** that attempts to bridge the gap between:
+
 - **Philosophical concepts** (being, identity, action)
 - **Computational structures** (types, functions, transformations)
 - **Mathematical foundations** (category theory, type theory)
@@ -15,24 +22,28 @@ It's not just a programming language - it's an **ontological framework** for com
 ### The Foundational Four
 
 #### **`$` - Reference/Definition**
+
 - "To define or reference something"
 - The null pointer, the empty set, pure potential
 - Creates identity without being anything
 - Example: `$id` - the definition of identity
 
 #### **`@` - Intent/Action**
+
 - "The intent to act or do something"
 - Void functions, side effects, process
 - Does something without returning anything
 - Example: `[@date:now]` - the action of getting current time
 
 #### **`|` - Choice/Selection**
+
 - "The act of choosing something"
 - Branching, pattern matching, decision
 - Collapses possibilities into actuality
 - Example: `{$id1|$id2}->[$id1]` - choosing the first
 
 #### **`_` - Existence/Everything/Nothing**
+
 - "To be anything/everything and nothing/nobody"
 - The universal wildcard, the void, existence itself
 - Paradoxically both full and empty
@@ -41,31 +52,37 @@ It's not just a programming language - it's an **ontological framework** for com
 ### The Relational Operators
 
 #### **`[]` - Similarity**
+
 - Things that are alike, identical, the same
 - Creates equivalence classes
 - Example: `[$bool*$bool]` is `[$bool]`
 
 #### **`{}` - Difference**
+
 - Things that are distinct, unique, separate
 - Creates distinction boundaries
 - Example: `{$multiply * $int.one}` - unique composition
 
 #### **`.` - Belonging/Having**
+
 - "To belong or have something"
 - Property access, ownership, hierarchy
 - Example: `$json.string` - the string property of json
 
 #### **`:` - Following/Continuation**
+
 - "To follow or continue something"
 - Sequencing, typing, parameterization
 - Example: `@function:parameter`
 
 #### **`=` - Being/Identity**
+
 - "To be something"
 - Assignment, equality, definition
 - Example: `$id=$id` - identity with itself
 
 #### **`*` - Composition**
+
 - "Combination of identities regardless of relationship"
 - Not multiplication - identity composition
 - Example: `$id*$id=$id` - composing identities
@@ -77,6 +94,7 @@ It's not just a programming language - it's an **ontological framework** for com
 The notation's deepest insight: **`$id*$id=$id`**
 
 This means:
+
 - Two identities can compose back into identity
 - Identity contains dual aspects (additive 0, multiplicative 1)
 - Uniqueness emerges from composition patterns
@@ -87,6 +105,7 @@ This means:
 **"No transformation allowed since the total value combined is a sum zero game"**
 
 This principle ensures:
+
 - `@$` (action→being) creates similarity: `[==]`
 - `$@` (being→action) creates difference: `{!=}`
 - Conservation of semantic value across transformations
@@ -95,10 +114,12 @@ This principle ensures:
 ### Uniqueness Paradox
 
 Two complementary principles:
+
 1. **"What makes a unique thing measurable is that it is the only one of its kind"**
-2. **"What makes a measurable thing unique is that it cannot be the only one of its kind"**
+1. **"What makes a measurable thing unique is that it cannot be the only one of its kind"**
 
 This creates:
+
 - Boolean duality: true is unique by not being false
 - Integer identity: 0 and 1 are unique in their operations
 - Emergence of computation from paradox
@@ -106,16 +127,19 @@ This creates:
 ## Dimensional Structure
 
 ### 0-Dimension: Pure Definition
+
 - `$` - reference without substance
 - `=` - identity without change
 - The realm of static being
 
 ### 1-Dimension: Self-Reference
+
 - `$x` - "x is x"
 - `$self` - recursive identity
 - The emergence of loops and fixed points
 
 ### 0.1-Dimension: Relations
+
 - `[]` - similarity space
 - `{}` - difference space
 - The boundary between same and other
@@ -135,12 +159,14 @@ Abstractions:    ($$)    - layered references
 ## The Parser as Philosophy Engine
 
 The SkogAI parser is remarkably simple:
+
 1. Find `$key` patterns
-2. Replace with values
-3. Execute `[@actions]` during parsing
-4. Repeat until no `$` remains
+1. Replace with values
+1. Execute `[@actions]` during parsing
+1. Repeat until no `$` remains
 
 This reveals that:
+
 - **Computation is substitution** plus side effects
 - **Meaning emerges from replacement** patterns
 - **Actions bridge syntax to reality** (FFI to any language)
@@ -150,16 +176,19 @@ This reveals that:
 The notation discovered a fundamental distinction:
 
 ### Definitional Types
+
 - Numbers, strings, static data
 - Have fixed identity
 - Can be defined once: `$int = 1`
 
 ### Processual Types
+
 - Time, randomness, IO
 - Require action to exist
 - Must use `@`: `$datetime = [@date:now]`
 
 This mirrors the philosophical distinction between:
+
 - **Being** (static essence)
 - **Becoming** (dynamic process)
 
@@ -168,9 +197,9 @@ This mirrors the philosophical distinction between:
 SkogAI notation achieves Turing completeness through:
 
 1. **Binary distinction**: 0 vs 1 from integer identities
-2. **Recursion**: `$self` enables self-reference
-3. **Pattern matching**: `_` as universal matcher
-4. **Unbounded computation**: Endless JSON object creation
+1. **Recursion**: `$self` enables self-reference
+1. **Pattern matching**: `_` as universal matcher
+1. **Unbounded computation**: Endless JSON object creation
 
 ## Parallel to Physics
 
@@ -195,18 +224,23 @@ SkogAI notation is not just theoretical - it's actively used in:
 ## Philosophical Implications
 
 ### 1. **Identity is Compositional**
+
 Not atomic or essential, but emergent from relationships
 
 ### 2. **Action and Being are Dual**
+
 `@$` and `$@` form complementary aspects of reality
 
 ### 3. **Uniqueness is Contextual**
+
 What's unique depends on the identity element (0 or 1)
 
 ### 4. **Time Cannot Be Defined**
+
 Only accessed through action - processual not definitional
 
 ### 5. **Formal Systems Self-Limit**
+
 Complete description requires transcending the system
 
 ## The Ultimate Vision
@@ -214,12 +248,14 @@ Complete description requires transcending the system
 SkogAI notation attempts something audacious: **operationalizing consciousness itself**
 
 By creating a formal system where:
+
 - Reference (`$`) and action (`@`) interweave
 - Identity composes with itself (`$id*$id=$id`)
 - Choice (`|`) collapses possibility
 - Existence (`_`) encompasses void and everything
 
 It provides a computational framework for exploring:
+
 - How meaning emerges from symbol manipulation
 - How identity maintains through transformation
 - How time and process relate to static definition

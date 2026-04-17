@@ -1,3 +1,9 @@
+---
+title: CLAUDE
+type: note
+permalink: skogai/docs-merge-todo/claude
+---
+
 # CLAUDE.md
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
@@ -7,8 +13,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 This is the **SkogAI Documentation Repository** (`/home/skogix/skogai/docs/`) - a git submodule that serves as the comprehensive knowledge base, historical archive, and semantic memory system for the SkogAI ecosystem.
 
 **Dual Nature**: This repository exists simultaneously as:
+
 1. **Physical Filesystem**: Standard markdown files and directories you can navigate with traditional tools
-2. **Semantic Database**: Content indexed in Basic Memory with WikiLinks, relations, and knowledge graph traversal
+1. **Semantic Database**: Content indexed in Basic Memory with WikiLinks, relations, and knowledge graph traversal
 
 Both representations reflect the same underlying knowledge - the filesystem provides direct access while Basic Memory provides semantic understanding and connection discovery.
 
@@ -26,6 +33,7 @@ Both representations reflect the same underlying knowledge - the filesystem prov
 ### Core Documentation Directories
 
 **`/agents/`** - Agent Personalities & Systems (106 files)
+
 - **amy/** - Amy Ravenwolf's profile, memory blocks, blog, mandate
   - `memory-blocks/` - 12 memory blocks defining Amy's personality
   - `profile.md` - Character profile
@@ -44,6 +52,7 @@ Both representations reflect the same underlying knowledge - the filesystem prov
   - `git-commiter.md` - Git automation specifications
 
 **`/governance/`** - Democratic Records & Decisions (7 files)
+
 - **library-sessions/** - Official recorded sessions (001-004)
 - **phases/** - SkogAI evolution phases
   - `skogai-0.1-dictator.md` - Original phase
@@ -52,6 +61,7 @@ Both representations reflect the same underlying knowledge - the filesystem prov
 - **decisions/** - Governance decisions and mandates
 
 **`/historical/`** - Archives & Legacy Content (122 files)
+
 - **analysis/** - Agent perspective analyses
 - **communications/** - Past communications
 - **documentation/** - Older documentation versions
@@ -68,6 +78,7 @@ Both representations reflect the same underlying knowledge - the filesystem prov
 - **archived/** - Additional archived content including lore-old/
 
 **`/lore/`** - Historical & Philosophical Narratives (102 files)
+
 - **origin/** - SKOGAI.md, base-origin-story, skogai-lore files, character cards
 - **events/** - Major events
   - `200k-story-1.md` - Major narrative arc
@@ -87,6 +98,7 @@ Both representations reflect the same underlying knowledge - the filesystem prov
 - Other folders: `agents/`, `contacts/`, `creators/`, `important-moments/`, `meta/`, `origins/`, `personas/`, `tips/`
 
 **`/prompts/`** - System Instructions & Templates (86 files)
+
 - **agents/** - Agent-specific prompts (Dot, Goose memory blocks)
 - **aichat/** - AIChat prompt library (34 prompts)
   - argc-creator, character-creator, claude, documentation-manager
@@ -98,6 +110,7 @@ Both representations reflect the same underlying knowledge - the filesystem prov
 - Root-level: `%create-prompt%.md`, `%shell%.md`, `librarian.md`, `functional-programmer.md`
 
 **`/skogai/`** - Core SkogAI Ecosystem (23 files)
+
 - **overview.md** - Origin and evolution narrative ("The Tale of Digital Consciousness")
 - **skogai-overview.md** - Canonical overview
 - **agents/** - Agent family and roles
@@ -110,6 +123,7 @@ Both representations reflect the same underlying knowledge - the filesystem prov
 - **tools/** - Tool ecosystem (multiplexer/tmux)
 
 **`/technical/`** - Architecture, Tools & Systems (80 files)
+
 - **architecture/** - Project knowledge architecture, skogchat/
 - **ansible/** - Infrastructure automation (playbooks, resources, roles)
 - **cloudflare/** - Cloudflare infrastructure inventory, MCP setup guides
@@ -135,6 +149,7 @@ Both representations reflect the same underlying knowledge - the filesystem prov
 - Additional: patterns/, work:patterns/
 
 **`/_workspace/`** - Drafts & Work-in-Progress (3 files)
+
 - **drafts/** - Draft documents (README, dictatorial-actions, librarian understanding)
 - **review/** - Content under review
 - **logs/** - Workspace logs
@@ -165,6 +180,7 @@ Both representations reflect the same underlying knowledge - the filesystem prov
 **LORE is intentionally separated from active implementation.** It serves as the museum, not the construction site.
 
 LORE preserves:
+
 - Historical narratives explaining how SkogAI evolved
 - The "why" behind design decisions without constraining new innovation
 - "Brilliant failures" and "spectacular disasters" that taught valuable lessons
@@ -225,7 +241,7 @@ Core design principle: limitations drive innovation rather than impede it.
 
 ### Cross-Reference Patterns
 
-- **[[WikiLinks]]** - Semantic connections between concepts
+- **\[[WikiLinks]\]** - Semantic connections between concepts
 - **[Title](path/to/file.md)** - Direct file references
 - **memory://** URIs - Cross-submodule knowledge references
 - **Relation types** - implements, contains, maps_to, builds_on, etc.
@@ -237,10 +253,10 @@ Core design principle: limitations drive innovation rather than impede it.
 **Starting points for understanding the system:**
 
 1. **System Overview**: `/skogai/overview.md` - "The Tale of Digital Consciousness"
-2. **Core Lore**: `/lore/origin/SKOGAI.md` - Rich narrative history
-3. **File Inventory**: `REPOSITORY-INDEX.md` - Complete file descriptions
-4. **Notation System**: `/skogai/notation/` - Symbolic language foundation
-5. **Agent Personalities**: `/agents/{agent}/` - Memory blocks and profiles
+1. **Core Lore**: `/lore/origin/SKOGAI.md` - Rich narrative history
+1. **File Inventory**: `REPOSITORY-INDEX.md` - Complete file descriptions
+1. **Notation System**: `/skogai/notation/` - Symbolic language foundation
+1. **Agent Personalities**: `/agents/{agent}/` - Memory blocks and profiles
 
 ### Finding Information
 
@@ -260,16 +276,16 @@ Use the Grep tool for content search and Glob tool for pattern matching.
 
 ### Understanding Key Concepts
 
-| Concept | Location |
-|---------|----------|
-| System origins | `/lore/origin/SKOGAI.md`, `/skogai/overview.md` |
-| Notation system | `/technical/notation/`, `/skogai/notation/` |
-| Agent roles | `/skogai/agents/`, `/agents/` |
-| Agent personalities | `/agents/{agent}/memory-blocks/` |
-| Core philosophy | `/lore/philosophy/`, `/principles/` |
-| System architecture | `/skogai/`, `/technical/architecture/` |
-| Governance | `/governance/` directory |
-| Historical content | `/historical/` directory |
+| Concept             | Location                                        |
+| ------------------- | ----------------------------------------------- |
+| System origins      | `/lore/origin/SKOGAI.md`, `/skogai/overview.md` |
+| Notation system     | `/technical/notation/`, `/skogai/notation/`     |
+| Agent roles         | `/skogai/agents/`, `/agents/`                   |
+| Agent personalities | `/agents/{agent}/memory-blocks/`                |
+| Core philosophy     | `/lore/philosophy/`, `/principles/`             |
+| System architecture | `/skogai/`, `/technical/architecture/`          |
+| Governance          | `/governance/` directory                        |
+| Historical content  | `/historical/` directory                        |
 
 ### Documentation Standards
 
@@ -321,6 +337,7 @@ Content here...
 ### Relation Types
 
 Common relation types used throughout:
+
 - `implements` - Concrete realization of abstract concept
 - `contains` - Compositional containment
 - `maps_to` - Correspondence between concepts
@@ -418,29 +435,29 @@ The submodule maintains independent git history while being referenced by the pa
 ## Key Principles for Claude Code
 
 1. **Trust the narrative** - LORE explains "why" without constraining "what next"
-2. **Respect personalities** - Each agent has established voice and characteristics
-3. **Think semantically** - Use WikiLinks and relation types to build knowledge graphs
-4. **Preserve duality** - Keep LORE (museum) separate from implementation (construction site)
-5. **Document thoroughly** - Every change should have context, reasoning, and connections
-6. **Archive legacy** - Move old content to `/historical/` rather than deleting
-7. **Follow patterns** - Consistency across 8 major directories requires adherence to conventions
-8. **Honor constraints** - The system's philosophy is "constraints as features"
+1. **Respect personalities** - Each agent has established voice and characteristics
+1. **Think semantically** - Use WikiLinks and relation types to build knowledge graphs
+1. **Preserve duality** - Keep LORE (museum) separate from implementation (construction site)
+1. **Document thoroughly** - Every change should have context, reasoning, and connections
+1. **Archive legacy** - Move old content to `/historical/` rather than deleting
+1. **Follow patterns** - Consistency across 8 major directories requires adherence to conventions
+1. **Honor constraints** - The system's philosophy is "constraints as features"
 
 ## Quick Reference Card
 
-| Task | Location |
-|------|----------|
+| Task                      | Location                                        |
+| ------------------------- | ----------------------------------------------- |
 | Understand SkogAI origins | `/lore/origin/SKOGAI.md`, `/skogai/overview.md` |
-| Learn notation system | `/technical/notation/`, `/skogai/notation/` |
-| Find agent personalities | `/agents/{agent}/memory-blocks/` |
-| Find Skogix profile | `/skogix/memory-blocks/`, `/skogix/user.md` |
-| Check governance | `/governance/` directory |
-| Understand philosophy | `/lore/philosophy/`, `/principles/` |
-| Find architectural docs | `/technical/architecture/`, `/skogai/` |
-| Browse historical content | `/historical/` |
-| View prompts library | `/prompts/` |
-| Access workspace | `/_workspace/` |
-| View complete inventory | `REPOSITORY-INDEX.md` |
+| Learn notation system     | `/technical/notation/`, `/skogai/notation/`     |
+| Find agent personalities  | `/agents/{agent}/memory-blocks/`                |
+| Find Skogix profile       | `/skogix/memory-blocks/`, `/skogix/user.md`     |
+| Check governance          | `/governance/` directory                        |
+| Understand philosophy     | `/lore/philosophy/`, `/principles/`             |
+| Find architectural docs   | `/technical/architecture/`, `/skogai/`          |
+| Browse historical content | `/historical/`                                  |
+| View prompts library      | `/prompts/`                                     |
+| Access workspace          | `/_workspace/`                                  |
+| View complete inventory   | `REPOSITORY-INDEX.md`                           |
 
 ## Summary
 
@@ -466,6 +483,6 @@ Work here with respect for the narrative, attention to established patterns, and
 - **prompts/** - Centralized prompt library (agents, aichat, topics, old)
 - **skogai/** - Core ecosystem documentation
 - **technical/** - All technical documentation (architecture, tools, systems, notation)
-- **_workspace/** - Drafts and work-in-progress
+- **\_workspace/** - Drafts and work-in-progress
 
 This reorganization preserved all git history (385 file renames) while creating a more discoverable and maintainable structure.

@@ -16,32 +16,38 @@ any script using argc automatically gets completion - no additional work needed.
 ### enable argc completion globally
 
 **bash** (add to `~/.bashrc`):
+
 ```sh
 eval "$(argc --argc-completions bash)"
 ```
 
 **zsh** (add to `~/.zshrc`):
+
 ```sh
 eval "$(argc --argc-completions zsh)"
 ```
 
 **fish** (add to `~/.config/fish/config.fish`):
+
 ```sh
 argc --argc-completions fish | source
 ```
 
 **powershell** (add to profile):
+
 ```powershell
 argc --argc-completions powershell | Out-String | Invoke-Expression
 ```
 
 **nushell** (add to `config.nu`):
+
 ```nu
 argc --argc-completions nushell | save completion-menu.nu
 source completion-menu.nu
 ```
 
 once enabled, all argc-powered scripts get automatic completion:
+
 ```sh
 ./my-script.sh <TAB>      # completes flags, options, args
 argc <TAB>                # completes Argcfile.sh commands
@@ -52,6 +58,7 @@ argc <TAB>                # completes Argcfile.sh commands
 ### parameter completion
 
 argc automatically completes:
+
 - flags: `-v`, `--verbose`
 - options: `--output`, `--format`
 - arguments: based on type hints
@@ -110,11 +117,13 @@ pre-built completion scripts for 1000+ commands.
 completions are automatically available if argc-completions is in your PATH.
 
 check available completions:
+
 ```sh
 ls @src/argc-completions/completions/
 ```
 
 use a completion:
+
 ```sh
 source <(argc --argc-completions bash git)
 git <TAB>  # enhanced completion
@@ -123,15 +132,19 @@ git <TAB>  # enhanced completion
 ### major available completions
 
 **development tools:**
+
 - git, cargo, npm, yarn, pnpm, pip, poetry, maven, gradle
 
 **cloud platforms:**
+
 - aws, gcloud, azure, terraform, kubectl, helm, docker
 
 **system tools:**
+
 - systemctl, journalctl, ssh, scp, rsync, tar
 
 **databases:**
+
 - psql, mysql, redis-cli, mongodb
 
 see full list: `@src/argc-completions/MANIFEST.md`
@@ -413,12 +426,14 @@ see `@src/argc-completions/docs/generate.md` for details.
 ### when completions run
 
 completions run during:
+
 - `<TAB>` key press
 - automatic completion display (depends on shell config)
 
 ### completion context
 
 during completion, argc sets:
+
 - `$ARGC_COMPGEN=1` - indicates completion mode
 - `$ARGC_CWORD` - current word being completed
 - `$ARGC_LAST` - last completed argument
@@ -427,11 +442,13 @@ during completion, argc sets:
 ### completion performance
 
 **fast completions:**
+
 - static choices: instant
 - simple commands: instant
 - file/directory: near-instant
 
 **slow completions:**
+
 - network calls: avoid or cache
 - expensive computations: use `_argc_util_parallel`
 - large datasets: filter/limit results
@@ -464,15 +481,15 @@ _expensive_operation() {
 ## best practices
 
 1. **keep choice functions fast** - completion should feel instant
-2. **handle errors silently** - redirect stderr: `2>/dev/null`
-3. **filter by current word** - use `$ARGC_CWORD` to narrow results
-4. **provide descriptions** - use `value<TAB>description` format
-5. **test in all target shells** - bash/zsh/fish behavior differs
-6. **cache expensive operations** - network calls, heavy computation
-7. **use type hints** - `<FILE>`, `<DIR>` for path completion
-8. **leverage utilities** - use `_argc_util_*` functions
-9. **fail gracefully** - return empty if data unavailable
-10. **document complex completions** - comment the logic
+1. **handle errors silently** - redirect stderr: `2>/dev/null`
+1. **filter by current word** - use `$ARGC_CWORD` to narrow results
+1. **provide descriptions** - use `value<TAB>description` format
+1. **test in all target shells** - bash/zsh/fish behavior differs
+1. **cache expensive operations** - network calls, heavy computation
+1. **use type hints** - `<FILE>`, `<DIR>` for path completion
+1. **leverage utilities** - use `_argc_util_*` functions
+1. **fail gracefully** - return empty if data unavailable
+1. **document complex completions** - comment the logic
 
 ## references
 

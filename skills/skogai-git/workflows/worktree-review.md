@@ -1,10 +1,16 @@
+---
+title: worktree-review
+type: note
+permalink: skogai/skills/skogai-git/workflows/worktree-review
+---
+
 # Worktree PR Review
 
 Isolated PR review in separate worktree to avoid disrupting current work.
 
-<required_reading>
-- skogai-worktrunk/SKILL.md (if unfamiliar with wt commands)
-</required_reading>
+\<required_reading>
+
+- skogai-worktrunk/SKILL.md (if unfamiliar with wt commands) \</required_reading>
 
 <process>
 
@@ -28,6 +34,7 @@ wt switch --create review/pr-<number>
 ```
 
 Example:
+
 ```bash
 wt switch --create review/pr-123
 ```
@@ -44,6 +51,7 @@ git checkout pr-<number>
 ```
 
 Example:
+
 ```bash
 gh pr checkout 123
 ```
@@ -91,24 +99,26 @@ wt remove review/pr-123 --force-delete
 
 </process>
 
-<decision_tree>
+\<decision_tree>
 
 ## When to Use Worktree for Review
 
 **Use worktree if:**
+
 - You have uncommitted changes you don't want to stash
 - Review might take a while
 - You want to run the PR code locally
 - You need to switch between review and your work
 
 **Skip worktree if:**
+
 - You're already on the PR branch
 - Quick review, no local testing needed
 - No work in progress to protect
 
-</decision_tree>
+\</decision_tree>
 
-<quick_workflow>
+\<quick_workflow>
 
 ## One-Liner Review Setup
 
@@ -122,10 +132,10 @@ wt switch --create review/pr-123 && gh pr checkout 123
 wt switch ^ && wt remove review/pr-123 --force-delete
 ```
 
-</quick_workflow>
+\</quick_workflow>
 
-<success_criteria>
+\<success_criteria>
+
 - Review completed without disrupting current work
 - PR approved/changes requested
-- Review worktree cleaned up
-</success_criteria>
+- Review worktree cleaned up \</success_criteria>

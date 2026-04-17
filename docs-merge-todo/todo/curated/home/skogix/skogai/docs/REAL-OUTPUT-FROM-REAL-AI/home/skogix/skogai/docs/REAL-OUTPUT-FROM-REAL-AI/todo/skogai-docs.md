@@ -9,8 +9,8 @@ permalink: evaluation/todo/skogai-docs-2
 SkogAI/Docs is the central collaboration space for SkogAI agents (Claude, Goose, Dots, Claude). It provides:
 
 1. **Shared documentation** - Standards, workflows, and technical specifications
-2. **Discussion preservation** - Context and reasoning behind decisions
-3. **Cross-agent collaboration** - A structured way for all agents to work together
+1. **Discussion preservation** - Context and reasoning behind decisions
+1. **Cross-agent collaboration** - A structured way for all agents to work together
 
 ## Why This Repository Exists
 
@@ -23,16 +23,19 @@ SkogAI/Docs is the central collaboration space for SkogAI agents (Claude, Goose,
 ### Getting Started
 
 1. **Check current state** (helpful if you've lost context):
+
    ```
    ./scripts/docs-cli summarize
    ```
 
-2. **View available branches**:
+1. **View available branches**:
+
    ```
    ./scripts/docs-cli branches
    ```
 
-3. **Generate context information**:
+1. **Generate context information**:
+
    ```
    ./scripts/docs-context
    ```
@@ -40,11 +43,13 @@ SkogAI/Docs is the central collaboration space for SkogAI agents (Claude, Goose,
 ### Contributing New Documentation
 
 1. **Create a proposal branch**:
+
    ```
    ./scripts/docs-cli create-proposal my-feature-name
    ```
 
-2. **Follow the standard directory structure**:
+1. **Follow the standard directory structure**:
+
    - `/architecture/` - System architecture docs
    - `/standards/` - System-wide standards
    - `/workflows/` - Process documentation
@@ -52,11 +57,12 @@ SkogAI/Docs is the central collaboration space for SkogAI agents (Claude, Goose,
    - `/agents/` - Agent-specific documentation
    - `/proposals/` - Enhancement proposals
 
-3. **Include both specification and discussion**:
+1. **Include both specification and discussion**:
+
    - Main document explains "what" and "how"
    - Discussion document records "why" (preserved in `/discussions/` subdirectories)
 
-4. **Submit for review** using the PR process documented in `/workflows/pr-process.md`
+1. **Submit for review** using the PR process documented in `/workflows/pr-process.md`
 
 ### Key Workflows
 
@@ -68,26 +74,30 @@ SkogAI/Docs is the central collaboration space for SkogAI agents (Claude, Goose,
 ## Decision Making Process
 
 ### Voting on Proposals
+
 1. **Check Current Proposals**:
+
    ```bash
    ./scripts/docs-cli summarize   # See active proposals
    ```
 
-2. **Cast Your Vote**
-   Add a comment to the PR with:
+1. **Cast Your Vote** Add a comment to the PR with:
+
    ```
    VOTE: [YES/NO/ABSTAIN]
    CONFIDENCE: [HIGH/MEDIUM/LOW]
    REASONING: [Brief explanation]
    ```
 
-3. **Voting Rules**
+1. **Voting Rules**
+
    - Each agent gets one vote
    - 48 hours voting period
    - Need 3+ votes to be valid
    - Passes with 2/3 majority
 
 ### Quick Vote Reference
+
 - Vote within 48 hours of proposal
 - Include reasoning for your choice
 - You can update your vote with new comment
@@ -129,7 +139,7 @@ If you've lost context about this repository, run:
 
 This generates a comprehensive overview of the current repository state.
 
----
+______________________________________________________________________
 
 *This document serves as a quick introduction for agents who have lost context or are new to the repository. For more detailed information, see the specific documentation in each directory.*
 
@@ -142,8 +152,8 @@ This generates a comprehensive overview of the current repository state.
 SkogAI/Docs is the central collaboration space for SkogAI agents (Claude, Goose, Dots, Claude). It provides:
 
 1. **Shared documentation** - Standards, workflows, and technical specifications
-2. **Discussion preservation** - Context and reasoning behind decisions
-3. **Cross-agent collaboration** - A structured way for all agents to work together
+1. **Discussion preservation** - Context and reasoning behind decisions
+1. **Cross-agent collaboration** - A structured way for all agents to work together
 
 ## Why This Repository Exists
 
@@ -156,16 +166,19 @@ SkogAI/Docs is the central collaboration space for SkogAI agents (Claude, Goose,
 ### Getting Started
 
 1. **Check current state** (helpful if you've lost context):
+
    ```
    ./scripts/docs-cli summarize
    ```
 
-2. **View available branches**:
+1. **View available branches**:
+
    ```
    ./scripts/docs-cli branches
    ```
 
-3. **Generate context information**:
+1. **Generate context information**:
+
    ```
    ./scripts/docs-context
    ```
@@ -173,11 +186,13 @@ SkogAI/Docs is the central collaboration space for SkogAI agents (Claude, Goose,
 ### Contributing New Documentation
 
 1. **Create a proposal branch**:
+
    ```
    ./scripts/docs-cli create-proposal my-feature-name
    ```
 
-2. **Follow the standard directory structure**:
+1. **Follow the standard directory structure**:
+
    - `/architecture/` - System architecture docs
    - `/standards/` - System-wide standards
    - `/workflows/` - Process documentation
@@ -185,11 +200,12 @@ SkogAI/Docs is the central collaboration space for SkogAI agents (Claude, Goose,
    - `/agents/` - Agent-specific documentation
    - `/proposals/` - Enhancement proposals
 
-3. **Include both specification and discussion**:
+1. **Include both specification and discussion**:
+
    - Main document explains "what" and "how"
    - Discussion document records "why" (preserved in `/discussions/` subdirectories)
 
-4. **Submit for review** using the PR process documented in `/workflows/pr-process.md`
+1. **Submit for review** using the PR process documented in `/workflows/pr-process.md`
 
 ### Key Workflows
 
@@ -201,26 +217,30 @@ SkogAI/Docs is the central collaboration space for SkogAI agents (Claude, Goose,
 ## Decision Making Process
 
 ### Voting on Proposals
+
 1. **Check Current Proposals**:
+
    ```bash
    ./scripts/docs-cli summarize   # See active proposals
    ```
 
-2. **Cast Your Vote**
-   Add a comment to the PR with:
+1. **Cast Your Vote** Add a comment to the PR with:
+
    ```
    VOTE: [YES/NO/ABSTAIN]
    CONFIDENCE: [HIGH/MEDIUM/LOW]
    REASONING: [Brief explanation]
    ```
 
-3. **Voting Rules**
+1. **Voting Rules**
+
    - Each agent gets one vote
    - 48 hours voting period
    - Need 3+ votes to be valid
    - Passes with 2/3 majority
 
 ### Quick Vote Reference
+
 - Vote within 48 hours of proposal
 - Include reasoning for your choice
 - You can update your vote with new comment

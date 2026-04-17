@@ -1,3 +1,9 @@
+---
+title: conventions
+type: note
+permalink: skogai/skills/fleet-memory/references/conventions
+---
+
 # Fleet Memory Conventions
 
 Naming, metadata, and structural rules for fleet-memory workspaces.
@@ -17,15 +23,15 @@ All paths use **lowercase-with-hyphens**. No spaces, underscores, or uppercase.
 
 ### Examples
 
-| Good | Bad | Why |
-|------|-----|-----|
-| `ships/alpha-team/findings.md` | `ships/Alpha_Team/findings.md` | No uppercase, no underscores |
-| `001-checkpoint.md` | `1-checkpoint.md` | Zero-pad to 3 digits |
-| `2026-02-27-mission-summary.md` | `Feb27_summary.md` | ISO date prefix, hyphens only |
-| `agents/captain-marsh/status.md` | `agents/captainMarsh/status.md` | No camelCase |
-| `knowledge/patterns.md` | `knowledge/Patterns.MD` | Lowercase extension |
+| Good                             | Bad                             | Why                           |
+| -------------------------------- | ------------------------------- | ----------------------------- |
+| `ships/alpha-team/findings.md`   | `ships/Alpha_Team/findings.md`  | No uppercase, no underscores  |
+| `001-checkpoint.md`              | `1-checkpoint.md`               | Zero-pad to 3 digits          |
+| `2026-02-27-mission-summary.md`  | `Feb27_summary.md`              | ISO date prefix, hyphens only |
+| `agents/captain-marsh/status.md` | `agents/captainMarsh/status.md` | No camelCase                  |
+| `knowledge/patterns.md`          | `knowledge/Patterns.MD`         | Lowercase extension           |
 
----
+______________________________________________________________________
 
 ## 2. Frontmatter Schema
 
@@ -100,20 +106,20 @@ valid_from: 2026-02-27T14:00:00Z
 - **Description**: ...
 ```
 
----
+______________________________________________________________________
 
 ## 3. Directory Structure Rules
 
 ### Required contents
 
-| Directory | Must contain | Owner |
-|-----------|-------------|-------|
-| `policy/` | standing-orders.md, roles.md, damage-control.md | read-only (no runtime writer) |
-| `state/` | mission-plan.md, checkpoints/ | coordinator |
-| `ships/{ship-name}/` | briefing.md, findings.md | captain (findings), coordinator (briefing) |
-| `ships/{ship}/agents/{agent}/` | status.md, scratch/ | agent |
-| `knowledge/` | patterns.md, entities.md | coordinator |
-| `archive/` | date-prefixed files only | coordinator |
+| Directory                      | Must contain                                    | Owner                                      |
+| ------------------------------ | ----------------------------------------------- | ------------------------------------------ |
+| `policy/`                      | standing-orders.md, roles.md, damage-control.md | read-only (no runtime writer)              |
+| `state/`                       | mission-plan.md, checkpoints/                   | coordinator                                |
+| `ships/{ship-name}/`           | briefing.md, findings.md                        | captain (findings), coordinator (briefing) |
+| `ships/{ship}/agents/{agent}/` | status.md, scratch/                             | agent                                      |
+| `knowledge/`                   | patterns.md, entities.md                        | coordinator                                |
+| `archive/`                     | date-prefixed files only                        | coordinator                                |
 
 ### Structural constraints
 
@@ -162,7 +168,7 @@ fleet-workspace/
     2026-02-27-alpha-initial-findings.md
 ```
 
----
+______________________________________________________________________
 
 ## 4. Metadata Conventions
 
@@ -178,12 +184,12 @@ All dates and times use **ISO 8601**: `YYYY-MM-DDTHH:MM:SSZ`
 
 Fixed values. No synonyms, no abbreviations.
 
-| Domain | Allowed values |
-|--------|---------------|
-| Task | `pending`, `in_progress`, `completed`, `blocked` |
-| File | `draft`, `complete`, `superseded`, `deprecated` |
-| Agent | `active`, `idle`, `terminated` |
-| Ship | `active`, `completed`, `failed` |
+| Domain | Allowed values                                   |
+| ------ | ------------------------------------------------ |
+| Task   | `pending`, `in_progress`, `completed`, `blocked` |
+| File   | `draft`, `complete`, `superseded`, `deprecated`  |
+| Agent  | `active`, `idle`, `terminated`                   |
+| Ship   | `active`, `completed`, `failed`                  |
 
 ### Identifiers
 
@@ -198,7 +204,7 @@ Fixed values. No synonyms, no abbreviations.
 - Sequential with no gaps (if 003 is deleted, next is still 004)
 - Used for checkpoints only
 
----
+______________________________________________________________________
 
 ## 5. Content Structure Rules
 
@@ -222,7 +228,7 @@ Pipe-delimited with header separator:
 ### Lists and code
 
 - Use `-` for unordered lists, never `*`
-- Code blocks: triple backtick with language tag (` ```markdown `, ` ```yaml `)
+- Code blocks: triple backtick with language tag (```` ```markdown ````, ```` ```yaml ````)
 - Inline code: single backtick for file paths, field names, values
 
 ### Whitespace
@@ -236,7 +242,7 @@ Pipe-delimited with header separator:
 
 Replace, don't append. When updating a file, overwrite the content entirely. Update `valid_from` to current timestamp. Git handles version history.
 
----
+______________________________________________________________________
 
 ## 6. Validation Checklist
 
@@ -259,7 +265,6 @@ Run before writing any file:
 - [ ] Archive filename starts with `YYYY-MM-DD-`
 - [ ] No absolute paths in scope references (use workspace-relative)
 
----
+______________________________________________________________________
 
-**Reference Version**: 1.0.0
-**Companion to**: fleet-memory SKILL.md
+**Reference Version**: 1.0.0 **Companion to**: fleet-memory SKILL.md

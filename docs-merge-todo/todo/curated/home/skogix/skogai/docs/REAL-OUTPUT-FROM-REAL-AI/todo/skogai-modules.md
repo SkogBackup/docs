@@ -25,9 +25,9 @@ SkogAI/SkogAI/                 (Main repository)
 ## Key Principles
 
 1. **Git Submodules** - Each module is its own git repository, allowing independent versioning
-2. **Automatic Discovery** - Modules are automatically discovered and made available through skogcli
-3. **Consistent Interface** - Modules expose functionality through predictable commands
-4. **Scriptable Implementation** - Module functionality is implemented through scripts in a standard location
+1. **Automatic Discovery** - Modules are automatically discovered and made available through skogcli
+1. **Consistent Interface** - Modules expose functionality through predictable commands
+1. **Scriptable Implementation** - Module functionality is implemented through scripts in a standard location
 
 ## Command Structure
 
@@ -38,6 +38,7 @@ skogcli [module-name] [command] [arguments]
 ```
 
 Example:
+
 ```bash
 skogcli skogchat chat "Hello world"
 ```
@@ -52,10 +53,10 @@ skogcli skogchat chat "Hello world"
 ## Benefits
 
 1. **Simplicity** - "Everything is a file/script" makes the system easy to understand
-2. **Discoverability** - Functionality is organized in a predictable way
-3. **Extensibility** - New modules can be added without modifying core code
-4. **Version Control** - Each module evolves at its own pace
-5. **Security** - All commands run through skogcli's security mechanisms
+1. **Discoverability** - Functionality is organized in a predictable way
+1. **Extensibility** - New modules can be added without modifying core code
+1. **Version Control** - Each module evolves at its own pace
+1. **Security** - All commands run through skogcli's security mechanisms
 
 ## Implementation
 
@@ -74,7 +75,8 @@ skogcli skogchat chat "Hello world"
 ## Example Module Setup
 
 Creating a new module is as simple as:
+
 1. Create a new directory in the SkogAI structure
-2. Add scripts to the root and scripts/ directories
-3. The module is immediately available through skogcli
-4. No registration or configuration required
+1. Add scripts to the root and scripts/ directories
+1. The module is immediately available through skogcli
+1. No registration or configuration required

@@ -1,6 +1,10 @@
-allowed-tools: Write
-description: Guide for creating new slash commands
-argument-hint: [command-name] [description]
+---
+title: add-command
+type: note
+permalink: skogai/docs-merge-todo/agents/claude/prompts/prompts/commands/add-command
+---
+
+allowed-tools: Write description: Guide for creating new slash commands argument-hint: [command-name] [description]
 
 # Slash Command Creator Guide
 

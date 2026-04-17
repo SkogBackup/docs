@@ -1,10 +1,16 @@
+---
+title: node_mcp_server
+type: note
+permalink: skogai/skills/skogai-mcp-builder/reference/node-mcp-server
+---
+
 # Node/TypeScript MCP Server Implementation Guide
 
 ## Overview
 
 This document provides Node/TypeScript-specific best practices and examples for implementing MCP servers using the MCP TypeScript SDK. It covers project structure, server setup, tool registration patterns, input validation with Zod, error handling, and complete working examples.
 
----
+______________________________________________________________________
 
 ## Quick Reference
 
@@ -34,7 +40,7 @@ server.registerTool("tool_name", { ...config }, async (params) => {
 });
 ```
 
----
+______________________________________________________________________
 
 ## MCP TypeScript SDK
 
@@ -512,12 +518,12 @@ function fetchData(resourceId: string): Promise<ResourceData> {
 ## TypeScript Best Practices
 
 1. **Use Strict TypeScript**: Enable strict mode in tsconfig.json
-2. **Define Interfaces**: Create clear interface definitions for all data structures
-3. **Avoid `any`**: Use proper types or `unknown` instead of `any`
-4. **Zod for Runtime Validation**: Use Zod schemas to validate external data
-5. **Type Guards**: Create type guard functions for complex type checking
-6. **Error Handling**: Always use try-catch with proper error type checking
-7. **Null Safety**: Use optional chaining (`?.`) and nullish coalescing (`??`)
+1. **Define Interfaces**: Create clear interface definitions for all data structures
+1. **Avoid `any`**: Use proper types or `unknown` instead of `any`
+1. **Zod for Runtime Validation**: Use Zod schemas to validate external data
+1. **Type Guards**: Create type guard functions for complex type checking
+1. **Error Handling**: Always use try-catch with proper error type checking
+1. **Null Safety**: Use optional chaining (`?.`) and nullish coalescing (`??`)
 
 ```typescript
 // Good: Type-safe with Zod and interfaces
@@ -762,7 +768,7 @@ main().catch((error) => {
 });
 ```
 
----
+______________________________________________________________________
 
 ## Advanced MCP Features
 
@@ -868,7 +874,7 @@ server.notification({
 
 Use notifications sparingly - only when server capabilities genuinely change.
 
----
+______________________________________________________________________
 
 ## Code Best Practices
 
@@ -884,7 +890,8 @@ Your implementation MUST prioritize composability and code reuse:
    - Extract business logic into dedicated functions that can be composed
    - Extract shared markdown or JSON field selection & formatting functionality
 
-2. **Avoid Duplication**:
+1. **Avoid Duplication**:
+
    - NEVER copy-paste similar code between tools
    - If you find yourself writing similar logic twice, extract it into a function
    - Common operations like pagination, filtering, field selection, and formatting should be shared

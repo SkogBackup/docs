@@ -1,9 +1,17 @@
+---
+title: puppeteer
+type: note
+permalink: skogai/docs-merge-todo/mcp/servers/puppeteer
+---
+
 # puppeteer MCP Server
 
 ## Purpose
+
 Browser automation and web interaction
 
 ## Functions
+
 - `mcp__puppeteer__puppeteer_navigate`
 - `mcp__puppeteer__puppeteer_screenshot`
 - `mcp__puppeteer__puppeteer_click`
@@ -15,11 +23,13 @@ Browser automation and web interaction
 ## Parameters
 
 ### puppeteer_navigate
+
 - `url` (string): URL to navigate to
 - `launchOptions` (object, optional): PuppeteerJS LaunchOptions
 - `allowDangerous` (boolean, optional): Allow dangerous LaunchOptions (default: false)
 
 ### puppeteer_screenshot
+
 - `name` (string): Name for the screenshot
 - `selector` (string, optional): CSS selector for element to screenshot
 - `width` (number, optional): Width in pixels (default: 800)
@@ -27,23 +37,29 @@ Browser automation and web interaction
 - `encoded` (boolean, optional): Return as base64 data URI (default: false)
 
 ### puppeteer_click
+
 - `selector` (string): CSS selector for element to click
 
 ### puppeteer_fill
+
 - `selector` (string): CSS selector for input field
 - `value` (string): Value to fill
 
 ### puppeteer_select
+
 - `selector` (string): CSS selector for select element
 - `value` (string): Value to select
 
 ### puppeteer_hover
+
 - `selector` (string): CSS selector for element to hover
 
 ### puppeteer_evaluate
+
 - `script` (string): JavaScript code to execute
 
 ## Use Cases
+
 - Web scraping and data extraction
 - Automated testing of web applications
 - Form filling and submission
@@ -51,7 +67,9 @@ Browser automation and web interaction
 - JavaScript execution in browser context
 
 ## Test Results
+
 ✅ **Tested**: Successfully navigated to example.com and captured screenshot
 
 ## Status
+
 Available and functional

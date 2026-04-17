@@ -1,13 +1,14 @@
 ---
 name: skogai-project-lifecycle
 description: Navigate SkogAI's dual workflow system - explosive creative phase using skogix personal plugin setup and the controlled production-ready phase skogai/claude where all of SkogAI's experience comes into play with long term goals and strategies. Use when starting new features, deciding when to migrate work, planning a workflow or tooling setup or understanding the pruning process that is core to SkogAI's philosophy.
+permalink: skogai/skills/skogai-project-lifecycle/skill
 ---
 
 <objective>
 Guide navigation between SkogAI's two development workflows: explosive creative experimentation and production-ready implementation.
 </objective>
 
-<essential_principles>
+\<essential_principles>
 
 ## The Core Insight
 
@@ -60,23 +61,23 @@ Each phase has different tools, constraints, and success criteria.
 For any piece of content (doc, code, skill, config), apply this test:
 
 1. **Full Context**: What did Claude produce with full project knowledge?
-2. **Starved Context**: What would Claude produce knowing _nothing_ about your project?
-3. **Delta**: What's in #1 that's NOT in #2?
+1. **Starved Context**: What would Claude produce knowing _nothing_ about your project?
+1. **Delta**: What's in #1 that's NOT in #2?
 
 **Only the delta has value. Everything else is noise.**
 
 See `@references/differential-documentation-engine.md` for the concrete implementation of this test.
 
-</essential_principles>
+\</essential_principles>
 
 <intake>
 
 Where are you in the lifecycle?
 
 1. Starting new feature/idea (explosive phase)
-2. Have working MVP, need to prune/polish (transition)
-3. Migrating to production (.skogai/claude/)
-4. Understanding the philosophy/when to use which
+1. Have working MVP, need to prune/polish (transition)
+1. Migrating to production (.skogai/claude/)
+1. Understanding the philosophy/when to use which
 
 **Wait for response before routing.**
 
@@ -95,12 +96,11 @@ Where are you in the lifecycle?
 
 </routing>
 
-<pruning_theory>
+\<pruning_theory>
 
 ## Why Pruning Works
 
-Traditional documentation asks: "What does someone need to know?"
-SkogAI documentation asks: "What can't someone infer?"
+Traditional documentation asks: "What does someone need to know?" SkogAI documentation asks: "What can't someone infer?"
 
 The difference is profound:
 
@@ -136,8 +136,7 @@ The second version is 90% shorter and 100% more useful. Claude already knows wha
 
 The concrete tool for pruning documentation:
 
-**Pass 1 (Full Context)**: Write comprehensive docs with all project knowledge
-**Pass 2 (Starved Context)**: Write the same docs knowing nothing about the project  
+**Pass 1 (Full Context)**: Write comprehensive docs with all project knowledge **Pass 2 (Starved Context)**: Write the same docs knowing nothing about the project\
 **Pass 3 (Delta Extraction)**: Keep only what's in Pass 1 but not Pass 2
 
 Real results from testing: 450 lines → 95 lines (79% reduction), 100% actionable info preserved.
@@ -188,9 +187,9 @@ existing team expertise + JSONB columns + need for transactions
 in the payment flow outweighed schema flexibility benefits.
 ```
 
-</pruning_theory>
+\</pruning_theory>
 
-<current_examples>
+\<current_examples>
 
 ## Real Examples from This Repo
 
@@ -226,9 +225,9 @@ Skills still in explosive/validation:
 
 **Graduation criteria**: Can a context-starved Claude still use the skill effectively? If yes, it's been pruned enough for production.
 
-</current_examples>
+\</current_examples>
 
-<success_criteria>
+\<success_criteria>
 
 You understand:
 
@@ -239,7 +238,7 @@ You understand:
 - [ ] When to transition: working MVP + can articulate the delta = ready to prune
 - [ ] How to use the Differential Documentation Engine for systematic pruning
 
-</success_criteria>
+\</success_criteria>
 
 <references>
 

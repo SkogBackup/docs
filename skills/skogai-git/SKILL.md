@@ -1,20 +1,23 @@
 ---
-name: skogai-git
-description: "What should I do?" — Git workflows, commit philosophy, PR workflows, branch management, tool selection routing. Orchestration across wt, gita, gh, and raw git. For tool configuration details ("How does this tool work?"), see skogai-worktrunk.
+permalink: skogai/skills/skogai-git/skill
 ---
 
-<essential_principles>
+______________________________________________________________________
+
+## name: skogai-git description: "What should I do?" — Git workflows, commit philosophy, PR workflows, branch management, tool selection routing. Orchestration across wt, gita, gh, and raw git. For tool configuration details ("How does this tool work?"), see skogai-worktrunk.
+
+\<essential_principles>
 
 ## Tool Selection
 
 Choose the right tool for the job:
 
-| Tool | Use When | Example |
-|------|----------|---------|
-| **wt** | Single repo, multiple branches simultaneously | `wt switch --create feature/x` |
-| **gita** | Multiple repos, unified operations | `gita ll`, `gita pull` |
-| **gh** | GitHub PRs, issues, checks | `gh pr create`, `gh pr view` |
-| **raw git** | Simple operations, edge cases | `git status`, `git log` |
+| Tool        | Use When                                      | Example                        |
+| ----------- | --------------------------------------------- | ------------------------------ |
+| **wt**      | Single repo, multiple branches simultaneously | `wt switch --create feature/x` |
+| **gita**    | Multiple repos, unified operations            | `gita ll`, `gita pull`         |
+| **gh**      | GitHub PRs, issues, checks                    | `gh pr create`, `gh pr view`   |
+| **raw git** | Simple operations, edge cases                 | `git status`, `git log`        |
 
 ## Commit Philosophy
 
@@ -31,18 +34,18 @@ Choose the right tool for the job:
 - Each commit should be independently reviewable
 - Detect repo style from `git log --oneline -10` before committing
 
-</essential_principles>
+\</essential_principles>
 
 <intake>
 
 What would you like to do?
 
 1. Work in parallel (worktrees)
-2. Manage multiple repos (gita)
-3. Commit and push changes
-4. Create or review PRs
-5. Branch management
-6. Get guidance on tool selection
+1. Manage multiple repos (gita)
+1. Commit and push changes
+1. Create or review PRs
+1. Branch management
+1. Get guidance on tool selection
 
 If intent is clear from context, route directly. Otherwise, ask.
 
@@ -50,15 +53,15 @@ If intent is clear from context, route directly. Otherwise, ask.
 
 <routing>
 
-| Response | Next Action | Workflow |
-|----------|-------------|----------|
-| 1, "worktree", "parallel", "wt" | Route to worktree workflow | workflows/worktree-parallel.md |
-| "review", "pr review", "isolated review" | Route to review workflow | workflows/worktree-review.md |
-| 2, "multi-repo", "gita", "repos", "all repos" | Route to gita workflow | workflows/multi-repo.md |
-| 3, "commit", "push", "save" | Route to commit workflow | workflows/commit-push.md |
-| 4, "pr", "pull request", "create pr" | Route to PR workflow | workflows/pr-workflow.md |
-| 5, "branch", "merge", "cleanup", "delete" | Route to branch workflow | workflows/branch-management.md |
-| 6, "guidance", "which tool", "help" | Read references/tool-selection.md | Direct reference |
+| Response                                      | Next Action                       | Workflow                       |
+| --------------------------------------------- | --------------------------------- | ------------------------------ |
+| 1, "worktree", "parallel", "wt"               | Route to worktree workflow        | workflows/worktree-parallel.md |
+| "review", "pr review", "isolated review"      | Route to review workflow          | workflows/worktree-review.md   |
+| 2, "multi-repo", "gita", "repos", "all repos" | Route to gita workflow            | workflows/multi-repo.md        |
+| 3, "commit", "push", "save"                   | Route to commit workflow          | workflows/commit-push.md       |
+| 4, "pr", "pull request", "create pr"          | Route to PR workflow              | workflows/pr-workflow.md       |
+| 5, "branch", "merge", "cleanup", "delete"     | Route to branch workflow          | workflows/branch-management.md |
+| 6, "guidance", "which tool", "help"           | Read references/tool-selection.md | Direct reference               |
 
 **Intent-based routing (if user provides clear intent):**
 
@@ -74,7 +77,7 @@ If intent is clear from context, route directly. Otherwise, ask.
 
 </routing>
 
-<quick_reference>
+\<quick_reference>
 
 ## wt (Worktrunk) Commands
 
@@ -108,9 +111,9 @@ gh pr merge                  # Merge PR
 gh pr list                   # List open PRs
 ```
 
-</quick_reference>
+\</quick_reference>
 
-<reference_index>
+\<reference_index>
 
 ## Domain Knowledge
 
@@ -121,26 +124,26 @@ All in `references/`:
 - **Commands:** wt-commands.md, gita-commands.md — *cross-references to skogai-worktrunk*
 - **Hooks:** hook-types.md — *cross-reference to skogai-worktrunk*
 
-</reference_index>
+\</reference_index>
 
-<workflows_index>
+\<workflows_index>
 
 ## Workflows
 
 All in `workflows/`:
 
-| Workflow | Purpose |
-|----------|---------|
+| Workflow             | Purpose                                       |
+| -------------------- | --------------------------------------------- |
 | worktree-parallel.md | Create and manage worktrees for parallel work |
-| worktree-review.md | Isolated PR review in separate worktree |
-| multi-repo.md | gita operations across multiple repos |
-| commit-push.md | Semantic commits and push workflow |
-| branch-management.md | Create, switch, merge, cleanup branches |
-| pr-workflow.md | Create, review, merge pull requests |
+| worktree-review.md   | Isolated PR review in separate worktree       |
+| multi-repo.md        | gita operations across multiple repos         |
+| commit-push.md       | Semantic commits and push workflow            |
+| branch-management.md | Create, switch, merge, cleanup branches       |
+| pr-workflow.md       | Create, review, merge pull requests           |
 
-</workflows_index>
+\</workflows_index>
 
-<templates_index>
+\<templates_index>
 
 ## Templates
 
@@ -150,18 +153,18 @@ All in `templates/`:
 - **commit-formats.md:** Semantic commit message templates
 - **pr-body.md:** Pull request description template
 
-</templates_index>
+\</templates_index>
 
-<see_also>
+\<see_also>
 
 ## Related Skills
 
 - **skogai-worktrunk** — "How does this tool work?" Tool configuration, operation details, hooks, permission models, submodule patterns, LLM commit setup. Use when you need to configure wt/gita or understand tool internals.
 - **skogai-git** (this skill) — "What should I do?" Git workflows, commit philosophy, PR workflows, branch management, tool selection routing.
 
-</see_also>
+\</see_also>
 
-<success_criteria>
+\<success_criteria>
 
 A well-executed git workflow:
 
@@ -171,4 +174,4 @@ A well-executed git workflow:
 - Worktrees are cleaned up after merging
 - PRs have clear summaries and test plans
 
-</success_criteria>
+\</success_criteria>

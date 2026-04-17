@@ -1,3 +1,9 @@
+---
+title: specification
+type: note
+permalink: skogai/skills/skogai-argc/docs/specification
+---
+
 # Specification
 
 ## Comment Tags
@@ -67,10 +73,7 @@ COMMANDS:
 Defines a positional argument.
 
 > **<sup>Syntax</sup>**\
-> `@arg` [_name_] [_modifier_]<sup>?</sup> [_param-value_]<sup>?</sup>
->   [_bind-env_]<sup>?</sup>
->   [_notation_]<sup>?</sup>
->   [_description_]<sup>?</sup>
+> `@arg` [_name_] [_modifier_]<sup>?</sup> [_param-value_]<sup>?</sup> [_bind-env_]<sup>?</sup> [_notation_]<sup>?</sup> [_description_]<sup>?</sup>
 
 ```sh
 # @arg va
@@ -98,10 +101,7 @@ Defines a positional argument.
 Defines an option argument.
 
 > **<sup>Syntax</sup>**\
-> `@option` [_short_]<sup>?</sup> [_long_] [_modifier_]<sup>?</sup> [_param-value_]<sup>?</sup>
->   [_bind-env_]<sup>?</sup>
->   [_notations_]<sup>?</sup>
->   [_description_]<sup>?</sup>
+> `@option` [_short_]<sup>?</sup> [_long_] [_modifier_]<sup>?</sup> [_param-value_]<sup>?</sup> [_bind-env_]<sup>?</sup> [_notations_]<sup>?</sup> [_description_]<sup>?</sup>
 
 ```sh
 # @option    --oa                   
@@ -134,9 +134,7 @@ Defines an option argument.
 Defines a flag argument. Flag is a special option that does not accept any value.
 
 > **<sup>Syntax</sup>**\
-> `@flag` [_short_]<sup>?</sup> [_long_]`*`<sup>?</sup>
->   [_bind-env_]<sup>?</sup>
->   [_description_]<sup>?</sup>
+> `@flag` [_short_]<sup>?</sup> [_long_]`*`<sup>?</sup> [_bind-env_]<sup>?</sup> [_description_]<sup>?</sup>
 
 ```sh
 # @flag     --fa 
@@ -152,9 +150,7 @@ Defines a flag argument. Flag is a special option that does not accept any value
 Defines an environment variable.
 
 > **<sup>Syntax</sup>**\
-> `@arg` [_NAME_]`!`<sup>?</sup>[_param-value_]<sup>?</sup>
->   [_notation_]<sup>?</sup>
->   [_description_]<sup>?</sup>
+> `@arg` [_NAME_]`!`<sup>?</sup>[_param-value_]<sup>?</sup> [_notation_]<sup>?</sup> [_description_]<sup>?</sup>
 
 ```sh
 # @env EA                 optional
@@ -182,7 +178,6 @@ Adds metadata.
 | `@meta combine-shorts`           | root   | Short flags/options can be combined, e.g. `prog -xf => prog -x -f `. |
 | `@meta symbol <param>`           | any    | Define a symbolic parameter, e.g. `+toolchain`, `@argument-file`.    |
 
-
 ```sh
 # @meta version 1.0.0
 # @meta dotenv
@@ -196,10 +191,10 @@ Adds metadata.
 
 ### short
 
- A single character abbreviation for a flag/option.
+A single character abbreviation for a flag/option.
 
 > **<sup>Syntax</sup>**\
-> &nbsp;&nbsp; -[_short-char_] \
+> -[_short-char_] \
 > | +[_short-char_]
 
 ### long
@@ -207,7 +202,7 @@ Adds metadata.
 A descriptive name for a flag/option.
 
 > **<sup>Syntax</sup>**\
-> &nbsp; -- [_long-name_] \
+> -- [_long-name_] \
 > | -[_long-name_] \
 > | +[_long-name_]
 
@@ -216,7 +211,7 @@ A descriptive name for a flag/option.
 Symbols used to modify param behavior:
 
 > **<sup>Syntax</sup>**\
-> &nbsp; `!` \
+> `!` \
 > | `*` [_separated-char_]<sup>?</sup> \
 > | `+` [_separated-char_]<sup>?</sup>
 
@@ -229,12 +224,12 @@ Symbols used to modify param behavior:
 Ways to specify values for params:
 
 > **<sup>Syntax</sup>**\
-> &nbsp; =[_value_] \
+> =[_value_] \
 > | =\`[_fn-name_]\` \
-> | [[_choices_]] \
-> | [=[_choices_]] \
-> | [\`[_fn-name_]\`] \
-> | [?\`[_fn-name_]\`]
+> | \[[_choices_]\] \
+> | \[=[_choices_]\] \
+> | \[\`[_fn-name_]\`\] \
+> | \[?\`[_fn-name_]\`\]
 
 ### choices
 
@@ -248,13 +243,12 @@ Define a set of acceptable values for an param
 Placeholders in help messages and usage instructions:
 
 > **<sup>Syntax</sup>**\
-> ([_notation_] )<sup>\*</sup>  [_notation-last_] 
+> ([_notation_] )<sup>\*</sup> [_notation-last_]
 
 ### notation
 
 > **<sup>Syntax</sup>**\
 > `<` [_value_]` >`
-
 
 - `FILE`/`PATH`: complete files
 - `DIR`: complete directories
@@ -269,7 +263,7 @@ Placeholders in help messages and usage instructions:
 Symbols used within the last notation to specify value requirements
 
 > **<sup>Syntax</sup>**\
-> &nbsp; `*` \
+> `*` \
 > | `+` \
 > | `?`
 
@@ -287,7 +281,7 @@ A-Z a-z 0-9 `!` `#` `$` `%` `*` `+` `,` `.` `/` `:` `=` `?` `@` `[` `]` `^` `_` 
 
 ### bind-env
 
- Link environment variables to params:
+Link environment variables to params:
 
 - `$$`: Automatically use the param's name for the environment variable.
 - `$`[_NAME_]: Use a specific environment variable name.
@@ -303,21 +297,20 @@ Plain text for documentation and usage information
 # are treated as the long description. A line which is not a comment ends the block.
 ```
 
-[_short_]: #short
+[_bind-env_]: #bind-env
+[_choices_]: #choices
+[_description_]: #description
+[_fn-name_]: #fn-name
+[_long-name_]: #name
 [_long_]: #long
 [_modifier_]: #modifier
-[_param-value_]: #param-value
-[_choices_]: #choices
-[_notations_]: #notations
-[_notation_]: #notation
+[_name_]: #name
 [_notation-last_]: #notation-last
 [_notation-modifier_]: #notation-modifier
-[_short-char_]: #short-char
+[_notations_]: #notations
+[_notation_]: #notation
+[_param-value_]: #param-value
 [_separated-char_]: #separated-char
-[_bind-env_]: #bind-env
-[_description_]: #description
-[_name_]: #name
-[_long-name_]: #name
-[_fn-name_]: #fn-name
+[_short-char_]: #short-char
+[_short_]: #short
 [_value_]: #value
-[_NAME_]: #name

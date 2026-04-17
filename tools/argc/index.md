@@ -3,11 +3,11 @@ title: argc documentation
 type: tool
 permalink: docs/tools/argc/index.md-1
 tags:
-- argc
-- bash
-- cli
-- task-runner
-- completion
+  - argc
+  - bash
+  - cli
+  - task-runner
+  - completion
 ---
 
 # argc
@@ -41,6 +41,7 @@ argc is a bash framework written in rust for building feature-rich command-line 
 ## core concepts
 
 **comment-tag dsl** - argc uses bash comments as a domain-specific language:
+
 ```sh
 # @cmd         - define command/subcommand
 # @arg         - positional argument
@@ -53,6 +54,7 @@ argc is a bash framework written in rust for building feature-rich command-line 
 ```
 
 **variable naming** - argc maps parameters to bash variables with `argc_` prefix:
+
 ```sh
 # @option --name
 # becomes: $argc_name
@@ -62,12 +64,13 @@ argc is a bash framework written in rust for building feature-rich command-line 
 ```
 
 **modifiers** - symbols control parameter behavior:
+
 - `!` - required
 - `*` - multi-occurs/multi-values
 - `+` - required + multi-occurs
 - `=value` - default value
 - `[a|b|c]` - static choices
-- `[`_choice_fn`]` - dynamic choices from function
+- `[`\_choice_fn`]` - dynamic choices from function
 
 ## key features
 
@@ -83,6 +86,7 @@ argc is a bash framework written in rust for building feature-rich command-line 
 ## usage patterns
 
 **cli script:**
+
 ```sh
 #!/usr/bin/env bash
 # @flag -v --verbose  Enable verbose output
@@ -96,6 +100,7 @@ echo "result" > "${argc_output:-output.txt}"
 ```
 
 **task runner (Argcfile.sh):**
+
 ```sh
 #!/usr/bin/env bash
 set -e

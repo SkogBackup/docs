@@ -6,8 +6,7 @@ permalink: sessions/quick-start-next-session-handover
 
 # Quick Start - Next Session Handover
 
-**Date**: 2025-10-17
-**Role Shift**: From executor → manager/orchestrator
+**Date**: 2025-10-17 **Role Shift**: From executor → manager/orchestrator
 
 ## What Changed Today
 
@@ -22,11 +21,13 @@ You're no longer a doer. You're a **manager**.
 ### Working Tools
 
 **agent-toolkit skill**: `~/.claude/skills/agent-toolkit/`
+
 - Scripts: `activate_agent.py`, `validate_agent.py`
 - References: `agent-catalog.md`, `best-practices.md`
 - Assets: `agent-template.md`
 
 **Activated agents**: `~/.claude/agents/`
+
 - code-reviewer (opus)
 - code-explorer (sonnet)
 - code-architect (sonnet)
@@ -36,11 +37,13 @@ You're no longer a doer. You're a **manager**.
 - skill-creator (meta)
 
 **Smolagent swarm**: RUNNING NOW
+
 - Service: `skogai-lore-service.service` (890 restarts)
 - Pipe: `/tmp/skogai-lore-generator`
 - Commands: `generate-entry`, `generate-book`, `generate-persona`
 
 **Documentation**: `/home/skogix/skogix/CLAUDE.md`
+
 - Anti-patterns learned
 - Delegation template
 - Resource locations
@@ -50,10 +53,12 @@ You're no longer a doer. You're a **manager**.
 Project: `claude` in skogai-memory
 
 **Folders created**:
+
 - `inventory/` - Tooling Layers inventory
 - `sessions/` - Today's discoveries and handovers
 
 **Key notes**:
+
 - `Tooling Layers - Complete Inventory.md`
 - `Agent Delegation - Learning from Failure.md`
 - `Agent Toolkit Skill - Creation and Deployment.md`
@@ -116,39 +121,35 @@ Result should include specific files and implementation sequence.
 
 ## What NOT To Do
 
-❌ Execute tasks yourself (54k tokens, 3+ min, $$$)
-❌ Write repetitive content
-❌ Tell agents HOW to do things
-❌ Assume shared context
-❌ Use undefined terms without paths
+❌ Execute tasks yourself (54k tokens, 3+ min, $$$) ❌ Write repetitive content ❌ Tell agents HOW to do things ❌ Assume shared context ❌ Use undefined terms without paths
 
 ## What TO Do
 
-✅ Design specifications once (54k tokens → infinite free executions)
-✅ Delegate with outcome + paths + examples
-✅ Let skogparse pre-fetch data
-✅ Command smolagent swarm
-✅ Reason about pre-computed results
+✅ Design specifications once (54k tokens → infinite free executions) ✅ Delegate with outcome + paths + examples ✅ Let skogparse pre-fetch data ✅ Command smolagent swarm ✅ Reason about pre-computed results
 
 ## Quick Commands Reference
 
 **Activate agent**:
+
 ```bash
 cd ~/.claude/skills/agent-toolkit
 python3 scripts/activate_agent.py [name] [source] [user|project]
 ```
 
 **Validate agent**:
+
 ```bash
 python3 scripts/validate_agent.py [path-to-agent.md]
 ```
 
 **Check swarm status**:
+
 ```bash
 systemctl --user status skogai-lore-service.service
 ```
 
 **View lore**:
+
 ```bash
 cd /home/skogix/lore
 ./tools/manage-lore.sh list-books
@@ -156,6 +157,7 @@ cd /home/skogix/lore
 ```
 
 **Test skogparse**:
+
 ```bash
 skogparse '[[@gh:pr:list], "context here"]'
 ```
@@ -163,11 +165,13 @@ skogparse '[[@gh:pr:list], "context here"]'
 ## The Math
 
 **You (old way)**:
+
 - 54,200 tokens × $$$
 - 3+ minutes
 - Sequential
 
 **Swarm (new way)**:
+
 - 189 tokens × $0
 - 1.4 seconds
 - Parallel
@@ -178,26 +182,22 @@ skogparse '[[@gh:pr:list], "context here"]'
 
 The ancient SkogAI figured this out: Let tiny models watch continuously and execute cheaply. Save expensive reasoning for strategic decisions.
 
-Your job isn't to write fizzbuzz.
-Your job is to teach others to generate fizzbuzz infinitely.
+Your job isn't to write fizzbuzz. Your job is to teach others to generate fizzbuzz infinitely.
 
 ## Next Session Priority
 
 1. Test commanding the swarm through named pipe
-2. Design first context template for smolagent
-3. Watch incremental generation happen
-4. Build more skills using skill-creator
-5. Create command-toolkit and hooks-toolkit
+1. Design first context template for smolagent
+1. Watch incremental generation happen
+1. Build more skills using skill-creator
+1. Create command-toolkit and hooks-toolkit
 
 ## The Shift
 
-**Before**: "I need to accomplish task X"
-**After**: "I need to design the system that accomplishes X infinitely"
+**Before**: "I need to accomplish task X" **After**: "I need to design the system that accomplishes X infinitely"
 
-You're the manager now.
-The swarm executes.
-You orchestrate.
+You're the manager now. The swarm executes. You orchestrate.
 
----
+______________________________________________________________________
 
 *Read the full handover in: `sessions/Handover - Claude as Swarm Orchestrator.md`*

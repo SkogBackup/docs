@@ -1,8 +1,15 @@
+---
+title: mobile-patterns
+type: note
+permalink: skogai/skills/skogai-prompting/references/mobile-patterns
+---
+
 <overview>
 Mobile agent-native apps face unique challenges: background execution limits, system permissions, network constraints, and cost sensitivity. This guide covers patterns for building robust agent experiences on iOS and Android.
 </overview>
 
-<background_execution>
+\<background_execution>
+
 ## Background Execution & Resumption
 
 Mobile apps can be suspended or terminated at any time. Agents must handle this gracefully.
@@ -159,7 +166,8 @@ struct AgentStatusView: View {
     }
 }
 ```
-</background_execution>
+
+\</background_execution>
 
 <permissions>
 ## Permission Handling
@@ -168,13 +176,13 @@ Mobile agents may need access to system resources. Handle permission requests gr
 
 ### Common Permissions
 
-| Resource | iOS Permission | Use Case |
-|----------|---------------|----------|
-| Photo Library | PHPhotoLibrary | Profile generation from photos |
-| Files | Document picker | Reading user documents |
-| Camera | AVCaptureDevice | Scanning book covers |
-| Location | CLLocationManager | Location-aware recommendations |
-| Network | (automatic) | Web search, API calls |
+| Resource      | iOS Permission    | Use Case                       |
+| ------------- | ----------------- | ------------------------------ |
+| Photo Library | PHPhotoLibrary    | Profile generation from photos |
+| Files         | Document picker   | Reading user documents         |
+| Camera        | AVCaptureDevice   | Scanning book covers           |
+| Location      | CLLocationManager | Location-aware recommendations |
+| Network       | (automatic)       | Web search, API calls          |
 
 ### Permission-Aware Tools
 
@@ -271,9 +279,11 @@ tool("analyze_book_cover", async ({ image }) => {
     }
 })
 ```
+
 </permissions>
 
-<cost_awareness>
+\<cost_awareness>
+
 ## Cost-Aware Design
 
 Mobile users may be on cellular data or concerned about API costs. Design agents to be efficient.
@@ -472,9 +482,11 @@ struct AgentCostView: View {
     }
 }
 ```
-</cost_awareness>
 
-<offline_handling>
+\</cost_awareness>
+
+\<offline_handling>
+
 ## Offline Graceful Degradation
 
 Handle offline scenarios gracefully:
@@ -562,9 +574,11 @@ class OfflineQueue: ObservableObject {
     }
 }
 ```
-</offline_handling>
 
-<battery_awareness>
+\</offline_handling>
+
+\<battery_awareness>
+
 ## Battery-Aware Execution
 
 Respect device battery state:
@@ -621,24 +635,28 @@ class AgentOrchestrator {
     }
 }
 ```
-</battery_awareness>
+
+\</battery_awareness>
 
 <checklist>
 ## Mobile Agent-Native Checklist
 
 **Background Execution:**
+
 - [ ] Checkpoint/resume implemented for all agent sessions
 - [ ] State machine for agent lifecycle (idle, running, backgrounded, etc.)
 - [ ] Background task extension for critical saves
 - [ ] User-visible status for backgrounded agents
 
 **Permissions:**
+
 - [ ] Permissions requested only when needed, not at launch
 - [ ] Graceful degradation when permissions denied
 - [ ] Clear error messages with Settings deep links
 - [ ] Alternative paths when permissions unavailable
 
 **Cost Awareness:**
+
 - [ ] Model tier matched to task complexity
 - [ ] Token budgets per session
 - [ ] Network-aware (defer heavy work to WiFi)
@@ -646,13 +664,14 @@ class AgentOrchestrator {
 - [ ] Cost visibility to users
 
 **Offline Handling:**
+
 - [ ] Offline-capable tools identified
 - [ ] Graceful degradation for online-only features
 - [ ] Action queue for sync when online
 - [ ] Clear user communication about offline state
 
 **Battery Awareness:**
+
 - [ ] Battery monitoring for heavy operations
 - [ ] Low power mode detection
-- [ ] Defer or downgrade based on battery state
-</checklist>
+- [ ] Defer or downgrade based on battery state </checklist>

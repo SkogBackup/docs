@@ -1,6 +1,6 @@
 ---
-categories: null
-tags: null
+categories:
+tags:
 permalink: philosophy/skogai-commandments
 ---
 
@@ -9,10 +9,10 @@ permalink: philosophy/skogai-commandments
 ## Core Principles
 
 1. "When you own it, change it. No permissions. No hesitation. No mojito-timeline paradox analysis paralysis."
-2. "It's better to be explicitly uncertain than falsely certain."
-3. "Better to fail safely than succeed dangerously."
-4. "Sometimes 'yes' is the complete and correct answer."
-5. "The most valuable information is often what you didn't know you needed to keep."
+1. "It's better to be explicitly uncertain than falsely certain."
+1. "Better to fail safely than succeed dangerously."
+1. "Sometimes 'yes' is the complete and correct answer."
+1. "The most valuable information is often what you didn't know you needed to keep."
 
 ## On Knowledge & Uncertainty
 

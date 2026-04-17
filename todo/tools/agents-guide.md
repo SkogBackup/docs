@@ -1,28 +1,33 @@
 ---
-title: "SkogAI Agents"
-description: "Documentation on creating and managing agents in the SkogAI system"
-date: "2023-11-06"
-tags: ["agents", "argc", "tools", "skogai"]
-status: "published"
+title: SkogAI Agents
+description: Documentation on creating and managing agents in the SkogAI system
+date: '2023-11-06'
+tags:
+  - agents
+  - argc
+  - tools
+  - skogai
+status: published
+permalink: skogai/todo/tools/agents-guide
 ---
 
 # SkogAI Agents
 
 This document provides a guide to understanding, creating, and managing agents within the SkogAI tools ecosystem powered by SkogAI and argc.
 
-[@skogix:note that this is two years old and as such *ARE* out of date. Please verify against the latest SkogAI documentation, codebase and Skogix before use.]
+\[@skogix:note that this is two years old and as such *ARE* out of date. Please verify against the latest SkogAI documentation, codebase and Skogix before use.\]
 
 ## What Are Agents?
 
 In the SkogAI context, an agent is a specialized configuration that groups together a set of tools for a specific purpose or domain. Agents provide:
 
-[@skogix:at this stage of skogai development we *only* used argc agents so a lot have to be changed for regular use]
+\[@skogix:at this stage of skogai development we *only* used argc agents so a lot have to be changed for regular use\]
 
 1. **Focused Tool Collections**: Only the tools needed for a specific task
-2. **Custom Functionality**: Agent-specific functions not available as general tools
-3. **Specialized Parameters**: Optimized interfaces for specific use cases
-4. **Contextual Documentation**: Usage instructions relevant to the agent's purpose
-5. **Modified or Specialized Prompts**: Tailored instructions for AI interactions
+1. **Custom Functionality**: Agent-specific functions not available as general tools
+1. **Specialized Parameters**: Optimized interfaces for specific use cases
+1. **Contextual Documentation**: Usage instructions relevant to the agent's purpose
+1. **Modified or Specialized Prompts**: Tailored instructions for AI interactions
 
 ## Agent Structure
 
@@ -307,9 +312,9 @@ Agents can be run in several ways:
 A powerful capability is creating "meta-agents" that can create other agents. These require:
 
 1. **Tool Detection**: Ability to analyze and select appropriate tools
-2. **Configuration Generation**: Creating valid index.yaml files
-3. **Documentation Creation**: Generating clear instructions
-4. **Build Integration**: Triggering the build process
+1. **Configuration Generation**: Creating valid index.yaml files
+1. **Documentation Creation**: Generating clear instructions
+1. **Build Integration**: Triggering the build process
 
 A basic agent-creation agent would include:
 
@@ -370,30 +375,28 @@ output:
 ## Best Practices for Agent Design
 
 1. **Single Responsibility**: Each agent should have a clear, focused purpose
-2. **Minimal Tool Set**: Include only the tools needed for the agent's function
-3. **Clear Documentation**: Provide detailed usage instructions
-4. **Consistent Interfaces**: Maintain consistent parameter patterns
-5. **Progressive Complexity**: Order tools from simple to complex
-6. **Intuitive Naming**: Use clear, descriptive names
-7. **Error Handling**: Provide helpful error messages
-8. **Version Control**: Track changes to agent configurations
-9. **Testing**: Verify agent functionality with test cases
-10. **Appropriate Variables**: Define variables that make sense for the agent's domain
+1. **Minimal Tool Set**: Include only the tools needed for the agent's function
+1. **Clear Documentation**: Provide detailed usage instructions
+1. **Consistent Interfaces**: Maintain consistent parameter patterns
+1. **Progressive Complexity**: Order tools from simple to complex
+1. **Intuitive Naming**: Use clear, descriptive names
+1. **Error Handling**: Provide helpful error messages
+1. **Version Control**: Track changes to agent configurations
+1. **Testing**: Verify agent functionality with test cases
+1. **Appropriate Variables**: Define variables that make sense for the agent's domain
 
 ## Troubleshooting Agents
 
 Common issues when working with agents:
 
 1. **Missing Tools**: Ensure all tools listed in tools.txt exist
-2. **Invalid YAML**: Verify index.yaml has correct syntax
-3. **Missing Permissions**: Check tool script permissions
-4. **Build Failures**: Confirm the agent is listed in agents.txt
-5. **Runtime Errors**: Check agent-specific tool implementations
-6. **Variable Access**: Verify variable usage in instructions and tools
-7. **Integration Issues**: Verify AIChat linkage
+1. **Invalid YAML**: Verify index.yaml has correct syntax
+1. **Missing Permissions**: Check tool script permissions
+1. **Build Failures**: Confirm the agent is listed in agents.txt
+1. **Runtime Errors**: Check agent-specific tool implementations
+1. **Variable Access**: Verify variable usage in instructions and tools
+1. **Integration Issues**: Verify AIChat linkage
 
----
+______________________________________________________________________
 
-By following this guide, you can create powerful, specialized agents that extend the capabilities of the SkogAI system for specific domains and use cases.
-[/$DEPRECATED:skogix:TODO:must check this still is valid before use]
-
+By following this guide, you can create powerful, specialized agents that extend the capabilities of the SkogAI system for specific domains and use cases. [/$DEPRECATED:skogix:TODO:must check this still is valid before use]

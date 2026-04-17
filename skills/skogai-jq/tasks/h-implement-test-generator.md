@@ -3,7 +3,9 @@ name: h-implement-test-generator
 branch: feature/h-implement-test-generator
 status: pending
 created: 2025-11-14
-submodules: [list of git submodules affected (delete if not super-repo)]
+submodules:
+  - list of git submodules affected (delete if not super-repo)
+permalink: skogai/skills/skogai-jq/tasks/h-implement-test-generator
 ---
 
 # [Human-Readable Title]

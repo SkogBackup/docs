@@ -1,11 +1,17 @@
+---
+title: worktree-parallel
+type: note
+permalink: skogai/skills/skogai-git/workflows/worktree-parallel
+---
+
 # Worktree Parallel Work
 
 Create and manage worktrees for parallel development on multiple branches.
 
-<required_reading>
+\<required_reading>
+
 - skogai-worktrunk/SKILL.md (if unfamiliar with wt commands)
-- skogai-worktrunk/reference/hook-types-reference.md (if setting up automation)
-</required_reading>
+- skogai-worktrunk/reference/hook-types-reference.md (if setting up automation) \</required_reading>
 
 <process>
 
@@ -28,6 +34,7 @@ wt switch --create feature/my-feature --base develop
 ```
 
 This:
+
 - Creates new branch
 - Creates worktree in configured path (default: `.worktrees/<branch>` in repo root)
 - Runs `post-create` hooks (npm install, etc.)
@@ -70,6 +77,7 @@ wt merge develop
 ```
 
 This:
+
 - Runs `pre-commit` hooks
 - Creates commit
 - Switches to target branch
@@ -94,7 +102,7 @@ wt remove feature/my-feature --no-delete-branch
 
 </process>
 
-<common_patterns>
+\<common_patterns>
 
 ## Git-Flow Feature
 
@@ -141,9 +149,9 @@ gh pr checkout 123
 wt remove review/pr-123 --force-delete
 ```
 
-</common_patterns>
+\</common_patterns>
 
-<worktree_setup>
+\<worktree_setup>
 
 ## Environment and Gitignore Setup
 
@@ -172,7 +180,7 @@ Configure this as a `post-create` hook in `.config/wt.toml` to automate it:
 post-create = ["npm install", "cp .env* .worktrees/$WT_BRANCH/ 2>/dev/null || true"]
 ```
 
-</worktree_setup>
+\</worktree_setup>
 
 <troubleshooting>
 
@@ -208,11 +216,11 @@ cp $(git worktree list | head -1 | awk '{print $1}')/.env* . 2>/dev/null
 
 </troubleshooting>
 
-<success_criteria>
+\<success_criteria>
+
 - Worktree created and hooks ran
 - Can switch between worktrees freely
 - .env files present in worktree
 - .worktrees/ in .gitignore
 - Changes merged cleanly
-- Worktree cleaned up after merge
-</success_criteria>
+- Worktree cleaned up after merge \</success_criteria>

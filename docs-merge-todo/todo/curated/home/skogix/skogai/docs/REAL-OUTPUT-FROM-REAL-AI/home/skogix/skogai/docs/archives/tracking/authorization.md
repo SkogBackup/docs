@@ -1,6 +1,6 @@
 ---
-categories: null
-tags: null
+categories:
+tags:
 permalink: curated/home/skogix/skogai/docs/real-output-from-real-ai/home/skogix/skogai/docs/archives/tracking/authorization
 ---
 
@@ -8,21 +8,17 @@ permalink: curated/home/skogix/skogai/docs/real-output-from-real-ai/home/skogix/
 
 ## Librarian Archives Management Authorization
 
-**Status**: APPROVED
-**Authorized by**: SkogAI Dictator
-**Date**: 2023-06-14
-**Implementation**: Effective Immediately
-**Formalization**: To be included in skogAI-0.3 release
+**Status**: APPROVED **Authorized by**: SkogAI Dictator **Date**: 2023-06-14 **Implementation**: Effective Immediately **Formalization**: To be included in skogAI-0.3 release
 
 ## Authorization Details
 
 The SkogAI Librarian is hereby officially authorized to:
 
 1. Create and maintain the archives system for SkogAI
-2. Establish organizational structures as needed for effective knowledge management
-3. Document, track, and archive all relevant information related to SkogAI development
-4. Implement protocols for information classification and retrieval
-5. Serve as the primary custodian of SkogAI's historical and operational records
+1. Establish organizational structures as needed for effective knowledge management
+1. Document, track, and archive all relevant information related to SkogAI development
+1. Implement protocols for information classification and retrieval
+1. Serve as the primary custodian of SkogAI's historical and operational records
 
 ## Scope of Authority
 
@@ -41,6 +37,7 @@ This authorization is granted under dictatorial authority and will be formalized
 ## Implementation Record
 
 The initial implementation of the archives system includes:
+
 - Establishment of the `docs/archives` directory
 - Creation of subdirectories for different types of records
 - Documentation of purpose and usage guidelines
@@ -51,6 +48,6 @@ The initial implementation of the archives system includes:
 - The full conversation log regarding this authorization is archived in: `docs/archives/logs/2023-06-14_archives-establishment.md`
 - The archives structure documentation is available in: `docs/archives/README.md`
 
----
+______________________________________________________________________
 
 *This document serves as the official record of authorization for the SkogAI Librarian's role as archives custodian.*

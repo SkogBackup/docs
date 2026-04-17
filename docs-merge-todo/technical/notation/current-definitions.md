@@ -14,73 +14,7 @@ output:
 
 ```
 
-{
-"json": {
-"string": "",
-"int": {
-"additative": 0,
-"multiplicative": 1,
-"one": 1,
-"zero": 0
-},
-"list": [],
-"parent": "$ json.self",
-"_": "$ json.string \* [@def:\"$.json\"]",
-"self": "$ json",
-"child": "$ json.parent"
-},
-"int": "$ json.int",
-"string": "$ json.string",
-"null": "$ json._",
-"void": "$ json._",
-"increment": "$ json.int.zero \* $ json.int.one",
-"datetime": "[@date:now]",
-"type": {
-"$type.self": "every base case of a $",
-    "value": "the declaration/implementation of a $",
-    "eid": "$ eid"
-},
-"$": "to define or reference something",
-  "|": "the act of choosing something | {$id1|$id2}->[$id1]",
-"_": "anything/everything and nothing/nobody | {$id1_$id2}",
-"[_]": "similarity",
-"{\_}": "difference",
-"@": "the intent to act or do something | {$id@$id}",
-".": "to belong or have something via [$$]",
-":": "to follow or continue something via [$@]",
-"=": "to be something | [$id=$id]",
-"->": "{$id1@$id2}",
-"_": "$_$=$",
-"id": "$ int _ $ unique",
-"self": "$ $ | $ self | [$id@$id]",
-"unique": "a thing which there only exists one of",
-"name": {
-"1": "$unique.$string",
-"2": "$string@$unique",
-"3": "$string{@->}$unique"
-},
-"message": {
-"eid": "$ eid",
-"from": "$ name",
-"to": "$ name",
-"content": "$ string",
-"created_at": "[@date:now]",
-"parent": "$ eid"
-},
-"list": "the ordering of something",
-"eid": "$ entity.id_$ entity.gen",
-"entity": {
-"eid": "",
-"gen": "$ id",
-"id": "$ id",
-"name": "$ name"
-},
-"claude": {
-"context": "the place where skogix puts stupid stuff so claude can ignore it instantly",
-"hello": "[@hello:Claude]",
-"random": "[@rand]"
-}
-}
+{ "json": { "string": "", "int": { "additative": 0, "multiplicative": 1, "one": 1, "zero": 0 }, "list": [], "parent": "$ json.self", "_": "$ json.string * [@def:"$.json"]", "self": "$ json", "child": "$ json.parent" }, "int": "$ json.int", "string": "$ json.string", "null": "$ json._", "void": "$ json._", "increment": "$ json.int.zero * $ json.int.one", "datetime": "[@date:now]", "type": { "$type.self": "every base case of a $", "value": "the declaration/implementation of a $", "eid": "$ eid" }, "$": "to define or reference something", "|": "the act of choosing something | {$id1|$id2}->[$id1]", "_": "anything/everything and nothing/nobody | {$id1\_$id2}", "\[_\]": "similarity", "{\_}": "difference", "@": "the intent to act or do something | {$id@$id}", ".": "to belong or have something via [$$]", ":": "to follow or continue something via [$@]", "=": "to be something | [$id=$id]", "->": "{$id1@$id2}", "_": "$_$=$", "id": "$ int _ $ unique", "self": "$ $ | $ self | [$id@$id]", "unique": "a thing which there only exists one of", "name": { "1": "$unique.$string", "2": "$string@$unique", "3": "$string{@->}$unique" }, "message": { "eid": "$ eid", "from": "$ name", "to": "$ name", "content": "$ string", "created_at": "[@date:now]", "parent": "$ eid" }, "list": "the ordering of something", "eid": "$ entity.id_$ entity.gen", "entity": { "eid": "", "gen": "$ id", "id": "$ id", "name": "$ name" }, "claude": { "context": "the place where skogix puts stupid stuff so claude can ignore it instantly", "hello": "[@hello:Claude]", "random": "[@rand]" } }
 
 # skogparse
 
@@ -417,11 +351,11 @@ type SValue =
 ### **Execution Flow:**
 
 1. **Parse** text into SValue tree
-2. **Find references** (`SRef`) → call `skogcli config get`
-3. **Find actions** (`SAction`) → call `skogcli script run`
-4. **Parse results** → may contain more references/actions
-5. **Recursive resolution** → continue until concrete
-6. **Output** final JSON with all semantics resolved
+1. **Find references** (`SRef`) → call `skogcli config get`
+1. **Find actions** (`SAction`) → call `skogcli script run`
+1. **Parse results** → may contain more references/actions
+1. **Recursive resolution** → continue until concrete
+1. **Output** final JSON with all semantics resolved
 
 ## 📚 **Examples**
 
@@ -447,19 +381,19 @@ See `example.md` for comprehensive test cases covering:
 ### **Next Steps:**
 
 1. Fix empty array parsing
-2. Add execution tracing/debugging
-3. Implement missing SkogAI operators
-4. Add cycle detection for references
-5. Improve error messages
+1. Add execution tracing/debugging
+1. Implement missing SkogAI operators
+1. Add cycle detection for references
+1. Improve error messages
 
 See `STATUS.md` for detailed progress and `DEVELOPMENT.md` for contributor guide.
 
 ## 🤝 **Contributing**
 
 1. **Read** `DEVELOPMENT.md` for architecture overview
-2. **Test** with `example.md` - add new test cases
-3. **Follow** existing code patterns and naming
-4. **Update** documentation for new features
+1. **Test** with `example.md` - add new test cases
+1. **Follow** existing code patterns and naming
+1. **Update** documentation for new features
 
 ## 🎯 **Philosophy**
 
@@ -472,49 +406,46 @@ SkogParse embodies the **SkogAI vision** of **executable semantics** - where:
 
 This is **beyond traditional programming** - it's **semantic computation** where formal logic becomes directly runnable code.
 
----
+______________________________________________________________________
 
-**Transform static text into living semantics with SkogParse!** 🚀"}]}
-{"type": "array", "value": [{"type": "string", "value": "52"}, {"type": "string", "value": "2025-09-08 00:08:24"}]}
-% Total % Received % Xferd Average Speed Time Time Time Current
-Dload Upload Total Spent Left Speed
-100 1256 100 1256 0 0 1962 0 --:--:-- --:--:-- --:--:-- 1962
-{"type": "array", "value": [{"type": "string", "value": "https://tools.skogai.se/tools for the REPL and openai function declarations of the skogai notation tools"}, {"type": "string", "value": "<!doctype html>
+**Transform static text into living semantics with SkogParse!** 🚀"}\]} {"type": "array", "value": [{"type": "string", "value": "52"}, {"type": "string", "value": "2025-09-08 00:08:24"}]} % Total % Received % Xferd Average Speed Time Time Time Current Dload Upload Total Spent Left Speed 100 1256 100 1256 0 0 1962 0 --:--:-- --:--:-- --:--:-- 1962 {"type": "array", "value": \[{"type": "string", "value": "https://tools.skogai.se/tools for the REPL and openai function declarations of the skogai notation tools"}, {"type": "string", "value": "<!doctype html>
 
 <html>
 <head>
     <title>Example Domain</title>
 
-    <meta charset="utf-8" />
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style type="text/css">
-    body {
-        background-color: #f0f0f2;
-        margin: 0;
-        padding: 0;
-        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+```
+<meta charset="utf-8" />
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style type="text/css">
+body {
+    background-color: #f0f0f2;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-    }
+}
+div {
+    width: 600px;
+    margin: 5em auto;
+    padding: 2em;
+    background-color: #fdfdff;
+    border-radius: 0.5em;
+    box-shadow: 2px 3px 7px 2px rgba(0,0,0,0.02);
+}
+a:link, a:visited {
+    color: #38488f;
+    text-decoration: none;
+}
+@media (max-width: 700px) {
     div {
-        width: 600px;
-        margin: 5em auto;
-        padding: 2em;
-        background-color: #fdfdff;
-        border-radius: 0.5em;
-        box-shadow: 2px 3px 7px 2px rgba(0,0,0,0.02);
+        margin: 0 auto;
+        width: auto;
     }
-    a:link, a:visited {
-        color: #38488f;
-        text-decoration: none;
-    }
-    @media (max-width: 700px) {
-        div {
-            margin: 0 auto;
-            width: auto;
-        }
-    }
-    </style>
+}
+</style>
+```
 
 </head>
 
@@ -532,10 +463,10 @@ Dload Upload Total Spent Left Speed
 - **"$"**: to define or reference something
 - **"|"**: the act of choosing something = `{$id1|$id2}->[$id1]`
 - **"\_"**: to be anything/everything and nothing/nobody = `{$id1_$id2}`
-- **"[_]"**: similarity
+- **"[\_]"**: similarity
 - **"{\_}"**: difference
 - **"@"**: the intent to act or do something = `{$id@$id}`
-- **"\*"**: $id*$id=$id
+- **"\*"**: $id\*$id=$id
 - **"."**: to belong or have something via `[$$]`
 - **":"**: to follow or continue something via `[$@]`
 - **"="**: to be something = `[$id=$id]`
@@ -547,7 +478,7 @@ Dload Upload Total Spent Left Speed
 - **"eid"**: `$id*$id`
 - **"unique"**: a thing which there only exists one of
 
----
+______________________________________________________________________
 
 ### Dimensions
 
@@ -581,7 +512,7 @@ Dload Upload Total Spent Left Speed
   - **"$"**: reference something without being anything
     - "null, null-pointer"
 
----
+______________________________________________________________________
 
 - **- dimension**:
   - **"@$"**: `[=]`
@@ -591,75 +522,43 @@ Dload Upload Total Spent Left Speed
   - **"@action$type"**
   - **"@"**: to act upon something is just
 
----
+______________________________________________________________________
 
 Types: `($@)` / Transformations: `(@$)` / Functions: `($@=@$)`, linked list, arrays: `($$)` and abstractions: `($$)`
 
----
+______________________________________________________________________
 
-Π-types (product types \*)
-Σ-types (sum types |)
-identity types (=)
-path types (->)
+Π-types (product types \*) Σ-types (sum types |) identity types (=) path types (->)
 
 maybe not needed but for good measure might include these as well
 
-\_ as polymorphic existentials (∃x.P(x))
-@ as modal necessity (□) from modal logic
-: as type judgement (Γ ⊢ a : A)
+\_ as polymorphic existentials (∃x.P(x)) @ as modal necessity (□) from modal logic : as type judgement (Γ ⊢ a : A)
 
 creating a free cartesian closed category is obvious
 
-- = product
-  -> = exponential object
-  | = coproduct
-  @ = monadic binding
+- = product -> = exponential object | = coproduct @ = monadic binding
 
 and yeah - might as well
 
-\_ as polymorphic yoneda embedding
-. as forgetful functor
-= as natural isomorphism
+\_ as polymorphic yoneda embedding . as forgetful functor = as natural isomorphism
 
 linear types ($unique), the effect system (@), regular persistent data structures ($eid with it's versioning) and security via capability (.) is old news
 
 type universe would be self referential via $ containing $ or dependencies/dependent types such as $message.created_at$datetime
 
----
+______________________________________________________________________
 
-the _operator:
-heideggerian being-in-the-world (dasein)
-badiouian event theory (@ as evental site)
-deleuzian difference engine ({_} as differance)
-but operationalized computationally through:
-$entity.gen as bergsonian duration
-$list as husserlian time consciousness
-$unique as leibnizian identity
+the _operator: heideggerian being-in-the-world (dasein) badiouian event theory (@ as evental site) deleuzian difference engine ({_} as differance) but operationalized computationally through: $entity.gen as bergsonian duration $list as husserlian time consciousness $unique as leibnizian identity
 
-data $type : type where
-  ($) : $type -> $type
-(\*) : $type -> $type -> $type
-(|) : $type -> $type -> $type
-(@) : $type -> $type -> $type
-(=) : $type -> $type -> $type
+data $type : type where ($) : $type -> $type (\*) : $type -> $type -> $type (|) : $type -> $type -> $type (@) : $type -> $type -> $type (=) : $type -> $type -> $type
 
-gödel numbering:
-φ($) = 1
-φ(|) = 2
-φ(\_) = 3
-etc...
+gödel numbering: φ($) = 1 φ(|) = 2 φ(\_) = 3 etc...
 
-overall trying to avoid inconsistency via:
-predicative hierarchy (no $ in its own definition)
-type/token distinction (id vs unique)
-bounded generality (list as finite ordinal)
+overall trying to avoid inconsistency via: predicative hierarchy (no $ in its own definition) type/token distinction (id vs unique) bounded generality (list as finite ordinal)
 
-lucky to be born early:
-Martin-Löf Type Theory (1972)
-Fitch-Style Calculi (1952)
-Lawvere Theories (1963)
+lucky to be born early: Martin-Löf Type Theory (1972) Fitch-Style Calculi (1952) Lawvere Theories (1963)
 
-(don't see any \_ for existance, $eid representing spacetime coordinates or even basic semiotics like using @ as a pragmatic force? ;))"}
+(don't see any _ for existance, $eid representing spacetime coordinates or even basic semiotics like using @ as a pragmatic force? ;))"}
 
 ```
 

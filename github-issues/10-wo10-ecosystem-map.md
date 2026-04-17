@@ -1,6 +1,7 @@
 ---
-title: "WO-10: Document skill ecosystem architecture map"
+title: 'WO-10: Document skill ecosystem architecture map'
 labels: skills, enhancement, phase-4
+permalink: skogai/github-issues/10-wo10-ecosystem-map
 ---
 
 ## Summary
@@ -16,23 +17,28 @@ After consolidation, ~14 skills will exist across 5 clusters. No single place cu
 ## Proposed Skill Clusters
 
 ### Philosophy (3 skills)
+
 - **skogai-workflow** — the atomic loop (intent → understand → implement → iterate)
 - **skogai-project-lifecycle** — explosive vs production phases, pruning philosophy
 - **skogai-prompting** — prompt-native architecture philosophy
 
 ### Creation (2 skills)
+
 - **skogai-routing** — how to build routing skills with progressive disclosure (hub)
 - **skogai-developing-for-claude-code** — how to create Claude Code plugins
 
 ### Git Tooling (2 skills)
+
 - **skogai-git** — unified git workflows (wt, gita, gh, semantic commits)
 - **skogai-worktrunk** — wt + gita tool configuration and operation
 
 ### Multi-Agent (2 skills)
+
 - **nelson** — squadron orchestration for parallel agent execution
 - **fleet-memory** — multi-agent memory coordination
 
 ### Standalone Tools (5 skills)
+
 - **skogai-argc** — argc CLI framework for bash
 - **skogai-jq** — 60+ schema-driven jq transformations
 - **skogai-mcp-builder** — MCP server development guide

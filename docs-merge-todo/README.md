@@ -1,3 +1,9 @@
+---
+title: README
+type: note
+permalink: skogai/docs-merge-todo/readme
+---
+
 # SkogAI Documentation Repository
 
 The comprehensive knowledge base, historical archive, and semantic memory system for the SkogAI ecosystem.
@@ -25,9 +31,9 @@ docs/
 ### Understanding SkogAI
 
 1. **Start here**: [`skogai/overview.md`](skogai/overview.md) - The origin story and system evolution
-2. **Core lore**: [`lore/origin/SKOGAI.md`](lore/origin/SKOGAI.md) - Rich narrative history
-3. **Notation system**: [`skogai/notation/`](skogai/notation/) - The symbolic language (@ and $)
-4. **Agent personalities**: [`agents/`](agents/) - Memory blocks and character definitions
+1. **Core lore**: [`lore/origin/SKOGAI.md`](lore/origin/SKOGAI.md) - Rich narrative history
+1. **Notation system**: [`skogai/notation/`](skogai/notation/) - The symbolic language (@ and $)
+1. **Agent personalities**: [`agents/`](agents/) - Memory blocks and character definitions
 
 ### Finding Content
 
@@ -195,16 +201,16 @@ git push
 When adding or updating documentation:
 
 1. **Respect agent voices** - Each agent has established characteristics
-2. **Maintain narrative quality** - LORE is storytelling, not just facts
-3. **Use semantic markup** - WikiLinks, observations, relations
-4. **Archive, don't delete** - Move outdated content to `historical/`
-5. **Follow naming conventions** - Kebab-case, meaningful names
+1. **Maintain narrative quality** - LORE is storytelling, not just facts
+1. **Use semantic markup** - WikiLinks, observations, relations
+1. **Archive, don't delete** - Move outdated content to `historical/`
+1. **Follow naming conventions** - Kebab-case, meaningful names
 
 ## More Information
 
 - See [`CLAUDE.md`](CLAUDE.md) for comprehensive guidance on working with this repository
 - See [`REPOSITORY-INDEX.md`](REPOSITORY-INDEX.md) for complete file inventory
 
----
+______________________________________________________________________
 
 **SkogAI**: Where constraints become features, and agents develop character.

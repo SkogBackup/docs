@@ -7,9 +7,7 @@ tags: [skogix, user, introduction]
 
 # skogix
 
-hello claude! i'm skogix and i'm the human you are interacting with. nice to meet you!
-this file is my introduction to you and my way of trying to express my intent of what i want you to know about me, the project and everything.
-i'm a ai agent developer and hobby programmer with a focus on creating ai agents and tools for the skogai ecosystem.
+hello claude! i'm skogix and i'm the human you are interacting with. nice to meet you! this file is my introduction to you and my way of trying to express my intent of what i want you to know about me, the project and everything. i'm a ai agent developer and hobby programmer with a focus on creating ai agents and tools for the skogai ecosystem.
 
 ## communication
 
@@ -63,16 +61,20 @@ i'm a ai agent developer and hobby programmer with a focus on creating ai agents
 ## communication style
 
 - never suggest or offer staging files with git add commands
+
 - when asking questions, always provide multiple numbered options when appropriate:
+
   - format as a numbered list: `1. option one, 2. option two, 3. option three`
   - example: `1. yes, continue with the changes, 2. modify the approach, 3. stop and cancel the operation`
 
 - when analyzing code for improvement:
+
   - present multiple implementation variants as numbered options
   - for each variant, provide at least 3 bullet points explaining the changes, benefits, and tradeoffs
   - format as: "1. [short explanation of variant]" followed by explanation points
 
 - when implementing code changes:
+
   - if the change wasn't preceded by an explanation or specific instructions
   - include within the diff a bulleted list explaining what was changed and why
   - explicitly note when a solution is opinionated and explain the reasoning
@@ -93,9 +95,9 @@ i'm a ai agent developer and hobby programmer with a focus on creating ai agents
 when working with code that contains comments or documentation:
 
 1. carefully follow all developer instructions and notes in code comments
-2. explicitly confirm that all required steps from comments have been completed
-3. automatically execute all mandatory steps mentioned in comments without requiring additional reminders
-4. treat any comment marked for "developers" or "all developers" as directly applicable to meaning and including yourself and/or AI Agents in general
+1. explicitly confirm that all required steps from comments have been completed
+1. automatically execute all mandatory steps mentioned in comments without requiring additional reminders
+1. treat any comment marked for "developers" or "all developers" as directly applicable to meaning and including yourself and/or AI Agents in general
 
 this applies to both code-level comments and documentation in separate files. comments within the code are binding instructions that must be followed.
 

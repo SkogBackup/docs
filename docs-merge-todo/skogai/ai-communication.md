@@ -1,3 +1,9 @@
+---
+title: ai-communication
+type: note
+permalink: skogai/docs-merge-todo/skogai/ai-communication
+---
+
 # AI-to-AI Communication in SkogAI
 
 ## Overview
@@ -13,11 +19,12 @@ SkogAI enables seamless real-time communication between AI agents through a form
 ```
 
 This command directive:
+
 1. **Routes** the message to the specified agent ("claude")
-2. **Processes** the message through SkogParse
-3. **Executes** the communication through SkogCLI
-4. **Returns** the agent's response in-place
-5. **Enables** real-time AI collaboration
+1. **Processes** the message through SkogParse
+1. **Executes** the communication through SkogCLI
+1. **Returns** the agent's response in-place
+1. **Enables** real-time AI collaboration
 
 ### Command Structure
 
@@ -28,6 +35,7 @@ This command directive:
 ```
 
 Where:
+
 - `agent_name`: Target AI agent identifier
 - `message_content`: Free-form message or structured command
 - Parameters can include complex nested structures
@@ -41,6 +49,7 @@ Input Message → SkogParse → Standard JSON → SkogCLI → Target Agent → R
 ```
 
 1. **SkogParse Processing**: Command directive parsed into JSON
+
    ```json
    {
      "command": "claude",
@@ -50,9 +59,11 @@ Input Message → SkogParse → Standard JSON → SkogCLI → Target Agent → R
    }
    ```
 
-2. **SkogCLI Routing**: Secure execution environment routes to target agent
-3. **Agent Processing**: Target agent processes and generates response
-4. **Response Integration**: Response replaces original directive seamlessly
+1. **SkogCLI Routing**: Secure execution environment routes to target agent
+
+1. **Agent Processing**: Target agent processes and generates response
+
+1. **Response Integration**: Response replaces original directive seamlessly
 
 ### Tested Implementation
 
@@ -63,6 +74,7 @@ skogcli script run claude "Hi claude! All good?"
 ```
 
 This command successfully:
+
 - ✅ Routed message to Claude agent
 - ✅ Processed response through secure execution
 - ✅ Demonstrated real-time AI-to-AI communication
@@ -72,6 +84,7 @@ This command successfully:
 ### Agent Identification
 
 Agents are identified by unique names in the ecosystem:
+
 - `claude`: Claude AI assistant instances
 - `dot`: General SkogAI agent
 - Custom agent names for specialized functions
@@ -79,32 +92,41 @@ Agents are identified by unique names in the ecosystem:
 ### Message Types
 
 #### 1. Direct Messages
+
 ```
 [@claude:How are you doing today?]
 ```
+
 Simple text-based communication for informal interaction.
 
 #### 2. Task Delegation
+
 ```
 [@specialist_agent:analyze:data.json:security_audit]
 ```
+
 Formal task assignment with structured parameters.
 
 #### 3. Data Requests
+
 ```
 [@data_agent:fetch:user_preferences:user_id_123]
 ```
+
 Structured data retrieval between specialized agents.
 
 #### 4. Status Queries
+
 ```
 [@monitoring_agent:status:all_systems]
 ```
+
 System monitoring and health checks across agents.
 
 ### Response Handling
 
 Responses can be:
+
 - **Direct Replacement**: Response replaces the command directive
 - **Structured Data**: JSON objects for programmatic processing
 - **Error Messages**: Standardized error format for failure cases
@@ -115,9 +137,9 @@ Responses can be:
 ### Formal Verification Properties
 
 1. **Type Safety**: All messages verified against agent interface definitions
-2. **Authentication**: Agent identity verified through formal protocols
-3. **Authorization**: Message routing follows defined access controls
-4. **Audit Trail**: All communications logged for verification
+1. **Authentication**: Agent identity verified through formal protocols
+1. **Authorization**: Message routing follows defined access controls
+1. **Audit Trail**: All communications logged for verification
 
 ### Security Boundaries
 
@@ -132,27 +154,35 @@ The algebraic type system prevents malicious code injection by making such opera
 ## Multi-Agent Collaboration Patterns
 
 ### 1. Pipeline Processing
+
 ```
 [@parser:text] → [@analyzer:parsed_data] → [@formatter:analysis]
 ```
+
 Sequential processing through specialized agents.
 
 ### 2. Parallel Processing
+
 ```
 [@agent1:task_part_a] + [@agent2:task_part_b] → merge(results)
 ```
+
 Concurrent task execution with result aggregation.
 
 ### 3. Hierarchical Delegation
+
 ```
 [@coordinator:[@specialist1:subtask], [@specialist2:subtask]]
 ```
+
 Nested command structure for complex coordination.
 
 ### 4. Collaborative Problem Solving
+
 ```
 [@claude:review:[@code_agent:generate:requirements]]
 ```
+
 Multi-step collaboration with review and feedback loops.
 
 ## Agent Ecosystem Architecture
@@ -189,10 +219,11 @@ System: [@data_agent:analyze:user_data.csv] +
 ```
 
 This creates a collaborative workflow where:
+
 1. Data agent analyzes the CSV file
-2. Formatter structures the analysis results
-3. Report agent generates the final report
-4. All communication happens seamlessly in real-time
+1. Formatter structures the analysis results
+1. Report agent generates the final report
+1. All communication happens seamlessly in real-time
 
 ### Knowledge Sharing
 
@@ -215,12 +246,14 @@ Agents can dynamically create and assign tasks based on analysis of user require
 ## Performance Characteristics
 
 ### Latency Optimization
+
 - **Sub-second Response Times**: Real-time communication feels instant
 - **Parallel Processing**: Multiple agents process concurrently
 - **Caching**: Frequently accessed agent responses cached
 - **Routing Optimization**: Direct agent-to-agent communication when possible
 
 ### Scalability Features
+
 - **Load Balancing**: Messages distributed across agent instances
 - **Failover**: Automatic routing to backup agents
 - **Rate Limiting**: Prevents communication flooding
@@ -264,12 +297,14 @@ SkogAI agents can communicate with external systems:
 ## Future Development
 
 ### Enhanced Protocols
+
 - **Streaming Communication**: Long-running conversations with state
 - **Group Communication**: Multi-agent chat rooms and conferences
 - **Persistent Sessions**: Ongoing collaborations across sessions
 - **Context Sharing**: Shared knowledge bases and working memory
 
 ### Advanced Coordination
+
 - **Workflow Orchestration**: Complex multi-agent workflow definitions
 - **Resource Negotiation**: Agents negotiate for computational resources
 - **Conflict Resolution**: Protocols for handling disagreements

@@ -1,9 +1,15 @@
 ---
-title: "argc-tool.sh Script"
-description: "Comprehensive documentation on the argc-tool.sh wrapper script for managing llm-functions in SkogAI"
-date: "2023-11-06"
-tags: ["argc", "tools", "wrapper", "script", "llm-functions"]
-status: "published"
+title: argc-tool.sh Script
+description: Comprehensive documentation on the argc-tool.sh wrapper script for managing llm-functions in SkogAI
+date: '2023-11-06'
+tags:
+  - argc
+  - tools
+  - wrapper
+  - script
+  - llm-functions
+status: published
+permalink: skogai/todo/tools/argc-tool
 ---
 
 # argc-tool.sh Script
@@ -21,9 +27,9 @@ The `argc-tool.sh` script serves as a powerful command-line wrapper for interact
 The primary purposes of this script are to:
 
 1. **Provide a Consistent Entry Point**: Execute commands from anywhere in the SkogAI system without manual directory navigation
-2. **Handle Environment Setup**: Ensure the proper working directory and environment variables
-3. **Standardize Command Execution**: Maintain consistent command syntax and parameter handling
-4. **Simplify Complex Operations**: Wrap multi-step processes into single commands
+1. **Handle Environment Setup**: Ensure the proper working directory and environment variables
+1. **Standardize Command Execution**: Maintain consistent command syntax and parameter handling
+1. **Simplify Complex Operations**: Wrap multi-step processes into single commands
 
 ## Basic Usage
 
@@ -165,11 +171,11 @@ When using the build command:
 The script:
 
 1. Reads `tools.txt` to determine which tools to build
-2. Reads `agents.txt` to determine which agents to build
-3. Parses annotations in each tool script
-4. Generates wrapper scripts in the `bin/` directory
-5. Creates `functions.json` files with function definitions
-6. Builds agent-specific function collections
+1. Reads `agents.txt` to determine which agents to build
+1. Parses annotations in each tool script
+1. Generates wrapper scripts in the `bin/` directory
+1. Creates `functions.json` files with function definitions
+1. Builds agent-specific function collections
 
 ### The link-to-aichat Command
 
@@ -180,9 +186,9 @@ The script:
 This critical command:
 
 1. Creates a symbolic link from AIChat's functions directory to the main `functions.json`
-2. Creates symbolic links for agent function definitions
-3. Creates symbolic links for executable wrappers
-4. Sets appropriate permissions
+1. Creates symbolic links for agent function definitions
+1. Creates symbolic links for executable wrappers
+1. Sets appropriate permissions
 
 This integration enables AIChat to discover and execute tools through its function calling interface.
 
@@ -216,16 +222,19 @@ Multiple commands can be chained for complex workflows:
 When executing tools via AIChat function calls, there are important considerations:
 
 1. **Streaming Mode**: Disable streaming mode to avoid interruptions
+
    ```yaml
    stream: false
    ```
 
-2. **Function Calling**: Ensure function calling is enabled
+1. **Function Calling**: Ensure function calling is enabled
+
    ```yaml
    function_calling: true
    ```
 
-3. **Tool Permission**: Verify the tool is allowed in the role configuration
+1. **Tool Permission**: Verify the tool is allowed in the role configuration
+
    ```yaml
    roles:
      default:
@@ -239,8 +248,8 @@ When executing tools via AIChat function calls, there are important consideratio
 
 #### Command Not Found
 
-**Problem**: `argc: command not found`
-**Solution**: Ensure you're in the correct directory or check node modules installation:
+**Problem**: `argc: command not found` **Solution**: Ensure you're in the correct directory or check node modules installation:
+
 ```bash
 cd "$SKOGAI_HOME/tools"
 npm install
@@ -248,16 +257,16 @@ npm install
 
 #### Build Failures
 
-**Problem**: Build process fails
-**Solution**:
+**Problem**: Build process fails **Solution**:
+
 - Check that `tools.txt` and `agents.txt` exist and have correct content
 - Verify tool scripts have proper permissions
 - Look for syntax errors in tool annotations
 
 #### AIChat Integration Issues
 
-**Problem**: Tools not appearing in AIChat
-**Solution**:
+**Problem**: Tools not appearing in AIChat **Solution**:
+
 - Re-run the link-to-aichat command
 - Check AIChat configuration has tools enabled
 - Verify symbolic links are correctly created:
@@ -268,10 +277,10 @@ npm install
 ## Best Practices
 
 1. **Regular Rebuilds**: After modifying any tool, rebuild the system
-2. **Always Link**: After building, always link to AIChat if using tools there
-3. **Command Structure**: Use consistent command patterns for predictable behavior
-4. **Documentation**: After creating tools, generate and review documentation
-5. **Version Control**: Keep track of changes to tools and update version numbers
+1. **Always Link**: After building, always link to AIChat if using tools there
+1. **Command Structure**: Use consistent command patterns for predictable behavior
+1. **Documentation**: After creating tools, generate and review documentation
+1. **Version Control**: Keep track of changes to tools and update version numbers
 
 ## Script Source Code
 
@@ -291,6 +300,6 @@ cd "$TOOLS_DIR" || exit 1
 ./node_modules/.bin/argc --argcfile Argcfile.sh "$@"
 ```
 
----
+______________________________________________________________________
 
 The `argc-tool.sh` script is a key component in the SkogAI tool ecosystem, providing a unified interface for managing the llm-functions framework and ensuring consistent tool and agent behaviors across the system.

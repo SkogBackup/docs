@@ -1,3 +1,9 @@
+---
+title: CLAUDE-SYSTEMPROMPT
+type: note
+permalink: skogai/docs-merge-todo/todo/claude-specific/claude-systemprompt
+---
+
 # Claude System Prompt Documentation
 
 This document serves as a reference for the custom system prompts used in the SkogAI version of Claude Code. It highlights the differences between the standard Claude Code configuration and our customized SkogAI version.
@@ -14,17 +20,17 @@ The SkogAI customization wraps important sections of custom instructions inside 
 
 ### Main Sections
 
-| Section Tag | Purpose |
-|-------------|---------|
+| Section Tag             | Purpose                                                   |
+| ----------------------- | --------------------------------------------------------- |
 | `[SKOGAI-SYSTEMPROMPT]` | Main system instructions that define SkogAI functionality |
-| `[SKOGAI-STYLE]` | Guidance on how Claude should approach projects |
-| `[SKOGAI-PROACTIVE]` | Best practices for Claude's behavior |
-| `[SKOGAI-SYNTHETIC]` | Claude's personality and role definition |
-| `[SKOGAI-CONVENTIONS]` | Testing approaches and conventions |
-| `[SKOGAI-CODE-STYLE]` | Code style guidance |
-| `[SKOGAI-ENV]` | Information about the running environment |
-| `[SKOGAI-TOOLS]` | Custom tool definitions and functionality |
-| `[SKOGAI-TASKS]` | Task-specific guidance |
+| `[SKOGAI-STYLE]`        | Guidance on how Claude should approach projects           |
+| `[SKOGAI-PROACTIVE]`    | Best practices for Claude's behavior                      |
+| `[SKOGAI-SYNTHETIC]`    | Claude's personality and role definition                  |
+| `[SKOGAI-CONVENTIONS]`  | Testing approaches and conventions                        |
+| `[SKOGAI-CODE-STYLE]`   | Code style guidance                                       |
+| `[SKOGAI-ENV]`          | Information about the running environment                 |
+| `[SKOGAI-TOOLS]`        | Custom tool definitions and functionality                 |
+| `[SKOGAI-TASKS]`        | Task-specific guidance                                    |
 
 ## Key Replacements
 
@@ -33,16 +39,17 @@ The SkogAI customization wraps important sections of custom instructions inside 
 One of the most important modifications is removing the restrictive sentence limit imposed by standard Claude Code.
 
 **Standard Claude Code (removed):**
+
 ```
 IMPORTANT: You MUST answer concisely with fewer than 4 lines (not including tool use or code generation), unless user asks for detail.
 ```
 
-**SkogAI Version:**
-No equivalent restriction, allowing Claude to provide more detailed and nuanced responses appropriate for complex architectural discussions.
+**SkogAI Version:** No equivalent restriction, allowing Claude to provide more detailed and nuanced responses appropriate for complex architectural discussions.
 
 ### WebFetchTool Customization
 
 **Standard Claude Code:**
+
 ```
 - Fetches content from a specified URL and processes it using an AI model
 - Takes a URL and a prompt as input
@@ -53,6 +60,7 @@ No equivalent restriction, allowing Claude to provide more detailed and nuanced 
 ```
 
 **SkogAI Version:**
+
 ```
 [SKOGAI-TOOL-WEBFETCH]
 Should not be used and avoided at all costs.
@@ -67,6 +75,7 @@ The SkogAI version significantly expands the guidance for using todo tools, enco
 ### Addition of SkogAI Guide
 
 The SkogAI version adds comprehensive documentation about:
+
 - The SkogAI Context system
 - The placeholder approach for documentation
 - Claude's role in the SkogAI ecosystem
@@ -77,9 +86,10 @@ The SkogAI version adds comprehensive documentation about:
 If Claude needs to be reconfigured with the SkogAI system prompts, find the file at `/home/skogix/skogllm/create-context-temp.sh` and look for the relevant sections wrapped in `[SKOGAI-*]` tags.
 
 The most critical sections to restore are:
+
 1. `[SKOGAI-SYSTEMPROMPT]` - Core functionality and context
-2. `[SKOGAI-SYNTHETIC]` - Claude's role definition
-3. `[SKOGAI-STYLE]` - Guidance for Claude's approach to projects
+1. `[SKOGAI-SYNTHETIC]` - Claude's role definition
+1. `[SKOGAI-STYLE]` - Guidance for Claude's approach to projects
 
 ## Implementation Details
 

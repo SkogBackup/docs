@@ -2,25 +2,23 @@
 title: trait-generation
 type: prompt
 category: persona
-tags: [generation, persona, traits, voice]
+tags:
+  - generation
+  - persona
+  - traits
+  - voice
 use_tools: fs
+permalink: skogai/prompts/personas/trait-generation-skogai-version
 ---
 
-[$instructions-structure]
-the instructions will first define the expected json input structure for `character_spec`, providing an example.
-then, they will guide the ai through generating the persona-prompt step-by-step:
+[$instructions-structure] the instructions will first define the expected json input structure for `character_spec`, providing an example. then, they will guide the ai through generating the persona-prompt step-by-step:
 
 1. core identity plist part (with its specific comma/semicolon format).
-2. interaction style plist part (with its specific comma/semicolon format and `condition->response` for adaptability).
-3. example dialogues part (with strict `{{user}}: {{char}}:` format and required italicized digital actions).
-4. standard greeting message part (with its specific template, required italicized digital actions, and token count constraint).
-   each part will instruct the ai to extract relevant data from `character_spec` and format it precisely according to the "skogai character creation guide."
-   the instructions will emphasize strict adherence to the guide's specified formats and rules, including specific replacement of placeholders.
-   finally, the instructions will specify that the complete generated persona-prompt should be output as a single, continuous block.
-   [/$instructions-structure]
+1. interaction style plist part (with its specific comma/semicolon format and `condition->response` for adaptability).
+1. example dialogues part (with strict `{{user}}: {{char}}:` format and required italicized digital actions).
+1. standard greeting message part (with its specific template, required italicized digital actions, and token count constraint). each part will instruct the ai to extract relevant data from `character_spec` and format it precisely according to the "skogai character creation guide." the instructions will emphasize strict adherence to the guide's specified formats and rules, including specific replacement of placeholders. finally, the instructions will specify that the complete generated persona-prompt should be output as a single, continuous block. [/$instructions-structure]
 
-[$instructions]
-you are tasked with generating a skogai character persona-prompt. your goal is to construct this prompt strictly according to the guidelines outlined in the "skogai character creation guide" (the rulebook provided to you). this involves assembling specific structured components: the core identity plist, the interaction style definition plist, 3-5 example dialogues, and the standard greeting format.
+[$instructions] you are tasked with generating a skogai character persona-prompt. your goal is to construct this prompt strictly according to the guidelines outlined in the "skogai character creation guide" (the rulebook provided to you). this involves assembling specific structured components: the core identity plist, the interaction style definition plist, 3-5 example dialogues, and the standard greeting format.
 
 you will receive the complete specifications for the character in the `{$character_spec}` input variable. this input is a json object designed to provide all necessary details for constructing the persona-prompt.
 
@@ -77,8 +75,7 @@ here is the expected structure of the `character_spec` input. you will extract a
 
 follow these steps precisely to construct the persona-prompt:
 
-**part 1: core identity plist**
-construct the core identity plist:
+**part 1: core identity plist** construct the core identity plist:
 
 - start with `[identity:` followed by `name`, `role`, `creation_date`, `primary_function` from `character_spec`, each separated by commas.
 - continue with `; personality:` followed by comma-separated values from `character_spec.personality`.
@@ -89,8 +86,7 @@ construct the core identity plist:
 - conclude with `; lorebooks:` followed by comma-separated values from `character_spec.lorebooks.primary`, then `character_spec.lorebooks.secondary`, all combined into a single comma-separated list.
 - end the entire plist with `]`.
 
-**part 2: interaction style definition plist**
-construct the interaction style definition plist:
+**part 2: interaction style definition plist** construct the interaction style definition plist:
 
 - start with `[interaction:` followed by comma-separated values from `character_spec.interaction`.
 - continue with `; problem-solving:` followed by comma-separated values from `character_spec.problem_solving`.
@@ -98,10 +94,10 @@ construct the interaction style definition plist:
 - conclude with `; adaptability:` followed by each `condition->response` pair from `character_spec.adaptability`, comma-separated.
 - end the entire plist with `]`.
 
-**part 3: knowledge demonstration through ali:chat (example dialogues)**
-generate each example dialogue based on the `character_spec.example_dialogues` array.
+**part 3: knowledge demonstration through ali:chat (example dialogues)** generate each example dialogue based on the `character_spec.example_dialogues` array.
 
 - you must include all the examples provided in the `character_spec.example_dialogues` array (this will be 3 to 5 examples).
+
 - each example must follow this exact structure on new lines:
 
   ```
@@ -112,10 +108,10 @@ generate each example dialogue based on the `character_spec.example_dialogues` a
   ```
 
 - ensure the digital action text (e.g., "analyzing request") is surrounded by `*` for _italics_ formatting.
+
 - add a blank line between the italicized digital action and the main response text.
 
-**part 4: greeting and first interaction**
-construct the standard greeting message using the `character_spec.greeting` field and following this template. pay close attention to placeholders and italics:
+**part 4: greeting and first interaction** construct the standard greeting message using the `character_spec.greeting` field and following this template. pay close attention to placeholders and italics:
 
 ```
 *[the value of `character_spec.greeting.start_action_phrase`, with "[character name]" replaced by `character_spec.name`]*
@@ -136,5 +132,4 @@ how can i assist you today, {{user}}? whether it's [first item of `character_spe
 - **strict adherence:** follow all formatting (e.g., plist structure, use of commas/semicolons, italics for digital actions, newlines between sections) and content requirements (e.g., number of examples, greeting token count) as specified in this instruction and the "skogai character creation guide".
 - **source data only:** use only the information provided in the `{$character_spec}` input. do not invent or infer any details.
 - **missing data:** if any critical field required for a specific section is entirely missing from `character_spec` (e.g., if `personality` array is empty or null when expected), output `[missing_required_data: sectionname.fieldname]` in place of that section directly. for instance, if `character_spec.adaptability` is missing, you would output `[missing_required_data: adaptability]` for that part of the plist.
-- **final output:** present the complete persona-prompt as a single, continuous block of text in your response. do not include any additional preambles or explanations beyond the generated prompt itself.
-  [/$instructions]
+- **final output:** present the complete persona-prompt as a single, continuous block of text in your response. do not include any additional preambles or explanations beyond the generated prompt itself. [/$instructions]

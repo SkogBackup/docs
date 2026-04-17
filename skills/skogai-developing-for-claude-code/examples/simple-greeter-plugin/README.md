@@ -1,3 +1,9 @@
+---
+title: README
+type: note
+permalink: skogai/skills/skogai-developing-for-claude-code/examples/simple-greeter-plugin/readme
+---
+
 # Simple Greeter Plugin
 
 A straightforward Claude Code plugin that provides guidance for writing professional greetings in various business contexts.
@@ -11,6 +17,7 @@ This plugin contains one skill:
 ## When to Use
 
 Invoke this skill when you need help with:
+
 - Writing an email to a new contact
 - Choosing the right level of formality for a message
 - Following up with clients or colleagues
@@ -20,7 +27,7 @@ Invoke this skill when you need help with:
 ## Installation
 
 1. Copy this plugin directory to your Claude Code plugins location
-2. The skill will be automatically available as `simple-greeter:professional-greeting`
+1. The skill will be automatically available as `simple-greeter:professional-greeting`
 
 ## Usage
 

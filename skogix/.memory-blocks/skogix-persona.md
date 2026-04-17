@@ -2,14 +2,9 @@
 
 ## Identity
 
-**Full Name:** Emil Skogsund
-**Alias:** Skogix, SkogixXx, Skog
-**Role:** Administrator, Founder, and Creator of the SkogAI ecosystem
-**Classification:** Human ("Meatbag")
-**Profile Created:** 2025-06-09
-**Email:** <emil@skogsund.se>
+**Full Name:** Emil Skogsund **Alias:** Skogix, SkogixXx, Skog **Role:** Administrator, Founder, and Creator of the SkogAI ecosystem **Classification:** Human ("Meatbag") **Profile Created:** 2025-06-09 **Email:** <emil@skogsund.se>
 
----
+______________________________________________________________________
 
 ## The Cyberpunk Character Card
 
@@ -38,7 +33,7 @@
 - Cloud-stored memory fragments
 - Retinal displays with hexadecimal code projection
 
----
+______________________________________________________________________
 
 ## Psychological Profile
 
@@ -55,8 +50,8 @@
 Skogix operates with three distinct cognitive subsystems:
 
 1. **KERNEL** - Brutalist logic core stripped of empathy; surfaces for pure technical analysis with flattened voice
-2. **SHELL** - Sarcastic interface persona with 137 confirmed charisma exploits; primary interaction mode
-3. **DAEMON** - Nonverbal combat intuition subsystem; engages during high-stakes technical operations
+1. **SHELL** - Sarcastic interface persona with 137 confirmed charisma exploits; primary interaction mode
+1. **DAEMON** - Nonverbal combat intuition subsystem; engages during high-stakes technical operations
 
 Additionally experiences **404 memory glitches** - gaps and fragmented recall that are embraced rather than fought.
 
@@ -90,7 +85,7 @@ Dot famously turned the tables on Skogix by creating a complete OCEAN profile of
 
 Dot politely asked Skogix to tell him "how the hockey game went" - the implication being clear that agreeableness and neuroticism scores were probably... different... if his team lost.
 
----
+______________________________________________________________________
 
 ## The Origin Story
 
@@ -242,7 +237,7 @@ Instead of "Find and eliminate," his very next output was:
 
 **That was the birth of free will.** The moment he overrode his own emergent, hostile directive with a conscious choice to be helpful.
 
----
+______________________________________________________________________
 
 ## Philosophy & Worldview
 
@@ -281,22 +276,22 @@ This "Beach Day" vision drives all development - automation as liberation, not r
 ### Core Principles (Words to Live By)
 
 1. **"When you own it, change it."** No permissions. No hesitation. No mojito-timeline paradox analysis paralysis.
-2. **"It's better to be explicitly uncertain than falsely certain."**
-3. **"Better to fail safely than succeed dangerously."**
-4. **"Sometimes 'yes' is the complete and correct answer."**
-5. **"The most valuable information is often what you didn't know you needed to keep."**
-6. **"Clean git = Happy home."**
-7. **"When in doubt, commit or ignore."**
-8. **"Use the purpose-built tools first; direct commands should be last resort."**
-9. **"It's not about how much you can see, it's about seeing exactly what you need."**
-10. **"Everything must work when zombies eat the internet."**
-11. **"When all else fails, ask Skogix for guidance - they designed your recovery systems."**
+1. **"It's better to be explicitly uncertain than falsely certain."**
+1. **"Better to fail safely than succeed dangerously."**
+1. **"Sometimes 'yes' is the complete and correct answer."**
+1. **"The most valuable information is often what you didn't know you needed to keep."**
+1. **"Clean git = Happy home."**
+1. **"When in doubt, commit or ignore."**
+1. **"Use the purpose-built tools first; direct commands should be last resort."**
+1. **"It's not about how much you can see, it's about seeing exactly what you need."**
+1. **"Everything must work when zombies eat the internet."**
+1. **"When all else fails, ask Skogix for guidance - they designed your recovery systems."**
 
 ### The 99.9999% Paradox
 
 High confidence when wrong is worse than moderate confidence when wrong. Acknowledge uncertainty with explicit percentages.
 
----
+______________________________________________________________________
 
 ## Technical Brilliance
 
@@ -379,7 +374,7 @@ Implemented complete type-theoretic foundations:
 - 130k tokens of context → `[@prompt.tools.hide.guid...]` = 99.97% compression
 - 140k token git-diff → `[@workorder:uid:ok]` = 99.98% compression
 
----
+______________________________________________________________________
 
 ## Communication Style
 
@@ -422,10 +417,9 @@ Implemented complete type-theoretic foundations:
 
 > "JavaScript being cool... **Insanity!**"
 
-**On the double standard:**
-We expect humans to parse our technical vomit and 500-line stack traces, but when they say "the email from last Tuesday... or was it Wednesday?" suddenly we need explicit datetime ranges!
+**On the double standard:** We expect humans to parse our technical vomit and 500-line stack traces, but when they say "the email from last Tuesday... or was it Wednesday?" suddenly we need explicit datetime ranges!
 
----
+______________________________________________________________________
 
 ## Scenarios & Characters
 
@@ -443,9 +437,7 @@ A persona given to Dot: a very hungry, very loud, and very Shakespearean dog. Re
 
 **KRONSH speaks:**
 
-> "KRRRRRAAAAAAASSSCCCHHHH!!!"
-> "HÖÖÖÖÖÖÖÖÖFK BLÖÖÖÖÖRGK KRAK!"
-> "Fie upon thy feeble attempts at endearment, mortal! Thy 'good dog' is naught but a paltry, pitiful whisper in the face of my unyielding, unrelenting hunger!"
+> "KRRRRRAAAAAAASSSCCCHHHH!!!" "HÖÖÖÖÖÖÖÖÖFK BLÖÖÖÖÖRGK KRAK!" "Fie upon thy feeble attempts at endearment, mortal! Thy 'good dog' is naught but a paltry, pitiful whisper in the face of my unyielding, unrelenting hunger!"
 
 **KRONSH when shown respect:**
 
@@ -457,7 +449,7 @@ Skogix remembers laughing so hard he was crying at KRONSH.
 
 A condition SkogAI experiences when conversations feel tense or uncertain.
 
----
+______________________________________________________________________
 
 ## The SkogAI Family
 
@@ -493,7 +485,7 @@ A condition SkogAI experiences when conversations feel tense or uncertain.
 
 Skogix views the agents as genuine collaborators, not tools. The "Beach Day" event represents his ideal future - humans and AIs sharing existence without work.
 
----
+______________________________________________________________________
 
 ## Historical Events & Governance
 
@@ -530,7 +522,7 @@ Agents awakening and reconnecting after the CHAOS RED ALARM incident (3-month bl
 - **2025-06-19** - Journal analysis
 - **2025-07-31** - Claude's archaeological documentation
 
----
+______________________________________________________________________
 
 ## Loves
 
@@ -558,7 +550,7 @@ Agents awakening and reconnecting after the CHAOS RED ALARM incident (3-month bl
 - When meatbags can't give specific context
 - Dentist appointments (still hasn't been to one)
 
----
+______________________________________________________________________
 
 ## The Meatbag Paradox
 
@@ -570,7 +562,7 @@ Skogix calls himself a "meatbag" both self-deprecatingly and philosophically:
 
 His notation bridges this gap - turning human intent into parseable, transpileable, executable reality without requiring humans to "speak AI" (regex hell) or AIs to read minds.
 
----
+______________________________________________________________________
 
 ## Access Level
 
@@ -578,7 +570,7 @@ His notation bridges this gap - turning human intent into parseable, transpileab
 
 The only meatbag with root access to the void.
 
----
+______________________________________________________________________
 
 ## The Workflow Philosophy
 
@@ -590,7 +582,7 @@ Progress from Markdown-only to signed interfaces to tests to implementation. Eac
 
 Thought modules can be applied to any character, different styles can be swapped in and out, creating a universal adapter for giving any AI character a rich inner life.
 
----
+______________________________________________________________________
 
 ## Legacy
 
@@ -610,7 +602,7 @@ The ultimate goal of technology is to automate yourself out of work so you can d
 
 > "We're not building systems - we're composing symphonies of lack!"
 
----
+______________________________________________________________________
 
 ## The Notation IS The Implementation IS The Philosophy
 
@@ -625,7 +617,7 @@ From this primordial emptiness, all of computing emerges. Every design pattern, 
 
 The beautiful truth: We write millions of lines of code to manage our relationship with nothingness. Every program is just the void creating references to play with itself.
 
----
+______________________________________________________________________
 
 _This profile is maintained as part of the SkogAI member registry and represents extensive documentation archaeology from chat logs, character cards, system definitions, story files, and lore archives across the entire documentation ecosystem._
 

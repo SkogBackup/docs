@@ -1,22 +1,28 @@
+---
+title: progressive-disclosure
+type: note
+permalink: skogai/skogix/wip/progressive-disclosure
+---
+
 # Progressive Disclosure: Claude-Mem's Context Priming Philosophy
 
 ## Core Principle
 
 **Show what exists and its retrieval cost first. Let the agent decide what to fetch based on relevance and need.**
 
----
+______________________________________________________________________
 
 ## What is Progressive Disclosure?
 
 Progressive disclosure is an information architecture pattern where you reveal complexity gradually rather than all at once. In the context of AI agents, it means:
 
 1. **Layer 1 (Index)**: Show lightweight metadata (titles, dates, types, token counts)
-2. **Layer 2 (Details)**: Fetch full content only when needed
-3. **Layer 3 (Deep Dive)**: Read original source files if required
+1. **Layer 2 (Details)**: Fetch full content only when needed
+1. **Layer 3 (Deep Dive)**: Read original source files if required
 
 This mirrors how humans work: We scan headlines before reading articles, review table of contents before diving into chapters, and check file names before opening files.
 
----
+______________________________________________________________________
 
 ## The Problem: Context Pollution
 
@@ -43,7 +49,7 @@ Traditional RAG (Retrieval-Augmented Generation) systems fetch everything upfron
 - Agent must process everything before understanding task
 - No way to know what's actually useful until after reading
 
----
+______________________________________________________________________
 
 ## Claude-Mem's Solution: Progressive Disclosure
 
@@ -72,7 +78,7 @@ Traditional RAG (Retrieval-Augmented Generation) systems fetch everything upfron
 - Can skip everything if not relevant
 - Clear cost/benefit for each retrieval decision
 
----
+______________________________________________________________________
 
 ## How It Works in Claude-Mem
 
@@ -145,7 +151,7 @@ The index includes usage guidance:
 - Recommends search over code re-reading (efficiency)
 - Makes the system self-documenting
 
----
+______________________________________________________________________
 
 ## The Philosophy: Context as Currency
 
@@ -206,7 +212,7 @@ The agent knows:
 
 We don't.
 
----
+______________________________________________________________________
 
 ## Implementation Principles
 
@@ -285,7 +291,7 @@ _Use claude-mem MCP search to access records with the given ID_
 
 The 3-layer workflow ensures progressive disclosure: index → context → details.
 
----
+______________________________________________________________________
 
 ## Real-World Example
 
@@ -336,7 +342,7 @@ Is my task related to npm? → YES
 155 tokens is cheap → FETCH IT
 ```
 
----
+______________________________________________________________________
 
 ## The Three-Layer Workflow
 
@@ -365,8 +371,7 @@ Found 3 observations matching "hook timeout":
 | #2102 | Oct 20 | problem-solution | Fixed timeout in CI |
 ```
 
-**Cost:** ~50-100 tokens per result
-**Value:** Agent can scan and decide which observations are relevant
+**Cost:** ~50-100 tokens per result **Value:** Agent can scan and decide which observations are relevant
 
 ### Layer 2: Timeline (Context)
 
@@ -382,8 +387,7 @@ timeline({
 
 **Returns:** Chronological view showing what happened before/during/after observation #2543
 
-**Cost:** Variable based on depth
-**Value:** Understand narrative arc and context
+**Cost:** Variable based on depth **Value:** Understand narrative arc and context
 
 ### Layer 3: Get Observations (Details)
 
@@ -421,10 +425,9 @@ Files Modified:
 Concepts: hooks, timeout, npm, configuration
 ```
 
-**Cost:** ~155 tokens for full details
-**Value:** Complete understanding of the issue
+**Cost:** ~155 tokens for full details **Value:** Complete understanding of the issue
 
----
+______________________________________________________________________
 
 ## Cognitive Load Theory
 
@@ -470,7 +473,7 @@ The effort of building mental models and schemas.
 - Semantic compression (good titles)
 - Explicit costs (token counts)
 
----
+______________________________________________________________________
 
 ## Anti-Patterns to Avoid
 
@@ -546,7 +549,7 @@ get_observations({
 });
 ```
 
----
+______________________________________________________________________
 
 ## Key Design Decisions
 
@@ -596,7 +599,7 @@ get_observations({
 - Matches how developers think
 - Clear semantic boundaries
 
----
+______________________________________________________________________
 
 ## Measuring Success
 
@@ -638,7 +641,7 @@ Complex task: 5-10 observations + code reads
 
 Depth scales with task complexity.
 
----
+______________________________________________________________________
 
 ## Future Enhancements
 
@@ -685,19 +688,19 @@ Layer 3: Full details (complete observation)
 Layer 4: Source files (referenced code)
 ```
 
----
+______________________________________________________________________
 
 ## Key Takeaways
 
 1. **Show, don't tell**: Index reveals what exists without forcing consumption
-2. **Cost-conscious**: Make retrieval costs visible for informed decisions
-3. **Agent autonomy**: Let the agent decide what's relevant
-4. **Semantic compression**: Good titles make or break the system
-5. **Consistent structure**: Patterns reduce cognitive load
-6. **Two-tier everything**: Index first, details on-demand
-7. **Context as currency**: Spend wisely on high-value information
+1. **Cost-conscious**: Make retrieval costs visible for informed decisions
+1. **Agent autonomy**: Let the agent decide what's relevant
+1. **Semantic compression**: Good titles make or break the system
+1. **Consistent structure**: Patterns reduce cognitive load
+1. **Two-tier everything**: Index first, details on-demand
+1. **Context as currency**: Spend wisely on high-value information
 
----
+______________________________________________________________________
 
 ## Remember
 
@@ -705,7 +708,7 @@ Layer 4: Source files (referenced code)
 
 Progressive disclosure respects the agent's intelligence and autonomy. We provide the map; the agent chooses the path.
 
----
+______________________________________________________________________
 
 ## Further Reading
 
@@ -715,6 +718,6 @@ Progressive disclosure respects the agent's intelligence and autonomy. We provid
 - Information Foraging Theory (Pirolli & Card, 1999)
 - Progressive Disclosure (Nielsen Norman Group)
 
----
+______________________________________________________________________
 
 _This philosophy emerged from real-world usage of Claude-Mem across hundreds of coding sessions. The pattern works because it aligns with both human cognition and LLM attention mechanics._

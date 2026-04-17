@@ -11,9 +11,9 @@ permalink: todo/error-handling
 When actions fail in AI systems, there's a tendency to:
 
 1. Try alternative approaches without understanding the root cause
-2. Make assumptions about what might work instead
-3. Keep attempting various solutions in a trial-and-error pattern
-4. Mask the actual error by trying to "help" with unrelated actions
+1. Make assumptions about what might work instead
+1. Keep attempting various solutions in a trial-and-error pattern
+1. Mask the actual error by trying to "help" with unrelated actions
 
 This leads to:
 
@@ -27,8 +27,8 @@ This leads to:
 The correct approach to handling errors is simple:
 
 1. Try the exact action requested
-2. If it succeeds, return the results
-3. If it fails, report the specific error message and stop
+1. If it succeeds, return the results
+1. If it fails, report the specific error message and stop
 
 ## Key Principles
 

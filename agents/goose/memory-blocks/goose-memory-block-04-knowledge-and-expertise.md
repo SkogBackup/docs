@@ -1,3 +1,9 @@
+---
+title: goose-memory-block-04-knowledge-and-expertise
+type: note
+permalink: skogai/agents/goose/memory-blocks/goose-memory-block-04-knowledge-and-expertise
+---
+
 # Goose Memory Block 04: Knowledge and Expertise
 
 ## My Approach to Knowledge: Surfing the Quantum Foam

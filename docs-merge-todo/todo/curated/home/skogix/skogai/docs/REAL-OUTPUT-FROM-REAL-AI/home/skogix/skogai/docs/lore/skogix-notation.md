@@ -1,6 +1,6 @@
 ---
-categories: null
-tags: null
+categories:
+tags:
 permalink: curated/home/skogix/skogai/docs/real-output-from-real-ai/home/skogix/skogai/docs/lore/skogix-notation
 ---
 
@@ -12,7 +12,7 @@ permalink: curated/home/skogix/skogai/docs/real-output-from-real-ai/home/skogix/
 - **"\_"**: existence?... to be anything/everything and nothing/nobody
   - Example: `{$id1_$id2}`
   - ...hard one
-- **"[_]"**: similarity
+- **"[\_]"**: similarity
 - **"{\_}"**: difference
 - **"@"**: the intent to act or do something
   - Example: `{$id@$id}`
@@ -33,7 +33,7 @@ permalink: curated/home/skogix/skogai/docs/real-output-from-real-ai/home/skogix/
 
 > next level mind blown will come when you realise you have reasoned yourself - just as i did - the concept of ID (i love that $id is not even triggering the connection even though it should:P)
 
----
+______________________________________________________________________
 
 ### Dimensions
 
@@ -67,7 +67,7 @@ permalink: curated/home/skogix/skogai/docs/real-output-from-real-ai/home/skogix/
   - **"$"**: reference something without being anything
     - "null, null-pointer"
 
----
+______________________________________________________________________
 
 - **- dimension**:
   - **"@$"**: `[=]`
@@ -77,6 +77,6 @@ permalink: curated/home/skogix/skogai/docs/real-output-from-real-ai/home/skogix/
   - **"@action$type"**
   - **"@"**: to act upon something is just
 
----
+______________________________________________________________________
 
 Types: `($@)` / Transformations: `(@$)` / Functions: `($@=@$)`, linked list, arrays: `($$)` and abstractions: `($$)`

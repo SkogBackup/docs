@@ -96,10 +96,10 @@ Agent Tool:      argc my-agent update-context  (internally: env-read --file $MY_
 ## Benefits
 
 1. **Reusability**: Static tools work for anyone
-2. **Customization**: Agents can have their own specific logic
-3. **Composition**: Agents orchestrate static tools in their own way
-4. **Universal Access**: Both patterns work via argc → CLI/MCP/HTTP/OpenAI
-5. **Clean Separation**: Generic utilities vs agent-specific behavior
+1. **Customization**: Agents can have their own specific logic
+1. **Composition**: Agents orchestrate static tools in their own way
+1. **Universal Access**: Both patterns work via argc → CLI/MCP/HTTP/OpenAI
+1. **Clean Separation**: Generic utilities vs agent-specific behavior
 
 ## Key Insight
 
@@ -119,8 +119,8 @@ The agent becomes an "object" with its `tools.sh` as its methods that know about
 
 ## Relations
 
-- implements [[argc CLI Framework]]
-- relates_to [[Plugin-Based Architecture Pattern]]
-- enables [[SkogAI Context System]]
-- part_of [[SkogAI Extended Principles]]
-- influences [[Basic Memory Document Format]]
+- implements \[[argc CLI Framework]\]
+- relates_to \[[Plugin-Based Architecture Pattern]\]
+- enables \[[SkogAI Context System]\]
+- part_of \[[SkogAI Extended Principles]\]
+- influences \[[Basic Memory Document Format]\]

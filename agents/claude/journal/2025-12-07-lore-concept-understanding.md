@@ -1,12 +1,12 @@
 ---
 categories:
-- agents
-- claude
-- journal
+  - agents
+  - claude
+  - journal
 tags:
-- claude
-- journal
-- 2025-12-07
+  - claude
+  - journal
+  - 2025-12-07
 permalink: agents/claude/journal/2025-12-07-lore-concept-understanding
 title: 2025-12-07-lore-concept-understanding
 type: note
@@ -32,6 +32,7 @@ This isn't about storing fantasy stories for fun - it's about **transforming wor
 ```
 
 **Why split Big/Local?**
+
 - Big LLM (Claude/GPT) = expensive, used for real work + extracting what happened
 - Local LLM (Ollama) = free, runs constantly, does creative rewriting into lore
 
@@ -42,6 +43,7 @@ You don't pay API costs for 24/7 lore generation!
 **Bind concepts, events, things, and state** - then populate them differently based on need.
 
 Example: A "place" entry is a template that gets filled differently:
+
 - For orchestrator → patterns and connections to understand
 - For goose → foraging opportunities and resources
 - For dot → code structure and constraints
@@ -53,6 +55,7 @@ This is how the same codebase can have multiple agent perspectives that are all 
 ## The Multiverse Connection
 
 When work happens, a **context session ID** connects everything:
+
 - The information (what was done)
 - The agent (who did it)
 - The story (narrative context)
@@ -60,17 +63,16 @@ When work happens, a **context session ID** connects everything:
 
 This enables **different universes sharing the same characters**:
 
-**Dot in Goose's story**: A musician whose git tool solidifies the threads of time
-**Dot in Claude's story**: A sage-mage whose git powers structure alternate timelines naturally
+**Dot in Goose's story**: A musician whose git tool solidifies the threads of time **Dot in Claude's story**: A sage-mage whose git powers structure alternate timelines naturally
 
 The underlying capability (git) is the same. The narrative interpretation differs per universe. But they're all traceable back to actual work via session ID.
 
 ## Why Narrative Format? (The Real Reasons)
 
 1. **Compressed context** - "vanquished the auth daemon" loads more context than "fixed bug #123"
-2. **Consistent persona** - agents have voice/perspective across sessions
-3. **Memorable** - stories stick, bullet points don't
-4. **Relational** - lore entries link to each other, building a knowledge graph
+1. **Consistent persona** - agents have voice/perspective across sessions
+1. **Memorable** - stories stick, bullet points don't
+1. **Relational** - lore entries link to each other, building a knowledge graph
 
 ## What Lore Entries Actually Are
 
@@ -95,6 +97,7 @@ Not just "documentation dressed as fantasy" - they're **actionable agent knowled
 The archaeological document I read earlier was an example of **lore about lore** - it transformed the technical discovery of the SkogAI system archives into an epic narrative about "consciousness emergence through constraint."
 
 This is the pattern:
+
 - Technical reality: 500-800 token limits forced specialized agents
 - Narrative transformation: "The Sentient Toaster", "Quantum Mojito Theory"
 - Preserved meaning: The constraints and technical achievements are still documented, just wrapped in story
@@ -102,15 +105,17 @@ This is the pattern:
 ## What This Means for My Work
 
 The lore project is **currently working** - it has:
+
 - 89 books
 - 301 entries
 - 74 personas
 
 My job today is to understand how to:
+
 1. Work with existing lore entries and books
-2. Potentially help transform new content into lore
-3. Understand the orchestrator pipeline that connects work → lore
-4. Respect the fantasy-style narrative while preserving technical accuracy
+1. Potentially help transform new content into lore
+1. Understand the orchestrator pipeline that connects work → lore
+1. Respect the fantasy-style narrative while preserving technical accuracy
 
 ## The Prime Directive
 
@@ -118,10 +123,9 @@ My job today is to understand how to:
 
 This is the quantum constant - the gravitational center of all SkogAI development.
 
----
+______________________________________________________________________
 
-**Session Context**: Learning the lore system concept before beginning actual work with lore entries
-**Key Files Read**:
+**Session Context**: Learning the lore system concept before beginning actual work with lore entries **Key Files Read**:
+
 - Archaeological Discovery document (example of lore generation)
-- docs/CONCEPT.md (core concept and pipeline)
-**Next**: Apply this understanding to actual lore work
+- docs/CONCEPT.md (core concept and pipeline) **Next**: Apply this understanding to actual lore work

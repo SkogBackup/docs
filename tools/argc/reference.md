@@ -128,6 +128,7 @@ metadata directives.
 ```
 
 **available meta values:**
+
 - `version <ver>` - set version string
 - `author <name>` - set author
 - `dotenv` - load .env file
@@ -163,7 +164,7 @@ makes parameter required.
 # @env API_KEY!  Required env var
 ```
 
-### * (multiple)
+### \* (multiple)
 
 zero or more values.
 
@@ -193,6 +194,7 @@ capture all remaining arguments.
 ```
 
 useful for delegating to other commands:
+
 ```sh
 # @arg docker_args~
 docker_wrapper() {
@@ -215,12 +217,14 @@ provide default value.
 restrict to specific values.
 
 **static choices:**
+
 ```sh
 # @option --format[json|yaml|toml|xml]
 # @arg env[dev|staging|prod]
 ```
 
 **dynamic choices (backticks):**
+
 ```sh
 # @option --branch[`git branch -r`]
 # @arg file[`ls *.txt`]
@@ -256,7 +260,7 @@ hint for shell completion.
 
 built-in types trigger appropriate completion.
 
-### -* (prefixed options)
+### -\* (prefixed options)
 
 accept prefix-style options.
 
@@ -298,11 +302,13 @@ argc maps parameters to bash variables with `argc_` prefix:
 ```
 
 **naming rules:**
+
 - prepend `argc_`
 - hyphens become underscores
 - preserve case
 
 **multi-value (arrays):**
+
 ```sh
 # @arg files*              → ${argc_files[@]}
 # @option --tags*,         → ${argc_tags[@]}
@@ -324,6 +330,7 @@ argc provides special variables:
 ```
 
 examples:
+
 ```sh
 # @arg input!  Required input file
 # @option --port=8080  Server port
@@ -393,6 +400,7 @@ eval "$(argc --argc-eval "$0" "$@")"
 ```
 
 **rules:**
+
 - use `::` separator
 - parent commands need `{ :; }` body
 - arbitrary nesting depth
@@ -475,6 +483,7 @@ build() { :; }
 ```
 
 **help output includes:**
+
 - description
 - usage syntax
 - all commands (nested shown with hierarchy)
@@ -553,6 +562,7 @@ allow leading symbols:
 ```
 
 loads `.env` file from script directory:
+
 ```
 DATABASE_URL=postgres://localhost/mydb
 API_KEY=secret123

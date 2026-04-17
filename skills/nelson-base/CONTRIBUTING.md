@@ -1,3 +1,9 @@
+---
+title: CONTRIBUTING
+type: note
+permalink: skogai/skills/nelson-base/contributing
+---
+
 # Contributing
 
 Thanks for your interest in contributing to Nelson.
@@ -5,8 +11,8 @@ Thanks for your interest in contributing to Nelson.
 ## How to contribute
 
 1. Fork the repo and create a branch from `main`
-2. Make your changes
-3. Open a pull request
+1. Make your changes
+1. Open a pull request
 
 ## What to contribute
 

@@ -1,3 +1,9 @@
+---
+title: CLAUDE
+type: note
+permalink: skogai/skills/skogai-worktrunk/claude
+---
+
 # Claude Code Plugin Guidelines
 
 ## Skill Boundary
@@ -12,6 +18,7 @@ When a user asks about *workflow* (e.g. "how do I do a feature branch flow?"), r
 **Working solution**: Using `source: "./.claude-plugin"` in `marketplace.json` allows skills to remain in `.claude-plugin/skills/` ✅
 
 Configuration in `marketplace.json`:
+
 ```json
 {
   "source": "./.claude-plugin",
@@ -20,6 +27,7 @@ Configuration in `marketplace.json`:
 ```
 
 Configuration in `plugin.json`:
+
 ```json
 {
   "hooks": "./hooks/hooks.json",
@@ -28,6 +36,7 @@ Configuration in `plugin.json`:
 ```
 
 **Path resolution**:
+
 - Source base: `./.claude-plugin`
 - Skills: `./.claude-plugin + ./skills/worktrunk = ./.claude-plugin/skills/worktrunk` ✅
 - Hooks: `./.claude-plugin + ./hooks/hooks.json = ./.claude-plugin/hooks/hooks.json` ✅

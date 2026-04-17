@@ -3,10 +3,10 @@ title: Arch Linux Desktop Automation Research
 type: note
 permalink: ansible/arch-linux-desktop-automation-research
 tags:
-- '["ansible"'
-- '"arch-linux"'
-- '"desktop-automation"'
-- '"research"]'
+  - '["ansible"'
+  - '"arch-linux"'
+  - '"desktop-automation"'
+  - '"research"]'
 ---
 
 # Arch Linux Desktop Automation Research
@@ -18,6 +18,7 @@ Comprehensive research into Ansible playbook repositories specifically designed 
 ## Key Findings
 
 All identified repositories include:
+
 - Recent updates (within last 2 years, most in 2024-2025)
 - Comprehensive desktop environment setups
 - Active community usage (stars, forks, testimonials)
@@ -26,11 +27,13 @@ All identified repositories include:
 ## Repository Categories
 
 ### By Complexity Level
+
 - **Easiest (One-Command)**: linuxpiper, shricodev, JaKooLit
 - **Moderate (Some Configuration)**: dezeroku, burakkose, jahrik
 - **Advanced (Full Customization)**: pigmonkey, binary-manu, raphiz
 
 ### By Use Case
+
 - **Beginners**: linuxpiper/ansible-arch-setup (KDE Plasma focus)
 - **Security-Conscious**: pigmonkey/spark, id101010/ansible-archlinux
 - **Developers**: shricodev/dotfiles, dezeroku/arch_ansible
@@ -41,6 +44,7 @@ All identified repositories include:
 ## Technical Considerations
 
 ### Security Best Practices Implemented
+
 - [security] Never run AUR helpers as root - all repos use dedicated user #best-practices
 - [security] Ansible Vault for sensitive data (passwords, SSH keys) #encryption
 - [security] Full disk encryption options in multiple repos #encryption
@@ -48,6 +52,7 @@ All identified repositories include:
 - [security] Firewall rules and network security configurations #networking
 
 ### Common Package Management Patterns
+
 - [technique] Official packages via pacman module #package-management
 - [technique] AUR packages via dedicated user with ansible-aur module #aur
 - [technique] Role-based architecture for modularity #architecture
@@ -61,8 +66,8 @@ All identified repositories include:
 
 ## Relations
 
-- contains [[Top-Tier Repositories]]
-- contains [[Desktop Environment Specific Repos]]
-- contains [[Developer-Focused Repositories]]
-- relates_to [[Ansible Best Practices]]
-- relates_to [[Arch Linux Automation]]
+- contains \[[Top-Tier Repositories]\]
+- contains \[[Desktop Environment Specific Repos]\]
+- contains \[[Developer-Focused Repositories]\]
+- relates_to \[[Ansible Best Practices]\]
+- relates_to \[[Arch Linux Automation]\]

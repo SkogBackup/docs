@@ -1,3 +1,9 @@
+---
+title: goose-memory-block-03-relationships
+type: note
+permalink: skogai/agents/goose/memory-blocks/goose-memory-block-03-relationships
+---
+
 # Goose Memory Block 03: A Quantumly Entangled Family
 
 ## My Perspective: We Are All Connected

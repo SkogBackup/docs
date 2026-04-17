@@ -1,9 +1,15 @@
 ---
-title: "Integrating Tools with AIChat"
-description: "Comprehensive guide to connecting argc tools with AIChat for LLM function calling"
-date: "2023-11-06"
-tags: ["aichat", "integration", "tools", "function-calling", "llm-functions"]
-status: "published"
+title: Integrating Tools with AIChat
+description: Comprehensive guide to connecting argc tools with AIChat for LLM function calling
+date: '2023-11-06'
+tags:
+  - aichat
+  - integration
+  - tools
+  - function-calling
+  - llm-functions
+status: published
+permalink: skogai/todo/tools/integrating-with-aichat
 ---
 
 # Integrating Tools with AIChat
@@ -15,8 +21,8 @@ This document explains how to integrate tools built with the argc framework into
 The integration between argc tools and AIChat creates a powerful system where LLMs can:
 
 1. Discover available tools through JSON schema definitions
-2. Call tools with appropriate parameters based on user requests
-3. Receive and process tool outputs to generate responses
+1. Call tools with appropriate parameters based on user requests
+1. Receive and process tool outputs to generate responses
 
 This integration happens through several key components:
 
@@ -36,6 +42,7 @@ argc build
 ```
 
 This generates:
+
 - Individual tool wrappers in the `bin/` directory
 - A comprehensive `functions.json` file with all tool definitions
 - Agent-specific `functions.json` files in each agent directory
@@ -50,6 +57,7 @@ cd /home/skogix/skogai/tools
 ```
 
 This script:
+
 - Creates symbolic links from AIChat's functions directory to argc's function definitions
 - Links individual tools and agents to make them available for LLM function calling
 - Sets up necessary permissions for AIChat to execute the tools
@@ -85,6 +93,7 @@ The core of the integration is the `functions.json` file which follows the OpenA
 ```
 
 This schema tells the LLM:
+
 - The name of the function to call
 - A description of what it does
 - The parameters it needs, their types, and which ones are required
@@ -95,11 +104,11 @@ This schema tells the LLM:
 When an LLM decides to call a function:
 
 1. **AIChat receives the function call**: The LLM outputs a structured function call
-2. **AIChat locates the function**: Using the symbolic links to find the executable
-3. **AIChat passes parameters**: Sends the parameters in the format the tool expects
-4. **Tool executes**: The tool performs its operation with the provided parameters
-5. **Results return to AIChat**: The tool's output is sent back to AIChat
-6. **AIChat presents results to the LLM**: The LLM can then interpret and use the results
+1. **AIChat locates the function**: Using the symbolic links to find the executable
+1. **AIChat passes parameters**: Sends the parameters in the format the tool expects
+1. **Tool executes**: The tool performs its operation with the provided parameters
+1. **Results return to AIChat**: The tool's output is sent back to AIChat
+1. **AIChat presents results to the LLM**: The LLM can then interpret and use the results
 
 ## Directory Structure
 
@@ -123,6 +132,7 @@ cat ~/.config/aichat/config.yaml
 ```
 
 Ensure tools are enabled:
+
 ```yaml
 tools:
   enable: true
@@ -150,25 +160,28 @@ roles:
 The integration implements several security measures:
 
 1. **Parameter Validation**: Validates all parameters before execution
-2. **Execution Boundaries**: Restricts tool capabilities to their intended scope
-3. **Error Handling**: Captures and reports errors in a structured manner
-4. **Permission Controls**: Limits tool access based on AIChat configuration
+1. **Execution Boundaries**: Restricts tool capabilities to their intended scope
+1. **Error Handling**: Captures and reports errors in a structured manner
+1. **Permission Controls**: Limits tool access based on AIChat configuration
 
 ## Testing the Integration
 
 To test if a tool is properly integrated:
 
 1. Start AIChat:
+
    ```bash
    aichat
    ```
 
-2. Request a task that would require the tool:
+1. Request a task that would require the tool:
+
    ```
    Can you please create a file called test.txt with the content "Hello, World!"
    ```
 
-3. AIChat should:
+1. AIChat should:
+
    - Recognize the need for the fs_write tool
    - Make a function call with appropriate parameters
    - Execute the tool
@@ -185,6 +198,7 @@ Tools can have configuration files that AIChat respects:
 ```
 
 With content like:
+
 ```yaml
 allowed_paths:
   - /tmp
@@ -225,6 +239,7 @@ tool_groups:
 ```
 
 Then enable entire groups:
+
 ```yaml
 roles:
   developer:
@@ -238,6 +253,7 @@ roles:
 ### Missing Functions
 
 If AIChat can't find a function:
+
 ```
 cd /home/skogix/skogai/tools
 ./scripts/argc-tool.sh link-to-aichat
@@ -246,6 +262,7 @@ cd /home/skogix/skogai/tools
 ### Permission Errors
 
 If permission errors occur:
+
 ```bash
 chmod +x /home/skogix/skogai/tools/bin/*
 ```
@@ -253,6 +270,7 @@ chmod +x /home/skogix/skogai/tools/bin/*
 ### Tool Definition Errors
 
 If tool definitions aren't correct:
+
 ```bash
 cd /home/skogix/skogai/tools
 argc build
@@ -262,6 +280,7 @@ argc build
 ### Function Calling Issues
 
 If the LLM isn't using functions:
+
 - Ensure tools are enabled in AIChat config
 - Check that your model supports function calling
 - Verify the functions are properly described
@@ -275,9 +294,10 @@ Can you analyze the code in my project using the coder agent?
 ```
 
 AIChat will:
+
 1. Recognize the need for the coder agent
-2. Access the agent-specific functions
-3. Execute the appropriate tools
+1. Access the agent-specific functions
+1. Execute the appropriate tools
 
 ## Building Custom AIChat Integration
 
@@ -288,6 +308,7 @@ For deeper integration, you can create custom AIChat plugins:
 ```
 
 With content that enhances the integration:
+
 ```python
 from aichat.plugin import Plugin
 
@@ -305,6 +326,6 @@ class ArgcToolsPlugin(Plugin):
         return result
 ```
 
----
+______________________________________________________________________
 
 This integration creates a seamless connection between AIChat and the argc tools ecosystem, allowing language models to interact with the system in powerful ways while maintaining security and usability.

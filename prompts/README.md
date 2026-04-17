@@ -47,40 +47,45 @@ Format:
 ### By Category
 
 **Personas & Character**
+
 - Character voice templates
 - Personality trait definitions
 - Interaction style guides
 
 **Lore Generation**
+
 - Entry creation prompts
 - Narrative transformation templates
 - Book organization patterns
 
 **Tool Development**
+
 - Argc command templates
 - Script creation patterns
 - Integration guidelines
 
 **Workflows**
+
 - Multi-agent orchestration
 - Pipeline automation
 - Session management
 
 ### By Use Case
 
-| Use Case | Prompt Location | Description |
-|----------|----------------|-------------|
-| Create lore entry | `lore/entry-generation.yaml` | Transform title → narrative prose |
-| Extract lore (JSON) | `lore/extraction-json.yaml` | Extract entities from docs → JSON |
-| Extract lore (Markdown) | `lore/extraction-markdown.yaml` | Extract entities → markdown |
-| Generate titles | `lore/title-generation.yaml` | Generate entry titles for lorebook |
-| Find connections | `lore/connection-analysis.yaml` | Identify relationships between entries |
-| Generate persona | `personas/generation.yaml` | Create traits/voice from name+description |
-| Extract persona | `personas/from-text.yaml` | Extract persona profile from text |
+| Use Case                | Prompt Location                 | Description                               |
+| ----------------------- | ------------------------------- | ----------------------------------------- |
+| Create lore entry       | `lore/entry-generation.yaml`    | Transform title → narrative prose         |
+| Extract lore (JSON)     | `lore/extraction-json.yaml`     | Extract entities from docs → JSON         |
+| Extract lore (Markdown) | `lore/extraction-markdown.yaml` | Extract entities → markdown               |
+| Generate titles         | `lore/title-generation.yaml`    | Generate entry titles for lorebook        |
+| Find connections        | `lore/connection-analysis.yaml` | Identify relationships between entries    |
+| Generate persona        | `personas/generation.yaml`      | Create traits/voice from name+description |
+| Extract persona         | `personas/from-text.yaml`       | Extract persona profile from text         |
 
 ## Using These Prompts
 
 ### In Shell Scripts (via yq)
+
 ```bash
 # Load prompt template
 PROMPT_FILE="$SKOGAI_DIR/agents/prompts/lore/entry-generation.yaml"
@@ -95,11 +100,13 @@ ollama run llama3.2 "$PROMPT"
 ```
 
 ### Direct Reference
+
 ```
 @agents/prompts/lore/entry-generation.yaml
 ```
 
 ### In Python
+
 ```python
 from pathlib import Path
 import yaml
@@ -186,11 +193,11 @@ tags: [relevant, tags]
 When adding new prompts:
 
 1. Choose appropriate category directory
-2. Use descriptive kebab-case filename
-3. Include complete frontmatter
-4. Provide usage examples
-5. Test with actual use cases
-6. Document any dependencies
+1. Use descriptive kebab-case filename
+1. Include complete frontmatter
+1. Provide usage examples
+1. Test with actual use cases
+1. Document any dependencies
 
 ## Integration Points
 
@@ -204,14 +211,13 @@ This repository integrates with:
 ## Recent Changes
 
 **2026-01-12**: Prompt repository restructured
+
 - Migrated from `/prompts/` to `/agents/prompts/` as canonical location
 - Converted all operational prompts to improved YAML format with XML-style structure tags
 - Updated scripts (`llama-lore-integrator.sh`, `llama-lore-creator.sh`) to use new paths
 - Maintained markdown guides for documentation purposes
 - Added better prompt engineering patterns (`<role>`, `<task>`, `<rules>`, `<examples>`)
 
----
+______________________________________________________________________
 
-**Last Updated**: 2026-01-12
-**Maintainer**: skogix
-**Repository**: Part of SkogAI lore project
+**Last Updated**: 2026-01-12 **Maintainer**: skogix **Repository**: Part of SkogAI lore project

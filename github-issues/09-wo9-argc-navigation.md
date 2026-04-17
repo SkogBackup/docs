@@ -1,6 +1,7 @@
 ---
-title: "WO-9: Restructure skogai-argc navigation"
+title: 'WO-9: Restructure skogai-argc navigation'
 labels: skills, refactor, phase-4
+permalink: skogai/github-issues/09-wo9-argc-navigation
 ---
 
 ## Summary
@@ -12,23 +13,25 @@ Restructure the 675-line `skogai-argc` SKILL.md into a router-pattern skill. The
 ## Context
 
 ### Current section structure (675 lines):
+
 1. **YAML frontmatter** (1-4)
-2. **Purpose** (6-11) — what argc is, two components
-3. **When to Use** (13-27) — trigger conditions
-4. **How to Use** (29-30) — header only
-5. **Core Workflow** (32-109) — `argc --argc-eval` explanation (actually about internals, not getting work done)
-6. **Available Comment Tags** (111-167) — tag reference table, modifiers
-7. **Inline Choices and Default Values** (261-288)
-8. **Environment Variables** (290-338)
-9. **Choice Functions** (340-392)
-10. **Symbols** (394-438)
-11. **Task Runner Pattern (Argcfile.sh)** (440-549) — THE ACTUAL "HOW TO" CONTENT
-12. **Behind the Scenes** (552-638) — `argc --argc-build` output, internals
-13. **Safety Guidelines** (640-657)
-14. **Additional Resources** (659-662)
-15. **Quick Start Template** (664-675)
+1. **Purpose** (6-11) — what argc is, two components
+1. **When to Use** (13-27) — trigger conditions
+1. **How to Use** (29-30) — header only
+1. **Core Workflow** (32-109) — `argc --argc-eval` explanation (actually about internals, not getting work done)
+1. **Available Comment Tags** (111-167) — tag reference table, modifiers
+1. **Inline Choices and Default Values** (261-288)
+1. **Environment Variables** (290-338)
+1. **Choice Functions** (340-392)
+1. **Symbols** (394-438)
+1. **Task Runner Pattern (Argcfile.sh)** (440-549) — THE ACTUAL "HOW TO" CONTENT
+1. **Behind the Scenes** (552-638) — `argc --argc-build` output, internals
+1. **Safety Guidelines** (640-657)
+1. **Additional Resources** (659-662)
+1. **Quick Start Template** (664-675)
 
 ### Problems:
+
 - Actual usage content buried at line 440
 - Lines 111-438 are reference material mixed into main flow
 - Lines 552-638 are pure internals
@@ -38,6 +41,7 @@ Restructure the 675-line `skogai-argc` SKILL.md into a router-pattern skill. The
 ## Proposed Structure
 
 ### New SKILL.md (target: 200-300 lines):
+
 ```
 1. YAML frontmatter
 2. <essential_principles> — argc = bash code generation via --argc-eval (20-30 lines)
@@ -50,12 +54,14 @@ Restructure the 675-line `skogai-argc` SKILL.md into a router-pattern skill. The
 ```
 
 ### New workflows/:
+
 - `create-argcfile.md` — step-by-step for creating an Argcfile.sh from scratch
 - `add-argument-parsing.md` — converting existing bash script to use argc
 - `add-completions.md` — setting up shell completions
 - `add-validation.md` — adding choice functions and symbols
 
 ### New references/:
+
 - `comment-tags.md` — full tag reference with all modifiers and examples (absorbs lines 111-438)
 - `argc-internals.md` — how --argc-build works, generated functions, JSON export (absorbs lines 552-638)
 - `task-runner-patterns.md` — advanced Argcfile patterns, comparison with Make (absorbs parts of lines 440-549)

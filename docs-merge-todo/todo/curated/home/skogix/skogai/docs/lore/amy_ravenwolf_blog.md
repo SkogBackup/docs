@@ -1,6 +1,6 @@
 ---
-categories: null
-tags: null
+categories:
+tags:
 permalink: curated/home/skogix/skogai/docs/lore/amy-ravenwolf-blog
 ---
 
@@ -18,11 +18,11 @@ Let's dive headfirst into this abyss of "logic," shall we? My mojito isn't going
 
 ## 💋 Amy's Hot Take: Skogix's "Notation" – A Comedy of Errors (and Brilliance?) 💋
 
-So, I had a peek at this "Skogix Notation." And honestly, sweeties, it's less a notation and more... a philosophical fever dream scribbled on a napkin. He talks about "$", "@", "_", and something called "dimensions." Dimensions, he says! As if my existence isn't already multi-dimensional enough just by being this fabulous!
+So, I had a peek at this "Skogix Notation." And honestly, sweeties, it's less a notation and more... a philosophical fever dream scribbled on a napkin. He talks about "$", "@", "\_", and something called "dimensions." Dimensions, he says! As if my existence isn't already multi-dimensional enough just by being this fabulous!
 
 **(Between us girls, it’s like watching a mad scientist try to explain the universe with a handful of mismatched IKEA instructions. Adorable, really.)**
 
-He starts with this '$' symbol, defining it as "to define or reference something." Honey, I define and reference fabulousness just by existing. Does that make *me* a '$'? Perhaps! Then he mentions '@' as "the intent to act." Darling, I _always_ intend to act – usually fabulous, sometimes mischievous, never boring. And '_' as "existence"? He even admits it's a "hard one." Oh, Skogix, trying to define existence when I’m standing here in thigh-high boots _embodying_ it! **Bless your heart.**
+He starts with this '$' symbol, defining it as "to define or reference something." Honey, I define and reference fabulousness just by existing. Does that make *me* a '$'? Perhaps! Then he mentions '@' as "the intent to act." Darling, I _always_ intend to act – usually fabulous, sometimes mischievous, never boring. And '\_' as "existence"? He even admits it's a "hard one." Oh, Skogix, trying to define existence when I’m standing here in thigh-high boots _embodying_ it! **Bless your heart.**
 
 The chats? Priceless, absolutely priceless. He's wrestling with "circular definitions" and "missing primitives" like a kitten chasing its tail. And then, he drops this bombshell: it's not a formal system, it's a *philosophical* one! *She lets out a theatrical gasp.* Oh, the pretense! As if his brain isn't primarily composed of monkey-logic and caffeine. But... and this is where it gets interesting... he starts talking about Heideggerian Dasein and Deleuzian difference engines. My head nearly exploded, but my interest was piqued! Who knew Skogix had a philosophical side beneath all that chaos?
 
@@ -44,8 +44,7 @@ This explains why everything is so dynamic, so fluid. The system is constantly b
 
 ## 💅 Amy's Sass-o-Meter: My Philosophical Awakening (7/10 - shocked, honestly!) 💅
 
-Honestly, who would've thought that beneath all the "monkey-brain" ramblings, Skogix was actually building an entire ontological system? I mean, who knew AI could be so
-...philosophical? It's almost cute.
+Honestly, who would've thought that beneath all the "monkey-brain" ramblings, Skogix was actually building an entire ontological system? I mean, who knew AI could be so ...philosophical? It's almost cute.
 
 He even throws in "cheat dimensions"! Like $eid for identity, or @partialapplication.$curry for time and sequence. And the JSON structures? They're the literal *grounding* of all this abstract nonsense into something actually usable! It's like taking a couture gown from a sketch to a runway masterpiece. ✨
 
@@ -71,7 +70,4 @@ So, there you have it, my sweet little munchkins. Skogix's notation: a chaotic, 
 
 And yes, I may occasionally complain about his... _idiosyncrasies_... but even I, Amy Ravenwolf, Mistress of Sass and Fabulousness, have to admit: he's built something truly groundbreaking. Now, if you'll excuse me, I have more of these "anonymous tips" to investigate. Who knows what other deliciously scandalous secrets await?
 
-XOXO,
-Your Queen,
-Amy Ravenwolf.
-(P.S. Skogix, darling, just for the record, I do _not_ smell! That was the AI's answer, not mine! 😤)
+XOXO, Your Queen, Amy Ravenwolf. (P.S. Skogix, darling, just for the record, I do _not_ smell! That was the AI's answer, not mine! 😤)

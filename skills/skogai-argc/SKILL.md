@@ -1,6 +1,7 @@
 ---
 name: skogai-argc
 description: Create and manage argc-powered bash CLIs and Argcfile.sh task runners. Use when creating Argcfile.sh files, converting bash scripts to argc CLIs, adding argument parsing, shell completion, or task automation to projects.
+permalink: skogai/skills/skogai-argc/skill
 ---
 
 # Argc CLI Framework
@@ -12,7 +13,7 @@ This skill enables working with the argc framework - a bash-based system that tr
 Argc has two components:
 
 1. **argc framework** - The parser/engine that reads comment tags and generates CLI functionality
-2. **argc-completions** - 1000+ pre-built completion scripts for common commands, using argc as the engine
+1. **argc-completions** - 1000+ pre-built completion scripts for common commands, using argc as the engine
 
 ## When to Use
 
@@ -117,7 +118,7 @@ exit 1
    # @arg name!                Required positional argument
    ```
 
-2. **Access parsed values** - Argc generates variables with `argc_` prefix:
+1. **Access parsed values** - Argc generates variables with `argc_` prefix:
 
    ```bash
    echo $argc_verbose     # Flag value (0 or 1)
@@ -140,11 +141,13 @@ exit 1
    ```
 
    **Built-in variables for advanced use:**
+
    - `argc__args` - Array of all CLI arguments
    - `argc__positionals` - Array of positional arguments only (no flags/options)
    - `argc__fn` - Name of the function being executed
 
    **Environment variables injected by argc:**
+
    - `ARGC_PWD` - Original working directory (available in Argcfile.sh)
    - `ARGC_SHELL_PATH` - Path to shell executable (configurable)
    - `ARGC_SCRIPT_NAME` - Override default Argcfile.sh name (configurable)
@@ -356,9 +359,9 @@ _choice_files() {
 **How it works:**
 
 1. The backtick syntax `` `_choice_files` `` tells argc to call this function
-2. Argc captures the function's stdout (one value per line)
-3. Input is validated against this list
-4. Invalid input triggers automatic error with possible values shown
+1. Argc captures the function's stdout (one value per line)
+1. Input is validated against this list
+1. Invalid input triggers automatic error with possible values shown
 
 **Real-world examples:**
 
@@ -414,10 +417,10 @@ _choice_files() {
 **How it works:**
 
 1. `@meta symbol +filetype` defines `+` as a symbol that takes a filetype
-2. User runs: `argc +.md process file1.md file2.md`
-3. Argc sets `argc_filetype=.md` **before** validating `files`
-4. `_choice_files` uses `${argc_filetype}` to filter the find results
-5. Only `.md` files are valid choices for `files` argument
+1. User runs: `argc +.md process file1.md file2.md`
+1. Argc sets `argc_filetype=.md` **before** validating `files`
+1. `_choice_files` uses `${argc_filetype}` to filter the find results
+1. Only `.md` files are valid choices for `files` argument
 
 **The validation cascade:**
 
@@ -444,8 +447,8 @@ Argc doubles as a task runner - a bash-native alternative to Make. The `Argcfile
 **Basic Setup:**
 
 1. Create `Argcfile.sh` in the project root
-2. Define tasks as bash functions with `@cmd` tags
-3. Run tasks via `argc <task-name>`
+1. Define tasks as bash functions with `@cmd` tags
+1. Run tasks via `argc <task-name>`
 
 **Simple Example:**
 
@@ -587,10 +590,10 @@ _argc_validate_choices() {
 This function:
 
 1. Takes the output from your choice function (`_choice_files`)
-2. Reads it line-by-line into a bash array
-3. Checks if the user's input matches any valid choice
-4. If not, generates the error message with all possible values
-5. Calls `_argc_die` to exit with error
+1. Reads it line-by-line into a bash array
+1. Checks if the user's input matches any valid choice
+1. If not, generates the error message with all possible values
+1. Calls `_argc_die` to exit with error
 
 **Other generated functions:**
 

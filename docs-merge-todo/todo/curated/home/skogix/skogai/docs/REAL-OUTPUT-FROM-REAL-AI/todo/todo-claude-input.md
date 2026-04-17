@@ -2,28 +2,34 @@
 permalink: todo/curated/home/skogix/skogai/docs/real-output-from-real-ai/todo/todo-claude-input
 ---
 
----
+______________________________________________________________________
+
 categories:
 
 1. **Software Development**: The majority of the topics relate to software development, including context loading systems, verification systems, integration opportunities, tools and scripts.
-2. **Project Management**: Some topics, such as project outcomes, workflows, and documentation improvements, suggest a focus on project management.
-tags:
+
+1. **Project Management**: Some topics, such as project outcomes, workflows, and documentation improvements, suggest a focus on project management. tags:
 
 1. Software Development
-2. Artificial Intelligence (Natural Language Processing)
-3. Contextual Understanding
-4. Verification Systems
-5. Documentation Improvements
-6. Research and Development
+
+1. Artificial Intelligence (Natural Language Processing)
+
+1. Contextual Understanding
+
+1. Verification Systems
+
+1. Documentation Improvements
+
+1. Research and Development
 
 **Themes:**
 
 1. **Contextual Understanding**: The file focuses on improving context loading, verification systems, and certainty frameworks to enhance contextual understanding.
-2. **Software Development Best Practices**: The topics suggest a focus on best practices for software development, including documentation improvements, integration opportunities, and tools and scripts.
-3. **Research and Development**: Several topics indicate an ongoing research effort to improve the software, including investigating optimal token budgeting strategies, exploring progressive disclosure techniques, and analyzing patterns in verification status progression.
+1. **Software Development Best Practices**: The topics suggest a focus on best practices for software development, including documentation improvements, integration opportunities, and tools and scripts.
+1. **Research and Development**: Several topics indicate an ongoing research effort to improve the software, including investigating optimal token budgeting strategies, exploring progressive disclosure techniques, and analyzing patterns in verification status progression.
 
-Overall, the memory file appears to be a collection of ideas, tasks, and topics related to improving software development processes, particularly in the context of contextual understanding and verification systems.
----
+## Overall, the memory file appears to be a collection of ideas, tasks, and topics related to improving software development processes, particularly in the context of contextual understanding and verification systems.
+
 # TODO: Future Improvements
 
 This document tracks improvements and tasks that should be completed eventually but aren't urgent for the current session.

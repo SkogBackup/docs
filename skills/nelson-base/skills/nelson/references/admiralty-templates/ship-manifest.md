@@ -1,3 +1,9 @@
+---
+title: ship-manifest
+type: note
+permalink: skogai/skills/nelson-base/skills/nelson/references/admiralty-templates/ship-manifest
+---
+
 # Ship Manifest Template
 
 ```text

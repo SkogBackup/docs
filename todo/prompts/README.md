@@ -1,3 +1,9 @@
+---
+title: README
+type: note
+permalink: skogai/todo/prompts/readme
+---
+
 # Prompts Documentation
 
 Reusable prompt templates for various tasks in the SkogAI ecosystem.
@@ -9,14 +15,17 @@ This directory contains curated prompt templates designed for common workflows, 
 ## Contents
 
 ### [intro.md](./intro.md)
+
 Introduction prompt template for starting new sessions or introducing the SkogAI environment to AI agents.
 
 **Purpose**: Establish context and set expectations at the beginning of agent interactions.
 
 ### [next-session.md](./next-session.md)
+
 Session continuity prompt template for resuming work across multiple sessions.
 
 **Key Features**:
+
 - Session state preservation
 - Context restoration
 - Task continuity
@@ -25,9 +34,11 @@ Session continuity prompt template for resuming work across multiple sessions.
 **Use Case**: Starting a new session and need to restore context from previous work.
 
 ### [project-summary-pre.md](./project-summary-pre.md)
+
 Pre-summary prompt for generating project overviews and status reports.
 
-**Purpose**: 
+**Purpose**:
+
 - Prepare for project summaries
 - Gather context before reporting
 - Structure project information
@@ -35,9 +46,11 @@ Pre-summary prompt for generating project overviews and status reports.
 **Use Case**: Before creating comprehensive project documentation or status updates.
 
 ### [todo.md](./todo.md)
+
 Todo management prompt template for task organization and tracking.
 
 **Features**:
+
 - Task structuring
 - Priority management
 - Progress tracking
@@ -46,9 +59,11 @@ Todo management prompt template for task organization and tracking.
 **Use Case**: Managing project tasks, creating task lists, and tracking progress.
 
 ### [file-structure.md](./file-structure.md)
+
 File structure prompt template for generating and documenting project organization.
 
 **Purpose**:
+
 - Document directory structures
 - Explain file organization
 - Provide navigation context
@@ -57,9 +72,11 @@ File structure prompt template for generating and documenting project organizati
 **Use Case**: When needing to explain or document project file organization.
 
 ### [uv.md](./uv.md)
+
 UV package manager workflow prompt for Python package management.
 
 **Key Topics**:
+
 - Package installation and management
 - Virtual environment setup
 - Dependency resolution
@@ -72,9 +89,9 @@ UV package manager workflow prompt for Python package management.
 ### How to Use These Prompts
 
 1. **Direct Copy**: Copy prompt content directly into agent interactions
-2. **Customization**: Adapt prompts to specific project needs
-3. **Combination**: Combine multiple prompts for complex workflows
-4. **Reference**: Use as reference for creating new prompts
+1. **Customization**: Adapt prompts to specific project needs
+1. **Combination**: Combine multiple prompts for complex workflows
+1. **Reference**: Use as reference for creating new prompts
 
 ### When to Use Prompts
 
@@ -87,34 +104,39 @@ UV package manager workflow prompt for Python package management.
 ## Best Practices
 
 ### Effective Prompt Usage
+
 1. **Adapt to Context**: Customize prompts for specific situations
-2. **Maintain Consistency**: Use similar prompts across sessions for consistency
-3. **Update Regularly**: Keep prompts current with project evolution
-4. **Document Changes**: Note significant modifications to prompt templates
-5. **Share Patterns**: Contribute successful prompt patterns back
+1. **Maintain Consistency**: Use similar prompts across sessions for consistency
+1. **Update Regularly**: Keep prompts current with project evolution
+1. **Document Changes**: Note significant modifications to prompt templates
+1. **Share Patterns**: Contribute successful prompt patterns back
 
 ### Creating New Prompts
+
 1. **Clear Purpose**: Define specific use case
-2. **Structured Format**: Use consistent formatting
-3. **Actionable Content**: Include concrete steps or examples
-4. **Reusable Design**: Make templates adaptable
-5. **Documentation**: Explain prompt purpose and usage
+1. **Structured Format**: Use consistent formatting
+1. **Actionable Content**: Include concrete steps or examples
+1. **Reusable Design**: Make templates adaptable
+1. **Documentation**: Explain prompt purpose and usage
 
 ## Integration with Workflows
 
 ### AI Agent Sessions
+
 - Load relevant prompts at session start
 - Use prompts to restore context
 - Apply prompts for specific tasks
 - Maintain prompt library for quick access
 
 ### Development Workflow
+
 - Use file-structure prompts during code review
 - Apply todo prompts for sprint planning
 - Utilize uv prompts for dependency management
 - Leverage summary prompts for documentation
 
 ### Documentation Workflow
+
 - Generate structure documentation with file-structure prompts
 - Create project summaries with summary prompts
 - Maintain task lists with todo prompts

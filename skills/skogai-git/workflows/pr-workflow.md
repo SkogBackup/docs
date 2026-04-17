@@ -1,3 +1,9 @@
+---
+title: pr-workflow
+type: note
+permalink: skogai/skills/skogai-git/workflows/pr-workflow
+---
+
 # Pull Request Workflow
 
 Create, review, and merge pull requests using gh CLI.
@@ -17,11 +23,13 @@ git push -u origin feature/my-feature
 ## 2. Create PR
 
 **Interactive:**
+
 ```bash
 gh pr create
 ```
 
 **With options:**
+
 ```bash
 gh pr create --title "feat: add user authentication" \
   --body "## Summary
@@ -36,11 +44,13 @@ gh pr create --title "feat: add user authentication" \
 ```
 
 **Draft PR:**
+
 ```bash
 gh pr create --draft
 ```
 
 **Assign reviewers:**
+
 ```bash
 gh pr create --reviewer username1,username2
 ```
@@ -61,22 +71,26 @@ gh pr view --web
 ## 4. Review PR
 
 **Checkout PR locally:**
+
 ```bash
 gh pr checkout 123
 ```
 
 **With worktree isolation:**
+
 ```bash
 wt switch --create review/pr-123
 gh pr checkout 123
 ```
 
 **View diff:**
+
 ```bash
 gh pr diff 123
 ```
 
 **Leave review:**
+
 ```bash
 # Comment
 gh pr review 123 --comment -b "Looks good, minor suggestion"
@@ -137,7 +151,7 @@ git branch -d feature/my-feature
 
 </process>
 
-<pr_template>
+\<pr_template>
 
 ## Standard PR Body
 
@@ -189,9 +203,9 @@ Fix [issue description].
 - [ ] No side effects observed
 ```
 
-</pr_template>
+\</pr_template>
 
-<common_patterns>
+\<common_patterns>
 
 ## Quick PR
 
@@ -224,11 +238,11 @@ gh pr list --label "bug"
 gh pr close 123
 ```
 
-</common_patterns>
+\</common_patterns>
 
-<success_criteria>
+\<success_criteria>
+
 - PR has clear summary and test plan
 - CI checks pass
 - Reviews addressed
-- Merged and branch cleaned up
-</success_criteria>
+- Merged and branch cleaned up \</success_criteria>

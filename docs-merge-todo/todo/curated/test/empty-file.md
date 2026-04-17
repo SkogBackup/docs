@@ -1,6 +1,5 @@
 ---
-categories: null
-tags: null
+categories:
+tags:
 permalink: curated/test/empty-file
 ---
-

@@ -1,3 +1,9 @@
+---
+title: reddit-reply-graduated-discipline
+type: note
+permalink: skogai/skills/nelson-base/docs/reddit-reply-graduated-discipline
+---
+
 # Graduated Discipline
 
 Yes — corrections are logged, but per-mission, not in a persistent cross-mission store.
@@ -5,8 +11,8 @@ Yes — corrections are logged, but per-mission, not in a persistent cross-missi
 The escalation ladder has three levels:
 
 1. **Signal** — first occurrence, admiral references the relevant standing order in a coordination message.
-2. **Standing Order Remedy** — repeated or moderate impact. Apply the formal remedy and log it in the quarterdeck report.
-3. **Damage Control** — mission-threatening. Invoke a full procedure (replace agent, partial rollback, abort, or escalate to human).
+1. **Standing Order Remedy** — repeated or moderate impact. Apply the formal remedy and log it in the quarterdeck report.
+1. **Damage Control** — mission-threatening. Invoke a full procedure (replace agent, partial rollback, abort, or escalate to human).
 
 Levels aren't skipped unless the issue is immediately critical.
 

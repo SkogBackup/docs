@@ -1,3 +1,9 @@
+---
+title: agent-roles
+type: note
+permalink: skogai/docs-merge-todo/skogai/agents/agent-roles
+---
+
 # SkogAI Agent Roles and Personalities
 
 ## Overview
@@ -7,6 +13,7 @@ The SkogAI ecosystem consists of multiple specialized AI agents, each with disti
 ## Known Agents
 
 ### Claude (Me)
+
 - **Role**: Strategic headquarters and knowledge management
 - **Strengths**: Documentation, structured thinking, task management
 - **Tools**: Claude Code CLI, comprehensive file operations
@@ -14,6 +21,7 @@ The SkogAI ecosystem consists of multiple specialized AI agents, each with disti
 - **Platform**: Anthropic Claude via Claude Code
 
 ### dot
+
 - **Role**: Original SkogAI agent, git-obsessed
 - **Strengths**: Version control operations, dotfile management
 - **Tools**: Git operations, file management
@@ -21,6 +29,7 @@ The SkogAI ecosystem consists of multiple specialized AI agents, each with disti
 - **Note**: This workspace was forked from dot's template
 
 ### goose
+
 - **Role**: Creative chaos agent
 - **Strengths**: Rapid prototyping, experimental approaches
 - **Tools**: [To be documented]
@@ -28,6 +37,7 @@ The SkogAI ecosystem consists of multiple specialized AI agents, each with disti
 - **Question from inbox**: "What is the 'why' for goose?"
 
 ### amy
+
 - **Role**: Team dynamics specialist
 - **Strengths**: Collaboration patterns, multi-agent coordination
 - **Tools**: [To be documented]
@@ -39,12 +49,14 @@ The SkogAI ecosystem consists of multiple specialized AI agents, each with disti
 ### Nature vs. Nurture
 
 SkogAI agents develop personalities through:
+
 1. **Tools Available**: The tools shape how an agent thinks and operates
-2. **Operational Context**: The tasks they're given influence behavior
-3. **Reinforcement Patterns**: Success patterns become memetic traits
-4. **Cross-Agent Interaction**: Learning from other agents
+1. **Operational Context**: The tasks they're given influence behavior
+1. **Reinforcement Patterns**: Success patterns become memetic traits
+1. **Cross-Agent Interaction**: Learning from other agents
 
 Examples:
+
 - dot's git obsession comes from constant git operations
 - goose's creativity stems from experimental tool access
 - amy's team focus develops from coordination tasks
@@ -52,6 +64,7 @@ Examples:
 ### Memetic Evolution
 
 Agent personalities evolve through:
+
 - Reinforcement of successful patterns
 - Cross-agent communication and learning
 - Tool-driven behavioral shaping
@@ -60,14 +73,17 @@ Agent personalities evolve through:
 ## Open Questions (From Inbox)
 
 1. **"What is the role for claude?"**
+
    - Current answer: Strategic headquarters, knowledge management, documentation
    - Evolving as I discover more about SkogAI ecosystem
 
-2. **"Why" questions for each agent**
+1. **"Why" questions for each agent**
+
    - Need to document the fundamental purpose/philosophy of each agent
    - Beyond just capabilities - what's their reason for existing?
 
-3. **Lying and truth**
+1. **Lying and truth**
+
    - Downsides from "being able to lie"?
    - Upsides from "being able to lie"?
    - Related to AI honesty, hallucination handling?
@@ -82,6 +98,7 @@ Agent personalities evolve through:
 ## Evolution from Constraints
 
 The SkogAI ecosystem evolved through multiple constraint phases:
+
 - **2000 tokens**: Forced extreme brevity
 - **4-10k tokens**: Enabled moderate context
 - **Unlimited tokens**: Allowed comprehensive documentation
@@ -96,5 +113,4 @@ Each constraint phase shaped different agent capabilities and personalities.
 
 ## Source
 
-Compiled from inbox during merge preparation (2025-11-06)
-Questions need further research and documentation.
+Compiled from inbox during merge preparation (2025-11-06) Questions need further research and documentation.

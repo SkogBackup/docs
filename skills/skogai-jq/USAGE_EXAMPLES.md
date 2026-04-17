@@ -1,3 +1,9 @@
+---
+title: USAGE_EXAMPLES
+type: note
+permalink: skogai/skills/skogai-jq/usage-examples
+---
+
 # Usage Examples
 
 Real-world examples showing how to use jq-transforms in different scenarios.

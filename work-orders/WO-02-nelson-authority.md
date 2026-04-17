@@ -1,17 +1,25 @@
+---
+title: WO-02-nelson-authority
+type: note
+permalink: skogai/work-orders/wo-02-nelson-authority
+---
+
 # WO-2: Clarify nelson vs nelson-base authority
-**Phase**: 1
-**Status**: planned
-**Depends on**: none
+
+**Phase**: 1 **Status**: planned **Depends on**: none
 
 ## Summary
+
 Two nelson directories exist -- `nelson/` (a deployed skill copy) and `nelson-base/` (a full upstream repo clone with demos, CI, contributing docs, and the same skill nested inside). Clarify which is the source of truth, whether they are in sync, and establish a single authoritative path.
 
 ## Context
-`nelson-base/` is a clone of the upstream `harrymunro/nelson` GitHub repository. It contains the full repo structure: README, LICENSE, CONTRIBUTING, demos (battleships game), docs/images, CI config (lychee.toml, _typos.toml), a check-references script, and the actual skill nested at `skills/nelson/`. Meanwhile, `nelson/` at the top level of the skills directory appears to be a direct copy of just the skill portion (SKILL.md + references/). Both contain identical SKILL.md content. This creates confusion about where to make edits and which copy gets loaded.
+
+`nelson-base/` is a clone of the upstream `harrymunro/nelson` GitHub repository. It contains the full repo structure: README, LICENSE, CONTRIBUTING, demos (battleships game), docs/images, CI config (lychee.toml, \_typos.toml), a check-references script, and the actual skill nested at `skills/nelson/`. Meanwhile, `nelson/` at the top level of the skills directory appears to be a direct copy of just the skill portion (SKILL.md + references/). Both contain identical SKILL.md content. This creates confusion about where to make edits and which copy gets loaded.
 
 ## Current State
 
 **nelson/** (top-level skill directory):
+
 - `SKILL.md` -- main skill entrypoint (143 lines, identical to nelson-base's copy)
 - `PERSONAS.md` -- personas file (uppercase, at root)
 - `references/` -- full reference tree:
@@ -21,6 +29,7 @@ Two nelson directories exist -- `nelson/` (a deployed skill copy) and `nelson-ba
   - `standing-orders/` (12 anti-pattern files including `battalion-ashore.md`)
 
 **nelson-base/** (full upstream repo clone):
+
 - `CLAUDE.md` -- project-level instructions for contributors
 - `README.md` -- full upstream README with installation, usage, architecture docs (314 lines)
 - `CONTRIBUTING.md` -- contribution guidelines
@@ -33,6 +42,7 @@ Two nelson directories exist -- `nelson/` (a deployed skill copy) and `nelson-ba
 - `skills/nelson/` -- the actual skill (SKILL.md + references/, identical structure to top-level nelson/)
 
 **Key differences:**
+
 - `nelson/` has `PERSONAS.md` at root AND `references/personas.md` (possible duplication)
 - `nelson-base/` has `agents/nelson.md` -- not present in `nelson/`
 - `nelson-base/` has `battalion-ashore.md` in standing-orders; `nelson/` also has it
@@ -40,6 +50,7 @@ Two nelson directories exist -- `nelson/` (a deployed skill copy) and `nelson-ba
 - `nelson-base/CLAUDE.md` references `.claude/skills/nelson` symlink for local dev
 
 ## Tasks
+
 - [ ] Diff `nelson/SKILL.md` against `nelson-base/skills/nelson/SKILL.md` to confirm they are identical or identify drift
 - [ ] Diff all reference files between `nelson/references/` and `nelson-base/skills/nelson/references/` to check for drift
 - [ ] Determine whether `nelson/` was manually copied from `nelson-base/skills/nelson/` or installed via plugin system
@@ -51,6 +62,7 @@ Two nelson directories exist -- `nelson/` (a deployed skill copy) and `nelson-ba
 - [ ] If nelson is the deployed copy, consider whether nelson-base should be moved out of the skills directory entirely (e.g., to a `vendor/` or `upstream/` location)
 
 ## Acceptance Criteria
+
 - A single source of truth is identified and documented
 - No content drift exists between the two copies of the skill
 - The PERSONAS.md duplication is resolved
@@ -58,6 +70,7 @@ Two nelson directories exist -- `nelson/` (a deployed skill copy) and `nelson-ba
 - The `agents/` directory question is resolved (needed or not in deployed skill)
 
 ## Risks / Notes
+
 - If nelson-base is a git clone, it may have its own `.git` directory -- check whether it is a submodule, subtree, or plain copy
 - Editing the wrong copy means changes get silently lost on next sync
 - The battleships demo in nelson-base is substantial (14 JS files) -- if nelson-base is kept, clarify that this is upstream reference material, not part of the skill

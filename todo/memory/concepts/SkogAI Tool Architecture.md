@@ -3,9 +3,9 @@ title: SkogAI Tool Architecture
 type: note
 permalink: concepts/skog-ai-tool-architecture
 tags:
-- '#architecture'
-- '#tools'
-- '#design-patterns'
+  - '#architecture'
+  - '#tools'
+  - '#design-patterns'
 ---
 
 # SkogAI Tool Architecture
@@ -23,9 +23,9 @@ SkogAI implements an elegant modular tool system that enables AI assistants and 
 The architecture follows several powerful design patterns:
 
 1. **Declarative Tool Definitions**: Tools self-describe through special comments
-2. **Multi-Interface Accessibility**: The same tools are available through different interfaces
-3. **Standardized I/O**: Consistent patterns for input parameters and output handling
-4. **Dynamic Registration**: Tools can be added without modifying core systems
+1. **Multi-Interface Accessibility**: The same tools are available through different interfaces
+1. **Standardized I/O**: Consistent patterns for input parameters and output handling
+1. **Dynamic Registration**: Tools can be added without modifying core systems
 
 ## Implementation Example
 
@@ -71,7 +71,7 @@ The MCP server translates tool scripts into function declarations that AI assist
 
 ## relations
 
-- part_of [[skogai-ecosystem]] (tool architecture is a fundamental component)
-- relates_to [[memory-system]] (provides consistent access to memory operations)
-- implements [[extensibility-pattern]] (enables adding features without modifying core)
-- extends [[command-line-tools]] (builds upon standard Unix tool philosophy)
+- part_of \[[skogai-ecosystem]\] (tool architecture is a fundamental component)
+- relates_to \[[memory-system]\] (provides consistent access to memory operations)
+- implements \[[extensibility-pattern]\] (enables adding features without modifying core)
+- extends \[[command-line-tools]\] (builds upon standard Unix tool philosophy)

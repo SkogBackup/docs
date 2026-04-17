@@ -13,10 +13,10 @@ permalink: project/skogcontext/learning-session-from-monolithic-to-modular-conte
 From a single argc-annotated script, you automatically get:
 
 1. **CLI interface** with `--help` and proper argument parsing
-2. **OpenAI function specifications** (functions.json)
-3. **Executable binaries** (bin/) for standalone use
-4. **MCP integration** for Claude Code
-5. **HTTP API** accessible via curl at <https://tools.skogai.se>
+1. **OpenAI function specifications** (functions.json)
+1. **Executable binaries** (bin/) for standalone use
+1. **MCP integration** for Claude Code
+1. **HTTP API** accessible via curl at <https://tools.skogai.se>
 
 ### Two argc Tool Patterns
 
@@ -129,8 +129,7 @@ printf "[@/%s:context:%s]\n" "$agent_name" "$section_name" >> "$CONTEXT_OUTPUT"
 
 ### Multi-Path Module Discovery
 
-Default location: `./.context/modules/`
-Environment discovery: `env | grep SKOGAI_MODULE_`
+Default location: `./.context/modules/` Environment discovery: `env | grep SKOGAI_MODULE_`
 
 ```bash
 # Load from default location
@@ -193,46 +192,40 @@ done
 ## Key Insights & Principles
 
 ### 1. Static vs Agent Pattern
->
+
 > "When we want dynamic/agent-dependent behavior, we should think: 'let the agent provide an alternative executable' rather than making the static tool know about all possible agent contexts."
 
 ### 2. Universal Deployment
->
+
 > Each argc module becomes available across CLI, MCP, HTTP API, and OpenAI functions automatically
 
 ### 3. Composability
->
+
 > Agents can orchestrate static tools in their own specific ways while keeping the tools reusable
 
 ### 4. Legacy Compatibility
->
+
 > New system must produce `./tmp/context` for existing workflows
 
 ### 5. Environment-Driven Flexibility
->
+
 > `$ENV` variables control behavior rather than hardcoded paths
 
 ## Questions for Discussion
 
 ## Questions for Discussion ✅ RESOLVED
 
-1. **Module Discovery**: Should modules be auto-discovered via filesystem scan, or explicitly configured?
-   → **Multi-path**: `./.context/modules/` + `SKOGAI_MODULE_*` environment variables
+1. **Module Discovery**: Should modules be auto-discovered via filesystem scan, or explicitly configured? → **Multi-path**: `./.context/modules/` + `SKOGAI_MODULE_*` environment variables
 
-2. **Error Handling**: How should `update` handle when individual argc modules fail?
-   → **Bubble up**: Let real errors bubble up and appear in output - pipeable like everything else
+1. **Error Handling**: How should `update` handle when individual argc modules fail? → **Bubble up**: Let real errors bubble up and appear in output - pipeable like everything else
 
-3. **Module Dependencies**: Should modules be able to depend on outputs from other modules?
-   → **Text pipeable**: It's only "text out" so it's pipeable like everything else
+1. **Module Dependencies**: Should modules be able to depend on outputs from other modules? → **Text pipeable**: It's only "text out" so it's pipeable like everything else
 
-4. **Static vs Agent Balance**: Which context generation tasks should be static tools vs agent-specific?
-   → **Added to questions.md** for further exploration
+1. **Static vs Agent Balance**: Which context generation tasks should be static tools vs agent-specific? → **Added to questions.md** for further exploration
 
-5. ✅ **Migration Strategy**: How do we transition from the old system to new argc modules?
-   → **Simple swap**: Just point `SKOGAI_CONTEXT_FOLDER`, `SKOGAI_CONTEXT_UPDATE`, `SKOGAI_CONTEXT_RUN` to the new skogcontext location - immediately migrated!
+1. ✅ **Migration Strategy**: How do we transition from the old system to new argc modules? → **Simple swap**: Just point `SKOGAI_CONTEXT_FOLDER`, `SKOGAI_CONTEXT_UPDATE`, `SKOGAI_CONTEXT_RUN` to the new skogcontext location - immediately migrated!
 
-6. ✅ **Testing**: How do we validate argc modules work across all deployment targets?
-   → **Already solved**: Use `argc --argc-run /home/skogix/.local/src/llm-functions/Argcfile.sh test` - argc ecosystem handles universal testing
+1. ✅ **Testing**: How do we validate argc modules work across all deployment targets? → **Already solved**: Use `argc --argc-run /home/skogix/.local/src/llm-functions/Argcfile.sh test` - argc ecosystem handles universal testing
 
 ## Next Steps for Discussion
 

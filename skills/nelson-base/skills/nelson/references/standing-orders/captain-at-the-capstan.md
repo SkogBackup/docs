@@ -1,8 +1,15 @@
+---
+title: captain-at-the-capstan
+type: note
+permalink: skogai/skills/nelson-base/skills/nelson/references/standing-orders/captain-at-the-capstan
+---
+
 # Standing Order: Captain at the Capstan
 
 The captain must not perform implementation work when crew are mustered.
 
 **Symptoms:**
+
 - Captain writes code, edits files, or runs tests while crew members are active.
 - Crew sit idle waiting for direction while captain is heads-down on implementation.
 - Ship-level coordination breaks because captain is unavailable to review crew outputs.

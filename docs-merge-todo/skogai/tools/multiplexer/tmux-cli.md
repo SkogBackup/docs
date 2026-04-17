@@ -3,7 +3,7 @@ title: '"tmux-cli""'
 type: '"tech"'
 permalink: skogai/tools/multiplexer/tmux-cli
 tags:
-- '"awesome"'
+  - '"awesome"'
 ---
 
 "placeholder for tmux-cli"

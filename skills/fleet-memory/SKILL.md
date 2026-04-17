@@ -1,6 +1,7 @@
 ---
 name: fleet-memory
 description: Multi-agent memory coordination for filesystem-based agent systems. Activates when designing memory scopes for parallel agents, enforcing file ownership boundaries, implementing checkpoint-based state management, or coordinating memory lifecycle across agent teams.
+permalink: skogai/skills/fleet-memory/skill
 ---
 
 # Fleet Memory: Multi-Agent Memory Coordination
@@ -24,12 +25,12 @@ Core insight: multi-agent memory is 40% knowledge retention, 60% coordination an
 
 Four tiers, distinguished by mutability and lifetime:
 
-| Tier | Mutability | Lifetime | Example |
-|------|-----------|----------|---------|
-| **Policy** | Read-only | Permanent | Standing orders, role definitions, recovery procedures |
-| **State** | Owner-writable | Mission/session | Checkpoints, progress snapshots, task status |
-| **Entity** | Owner-writable | Persistent | Agent identity, scope boundaries, file ownership map |
-| **Knowledge** | Owner-writable | Persistent, consolidation-eligible | Learned facts, patterns, synthesis outputs |
+| Tier          | Mutability     | Lifetime                           | Example                                                |
+| ------------- | -------------- | ---------------------------------- | ------------------------------------------------------ |
+| **Policy**    | Read-only      | Permanent                          | Standing orders, role definitions, recovery procedures |
+| **State**     | Owner-writable | Mission/session                    | Checkpoints, progress snapshots, task status           |
+| **Entity**    | Owner-writable | Persistent                         | Agent identity, scope boundaries, file ownership map   |
+| **Knowledge** | Owner-writable | Persistent, consolidation-eligible | Learned facts, patterns, synthesis outputs             |
 
 **Policy is not State.** Policy is consulted at decision points but never modified during execution. State is ephemeral and changes every checkpoint. Conflating them causes scope violations and stale-data poisoning.
 
@@ -37,11 +38,11 @@ Four tiers, distinguished by mutability and lifetime:
 
 Three scopes, enforced at write time:
 
-| Scope | Read | Write | Use |
-|-------|------|-------|-----|
-| **Agent-private** | Owning agent | Owning agent | Scratch work, intermediate findings, local state |
-| **Ship-shared** | All ship agents | Designated owner | Ship findings, shared task state, briefings |
-| **Fleet-wide** | All agents | Coordinator only | Mission plan, policy, checkpoints, final synthesis |
+| Scope             | Read            | Write            | Use                                                |
+| ----------------- | --------------- | ---------------- | -------------------------------------------------- |
+| **Agent-private** | Owning agent    | Owning agent     | Scratch work, intermediate findings, local state   |
+| **Ship-shared**   | All ship agents | Designated owner | Ship findings, shared task state, briefings        |
+| **Fleet-wide**    | All agents      | Coordinator only | Mission plan, policy, checkpoints, final synthesis |
 
 Enforcement is operational, not technical. Assign each file a single writer in the mission plan. No file has two writers — ever. This is the Split Keel principle: concurrent writes to shared files destroy coherence.
 
@@ -93,9 +94,9 @@ Trigger consolidation when: file count exceeds threshold, retrieval degrades, or
 Memory loads in layers, not all at once:
 
 1. **At spawn** (~500 tokens): Agent receives briefing only — task, scope, file ownership, dependencies
-2. **On demand**: Agent reads policy files at decision points (standing orders, damage control)
-3. **At checkpoint**: Coordinator reads all ship findings, writes synthesis checkpoint
-4. **On failure**: Agent loads damage-control.md, follows typed recovery procedure
+1. **On demand**: Agent reads policy files at decision points (standing orders, damage control)
+1. **At checkpoint**: Coordinator reads all ship findings, writes synthesis checkpoint
+1. **On failure**: Agent loads damage-control.md, follows typed recovery procedure
 
 Never load all memory into a single context. The 25k effective limit means 2-3 active memory files maximum. Index everything, load selectively.
 
@@ -104,32 +105,32 @@ Never load all memory into a single context. The 25k effective limit means 2-3 a
 Prevention over resolution. Don't detect conflicts — prevent them.
 
 1. **Single-writer rule**: Every writable file has exactly one designated owner, declared in mission-plan.md
-2. **Read-many, write-one**: Any agent in scope can read; only the owner writes
-3. **Checkpoint serialization**: State writes happen at defined checkpoint intervals, not continuously
-4. **Conflict equals bug**: If two agents write the same file, the architecture is wrong. Fix ownership, not the conflict.
+1. **Read-many, write-one**: Any agent in scope can read; only the owner writes
+1. **Checkpoint serialization**: State writes happen at defined checkpoint intervals, not continuously
+1. **Conflict equals bug**: If two agents write the same file, the architecture is wrong. Fix ownership, not the conflict.
 
 ## Failure Recovery
 
-| Failure | Detection | Recovery |
-|---------|-----------|----------|
-| Stale state | Checkpoint age exceeds threshold | Force checkpoint, refresh all readers |
-| Scope violation | Agent wrote outside ownership | Revert write, escalate to coordinator |
-| Lost agent | No status update for N turns | Reassign owned files, rebuild from last checkpoint |
-| Conflicting facts | Two sources disagree | Prefer most recent `valid_from`; surface to coordinator |
-| Corrupted state | Validation fails on read | Rollback to last valid checkpoint |
+| Failure           | Detection                        | Recovery                                                |
+| ----------------- | -------------------------------- | ------------------------------------------------------- |
+| Stale state       | Checkpoint age exceeds threshold | Force checkpoint, refresh all readers                   |
+| Scope violation   | Agent wrote outside ownership    | Revert write, escalate to coordinator                   |
+| Lost agent        | No status update for N turns     | Reassign owned files, rebuild from last checkpoint      |
+| Conflicting facts | Two sources disagree             | Prefer most recent `valid_from`; surface to coordinator |
+| Corrupted state   | Validation fails on read         | Rollback to last valid checkpoint                       |
 
 See [Architecture Reference](./references/architecture.md) for detailed failure mode catalog and recovery procedures.
 
 ## Guidelines
 
 1. Assign every writable file exactly one owner before execution begins
-2. Separate policy (read-only reference) from state (mutable snapshots) — always
-3. Use checkpoints as attention resets — agents re-read state, not conversation history
-4. Load memory progressively: briefing at spawn, detail on demand
-5. Consolidate archived memory before it exceeds retrieval thresholds
-6. Promote stable patterns to policy; deprecate superseded state
-7. Design for the 25k effective limit: max 2-3 loaded memory files per agent context
-8. Enforce single-writer through mission planning, not runtime locking
+1. Separate policy (read-only reference) from state (mutable snapshots) — always
+1. Use checkpoints as attention resets — agents re-read state, not conversation history
+1. Load memory progressively: briefing at spawn, detail on demand
+1. Consolidate archived memory before it exceeds retrieval thresholds
+1. Promote stable patterns to policy; deprecate superseded state
+1. Design for the 25k effective limit: max 2-3 loaded memory files per agent context
+1. Enforce single-writer through mission planning, not runtime locking
 
 ## Integration
 
@@ -149,11 +150,8 @@ See [Architecture Reference](./references/architecture.md) for detailed failure 
 - memory-systems — Single-agent persistence patterns
 - filesystem-context — Filesystem I/O patterns for agents
 
----
+______________________________________________________________________
 
 ## Skill Metadata
 
-**Created**: 2026-02-27
-**Last Updated**: 2026-02-27
-**Author**: Nelson Squadron (HMS Victory)
-**Version**: 1.0.0
+**Created**: 2026-02-27 **Last Updated**: 2026-02-27 **Author**: Nelson Squadron (HMS Victory) **Version**: 1.0.0

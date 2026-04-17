@@ -1,34 +1,43 @@
+---
+title: WO-09-argc-navigation
+type: note
+permalink: skogai/work-orders/wo-09-argc-navigation
+---
+
 # WO-9: Improve skogai-argc navigation
-**Phase**: 4
-**Status**: planned
-**Depends on**: WO-1 through WO-7 (all prior phases must complete; WO-8 cross-references should ideally land first so argc's see_also is included)
+
+**Phase**: 4 **Status**: planned **Depends on**: WO-1 through WO-7 (all prior phases must complete; WO-8 cross-references should ideally land first so argc's see_also is included)
 
 ## Summary
+
 Restructure the 675-line skogai-argc SKILL.md into a router-pattern skill with clear separation between core workflow (what you need to get started) and behind-the-scenes content (how argc works internally).
 
 ## Context
+
 skogai-argc is one of the most content-rich skills at 675 lines -- well over the 500-line guideline established by skogai-routing and skogai-skills. It mixes "how to use argc" with "how argc works internally" in a single flat document. An agent that triggers this skill to create an Argcfile.sh has to wade through generated bash internals, validation cascade details, and `argc --argc-build` output before finding the task runner pattern.
 
 ## Current State
 
 ### Current section structure of SKILL.md (675 lines):
+
 1. **YAML frontmatter** (lines 1-4) -- name + description
-2. **Purpose** (lines 6-11) -- what argc is, two components
-3. **When to Use** (lines 13-27) -- trigger conditions
-4. **How to Use This Skill** (lines 29-30) -- header only
-5. **Core Workflow** (lines 32-109) -- `argc --argc-eval` explanation, success/error examples, key points
-6. **Available Comment Tags** (lines 111-167) -- tag reference table, @cmd vs @describe, argument modifiers
-7. **Inline Choices and Default Values** (lines 261-288)
-8. **Environment Variables** (lines 290-338)
-9. **Choice Functions - Dynamic Validation** (lines 340-392)
-10. **Symbols - Dynamic Choice Functions** (lines 394-438)
-11. **Task Runner Pattern (Argcfile.sh)** (lines 440-549) -- basic setup, capabilities, multi-namespace, env vars, task deps, why over Make
-12. **Behind the Scenes** (lines 552-638) -- `argc --argc-build` output, validation function internals, generated functions, trade-offs, JSON export
-13. **Safety Guidelines** (lines 640-657)
-14. **Additional Resources** (lines 659-662) -- pointers to docs/ and examples/
-15. **Quick Start Template** (lines 664-675) -- example commands
+1. **Purpose** (lines 6-11) -- what argc is, two components
+1. **When to Use** (lines 13-27) -- trigger conditions
+1. **How to Use This Skill** (lines 29-30) -- header only
+1. **Core Workflow** (lines 32-109) -- `argc --argc-eval` explanation, success/error examples, key points
+1. **Available Comment Tags** (lines 111-167) -- tag reference table, @cmd vs @describe, argument modifiers
+1. **Inline Choices and Default Values** (lines 261-288)
+1. **Environment Variables** (lines 290-338)
+1. **Choice Functions - Dynamic Validation** (lines 340-392)
+1. **Symbols - Dynamic Choice Functions** (lines 394-438)
+1. **Task Runner Pattern (Argcfile.sh)** (lines 440-549) -- basic setup, capabilities, multi-namespace, env vars, task deps, why over Make
+1. **Behind the Scenes** (lines 552-638) -- `argc --argc-build` output, validation function internals, generated functions, trade-offs, JSON export
+1. **Safety Guidelines** (lines 640-657)
+1. **Additional Resources** (lines 659-662) -- pointers to docs/ and examples/
+1. **Quick Start Template** (lines 664-675) -- example commands
 
 ### Problems with current structure:
+
 - "Core Workflow" section (32-109) is actually about understanding argc internals via `--argc-eval`, not about getting work done
 - The actual "how to create an Argcfile.sh" content is buried at line 440
 - "Behind the Scenes" (552-638) is reference material that belongs in references/
@@ -37,6 +46,7 @@ skogai-argc is one of the most content-rich skills at 675 lines -- well over the
 - No XML structure (uses markdown headings throughout, contrary to skogai-routing's principle #4)
 
 ## Tasks
+
 - [ ] Define what stays in SKILL.md (should be under 300 lines ideally):
   - YAML frontmatter
   - Essential principles: the `argc --argc-eval` insight (condensed to 20-30 lines), the eval integration pattern, safety guidelines
@@ -70,6 +80,7 @@ skogai-argc is one of the most content-rich skills at 675 lines -- well over the
 - [ ] Test the restructured skill by simulating common argc tasks
 
 ## Acceptance Criteria
+
 - SKILL.md is under 500 lines (target: 200-300)
 - An agent asked to "create an Argcfile.sh" reaches the right workflow within one routing hop
 - All current content is preserved (nothing deleted, only moved)
@@ -79,6 +90,7 @@ skogai-argc is one of the most content-rich skills at 675 lines -- well over the
 - Quick start template remains directly in SKILL.md for immediate use
 
 ## Risks / Notes
+
 - The current "Core Workflow" section's `argc --argc-eval` insight is genuinely valuable and should remain prominent in essential_principles -- it is the key teaching that makes argc understandable. Do not bury it in references.
 - The Safety Guidelines ("Never make argc scripts executable") currently has a note saying "detailed explanation will be provided separately" -- this WO should either provide that explanation in a reference file or remove the placeholder.
 - The skill currently uses markdown headings (#, ##, ###) throughout. Converting to XML structure is a significant reformatting effort but aligns with the routing skill's principle #4.

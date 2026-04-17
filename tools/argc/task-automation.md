@@ -39,6 +39,7 @@ eval "$(argc --argc-eval "$0" "$@")"
 ```
 
 run tasks:
+
 ```sh
 argc build
 argc test
@@ -49,6 +50,7 @@ argc --help  # see all tasks
 ## why argcfile.sh?
 
 **advantages over make:**
+
 - real bash functions (not make's weird syntax)
 - proper argument parsing
 - automatic help generation
@@ -56,6 +58,7 @@ argc --help  # see all tasks
 - better error handling
 
 **advantages over just:**
+
 - pure bash (no new syntax to learn)
 - full bash ecosystem available
 - better shell integration
@@ -79,6 +82,7 @@ pwd_task() {
 ```
 
 available variables:
+
 - `$ARGC_PWD` - original directory where argc was invoked
 - `$PWD` - project root (where Argcfile.sh lives)
 
@@ -157,6 +161,7 @@ deploy() {
 ```
 
 create `.env` file:
+
 ```sh
 DEPLOY_KEY=secret123
 API_URL=https://api.example.com
@@ -204,6 +209,7 @@ eval "$(argc --argc-eval "$0" "$@")"
 ```
 
 usage:
+
 ```sh
 argc docker up --detach
 argc docker down
@@ -349,6 +355,7 @@ docker::exec() {
 ```
 
 usage:
+
 ```sh
 argc docker build --no-cache
 argc docker up -d
@@ -497,19 +504,20 @@ watch() {
 ## best practices
 
 1. **always set -e** - fail fast on errors
-2. **document tasks** - use `@describe` for complex tasks
-3. **explicit dependencies** - call functions, don't duplicate code
-4. **validate inputs** - check arguments before expensive operations
-5. **provide defaults** - use `=value` for sensible defaults
-6. **group related tasks** - use nested commands (`db::migrate`)
-7. **hide helpers** - prefix with `_` for internal functions
-8. **use env vars** - for secrets and configuration
-9. **leverage dotenv** - avoid hardcoding credentials
-10. **test locally** - run `argc --help` to verify task structure
+1. **document tasks** - use `@describe` for complex tasks
+1. **explicit dependencies** - call functions, don't duplicate code
+1. **validate inputs** - check arguments before expensive operations
+1. **provide defaults** - use `=value` for sensible defaults
+1. **group related tasks** - use nested commands (`db::migrate`)
+1. **hide helpers** - prefix with `_` for internal functions
+1. **use env vars** - for secrets and configuration
+1. **leverage dotenv** - avoid hardcoding credentials
+1. **test locally** - run `argc --help` to verify task structure
 
 ## migrating from make
 
 **makefile:**
+
 ```make
 .PHONY: build test clean
 
@@ -524,6 +532,7 @@ clean:
 ```
 
 **argcfile.sh:**
+
 ```sh
 #!/usr/bin/env bash
 set -e
@@ -548,6 +557,7 @@ eval "$(argc --argc-eval "$0" "$@")"
 ```
 
 key differences:
+
 - no `.PHONY` needed
 - dependencies are function calls
 - proper bash syntax throughout
@@ -556,21 +566,25 @@ key differences:
 ## debugging
 
 **list all tasks:**
+
 ```sh
 argc --help
 ```
 
 **see what argc parses:**
+
 ```sh
 argc --argc-dump Argcfile.sh task_name arg1 arg2
 ```
 
 **verbose mode:**
+
 ```sh
 ARGC_VERBOSE=1 argc build
 ```
 
 **dry run pattern:**
+
 ```sh
 # @cmd deploy
 # @flag -n --dry-run  Show what would happen

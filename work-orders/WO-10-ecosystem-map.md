@@ -1,12 +1,19 @@
+---
+title: WO-10-ecosystem-map
+type: note
+permalink: skogai/work-orders/wo-10-ecosystem-map
+---
+
 # WO-10: Document the skill ecosystem architecture
-**Phase**: 4
-**Status**: planned
-**Depends on**: WO-1 through WO-9 (all prior WOs, especially WO-8 cross-references, must complete so the map reflects final relationships)
+
+**Phase**: 4 **Status**: planned **Depends on**: WO-1 through WO-9 (all prior WOs, especially WO-8 cross-references, must complete so the map reflects final relationships)
 
 ## Summary
+
 Create an ecosystem map inside skogai-routing that documents the skill clusters, their relationships, and intent-based routing paths so agents and humans can navigate the full skill landscape.
 
 ## Context
+
 The skill ecosystem has grown to 18+ skills organically. There is no single place that shows how they relate, which clusters they belong to, or how to navigate from an intent ("I want to build an MCP server") to the right skill. skogai-routing currently teaches how to BUILD routing skills -- it does not itself serve as a map of the ecosystem. This WO creates that map as a reference inside skogai-routing, since routing is the natural home for navigation infrastructure.
 
 ## Current State
@@ -14,27 +21,32 @@ The skill ecosystem has grown to 18+ skills organically. There is no single plac
 ### Skill inventory (18 skills identified):
 
 **Philosophy / Meta layer:**
+
 - skogai-workflow -- the atomic loop (intent/understand/implement/iterate)
 - skogai-project-lifecycle -- explosive vs production phases, pruning philosophy
 - skogai-prompting -- prompt-native architecture philosophy
 - skogai-agent-prompting -- identical content to skogai-prompting (duplication)
 
 **Skill creation layer:**
+
 - skogai-routing -- how to build routing skills with progressive disclosure
 - skogai-skills -- how to create skills (XML structure, router pattern)
 - skogai-skill-creator -- how to create skills (Anthropic official approach, init scripts)
 - skogai-developing-for-claude-code -- how to create Claude Code plugins
 
 **Git / version control tooling:**
+
 - skogai-git -- unified git workflows (wt, gita, gh, semantic commits)
 - skogai-git-worktree -- worktree manager script for isolated development
 - skogai-worktrunk -- wt + gita configuration and workflows
 
 **Multi-agent coordination:**
+
 - nelson -- Royal Navy squadron metaphor for parallel agent execution
 - fleet-memory -- multi-agent memory coordination (filesystem-based)
 
 **Standalone domain tools:**
+
 - skogai-argc -- argc CLI framework for bash
 - skogai-jq -- 60+ schema-driven jq transformations
 - skogai-mcp-builder -- MCP server development guide
@@ -42,18 +54,21 @@ The skill ecosystem has grown to 18+ skills organically. There is no single plac
 - skogai-todos -- file-based todo tracking system
 
 ### Known issues affecting the map:
+
 - skogai-prompting and skogai-agent-prompting are duplicates
 - skogai-skills and skogai-routing have significant overlap
 - skogai-git, skogai-git-worktree, and skogai-worktrunk overlap in worktree coverage
 - fleet-memory references skills that may not exist yet
 
 ### Current navigation gaps:
+
 - No "I want to X" routing table exists at the ecosystem level
 - An agent asked to "build a CLI tool" would not know to look at skogai-argc
 - An agent asked to "coordinate parallel work" would not know nelson exists
 - The relationship between philosophy skills and practical skills is implicit
 
 ## Tasks
+
 - [ ] Define the skill clusters/layers:
   - **Philosophy** -- skogai-workflow, skogai-project-lifecycle, skogai-prompting (the "why")
   - **Creation** -- skogai-routing, skogai-skills, skogai-skill-creator, skogai-developing-for-claude-code (building skills/plugins)
@@ -94,6 +109,7 @@ The skill ecosystem has grown to 18+ skills organically. There is no single plac
 - [ ] Flag skills that may be candidates for merging in a future phase (not this WO's job to merge)
 
 ## Acceptance Criteria
+
 - A file `references/ecosystem-map.md` exists in skogai-routing
 - The map covers all 18+ skills with cluster assignments and one-liner descriptions
 - An intent routing table with at least 12 common intents maps to specific skills
@@ -103,6 +119,7 @@ The skill ecosystem has grown to 18+ skills organically. There is no single plac
 - A new skill added in the future would have an obvious place in the cluster diagram
 
 ## Risks / Notes
+
 - This map will go stale as skills are added, merged, or renamed. Consider adding a "last updated" date and a maintenance note.
 - The map should NOT try to be exhaustive about what each skill does -- that is the job of each skill's description. Keep entries to one line.
 - The overlap situations (especially the prompting duplication) may cause confusion if agents consult the map. The map should give clear guidance on which to prefer until merges happen.

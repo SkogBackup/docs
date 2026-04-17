@@ -1,6 +1,7 @@
 ---
-title: "WO-3: Delete duplicate prompting skill"
+title: 'WO-3: Delete duplicate prompting skill'
 labels: skills, cleanup, phase-2
+permalink: skogai/github-issues/03-wo3-delete-duplicate-prompting
 ---
 
 ## Summary
@@ -17,6 +18,7 @@ Both skills exist under `/home/skogix/.local/src/docs/skills/`:
 The SKILL.md files differ by exactly **one line**: the `name:` field. All 10 reference files are identical (same names, same byte sizes). Neither skill has any content the other lacks.
 
 **Reference files (identical in both):**
+
 - action-parity-discipline.md (11KB)
 - agent-native-testing.md (17KB)
 - architecture-patterns.md (17KB)

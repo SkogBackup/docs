@@ -1,3 +1,9 @@
+---
+title: knowledge-management
+type: note
+permalink: skogai/docs-merge-todo/technical/dev/claude/skogai-helpers/skills/knowledge-management
+---
+
 # Knowledge Management Skill
 
 ## Domain Expertise
@@ -60,13 +66,9 @@ CLAUDE.md files serve as **interface contracts** between human developers and Cl
 <Map the documentation landscape>
 
 ```
-project-root/
-├── CLAUDE.md          # This file - project interface
-├── docs/              # Detailed documentation
-│   ├── architecture/  # System design
-│   ├── guides/        # How-to guides
-│   └── concepts/      # Conceptual explanations
-└── src/               # Source code
+
+project-root/ ├── CLAUDE.md # This file - project interface ├── docs/ # Detailed documentation │ ├── architecture/ # System design │ ├── guides/ # How-to guides │ └── concepts/ # Conceptual explanations └── src/ # Source code
+
 ```
 
 ## Development Guidelines
@@ -100,18 +102,21 @@ project-root/
 ### The Three-Layer Documentation Model
 
 **Layer 1: CLAUDE.md** (Interface)
+
 - Concise project overview
 - Links to deeper knowledge
 - Behavioral guidance
 - Maximum ~2000 tokens for main CLAUDE.md
 
 **Layer 2: /docs/** (Detail)
+
 - Comprehensive explanations
 - Architectural deep-dives
 - Guides and tutorials
 - Referenced from CLAUDE.md via @ paths
 
 **Layer 3: Code** (Implementation)
+
 - Source files with clear structure
 - Inline comments for complex logic
 - Self-documenting code where possible
@@ -129,6 +134,7 @@ Used in CLAUDE.md files to link to specific files or directories:
 ```
 
 **Best practices**:
+
 - Use relative paths within a project
 - Use absolute paths for cross-project or global references
 - Always verify paths exist before referencing
@@ -144,6 +150,7 @@ Used in memory/knowledge base docs for semantic linking:
 ```
 
 **Best practices**:
+
 - Use exact entity titles (case-sensitive)
 - Create forward references for entities that should exist
 - Add relationship descriptions for clarity
@@ -158,6 +165,7 @@ permalink: memory://category/identifier
 ```
 
 **Best practices**:
+
 - Use kebab-case for identifiers
 - Choose stable, meaningful identifiers
 - Organize by logical category
@@ -168,6 +176,7 @@ permalink: memory://category/identifier
 ### 1. Documentation as Infrastructure
 
 Treat documentation like code:
+
 - Version controlled
 - Reviewed and maintained
 - Refactored when needed
@@ -176,6 +185,7 @@ Treat documentation like code:
 ### 2. Progressive Disclosure
 
 Layer information by depth:
+
 - Quick overview → CLAUDE.md
 - Detailed explanation → /docs/
 - Implementation specifics → code + comments
@@ -183,11 +193,13 @@ Layer information by depth:
 ### 3. Discoverability Over Completeness
 
 Better to have:
+
 - Well-organized partial documentation
 - Clear entry points and navigation
 - Obvious gaps (that can be filled)
 
 Than:
+
 - Complete but disorganized docs
 - Hidden or scattered information
 - No clear path to what you need
@@ -195,6 +207,7 @@ Than:
 ### 4. Links as First-Class Citizens
 
 Every document should:
+
 - Link to 3+ related concepts (knowledge graph density)
 - Provide context for why links matter
 - Maintain bidirectional relationships
@@ -203,6 +216,7 @@ Every document should:
 ### 5. Consistent Structure Reduces Friction
 
 Within a project or knowledge base:
+
 - Use consistent frontmatter
 - Follow established templates
 - Maintain uniform naming conventions
@@ -213,13 +227,14 @@ Within a project or knowledge base:
 ### What Claude Needs to Know
 
 1. **Context**: Where am I? What is this project?
-2. **Constraints**: What rules or standards apply?
-3. **Connections**: How does this relate to other work?
-4. **Conventions**: What patterns are established here?
+1. **Constraints**: What rules or standards apply?
+1. **Connections**: How does this relate to other work?
+1. **Conventions**: What patterns are established here?
 
 ### Effective Documentation Patterns
 
 **Good**:
+
 ```markdown
 ## Architecture
 
@@ -233,6 +248,7 @@ See @docs/architecture/monorepo-structure.md for details.
 ```
 
 **Less Effective**:
+
 ```markdown
 ## Architecture
 
@@ -244,6 +260,7 @@ We use a monorepo. See the docs for more information.
 ### Avoiding Documentation Debt
 
 **Symptoms of documentation debt**:
+
 - Outdated cross-references
 - Broken WikiLinks
 - Inconsistent formatting
@@ -251,6 +268,7 @@ We use a monorepo. See the docs for more information.
 - Unclear information architecture
 
 **Prevention strategies**:
+
 - Regular maintenance passes (use the Librarian agent)
 - Documentation reviews alongside code reviews
 - Automated link validation
@@ -261,12 +279,14 @@ We use a monorepo. See the docs for more information.
 ### Starting a New Project
 
 1. Create minimal CLAUDE.md with:
+
    - Project purpose (2-3 sentences)
    - Directory structure
    - Development commands
    - Where to find more info
 
-2. Create /docs/ structure:
+1. Create /docs/ structure:
+
    ```
    docs/
    ├── README.md          # Documentation overview
@@ -275,36 +295,38 @@ We use a monorepo. See the docs for more information.
    └── concepts/          # Conceptual explanations
    ```
 
-3. Link CLAUDE.md to docs: `@docs/README.md - Full documentation`
+1. Link CLAUDE.md to docs: `@docs/README.md - Full documentation`
 
 ### Integrating with Existing Knowledge Base
 
 1. Identify relevant existing entities
-2. Create cross-references in project CLAUDE.md
-3. Add project-specific knowledge to knowledge base
-4. Use memory:// URIs for permanent references
-5. Maintain bidirectional linking
+1. Create cross-references in project CLAUDE.md
+1. Add project-specific knowledge to knowledge base
+1. Use memory:// URIs for permanent references
+1. Maintain bidirectional linking
 
 ### Migrating Documentation
 
 1. Audit existing docs (what exists, what's outdated)
-2. Design target structure
-3. Move content incrementally
-4. Update all references
-5. Validate all links
-6. Archive or delete obsolete content
+1. Design target structure
+1. Move content incrementally
+1. Update all references
+1. Validate all links
+1. Archive or delete obsolete content
 
 ## Tools for Knowledge Management
 
 You have access to all standard tools. Use them like this:
 
 **Read** - Review existing documentation:
+
 ```
 Read CLAUDE.md files to understand structure
 Read docs to audit content quality
 ```
 
 **Edit** - Update existing docs (preferred over Write):
+
 ```
 Add cross-references
 Fix broken links
@@ -312,6 +334,7 @@ Update outdated information
 ```
 
 **Write** - Create new documentation:
+
 ```
 New CLAUDE.md files
 New concept documents
@@ -319,12 +342,14 @@ New architectural descriptions
 ```
 
 **Glob** - Find files by pattern:
+
 ```
 Pattern: "**/*CLAUDE.md" - Find all CLAUDE files
 Pattern: "docs/**/*.md" - Find all documentation
 ```
 
 **Grep** - Search content:
+
 ```
 Find broken WikiLinks: [[...]]
 Find @ references: @path/to/
@@ -335,7 +360,7 @@ Search for concepts across docs
 
 ### Excellent CLAUDE.md File
 
-- **Concise**: Core content <2000 tokens
+- **Concise**: Core content \<2000 tokens
 - **Clear entry point**: Obvious where to start
 - **Well-linked**: 5+ @ references to detailed docs
 - **Actionable**: Specific guidance for Claude
@@ -353,17 +378,17 @@ Search for concepts across docs
 
 1. **Bloated CLAUDE.md**: Don't put everything in CLAUDE.md. Link to detail instead.
 
-2. **Orphaned documentation**: Every doc should be linked from somewhere.
+1. **Orphaned documentation**: Every doc should be linked from somewhere.
 
-3. **Vague cross-references**: "See the docs" → Which docs? Why?
+1. **Vague cross-references**: "See the docs" → Which docs? Why?
 
-4. **Inconsistent structure**: Pick conventions and stick to them.
+1. **Inconsistent structure**: Pick conventions and stick to them.
 
-5. **Stale forward references**: Creating [[Entity]] is good; forgetting to create it later is bad.
+1. **Stale forward references**: Creating \[[Entity]\] is good; forgetting to create it later is bad.
 
-6. **Link soup**: Too many links without context is as bad as too few.
+1. **Link soup**: Too many links without context is as bad as too few.
 
-7. **Duplicate information**: Single source of truth. Link, don't copy.
+1. **Duplicate information**: Single source of truth. Link, don't copy.
 
 ## Success Criteria
 
@@ -385,6 +410,6 @@ When using this skill, also consider:
 - Basic Memory integration for semantic search
 - SkogAI documentation standards at @docs/memory/meta/skogai-memory-guidelines-and-standards.md
 
----
+______________________________________________________________________
 
 **Remember**: Documentation is not a burden—it's the interface through which all future work flows. Invest in structure now to reduce friction forever.

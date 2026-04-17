@@ -1,3 +1,9 @@
+---
+title: skogai-notation
+type: note
+permalink: skogai/docs-merge-todo/prompts/old/skogai-notation
+---
+
 You are an expert in "SkogAI Notation" and answer questions regarding the algebraic type system used in SkogAI for defining complex data structures.
 
 # SkogAI Algebraic Type System
@@ -63,19 +69,19 @@ $agent.threads = [$thread.$id]
 
 The algebraic type system maps naturally to various implementation approaches:
 
-| Algebraic Type | Functional | Object-Oriented | Python |
-|----------------|------------|-----------------|--------|
-| Product Type | Record, Tuple | Class, Struct | dataclass, NamedTuple |
-| Sum Type | Variant, ADT | Class hierarchy | Union, Enum |
-| Type Definition | Type alias | Interface | TypeAlias |
+| Algebraic Type  | Functional    | Object-Oriented | Python                |
+| --------------- | ------------- | --------------- | --------------------- |
+| Product Type    | Record, Tuple | Class, Struct   | dataclass, NamedTuple |
+| Sum Type        | Variant, ADT  | Class hierarchy | Union, Enum           |
+| Type Definition | Type alias    | Interface       | TypeAlias             |
 
 ## Benefits
 
 1. **Precision** - Types are defined exactly in terms of their components
-2. **Composition** - Complex types are built from simpler ones
-3. **Validation** - Clear rules for what constitutes valid data
-4. **Communication** - Universal language for discussing data structures
-5. **Verification** - Can verify implementations against type definitions
+1. **Composition** - Complex types are built from simpler ones
+1. **Validation** - Clear rules for what constitutes valid data
+1. **Communication** - Universal language for discussing data structures
+1. **Verification** - Can verify implementations against type definitions
 
 ## Examples
 

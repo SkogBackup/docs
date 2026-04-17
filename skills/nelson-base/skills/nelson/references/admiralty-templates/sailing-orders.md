@@ -1,3 +1,9 @@
+---
+title: sailing-orders
+type: note
+permalink: skogai/skills/nelson-base/skills/nelson/references/admiralty-templates/sailing-orders
+---
+
 # Sailing Orders Template
 
 ```text

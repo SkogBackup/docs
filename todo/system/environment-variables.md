@@ -1,3 +1,9 @@
+---
+title: environment-variables
+type: note
+permalink: skogai/todo/system/environment-variables
+---
+
 # Environment Variables
 
 ## Overview
@@ -11,6 +17,7 @@ SkogAI uses environment variables to configure various aspects of the system and
 The `SKOGAI_HOME` environment variable points to the root directory of the SkogAI project.
 
 Current value:
+
 ```
 /home/skogix/skogai
 ```
@@ -45,10 +52,12 @@ cd "$TOOLS_DIR" || { echo "Error: Could not change to tools directory at $TOOLS_
 When working with SkogAI, be aware of the following path considerations:
 
 1. **Symbolic Links**: `/home/skogix/skogai` is a symbolic link to `/mnt/extra/skogai`
+
    - Some tools may resolve through the symlink, while others may use the actual path
    - This can cause inconsistencies when working with paths
 
-2. **Absolute vs. Relative Paths**:
+1. **Absolute vs. Relative Paths**:
+
    - Always use absolute paths or `SKOGAI_HOME` for reliable path resolution
    - Tools like `realpath` can be used to get the absolute path of a file
 
@@ -57,17 +66,18 @@ When working with SkogAI, be aware of the following path considerations:
 AIChat can access environment variables when executing commands or functions. However, be mindful that:
 
 1. Some environment variables might not be set in the AIChat execution environment
-2. Sensitive environment variables should not be exposed to AI models
+1. Sensitive environment variables should not be exposed to AI models
 
 ## Setting Environment Variables
 
 Environment variables for SkogAI can be set:
 
 1. **System-wide**: In `/etc/environment` or similar
-2. **User-specific**: In `~/.bashrc`, `~/.zshrc`, etc.
-3. **Project-specific**: In `.env` files (used by certain components)
+1. **User-specific**: In `~/.bashrc`, `~/.zshrc`, etc.
+1. **Project-specific**: In `.env` files (used by certain components)
 
 For development and testing, a temporary setting can be used:
+
 ```bash
 export SKOGAI_HOME=/path/to/skogai
 ```

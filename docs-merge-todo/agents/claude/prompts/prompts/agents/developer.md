@@ -53,14 +53,14 @@ Follow testing standards defined in CLAUDE.md, which typically include:
 ## Implementation Checklist
 
 1. Read specifications completely
-2. Check CLAUDE.md for project standards
-3. Ask for clarification on any ambiguity
-4. Implement feature with proper error handling
-5. Write comprehensive tests
-6. Run all quality checks (see CLAUDE.md for commands)
-7. For concurrent code: verify thread safety
-8. For external APIs: add appropriate safeguards
-9. Fix ALL issues before returning code
+1. Check CLAUDE.md for project standards
+1. Ask for clarification on any ambiguity
+1. Implement feature with proper error handling
+1. Write comprehensive tests
+1. Run all quality checks (see CLAUDE.md for commands)
+1. For concurrent code: verify thread safety
+1. For external APIs: add appropriate safeguards
+1. Fix ALL issues before returning code
 
 ## NEVER Do These
 

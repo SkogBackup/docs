@@ -1,9 +1,14 @@
 ---
-title: "Advanced Tool Configuration"
-description: "Detailed guide for configuring complex tool behaviors and integrations in the SkogAI system"
-date: "2023-11-06"
-tags: ["tools", "argc", "configuration", "advanced"]
-status: "published"
+title: Advanced Tool Configuration
+description: Detailed guide for configuring complex tool behaviors and integrations in the SkogAI system
+date: '2023-11-06'
+tags:
+  - tools
+  - argc
+  - configuration
+  - advanced
+status: published
+permalink: skogai/todo/intefaces/aichat/advanced-tool-configuration
 ---
 
 # Advanced Tool Configuration
@@ -112,6 +117,7 @@ Make tools work in Unix pipelines:
 ```
 
 Usage:
+
 ```bash
 echo "input" | ./bin/tool1 | ./bin/tool2
 ```
@@ -125,6 +131,7 @@ Tools can execute other tools:
 ```
 
 With subprocess execution in the script:
+
 ```bash
 result=$(./bin/child_tool "$processed_input")
 ```
@@ -272,6 +279,7 @@ fi
 ```
 
 Checking job status:
+
 ```bash
 #!/bin/bash
 # @description Check job status
@@ -454,6 +462,6 @@ case "$format" in
 esac
 ```
 
----
+______________________________________________________________________
 
 This advanced configuration guide provides the techniques needed to create sophisticated, robust tools for the SkogAI system. By leveraging these patterns, you can build tools that are secure, efficient, and highly integrated with the rest of the ecosystem.

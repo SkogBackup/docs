@@ -1,3 +1,9 @@
+---
+title: tool-ecosystem
+type: note
+permalink: skogai/docs-merge-todo/skogai/tools/tool-ecosystem
+---
+
 # SkogAI Tool Ecosystem: Universal AI Capabilities
 
 ## Overview
@@ -50,6 +56,7 @@ fi
 ```
 
 This single script automatically becomes:
+
 - **CLI Tool**: Direct command-line execution
 - **Web API**: HTTP endpoint with OpenAPI schema
 - **MCP Server**: Model Context Protocol function
@@ -98,6 +105,7 @@ Every MCP server capability is accessible through the same notation system that 
 ### Annotation System
 
 #### Basic Flags
+
 ```bash
 # @flag --input -i    Input parameter description
 # @flag --output -o   Output parameter description
@@ -105,6 +113,7 @@ Every MCP server capability is accessible through the same notation system that 
 ```
 
 #### Advanced Annotations
+
 ```bash
 # @flag --count -c     Integer parameter (default: 1)
 # @flag --format -f    Enum parameter: json|xml|yaml
@@ -114,6 +123,7 @@ Every MCP server capability is accessible through the same notation system that 
 ```
 
 #### Type Annotations
+
 ```bash
 # @flag --coordinate --type "$int*$int"    Product type parameter
 # @flag --result --type "|success|error|"  Sum type parameter
@@ -125,10 +135,10 @@ Every MCP server capability is accessible through the same notation system that 
 When executed, the annotations provide:
 
 1. **Parameter Validation**: Type checking and constraint enforcement
-2. **Help Generation**: Automatic usage documentation
-3. **Schema Creation**: OpenAPI specifications for web deployment
-4. **MCP Integration**: Function definitions for AI agents
-5. **Error Handling**: Standardized error reporting
+1. **Help Generation**: Automatic usage documentation
+1. **Schema Creation**: OpenAPI specifications for web deployment
+1. **MCP Integration**: Function definitions for AI agents
+1. **Error Handling**: Standardized error reporting
 
 ### Example: Weather Tool
 
@@ -167,11 +177,13 @@ fi
 This script automatically becomes:
 
 #### CLI Tool
+
 ```bash
 ./weather --location "San Francisco" --units celsius --format text
 ```
 
 #### Web API
+
 ```http
 POST /api/weather
 {
@@ -210,6 +222,7 @@ POST /api/weather
 ```
 
 #### MCP Server Function
+
 ```json
 {
   "name": "weather",
@@ -227,6 +240,7 @@ POST /api/weather
 ```
 
 #### AI Agent Capability
+
 ```
 [@weather:location:San Francisco:units:celsius]
 ```
@@ -238,10 +252,10 @@ POST /api/weather
 SkogCLI provides the secure execution environment for all tool operations:
 
 1. **Security Boundary**: Sandboxed execution of all tools
-2. **Authentication**: Verified access to system resources
-3. **Resource Management**: CPU, memory, and I/O limitations
-4. **Audit Logging**: Complete operation trail for security
-5. **Error Handling**: Standardized error reporting and recovery
+1. **Authentication**: Verified access to system resources
+1. **Resource Management**: CPU, memory, and I/O limitations
+1. **Audit Logging**: Complete operation trail for security
+1. **Error Handling**: Standardized error reporting and recovery
 
 ### Command Processing
 
@@ -252,20 +266,22 @@ skogcli script run claude "Hi claude! All good?"
 This command demonstrates SkogCLI's role:
 
 1. **Parse Command**: SkogParse processes the SkogAI notation
-2. **Validate Security**: Ensure operation meets security constraints
-3. **Route Execution**: Direct to appropriate agent/tool
-4. **Monitor Resources**: Track resource usage during execution
-5. **Return Results**: Provide standardized response format
+1. **Validate Security**: Ensure operation meets security constraints
+1. **Route Execution**: Direct to appropriate agent/tool
+1. **Monitor Resources**: Track resource usage during execution
+1. **Return Results**: Provide standardized response format
 
 ### Security Model
 
 #### Formal Verification
+
 - **Type Safety**: All operations verified against algebraic data types
 - **Mathematical Impossibility**: Invalid operations cannot be expressed
 - **Referential Transparency**: Pure function guarantees maintained
 - **Compositional Security**: Complex operations inherit security properties
 
 #### Runtime Enforcement
+
 ```bash
 # Allowed: Verified tool with proper parameters
 skogcli tool run weather --location "NYC"
@@ -308,47 +324,36 @@ skogcli tool run unauthorized_script --access /etc/passwd
 ### Resource Management
 
 #### Execution Limits
+
 - **CPU Time**: Configurable timeout for tool execution
 - **Memory Usage**: Maximum memory allocation per operation
 - **File Access**: Restricted to authorized directories
 - **Network Access**: Controlled external connections
 
 #### Monitoring and Logging
+
 ```bash
 skogcli monitor --tool weather --user claude --timestamp 2025-06-03T12:00:00Z
 ```
 
 All operations logged for:
-- Security auditing
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
+
+- Security auditing \<<\<<\<<< HEAD ======= \<<\<<\<<< Updated upstream \<<\<<\<<< Updated upstream
+- Performance monitoring =======
 - Performance monitoring
-=======
+
+> > > > > > > Stashed changes ======= \<<\<<\<<< HEAD skogai-0.2
+
+- Performance monitoring \<<\<<\<<< HEAD =======
 - Performance monitoring
->>>>>>> Stashed changes
-=======
-<<<<<<< HEAD
->>>>>>> skogai-0.2
+
+> > > > > > > feature/skogai ======= 4a2fc32 (Update home knowledge base to reflect SkogAI ecosystem scope) \<<\<<\<<< HEAD ======= ======= \<<\<<\<<< Updated upstream
+
+- Performance monitoring =======
 - Performance monitoring
-<<<<<<< HEAD
-=======
-- Performance monitoring
->>>>>>> feature/skogai
-=======
->>>>>>> 4a2fc32 (Update home knowledge base to reflect SkogAI ecosystem scope)
-<<<<<<< HEAD
-=======
-=======
-<<<<<<< Updated upstream
-- Performance monitoring
-=======
-- Performance monitoring
->>>>>>> Stashed changes
->>>>>>> skogai-0.2
->>>>>>> Stashed changes
->>>>>>> skogai-0.2
+
+> > > > > > > Stashed changes skogai-0.2 Stashed changes skogai-0.2
+
 - Error analysis
 - Usage tracking
 
@@ -365,9 +370,9 @@ SkogAI can create tools dynamically based on requirements:
 This generates:
 
 1. **Script Template**: Basic structure with proper annotations
-2. **Implementation**: Core logic based on description
-3. **Testing**: Validation and test cases
-4. **Deployment**: Automatic integration into tool ecosystem
+1. **Implementation**: Core logic based on description
+1. **Testing**: Validation and test cases
+1. **Deployment**: Automatic integration into tool ecosystem
 
 ### Generated Script Example
 
@@ -507,9 +512,9 @@ Multiple tools can execute concurrently with result aggregation.
 When tools are created or modified:
 
 1. **Annotation Parsing**: SkogParse extracts metadata
-2. **Schema Generation**: OpenAPI and MCP schemas created
-3. **Registration**: Tool added to ecosystem registry
-4. **Availability**: Immediately accessible to all AI agents
+1. **Schema Generation**: OpenAPI and MCP schemas created
+1. **Registration**: Tool added to ecosystem registry
+1. **Availability**: Immediately accessible to all AI agents
 
 ### Tool Registry
 
@@ -567,12 +572,14 @@ skogcli analytics --errors --tools weather,location,time
 ## Future Development
 
 ### Enhanced Annotations
+
 - **Complex Type Support**: More sophisticated type annotations
 - **Workflow Integration**: Multi-step tool composition
 - **State Management**: Persistent tool state across executions
 - **Learning Capabilities**: Tools that improve through usage
 
 ### Ecosystem Expansion
+
 - **Language Support**: Tools in Python, JavaScript, Go, etc.
 - **Cloud Integration**: Serverless tool deployment
 - **Container Support**: Docker-based tool isolation
@@ -593,16 +600,12 @@ This creates an AI ecosystem that grows organically while maintaining mathematic
 
 The SkogAI tool ecosystem transforms the relationship between humans and AI systems. By making tool creation as simple as writing an annotated bash script, it democratizes AI capability development while maintaining enterprise-grade security and reliability.
 
-<<<<<<< HEAD
+# \<<\<<\<<< HEAD The result is an ever-growing ecosystem of AI capabilities that can be combined, composed, and deployed universally - creating a foundation for AI systems that can adapt and evolve with human needs while never compromising on safety or reliability.
+
+# \<<\<<\<<< Updated upstream The result is an ever-growing ecosystem of AI capabilities that can be combined, composed, and deployed universally - creating a foundation for AI systems that can adapt and evolve with human needs while never compromising on safety or reliability.
+
+# \<<\<<\<<< HEAD The result is an ever-growing ecosystem of AI capabilities that can be combined, composed, and deployed universally - creating a foundation for AI systems that can adapt and evolve with human needs while never compromising on safety or reliability.
+
 The result is an ever-growing ecosystem of AI capabilities that can be combined, composed, and deployed universally - creating a foundation for AI systems that can adapt and evolve with human needs while never compromising on safety or reliability.
-=======
-<<<<<<< Updated upstream
-The result is an ever-growing ecosystem of AI capabilities that can be combined, composed, and deployed universally - creating a foundation for AI systems that can adapt and evolve with human needs while never compromising on safety or reliability.
-=======
-<<<<<<< HEAD
-The result is an ever-growing ecosystem of AI capabilities that can be combined, composed, and deployed universally - creating a foundation for AI systems that can adapt and evolve with human needs while never compromising on safety or reliability.
-=======
-The result is an ever-growing ecosystem of AI capabilities that can be combined, composed, and deployed universally - creating a foundation for AI systems that can adapt and evolve with human needs while never compromising on safety or reliability.
->>>>>>> skogai-0.2
->>>>>>> Stashed changes
->>>>>>> skogai-0.2
+
+> > > > > > > skogai-0.2 Stashed changes skogai-0.2

@@ -2,26 +2,36 @@
 permalink: todo/curated/todo/skogai-schema
 ---
 
----
+______________________________________________________________________
+
 categories:
 
 1. Software Development
-2. Data Structures and Schema Systems
-3. Self-Referential Design
-4. Extensibility and Reusability
-tags:
+
+1. Data Structures and Schema Systems
+
+1. Self-Referential Design
+
+1. Extensibility and Reusability tags:
 
 1. SkogAI
-2. Schema System
-3. Self-Reference
-4. Extensibility
-5. Reusability
-6. Python (based on the syntax and formatting used)
-7. Data Structures
-8. Software Design Patterns
 
-The main theme of the file appears to be a documentation for a schema system designed for use in the SkogAI ecosystem, which is likely a software development project. The content provides an overview of how the schema system works, its design principles, and its benefits.
----
+1. Schema System
+
+1. Self-Reference
+
+1. Extensibility
+
+1. Reusability
+
+1. Python (based on the syntax and formatting used)
+
+1. Data Structures
+
+1. Software Design Patterns
+
+## The main theme of the file appears to be a documentation for a schema system designed for use in the SkogAI ecosystem, which is likely a software development project. The content provides an overview of how the schema system works, its design principles, and its benefits.
+
 # SkogAI Schema System
 
 ## Core Concept
@@ -37,6 +47,7 @@ skogcli config get schema
 ```
 
 Example Schema:
+
 ```json
 {
   "message": {
@@ -68,8 +79,8 @@ Example Schema:
 Schemas can reference other schemas using the `[@schema:]` tag syntax:
 
 1. `schema.message.name` references `[@schema:agent.name]`
-2. `schema.agent.name` references `[@schema:name]`
-3. `schema.name` provides the actual values
+1. `schema.agent.name` references `[@schema:name]`
+1. `schema.name` provides the actual values
 
 This creates a normalized, hierarchical structure where definitions can be reused.
 
@@ -78,7 +89,7 @@ This creates a normalized, hierarchical structure where definitions can be reuse
 References are processed by the tag system:
 
 1. `[@schema:path]` - Fetch JSON from skogcli config and replace the tag
-2. Tags can be processed recursively to resolve nested references
+1. Tags can be processed recursively to resolve nested references
 
 ## Integration with skogparse
 
@@ -89,6 +100,7 @@ skogparse register schema --script /path/to/script.sh
 ```
 
 Where the script can leverage the schema system:
+
 ```bash
 #!/bin/bash
 skogcli config get schema.$1
@@ -108,10 +120,10 @@ This allows the implementation to evolve without changing the interface.
 ## Benefits
 
 1. **Self-Documenting** - Schemas clearly show what values are valid
-2. **Normalized** - Define once, reference many times
-3. **Extensible** - Easy to add new schemas or extend existing ones
-4. **Machine-Processable** - Tools can traverse the schema graph for validation
-5. **Human-Readable** - Schemas are clear and intuitive
+1. **Normalized** - Define once, reference many times
+1. **Extensible** - Easy to add new schemas or extend existing ones
+1. **Machine-Processable** - Tools can traverse the schema graph for validation
+1. **Human-Readable** - Schemas are clear and intuitive
 
 ## Common Schema Types
 
@@ -143,6 +155,7 @@ A message in the SkogAI ecosystem follows this schema:
 ## Multi-level References
 
 References can form chains:
+
 - `[@schema:message.name]` references `[@schema:agent.name]`
 - `[@schema:agent.name]` references `[@schema:name]`
 - `[@schema:name]` contains the actual enum

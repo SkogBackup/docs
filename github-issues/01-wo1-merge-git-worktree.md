@@ -1,6 +1,7 @@
 ---
-title: "WO-1: Merge skogai-git-worktree into skogai-git"
+title: 'WO-1: Merge skogai-git-worktree into skogai-git'
 labels: skills, merge, phase-1
+permalink: skogai/github-issues/01-wo1-merge-git-worktree
 ---
 
 ## Summary
@@ -10,21 +11,24 @@ Absorb `skogai-git-worktree` into `skogai-git` and delete the standalone skill. 
 ## Context
 
 **Source (to be merged):** `skogai-git-worktree/`
+
 - `SKILL.md` — standalone worktree manager docs (280 lines)
 - `scripts/worktree-manager.sh` — bash script with subcommands: create, list/ls, switch/go, cleanup/clean, copy-env
 
 **Target (absorbing):** `skogai-git/`
+
 - Already has `workflows/worktree-parallel.md` and `workflows/worktree-review.md`
 - Already has `references/wt-commands.md`
 - SKILL.md routing table already includes worktree intents
 
 **Unique content in git-worktree not covered by git:**
+
 1. `worktree-manager.sh` script (create, list, switch, cleanup, copy-env)
-2. Automatic `.env` file copying to new worktrees (.env, .env.local, .env.test)
-3. Automatic `.gitignore` management for `.worktrees/` directory
-4. `copy-env` subcommand for retroactive env file copying
-5. Integration hooks with `/workflows:review` and `/workflows:work` commands
-6. Troubleshooting section (worktree already exists, cannot remove, lost in worktree, missing .env)
+1. Automatic `.env` file copying to new worktrees (.env, .env.local, .env.test)
+1. Automatic `.gitignore` management for `.worktrees/` directory
+1. `copy-env` subcommand for retroactive env file copying
+1. Integration hooks with `/workflows:review` and `/workflows:work` commands
+1. Troubleshooting section (worktree already exists, cannot remove, lost in worktree, missing .env)
 
 **Known conflict:** git assumes `~/.worktrees/<branch>` path; git-worktree assumes `.worktrees/` in repo root. Must resolve.
 

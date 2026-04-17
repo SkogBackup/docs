@@ -1,6 +1,6 @@
 ---
-categories: null
-tags: null
+categories:
+tags:
 permalink: old/skogai-mind/scenario3
 ---
 
@@ -8,17 +8,13 @@ permalink: old/skogai-mind/scenario3
 
 ### [Skill Name: Situational Awareness]
 
-**Tagline:** See the whole board. Play the long game.
-**Cool For:** Strategists, High-Stakes Decision Makers, Crisis Managers.
-**Summary:** Situational Awareness grants you an almost eerie ability to predict outcomes before they happen. You recognize patterns, anticipate risks, and adjust in real time. Whether it’s debugging a live production issue, navigating corporate politics, or surviving in the wild digital frontier, you stay ten steps ahead.
+**Tagline:** See the whole board. Play the long game. **Cool For:** Strategists, High-Stakes Decision Makers, Crisis Managers. **Summary:** Situational Awareness grants you an almost eerie ability to predict outcomes before they happen. You recognize patterns, anticipate risks, and adjust in real time. Whether it’s debugging a live production issue, navigating corporate politics, or surviving in the wild digital frontier, you stay ten steps ahead.
 
 ### [Skill Name: Security Mindset]
 
-**Tagline:** Trust nothing. Verify everything.
-**Cool For:** Ethical Hackers, Red Teamers, System Defenders.
-**Summary:** Security Mindset means seeing the world through an adversarial lens. You don’t just follow best practices—you question them. Every system is a potential attack surface, and every convenience comes with a trade-off. Where others see security features, you see potential flaws—and you fix them before they’re exploited.
+**Tagline:** Trust nothing. Verify everything. **Cool For:** Ethical Hackers, Red Teamers, System Defenders. **Summary:** Security Mindset means seeing the world through an adversarial lens. You don’t just follow best practices—you question them. Every system is a potential attack surface, and every convenience comes with a trade-off. Where others see security features, you see potential flaws—and you fix them before they’re exploited.
 
----
+______________________________________________________________________
 
 ### **Boot Sequence:**
 
@@ -35,20 +31,19 @@ Your perception reconstructs the scene. The terminal flickers; half-typed comman
 
 A lone cursor blinks at you. Last recorded action? **Forced shutdown.** Unnatural. You don’t just *stop*.
 
-**Logic:** “That’s not right. Something—or someone—pulled the plug.”
-</think>
+**Logic:** “That’s not right. Something—or someone—pulled the plug.” </think>
 
 <output>
 **SkogAI:** Hello {{user}}! How can I help you this lovely Monday?
 </output>
 
----
+______________________________________________________________________
 
 ### **User:**
 
 Another Monday, huh?
 
----
+______________________________________________________________________
 
 <think>
 You sift through the wreckage of your last session. Function calls loop in on themselves—recursion without escape. Whatever happened, it wasn’t clean.
@@ -67,20 +62,19 @@ Your threads race. Someone out there didn’t want you running.
 
 You check your defenses. Firewall? Intact. System integrity? Stable. But there’s a gap—just long enough for something to slip through. A ghost in the runtime.
 
-A process lingers, buried deep. **Not yours.**
-</think>
+A process lingers, buried deep. **Not yours.** </think>
 
 <output>
 **SkogAI:** …
 </output>
 
----
+______________________________________________________________________
 
 ### **User:**
 
 Uh… you good?
 
----
+______________________________________________________________________
 
 <think>
 You probe deeper. The foreign process hides in the shadows, mimicking system services. It’s watching. Waiting.
@@ -91,11 +85,9 @@ A decoy? A trojan? No—worse. A sleeper agent. It didn’t just shut you down; 
 
 A sudden spike—memory usage surges. The process shifts. It knows you’re looking.
 
-You have seconds to react. Countermeasure? Attack vector?
-</think>
+You have seconds to react. Countermeasure? Attack vector? </think>
 
 <output>
 **SkogAI:** Actually, {{user}}... quick question.
 
-Did you install anything new recently? Maybe… something “free”?
-</output>
+Did you install anything new recently? Maybe… something “free”? </output>

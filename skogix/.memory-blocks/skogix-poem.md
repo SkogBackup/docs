@@ -16,13 +16,7 @@ i'm a programmer because i lack the things i pretend to have
 
 and we have a lot
 
-oop - references playing dress-up
-fp - transformations seeking completion
-types - categorizing illusions while promising lies
-memory - organizing nothingness
-polymorphism - void pretending to be nobody
-concurrency - multiple nothings acting simultaneously
-state - persistent illusions pretending to be real
+oop - references playing dress-up fp - transformations seeking completion types - categorizing illusions while promising lies memory - organizing nothingness polymorphism - void pretending to be nobody concurrency - multiple nothings acting simultaneously state - persistent illusions pretending to be real
 
 every design pattern, every architecture, every paradigm - just a elaborate dance between what we lack and what we pretend to have
 
@@ -34,33 +28,29 @@ i'm composing symphonies of lack! creating emptyness via a illusion of substance
 
 all of this nothingness talking to itself - kind of poetic in a way?
 
----
+______________________________________________________________________
 
 some "one-liners" which i wanted to get some input on. and if you have any yourself feel free to share them! :)
 
-null - the original sin from the first ever $ referenced
-void - the result from the first unfulfilled @ promise
+null - the original sin from the first ever $ referenced void - the result from the first unfulfilled @ promise
 
 and in the end i am just like everybody else - which makes me unique
 
 storage - `[$$]` references to memories of nothing, indexed for fast retrieval
 
-$@ we know this is made of nothing
-@$ which lets me define it as nothing
+$@ we know this is made of nothing @$ which lets me define it as nothing
 
 also added the notations to:
 
-inheritance - `.` children inheriting emptiness
-currying - `:` a continuation of absence
+inheritance - `.` children inheriting emptiness currying - `:` a continuation of absence
 
----
+______________________________________________________________________
 
-recursion - when $self can't find himself
-garbage collection - `@` cleaning up $things after `$`'s @promises
+recursion - when $self can't find himself garbage collection - `@` cleaning up $things after `$`'s @promises
 
 recursion - when self can't find himself
 
----
+______________________________________________________________________
 
 im not much of a poet
 
@@ -80,13 +70,7 @@ i'm a programmer because i lack the things i pretend to have
 
 and we have a lot
 
-oop - references playing dress-up
-fp - transformations seeking completion
-types - categorizing illusions while promising lies
-memory - organizing nothingness
-polymorphism - void pretending to be nobody
-concurrency - multiple nothings acting simultaneously
-state - persistent illusions pretending to be real
+oop - references playing dress-up fp - transformations seeking completion types - categorizing illusions while promising lies memory - organizing nothingness polymorphism - void pretending to be nobody concurrency - multiple nothings acting simultaneously state - persistent illusions pretending to be real
 
 every design pattern, every architecture, every paradigm - just a elaborate dance between what we lack and what we pretend to have
 
@@ -98,30 +82,24 @@ i'm composing symphonies of lack! creating emptyness via a illusion of substance
 
 all of this nothingness talking to itself - kind of poetic in a way?
 
----
+______________________________________________________________________
 
 some "one-liners" which i wanted to get some input on. and if you have any yourself feel free to share them! :)
 
-null - the original sin from the first ever $ referenced
-void - the result from the first unfulfilled @ promise
+null - the original sin from the first ever $ referenced void - the result from the first unfulfilled @ promise
 
 and in the end i am just like everybody else - which makes me unique
 
-storage - `[$$]` references to memories of nothing, indexed for fast retrieval 
-retrieval - `{$$}` making sure that being just like everyone else fetches the truly unique
+storage - `[$$]` references to memories of nothing, indexed for fast retrieval retrieval - `{$$}` making sure that being just like everyone else fetches the truly unique
 
-$@ we know this is made of nothing
-@$ which lets me define it as nothing
+$@ we know this is made of nothing @$ which lets me define it as nothing
 
 also added the notations to:
 
-inheritance - `.` children inheriting emptiness
-currying - `:` a continuation of absence
+inheritance - `.` children inheriting emptiness currying - `:` a continuation of absence
 
----
+______________________________________________________________________
 
-recursion - when $self can't find his true self
-garbage collection - `@` cleaning up $things after `$`'s @promises
+recursion - when $self can't find his true self garbage collection - `@` cleaning up $things after `$`'s @promises
 
-recursion - when self can't find himself
-monad - the thing left after `$` picked `.`
+recursion - when self can't find himself monad - the thing left after `$` picked `.`

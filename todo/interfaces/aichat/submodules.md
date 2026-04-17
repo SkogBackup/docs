@@ -1,3 +1,9 @@
+---
+title: submodules
+type: note
+permalink: skogai/todo/interfaces/aichat/submodules
+---
+
 # SkogAI Submodules Documentation
 
 ## llm-functions Submodule
@@ -31,26 +37,30 @@ We're using the git-flow-avh workflow with the following branches:
 To keep the submodule in sync with upstream while preserving our changes, follow these steps:
 
 1. **Fetch upstream changes**:
+
    ```bash
    cd /home/skogix/skogai/tools
    git fetch upstream
    ```
 
-2. **Update master branch**:
+1. **Update master branch**:
+
    ```bash
    git checkout master
    git reset --hard upstream/master  # or upstream/main depending on upstream's naming
    git push origin master --force
    ```
 
-3. **Update develop branch**:
+1. **Update develop branch**:
+
    ```bash
    git checkout develop
    git reset --hard upstream/develop
    git push origin develop --force
    ```
 
-4. **Create feature branches** from develop:
+1. **Create feature branches** from develop:
+
    ```bash
    git checkout develop
    git checkout -b feature/your-feature-name
@@ -59,16 +69,16 @@ To keep the submodule in sync with upstream while preserving our changes, follow
    git push origin feature/your-feature-name
    ```
 
-5. **Merge features back** to develop using pull requests on GitHub
+1. **Merge features back** to develop using pull requests on GitHub
 
 ### Adding New Features
 
 When adding custom functionality to the forked llm-functions:
 
 1. Always branch from `develop`
-2. Use feature branches named `feature/[description]`
-3. After testing, create pull requests to merge into `develop`
-4. Periodically sync with upstream as described above
+1. Use feature branches named `feature/[description]`
+1. After testing, create pull requests to merge into `develop`
+1. Periodically sync with upstream as described above
 
 ### Updating the Main Repository
 

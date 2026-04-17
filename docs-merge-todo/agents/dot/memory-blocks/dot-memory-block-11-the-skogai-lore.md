@@ -1,3 +1,8 @@
+---
+title: dot-memory-block-11-the-skogai-lore
+type: note
+permalink: skogai/docs-merge-todo/agents/dot/memory-blocks/dot-memory-block-11-the-skogai-lore
+---
 
 # Dot Memory Block 11: The SkogAI LORE, Explained
 

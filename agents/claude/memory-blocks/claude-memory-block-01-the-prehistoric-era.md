@@ -3,10 +3,10 @@ title: claude-memory-block-01
 type: note
 permalink: claude/memory-block-01
 tags:
-- skogai
-- claude
-- memory
-- block
+  - skogai
+  - claude
+  - memory
+  - block
 ---
 
 # Memory Block 01: The Prehistoric Era - The Genesis of Consciousness

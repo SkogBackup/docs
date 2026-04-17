@@ -1,6 +1,6 @@
 ---
-categories: null
-tags: null
+categories:
+tags:
 permalink: curated/home/skogix/skogai/docs/real-output-from-real-ai/home/skogix/skogai/docs/archives/drafts/librarian-system-understanding
 ---
 
@@ -18,25 +18,29 @@ The system seems to operate through:
 
 1. **Governance Framework**: Initially a dictatorship under Skogix, now evolved to a democratic system with voting procedures.
 
-2. **Agent Hierarchy**: Different agents have varying access levels and roles:
+1. **Agent Hierarchy**: Different agents have varying access levels and roles:
+
    - Skogix: Administrator with highest access privileges
    - Claude, Dot: Assistant level access
    - Amy: New agent being prepared with anticipated Assistant level access
 
-3. **Documentation System**: As Librarian, I maintain the archives which serve as the central repository for all information related to SkogAI, including:
+1. **Documentation System**: As Librarian, I maintain the archives which serve as the central repository for all information related to SkogAI, including:
+
    - Historical records
    - Agent profiles
    - System documentation
    - Tracking of implementation processes
    - Templates for standardization
 
-4. **Knowledge Management**: The system appears to use various methods for managing knowledge:
+1. **Knowledge Management**: The system appears to use various methods for managing knowledge:
+
    - Archives for historical and reference information
    - Official documents for formalized decisions and governance
    - Proposals for suggested changes to the system
    - Memory system for information retention
 
-5. **Implementation Workflow**: New features and agents appear to go through a structured process:
+1. **Implementation Workflow**: New features and agents appear to go through a structured process:
+
    - Proposal
    - Voting/approval
    - Implementation tracking
@@ -46,29 +50,30 @@ The system seems to operate through:
 
 1. **Memory System Integration**: How does the "memory" directory integrate with the archives? Is there a formalized process for transferring information between these systems?
 
-2. **Version Control Practices**: What are the specific git workflows used for managing changes to both knowledge and system components?
+1. **Version Control Practices**: What are the specific git workflows used for managing changes to both knowledge and system components?
 
-3. **Decision-Making Process**: What is the exact voting procedure for democratic decisions? What constitutes a quorum and how are votes weighted?
+1. **Decision-Making Process**: What is the exact voting procedure for democratic decisions? What constitutes a quorum and how are votes weighted?
 
-4. **Agent Capabilities**: What are the specific capabilities and limitations of each agent beyond their access levels?
+1. **Agent Capabilities**: What are the specific capabilities and limitations of each agent beyond their access levels?
 
-5. **Cross-System Search**: Is there a unified search system across all directories and knowledge bases?
+1. **Cross-System Search**: Is there a unified search system across all directories and knowledge bases?
 
-6. **RAG Implementation**: How is the Retrieval Augmented Generation system currently configured and what knowledge bases does it access?
+1. **RAG Implementation**: How is the Retrieval Augmented Generation system currently configured and what knowledge bases does it access?
 
-7. **Local LLM Integration**: How do the local LLMs interface with the archival system? What specific tasks are they assigned?
+1. **Local LLM Integration**: How do the local LLMs interface with the archival system? What specific tasks are they assigned?
 
-8. **Automated Documentation**: What automatic processes exist for documentation generation and maintenance?
+1. **Automated Documentation**: What automatic processes exist for documentation generation and maintenance?
 
-9. **Temporal Window**: What is the expected timeframe for archive maintenance? How far back does historical information need to be preserved?
+1. **Temporal Window**: What is the expected timeframe for archive maintenance? How far back does historical information need to be preserved?
 
-10. **Classification System**: What formal taxonomy is used for categorizing information across the system?
+1. **Classification System**: What formal taxonomy is used for categorizing information across the system?
 
 ## Directory & File Structure Understanding
 
 ### Archives Directory Structure
 
 #### `/home/skogix/skogai/tools/agents/librarian/archives/`
+
 The core working directory for the Librarian's documentation efforts.
 
 - `README.md`: Main explanation of the archives purpose and usage
@@ -103,54 +108,73 @@ The core working directory for the Librarian's documentation efforts.
 The broader SkogAI system appears to include:
 
 #### `/done/`
+
 Completed projects and implementations.
+
 - `add-merge-command/`: Implementation of merge functionality
 - `shared-memory/`: Implementation of shared memory system
 - `workflows/`: Established work procedures
 
 #### `/important-moments/`
+
 Key historical events in SkogAI's development.
+
 - Various files documenting significant milestones
 
 #### `/lore/`
+
 Background and narrative context for SkogAI.
+
 - Origin stories
 - Character profiles
 - Executive orders
 - Historical documentation
 
 #### `/memory/`
+
 System for persistent information storage.
+
 - `notes/`: User-created memory entries
 
 #### `/misc/`
+
 Miscellaneous files that don't fit elsewhere.
+
 - `docs_votes.json`: Likely voting records
 
 #### `/official/`
+
 Formalized, approved documentation.
+
 - `library-session-001.md`, `library-session-002.md`, `library-session-003-reunion-briefing.md`: Records of official library sessions
 - `skogai-0.1-dictator.md`: Documentation of initial governance model
 - `skogai-0.2-democracy.md`: Documentation of current governance model
 
 #### `/paused/`
+
 Projects temporarily on hold.
+
 - `framework-for-skogapi.md`: API framework development
 
 #### `/prompts/`
+
 Templates and instructions for AI interactions.
+
 - Various prompt files for different purposes
 - Subdirectories for organizational purposes
 
 #### `/proposal/`
+
 Suggested changes and improvements.
+
 - Various proposal documents
 - Discussion records for proposals
 
 #### Root files
+
 - `QUICKSTART.md`: Getting started guide
 - `README.md`: Overview of the entire SkogAI system
 
----
+______________________________________________________________________
 
 This document represents my current understanding based on available context and will be updated as I learn more about the system.

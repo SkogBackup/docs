@@ -1,3 +1,9 @@
+---
+title: architecture-patterns
+type: note
+permalink: skogai/skills/skogai-prompting/references/architecture-patterns
+---
+
 <overview>
 Architectural patterns for building prompt-native agent systems. These patterns emerge from the philosophy that features should be defined in prompts, not code, and that tools should be primitives.
 </overview>
@@ -25,12 +31,14 @@ The agent runs as a long-lived process that responds to events. Events become pr
 ```
 
 **Key characteristics:**
+
 - Events (messages, webhooks, timers) trigger agent turns
 - Agent decides how to respond based on system prompt
 - Tools are primitives for IO, not business logic
 - State persists between events via data tools
 
 **Example: Discord feedback bot**
+
 ```typescript
 // Event source
 client.on("messageCreate", (message) => {
@@ -53,6 +61,7 @@ When someone shares feedback:
 Use your judgment about importance and categorization.
 `;
 ```
+
 </pattern>
 
 <pattern name="two-layer-git">
@@ -87,11 +96,11 @@ For self-modifying agents, separate code (shared) from data (instance-specific).
 ```
 
 **Why this works:**
+
 - Code and site are version controlled (GitHub)
 - Raw data stays local (instance-specific)
 - Site is generated from data, so reproducible
-- Automatic rollback via git history
-</pattern>
+- Automatic rollback via git history </pattern>
 
 <pattern name="multi-instance">
 ## Multi-Instance Branching
@@ -106,19 +115,22 @@ main                        # Shared features, bug fixes
 ```
 
 **Change flow:**
-| Change Type | Work On | Then |
-|-------------|---------|------|
-| Core features | main | Merge to instance branches |
-| Bug fixes | main | Merge to instance branches |
-| Instance config | instance branch | Done |
-| Instance data | instance branch | Done |
+
+| Change Type     | Work On         | Then                       |
+| --------------- | --------------- | -------------------------- |
+| Core features   | main            | Merge to instance branches |
+| Bug fixes       | main            | Merge to instance branches |
+| Instance config | instance branch | Done                       |
+| Instance data   | instance branch | Done                       |
 
 **Sync tools:**
+
 ```typescript
 tool("self_deploy", "Pull latest from main, rebuild, restart", ...)
 tool("sync_from_instance", "Merge from another instance", ...)
 tool("propose_to_main", "Create PR to share improvements", ...)
 ```
+
 </pattern>
 
 <pattern name="site-as-output">
@@ -157,6 +169,7 @@ The site should be:
 
 You decide the structure. Make it good.
 ```
+
 </pattern>
 
 <pattern name="approval-gates">
@@ -193,15 +206,16 @@ tool("apply_pending", async () => {
 ```
 
 **What requires approval:**
-- src/*.ts (agent code)
+
+- src/\*.ts (agent code)
 - package.json (dependencies)
 - system prompt changes
 
 **What doesn't:**
-- data/* (instance data)
-- site/* (generated content)
-- docs/* (documentation)
-</pattern>
+
+- data/\* (instance data)
+- site/\* (generated content)
+- docs/\* (documentation) </pattern>
 
 <pattern name="unified-agent-architecture">
 ## Unified Agent Architecture
@@ -277,12 +291,12 @@ struct ChatAgent {
 ```
 
 **Benefits:**
+
 - Consistent lifecycle management across all agent types
 - Automatic checkpoint/resume (critical for mobile)
 - Shared tool protocol
 - Easy to add new agent types
-- Centralized error handling and logging
-</pattern>
+- Centralized error handling and logging </pattern>
 
 <pattern name="agent-to-ui-communication">
 ## Agent-to-UI Communication
@@ -396,6 +410,7 @@ struct FeedView: View {
     let items = database.query("feed")  // Stale!
 }
 ```
+
 </pattern>
 
 <pattern name="model-tier-selection">
@@ -403,14 +418,14 @@ struct FeedView: View {
 
 Different agents need different intelligence levels. Use the cheapest model that achieves the outcome.
 
-| Agent Type | Recommended Tier | Reasoning |
-|------------|-----------------|-----------|
-| Chat/Conversation | Balanced | Fast responses, good reasoning |
-| Research | Balanced | Tool loops, not ultra-complex synthesis |
-| Content Generation | Balanced | Creative but not synthesis-heavy |
-| Complex Analysis | Powerful | Multi-document synthesis, nuanced judgment |
-| Profile/Onboarding | Powerful | Photo analysis, complex pattern recognition |
-| Simple Queries | Fast/Haiku | Quick lookups, simple transformations |
+| Agent Type         | Recommended Tier | Reasoning                                   |
+| ------------------ | ---------------- | ------------------------------------------- |
+| Chat/Conversation  | Balanced         | Fast responses, good reasoning              |
+| Research           | Balanced         | Tool loops, not ultra-complex synthesis     |
+| Content Generation | Balanced         | Creative but not synthesis-heavy            |
+| Complex Analysis   | Powerful         | Multi-document synthesis, nuanced judgment  |
+| Profile/Onboarding | Powerful         | Photo analysis, complex pattern recognition |
+| Simple Queries     | Fast/Haiku       | Quick lookups, simple transformations       |
 
 **Implementation:**
 
@@ -450,22 +465,22 @@ let lookupConfig = AgentConfig(
 ```
 
 **Cost optimization strategies:**
+
 - Start with balanced tier, only upgrade if quality insufficient
 - Use fast tier for tool-heavy loops where each turn is simple
 - Reserve powerful tier for synthesis tasks (comparing multiple sources)
-- Consider token limits per turn to control costs
-</pattern>
+- Consider token limits per turn to control costs </pattern>
 
-<design_questions>
+\<design_questions>
+
 ## Questions to Ask When Designing
 
 1. **What events trigger agent turns?** (messages, webhooks, timers, user requests)
-2. **What primitives does the agent need?** (read, write, call API, restart)
-3. **What decisions should the agent make?** (format, structure, priority, action)
-4. **What decisions should be hardcoded?** (security boundaries, approval requirements)
-5. **How does the agent verify its work?** (health checks, build verification)
-6. **How does the agent recover from mistakes?** (git rollback, approval gates)
-7. **How does the UI know when agent changes state?** (shared store, file watching, events)
-8. **What model tier does each agent type need?** (fast, balanced, powerful)
-9. **How do agents share infrastructure?** (unified orchestrator, shared tools)
-</design_questions>
+1. **What primitives does the agent need?** (read, write, call API, restart)
+1. **What decisions should the agent make?** (format, structure, priority, action)
+1. **What decisions should be hardcoded?** (security boundaries, approval requirements)
+1. **How does the agent verify its work?** (health checks, build verification)
+1. **How does the agent recover from mistakes?** (git rollback, approval gates)
+1. **How does the UI know when agent changes state?** (shared store, file watching, events)
+1. **What model tier does each agent type need?** (fast, balanced, powerful)
+1. **How do agents share infrastructure?** (unified orchestrator, shared tools) \</design_questions>

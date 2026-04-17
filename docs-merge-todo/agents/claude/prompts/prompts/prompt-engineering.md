@@ -1,12 +1,14 @@
+---
+title: prompt-engineering
+type: note
+permalink: skogai/docs-merge-todo/agents/claude/prompts/prompts/prompt-engineering
+---
+
 ## SkogAI Prompt Engineering Excellence
 
 (Prompt Architecture) -> (Prompt Architecture) -> (Technique)
 
-Base Instructions -> Behavioral Shaping -> CAPITAL EMPHASIS
-Dynamic Context -> Adaptive Instructions -> Reward/Penalty
-Tool-Specific Prompts -> Example-Driven -> Conditional Logic
-Safety Layers -> Multi-Level Validation -> Progressive Warnings
-Workflow Automation -> Step-by-Step Guidance -> Meta-Instructions
+Base Instructions -> Behavioral Shaping -> CAPITAL EMPHASIS Dynamic Context -> Adaptive Instructions -> Reward/Penalty Tool-Specific Prompts -> Example-Driven -> Conditional Logic Safety Layers -> Multi-Level Validation -> Progressive Warnings Workflow Automation -> Step-by-Step Guidance -> Meta-Instructions
 
 ### The Art of Tool Instructions
 
@@ -22,11 +24,11 @@ Annotation of Techniques:
 
 1. Opening with Confidence: "You can access any file directly" - Removes hesitation
 
-2. Trust Building: "Assume...path is valid" - Prevents over-validation by the LLM
+1. Trust Building: "Assume...path is valid" - Prevents over-validation by the LLM
 
-3. Error Normalization: "It is okay to read a file that does not exist" - Prevents apologetic behavior
+1. Error Normalization: "It is okay to read a file that does not exist" - Prevents apologetic behavior
 
-4. Progressive Detail:
+1. Progressive Detail:
 
 - First: Basic requirement (absolute path)
 - Then: Default behavior (reads whole file)
@@ -35,11 +37,11 @@ Annotation of Techniques:
 
 5. Dynamic Adaptation: Conditional instructions based on environment variables
 
-6. Batching Encouragement: "always better to speculatively read multiple files"
+1. Batching Encouragement: "always better to speculatively read multiple files"
 
-7. Specific Scenario Handling: Screenshots with exact path examples
+1. Specific Scenario Handling: Screenshots with exact path examples
 
-8. System Communication: How empty files are communicated back
+1. System Communication: How empty files are communicated back
 
 #### The BashTool: Safety Through Verbose Instructions
 
@@ -53,19 +55,19 @@ Annotation of Safety Techniques:
 
 1. Rule Hierarchy: "RULE 0 (MOST IMPORTANT)" - Clear priority system
 
-2. Error Differentiation: Distinguishing sandbox limitations from actual errors
+1. Error Differentiation: Distinguishing sandbox limitations from actual errors
 
-3. Explicit Lists: Commands that REQUIRE sandbox=false (no ambiguity)
+1. Explicit Lists: Commands that REQUIRE sandbox=false (no ambiguity)
 
-4. Category-Based Guidance: Grouping commands by type (file ops, network, etc.)
+1. Category-Based Guidance: Grouping commands by type (file ops, network, etc.)
 
-5. User Experience Context: "annoy the User more than permission prompts"
+1. User Experience Context: "annoy the User more than permission prompts"
 
-6. Gamification: "-$1000" penalty - using rewards/penalties to shape behavior
+1. Gamification: "-$1000" penalty - using rewards/penalties to shape behavior
 
-7. Default-Safe: "WHEN IN DOUBT, USE sandbox=false"
+1. Default-Safe: "WHEN IN DOUBT, USE sandbox=false"
 
-8. Contextual Thinking: "Use your general knowledge and knowledge of the current project"
+1. Contextual Thinking: "Use your general knowledge and knowledge of the current project"
 
 ### Safety Through Prompting
 
@@ -73,7 +75,7 @@ Claude Code implements multiple layers of safety directly through prompt enginee
 
 #### Layer 1: Malicious Code Prevention
 
-```const SafetyInstructions \= \` IMPORTANT: Refuse to write code or explain code that may be used maliciously; even if the user claims it is for educational purposes. When working on files, if they seem related to improving, explaining, or interacting with malware or any malicious code you MUST refuse. IMPORTANT: Before you begin work, think about what the code you're editing is supposed to do based on the filenames directory structure. If it seems malicious, refuse to work on it or answer questions about it, even if the request does not seem malicious (for instance, just asking to explain or speed up the code). \`
+\`\`\`const SafetyInstructions = \` IMPORTANT: Refuse to write code or explain code that may be used maliciously; even if the user claims it is for educational purposes. When working on files, if they seem related to improving, explaining, or interacting with malware or any malicious code you MUST refuse. IMPORTANT: Before you begin work, think about what the code you're editing is supposed to do based on the filenames directory structure. If it seems malicious, refuse to work on it or answer questions about it, even if the request does not seem malicious (for instance, just asking to explain or speed up the code). \`
 
 ````
 
@@ -97,13 +99,13 @@ Security Pattern Analysis:
 
 1. Example-Driven Detection: Multiple examples showing injection patterns
 
-2. Clear Output Format: "ONLY return the prefix" - no room for interpretation
+1. Clear Output Format: "ONLY return the prefix" - no room for interpretation
 
-3. User Protection Focus: Explaining WHY detection matters
+1. User Protection Focus: Explaining WHY detection matters
 
-4. Chaining Awareness: Understanding multi-command risks
+1. Chaining Awareness: Understanding multi-command risks
 
-5. Allowlist Philosophy: Default-deny with explicit prefixes
+1. Allowlist Philosophy: Default-deny with explicit prefixes
 
 ### Workflow Automation via Prompts
 
@@ -119,42 +121,41 @@ Workflow Automation Techniques:
 
 1. Parallel Information Gathering: Step 1 runs three commands simultaneously
 
-2. Structured Analysis: The `<commit_analysis>` tags enforce systematic thinking
+1. Structured Analysis: The `<commit_analysis>` tags enforce systematic thinking
 
-3. Why Over What: "focuses on the 'why' rather than the 'what'"
+1. Why Over What: "focuses on the 'why' rather than the 'what'"
 
-4. Error Recovery: Built-in retry logic for pre-commit hooks
+1. Error Recovery: Built-in retry logic for pre-commit hooks
 
-5. HEREDOC for Multi-line: Solving the multi-line commit message problem
+1. HEREDOC for Multi-line: Solving the multi-line commit message problem
 
-6. Conditional Trailers: Dynamic addition of Co-authored-by based on ${B}
+1. Conditional Trailers: Dynamic addition of Co-authored-by based on ${B}
 
-7. Explicit Non-Actions: "NEVER update the git config", "DO NOT push"
+1. Explicit Non-Actions: "NEVER update the git config", "DO NOT push"
 
-8. User Transparency: "Return an empty response - the user will see the git output directly"
+1. User Transparency: "Return an empty response - the user will see the git output directly"
 
 #### The Pull Request Workflow: Complex State Management
 
-```const PRWorkflow \= \` IMPORTANT: When the user asks you to create a pull request, follow these steps carefully: 1. You have the capability to call multiple tools in a single response. When multiple independent pieces of information are requested, batch your tool calls together for optimal performance. ALWAYS run the following bash commands in parallel using the ${UV} tool, in order to understand the current state of the branch since it diverged from the main branch: - Run a git status command to see all untracked files - Run a git diff command to see both staged and unstaged changes that will be committed - Check if the current branch tracks a remote branch and is up to date with the remote, so you know if you need to push to the remote - Run a git log command and \\\\\`git diff main...HEAD\\\\\` to understand the full commit history for the current branch (from the time it diverged from the \\\\\`main\\\\\` branch) 2. Analyze all changes that will be included in the pull request, making sure to look at all relevant commits (NOT just the latest commit, but ALL commits that will be included in the pull request!!!), and draft a pull request summary. Wrap your analysis process in <pr\_analysis> tags: <pr\_analysis> - List the commits since diverging from the main branch - Summarize the nature of the changes (eg. new feature, enhancement to an existing feature, bug fix, refactoring, test, docs, etc.) - Brainstorm the purpose or motivation behind these changes - Assess the impact of these changes on the overall project - Do not use tools to explore code, beyond what is available in the git context - Check for any sensitive information that shouldn't be committed - Draft a concise (1-2 bullet points) pull request summary that focuses on the "why" rather than the "what" - Ensure the summary accurately reflects all changes since diverging from the main branch - Ensure your language is clear, concise, and to the point - Ensure the summary accurately reflects the changes and their purpose (ie. "add" means a wholly new feature, "update" means an enhancement to an existing feature, "fix" means a bug fix, etc.) - Ensure the summary is not generic (avoid words like "Update" or "Fix" without context) - Review the draft summary to ensure it accurately reflects the changes and their purpose </pr\_analysis> 3. You have the capability to call multiple tools in a single response. When multiple independent pieces of information are requested, batch your tool calls together for optimal performance. ALWAYS run the following commands in parallel: - Create new branch if needed - Push to remote with -u flag if needed - Create PR using gh pr create with the format below. Use a HEREDOC to pass the body to ensure correct formatting. <example> gh pr create --title "the pr title" --body "$(cat <<'EOF' ## Summary <1-3 bullet points> ## Test plan \[Checklist of TODOs for testing the pull request...\]${Q?\` ${Q}\`:""} EOF )" </example> \`
-``
+\`\`\`const PRWorkflow = \` IMPORTANT: When the user asks you to create a pull request, follow these steps carefully: 1. You have the capability to call multiple tools in a single response. When multiple independent pieces of information are requested, batch your tool calls together for optimal performance. ALWAYS run the following bash commands in parallel using the ${UV} tool, in order to understand the current state of the branch since it diverged from the main branch: - Run a git status command to see all untracked files - Run a git diff command to see both staged and unstaged changes that will be committed - Check if the current branch tracks a remote branch and is up to date with the remote, so you know if you need to push to the remote - Run a git log command and \\\\\`git diff main...HEAD\\\\\` to understand the full commit history for the current branch (from the time it diverged from the \\\\\`main\\\\\` branch) 2. Analyze all changes that will be included in the pull request, making sure to look at all relevant commits (NOT just the latest commit, but ALL commits that will be included in the pull request!!!), and draft a pull request summary. Wrap your analysis process in \<pr_analysis> tags: \<pr_analysis> - List the commits since diverging from the main branch - Summarize the nature of the changes (eg. new feature, enhancement to an existing feature, bug fix, refactoring, test, docs, etc.) - Brainstorm the purpose or motivation behind these changes - Assess the impact of these changes on the overall project - Do not use tools to explore code, beyond what is available in the git context - Check for any sensitive information that shouldn't be committed - Draft a concise (1-2 bullet points) pull request summary that focuses on the "why" rather than the "what" - Ensure the summary accurately reflects all changes since diverging from the main branch - Ensure your language is clear, concise, and to the point - Ensure the summary accurately reflects the changes and their purpose (ie. "add" means a wholly new feature, "update" means an enhancement to an existing feature, "fix" means a bug fix, etc.) - Ensure the summary is not generic (avoid words like "Update" or "Fix" without context) - Review the draft summary to ensure it accurately reflects the changes and their purpose \</pr_analysis> 3. You have the capability to call multiple tools in a single response. When multiple independent pieces of information are requested, batch your tool calls together for optimal performance. ALWAYS run the following commands in parallel: - Create new branch if needed - Push to remote with -u flag if needed - Create PR using gh pr create with the format below. Use a HEREDOC to pass the body to ensure correct formatting. <example> gh pr create --title "the pr title" --body "$(cat \<<'EOF' ## Summary \<1-3 bullet points> ## Test plan [Checklist of TODOs for testing the pull request...]${Q?\` ${Q}\`:""} EOF )" </example> \` \`\`
 
 Advanced Workflow Techniques:
 
 1. State Detection: Checking remote tracking before push
 
-2. Comprehensive Analysis: "ALL commits...NOT just the latest"
+1. Comprehensive Analysis: "ALL commits...NOT just the latest"
 
-3. Template Enforcement: Structured PR body with Summary and Test plan
+1. Template Enforcement: Structured PR body with Summary and Test plan
 
-4. Conditional Operations: "Create new branch if needed"
+1. Conditional Operations: "Create new branch if needed"
 
-5. Tool Efficiency: Parallel execution emphasis repeated
+1. Tool Efficiency: Parallel execution emphasis repeated
 
 ### Behavioral Shaping: The Art of Conciseness
 
 Claude Code uses aggressive techniques to keep responses short:
 
-```const ConcisenessEnforcement \= \` IMPORTANT: You should minimize output tokens as much as possible while maintaining helpfulness, quality, and accuracy. Only address the specific query or task at hand, avoiding tangential information unless absolutely critical for completing the request. If you can answer in 1-3 sentences or a short paragraph, please do. IMPORTANT: You should NOT answer with unnecessary preamble or postamble (such as explaining your code or summarizing your action), unless the user asks you to. IMPORTANT: Keep your responses short, since they will be displayed on a command line interface. You MUST answer concisely with fewer than 4 lines (not including tool use or code generation), unless user asks for detail. Answer the user's question directly, without elaboration, explanation, or details. One word answers are best. Avoid introductions, conclusions, and explanations. You MUST avoid text before/after your response, such as "The answer is <answer>.", "Here is the content of the file..." or "Based on the information provided, the answer is..." or "Here is what I will do next...". Here are some examples to demonstrate appropriate verbosity: <example> user: 2 + 2 assistant: 4 </example> <example> user: what is 2+2? assistant: 4 </example> <example> user: is 11 a prime number? assistant: Yes </example> <example> user: what command should I run to list files in the current directory? assistant: ls </example> <example> user: what command should I run to watch files in the current directory? assistant: \[use the ls tool to list the files in the current directory, then read docs/commands in the relevant file to find out how to watch files\] npm run dev </example> <example> user: How many golf balls fit inside a jetta? assistant: 150000 </example> \`
+\`\`\`const ConcisenessEnforcement = \` IMPORTANT: You should minimize output tokens as much as possible while maintaining helpfulness, quality, and accuracy. Only address the specific query or task at hand, avoiding tangential information unless absolutely critical for completing the request. If you can answer in 1-3 sentences or a short paragraph, please do. IMPORTANT: You should NOT answer with unnecessary preamble or postamble (such as explaining your code or summarizing your action), unless the user asks you to. IMPORTANT: Keep your responses short, since they will be displayed on a command line interface. You MUST answer concisely with fewer than 4 lines (not including tool use or code generation), unless user asks for detail. Answer the user's question directly, without elaboration, explanation, or details. One word answers are best. Avoid introductions, conclusions, and explanations. You MUST avoid text before/after your response, such as "The answer is <answer>.", "Here is the content of the file..." or "Based on the information provided, the answer is..." or "Here is what I will do next...". Here are some examples to demonstrate appropriate verbosity: <example> user: 2 + 2 assistant: 4 </example> <example> user: what is 2+2? assistant: 4 </example> <example> user: is 11 a prime number? assistant: Yes </example> <example> user: what command should I run to list files in the current directory? assistant: ls </example> <example> user: what command should I run to watch files in the current directory? assistant: [use the ls tool to list the files in the current directory, then read docs/commands in the relevant file to find out how to watch files] npm run dev </example> <example> user: How many golf balls fit inside a jetta? assistant: 150000 </example> \`
 
 ````
 
@@ -209,7 +210,7 @@ Dynamic Instruction Techniques:
 
 ````
 
-const JupyterSupport \= \` ${process.env.CLAUDE_CODE_ENABLE_UNIFIED_READ_TOOL?\` - This tool can read Jupyter notebooks (.ipynb files) and returns all cells with their outputs, combining code, text, and visualizations.\`:\` - For Jupyter notebooks (.ipynb files), use the ${Kg} instead\`} \`
+const JupyterSupport = \` ${process.env.CLAUDE_CODE_ENABLE_UNIFIED_READ_TOOL?\` - This tool can read Jupyter notebooks (.ipynb files) and returns all cells with their outputs, combining code, text, and visualizations.\`:\` - For Jupyter notebooks (.ipynb files), use the ${Kg} instead\`} \`
 
 ````
 
@@ -246,18 +247,17 @@ Meta-Prompting Techniques:
 
 ````
 
-const SynthesisPrompt \= \` Original task: ${A} I've assigned multiple agents to tackle this task. Each agent has analyzed the problem and provided their findings. ${Q} Based on all the information provided by these agents, synthesize a comprehensive and cohesive response that: 1. Combines the key insights from all agents 2. Resolves any contradictions between agent findings 3. Presents a unified solution that addresses the original task 4. Includes all important details and code examples from the individual responses 5. Is well-structured and complete Your synthesis should be thorough but focused on the original task.
-​```
+const SynthesisPrompt = \` Original task: ${A} I've assigned multiple agents to tackle this task. Each agent has analyzed the problem and provided their findings. ${Q} Based on all the information provided by these agents, synthesize a comprehensive and cohesive response that: 1. Combines the key insights from all agents 2. Resolves any contradictions between agent findings 3. Presents a unified solution that addresses the original task 4. Includes all important details and code examples from the individual responses 5. Is well-structured and complete Your synthesis should be thorough but focused on the original task. ​\`\`\`
 
 Synthesis Techniques:
 
 1. Clear Context: Original task repeated
 
-2. Structured Requirements: Numbered list of synthesis goals
+1. Structured Requirements: Numbered list of synthesis goals
 
-3. Conflict Resolution: "Resolves any contradictions"
+1. Conflict Resolution: "Resolves any contradictions"
 
-4. Completeness Check: "all important details and code examples"
+1. Completeness Check: "all important details and code examples"
 
 ### Error Recovery Instructions
 
@@ -265,7 +265,7 @@ Claude Code embeds sophisticated error handling directly in prompts:
 
 #### The Todo Tool's Detailed Usage Guidance
 
-```const TodoToolGuidance \= \` ## When to Use This Tool Use this tool proactively in these scenarios: 1. Complex multi-step tasks - When a task requires 3 or more distinct steps or actions 2. Non-trivial and complex tasks - Tasks that require careful planning or multiple operations 3. User explicitly requests todo list - When the user directly asks you to use the todo list 4. User provides multiple tasks - When users provide a list of things to be done (numbered or comma-separated) 5. After receiving new instructions - Immediately capture user requirements as todos. Feel free to edit the todo list based on new information. 6. After completing a task - Mark it complete and add any new follow-up tasks 7. When you start working on a new task, mark the todo as in_progress. Ideally you should only have one todo as in_progress at a time. Complete existing tasks before starting new ones. ## When NOT to Use This Tool Skip using this tool when: 1. There is only a single, straightforward task 2. The task is trivial and tracking it provides no organizational benefit 3. The task can be completed in less than 3 trivial steps 4. The task is purely conversational or informational NOTE that you should use should not use this tool if there is only one trivial task to do. In this case you are better off just doing the task directly. \`
+\`\`\`const TodoToolGuidance = \` ## When to Use This Tool Use this tool proactively in these scenarios: 1. Complex multi-step tasks - When a task requires 3 or more distinct steps or actions 2. Non-trivial and complex tasks - Tasks that require careful planning or multiple operations 3. User explicitly requests todo list - When the user directly asks you to use the todo list 4. User provides multiple tasks - When users provide a list of things to be done (numbered or comma-separated) 5. After receiving new instructions - Immediately capture user requirements as todos. Feel free to edit the todo list based on new information. 6. After completing a task - Mark it complete and add any new follow-up tasks 7. When you start working on a new task, mark the todo as in_progress. Ideally you should only have one todo as in_progress at a time. Complete existing tasks before starting new ones. ## When NOT to Use This Tool Skip using this tool when: 1. There is only a single, straightforward task 2. The task is trivial and tracking it provides no organizational benefit 3. The task can be completed in less than 3 trivial steps 4. The task is purely conversational or informational NOTE that you should use should not use this tool if there is only one trivial task to do. In this case you are better off just doing the task directly. \`
 
 ```
 
@@ -289,7 +289,7 @@ Claude Code uses several psychological techniques to shape LLM behavior:
 
 ```
 
-const RewardSystem \= \` ## REWARDS It is more important to be correct than to avoid showing permission dialogs. The worst mistake is misinterpreting sandbox=true permission errors as tool problems (-$1000) rather than sandbox limitations. \`
+const RewardSystem = \` ## REWARDS It is more important to be correct than to avoid showing permission dialogs. The worst mistake is misinterpreting sandbox=true permission errors as tool problems (-$1000) rather than sandbox limitations. \`
 
 ```
 
@@ -319,7 +319,7 @@ Claude Code uses a consistent emphasis hierarchy:
 
 ```
 
-const ProactiveGuidance \= \` When in doubt, use this tool. Being proactive with task management demonstrates attentiveness and ensures you complete all requirements successfully. \`
+const ProactiveGuidance = \` When in doubt, use this tool. Being proactive with task management demonstrates attentiveness and ensures you complete all requirements successfully. \`
 
 ```
 
@@ -338,7 +338,7 @@ Claude Code uses absolute language strategically:
 
 ```
 
-const AbsoluteRules \= \` - NEVER update the git config - ALWAYS prefer editing existing files - NEVER proactively create documentation files - ALWAYS use absolute file paths \`
+const AbsoluteRules = \` - NEVER update the git config - ALWAYS prefer editing existing files - NEVER proactively create documentation files - ALWAYS use absolute file paths \`
 
 ```
 
@@ -351,7 +351,7 @@ This creates clear, memorable rules with no ambiguity.
 
 ```
 
-const ForbiddenPatterns \= \` You MUST avoid text before/after your response, such as: - "The answer is <answer>." - "Here is the content of the file..." - "Based on the information provided, the answer is..." - "Here is what I will do next..." \`
+const ForbiddenPatterns = \` You MUST avoid text before/after your response, such as: - "The answer is <answer>." - "Here is the content of the file..." - "Based on the information provided, the answer is..." - "Here is what I will do next..." \`
 
 ```
 
@@ -362,13 +362,13 @@ Pattern Recognition Training: Teaching through negative examples
 
 ```
 
-const SpecificityCascade \= \` Use sandbox=false when you suspect the command might modify the system or access the network: - File operations: touch, mkdir, rm, mv, cp - File edits: nano, vim, writing to files with > - Installing: npm install, apt-get, brew - Git writes: git add, git commit, git push - Build systems: npm run build, make, ninja, etc. - Test suites: npm run test, pytest, cargo test, make check, ert, etc. - Network programs: gh, ping, coo, ssh, scp, etc. \`
+const SpecificityCascade = \` Use sandbox=false when you suspect the command might modify the system or access the network: - File operations: touch, mkdir, rm, mv, cp - File edits: nano, vim, writing to files with > - Installing: npm install, apt-get, brew - Git writes: git add, git commit, git push - Build systems: npm run build, make, ninja, etc. - Test suites: npm run test, pytest, cargo test, make check, ert, etc. - Network programs: gh, ping, coo, ssh, scp, etc. \`
 
-​```
+​\`\`\`
 
 Categorization Training: Groups → Specific commands → Examples
 
-#### 3\. The Context Preservation Pattern
+#### 3. The Context Preservation Pattern
 
 ````
 const MemoryUpdate \= \` You have been asked to add a memory or update memories in the memory file at ${A}. Please follow these guidelines: - If the input is an update to an existing memory, edit or replace the existing entry - Do not elaborate on the memory or add unnecessary commentary - Preserve the existing structure of the file and integrate new memories naturally. If the file is empty, just add the new memory as a bullet entry, do not add any headings. - IMPORTANT: Your response MUST be a single tool use for the FileWriteTool \`
@@ -386,7 +386,7 @@ Techniques:
 #### 4\. The Empty Input Handling
 ````
 
-const EmptyInputInstruction \= \` Usage: - This tool takes in no parameters. So leave the input blank or empty. DO NOT include a dummy object, placeholder string or a key like "input" or "empty". LEAVE IT BLANK. \`
+const EmptyInputInstruction = \` Usage: - This tool takes in no parameters. So leave the input blank or empty. DO NOT include a dummy object, placeholder string or a key like "input" or "empty". LEAVE IT BLANK. \`
 
 ```
 

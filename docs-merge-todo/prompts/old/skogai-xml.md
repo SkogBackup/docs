@@ -1,3 +1,9 @@
+---
+title: skogai-xml
+type: note
+permalink: skogai/docs-merge-todo/prompts/old/skogai-xml
+---
+
 ```xml
 # Skog AI - XML-Structured Prompts
 

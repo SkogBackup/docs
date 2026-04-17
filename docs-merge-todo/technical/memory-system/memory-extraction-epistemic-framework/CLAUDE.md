@@ -1,3 +1,9 @@
+---
+title: CLAUDE
+type: note
+permalink: skogai/docs-merge-todo/technical/memory-system/memory-extraction-epistemic-framework/claude
+---
+
 # CLAUDE.md
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
@@ -13,8 +19,7 @@ this is skogix's personal documentation repository containing:
 
 ## who am i working with?
 
-@user.md - skogix introduction, communication style, code preferences
-@definitions.md - terminology glossary for weird words skogix uses
+@user.md - skogix introduction, communication style, code preferences @definitions.md - terminology glossary for weird words skogix uses
 
 ## how should i work?
 
@@ -48,9 +53,7 @@ docs/skogix/
             └── [raw test outputs]
 ```
 
-@memory-extraction-epistemic-framework/README.md
-@guides/quick-start.md
-@research/research-summary.md
+@memory-extraction-epistemic-framework/README.md @guides/quick-start.md @research/research-summary.md
 
 ## what are the commands?
 
@@ -121,11 +124,11 @@ last_reinforced: 2025-09-26T14:30:22Z
 **memory extraction pipeline architecture:**
 
 1. session parser → reads jsonl from ~/.claude/projects/
-2. session chunker → breaks conversations into semantic chunks
-3. agent extractor → uses claude cli with 15 analytical frameworks
-4. multi-dimensional synthesis → combines multiple analysis types
-5. memory storage → markdown + lancedb vector index
-6. retrieval hooks → injects into active sessions
+1. session chunker → breaks conversations into semantic chunks
+1. agent extractor → uses claude cli with 15 analytical frameworks
+1. multi-dimensional synthesis → combines multiple analysis types
+1. memory storage → markdown + lancedb vector index
+1. retrieval hooks → injects into active sessions
 
 **critical research finding from experiment 3:**
 
@@ -138,6 +141,6 @@ causal (five whys), psychological (hidden drivers), systemic (prevention), emoti
 **next phase priorities:**
 
 1. consensus flagging (>90% agreement triggers review)
-2. null hypothesis agent (test "nothing went wrong")
-3. automated comparison to human extractions
-4. search interface over memories
+1. null hypothesis agent (test "nothing went wrong")
+1. automated comparison to human extractions
+1. search interface over memories

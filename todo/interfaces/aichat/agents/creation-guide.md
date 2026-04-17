@@ -1,29 +1,33 @@
 ---
-title: "Agent Creation Guide"
-description: "Step-by-step instructions for creating custom agents in SkogAI"
-category: "interfaces"
-subcategory: "aichat"
-tags: ["agent", "aichat", "tools", "llm-functions", "development"]
-version: "0.1.0"
-status: "draft"
-created: "2024-07-01"
-updated: "2024-07-01"
+title: Agent Creation Guide
+description: Step-by-step instructions for creating custom agents in SkogAI
+category: interfaces
+subcategory: aichat
+tags:
+  - agent
+  - aichat
+  - tools
+  - llm-functions
+  - development
+version: 0.1.0
+status: draft
+created: '2024-07-01'
+updated: '2024-07-01'
+permalink: skogai/todo/interfaces/aichat/agents/creation-guide
 ---
 
 # Agent Creation Guide
 
-[prompt:intro]
-This document provides detailed instructions for creating custom agents in SkogAI using the llm-functions framework. Follow this guide to build specialized AI agents with custom tools, RAG integration, and dynamic variables.
-[/prompt:intro]
+[prompt:intro] This document provides detailed instructions for creating custom agents in SkogAI using the llm-functions framework. Follow this guide to build specialized AI agents with custom tools, RAG integration, and dynamic variables. [/prompt:intro]
 
 ## Prerequisites
 
 Before creating a custom agent, ensure you have:
 
 1. Access to a working SkogAI installation
-2. Basic understanding of at least one supported programming language (Bash, Python, JavaScript)
-3. Familiarity with the llm-functions framework
-4. Permissions to build and link new agents
+1. Basic understanding of at least one supported programming language (Bash, Python, JavaScript)
+1. Familiarity with the llm-functions framework
+1. Permissions to build and link new agents
 
 ## Agent Directory Structure
 
@@ -265,9 +269,10 @@ cd /mnt/extra/skogai
 ```
 
 The build process will:
+
 1. Parse your tool implementations
-2. Generate function schemas in `functions.json`
-3. Create executable wrappers in the `bin/` directory
+1. Generate function schemas in `functions.json`
+1. Create executable wrappers in the `bin/` directory
 
 ## Step 7: Test Your Agent
 
@@ -278,9 +283,10 @@ aichat --agent [agent-name] "Your test prompt here"
 ```
 
 You should see:
+
 1. RAG initialization (if documents are specified)
-2. Prompts for any user variables
-3. The agent responding with access to your custom tools
+1. Prompts for any user variables
+1. The agent responding with access to your custom tools
 
 ## Advanced Topics
 
@@ -326,8 +332,8 @@ save_data() {
 When implementing the same tool in multiple languages, the llm-functions framework follows this priority order:
 
 1. JavaScript
-2. Python
-3. Bash
+1. Python
+1. Bash
 
 This means if `get_weather` is implemented in both `tools.js` and `tools.py`, the JavaScript implementation will be used.
 
@@ -336,29 +342,31 @@ This means if `get_weather` is implemented in both `tools.js` and `tools.py`, th
 ### Build Errors
 
 If the build fails:
+
 1. Check for syntax errors in your tool implementations
-2. Ensure all required annotations are present
-3. Verify the agent directory structure is correct
+1. Ensure all required annotations are present
+1. Verify the agent directory structure is correct
 
 ### Runtime Errors
 
 If tools fail at runtime:
+
 1. Check the logs for error messages
-2. Verify any external dependencies are installed
-3. Test the tools manually outside of the agent context
+1. Verify any external dependencies are installed
+1. Test the tools manually outside of the agent context
 
 ## Best Practices
 
 1. **Keep tools focused**: Each tool should do one thing well
-2. **Document extensively**: Include examples in your README.md
-3. **Validate inputs**: Use argc annotations to validate arguments
-4. **Handle errors gracefully**: Tools should provide meaningful error messages
-5. **Use conversation starters**: Help users understand your agent's capabilities
-6. **Include relevant documentation**: Add helpful resources to the RAG collection
+1. **Document extensively**: Include examples in your README.md
+1. **Validate inputs**: Use argc annotations to validate arguments
+1. **Handle errors gracefully**: Tools should provide meaningful error messages
+1. **Use conversation starters**: Help users understand your agent's capabilities
+1. **Include relevant documentation**: Add helpful resources to the RAG collection
 
 [todo:items]
+
 - Create templates for common agent types
 - Add examples of complex tool implementations with error handling
 - Document integration with external APIs and services
-- Provide guidance on security considerations for agent tools
-[/todo:items]
+- Provide guidance on security considerations for agent tools [/todo:items]

@@ -1,6 +1,7 @@
 ---
-title: "WO-8: Add cross-references across all skills"
+title: 'WO-8: Add cross-references across all skills'
 labels: skills, enhancement, phase-4
+permalink: skogai/github-issues/08-wo8-cross-references
 ---
 
 ## Summary
@@ -12,23 +13,26 @@ Only 4 of 18 skills currently reference others. Audit all skills and add consist
 ## Context
 
 ### Skills that currently cross-reference:
+
 - **skogai-developing-for-claude-code** → "working-with-claude-code" skill
 - **skogai-project-lifecycle** → lists skogai-argc, skogai-docs, skogai-jq, skogai-todos, skogai-worktrunk, etc. as graduated examples
 - **skogai-workflow** → mentions routing, prompting, lifecycle as "lenses" (no links)
 - **fleet-memory** → lists integration points (memory-systems, filesystem-context — may not be real skills)
 
 ### Missing cross-references identified:
+
 1. **skogai-mcp-builder** ↔ **skogai-prompting** (MCP tool design aligns with prompt-native philosophy)
-2. **nelson** ↔ **fleet-memory** (multi-agent coordination)
-3. **skogai-argc** ↔ **skogai-worktrunk** (wt uses argc patterns)
-4. **skogai-docs** ↔ **skogai-todos** (both track work items)
-5. **skogai-workflow** ↔ **skogai-project-lifecycle** (loop vs dual-phase)
-6. **skogai-git** ↔ **skogai-worktrunk** (workflow vs config — added by WO-7)
-7. **skogai-routing** ↔ **skogai-project-lifecycle** (how to structure vs when to formalize)
-8. **skogai-prompting** ↔ **nelson** (philosophy that enables squadron pattern)
-9. **skogai-prompting** ↔ **fleet-memory** (philosophy that enables memory coordination)
+1. **nelson** ↔ **fleet-memory** (multi-agent coordination)
+1. **skogai-argc** ↔ **skogai-worktrunk** (wt uses argc patterns)
+1. **skogai-docs** ↔ **skogai-todos** (both track work items)
+1. **skogai-workflow** ↔ **skogai-project-lifecycle** (loop vs dual-phase)
+1. **skogai-git** ↔ **skogai-worktrunk** (workflow vs config — added by WO-7)
+1. **skogai-routing** ↔ **skogai-project-lifecycle** (how to structure vs when to formalize)
+1. **skogai-prompting** ↔ **nelson** (philosophy that enables squadron pattern)
+1. **skogai-prompting** ↔ **fleet-memory** (philosophy that enables memory coordination)
 
 ### No cross-references needed (standalone):
+
 - skogai-jq (self-contained JSON transformation library)
 
 ## Tasks

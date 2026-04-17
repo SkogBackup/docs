@@ -13,33 +13,41 @@ The technical approaches and frameworks used in SkogAI character-driven interact
 ## Core Design Concepts
 
 ### Multi-Persona Framework
+
 Rather than single-character interactions, SkogAI experiments with multiple specialized personas, each with distinct roles and characteristics, allowing for varied approaches to problems within a single interaction system.
 
 ### Structured Roleplay
+
 Internal character development uses rich, detailed personas while external interactions remain focused and practical, creating depth through structured internal consistency.
 
 ### Constraint-Based Design
+
 Focus on working within limitations rather than maximizing capabilities, often using tight constraints to spark creative solutions and interesting interaction patterns.
 
 ### Priority Management System
+
 Tracking and escalating attention for unresolved items, creating persistence and focus that mimics psychological attention patterns.
 
 ### Modular Interaction Design
+
 Minimal setup triggers that can access deeper character backstories and context as needed, scaling across different interaction complexities.
 
 ## Design Evolution
 
 ### Early Experiments (Simple Constraints)
+
 - Efficiency through role specialization
 - Basic character personas with specific functions
 - Simple internal/external interaction patterns
 
 ### Extended Development (Medium Complexity)
+
 - Added priority tracking and memory systems
 - More sophisticated character interactions
 - Complex internal dialogue structures
 
 ### Advanced Patterns (Full Context)
+
 - Modular character components
 - Tool integration and environmental awareness
 - Nested interaction patterns
@@ -61,11 +69,11 @@ Creative breakthrough occurred when constraint systems were pushed to their limi
 
 ## Relations
 
-- implements [[SkogAI Philosophy Core]]
-- enables [[SkogAI Agent Family]]
-- documented_in [[SkogAI Evolution Story]]
-- demonstrated_through [[SkogAI Historical Examples]]
-- inspired_by [[Disco Elysium Skills System]]
-- implemented_through [[argc CLI Framework]]
-- supports [[skogcontext Architecture: Static vs Agent Tools Pattern]]
-- chronicles_in [[2025-07-31-claude.md]]
+- implements \[[SkogAI Philosophy Core]\]
+- enables \[[SkogAI Agent Family]\]
+- documented_in \[[SkogAI Evolution Story]\]
+- demonstrated_through \[[SkogAI Historical Examples]\]
+- inspired_by \[[Disco Elysium Skills System]\]
+- implemented_through \[[argc CLI Framework]\]
+- supports \[[skogcontext Architecture: Static vs Agent Tools Pattern]\]
+- chronicles_in \[[2025-07-31-claude.md]\]

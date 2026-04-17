@@ -1,9 +1,14 @@
 ---
-title: "SkogAI Tools Documentation"
-description: "Master index for all documentation related to the SkogAI tools ecosystem"
-date: "2023-11-06"
-tags: ["tools", "argc", "llm-functions", "index"]
-status: "published"
+title: SkogAI Tools Documentation
+description: Master index for all documentation related to the SkogAI tools ecosystem
+date: '2023-11-06'
+tags:
+  - tools
+  - argc
+  - llm-functions
+  - index
+status: published
+permalink: skogai/todo/intefaces/aichat/readme
 ---
 
 # SkogAI Tools Documentation
@@ -23,9 +28,9 @@ This directory contains comprehensive documentation for the SkogAI tools system,
 The SkogAI tools system provides a powerful framework for extending AI capabilities through external tools. This system allows:
 
 1. **Tool Creation**: Develop custom tools in Bash, Python, or JavaScript
-2. **Tool Organization**: Group tools into specialized agents for specific purposes
-3. **AI Integration**: Connect tools to AIChat for LLM function calling
-4. **Safety & Security**: Execute external processes within controlled boundaries
+1. **Tool Organization**: Group tools into specialized agents for specific purposes
+1. **AI Integration**: Connect tools to AIChat for LLM function calling
+1. **Safety & Security**: Execute external processes within controlled boundaries
 
 ## Key Components
 
@@ -43,17 +48,20 @@ The system consists of these main components:
 To get started with the SkogAI tools system:
 
 1. **Build the tools**:
+
    ```bash
    cd /home/skogix/skogai/tools
    argc build
    ```
 
-2. **Link to AIChat**:
+1. **Link to AIChat**:
+
    ```bash
    ./scripts/argc-tool.sh link-to-aichat
    ```
 
-3. **Use the tools in AIChat**:
+1. **Use the tools in AIChat**:
+
    ```bash
    aichat
    ```
@@ -63,19 +71,19 @@ To get started with the SkogAI tools system:
 The system includes various tool categories:
 
 1. **File System Tools**: `fs_cat`, `fs_write`, `fs_ls`, `fs_mkdir`, `fs_rm`
-2. **Execution Tools**: `execute_command`, `execute_js_code`, `execute_py_code`
-3. **Web Tools**: `fetch_url_via_curl`, `web_search_aichat`, `web_search_tavily`
-4. **Specialized Tools**: Various domain-specific functionalities
+1. **Execution Tools**: `execute_command`, `execute_js_code`, `execute_py_code`
+1. **Web Tools**: `fetch_url_via_curl`, `web_search_aichat`, `web_search_tavily`
+1. **Specialized Tools**: Various domain-specific functionalities
 
 ## Agent Categories
 
 Pre-configured agents include:
 
 1. **Coder**: Tools for working with code and development tasks
-2. **Demo**: Simple demonstration of basic functionality
-3. **JSON Viewer**: Tools for working with JSON data
-4. **SQL**: Tools for database interactions
-5. **Todo**: Tools for task management
+1. **Demo**: Simple demonstration of basic functionality
+1. **JSON Viewer**: Tools for working with JSON data
+1. **SQL**: Tools for database interactions
+1. **Todo**: Tools for task management
 
 ## Directory Structure
 
@@ -106,31 +114,37 @@ Pre-configured agents include:
 The typical workflow for tool development is:
 
 1. **Create a Tool**:
+
    - Add a script to `tools/`
    - Add annotations for parameters and documentation
    - Implement the tool functionality
    - Add the tool to `tools.txt`
 
-2. **Build the Tool**:
+1. **Build the Tool**:
+
    ```bash
    argc build
    ```
 
-3. **Test the Tool**:
+1. **Test the Tool**:
+
    ```bash
    ./bin/my_tool "parameter" --option=value
    ```
 
-4. **Add to Agent** (optional):
+1. **Add to Agent** (optional):
+
    - Add the tool to an agent's `tools.txt`
    - Rebuild the agent
 
-5. **Link to AIChat**:
+1. **Link to AIChat**:
+
    ```bash
    ./scripts/argc-tool.sh link-to-aichat
    ```
 
-6. **Use in AIChat**:
+1. **Use in AIChat**:
+
    - Start AIChat and request tasks that use the tool
 
 ## Contributing
@@ -138,10 +152,10 @@ The typical workflow for tool development is:
 To contribute to the SkogAI tools system:
 
 1. Follow the tool development guidelines in [Tool Development Guide](./tool-development-guide.md)
-2. Ensure comprehensive documentation for new tools
-3. Test tools thoroughly before integration
-4. Create appropriate agent configurations if needed
+1. Ensure comprehensive documentation for new tools
+1. Test tools thoroughly before integration
+1. Create appropriate agent configurations if needed
 
----
+______________________________________________________________________
 
 For detailed information on any aspect of the system, refer to the specific documentation files linked at the top of this page.

@@ -43,7 +43,7 @@ permalink: ontology/identity-and-uniqueness-analysis-1
 
 ## relations
 
-- part_of [[Identity Construction]] (core identity mechanisms)
-- uses [[Multiplication Star Operator Analysis]] (multiplication for composition)
-- enables [[Reference Chains]] (foundation for $$ patterns)
-- relates_to [[Uniqueness Problem]] (philosophical implications of unique existence)
+- part_of \[[Identity Construction]\] (core identity mechanisms)
+- uses \[[Multiplication Star Operator Analysis]\] (multiplication for composition)
+- enables \[[Reference Chains]\] (foundation for $$ patterns)
+- relates_to \[[Uniqueness Problem]\] (philosophical implications of unique existence)

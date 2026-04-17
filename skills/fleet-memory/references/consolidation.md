@@ -1,3 +1,9 @@
+---
+title: consolidation
+type: note
+permalink: skogai/skills/fleet-memory/references/consolidation
+---
+
 # Memory Consolidation Reference
 
 Patterns for compressing, promoting, and archiving memory over time. Consolidation keeps the knowledge tier useful as missions accumulate, preventing retrieval degradation and context bloat.
@@ -60,6 +66,7 @@ CONSOLIDATE_PATTERNS(patterns_file):
 ```
 
 **Pattern entry format**:
+
 ```markdown
 ### {Pattern Name}
 - **Evidence**: {missions where observed, count}
@@ -144,6 +151,7 @@ reason: dormant | contradicted | superseded | inactive
 ```
 
 **Fields**:
+
 - `archived_from`: Original file path (for traceability)
 - `archived_by`: Agent that performed the archival
 - `valid_until`: When the content was marked invalid
@@ -156,10 +164,11 @@ Promoting a pattern to policy is a significant operation — it becomes permanen
 ### Promotion Criteria
 
 A pattern qualifies for promotion when ALL of:
+
 1. Confirmed across 3+ independent missions
-2. No contradicting evidence in recent missions
-3. Actionable: agents can apply it without interpretation
-4. Stable: hasn't changed in substance for 2+ missions
+1. No contradicting evidence in recent missions
+1. Actionable: agents can apply it without interpretation
+1. Stable: hasn't changed in substance for 2+ missions
 
 ### Promotion Procedure
 
@@ -178,35 +187,35 @@ PROMOTE_TO_POLICY(pattern, target_policy_file):
 ### Demotion (Rare)
 
 If a promoted pattern proves wrong:
+
 1. Do NOT modify policy during a mission (policy is read-only during execution)
-2. Record contradiction in patterns.md with evidence
-3. Between missions: remove from policy, move to archive with reason="demoted"
-4. Add to standing orders as anti-pattern if the error caused damage
+1. Record contradiction in patterns.md with evidence
+1. Between missions: remove from policy, move to archive with reason="demoted"
+1. Add to standing orders as anti-pattern if the error caused damage
 
 ## Failure Modes
 
-| Failure | Detection | Response |
-|---------|-----------|----------|
-| Lost during consolidation | Pattern referenced in active mission but archived | Restore from archive. Add mission-reference check before archiving. |
-| Premature promotion | Pattern promoted with insufficient evidence | Demote between missions. Raise evidence threshold. |
-| Archive bloat | Consolidation didn't reduce file count enough | Lower merge threshold. Accept coarser summaries. |
-| Contradicted policy | Promoted pattern conflicts with newer evidence | Flag for between-mission review. Never modify policy mid-execution. |
-| Consolidation during mission | Coordinator runs consolidation while agents are active | Only consolidate between missions or during checkpoint freeze. |
+| Failure                      | Detection                                              | Response                                                            |
+| ---------------------------- | ------------------------------------------------------ | ------------------------------------------------------------------- |
+| Lost during consolidation    | Pattern referenced in active mission but archived      | Restore from archive. Add mission-reference check before archiving. |
+| Premature promotion          | Pattern promoted with insufficient evidence            | Demote between missions. Raise evidence threshold.                  |
+| Archive bloat                | Consolidation didn't reduce file count enough          | Lower merge threshold. Accept coarser summaries.                    |
+| Contradicted policy          | Promoted pattern conflicts with newer evidence         | Flag for between-mission review. Never modify policy mid-execution. |
+| Consolidation during mission | Coordinator runs consolidation while agents are active | Only consolidate between missions or during checkpoint freeze.      |
 
 ## Consolidation Budget
 
 Consolidation costs tokens. Budget accordingly:
 
-| Operation | Approximate Cost | Frequency |
-|-----------|-----------------|-----------|
-| Pattern consolidation | ~500-1000 tokens | When patterns.md > 200 lines |
-| Entity consolidation | ~300-500 tokens | When entities > 50 |
-| Archive consolidation | ~200-400 tokens per group | When archive/ > 20 files |
-| Full consolidation | ~1500-2500 tokens | Between missions |
+| Operation             | Approximate Cost          | Frequency                    |
+| --------------------- | ------------------------- | ---------------------------- |
+| Pattern consolidation | ~500-1000 tokens          | When patterns.md > 200 lines |
+| Entity consolidation  | ~300-500 tokens           | When entities > 50           |
+| Archive consolidation | ~200-400 tokens per group | When archive/ > 20 files     |
+| Full consolidation    | ~1500-2500 tokens         | Between missions             |
 
 Keep full consolidation under 3000 tokens. If it costs more, the knowledge base has grown too large — aggressive archiving is needed.
 
----
+______________________________________________________________________
 
-**Reference Version**: 1.0.0
-**Companion to**: fleet-memory SKILL.md, architecture.md, primitives.md
+**Reference Version**: 1.0.0 **Companion to**: fleet-memory SKILL.md, architecture.md, primitives.md

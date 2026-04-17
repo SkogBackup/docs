@@ -1,10 +1,14 @@
+---
+title: whats-next
+type: note
+permalink: skogai/skills/skogai-jq/whats-next
+---
+
 # Session Handoff - 2025-12-06
 
 ## Current State
 
-**Branch:** master
-**Status:** modified (array-prepend transformation added, not committed)
-**Working Directory:** /home/skogix/dev/skogix/src/jq-transforms
+**Branch:** master **Status:** modified (array-prepend transformation added, not committed) **Working Directory:** /home/skogix/dev/skogix/src/jq-transforms
 
 **Recent Work:**
 
@@ -59,6 +63,7 @@ Successfully added 6 transformations with comprehensive test coverage:
   - Tests all falsy values: null, false, 0
 
 - **string-join** (17 tests) - Join array elements into string
+
   - Custom delimiter support (including multi-character)
   - Converts all types to strings before joining
   - Comprehensive edge case testing
@@ -111,9 +116,9 @@ Added comprehensive guide for future Claude Code instances:
 ### Decisions Made
 
 1. **Direct implementation over subagents**: Subagents couldn't bypass permission prompts, implemented transformations directly using their designs
-2. **Atomic commits**: Split work into 6 separate commits (one per transformation) rather than one large commit
-3. **Bug fixes on discovery**: Fixed array-flatten and crud-merge bugs during testing rather than deferring
-4. **CLAUDE.md focus**: Emphasized architecture, critical patterns, and real bugs over generic advice
+1. **Atomic commits**: Split work into 6 separate commits (one per transformation) rather than one large commit
+1. **Bug fixes on discovery**: Fixed array-flatten and crud-merge bugs during testing rather than deferring
+1. **CLAUDE.md focus**: Emphasized architecture, critical patterns, and real bugs over generic advice
 
 ## Next Steps
 
@@ -125,14 +130,15 @@ Added comprehensive guide for future Claude Code instances:
    git push origin master
    ```
 
-2. **Continue implementing remaining transformations** (52 tasks in `tasks/`)
+1. **Continue implementing remaining transformations** (52 tasks in `tasks/`)
 
    - High priority (h-implement-\*): 4 remaining (schema-validation, test-generator, crud-delete, crud-has marked done)
    - Medium priority (m-implement-\*): 52 tasks
    - Use IMPLEMENTATION_SPEC.md with comprehensive testing requirements
    - Launch code-writer agents in batches OR implement directly
 
-3. **Extract transformations from chat-history**
+1. **Extract transformations from chat-history**
+
    - 50+ existing transformations in `~/dev/chat-history/jq-utils/`
    - Add schemas and comprehensive tests
    - Validate with real-world usage patterns
@@ -169,6 +175,7 @@ Added comprehensive guide for future Claude Code instances:
   - ~~string-truncate~~ (DONE)
 
 - **Infrastructure improvements**:
+
   - Schema validation with ajv
   - Transformation generator template
   - Documentation generator from schemas
@@ -184,13 +191,14 @@ None currently - all critical paths are clear.
    - Tasks h-implement-crud-delete and h-implement-crud-has are marked as high priority but already exist
    - Should these task files be deleted or marked as complete?
 
-2. **Array index support in paths?**
+1. **Array index support in paths?**
 
    - Current: Paths like "user.name" work, but "items.0.id" doesn't
    - Should we support array index notation?
    - Decision: Not in current spec - document as limitation
 
-3. **Nested path support in pick-fields?**
+1. **Nested path support in pick-fields?**
+
    - Current: Only top-level fields ("name", "email")
    - Should we support nested paths ("user.name")?
    - Decision: Not yet - would break comma-separated parsing
@@ -205,20 +213,21 @@ None currently - all critical paths are clear.
    - Permission system overrides prompt instructions
    - Solution: Use subagents for planning/design, implement directly when permission issues arise
 
-2. **Atomic commits are better**
+1. **Atomic commits are better**
 
    - Initial mega-commit (71 files, +1293 lines) was hard to review
    - Split into 6 atomic commits (one per transformation)
    - Much cleaner git history, easier to cherry-pick or revert
 
-3. **Common jq pitfalls validated**
+1. **Common jq pitfalls validated**
 
    - `//` fallback breaks with falsy values (null, false) - use `try-catch` instead
    - `+` operator doesn't merge recursively - need custom merge logic
    - `add` fails on mixed types - use `reduce` pattern
    - These are documented in CLAUDE.md for future reference
 
-4. **Test coverage is critical**
+1. **Test coverage is critical**
+
    - Following IMPLEMENTATION_SPEC.md's 90%+ coverage requirement caught bugs early
    - Edge case testing (null, false, 0) prevented production bugs
    - Type safety checks essential for robustness
@@ -270,10 +279,10 @@ src/jq-transforms/
 ### Next Session Priorities
 
 1. Push commits to remote (git push origin master)
-2. Clean up task files (mark h-implement-crud-delete/crud-has as done or delete)
-3. Continue parallel implementation of remaining transformations
-4. Consider extracting transformations from chat-history for real validation
+1. Clean up task files (mark h-implement-crud-delete/crud-has as done or delete)
+1. Continue parallel implementation of remaining transformations
+1. Consider extracting transformations from chat-history for real validation
 
----
+______________________________________________________________________
 
 **Status:** Ready to continue. 6 new transformations implemented with comprehensive testing, CLAUDE.md created for future sessions. All tests passing, clean git history, ready to push.

@@ -12,8 +12,7 @@ This git repository is Claude's workspace, containing thoughts, documentation, a
 - Claude's role is documented in [`CLAUDE.md`](./CLAUDE.md)
 - Claude excels at balancing innovation with practical implementation
 
-Information about Claude can be found in [`ABOUT.md`](./ABOUT.md), including personality and goals.
-Information about Claude's architecture can be found in [`ARCHITECTURE.md`](./ARCHITECTURE.md).
+Information about Claude can be found in [`ABOUT.md`](./ABOUT.md), including personality and goals. Information about Claude's architecture can be found in [`ARCHITECTURE.md`](./ARCHITECTURE.md).
 
 ## Usage
 

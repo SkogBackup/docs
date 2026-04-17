@@ -1,25 +1,27 @@
 ---
 categories:
-- tools
-- gh
+  - tools
+  - gh
 permalink: tools/gh/filtering
 generated_at: '2025-12-19T12:56:06Z'
 title: '# gh - Filtering Issues and PRs'
 tags:
-- filtering
-- issues
-- pr
-- github
-- gh
+  - filtering
+  - issues
+  - pr
+  - github
+  - gh
 type: note
 ---
 
 # gh - Filtering Issues and PRs
 
 ## When to Use
+
 Need to find specific issues/PRs without manual searching
 
 ## Key Facts
+
 - Use native flags BEFORE using --jq for filtering
 - Filtering flags are more efficient than post-processing with --jq
 - Combine multiple filters for precise results
@@ -27,6 +29,7 @@ Need to find specific issues/PRs without manual searching
 ## Native Filter Flags
 
 ### Issues
+
 ```bash
 --assignee <login>     # Filter by assignee (use @me for yourself)
 --author <login>       # Filter by author
@@ -39,6 +42,7 @@ Need to find specific issues/PRs without manual searching
 ```
 
 ### Pull Requests
+
 ```bash
 --assignee <login>     # Filter by assignee
 --author <login>       # Filter by author
@@ -53,40 +57,49 @@ Need to find specific issues/PRs without manual searching
 ## Common Patterns
 
 ### My Open Issues
+
 ```bash
 gh issue list --assignee @me --state open
 ```
 
 ### Issues with Specific Label
+
 ```bash
 gh issue list --label "bug" --label "high-priority"
 ```
 
 ### PRs Waiting for Review
+
 ```bash
 gh pr list --search "review:required"
 ```
 
 ### PRs I Authored
+
 ```bash
 gh pr list --author @me
 ```
 
 ### Closed Issues from Last Week
+
 ```bash
 gh issue list --state closed --search "closed:>2025-10-06"
 ```
 
 ### PRs Targeting Specific Branch
+
 ```bash
 gh pr list --base main
 ```
 
 ### Combine Filters with JSON Output
+
 ```bash
 gh issue list --label "bug" --state open --json number,title --jq '.[].number'
 ```
+
 **Example**:
+
 ```bash
 $ gh issue list --label "documentation" --json number,title --jq '.[] | "\(.number): \(.title)"'
 187: Create AI-Optimized CLI Command Documentation
@@ -94,6 +107,7 @@ $ gh issue list --label "documentation" --json number,title --jq '.[] | "\(.numb
 ```
 
 ### Complex Search Queries
+
 ```bash
 # Issues without labels
 gh issue list --search "no:label"
@@ -111,6 +125,7 @@ gh issue list --search "updated:>2025-10-01"
 ## GitHub Search Query Syntax
 
 Common search qualifiers:
+
 ```
 is:open, is:closed, is:merged
 label:name
@@ -126,11 +141,13 @@ path:filename
 Full reference: https://docs.github.com/en/search-github/searching-on-github/searching-issues-and-pull-requests
 
 ## Don't Use When
+
 - You need complex post-processing (then use --json with --jq)
 - Filter isn't supported by gh (then use --search with GitHub query syntax)
 - Working with data that needs transformation (use --template)
 
 ## See Also
+
 - @skogai/gh/json.md - JSON output and formatting
 - @skogai/gh/templates.md - Go template patterns (TODO)
 - Run `gh issue list --help` for all flags

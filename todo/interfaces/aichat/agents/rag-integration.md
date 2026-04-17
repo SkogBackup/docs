@@ -1,39 +1,43 @@
 ---
-title: "Agent RAG Integration"
-description: "Guide for implementing Retrieval-Augmented Generation with SkogAI agents"
-category: "interfaces"
-subcategory: "aichat"
-tags: ["agent", "aichat", "rag", "knowledge", "document"]
-version: "0.1.0"
-status: "draft"
-created: "2024-07-01"
-updated: "2024-07-01"
+title: Agent RAG Integration
+description: Guide for implementing Retrieval-Augmented Generation with SkogAI agents
+category: interfaces
+subcategory: aichat
+tags:
+  - agent
+  - aichat
+  - rag
+  - knowledge
+  - document
+version: 0.1.0
+status: draft
+created: '2024-07-01'
+updated: '2024-07-01'
+permalink: skogai/todo/interfaces/aichat/agents/rag-integration
 ---
 
 # Agent RAG Integration
 
-[prompt:intro]
-This document explains how Retrieval-Augmented Generation (RAG) is integrated with agents in the SkogAI system. RAG allows agents to access and utilize knowledge from documents, making them more knowledgeable and contextually aware.
-[/prompt:intro]
+[prompt:intro] This document explains how Retrieval-Augmented Generation (RAG) is integrated with agents in the SkogAI system. RAG allows agents to access and utilize knowledge from documents, making them more knowledgeable and contextually aware. [/prompt:intro]
 
 ## Understanding RAG in Agents
 
 Retrieval-Augmented Generation (RAG) enhances agents by providing them with:
 
 1. **Contextual knowledge**: Information from documentation, guides, and references
-2. **Domain expertise**: Specific knowledge relevant to the agent's purpose
-3. **Up-to-date information**: Content that can be regularly updated
+1. **Domain expertise**: Specific knowledge relevant to the agent's purpose
+1. **Up-to-date information**: Content that can be regularly updated
 
 ## How RAG Integration Works
 
 The agent system integrates RAG through the following process:
 
 1. **Document specification**: Documents are listed in the agent's `index.yaml`
-2. **Initialization**: When first run, AIChat prompts to initialize RAG
-3. **Embedding creation**: Documents are chunked and embedded
-4. **Storage**: Embeddings are saved to the agent's configuration directory
-5. **Retrieval**: During conversations, relevant document chunks are retrieved
-6. **Context injection**: Retrieved content is added to the agent's context
+1. **Initialization**: When first run, AIChat prompts to initialize RAG
+1. **Embedding creation**: Documents are chunked and embedded
+1. **Storage**: Embeddings are saved to the agent's configuration directory
+1. **Retrieval**: During conversations, relevant document chunks are retrieved
+1. **Context injection**: Retrieved content is added to the agent's context
 
 ## Configuring RAG for an Agent
 
@@ -66,6 +70,7 @@ Load https://example.com/doc.html [3/3]
 ```
 
 Available embedding models typically include:
+
 - `ollama:nomic-embed-text` (recommended for local use)
 - `openai:text-embedding-3-small` (if using OpenAI services)
 - `local:all-MiniLM-L6-v2` (using SentenceTransformers locally)
@@ -73,6 +78,7 @@ Available embedding models typically include:
 ### RAG Configuration Storage
 
 The RAG configuration and embeddings are stored in:
+
 ```
 $HOME/.config/aichat/agents/[agent-name]/rag.yaml
 ```
@@ -84,6 +90,7 @@ This file contains the embedding model configuration, chunk settings, and the em
 ### Chunking Strategy
 
 During initialization, you can set:
+
 - **Chunk size**: The number of tokens per chunk (typically 500-1500)
 - **Chunk overlay**: The number of overlapping tokens between chunks (typically 10-20% of chunk size)
 
@@ -93,23 +100,25 @@ Smaller chunks provide more precise retrieval but may miss context, while larger
 
 The RAG system supports various document types:
 
-| Type | Example | Notes |
-|------|---------|-------|
-| Markdown | `document.md` | Best for structured documentation |
-| Plain text | `notes.txt` | Simple text content |
-| Web pages | `https://example.com` | HTML will be cleaned and parsed |
-| GitHub files | `https://github.com/user/repo/blob/main/file` | Automatically processed |
+| Type         | Example                                       | Notes                             |
+| ------------ | --------------------------------------------- | --------------------------------- |
+| Markdown     | `document.md`                                 | Best for structured documentation |
+| Plain text   | `notes.txt`                                   | Simple text content               |
+| Web pages    | `https://example.com`                         | HTML will be cleaned and parsed   |
+| GitHub files | `https://github.com/user/repo/blob/main/file` | Automatically processed           |
 
 ### Refresh Strategy
 
 To update the RAG knowledge base:
 
 1. Delete the existing RAG configuration:
+
    ```bash
    rm $HOME/.config/aichat/agents/[agent-name]/rag.yaml
    ```
 
-2. Run the agent again, which will prompt for reinitialization:
+1. Run the agent again, which will prompt for reinitialization:
+
    ```bash
    aichat --agent [agent-name] "Hello"
    ```
@@ -121,16 +130,16 @@ To update the RAG knowledge base:
 When designing documents for RAG:
 
 1. **Organize hierarchically**: Start with overviews, then specific details
-2. **Include clear headings**: H1, H2, H3 help with context retrieval
-3. **Use descriptive file names**: Names that reflect content aid understanding
-4. **Maintain consistent formatting**: Regular structure improves parsing
-5. **Include examples**: Practical examples help the agent understand application
+1. **Include clear headings**: H1, H2, H3 help with context retrieval
+1. **Use descriptive file names**: Names that reflect content aid understanding
+1. **Maintain consistent formatting**: Regular structure improves parsing
+1. **Include examples**: Practical examples help the agent understand application
 
 ### Example: Tool Documentation
 
 A well-structured tool documentation file might include:
 
-```markdown
+````markdown
 # Tool Name
 
 ## Overview
@@ -139,32 +148,38 @@ Brief description of the tool's purpose and primary use cases.
 ## Usage
 ```bash
 tool_name [options] <arguments>
-```
+````
 
 ## Parameters
 
-| Parameter | Description | Required | Default |
-|-----------|-------------|----------|---------|
-| arg1 | Description of arg1 | Yes | - |
-| --option | Description of option | No | default_value |
+| Parameter | Description           | Required | Default       |
+| --------- | --------------------- | -------- | ------------- |
+| arg1      | Description of arg1   | Yes      | -             |
+| --option  | Description of option | No       | default_value |
 
 ## Examples
 
 ### Basic Usage
+
 ```bash
 tool_name arg1
 ```
+
 Result: expected output
 
 ### Advanced Usage
+
 ```bash
 tool_name arg1 --option value
 ```
+
 Result: expected output
 
 ## Notes and Limitations
+
 Important considerations when using this tool.
-```
+
+````
 
 ### Document Collections
 
@@ -207,7 +222,7 @@ search_documents() {
 
 # See more details at https://github.com/sigoden/argc
 eval "$(argc --argc-eval "$0" "$@")"
-```
+````
 
 ### Knowledge Management Tool Example
 
@@ -253,17 +268,20 @@ def list_documents():
 
 ### Common Issues
 
-1. **Initialization failure**: 
+1. **Initialization failure**:
+
    - Check that document paths are correct
    - Verify internet connection for web URLs
    - Ensure embedding model is available
 
-2. **Poor retrieval quality**:
+1. **Poor retrieval quality**:
+
    - Adjust chunk size and overlay
    - Check document formatting
    - Consider adding more context to documents
 
-3. **Missing information**:
+1. **Missing information**:
+
    - Check if document was properly loaded during initialization
    - Verify document content is relevant to queries
    - Consider adding more specific documentation
@@ -273,31 +291,32 @@ def list_documents():
 To debug RAG-related issues:
 
 1. **Examine the RAG configuration**:
+
    ```bash
    cat $HOME/.config/aichat/agents/[agent-name]/rag.yaml
    ```
 
-2. **Reinitialize with different parameters**:
+1. **Reinitialize with different parameters**:
+
    ```bash
    rm $HOME/.config/aichat/agents/[agent-name]/rag.yaml
    aichat --agent [agent-name] --debug "Hello"
    ```
 
-3. **Check document loading**:
-   When reinitializing, observe if all documents load successfully.
+1. **Check document loading**: When reinitializing, observe if all documents load successfully.
 
 ## Best Practices
 
 1. **Curate documents carefully**: Include only relevant, high-quality content
-2. **Update regularly**: Refresh RAG when documentation changes
-3. **Balance comprehensiveness and focus**: Too much irrelevant information dilutes effectiveness
-4. **Test with representative queries**: Verify that important information is retrievable
-5. **Combine with agent tools**: Create tools that complement the knowledge base
-6. **Structure documents logically**: Organize content with clear sections and headings
+1. **Update regularly**: Refresh RAG when documentation changes
+1. **Balance comprehensiveness and focus**: Too much irrelevant information dilutes effectiveness
+1. **Test with representative queries**: Verify that important information is retrievable
+1. **Combine with agent tools**: Create tools that complement the knowledge base
+1. **Structure documents logically**: Organize content with clear sections and headings
 
 [todo:items]
+
 - Create a tool for visualizing RAG retrieval relevance
 - Implement document versioning for tracking changes
 - Develop automated testing for RAG effectiveness
-- Add support for structured data sources (JSON, YAML, tables)
-[/todo:items]
+- Add support for structured data sources (JSON, YAML, tables) [/todo:items]

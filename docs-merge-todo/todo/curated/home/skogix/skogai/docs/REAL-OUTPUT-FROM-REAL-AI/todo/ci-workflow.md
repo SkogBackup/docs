@@ -32,11 +32,11 @@ The memory-dump/todo folder serves as the primary staging area for all incoming 
 The system operates as a continuous pipeline:
 
 1. **Capture**: Markdown files are added to `/memory-dump/todo/`
-2. **Processing**: Automated script processes files on a schedule (e.g., every 15 minutes)
-3. **Summarization**: Each file is summarized with relation/structure guidance
-4. **Enhancement**: AI suggests structural improvements, missing links, categorization
-5. **Integration**: Content is properly linked to existing knowledge
-6. **Organization**: Processed files move to appropriate permanent locations
+1. **Processing**: Automated script processes files on a schedule (e.g., every 15 minutes)
+1. **Summarization**: Each file is summarized with relation/structure guidance
+1. **Enhancement**: AI suggests structural improvements, missing links, categorization
+1. **Integration**: Content is properly linked to existing knowledge
+1. **Organization**: Processed files move to appropriate permanent locations
 
 ### 3. The summarize.sh Tool
 
@@ -126,22 +126,26 @@ done
 ## Best Practices for Feeding the System
 
 1. **Quick Capture**: Prioritize getting content into the system quickly
+
    - Don't worry about perfect formatting initially
    - Focus on capturing core information
 
-2. **Content Signaling**: Use minimal formatting to help the AI processor
+1. **Content Signaling**: Use minimal formatting to help the AI processor
+
    - Simple `# Headings` for main topics
    - Use `[[brackets]]` to indicate important connection points
    - Include `#tags` for key categorization
 
-3. **Processing Directives**: Add special directives at the top of files
+1. **Processing Directives**: Add special directives at the top of files
+
    ```
    <!-- PRIORITY: HIGH -->
    <!-- RELATED: System Architecture, Error Handling -->
    <!-- CATEGORY: Implementation -->
    ```
 
-4. **Time-Based Processing**: Different processing schedules based on content type
+1. **Time-Based Processing**: Different processing schedules based on content type
+
    - Critical documents: Process immediately
    - Standard documents: Process in regular batch runs
    - Historical/archival: Process during low-usage periods
@@ -149,10 +153,10 @@ done
 ## Implementation Plan
 
 1. **Deploy automated script**: Set up the continuous processing script
-2. **Create integration hooks**: Connect with version control and notification systems
-3. **Establish monitoring**: Track processing statistics and quality metrics
-4. **Define escalation path**: System for handling complex or problematic content
-5. **Implement feedback loop**: Improve processing based on results
+1. **Create integration hooks**: Connect with version control and notification systems
+1. **Establish monitoring**: Track processing statistics and quality metrics
+1. **Define escalation path**: System for handling complex or problematic content
+1. **Implement feedback loop**: Improve processing based on results
 
 ## Observations
 
@@ -164,7 +168,7 @@ done
 
 ## Relations
 
-- part_of [[SkogAI-Memory Documentation]]
-- implements [[Knowledge Management Automation]]
-- relates_to [[SkogAI-Memory Best Practices Guide]]
-- extends [[Memory System Workflow]]
+- part_of \[[SkogAI-Memory Documentation]\]
+- implements \[[Knowledge Management Automation]\]
+- relates_to \[[SkogAI-Memory Best Practices Guide]\]
+- extends \[[Memory System Workflow]\]

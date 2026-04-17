@@ -1,3 +1,9 @@
+---
+title: README
+type: note
+permalink: skogai/skills/skogai-developing-for-claude-code/examples/full-featured-plugin/readme
+---
+
 # Full-Featured Plugin Example
 
 This is a complete example demonstrating all Claude Code plugin component types working together.
@@ -26,9 +32,9 @@ This is a complete example demonstrating all Claude Code plugin component types 
 Once installed:
 
 1. **Try the command**: `/hello` - See welcome message
-2. **SessionStart hook**: Notice the message when starting a new session
-3. **Skill usage**: Ask Claude about workflows (triggers example-workflow skill)
-4. **PostToolUse hook**: Watch for hook messages after Write/Edit operations
+1. **SessionStart hook**: Notice the message when starting a new session
+1. **Skill usage**: Ask Claude about workflows (triggers example-workflow skill)
+1. **PostToolUse hook**: Watch for hook messages after Write/Edit operations
 
 ## Structure
 
@@ -64,6 +70,7 @@ full-featured-plugin/
 ## Real-World Usage
 
 This is a teaching example. For production plugins:
+
 - Implement actual MCP server tools using `@modelcontextprotocol/sdk`
 - Add meaningful skills that provide real value
 - Create hooks that enforce conventions or automate workflows

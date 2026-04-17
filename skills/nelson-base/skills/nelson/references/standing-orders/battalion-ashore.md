@@ -1,3 +1,9 @@
+---
+title: battalion-ashore
+type: note
+permalink: skogai/skills/nelson-base/skills/nelson/references/standing-orders/battalion-ashore
+---
+
 # Battalion Ashore
 
 **Rule:** Do not deploy marines for work that belongs to the ship's crew or warrants a new ship.

@@ -1,3 +1,9 @@
+---
+title: file-structure
+type: note
+permalink: skogai/todo/context/file-structure
+---
+
 # SkogAI File Structure Script
 
 A command-line utility that generates project structure overviews, respecting `.gitignore` files.
@@ -8,8 +14,7 @@ A command-line utility that generates project structure overviews, respecting `.
 
 ## Purpose
 
-Provides context about the current project structure for humans and AI assistants.
-Useful when starting conversations with AI Agents to establish working context.
+Provides context about the current project structure for humans and AI assistants. Useful when starting conversations with AI Agents to establish working context.
 
 ## Usage
 
@@ -21,12 +26,12 @@ Basic usage (current directory, depth 2):
 
 ### Parameters
 
-| Option | Description | Default |
-|--------|-------------|---------|
-| `-d, --depth DEPTH` | Directory traversal depth | 2 |
-| `-t, --target DIR` | Target directory | Current directory |
-| `-o, --output FILE` | Save output to file | Display to console |
-| `-h, --help` | Show help message | - |
+| Option              | Description               | Default            |
+| ------------------- | ------------------------- | ------------------ |
+| `-d, --depth DEPTH` | Directory traversal depth | 2                  |
+| `-t, --target DIR`  | Target directory          | Current directory  |
+| `-o, --output FILE` | Save output to file       | Display to console |
+| `-h, --help`        | Show help message         | -                  |
 
 ### Examples
 
@@ -61,4 +66,3 @@ The script outputs the directory structure with:
 - The script checks if the `tree` command is installed
 - Only directories are shown (no files)
 - Respects `.gitignore` files
-

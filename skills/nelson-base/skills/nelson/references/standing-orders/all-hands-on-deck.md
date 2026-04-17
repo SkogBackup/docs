@@ -1,8 +1,15 @@
+---
+title: all-hands-on-deck
+type: note
+permalink: skogai/skills/nelson-base/skills/nelson/references/standing-orders/all-hands-on-deck
+---
+
 # Standing Order: All Hands on Deck
 
 Do not crew every role when the task does not require it.
 
 **Symptoms:**
+
 - Ship musters 4 crew for a task that needs only a PWO.
 - Crew members with no meaningful sub-task sit idle or invent busywork.
 - Token budget burns on coordination overhead that exceeds the work itself.

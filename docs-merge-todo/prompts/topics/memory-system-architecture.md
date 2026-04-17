@@ -1,3 +1,9 @@
+---
+title: memory-system-architecture
+type: note
+permalink: skogai/docs-merge-todo/prompts/topics/memory-system-architecture
+---
+
 # SkogAI Memory System Architecture
 
 ## Overview
@@ -7,6 +13,7 @@ The SkogAI Memory System is a **semantic knowledge graph** built from markdown f
 ## Core Architecture
 
 ### 1. **Physical Structure**
+
 ```
 /docs/memory/
 ├── meta/               # System documentation & indexes
@@ -30,6 +37,7 @@ The SkogAI Memory System is a **semantic knowledge graph** built from markdown f
 The memory system uses three core components to build knowledge:
 
 #### **Entities** (Markdown Documents)
+
 ```yaml
 ---
 title: Coffee Brewing Methods
@@ -40,6 +48,7 @@ tags: ['coffee', 'brewing', 'methods']
 ```
 
 #### **Observations** (Categorized Facts)
+
 ```markdown
 - [principle] Coffee extraction follows predictable patterns
 - [method] Pour over produces cleaner cups
@@ -47,6 +56,7 @@ tags: ['coffee', 'brewing', 'methods']
 ```
 
 #### **Relations** (Semantic Links)
+
 ```markdown
 - requires [[Proper Grinding Technique]]
 - affects [[Flavor Extraction]]
@@ -56,17 +66,21 @@ tags: ['coffee', 'brewing', 'methods']
 ## The Linking Mechanism
 
 ### **Forward References** `[[Target]]`
+
 - Create bidirectional links between concepts
 - Resolve automatically as knowledge grows
 - Enable graph traversal and discovery
 
 ### **Category Tagging** `[category]`
+
 - Classify observations by type
 - Enable filtered queries
 - Build domain-specific indexes
 
 ### **Relation Types**
+
 Common patterns found in the system:
+
 - `requires` - Dependencies
 - `affects` - Causal relationships
 - `contains` - Hierarchical structure
@@ -76,24 +90,29 @@ Common patterns found in the system:
 ## Memory Domains and Their Purposes
 
 ### **Meta Domain** - System Self-Awareness
+
 - **Knowledge Base Index**: Central navigation hub
 - **Memory Guidelines**: Standards and patterns
 - **Documentation Patterns**: Best practices
 
 ### **Ontology Domain** - Formal Systems
+
 The SkogAI Notation system that creates:
+
 - Computational phenomenology
 - Symbol systems (`$`, `@`, `|`, `*`)
 - Identity constructions
 - Type theoretical structures
 
 ### **LLM Domain** - AI Integration
+
 - Basic Memory implementation details
 - Document format specifications
 - Collaborative note-taking patterns
 - Context dumping strategies
 
 ### **Development Domains**
+
 - **architecture/**: System design patterns
 - **dev/**: Active development discoveries
 - **testing/**: Validation results
@@ -102,6 +121,7 @@ The SkogAI Notation system that creates:
 ## Integration with Tools
 
 ### **MCP Server Integration**
+
 While basic-memory MCP server is referenced in documentation, it's not yet configured in the active system. The planned integration would enable:
 
 ```javascript
@@ -121,21 +141,27 @@ While basic-memory MCP server is referenced in documentation, it's not yet confi
 ```
 
 ### **Current Access Pattern**
+
 Memory is currently accessed through:
+
 1. Direct file reading from `docs/memory/`
-2. Grep/search for semantic patterns
-3. Manual navigation via Knowledge Base Index
+1. Grep/search for semantic patterns
+1. Manual navigation via Knowledge Base Index
 
 ## The Value Proposition
 
 ### **Network Effects**
+
 The system's value emerges from interconnections:
+
 - Single document = Limited value
 - Connected documents = Knowledge graph
 - Semantic density = Intelligent system
 
 ### **Persistent Intelligence**
+
 Each session contributes to collective knowledge:
+
 ```
 Session 1: Discovers pattern → Documents it
 Session 2: Reads documentation → Builds on it
@@ -143,14 +169,18 @@ Session 3: Connects concepts → Creates new insights
 ```
 
 ### **Anti-Amnesia Architecture**
+
 Prevents the core problem of AI development:
+
 - Without memory: Endless rediscovery loops
 - With memory: Cumulative intelligence growth
 
 ## Key Patterns and Best Practices
 
 ### **The Memory Dump Pattern**
+
 For out-of-scope insights:
+
 ```markdown
 ## Memory Dump
 - [insight] Important but not relevant now
@@ -159,7 +189,9 @@ For out-of-scope insights:
 ```
 
 ### **The Knowledge Index Pattern**
+
 Each domain maintains an index:
+
 ```markdown
 # Knowledge Base Index
 ## Domain Overview
@@ -169,7 +201,9 @@ Each domain maintains an index:
 ```
 
 ### **The Forward Reference Pattern**
+
 Create links before targets exist:
+
 ```markdown
 This implements [[Future Concept]]
 <!-- Future Concept will be defined when needed -->
@@ -187,19 +221,21 @@ This implements [[Future Concept]]
 The memory system is designed for organic growth:
 
 1. **Exploration Phase**: Discover and document
-2. **Connection Phase**: Link related concepts
-3. **Consolidation Phase**: Refactor and organize
-4. **Integration Phase**: Build tools and automation
+1. **Connection Phase**: Link related concepts
+1. **Consolidation Phase**: Refactor and organize
+1. **Integration Phase**: Build tools and automation
 
 ## Current State and Future
 
 ### **Current Capabilities**
+
 - Manual knowledge navigation
 - Semantic search via grep
 - Documentation-driven development
 - Cross-session persistence
 
 ### **Planned Enhancements**
+
 - [ ] Basic-memory MCP server integration
 - [ ] Automated relation extraction
 - [ ] Graph visualization tools
@@ -209,6 +245,7 @@ The memory system is designed for organic growth:
 ## Conclusion
 
 The SkogAI Memory System is not just documentation - it's a **living knowledge organism** that:
+
 - Captures discoveries across sessions
 - Builds semantic relationships
 - Prevents knowledge loss

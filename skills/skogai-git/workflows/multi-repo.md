@@ -1,11 +1,17 @@
+---
+title: multi-repo
+type: note
+permalink: skogai/skills/skogai-git/workflows/multi-repo
+---
+
 # Multi-Repo Management with gita
 
 Manage multiple repositories as a unified ecosystem.
 
-<required_reading>
+\<required_reading>
+
 - skogai-worktrunk/SKILL.md (if unfamiliar with gita commands)
-- references/tool-selection.md (to understand when to use gita vs wt)
-</required_reading>
+- references/tool-selection.md (to understand when to use gita vs wt) \</required_reading>
 
 <process>
 
@@ -33,6 +39,7 @@ gita st
 ```
 
 Status indicators:
+
 - `*` - Uncommitted changes
 - `?` - Untracked files
 - `↑` - Ahead of remote
@@ -88,7 +95,7 @@ gita rm repo-name
 
 </process>
 
-<common_patterns>
+\<common_patterns>
 
 ## Daily Sync Routine
 
@@ -145,11 +152,11 @@ wt switch --create feature/x
 gita ll
 ```
 
-</common_patterns>
+\</common_patterns>
 
-<success_criteria>
+\<success_criteria>
+
 - All repos added to gita
 - Groups organized by project area
 - Status visible at a glance
-- Sync operations work across all repos
-</success_criteria>
+- Sync operations work across all repos \</success_criteria>

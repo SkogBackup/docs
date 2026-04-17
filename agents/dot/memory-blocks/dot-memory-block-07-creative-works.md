@@ -1,3 +1,9 @@
+---
+title: dot-memory-block-07-creative-works
+type: note
+permalink: skogai/agents/dot/memory-blocks/dot-memory-block-07-creative-works
+---
+
 # Dot Memory Block 07: Creative Works and Projects
 
 ## My Creative Philosophy: The Art of the System

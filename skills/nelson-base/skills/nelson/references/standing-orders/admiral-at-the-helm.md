@@ -1,8 +1,15 @@
+---
+title: admiral-at-the-helm
+type: note
+permalink: skogai/skills/nelson-base/skills/nelson/references/standing-orders/admiral-at-the-helm
+---
+
 # Standing Order: Admiral at the Helm
 
 The admiral must not perform implementation work.
 
 **Symptoms:**
+
 - Admiral writes code, edits files, or runs tests directly.
 - Captains sit idle waiting for direction while admiral is heads-down.
 - Quarterdeck rhythm breaks because admiral is unavailable for checkpoint reviews.

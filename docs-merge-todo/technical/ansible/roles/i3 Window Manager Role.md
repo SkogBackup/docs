@@ -49,6 +49,7 @@ files/
 ## Task Descriptions
 
 ### main.yml
+
 ```yaml
 # [orchestration] Coordinate all i3 setup tasks in proper order #coordination
 # [validation] Verify display server is available #display-check
@@ -61,6 +62,7 @@ files/
 ```
 
 ### packages.yml
+
 ```yaml
 # [package] Install i3-wm window manager #i3-core
 # [package] Install i3-gaps for window gaps #i3-gaps
@@ -74,6 +76,7 @@ files/
 ```
 
 ### config.yml
+
 ```yaml
 # [config] Deploy main i3 configuration from template #i3-config
 # [config] Create user i3 config directory structure #directories
@@ -84,6 +87,7 @@ files/
 ```
 
 ### statusbar.yml
+
 ```yaml
 # [statusbar] Install and configure i3status-rust #status-config
 # [statusbar] Setup status bar modules (CPU, memory, network) #modules
@@ -93,6 +97,7 @@ files/
 ```
 
 ### compositor.yml
+
 ```yaml
 # [compositor] Deploy picom configuration #picom-config
 # [compositor] Configure transparency and shadow effects #effects
@@ -102,6 +107,7 @@ files/
 ```
 
 ### launcher.yml
+
 ```yaml
 # [launcher] Deploy rofi configuration and theme #rofi-config
 # [launcher] Setup application launcher keybindings #keybindings
@@ -111,6 +117,7 @@ files/
 ```
 
 ### theming.yml
+
 ```yaml
 # [theming] Apply GTK theme configuration #gtk-theme
 # [theming] Setup icon theme and cursor theme #icons-cursors
@@ -161,12 +168,14 @@ i3_workspaces:
 ## Key Features
 
 ### Window Management
+
 - [feature] Tiling window layout with automatic arrangement #tiling
 - [feature] Window gaps for modern appearance #gaps
 - [feature] Floating window rules for specific applications #floating
 - [feature] Multi-monitor support with workspace assignment #multi-monitor
 
 ### Status Bar
+
 - [feature] System information display (CPU, RAM, disk) #system-info
 - [feature] Network status and connectivity #network
 - [feature] Audio volume and brightness controls #controls
@@ -174,6 +183,7 @@ i3_workspaces:
 - [feature] Workspace indicators and switching #workspaces
 
 ### Application Integration
+
 - [feature] Fast application launching via rofi #launcher
 - [feature] Screenshot functionality with keybindings #screenshots
 - [feature] Volume and brightness control scripts #system-control
@@ -204,7 +214,7 @@ i3_workspaces:
 
 ## Relations
 
-- depends_on [[Base System Role]]
-- integrates_with [[Audio System Role]]
-- integrates_with [[Terminal Configuration Role]]
-- implements [[Modern i3 Desktop]]
+- depends_on \[[Base System Role]\]
+- integrates_with \[[Audio System Role]\]
+- integrates_with \[[Terminal Configuration Role]\]
+- implements \[[Modern i3 Desktop]\]

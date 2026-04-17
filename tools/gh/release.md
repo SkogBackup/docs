@@ -1,28 +1,30 @@
 ---
 categories:
-- tools
-- gh
+  - tools
+  - gh
 permalink: tools/gh/release
 generated_at: '2025-12-19T12:58:42Z'
 title: '# gh - Release Management'
 tags:
-- github-releases
-- release-management
-- gh-release-create
-- gh-release-list
-- gh-release-view
-- gh-release-download
+  - github-releases
+  - release-management
+  - gh-release-create
+  - gh-release-list
+  - gh-release-view
+  - gh-release-download
 type: note
 ---
 
 # gh - Release Management
 
 ## When to Use
+
 Creating and managing GitHub releases
 
 ## Key Commands
 
 ### gh release create
+
 Create a new release
 
 ```bash
@@ -30,6 +32,7 @@ gh release create <tag> [<files>...] [flags]
 ```
 
 **Flags:**
+
 ```bash
 -t, --title string             Release title
 -n, --notes string             Release notes
@@ -44,6 +47,7 @@ gh release create <tag> [<files>...] [flags]
 ```
 
 ### gh release list
+
 List releases
 
 ```bash
@@ -51,6 +55,7 @@ gh release list [flags]
 ```
 
 **Flags:**
+
 ```bash
 -L, --limit int           Max releases (default 30)
 --exclude-drafts          Exclude drafts
@@ -60,6 +65,7 @@ gh release list [flags]
 ```
 
 ### gh release view
+
 View release details
 
 ```bash
@@ -67,6 +73,7 @@ gh release view [<tag>] [flags]
 ```
 
 **Flags:**
+
 ```bash
 -w, --web                 Open in browser
 --json fields             JSON output
@@ -74,6 +81,7 @@ gh release view [<tag>] [flags]
 ```
 
 ### gh release download
+
 Download release assets
 
 ```bash
@@ -81,6 +89,7 @@ gh release download [<tag>] [flags]
 ```
 
 **Flags:**
+
 ```bash
 -p, --pattern string      Download assets matching pattern
 -D, --dir string          Directory to download to
@@ -89,6 +98,7 @@ gh release download [<tag>] [flags]
 ```
 
 ### gh release upload
+
 Upload assets to release
 
 ```bash
@@ -96,11 +106,13 @@ gh release upload <tag> <files>... [flags]
 ```
 
 **Flags:**
+
 ```bash
 --clobber                 Overwrite existing assets
 ```
 
 ### gh release delete
+
 Delete a release
 
 ```bash
@@ -108,12 +120,14 @@ gh release delete <tag> [flags]
 ```
 
 **Flags:**
+
 ```bash
 -y, --yes                 Skip confirmation
 --cleanup-tag             Delete tag as well
 ```
 
 ### gh release delete-asset
+
 Delete a release asset
 
 ```bash
@@ -121,11 +135,13 @@ gh release delete-asset <tag> <asset-name> [flags]
 ```
 
 **Flags:**
+
 ```bash
 -y, --yes                 Skip confirmation
 ```
 
 ### gh release edit
+
 Edit a release
 
 ```bash
@@ -133,6 +149,7 @@ gh release edit <tag> [flags]
 ```
 
 **Flags:**
+
 ```bash
 -t, --title string             New title
 -n, --notes string             New notes
@@ -148,6 +165,7 @@ gh release edit <tag> [flags]
 ## Common Patterns
 
 ### Create Release from Tag
+
 ```bash
 # Tag must exist first
 git tag v1.0.0
@@ -160,11 +178,13 @@ gh release create v1.0.0 \
 ```
 
 ### Create Release with Auto-Generated Notes
+
 ```bash
 gh release create v1.0.0 --generate-notes
 ```
 
 ### Create Draft Release
+
 ```bash
 gh release create v1.0.0 \
   --draft \
@@ -173,6 +193,7 @@ gh release create v1.0.0 \
 ```
 
 ### Create Release with Assets
+
 ```bash
 gh release create v1.0.0 \
   --title "v1.0.0" \
@@ -183,6 +204,7 @@ gh release create v1.0.0 \
 ```
 
 ### Create Prerelease
+
 ```bash
 gh release create v1.0.0-rc.1 \
   --prerelease \
@@ -191,61 +213,73 @@ gh release create v1.0.0-rc.1 \
 ```
 
 ### Upload Additional Assets
+
 ```bash
 gh release upload v1.0.0 additional-file.zip
 ```
 
 ### Download Latest Release Assets
+
 ```bash
 gh release download
 ```
 
 ### Download Specific Release
+
 ```bash
 gh release download v1.0.0
 ```
 
 ### Download Matching Assets
+
 ```bash
 gh release download v1.0.0 --pattern "*.zip"
 ```
 
 ### Download Source Archive
+
 ```bash
 gh release download v1.0.0 --archive tar.gz
 ```
 
 ### List All Releases
+
 ```bash
 gh release list
 ```
 
 ### Get Latest Release Info
+
 ```bash
 gh release view --json tagName,name,createdAt,assets
 ```
 
 ### View Specific Release
+
 ```bash
 gh release view v1.0.0
 ```
 
 ### Edit Release Notes
+
 ```bash
 gh release edit v1.0.0 --notes "Updated notes"
 ```
 
 ### Convert Draft to Published
+
 ```bash
 gh release edit v1.0.0 --draft=false
 ```
 
 ### Delete Release (Keep Tag)
+
 ```bash
 gh release delete v1.0.0
 ```
 
 ### Delete Release and Tag
+
 ```bash
 gh release delete v1.0.0 --cleanup-tag
 ```
@@ -253,6 +287,7 @@ gh release delete v1.0.0 --cleanup-tag
 ## AI Agent Patterns
 
 ### DO create tag first
+
 ```bash
 # CORRECT order
 git tag v1.0.0
@@ -263,12 +298,14 @@ gh release create v1.0.0
 ```
 
 ### DO use --generate-notes
+
 ```bash
 # Let GitHub generate notes from PRs
 gh release create v1.0.0 --generate-notes
 ```
 
 ### DON'T parse text output
+
 ```bash
 # BAD
 gh release list | grep "v1" | head -1
@@ -278,6 +315,7 @@ gh release list --json tagName --jq '.[0].tagName'
 ```
 
 ### DO check if release exists
+
 ```bash
 if gh release view v1.0.0 &>/dev/null; then
   echo "Release exists"
@@ -285,6 +323,7 @@ fi
 ```
 
 ### DO get asset download URLs
+
 ```bash
 gh release view v1.0.0 --json assets \
   --jq '.assets[] | {name, url: .url}'
@@ -293,11 +332,13 @@ gh release view v1.0.0 --json assets \
 ## Available JSON Fields
 
 Run to discover:
+
 ```bash
 gh release view --json
 ```
 
 Common fields:
+
 ```
 tagName, name, body, isDraft, isPrerelease, isLatest,
 createdAt, publishedAt, url, author,
@@ -307,17 +348,20 @@ assets (array with name, url, size, downloadCount)
 ## Release Notes Tips
 
 ### Auto-Generated Notes
+
 ```bash
 # GitHub generates from merged PRs
 gh release create v1.0.0 --generate-notes
 ```
 
 ### From File
+
 ```bash
 gh release create v1.0.0 --notes-file CHANGELOG.md
 ```
 
 ### From Git Log
+
 ```bash
 # Generate notes from commits
 git log v0.9.0..v1.0.0 --pretty=format:"- %s (%h)" > notes.txt
@@ -325,11 +369,13 @@ gh release create v1.0.0 --notes-file notes.txt
 ```
 
 ## Don't Use When
+
 - Just viewing in browser (use `--web`)
 - Need to create tag only (use `git tag`)
 - Need complex asset management (consider GitHub API via `gh api`)
 
 ## See Also
+
 - @skogai/gh/json.md - JSON output
 - @skogai/git/tags.md - Git tag operations (TODO)
 - Run `gh release --help`

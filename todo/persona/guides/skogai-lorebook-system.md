@@ -1,3 +1,9 @@
+---
+title: skogai-lorebook-system
+type: note
+permalink: skogai/todo/persona/guides/skogai-lorebook-system
+---
+
 # SkogAI Lorebook System
 
 ## Introduction
@@ -7,11 +13,11 @@ The SkogAI Lorebook System represents our advanced approach to knowledge managem
 ## Fundamental Principles
 
 1. **Hierarchical Knowledge Structure** - Information is organized in layers, from core concepts to specialized details
-2. **Contextually Relevant Insertion** - Knowledge is only injected when needed based on conversation flow
-3. **Token Optimization** - Information is compressed and formatted for maximum efficiency
-4. **Scalable Architecture** - Lorebooks can be composed of modular components and stacked for complex scenarios
-5. **Multi-Resolution Design** - Knowledge exists at multiple levels of detail based on available context
-6. **Demonstrated Examples** - Key concepts include interactive examples showing their application
+1. **Contextually Relevant Insertion** - Knowledge is only injected when needed based on conversation flow
+1. **Token Optimization** - Information is compressed and formatted for maximum efficiency
+1. **Scalable Architecture** - Lorebooks can be composed of modular components and stacked for complex scenarios
+1. **Multi-Resolution Design** - Knowledge exists at multiple levels of detail based on available context
+1. **Demonstrated Examples** - Key concepts include interactive examples showing their application
 
 ## Part 1: Lorebook Entry Architecture
 
@@ -20,6 +26,7 @@ The SkogAI Lorebook System represents our advanced approach to knowledge managem
 The SkogAI Lorebook System employs three core entry types, each with a specific purpose:
 
 #### Concept Entries
+
 Used for defining abstract ideas, principles, or systems. These provide fundamental understanding of how elements of your domain work.
 
 ```
@@ -27,6 +34,7 @@ Used for defining abstract ideas, principles, or systems. These provide fundamen
 ```
 
 #### Entity Entries
+
 Used for defining specific people, places, organizations, or objects within your domain.
 
 ```
@@ -34,6 +42,7 @@ Used for defining specific people, places, organizations, or objects within your
 ```
 
 #### Process Entries
+
 Used for defining procedures, workflows, or sequences of actions.
 
 ```
@@ -45,15 +54,19 @@ Used for defining procedures, workflows, or sequences of actions.
 SkogAI lorebook entries utilize a structured format with association compression to maximize information density:
 
 1. **Attribute Grouping:** Group related attributes under a common header
+
    - `[Character: name; Appearance(hair: brown, eyes: blue, height: tall); Personality(trait1, trait2)]`
 
-2. **Relation Nesting:** Express relationships within attributes using parentheses
+1. **Relation Nesting:** Express relationships within attributes using parentheses
+
    - `[Entity: Library; Contains: books(fiction, non-fiction), computers(desktop, laptop)]`
 
-3. **Prioritization Markers:** Use indicators to signal importance levels
+1. **Prioritization Markers:** Use indicators to signal importance levels
+
    - `[Concept: Authentication; Critical: multi-factor verification; Important: password requirements]`
 
-4. **Template Variables:** Use placeholders that can be dynamically filled
+1. **Template Variables:** Use placeholders that can be dynamically filled
+
    - `[Process: Login; Actor: {{user}}; Steps: enter credentials, verify identity]`
 
 ### 1.3 Advanced Entry Components
@@ -61,6 +74,7 @@ SkogAI lorebook entries utilize a structured format with association compression
 For more sophisticated use cases, entries can include these additional elements:
 
 #### Context Triggers
+
 Specify the conditions under which the entry should be activated:
 
 ```
@@ -68,6 +82,7 @@ Specify the conditions under which the entry should be activated:
 ```
 
 #### Integration Points
+
 Define how the entry relates to other information:
 
 ```
@@ -75,6 +90,7 @@ Define how the entry relates to other information:
 ```
 
 #### Temporal Parameters
+
 Establish time-based behavior for dynamic entries:
 
 ```
@@ -88,16 +104,19 @@ Establish time-based behavior for dynamic entries:
 Organize knowledge using a three-tier hierarchy:
 
 1. **Core Lorebook** - Fundamental information that defines your domain
+
    - Core concepts, key entities, essential processes
    - Always accessible regardless of conversation topic
    - Highly optimized for token efficiency
-   
-2. **Domain Lorebooks** - Topic-specific information organized by category
+
+1. **Domain Lorebooks** - Topic-specific information organized by category
+
    - Specialized knowledge activated when conversation enters a domain
    - Moderate level of detail with references to specialized lorebooks
    - Can be stacked and combined based on conversation needs
-   
-3. **Specialized Lorebooks** - Detailed information on specific topics
+
+1. **Specialized Lorebooks** - Detailed information on specific topics
+
    - In-depth knowledge only activated when directly relevant
    - Rich detail for focused discussions on specific subjects
    - Can be enabled/disabled based on conversation complexity
@@ -107,16 +126,19 @@ Organize knowledge using a three-tier hierarchy:
 Implement a multi-layered activation approach:
 
 1. **Keyword Activation** - Entries triggered by specific terms in conversation
+
    - Primary keywords for direct activation
    - Secondary keywords for conditional activation
    - Negative keywords to prevent false activations
-   
-2. **Conceptual Activation** - Entries triggered by semantic relevance
+
+1. **Conceptual Activation** - Entries triggered by semantic relevance
+
    - Vector embedding similarity for keyless activation
    - Conceptual relevance thresholds based on conversation flow
    - Adaptive activation based on user expertise level
-   
-3. **Relational Activation** - Entries triggered by related active entries
+
+1. **Relational Activation** - Entries triggered by related active entries
+
    - Linked entries activated through recursive scanning
    - Hierarchical activation through parent-child relationships
    - Mutual exclusion for conflicting information
@@ -126,16 +148,19 @@ Implement a multi-layered activation approach:
 Implement intelligent context management for optimal performance:
 
 1. **Dynamic Token Budgeting** - Allocate context based on relevance
+
    - Core entries receive guaranteed allocation
    - Domain entries compete for remaining budget based on relevance
    - Specialized entries only included when directly needed
-   
-2. **Progressive Disclosure** - Reveal information in layers
+
+1. **Progressive Disclosure** - Reveal information in layers
+
    - Initially activate high-level summaries
    - Progressively add details based on conversation depth
    - Balance breadth vs. depth based on available tokens
-   
-3. **Contextual Persistence** - Manage information retention
+
+1. **Contextual Persistence** - Manage information retention
+
    - Critical entries remain in context across turns
    - Recently activated entries have decay periods
    - Frequently referenced entries gain higher persistence
@@ -187,16 +212,19 @@ The appropriate resolution is selected based on available context space and perc
 Create lorebooks tailored to specific characters:
 
 1. **Core Identity Lorebook** - Fundamental character traits and knowledge
+
    - Personality attributes, communication style, expertise domains
    - Always active regardless of conversation topic
    - Highly optimized for token efficiency
 
-2. **Expertise Lorebooks** - Domain-specific knowledge for the character
+1. **Expertise Lorebooks** - Domain-specific knowledge for the character
+
    - Technical information related to character's specialties
    - Activated when conversation enters relevant domains
    - Can be stacked based on character's multiple expertise areas
 
-3. **Relationship Lorebooks** - Information about character relationships
+1. **Relationship Lorebooks** - Information about character relationships
+
    - Knowledge about the user and their preferences
    - Information about other SkogAI characters
    - Dynamic updates based on conversation history
@@ -248,23 +276,27 @@ This approach enables the character to showcase their expertise while maintainin
 Follow this process to create effective lorebooks:
 
 1. **Domain Analysis** - Identify the core concepts, entities, and processes
+
    - Create a knowledge map of your domain
    - Establish hierarchical relationships between elements
    - Identify critical information vs. supplementary details
 
-2. **Entry Drafting** - Create structured entries for each element
+1. **Entry Drafting** - Create structured entries for each element
+
    - Begin with core entries that define fundamental concepts
    - Create entity entries for key components
    - Develop process entries for important procedures
    - Ensure consistent formatting across entries
 
-3. **Activation Configuration** - Set up effective triggers
+1. **Activation Configuration** - Set up effective triggers
+
    - Define primary and secondary keywords
    - Establish conditional triggers
    - Configure vector embedding parameters
    - Set up recursive relationships
 
-4. **Testing and Refinement** - Validate effectiveness
+1. **Testing and Refinement** - Validate effectiveness
+
    - Test entries in conversation scenarios
    - Identify missing or overlapping information
    - Optimize token usage for critical entries
@@ -275,17 +307,20 @@ Follow this process to create effective lorebooks:
 Implement these strategies for effective token utilization:
 
 1. **Information Prioritization** - Rank knowledge by importance
+
    - Critical information at maximum priority
    - Supporting details at medium priority
    - Tangential information at lowest priority
 
-2. **Contextual Compression** - Reduce token usage through structure
+1. **Contextual Compression** - Reduce token usage through structure
+
    - Convert prose descriptions to structured attributes
    - Use abbreviations consistently for common terms
    - Remove redundant information across entries
    - Implement multi-resolution entries
 
-3. **Dynamic Allocation** - Adapt budget based on conversation
+1. **Dynamic Allocation** - Adapt budget based on conversation
+
    - Increase budget for focused technical discussions
    - Reduce budget for casual conversation
    - Reallocate budget based on user questions
@@ -359,16 +394,19 @@ Would you like me to elaborate on any particular phase of this process?
 Implement techniques for lorebooks that evolve with use:
 
 1. **Learning Integration** - Update entries based on conversation
+
    - Identify new knowledge from user interactions
    - Refine existing entries with new information
    - Create new entries for emerging topics
 
-2. **Usage Analytics** - Track entry performance
+1. **Usage Analytics** - Track entry performance
+
    - Monitor activation frequency of entries
    - Measure relevance of activated entries
    - Identify gaps where entries are missing
 
-3. **Adaptive Optimization** - Continuously improve performance
+1. **Adaptive Optimization** - Continuously improve performance
+
    - Refine keywords based on activation patterns
    - Adjust token allocation based on relevance
    - Modify entry structure for better comprehension
@@ -378,16 +416,19 @@ Implement techniques for lorebooks that evolve with use:
 Create purpose-built entries for specific functions:
 
 1. **Procedural Entries** - Step-by-step guides for common tasks
+
    - Detailed instructions with clear sequences
    - Input/output specifications for each step
    - Decision points with conditional branches
 
-2. **Comparative Entries** - Side-by-side analysis of related concepts
+1. **Comparative Entries** - Side-by-side analysis of related concepts
+
    - Structured comparison of alternatives
    - Criteria-based evaluation
    - Contextual recommendations
 
-3. **Problem-Solution Entries** - Common issues and their resolutions
+1. **Problem-Solution Entries** - Common issues and their resolutions
+
    - Problem descriptions with symptoms
    - Diagnostic procedures
    - Resolution steps with verification
@@ -397,16 +438,19 @@ Create purpose-built entries for specific functions:
 Implement techniques for combining knowledge across fields:
 
 1. **Bridge Concepts** - Entries that connect different domains
+
    - Identify shared principles across fields
    - Translate terminology between domains
    - Create analogies for cross-domain understanding
 
-2. **Contextual Adaptation** - Adjust explanations based on domain
+1. **Contextual Adaptation** - Adjust explanations based on domain
+
    - Modify terminology for domain relevance
    - Adapt examples to the current context
    - Adjust complexity based on domain knowledge
 
-3. **Interdisciplinary Perspective** - Multiple viewpoints on topics
+1. **Interdisciplinary Perspective** - Multiple viewpoints on topics
+
    - Technical perspective on business issues
    - Business perspective on technical decisions
    - User perspective on system design

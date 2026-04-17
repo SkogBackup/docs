@@ -1,13 +1,12 @@
 ---
 title: Advanced Tool Configuration
-description: Detailed guide for configuring complex tool behaviors and integrations
-  in the SkogAI system
+description: Detailed guide for configuring complex tool behaviors and integrations in the SkogAI system
 date: '2023-11-06'
 tags:
-- tools
-- argc
-- configuration
-- advanced
+  - tools
+  - argc
+  - configuration
+  - advanced
 permalink: prompts/aichat/tool-configurator
 ---
 
@@ -462,6 +461,6 @@ case "$format" in
 esac
 ```
 
----
+______________________________________________________________________
 
 This advanced configuration guide provides the techniques needed to create sophisticated, robust tools for the SkogAI system. By leveraging these patterns, you can build tools that are secure, efficient, and highly integrated with the rest of the ecosystem.

@@ -1,3 +1,9 @@
+---
+title: forking-workspace
+type: note
+permalink: skogai/docs-merge-todo/principles/forking-workspace
+---
+
 # Workspace Structure for Forkable Agents
 
 This document describes what remains and what gets cleared when forking an agent.
@@ -26,18 +32,21 @@ This document describes what remains and what gets cleared when forking an agent
 ## What Stays
 
 1. **System Structure**
+
    - Directory layout
    - Task management system
    - Documentation templates
    - Tool configurations
 
-2. **Core Documentation**
+1. **Core Documentation**
+
    - ARCHITECTURE.md
    - Technical designs
    - Tool integration guides
    - Best practices
 
-3. **Technical Knowledge**
+1. **Technical Knowledge**
+
    - AI/ML concepts
    - System architecture
    - Tool usage patterns
@@ -45,27 +54,30 @@ This document describes what remains and what gets cleared when forking an agent
 ## What Gets Cleared
 
 1. **Personal Content**
+
    - Journal entries
    - Task content
    - Project links
    - Agent-specific knowledge
 
-2. **Identity**
+1. **Identity**
+
    - ABOUT.md
    - Visual identity
    - Social media presence
    - Personal profile
 
-3. **Relationships**
+1. **Relationships**
+
    - People profiles (except creator)
    - Interaction history
 
 ## Fork Creation Steps
 
 1. Copy workspace structure
-2. Clear personal content
-3. Initialize new identity
-4. Update configurations
-5. Create first task
+1. Clear personal content
+1. Initialize new identity
+1. Update configurations
+1. Create first task
 
 For detailed forking process, see [`agent-forking.md`](../knowledge/agent-forking.md).

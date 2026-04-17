@@ -5,11 +5,13 @@ permalink: testing/example1-with-extension
 ---
 
 <!--toc:start-->
+
 - [Overview](#overview)
 - [Content Features](#content-features)
 - [Categories](#categories)
 - [Relations](#relations)
 - [Technical Details](#technical-details)
+
 <!--toc:end-->
 
 ## Overview
@@ -19,7 +21,7 @@ This file was created directly via raw file system operations using the Write to
 ## Content Features
 
 - Standard markdown front-matter
-- [[Forward References]] to demonstrate linking
+- \[[Forward References]\] to demonstrate linking
 - Basic content structure
 - Created via Claude Code Write tool
 
@@ -29,7 +31,7 @@ This file was created directly via raw file system operations using the Write to
 
 ## Relations
 
-This example relates_to [[Example 2]] for comparison purposes.
+This example relates_to \[[Example 2]\] for comparison purposes.
 
 ## Technical Details
 

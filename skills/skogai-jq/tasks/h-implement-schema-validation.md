@@ -3,7 +3,9 @@ name: h-implement-schema-validation
 branch: feature/h-implement-schema-validation
 status: pending
 created: 2025-11-14
-submodules: [list of git submodules affected (delete if not super-repo)]
+submodules:
+  - list of git submodules affected (delete if not super-repo)
+permalink: skogai/skills/skogai-jq/tasks/h-implement-schema-validation
 ---
 
 # [Human-Readable Title]

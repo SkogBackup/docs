@@ -1,3 +1,9 @@
+---
+title: vision
+type: note
+permalink: skogai/skills/skogai-jq/vision
+---
+
 # vision: jq-transforms
 
 ## the problem
@@ -27,14 +33,13 @@ a library of json transformations where:
 
 **this is made for ai agents, not humans**
 
-the goal isn't to make jq easier for humans to write.
-the goal is to make json transformations:
+the goal isn't to make jq easier for humans to write. the goal is to make json transformations:
 
 1. **discoverable** - ai can find the right transformation
-2. **understandable** - schema tells ai what it does
-3. **composable** - ai can chain transformations
-4. **verifiable** - tests show it works
-5. **extensible** - ai can add new transformations following the pattern
+1. **understandable** - schema tells ai what it does
+1. **composable** - ai can chain transformations
+1. **verifiable** - tests show it works
+1. **extensible** - ai can add new transformations following the pattern
 
 ## use cases
 
@@ -74,16 +79,16 @@ any project doing:
 ai agent can:
 
 1. read schema, understand what transformation does
-2. generate correct invocation without examples
-3. add new transformation by following existing pattern
-4. compose multiple transformations
-5. debug failures by reading test cases
+1. generate correct invocation without examples
+1. add new transformation by following existing pattern
+1. compose multiple transformations
+1. debug failures by reading test cases
 
 human can:
 
 1. verify transformation works by reading tests
-2. understand intent by reading schema
-3. add transformation without knowing jq deeply
+1. understand intent by reading schema
+1. add transformation without knowing jq deeply
 
 ## non-goals
 
@@ -112,11 +117,11 @@ this approach:
 ## principles
 
 1. **schema-driven**: every transformation has input/output/args schema
-2. **test-first**: tests show usage, verify behavior
-3. **minimal**: less code, fewer bugs, easier to understand
-4. **composable**: transformations chain via pipes
-5. **direct**: no wrappers hiding what actually runs
-6. **isolated**: each transformation is self-contained
+1. **test-first**: tests show usage, verify behavior
+1. **minimal**: less code, fewer bugs, easier to understand
+1. **composable**: transformations chain via pipes
+1. **direct**: no wrappers hiding what actually runs
+1. **isolated**: each transformation is self-contained
 
 ## the long game
 
@@ -158,26 +163,19 @@ or maybe a simple runner that validates schemas between steps?
 
 ### schema format?
 
-json-schema is standard but verbose.
-custom format could be simpler for ai.
-need to validate this with real transformations.
+json-schema is standard but verbose. custom format could be simpler for ai. need to validate this with real transformations.
 
 ### file-based vs in-memory?
 
-current approach: files in, files out.
-could support streaming/pipes for performance.
-but simplicity first.
+current approach: files in, files out. could support streaming/pipes for performance. but simplicity first.
 
 ### how to handle errors?
 
-jq errors are cryptic.
-schemas could generate better error messages.
-but adds complexity.
+jq errors are cryptic. schemas could generate better error messages. but adds complexity.
 
 ### composition patterns?
 
-some transformations need multiple steps.
-document patterns? create helpers? stay manual?
+some transformations need multiple steps. document patterns? create helpers? stay manual?
 
 ## success looks like
 
@@ -202,11 +200,11 @@ document patterns? create helpers? stay manual?
 ## why this might fail
 
 1. schemas don't actually help ai understand
-2. testing strategy doesn't scale
-3. jq limitations force complexity
-4. composition is too manual
-5. not actually reusable across projects
-6. maintenance burden too high
+1. testing strategy doesn't scale
+1. jq limitations force complexity
+1. composition is too manual
+1. not actually reusable across projects
+1. maintenance burden too high
 
 ## mitigations
 

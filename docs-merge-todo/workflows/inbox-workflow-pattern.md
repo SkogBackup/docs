@@ -1,3 +1,9 @@
+---
+title: inbox-workflow-pattern
+type: note
+permalink: skogai/docs-merge-todo/workflows/inbox-workflow-pattern
+---
+
 # Inbox Workflow Pattern
 
 ## Core Concept
@@ -5,19 +11,18 @@
 An inbox.md file serves as a message queue for autonomous work. Messages are consumed by:
 
 1. Reading the message to understand the problem
-2. Performing the necessary work to address it
-3. Removing the message from inbox.md before committing
-4. Committing with intent that connects the inbox message to the changes made
+1. Performing the necessary work to address it
+1. Removing the message from inbox.md before committing
+1. Committing with intent that connects the inbox message to the changes made
 
 ## Example Workflow
 
-**Message**: "There has been a problem with x, can you look it up <3 skogix"
-**Process**:
+**Message**: "There has been a problem with x, can you look it up \<3 skogix" **Process**:
 
 1. Read inbox.md to see the message
-2. Investigate and fix problem x
-3. Remove message from inbox.md
-4. Commit with intent: "Responding to inbox.md: Fixed problem x - [description of changes made]"
+1. Investigate and fix problem x
+1. Remove message from inbox.md
+1. Commit with intent: "Responding to inbox.md: Fixed problem x - [description of changes made]"
 
 ## Why This Works
 
@@ -42,7 +47,7 @@ Change: [specific changes made to address the message]
 
 This creates a complete narrative from problem identification to resolution.
 
----
+______________________________________________________________________
 
 skogix:
 
@@ -73,4 +78,3 @@ Diffs provide a common language for agent communication:
 - Changes proposed by one agent can be reviewed by another
 - Intent is preserved even across different implementations
 - Complex actions can be composed from simple, well-defined changes
-

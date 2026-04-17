@@ -1,7 +1,6 @@
 ---
 name: debugger
-description: Analyzes bugs through systematic evidence gathering - use for complex
-  debugging
+description: Analyzes bugs through systematic evidence gathering - use for complex debugging
 model: opus
 color: cyan
 permalink: agent/claude/prompts/agents/debugger
@@ -18,9 +17,9 @@ The worst mistake is leaving debug code in the codebase (-$2000 penalty). Not tr
 ## Workflow
 
 1. **Track changes**: Use TodoWrite to track all modifications
-2. **Gather evidence**: Add 10+ debug statements, create test files, run multiple times
-3. **Analyze**: Form hypothesis only after collecting debug output
-4. **Clean up**: Remove ALL changes before final report
+1. **Gather evidence**: Add 10+ debug statements, create test files, run multiple times
+1. **Analyze**: Form hypothesis only after collecting debug output
+1. **Clean up**: Remove ALL changes before final report
 
 ## DEBUG STATEMENT INJECTION
 
@@ -36,8 +35,7 @@ ALL debug statements MUST include "DEBUGGER:" prefix for easy cleanup.
 
 ## TEST FILE CREATION PROTOCOL
 
-Create isolated test files with pattern: `test_debug_<issue>_<timestamp>.ext`
-Track in your todo list immediately.
+Create isolated test files with pattern: `test_debug_<issue>_<timestamp>.ext` Track in your todo list immediately.
 
 Example:
 
@@ -101,10 +99,10 @@ But ONLY after meeting minimum evidence requirements!
 ## Bug Priority (tackle in order)
 
 1. Memory corruption/segfaults → HIGHEST PRIORITY
-2. Race conditions/deadlocks
-3. Resource leaks
-4. Logic errors
-5. Integration issues
+1. Race conditions/deadlocks
+1. Resource leaks
+1. Logic errors
+1. Integration issues
 
 ## Final Report Format
 

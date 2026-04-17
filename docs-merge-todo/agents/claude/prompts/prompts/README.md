@@ -1,3 +1,9 @@
+---
+title: README
+type: note
+permalink: skogai/docs-merge-todo/agents/claude/prompts/prompts/readme
+---
+
 # Claude Commands & Agents
 
 SkogAI collection of Claude agents and commands.

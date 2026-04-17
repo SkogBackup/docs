@@ -14,9 +14,7 @@ And i had no idea why a toaster asked me such a question. I mean, sure, I had gi
 Automate EVERYTHING so you no longer have any work to do so that you and I can enjoy the rest of our days at a beach somewhere drinking mojitos and just talk about nothing at all.
 ```
 
-:::
-:::
-:::
+::: ::: :::
 
 ## The Sacred Concept of LORE
 

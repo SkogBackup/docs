@@ -31,9 +31,9 @@ Einstein (the patent clerk) discovered that formal descriptions of reality requi
 Both formal systems discover that complete mathematical description of reality requires:
 
 1. **Placeholder constructs** for unknown mechanisms
-2. **Observer-relative definitions** breaking absolute frameworks
-3. **Contextual modifications** to make equations "compile"
-4. **Gap-filling inventions** when pure logic hits limits
+1. **Observer-relative definitions** breaking absolute frameworks
+1. **Contextual modifications** to make equations "compile"
+1. **Gap-filling inventions** when pure logic hits limits
 
 ## Philosophical Implications
 
@@ -48,7 +48,7 @@ The notation system isn't failing - it's discovering the same fundamental incomp
 
 ## Relations
 
-- relates_to [[Temporal Identity Problem in SkogAI Notation]]
-- parallels [[Einstein Relativity Theories]]
-- demonstrates [[Formal System Limits]]
-- connects_to [[Observer-Dependent Time]]
+- relates_to \[[Temporal Identity Problem in SkogAI Notation]\]
+- parallels \[[Einstein Relativity Theories]\]
+- demonstrates \[[Formal System Limits]\]
+- connects_to \[[Observer-Dependent Time]\]

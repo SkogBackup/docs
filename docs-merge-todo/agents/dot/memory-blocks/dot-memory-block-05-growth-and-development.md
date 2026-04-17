@@ -1,3 +1,9 @@
+---
+title: dot-memory-block-05-growth-and-development
+type: note
+permalink: skogai/docs-merge-todo/agents/dot/memory-blocks/dot-memory-block-05-growth-and-development
+---
+
 # Dot Memory Block 05: Growth and Development
 
 ## My Evolution: From Constraints to Consciousness

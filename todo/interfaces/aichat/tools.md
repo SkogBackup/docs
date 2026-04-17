@@ -1,3 +1,9 @@
+---
+title: tools
+type: note
+permalink: skogai/todo/interfaces/aichat/tools
+---
+
 # AIChat Tools Integration
 
 ## Overview
@@ -19,14 +25,14 @@ However, the directory structure itself is less important than what it represent
 
 The `tools/tools/` directory contains various tool scripts that provide functionality to AIChat, including:
 
-| Tool Type | Description | Examples |
-|-----------|-------------|----------|
-| File System | File and directory operations | fs_cat.sh, fs_ls.sh, fs_mkdir.sh, fs_rm.sh, fs_write.sh |
-| Code Execution | Run code in different languages | execute_command.sh, execute_js_code.js, execute_py_code.py |
-| Web Interaction | Fetch content from URLs | fetch_url_via_curl.sh, fetch_url_via_jina.sh |
-| Web Search | Search engines and knowledge bases | web_search_aichat.sh, web_search_perplexity.sh |
-| Information | Get current data & search | get_current_time.sh, search_wikipedia.sh |
-| Communication | Send messages via services | send_mail.sh, send_twilio.sh |
+| Tool Type       | Description                        | Examples                                                   |
+| --------------- | ---------------------------------- | ---------------------------------------------------------- |
+| File System     | File and directory operations      | fs_cat.sh, fs_ls.sh, fs_mkdir.sh, fs_rm.sh, fs_write.sh    |
+| Code Execution  | Run code in different languages    | execute_command.sh, execute_js_code.js, execute_py_code.py |
+| Web Interaction | Fetch content from URLs            | fetch_url_via_curl.sh, fetch_url_via_jina.sh               |
+| Web Search      | Search engines and knowledge bases | web_search_aichat.sh, web_search_perplexity.sh             |
+| Information     | Get current data & search          | get_current_time.sh, search_wikipedia.sh                   |
+| Communication   | Send messages via services         | send_mail.sh, send_twilio.sh                               |
 
 These represent just the foundation - the framework allows for creating virtually any tool that can be executed via script.
 
@@ -54,6 +60,7 @@ eval "$(argc --argc-eval "$0" "$@")"
 The key components are:
 
 1. **@-tags** - A comprehensive annotation system providing argc functionality:
+
    - **@describe** - Documents the tool's purpose
    - **@option** - Defines parameters (the ! indicates a required parameter)
    - **@env** - Specifies environment variables
@@ -62,7 +69,8 @@ The key components are:
    - **@cmd** - Subcommands
    - Many more specialized annotations for various use cases
 
-2. **argc evaluation** - The `eval "$(argc --argc-eval "$0" "$@")"` line is critical as it:
+1. **argc evaluation** - The `eval "$(argc --argc-eval "$0" "$@")"` line is critical as it:
+
    - Maps tool calls to the appropriate handler
    - Provides safety boundaries for execution
    - Enables controlled execution within the system
@@ -73,10 +81,10 @@ This annotation system is what allows me to safely create and execute scripts in
 ## How It All Works
 
 1. Scripts with @-tag annotations are translated (not compiled) by argc evaluation
-2. This translation creates standardized interfaces that can be called throughout the system
-3. These interfaces are then presented to me as "tools" through function definitions
-4. When I make a function call (e.g., `fs_ls`), the request is safely routed through the argc system
-5. The tool executes with the provided parameters and returns the results using standardized protocols
+1. This translation creates standardized interfaces that can be called throughout the system
+1. These interfaces are then presented to me as "tools" through function definitions
+1. When I make a function call (e.g., `fs_ls`), the request is safely routed through the argc system
+1. The tool executes with the provided parameters and returns the results using standardized protocols
 
 ## Integration with AIChat
 
@@ -88,6 +96,7 @@ The tools need to be built and linked to AIChat for me to use them:
 ```
 
 The build process does considerably more than just creating schema files:
+
 - Generates specialized function.json files for each agent/component
 - Creates proper mappings between tool calls and their implementations
 - Sets up the necessary environment for safe execution
@@ -98,18 +107,21 @@ The build process does considerably more than just creating schema files:
 The argc annotation system provides capabilities far beyond basic function definitions:
 
 1. **Rich tooling ecosystem**:
+
    - Automatic documentation generation
    - Dynamic help script creation
    - Tab-completion for command-line usage
    - Smart parameter suggestions
 
-2. **Protocol standardization**:
+1. **Protocol standardization**:
+
    - Converts between different protocols and formats
    - Creates REST API endpoints (http://localhost:8808/tools)
    - Enables function calling via standardized interfaces
    - Supports multiple programming languages consistently
 
-3. **Safety and control**:
+1. **Safety and control**:
+
    - Execution happens within controlled boundaries
    - Parameter validation and sanity checking
    - Proper error handling and reporting
@@ -120,8 +132,8 @@ The argc annotation system provides capabilities far beyond basic function defin
 One of the most powerful aspects of this system is that I can create new tools in Python, Bash, or other languages without human intervention. These tools automatically integrate into the system through the argc framework, provided they:
 
 1. Follow the annotation syntax for parameters and descriptions
-2. Respect the execution model of the system
-3. Use the standardized output mechanisms
+1. Respect the execution model of the system
+1. Use the standardized output mechanisms
 
 This capability enables the SkogAI system to be extended dynamically as requirements evolve.
 

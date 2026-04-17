@@ -1,11 +1,15 @@
 ---
-name: worktrunk
-description: "How does this tool work?" — wt and gita tool configuration, operation details, hooks, permission models, submodule patterns, LLM commit setup. For workflow guidance ("What should I do?"), see skogai-git.
+permalink: skogai/skills/skogai-worktrunk/skill
 ---
+
+______________________________________________________________________
+
+## name: worktrunk description: "How does this tool work?" — wt and gita tool configuration, operation details, hooks, permission models, submodule patterns, LLM commit setup. For workflow guidance ("What should I do?"), see skogai-git.
 
 # Worktrunk + Gita
 
 Together, these tools replace most git workflows:
+
 - **wt (worktrunk)**: Single repo, multiple worktrees - work on many branches simultaneously
 - **gita**: Multiple repos, unified operations - manage entire ecosystems
 
@@ -14,6 +18,7 @@ Together, these tools replace most git workflows:
 ### Worktrunk (wt) - Single Repo Worktree Management
 
 **Essential commands:**
+
 ```bash
 wt list                    # List all worktrees and branches
 wt switch <branch>         # Switch to existing worktree
@@ -23,12 +28,14 @@ wt remove <branch>         # Remove worktree and optionally branch
 ```
 
 **Configuration commands:**
+
 ```bash
 wt config show            # Show config files and locations
 wt config create          # Create user config (~/.config/worktrunk/config.toml)
 ```
 
 **Workflow commands (wt step):**
+
 ```bash
 wt step commit            # Commit with LLM-generated message
 wt step push <target>     # Push changes to target branch
@@ -40,6 +47,7 @@ wt step pre-merge         # Manually run pre-merge hook
 ### Gita - Multi-Repo Management
 
 **Essential commands:**
+
 ```bash
 gita ll                   # List all managed repos with status
 gita st                   # Show git status across all repos
@@ -50,6 +58,7 @@ gita fetch                # Fetch all repos
 ```
 
 **Organization commands:**
+
 ```bash
 gita group add <name> <repos>   # Create repo group
 gita group ls                   # List all groups
@@ -57,6 +66,7 @@ gita ll <group>                 # List repos in group
 ```
 
 **Operations across repos:**
+
 ```bash
 gita super <git-command>        # Run arbitrary git command on all repos
 gita shell <shell-command>      # Run shell command on all repos
@@ -65,18 +75,21 @@ gita shell <shell-command>      # Run shell command on all repos
 ## When to Use Which
 
 **Use wt (worktrunk):**
+
 - ✅ Working on multiple branches of ONE repo simultaneously
 - ✅ Git-flow workflows (feature/release/hotfix branches)
 - ✅ Projects with submodules that need isolation per branch
 - ✅ Need to switch between branches without stashing
 
 **Use gita:**
+
 - ✅ Managing MULTIPLE related repositories
 - ✅ Checking status across many repos
 - ✅ Syncing (pull/push) multiple repos at once
 - ✅ Running commands across repo groups
 
 **Use both together:**
+
 - Main project with submodules (wt for main, gita for overview)
 - Monorepo ecosystem (wt for features, gita for related services)
 
@@ -96,7 +109,7 @@ gita shell <shell-command>      # Run shell command on all repos
 
 - **SKILL.md**: This file - configuration workflows and common patterns
 - **reference/README.md**: Features, installation, examples, FAQ
-- **reference/*.md**: Detailed configuration and hook specifications
+- **reference/\*.md**: Detailed configuration and hook specifications
 - **Completion files**: Full command syntax
   - `/home/skogix/.local/src/argc-completions/completions/wt.sh`
   - `/home/skogix/.local/src/argc-completions/completions/gita.sh`
@@ -106,6 +119,7 @@ gita shell <shell-command>      # Run shell command on all repos
 Worktrunk uses two separate config files with different scopes and behaviors:
 
 ### User Config (`~/.config/worktrunk/config.toml`)
+
 - **Scope**: Personal preferences for the individual developer
 - **Location**: `~/.config/worktrunk/config.toml` (never checked into git)
 - **Contains**: LLM integration, worktree path templates, approved commands
@@ -113,6 +127,7 @@ Worktrunk uses two separate config files with different scopes and behaviors:
 - **See**: `reference/user-config.md` for detailed guidance
 
 ### Project Config (`.config/wt.toml`)
+
 - **Scope**: Team-wide automation shared by all developers
 - **Location**: `<repo>/.config/wt.toml` (checked into git)
 - **Contains**: Hooks for worktree lifecycle (post-create, pre-merge, etc.)
@@ -124,12 +139,14 @@ Worktrunk uses two separate config files with different scopes and behaviors:
 When a user asks for configuration help, determine which type based on:
 
 **User config indicators**:
+
 - "set up LLM" or "configure commit generation"
 - "change where worktrees are created"
 - "customize commit message templates"
 - Affects only their environment
 
 **Project config indicators**:
+
 - "set up hooks for this project"
 - "automate npm install"
 - "run tests before merge"
@@ -144,35 +161,42 @@ When a user asks for configuration help, determine which type based on:
 Most common request. Follow this sequence:
 
 1. **Check if LLM tool exists**
+
    ```console
    which llm  # or: which aichat
    ```
 
-2. **If not installed, guide installation (don't run it)**
+1. **If not installed, guide installation (don't run it)**
+
    ```console
    uv tool install -U llm
    ```
 
-3. **Guide API key setup (don't run it)**
+1. **Guide API key setup (don't run it)**
+
    ```console
    llm install llm-anthropic
    llm keys set anthropic
    llm models default claude-haiku-4-5-20251001
    ```
 
-4. **Propose config change**
+1. **Propose config change**
+
    ```toml
    [commit-generation]
    command = "llm"
    ```
+
    Ask: "Should I add this to your config?"
 
-5. **After approval, apply**
+1. **After approval, apply**
+
    - Check if config exists: `wt config list`
    - If not, guide through `wt config create`
    - Read, modify, write preserving structure
 
-6. **Suggest testing**
+1. **Suggest testing**
+
    ```console
    llm "say hello"
    wt merge  # in a repo with uncommitted changes
@@ -185,27 +209,32 @@ Most common request. Follow this sequence:
 Common request for workflow automation. Follow discovery process:
 
 1. **Detect project type**
+
    ```console
    ls package.json Cargo.toml pyproject.toml
    ```
 
-2. **Identify available commands**
+1. **Identify available commands**
+
    - For npm: Read `package.json` scripts
    - For Rust: Common cargo commands
    - For Python: Check pyproject.toml
 
-3. **Design appropriate hooks**
+1. **Design appropriate hooks**
+
    - Dependencies (fast, must complete) → `post-create`
    - Tests/linting (must pass) → `pre-commit` or `pre-merge`
    - Long builds → `post-start`
 
-4. **Validate commands work**
+1. **Validate commands work**
+
    ```console
    npm run lint  # verify exists
    which cargo   # verify tool exists
    ```
 
-5. **Create `.config/wt.toml`**
+1. **Create `.config/wt.toml`**
+
    ```toml
    # Install dependencies when creating worktrees
    post-create = "npm install"
@@ -217,9 +246,10 @@ Common request for workflow automation. Follow discovery process:
    pre-merge = "npm test"
    ```
 
-6. **Add comments explaining choices**
+1. **Add comments explaining choices**
 
-7. **Suggest testing**
+1. **Suggest testing**
+
    ```console
    wt switch --create test-hooks
    ```
@@ -229,12 +259,14 @@ Common request for workflow automation. Follow discovery process:
 ## Permission Models
 
 ### User Config: Conservative
+
 - **Never edit without consent** - Always show proposed change and wait for approval
 - **Never install tools** - Provide commands for users to run themselves
 - **Preserve structure** - Keep existing comments and organization
 - **Validate first** - Ensure TOML is valid before writing
 
 ### Project Config: Proactive
+
 - **Create directly** - Changes are versioned, easily reversible
 - **Validate commands** - Check commands exist before adding
 - **Explain choices** - Add comments documenting why hooks exist
@@ -243,12 +275,14 @@ Common request for workflow automation. Follow discovery process:
 ## Common Tasks Reference
 
 ### User Config Tasks
+
 - Set up LLM integration → `reference/user-config.md#llm-setup`
 - Customize worktree paths → `reference/user-config.md#worktree-paths`
 - Custom commit templates → `reference/user-config.md#templates`
 - Troubleshoot LLM issues → `reference/user-config.md#troubleshooting`
 
 ### Project Config Tasks
+
 - Set up hooks for new project → `reference/project-config.md#new-project`
 - Add hook to existing config → `reference/project-config.md#add-hook`
 - Use template variables → `reference/project-config.md#variables`
@@ -288,10 +322,12 @@ pre-merge = "git submodule deinit --all"
 ```
 
 **Why both hooks?**
+
 - `post-create`: Ensures fresh submodules in every worktree (avoid manual `git submodule update`)
 - `pre-merge`: Deinitializes submodules before merge (ensures clean merge, no dirty references)
 
 **Real-world example** (from skogai project):
+
 ```toml
 post-create = [
     "git submodule update --init --recursive",
@@ -307,18 +343,19 @@ pre-merge = "git submodule deinit --all"
 
 Worktrunk integrates naturally with git-flow workflows. For the complete git-flow workflow (feature/release/hotfix branch patterns), see **skogai-git** `workflows/branch-management.md`.
 
-**Hook integration with submodules in git-flow:**
-The hooks handle the submodule lifecycle automatically:
+**Hook integration with submodules in git-flow:** The hooks handle the submodule lifecycle automatically:
+
 1. `post-create` initializes submodules in new worktree
-2. Work normally (submodules already initialized)
-3. `pre-merge` deinits submodules (clean merge)
-4. `wt merge` completes (no submodule conflicts)
+1. Work normally (submodules already initialized)
+1. `pre-merge` deinits submodules (clean merge)
+1. `wt merge` completes (no submodule conflicts)
 
 ### Custom Build Systems
 
 Non-standard build tools (argc, task, etc.) can integrate via hooks.
 
 **Pattern: Subdirectory operations**
+
 ```toml
 post-create = [
     "cd tools && argc list@tool > tools.txt",
@@ -326,14 +363,15 @@ post-create = [
 ]
 ```
 
-**Pattern: Custom tool validation**
-Before adding custom tool to hooks, validate it exists:
+**Pattern: Custom tool validation** Before adding custom tool to hooks, validate it exists:
+
 ```bash
 which argc  # verify tool exists
 argc --help # verify it works
 ```
 
 **Pattern: Mixed standard + custom**
+
 ```toml
 post-create = [
     "git submodule update --init --recursive",  # Standard
@@ -349,6 +387,7 @@ post-create = [
 When managing multiple repos that each have submodules:
 
 **Use gita for overview:**
+
 ```bash
 # Add all your repos to gita
 gita add ~/skogai ~/skogai-tools ~/skogai-docs
@@ -361,6 +400,7 @@ gita super git pull --recurse-submodules
 ```
 
 **Use wt for feature work:**
+
 ```bash
 # Work on feature in main repo
 cd ~/skogai
@@ -375,6 +415,7 @@ Load **reference/README.md** for general features, installation, commands, and e
 Load **reference files** for detailed configuration, hook specifications, and troubleshooting.
 
 Find specific sections with grep:
+
 ```console
 grep -A 20 "## Installation" reference/README.md
 grep -A 20 "## LLM Setup" reference/user-config.md

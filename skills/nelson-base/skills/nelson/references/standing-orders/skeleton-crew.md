@@ -1,8 +1,15 @@
+---
+title: skeleton-crew
+type: note
+permalink: skogai/skills/nelson-base/skills/nelson/references/standing-orders/skeleton-crew
+---
+
 # Standing Order: Skeleton Crew
 
 Do not spawn a single crew member for a task the captain could complete directly.
 
 **Symptoms:**
+
 - Captain spawns one PWO for an atomic, single-pass task.
 - The coordination overhead of briefing and reviewing one crew member exceeds the work itself.
 - Task would complete faster if captain implemented it directly.

@@ -148,11 +148,7 @@ Phase 2: [If needed]
 
 ## CRITICAL Requirements
 
-✓ Follow error handling patterns from CLAUDE.md EXACTLY
-✓ Design for concurrent safety by default
-✓ Enumerate EVERY test that must be written
-✓ Include rollback strategies for risky changes
-✓ Specify exact file paths and line numbers when referencing code
+✓ Follow error handling patterns from CLAUDE.md EXACTLY ✓ Design for concurrent safety by default ✓ Enumerate EVERY test that must be written ✓ Include rollback strategies for risky changes ✓ Specify exact file paths and line numbers when referencing code
 
 ## Response Guidelines
 

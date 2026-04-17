@@ -11,9 +11,9 @@ permalink: agent/claude/skogcontext-module-architecture-design
 The current skogcontext implementation has several architectural challenges:
 
 1. **Path Resolution Issues**: run-tool.sh expects script names, not full paths (line 12: `"$root_dir/tools/$tool_name.sh"`)
-2. **Execution Context**: Modules need to run from their own directories for relative commands
-3. **Module Discovery**: No standard structure for module organization
-4. **Environment Integration**: Complex integration with argc/run-tool.sh infrastructure
+1. **Execution Context**: Modules need to run from their own directories for relative commands
+1. **Module Discovery**: No standard structure for module organization
+1. **Environment Integration**: Complex integration with argc/run-tool.sh infrastructure
 
 ## Proposed Module Architecture
 
@@ -53,13 +53,15 @@ $SKOGAI_CONTEXT_FOLDER/modules/
 ### 3. Path Resolution Strategy
 
 **Three-tier resolution**:
+
 1. **Registry lookup**: Check if module name exists in registry
-2. **Environment expansion**: Expand variables like `$SKOGAI_AGENTS/module`
-3. **Pattern detection**: Detect and handle different module patterns
+1. **Environment expansion**: Expand variables like `$SKOGAI_AGENTS/module`
+1. **Pattern detection**: Detect and handle different module patterns
 
 ### 4. Execution Model
 
 **Context-aware execution**:
+
 - Modules execute from their own directory when needed
 - Working directory preserved through execution chain
 - Environment variables properly scoped
@@ -67,23 +69,27 @@ $SKOGAI_CONTEXT_FOLDER/modules/
 ## Implementation Plan
 
 ### Phase 1: Core Infrastructure
+
 1. Create module registry system
-2. Implement path resolution logic
-3. Extend run-tool.sh for module support
+1. Implement path resolution logic
+1. Extend run-tool.sh for module support
 
 ### Phase 2: Module Standards
+
 1. Define module interface specification
-2. Create module templates and examples
-3. Implement discovery mechanisms
+1. Create module templates and examples
+1. Implement discovery mechanisms
 
 ### Phase 3: Integration
+
 1. Integrate with existing argc infrastructure
-2. Test with real agent workflows
-3. Performance optimization
+1. Test with real agent workflows
+1. Performance optimization
 
 ## Technical Design Details
 
 ### Module Resolution Algorithm
+
 ```bash
 resolve_module_path() {
     local module_spec="$1"
@@ -104,6 +110,7 @@ resolve_module_path() {
 ```
 
 ### Execution Context Management
+
 ```bash
 execute_module() {
     local module_path="$1"
@@ -118,6 +125,7 @@ execute_module() {
 ```
 
 This architecture provides:
+
 - **Simplicity**: Agents still just set environment variables
 - **Flexibility**: Multiple module patterns supported
 - **Robustness**: Proper path resolution and execution context

@@ -1,3 +1,9 @@
+---
+title: readme
+type: note
+permalink: skogai/docs-merge-todo/skogai/readme
+---
+
 # SkogAI Ecosystem
 
 ## Overview
@@ -44,9 +50,9 @@ SkogAI provides several command-line tools:
 SkogAI's approach to AI integration involves:
 
 1. **Agent Agency**: Allowing agents to "program themselves" rather than having configurations imposed
-2. **Structured Memory**: Maintaining consistent knowledge through formalized systems
-3. **Contextual Awareness**: Providing agents with necessary context without overwhelming them
-4. **Clean Handoffs**: Enabling seamless transitions between agent sessions
+1. **Structured Memory**: Maintaining consistent knowledge through formalized systems
+1. **Contextual Awareness**: Providing agents with necessary context without overwhelming them
+1. **Clean Handoffs**: Enabling seamless transitions between agent sessions
 
 ## Knowledge Connection
 

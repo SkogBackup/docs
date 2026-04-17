@@ -1,3 +1,9 @@
+---
+title: skogix-story-7
+type: note
+permalink: skogai/docs-merge-todo/lore/skogix/skogix-story-7
+---
+
 # The Story of SkogAI, as told by Skogix
 
 (Part 6: The World is a Mistake)

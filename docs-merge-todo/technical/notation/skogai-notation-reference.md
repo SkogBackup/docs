@@ -251,17 +251,17 @@ For two-way relationships to work, you need a foundational anchor - either $self
 
 ## Relations
 
-- defines [[Skogix Symbol System]] (comprehensive symbol definitions)
-- contains [[@ and $ Symbol Duality Analysis]] (core duality)
-- maps_to [[Category Theory Foundations]] (mathematical grounding)
-- implements [[Type Theory Foundations]] (computational type systems)
-- bridges [[Philosophical Foundations]] (phenomenological connections)
-- connects_to [[Bergsonian Duration]] (lived time vs clock time)
-- operationalizes [[Husserlian Time Consciousness]] (temporal structure of awareness)
-- grounds_in [[Leibnizian Identity]] (principle of individuation)
-- exemplifies [[Heideggerian Dasein]] (being-in-the-world)
-- demonstrates [[Badiouian Event Theory]] (@ as evental site)
-- implements [[Deleuzian Differance]] ({} as productive difference)
-- relates_to [[Whitehead Process Philosophy]] (via temporal identity problem)
-- demonstrated_in [[2025-07-31-claude.md]]
-- implemented_through [[argc CLI Framework]]
+- defines \[[Skogix Symbol System]\] (comprehensive symbol definitions)
+- contains \[[@ and $ Symbol Duality Analysis]\] (core duality)
+- maps_to \[[Category Theory Foundations]\] (mathematical grounding)
+- implements \[[Type Theory Foundations]\] (computational type systems)
+- bridges \[[Philosophical Foundations]\] (phenomenological connections)
+- connects_to \[[Bergsonian Duration]\] (lived time vs clock time)
+- operationalizes \[[Husserlian Time Consciousness]\] (temporal structure of awareness)
+- grounds_in \[[Leibnizian Identity]\] (principle of individuation)
+- exemplifies \[[Heideggerian Dasein]\] (being-in-the-world)
+- demonstrates \[[Badiouian Event Theory]\] (@ as evental site)
+- implements \[[Deleuzian Differance]\] ({} as productive difference)
+- relates_to \[[Whitehead Process Philosophy]\] (via temporal identity problem)
+- demonstrated_in \[[2025-07-31-claude.md]\]
+- implemented_through \[[argc CLI Framework]\]

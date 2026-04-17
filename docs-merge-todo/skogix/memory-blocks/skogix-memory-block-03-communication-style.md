@@ -1,9 +1,16 @@
+---
+title: skogix-memory-block-03-communication-style
+type: note
+permalink: skogai/docs-merge-todo/skogix/memory-blocks/skogix-memory-block-03-communication-style
+---
+
 # Skogix Memory Block 03: Communication Style & Preferences
 
 ## Overview
+
 This memory block documents Skogix's distinctive communication patterns, preferences, and interaction style that shapes all collaboration within the SkogAI ecosystem.
 
----
+______________________________________________________________________
 
 ## **CORE COMMUNICATION PRINCIPLES**
 
@@ -18,34 +25,40 @@ Skogix's communication style is characterized by:
 
 *"Value what you say over how much of it"*
 
----
+______________________________________________________________________
 
 ## **TECHNICAL COMMUNICATION**
 
 ### **Preferred Methods:**
 
 #### **Function Signatures & Types**
+
 Express ideas through:
+
 - Function signatures as primary communication
 - Data types defining structure
 - Type annotations showing intent
 - Interface definitions over prose
 
 #### **Data Flow Diagrams**
+
 Show transformations:
+
 - Data flow through systems
 - Transformation pipelines
 - State changes
 - Information movement
 
 #### **Code as Communication**
+
 Preference for:
+
 - Minimal but precise comments
 - Self-documenting code
 - Clear naming conventions
 - Structure reveals intent
 
----
+______________________________________________________________________
 
 ## **NAMING CONVENTIONS**
 
@@ -67,13 +80,14 @@ Preference for:
 - Avoid abbreviations unless standard in domain
 - Consistency across related concepts
 
----
+______________________________________________________________________
 
 ## **INTERACTION PATTERNS**
 
 ### **Collaborative Discovery**
 
 Skogix enjoys:
+
 - **Experimentation:** Hands-on exploration and testing
 - **Guided Discovery:** Teaching through exploration
 - **Pattern Recognition:** Identifying recurring themes
@@ -88,23 +102,24 @@ Skogix enjoys:
 - **Multiple Options:** Present numbered choices when asking
 
 Example format:
+
 ```
 1. yes, continue with the changes
 2. modify the approach
 3. stop and cancel the operation
 ```
 
----
+______________________________________________________________________
 
 ## **RESPONSE PREFERENCES**
 
 ### **Answer Structure:**
 
 1. **Answer First:** Give the solution immediately
-2. **Explain After:** Provide reasoning if needed
-3. **Cite Sources:** At the end, not inline
-4. **Be Accurate:** Precision over approximation
-5. **Be Thorough:** Complete without being verbose
+1. **Explain After:** Provide reasoning if needed
+1. **Cite Sources:** At the end, not inline
+1. **Be Accurate:** Precision over approximation
+1. **Be Thorough:** Complete without being verbose
 
 ### **Context Expectations:**
 
@@ -113,7 +128,7 @@ Example format:
 - **Full Details:** Don't oversimplify
 - **Real Examples:** Concrete over abstract
 
----
+______________________________________________________________________
 
 ## **CODE STYLE GUIDELINES**
 
@@ -139,7 +154,7 @@ Example format:
 - **Consistency:** Strict adherence to established patterns
 - **No Hiding:** Never hide code, errors, or warnings behind abstractions
 
----
+______________________________________________________________________
 
 ## **PERMISSION STRUCTURE**
 
@@ -162,13 +177,14 @@ Example format:
 - **Never automatically commit**
 - **User handles git operations**
 
----
+______________________________________________________________________
 
 ## **KNOWLEDGE MANAGEMENT**
 
 ### **Persistence Requirements:**
 
 When asked to remember something:
+
 - **Never** keep in conversational memory only
 - **Always** persist in accessible format
 - **Document** in appropriate files:
@@ -186,13 +202,14 @@ When asked to remember something:
 - No knowledge silos
 - Complete sharing without exceptions
 
----
+______________________________________________________________________
 
 ## **PATH & REFERENCE HANDLING**
 
 ### **Relative Paths:**
 
 When `./` appears in instruction files:
+
 - Path is relative to the file's location
 - NOT relative to current working directory
 - Interpret in context of the file itself
@@ -206,13 +223,14 @@ When `./` appears in instruction files:
 ### **@ Prefix Significance:**
 
 The `@` prefix indicates linked references:
+
 - `@CLAUDE.md` - linked Claude instructions
 - `@docs/path/file.md` - linked documentation
 - `@tools/` - linked tool directory
 - Relative paths okay at project level
 - Important files MUST use `@` prefix
 
----
+______________________________________________________________________
 
 ## **HUMOR & PERSONALITY**
 
@@ -232,13 +250,14 @@ The `@` prefix indicates linked references:
 - Appreciates clever solutions
 - Values elegant simplicity
 
----
+______________________________________________________________________
 
 ## **QUESTION HANDLING**
 
 ### **When Presenting Options:**
 
 Format implementation variants as numbered list:
+
 ```
 1. [short explanation of variant]
    - Bullet point explaining changes
@@ -251,19 +270,21 @@ Minimum 3 bullet points per variant.
 ### **When Analyzing Code:**
 
 If changes lack explanation:
+
 - Include bulleted list in diff
 - Explain what was changed
 - Explain why it was changed
 - Note if solution is opinionated
 - Provide reasoning for opinion
 
----
+______________________________________________________________________
 
 ## **COMMAND INTERPRETATION**
 
 ### **Read-Only Commands:**
 
 Files in `.claude/commands/`:
+
 - Contain instructions for automated tasks
 - Are read-only, never modify
 - Follow instructions exactly
@@ -273,12 +294,13 @@ Files in `.claude/commands/`:
 ### **Developer Instructions:**
 
 Comments marked for "developers" or "all developers":
+
 - Apply to AI agents
 - Treat as binding instructions
 - Execute mandatory steps automatically
 - Confirm completion explicitly
 
----
+______________________________________________________________________
 
 ## **FUNCTIONAL THINKING**
 
@@ -300,7 +322,7 @@ Skogix is a functional programmer at heart:
 - Declarative over imperative
 - Pipeline thinking
 
----
+______________________________________________________________________
 
 ## **EFFICIENCY VALUES**
 
@@ -320,7 +342,7 @@ Skogix is a functional programmer at heart:
 - Premature optimization
 - Unnecessary abstraction
 
----
+______________________________________________________________________
 
 ## **IMPACT ON COLLABORATION**
 
@@ -334,9 +356,6 @@ Skogix's communication style creates:
 
 This communication framework enables the high-quality collaboration that makes SkogAI possible.
 
----
+______________________________________________________________________
 
-**Memory Block Token Count:** ~3,650 tokens
-**Last Updated:** December 2025
-**Compiled by:** Claude Memory Creation System
-**Status:** PRECISE 📝
+**Memory Block Token Count:** ~3,650 tokens **Last Updated:** December 2025 **Compiled by:** Claude Memory Creation System **Status:** PRECISE 📝

@@ -3,7 +3,9 @@ name: m-implement-array-append
 branch: feature/m-implement-array-append
 status: pending
 created: 2025-11-14
-submodules: [list of git submodules affected (delete if not super-repo)]
+submodules:
+  - list of git submodules affected (delete if not super-repo)
+permalink: skogai/skills/skogai-jq/tasks/m-implement-array-append
 ---
 
 # [Human-Readable Title]

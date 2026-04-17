@@ -19,28 +19,33 @@ permalink: skogai-memory/relation-linking-quick-reference
 ## Primary Relation Types
 
 **Hierarchical**:
+
 - `contains` - Parent encompasses child
 - `part_of` - Child belongs to parent
 - `extends` - Builds upon or enhances
 
 **Dependency**:
+
 - `requires` - Must have prerequisite
 - `depends_on` - Technical dependency
 - `uses` - Employs or utilizes
 - `enables` - Makes possible
 
 **Associative**:
+
 - `relates_to` - General connection (use sparingly)
 - `affects` - Has impact on
 - `pairs_with` - Complementary relationship
 - `contrasts_with` - Opposite or alternative
 
 **Implementation**:
+
 - `implements` - Realizes specification
 - `demonstrates` - Shows example
 - `supports` - Provides support for
 
 **Documentation**:
+
 - `documents` - Provides documentation for
 - `archives` - Preserves historical record
 - `extracted_from` - Derived from source
@@ -58,9 +63,10 @@ permalink: skogai-memory/relation-linking-quick-reference
 ## Finding Existing Entities
 
 Before creating relations:
+
 1. Search for keywords: `search_notes(query="topic")`
-2. Check recent activity: `recent_activity(timeframe="1 week")`
-3. List directory: `list_directory(dir_name="/folder")`
+1. Check recent activity: `recent_activity(timeframe="1 week")`
+1. List directory: `list_directory(dir_name="/folder")`
 
 ## Minimum Targets
 

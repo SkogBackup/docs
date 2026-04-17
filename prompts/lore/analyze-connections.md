@@ -2,7 +2,11 @@
 title: analyze-connections
 type: prompt
 category: lore
-tags: [analysis, connections, relationships]
+tags:
+  - analysis
+  - connections
+  - relationships
+permalink: skogai/prompts/lore/analyze-connections
 ---
 
 # Objective
@@ -21,14 +25,16 @@ Structured connection data with SOURCE, TARGET, RELATIONSHIP, DESCRIPTION for ea
 
 Analyze these lore entries and identify meaningful connections between them:
 
-    $ENTRY_DATA
+```
+$ENTRY_DATA
 
-    For each connection you find, format your response like this:
+For each connection you find, format your response like this:
 
-    ## CONNECTION
-    SOURCE: [entry_id of source]
-    TARGET: [entry_id of target]
-    RELATIONSHIP: [describe relationship type: part_of, located_in, created_by, opposes, allies_with, etc.]
-    DESCRIPTION: [1-2 sentences describing the connection]
+## CONNECTION
+SOURCE: [entry_id of source]
+TARGET: [entry_id of target]
+RELATIONSHIP: [describe relationship type: part_of, located_in, created_by, opposes, allies_with, etc.]
+DESCRIPTION: [1-2 sentences describing the connection]
 
-    Identify at least 3-5 meaningful connections.
+Identify at least 3-5 meaningful connections.
+```

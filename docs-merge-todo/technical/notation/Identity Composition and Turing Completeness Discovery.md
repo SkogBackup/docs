@@ -23,14 +23,16 @@ Successfully traced how skogai notation achieves Turing completeness through ide
 ### Turing Completeness Requirements
 
 Achieved through:
+
 1. **Binary distinction**: 0 vs 1 from `$int` identity elements
-2. **Recursion**: `$self` enables self-reference and fixed points
-3. **Pattern matching**: `_` (existence) acts as universal matcher
-4. **Unbounded computation**: Creating endless JSON objects as Peano numbers
+1. **Recursion**: `$self` enables self-reference and fixed points
+1. **Pattern matching**: `_` (existence) acts as universal matcher
+1. **Unbounded computation**: Creating endless JSON objects as Peano numbers
 
 ### Parser Implementation
 
 The parser is elegantly simple:
+
 - Find `$key` patterns
 - Replace with values (left→right, top→bottom, inside→out)
 - Repeat until no `$` symbols remain
@@ -53,11 +55,11 @@ The parser is elegantly simple:
 
 ## Relations
 
-- builds_on [[Temporal Identity Problem in SkogAI Notation]]
-- demonstrates [[Identity Composition Rules]]
-- enables [[Parser as Macro Expander]]
-- reveals [[Static vs Processual Types]]
-- implements [[Turing Complete Notation System]]
+- builds_on \[[Temporal Identity Problem in SkogAI Notation]\]
+- demonstrates \[[Identity Composition Rules]\]
+- enables \[[Parser as Macro Expander]\]
+- reveals \[[Static vs Processual Types]\]
+- implements \[[Turing Complete Notation System]\]
 
 ## Observations
 

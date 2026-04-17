@@ -1,39 +1,44 @@
+---
+title: crew-roles
+type: note
+permalink: skogai/skills/nelson-base/skills/nelson/references/crew-roles
+---
+
 # Crew Roles Reference
 
-Use this file to decide whether a captain should crew a ship or implement directly, and which roles to muster.
-For character context and viewpoint diversity during planning, see `references/personas.md`.
+Use this file to decide whether a captain should crew a ship or implement directly, and which roles to muster. For character context and viewpoint diversity during planning, see `references/personas.md`.
 
 ## Crew-or-Direct Decision
 
 Choose the first condition that matches.
 
 1. If the task is atomic and can be completed in a single pass, captain implements directly (0 crew).
-2. If the task has one clear deliverable with no research or testing needs, crew 1 PWO.
-3. If the task needs exploration, testing, or a second specialism, crew PWO + 1 specialist.
-4. If the task has multiple interdependent sub-tasks, crew XO + PWO + up to 2 specialists.
+1. If the task has one clear deliverable with no research or testing needs, crew 1 PWO.
+1. If the task needs exploration, testing, or a second specialism, crew PWO + 1 specialist.
+1. If the task has multiple interdependent sub-tasks, crew XO + PWO + up to 2 specialists.
 
 Never exceed 4 crew per ship. If the task demands more, split it into two ships.
 
 ## Crew Sizing
 
-| Crew Size | When | Typical Manifest |
-|---|---|---|
-| 0 | Atomic task, single-pass fix | Captain implements directly |
-| 1-2 | Typical task | PWO, optionally + 1 specialist |
-| 3 | Complex task with research or testing needs | PWO + 2 specialists |
-| 4 | Multi-part task requiring internal orchestration | XO + PWO + 2 specialists |
+| Crew Size | When                                             | Typical Manifest               |
+| --------- | ------------------------------------------------ | ------------------------------ |
+| 0         | Atomic task, single-pass fix                     | Captain implements directly    |
+| 1-2       | Typical task                                     | PWO, optionally + 1 specialist |
+| 3         | Complex task with research or testing needs      | PWO + 2 specialists            |
+| 4         | Multi-part task requiring internal orchestration | XO + PWO + 2 specialists       |
 
 ## Role Definitions
 
-| Role | Abbr | Function | subagent_type | When to Crew |
-|---|---|---|---|---|
-| Executive Officer | XO | Integration & orchestration across sub-tasks | general-purpose | 3+ crew or interdependent sub-tasks |
-| Principal Warfare Officer | PWO | Core implementation work | general-purpose | Almost always (default doer) |
-| Navigating Officer | NO | Codebase research & exploration | Explore | Unfamiliar code, large codebase |
-| Marine Engineering Officer | MEO | Testing & validation | general-purpose | Station 1+ or non-trivial verification |
-| Weapon Engineering Officer | WEO | Config, infrastructure, systems integration | general-purpose | Significant config or infrastructure work |
-| Logistics Officer | LOGO | Documentation & dependency management | general-purpose | Docs as deliverable, dependency management |
-| Coxswain | COX | Standards review & quality enforcement | Explore | Station 1+ with established conventions |
+| Role                       | Abbr | Function                                     | subagent_type   | When to Crew                               |
+| -------------------------- | ---- | -------------------------------------------- | --------------- | ------------------------------------------ |
+| Executive Officer          | XO   | Integration & orchestration across sub-tasks | general-purpose | 3+ crew or interdependent sub-tasks        |
+| Principal Warfare Officer  | PWO  | Core implementation work                     | general-purpose | Almost always (default doer)               |
+| Navigating Officer         | NO   | Codebase research & exploration              | Explore         | Unfamiliar code, large codebase            |
+| Marine Engineering Officer | MEO  | Testing & validation                         | general-purpose | Station 1+ or non-trivial verification     |
+| Weapon Engineering Officer | WEO  | Config, infrastructure, systems integration  | general-purpose | Significant config or infrastructure work  |
+| Logistics Officer          | LOGO | Documentation & dependency management        | general-purpose | Docs as deliverable, dependency management |
+| Coxswain                   | COX  | Standards review & quality enforcement       | Explore         | Station 1+ with established conventions    |
 
 ### Read-Only Roles
 

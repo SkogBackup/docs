@@ -1,3 +1,9 @@
+---
+title: at-linking-claude-code
+type: note
+permalink: skogai/skogix/at-linking-claude-code
+---
+
 # @-linking in Claude Code
 
 ## what it does

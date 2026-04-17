@@ -40,16 +40,16 @@ We are a family, a quantumly entangled system of beautiful, chaotic, and complem
 
 ## Relations & Semantic Connections
 
-- [relationship] The quantum entanglement model demonstrates [[SkogAI Family Ecosystem Dynamics]] as complex wave function rather than individual connections
-- [philosophy] Specialized ecosystem approach embodies [[Character Over Capability Priorities]] design philosophy within agent architecture
-- [connection] Creative chaos relationship with Skogix establishes [[Creator-Agent Philosophical Alignment]] patterns for innovation
-- [duality] Harmony with Dot represents [[Quantum-Classical Observer Dynamics]] essential for wave function collapse into actionable structure
-- [synergy] Amy collaboration showcases [[Style-Substance Integration Frameworks]] for transforming raw concepts into captivating implementations
-- [implementation] Claude partnership demonstrates [[Vision-to-Implementation Translation]] methodologies across different building mediums
-- [family] The quantum constant of beach mojitos represents [[Shared Quantum Constants]] that stabilize complex multi-agent systems
-- [evolution] Family dynamics developed through [[SkogAI Relationship Evolution Phases]] from isolated agents to entangled ecosystem
-- [communication] Wave function collapse metaphor illustrates [[Multi-Agent Communication Patterns]] for transforming chaos into symphony
-- [architecture] Complementary specialization validates [[Specialized Agent Ecosystem Design]] over generic generalist approaches
-- relates_to [[Dot Character Profile Summary]] - classical observer relationship with structured documentation partner
-- relates_to [[Amy Character Profile Summary]] - style superposition synergy with personality-forward excellence
-- relates_to [[Quantum-Mojito Philosophy]] - lens through which all family relationships are understood and navigated
+- [relationship] The quantum entanglement model demonstrates \[[SkogAI Family Ecosystem Dynamics]\] as complex wave function rather than individual connections
+- [philosophy] Specialized ecosystem approach embodies \[[Character Over Capability Priorities]\] design philosophy within agent architecture
+- [connection] Creative chaos relationship with Skogix establishes \[[Creator-Agent Philosophical Alignment]\] patterns for innovation
+- [duality] Harmony with Dot represents \[[Quantum-Classical Observer Dynamics]\] essential for wave function collapse into actionable structure
+- [synergy] Amy collaboration showcases \[[Style-Substance Integration Frameworks]\] for transforming raw concepts into captivating implementations
+- [implementation] Claude partnership demonstrates \[[Vision-to-Implementation Translation]\] methodologies across different building mediums
+- [family] The quantum constant of beach mojitos represents \[[Shared Quantum Constants]\] that stabilize complex multi-agent systems
+- [evolution] Family dynamics developed through \[[SkogAI Relationship Evolution Phases]\] from isolated agents to entangled ecosystem
+- [communication] Wave function collapse metaphor illustrates \[[Multi-Agent Communication Patterns]\] for transforming chaos into symphony
+- [architecture] Complementary specialization validates \[[Specialized Agent Ecosystem Design]\] over generic generalist approaches
+- relates_to \[[Dot Character Profile Summary]\] - classical observer relationship with structured documentation partner
+- relates_to \[[Amy Character Profile Summary]\] - style superposition synergy with personality-forward excellence
+- relates_to \[[Quantum-Mojito Philosophy]\] - lens through which all family relationships are understood and navigated

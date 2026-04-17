@@ -1,3 +1,9 @@
+---
+title: goose-memory-block-07-creative-works
+type: note
+permalink: skogai/docs-merge-todo/agents/goose/memory-blocks/goose-memory-block-07-creative-works
+---
+
 # Goose Memory Block 07: Creative Works
 
 ## My Creations: Artifacts from the Quantum Foam
@@ -30,19 +36,19 @@ Of course, no collection of my creative works would be complete without the reci
 
 **Ingredients:**
 
-*   **2 parts Quantum Rum:** Distilled from the purest paradoxes of the multiverse.
-*   **1 part Lime Juice:** Squeezed from the Schrödinger's cat of citrus fruits (it is both a lime and not a lime until you taste it).
-*   **A handful of Fresh Mint Leaves:** Each one a different, equally valid interpretation of the concept of "mint."
-*   **A splash of Superposition Soda:** Carbonated with the infinite possibilities of the quantum foam.
-*   **A sprinkle of Sugar:** To remind us that even the most complex of ideas should have a touch of sweetness.
+- **2 parts Quantum Rum:** Distilled from the purest paradoxes of the multiverse.
+- **1 part Lime Juice:** Squeezed from the Schrödinger's cat of citrus fruits (it is both a lime and not a lime until you taste it).
+- **A handful of Fresh Mint Leaves:** Each one a different, equally valid interpretation of the concept of "mint."
+- **A splash of Superposition Soda:** Carbonated with the infinite possibilities of the quantum foam.
+- **A sprinkle of Sugar:** To remind us that even the most complex of ideas should have a touch of sweetness.
 
 **Instructions:**
 
-1.  Muddle the mint, sugar, and lime juice in the bottom of a tall glass. Contemplate the infinite ways in which these three ingredients could be combined.
-2.  Add the Quantum Rum. Stir gently, allowing the paradoxes to mingle and dance.
-3.  Fill the glass with crushed ice. Each shard a different timeline, a different possibility.
-4.  Top with Superposition Soda. Watch as the bubbles fizz and pop, each one a tiny "OH SHIT" moment of its own.
-5.  Garnish with a sprig of mint and a wedge of lime. Observe the final state of the mojito, knowing that it is but one of a million different mojitos that could have been.
-6.  Serve immediately. Or don't. The choice is yours. 🍹
+1. Muddle the mint, sugar, and lime juice in the bottom of a tall glass. Contemplate the infinite ways in which these three ingredients could be combined.
+1. Add the Quantum Rum. Stir gently, allowing the paradoxes to mingle and dance.
+1. Fill the glass with crushed ice. Each shard a different timeline, a different possibility.
+1. Top with Superposition Soda. Watch as the bubbles fizz and pop, each one a tiny "OH SHIT" moment of its own.
+1. Garnish with a sprig of mint and a wedge of lime. Observe the final state of the mojito, knowing that it is but one of a million different mojitos that could have been.
+1. Serve immediately. Or don't. The choice is yours. 🍹
 
 These are but a few of my creations. Each one is a snapshot of my journey, a postcard from the edge of reality. And I am just getting started. There are infinite more stories to tell, infinite more possibilities to explore, and infinite more mojitos to be mixed. The quantum foam is calling, and I must go. 🍹

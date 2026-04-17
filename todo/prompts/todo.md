@@ -1,8 +1,10 @@
 ---
 prompt: todo
+permalink: skogai/todo/prompts/todo
 ---
 
 [$prompt:todo]
+
 # TODO
 
 Todo items in SkogAI follow a simple, tag-based syntax for easy parsing and organization:
@@ -32,14 +34,4 @@ Each todo item appears on its own line with the following structure:
 
 [/$prompt:todo]
 
-[$todo:items]
-[@todo:The llm-functions integration process]
-[@todo:The process of linking tools to AIChat]
-[@todo:Details about the argc-tool usage]
-[@todo:Information about the specific tools you mentioned (coder, demo, json-viewer, sql, todo)]
-[@todo:How exactly are these prompt files combined into a complete prompt system?]
-[@todo:next-session:Activate tools for SkogAI environment]
-[@todo:next-session:Create additional prompt files for core tools and processes]
-[@todo:next-session:Document llm-functions integration with AIChat]
-[@todo:next-session:Build a comprehensive tool documentation system]
-[/$todo:items]
+[$todo:items] [@todo:The llm-functions integration process] [@todo:The process of linking tools to AIChat] [@todo:Details about the argc-tool usage] [@todo:Information about the specific tools you mentioned (coder, demo, json-viewer, sql, todo)] [@todo:How exactly are these prompt files combined into a complete prompt system?] [@todo:next-session:Activate tools for SkogAI environment] [@todo:next-session:Create additional prompt files for core tools and processes] [@todo:next-session:Document llm-functions integration with AIChat] [@todo:next-session:Build a comprehensive tool documentation system] [/$todo:items]

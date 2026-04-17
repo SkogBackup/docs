@@ -1,3 +1,9 @@
+---
+title: patterns
+type: note
+permalink: skogai/skills/skogai-jq/patterns
+---
+
 # patterns
 
 common patterns in json transformations and how to handle them.
@@ -10,8 +16,7 @@ common patterns in json transformations and how to handle them.
 .user.profile.name
 ```
 
-problem: fails if intermediate keys missing
-solution: use `//` for default or `?` for optional
+problem: fails if intermediate keys missing solution: use `//` for default or `?` for optional
 
 ```jq
 .user.profile.name // "unknown"

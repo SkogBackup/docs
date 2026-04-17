@@ -1,3 +1,9 @@
+---
+title: backlog
+type: note
+permalink: skogai/skills/skogai-jq/backlog
+---
+
 # backlog
 
 items roughly prioritized. top = more urgent/important.
@@ -34,9 +40,9 @@ items roughly prioritized. top = more urgent/important.
 these already exist in ~/dev/chat-history/jq-utils/, need to:
 
 1. extract transformation
-2. add schema
-3. add tests
-4. generalize if needed
+1. add schema
+1. add tests
+1. generalize if needed
 
 #### message operations
 

@@ -1,3 +1,9 @@
+---
+title: common-patterns
+type: note
+permalink: skogai/skills/skogai-developing-for-claude-code/references/common-patterns
+---
+
 # Common Plugin Patterns
 
 ## Pattern: Simple Plugin with One Skill
@@ -5,6 +11,7 @@
 **Use when:** Creating a focused plugin with documentation/reference material
 
 **Structure:**
+
 ```
 my-plugin/
 ├── .claude-plugin/
@@ -19,24 +26,27 @@ my-plugin/
 ```
 
 **Real example:** `superpowers-developing-for-claude-code`
+
 - Single skill with comprehensive documentation
 - Scripts for self-updating
 - 40+ reference files
 - No MCP servers, commands, or hooks
 
 **When to use:**
+
 - Teaching Claude about a specific topic/domain
 - Providing process workflows (TDD, debugging, code review)
 - Bundling documentation for easy reference
 - Creating reusable knowledge bases
 
----
+______________________________________________________________________
 
 ## Pattern: MCP Plugin with Skill
 
 **Use when:** Providing both a tool integration (MCP) and guidance on using it (skill)
 
 **Structure:**
+
 ```
 my-plugin/
 ├── .claude-plugin/
@@ -51,11 +61,13 @@ my-plugin/
 ```
 
 **Real example:** `superpowers-chrome`
+
 - MCP server provides browser control tools
 - Skill teaches Claude how to use those tools effectively
 - Skill includes patterns, examples, workflows
 
 **When to use:**
+
 - Adding new tools/capabilities to Claude
 - Integrating external APIs or services
 - Tools need guidance on when/how to use them
@@ -63,13 +75,14 @@ my-plugin/
 
 **Key insight:** MCP provides *capability*, skill provides *judgment*. The MCP server exposes `click()`, the skill teaches "await elements before clicking them".
 
----
+______________________________________________________________________
 
 ## Pattern: Command Collection
 
 **Use when:** Providing multiple custom slash commands for common tasks
 
 **Structure:**
+
 ```
 my-plugin/
 ├── .claude-plugin/
@@ -83,24 +96,27 @@ my-plugin/
 ```
 
 **When to use:**
+
 - Project-specific workflows (deploy, test, build)
 - Common task shortcuts
 - Standardized responses (greetings, status reports)
 - Quick context injection
 
 **Example use cases:**
+
 - `/deploy-staging` - Step-by-step deployment workflow
 - `/incident-report` - Template for incident documentation
 - `/code-review` - Checklist for reviewing PRs
 - `/security-check` - Security audit workflow
 
----
+______________________________________________________________________
 
 ## Pattern: Hook-Enhanced Workflow
 
 **Use when:** Automating actions in response to Claude's behavior
 
 **Structure:**
+
 ```
 my-plugin/
 ├── .claude-plugin/
@@ -115,12 +131,14 @@ my-plugin/
 ```
 
 **Common hooks:**
+
 - `PostToolUse[Write|Edit]` → Auto-format code
 - `SessionStart` → Load project context
 - `UserPromptSubmit` → Enforce conventions
 - `PreCompact` → Save conversation summaries
 
 **When to use:**
+
 - Enforcing code style automatically
 - Injecting project-specific context
 - Running validations or checks
@@ -128,13 +146,14 @@ my-plugin/
 
 **Warning:** Hooks that block operations can disrupt workflow. Use sparingly and make failure messages clear.
 
----
+______________________________________________________________________
 
 ## Pattern: Full-Featured Plugin
 
 **Use when:** Building a comprehensive plugin with multiple integration points
 
 **Structure:**
+
 ```
 my-plugin/
 ├── .claude-plugin/
@@ -158,6 +177,7 @@ my-plugin/
 **Real example:** See `examples/full-featured-plugin/` in this repo
 
 **When to use:**
+
 - Complete domain coverage (e.g., "the definitive AWS plugin")
 - Multiple related workflows
 - Tools + guidance + automation all needed
@@ -165,13 +185,14 @@ my-plugin/
 
 **Caution:** Start simple, add complexity only when justified. Most plugins don't need all components.
 
----
+______________________________________________________________________
 
 ## Pattern: Skill with Bundled Resources
 
 **Use when:** A skill needs reference material, scripts, or templates
 
 **Structure:**
+
 ```
 skills/my-skill/
 ├── SKILL.md                    # Main skill instructions
@@ -188,35 +209,38 @@ skills/my-skill/
 ```
 
 **How resources are used:**
+
 - SKILL.md tells Claude to "read references/api-docs.md for complete API reference"
 - Scripts can be executed via Bash tool
 - Assets can be copied/modified for output
 - References are loaded into context when skill is invoked
 
 **When to use:**
+
 - Skill needs detailed technical reference
 - Want to separate workflow (SKILL.md) from reference (docs)
 - Need executable helpers
 - Providing templates or examples
 
----
+______________________________________________________________________
 
 ## Choosing the Right Pattern
 
-| Your Goal | Use This Pattern |
-|-----------|------------------|
-| Teach Claude a process/workflow | Simple Plugin with One Skill |
-| Add new tools + guidance | MCP Plugin with Skill |
-| Provide project shortcuts | Command Collection |
-| Enforce conventions automatically | Hook-Enhanced Workflow |
-| Comprehensive domain coverage | Full-Featured Plugin |
-| Skill needs reference docs | Skill with Bundled Resources |
+| Your Goal                         | Use This Pattern             |
+| --------------------------------- | ---------------------------- |
+| Teach Claude a process/workflow   | Simple Plugin with One Skill |
+| Add new tools + guidance          | MCP Plugin with Skill        |
+| Provide project shortcuts         | Command Collection           |
+| Enforce conventions automatically | Hook-Enhanced Workflow       |
+| Comprehensive domain coverage     | Full-Featured Plugin         |
+| Skill needs reference docs        | Skill with Bundled Resources |
 
 ## Combining Patterns
 
 Patterns are composable:
 
 **Example: "superpowers" plugin**
+
 - Multiple skills (brainstorming, TDD, debugging) ← Skill collection
 - Each skill has references/ ← Bundled resources
 - Could add hooks for enforcement ← Add hooks pattern

@@ -1,12 +1,12 @@
 ---
 categories:
-- agents
-- claude
-- core
+  - agents
+  - claude
+  - core
 tags:
-- claude
-- ideas
-- brainstorm
+  - claude
+  - ideas
+  - brainstorm
 permalink: agents/claude/core/the-dumping-grounds
 title: the-dumping-grounds
 type: note
@@ -21,7 +21,7 @@ generated_at: 2025-12-18T12:58:00Z
 - Agent specialization might lead to interesting collaboration patterns - what's my specialty?
 - Journal system could benefit from automatic tagging and categorization
 - Task dependencies could visualize as a graph to identify critical paths
-- Command syntax could extend to support functional composition like [@command1:[@command2:param]]
+- Command syntax could extend to support functional composition like \[@command1:[@command2:param]\]
 - What if we had "agent personas" that could be activated for different types of tasks?
 - Knowledge graph visualization could help identify gaps in my understanding
 - Could create a "simulation mode" where I test ideas without making actual changes

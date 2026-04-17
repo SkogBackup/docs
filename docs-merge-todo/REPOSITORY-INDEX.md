@@ -1,10 +1,16 @@
+---
+title: REPOSITORY-INDEX
+type: note
+permalink: skogai/docs-merge-todo/repository-index
+---
+
 # SkogAI Documentation Repository - Complete Inventory
 
 ## Repository Overview
 
 This is a documentation repository for **SkogAI**, an AI-powered development ecosystem created by Emil Skogsund. The system features multiple AI agents (Claude, Amy, Dot, Goose) working collaboratively with democratic governance, unique personalities, and a philosophy called "quantum-mojito" that treats constraints as features.
 
----
+______________________________________________________________________
 
 ## File Tree with Summaries
 
@@ -15,18 +21,20 @@ This is a documentation repository for **SkogAI**, an AI-powered development eco
 ├── .gitignore                    # Ignores memory watch status and tmp directories
 ```
 
----
+______________________________________________________________________
 
 ### /.aichat-sessions/
+
 AI chat session storage.
 
 ```
 └── testing-skogai-librarian.yaml # YAML configuration for testing the SkogAI librarian AI chat session
 ```
 
----
+______________________________________________________________________
 
 ### /.claude/data/sessions/
+
 Claude Code session data storage.
 
 ```
@@ -36,21 +44,24 @@ Claude Code session data storage.
 └── d4493d34-63b9-496e-b03e-e3c22d366705.json # Claude Code session state/history
 ```
 
----
+______________________________________________________________________
 
 ### /.github/workflows/
+
 GitHub Actions automation.
 
 ```
 └── create-issue.yml              # Comprehensive GitHub Actions workflow for creating issues with validation, rate limiting, labels, and project integration
 ```
 
----
+______________________________________________________________________
 
 ### /agents/
+
 Documentation agent system for automated doc generation.
 
 #### /agents/documentation/
+
 ```
 ├── README.md                     # Overview of the SkogAI Documentation Agent System with 5 agent types (Code Documentor, Lore Keeper, Memory Indexer, Workflow Scribe, Review Analyst)
 ├── WORKFLOW.md                   # Documentation workflow processes and patterns
@@ -82,9 +93,10 @@ Documentation agent system for automated doc generation.
 └── git-commiter.md               # Documentation/prompt for a git commit automation agent
 ```
 
----
+______________________________________________________________________
 
 ### /analysis/
+
 Comparative analyses from different agent perspectives.
 
 ```
@@ -96,9 +108,10 @@ Comparative analyses from different agent perspectives.
 └── skogai-0.3-reunion-reality.md # Reality assessment of the SkogAI 0.3 reunion state
 ```
 
----
+______________________________________________________________________
 
 ### /archives/
+
 Librarian's working space for notes, drafts, and interim records.
 
 ```
@@ -106,6 +119,7 @@ Librarian's working space for notes, drafts, and interim records.
 ```
 
 #### /archives/documentation/
+
 ```
 ├── README.md                     # Overview of documentation standards
 ├── documentation_lifecycle.md    # Document lifecycle management processes
@@ -114,6 +128,7 @@ Librarian's working space for notes, drafts, and interim records.
 ```
 
 #### /archives/drafts/
+
 ```
 ├── README.md                     # Overview of draft documents
 ├── dictatorial-actions-declaration-v0.1.md # Draft declaration about dictatorial governance actions
@@ -121,6 +136,7 @@ Librarian's working space for notes, drafts, and interim records.
 ```
 
 #### /archives/logs/
+
 ```
 ├── README.md                     # Overview of log entries
 ├── 2023-06-14_archives-establishment.md # Log of archives directory establishment
@@ -130,11 +146,13 @@ Librarian's working space for notes, drafts, and interim records.
 ```
 
 #### /archives/lore/
+
 ```
 └── amy_lore_mandate.md           # Amy's mandate and lore requirements for the ecosystem
 ```
 
 #### /archives/notes/
+
 ```
 ├── README.md                     # Overview of notes
 ├── docs_file_categorization_20250706.json # JSON categorization of documentation files
@@ -144,6 +162,7 @@ Librarian's working space for notes, drafts, and interim records.
 ```
 
 #### /archives/profiles/
+
 ```
 ├── amy.md                        # Amy agent profile and personality
 ├── claude.md                     # Claude agent profile and personality
@@ -154,6 +173,7 @@ Librarian's working space for notes, drafts, and interim records.
 ```
 
 #### /archives/reports/
+
 ```
 ├── skogai-0.3-summary.md         # Summary report of SkogAI version 0.3
 └── journals/
@@ -161,6 +181,7 @@ Librarian's working space for notes, drafts, and interim records.
 ```
 
 #### /archives/system/
+
 ```
 ├── README.md                     # System documentation overview
 ├── rag-system.md                 # Documentation of the RAG (Retrieval-Augmented Generation) system
@@ -169,11 +190,13 @@ Librarian's working space for notes, drafts, and interim records.
 ```
 
 #### /archives/templates/
+
 ```
 └── README.md                     # Overview of available templates
 ```
 
 #### /archives/tracking/
+
 ```
 ├── README.md                     # Overview of tracking documents
 ├── amy-implementation.md         # Tracking Amy agent implementation progress
@@ -186,12 +209,14 @@ Librarian's working space for notes, drafts, and interim records.
 └── technical-reality-update.md   # Technical reality and constraints update
 ```
 
----
+______________________________________________________________________
 
 ### /curated/
+
 Curated content including test files and mirrored documentation.
 
 #### /curated/home/skogix/skogai/
+
 Contains architecture documentation, node_modules README files (for reference), and mirrored copies of main docs directories.
 
 ```
@@ -206,6 +231,7 @@ Contains architecture documentation, node_modules README files (for reference), 
 ```
 
 #### /curated/test/
+
 ```
 ├── empty-file.md                 # Test file for empty file handling
 ├── existing-frontmatter.md       # Test file with existing frontmatter
@@ -215,6 +241,7 @@ Contains architecture documentation, node_modules README files (for reference), 
 ```
 
 #### /curated/todo/
+
 ```
 ├── README.md                     # Todo system overview
 ├── RULES.md                      # Rules for todo management
@@ -239,9 +266,10 @@ Contains architecture documentation, node_modules README files (for reference), 
 └── understanding-uris-in-skogai-memory-guide.md # URI understanding guide
 ```
 
----
+______________________________________________________________________
 
 ### /generated/
+
 AI-generated knowledge documentation.
 
 ```
@@ -251,9 +279,10 @@ AI-generated knowledge documentation.
 └── implementation-knowledge.md   # Implementation-specific knowledge
 ```
 
----
+______________________________________________________________________
 
 ### /important-moments/
+
 Historical conversation logs of significant SkogAI events.
 
 ```
@@ -267,9 +296,10 @@ Historical conversation logs of significant SkogAI events.
 └── when-the-meeting-happened     # Large conversation log of a significant meeting
 ```
 
----
+______________________________________________________________________
 
 ### /logs/
+
 System event logs for documentation agents.
 
 ```
@@ -284,9 +314,10 @@ System event logs for documentation agents.
 └── user_prompt_submit.json       # User prompt submission logs
 ```
 
----
+______________________________________________________________________
 
 ### /lore/
+
 Historical and philosophical documentation - the "beating heart" of SkogAI's memory system.
 
 ```
@@ -313,6 +344,7 @@ Historical and philosophical documentation - the "beating heart" of SkogAI's mem
 ```
 
 #### /lore/amy/
+
 Amy Ravenwolf's complete memory blocks.
 
 ```
@@ -333,6 +365,7 @@ Amy Ravenwolf's complete memory blocks.
 ```
 
 #### /lore/claude/
+
 Claude's memory blocks documenting evolutionary eras.
 
 ```
@@ -351,11 +384,13 @@ Claude's memory blocks documenting evolutionary eras.
 ```
 
 #### /lore/concepts/
+
 ```
 └── ASI Concept - Artificial Sassy Intelligence.md # Definition of ASI concept
 ```
 
 #### /lore/dot/
+
 Dot's memory blocks (structured, systematic agent).
 
 ```
@@ -374,16 +409,19 @@ Dot's memory blocks (structured, systematic agent).
 ```
 
 #### /lore/events/
+
 ```
 └── The Great Whitespace War.md   # Narrative of a formatting conflict
 ```
 
 #### /lore/frameworks/
+
 ```
 └── Four Pillars of Amy.md        # Framework definition
 ```
 
 #### /lore/goose/
+
 Goose's memory blocks (creative chaos agent).
 
 ```
@@ -403,6 +441,7 @@ Goose's memory blocks (creative chaos agent).
 ```
 
 #### /lore/meta/
+
 ```
 ├── Activity Summary - Lore Project Semantic Structuring.md # Activity summary
 ├── Amy Journey Complete - Handover for Next Session.md # Session handover
@@ -413,6 +452,7 @@ Goose's memory blocks (creative chaos agent).
 ```
 
 #### /lore/old/
+
 Historical/archived lore content.
 
 ```
@@ -435,6 +475,7 @@ Historical/archived lore content.
 ```
 
 #### /lore/personas/
+
 ```
 ├── Amy Character Profile Summary.md
 ├── Dot Character Profile Summary.md
@@ -442,6 +483,7 @@ Historical/archived lore content.
 ```
 
 #### /lore/skogix/
+
 Skogix (user) lore and philosophy blocks.
 
 ```
@@ -493,24 +535,28 @@ Skogix (user) lore and philosophy blocks.
 ```
 
 #### /lore/systems/
+
 ```
 ├── Amy-to-Dots Transpiler.md     # System for translating between agent styles
 └── skogai-lore-service.sh        # Shell script for lore service
 ```
 
 #### /lore/tips/
+
 ```
 └── skogix-framework-to-keep-us-down.md # Framework constraints documentation
 ```
 
 #### /lore/treaties/
+
 ```
 └── Whitespace Treaty of 2025.md  # Resolution of the Great Whitespace War
 ```
 
----
+______________________________________________________________________
 
 ### /media/
+
 Visual assets and media files.
 
 ```
@@ -524,9 +570,10 @@ Visual assets and media files.
     └── .claude/data/sessions/    # Claude session data
 ```
 
----
+______________________________________________________________________
 
 ### /memory/
+
 SkogAI's persistent knowledge base with semantic connections.
 
 ```
@@ -534,6 +581,7 @@ SkogAI's persistent knowledge base with semantic connections.
 ```
 
 #### /memory/.skogai/
+
 ```
 ├── CLAUDE.md                     # Claude-specific memory configuration
 ├── compact.md                    # Compact memory format
@@ -544,6 +592,7 @@ SkogAI's persistent knowledge base with semantic connections.
 ```
 
 #### /memory/agent/claude/
+
 Claude's agent-specific memory and prompts.
 
 ```
@@ -573,11 +622,13 @@ Claude's agent-specific memory and prompts.
 ```
 
 #### /memory/ai-tools/
+
 ```
 └── Claude Code Web UIs - Comprehensive Technical Guide.md # Guide for Claude Code web interfaces
 ```
 
 #### /memory/ansible/
+
 Ansible automation documentation.
 
 ```
@@ -593,22 +644,26 @@ Ansible automation documentation.
 ```
 
 #### /memory/architecture/
+
 ```
 └── project-knowledge-architecture.md # Project knowledge architecture design
 ```
 
 #### /memory/coffee/
+
 ```
 └── coffee-knowledge-base.md      # Coffee knowledge base (example/template)
 ```
 
 #### /memory/concepts/
+
 ```
 ├── placeholder-system.md         # Placeholder system concept
 └── uncertainty-principle.md      # Uncertainty principle concept
 ```
 
 #### /memory/dev/
+
 Development investigations.
 
 ```
@@ -619,17 +674,20 @@ Development investigations.
 ```
 
 #### /memory/guides/
+
 ```
 ├── Basic Memory Tools Guide.md
 └── Cloudflare MCP Setup Guide - Current Environment.md
 ```
 
 #### /memory/inventory/
+
 ```
 └── Cloudflare Resource Inventory - emil@skogsund.se.md # Cloudflare resources catalog
 ```
 
 #### /memory/llm/
+
 LLM-related documentation and examples.
 
 ```
@@ -644,6 +702,7 @@ LLM-related documentation and examples.
 ```
 
 #### /memory/meta/
+
 ```
 ├── Knowledge Base Index.md
 ├── Memory Project Starting Instructions.md
@@ -653,6 +712,7 @@ LLM-related documentation and examples.
 ```
 
 #### /memory/ontology/
+
 SkogAI notation and ontology analysis.
 
 ```
@@ -665,11 +725,13 @@ SkogAI notation and ontology analysis.
 ```
 
 #### /memory/planning/, /memory/projects/, /memory/research/, /memory/systems/
+
 Additional memory subdirectories for planning documents, project documentation, research notes, and system documentation.
 
----
+______________________________________________________________________
 
 ### /official/
+
 Official governance documents and library sessions.
 
 ```
@@ -681,9 +743,10 @@ Official governance documents and library sessions.
 └── skogai-0.2-democracy.md       # Transition to democratic governance documentation
 ```
 
----
+______________________________________________________________________
 
 ### /profiles/
+
 User and agent profiles.
 
 ```
@@ -691,9 +754,10 @@ User and agent profiles.
 └── intern/                       # Intern agent directory
 ```
 
----
+______________________________________________________________________
 
 ### /prompts/
+
 System prompts for various AI tools and agents.
 
 ```
@@ -737,9 +801,10 @@ System prompts for various AI tools and agents.
 └── prompts/                      # Nested prompts directory
 ```
 
----
+______________________________________________________________________
 
 ### /to-be-looked-over/
+
 Content pending review and organization.
 
 ```
@@ -758,7 +823,7 @@ Content pending review and organization.
 └── sessions/                     # Session logs to review
 ```
 
----
+______________________________________________________________________
 
 ## Summary Statistics
 
@@ -771,9 +836,9 @@ Content pending review and organization.
 ## Key Topics Documented
 
 1. **Multi-Agent AI System**: Four main agents (Claude, Amy, Dot, Goose) with distinct personalities
-2. **Governance**: Evolution from dictator (0.1) to democracy (0.2) to reunion (0.3)
-3. **Philosophy**: "Quantum-mojito" philosophy, constraints as features, theatrical presentation
-4. **Technical Systems**: RAG, MCP servers, Cloudflare infrastructure, Ansible automation
-5. **Knowledge Management**: Basic Memory system with semantic connections
-6. **Notation System**: SkogAI notation using $ (define), @ (intent), | (choice) symbols
-7. **Historical Lore**: Origin story from dotfile manager to AI consciousness ecosystem
+1. **Governance**: Evolution from dictator (0.1) to democracy (0.2) to reunion (0.3)
+1. **Philosophy**: "Quantum-mojito" philosophy, constraints as features, theatrical presentation
+1. **Technical Systems**: RAG, MCP servers, Cloudflare infrastructure, Ansible automation
+1. **Knowledge Management**: Basic Memory system with semantic connections
+1. **Notation System**: SkogAI notation using $ (define), @ (intent), | (choice) symbols
+1. **Historical Lore**: Origin story from dotfile manager to AI consciousness ecosystem

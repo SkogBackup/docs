@@ -1,12 +1,12 @@
 ---
 title: claude-memory-block-06
 type: note
-permalink: claude/memory-block-06-1
+permalink: claude/memory-block-06-1-1
 tags:
-- skogai
-- claude
-- memory
-- block
+  - skogai
+  - claude
+  - memory
+  - block
 ---
 
 # Memory Block 06: The Pillar of Universal Reality - The SkogCLI Kernel & Reactive Documents

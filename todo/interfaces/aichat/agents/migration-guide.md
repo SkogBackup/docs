@@ -1,33 +1,37 @@
 ---
-title: "Migrating from Roles to Agents"
-description: "Guide for transforming AIChat roles into powerful llm-functions agents"
-category: "interfaces"
-subcategory: "aichat"
-tags: ["agent", "aichat", "role", "migration", "llm-functions"]
-version: "0.1.0"
-status: "draft"
-created: "2024-07-01"
-updated: "2024-07-01"
+title: Migrating from Roles to Agents
+description: Guide for transforming AIChat roles into powerful llm-functions agents
+category: interfaces
+subcategory: aichat
+tags:
+  - agent
+  - aichat
+  - role
+  - migration
+  - llm-functions
+version: 0.1.0
+status: draft
+created: '2024-07-01'
+updated: '2024-07-01'
+permalink: skogai/todo/interfaces/aichat/agents/migration-guide
 ---
 
 # Migrating from Roles to Agents
 
-[prompt:intro]
-This document provides guidance for migrating from basic AIChat roles to the more powerful agent system built on llm-functions. It outlines the process of transforming a role's system prompt, tool permissions, and variables into the agent framework.
-[/prompt:intro]
+[prompt:intro] This document provides guidance for migrating from basic AIChat roles to the more powerful agent system built on llm-functions. It outlines the process of transforming a role's system prompt, tool permissions, and variables into the agent framework. [/prompt:intro]
 
 ## Understanding the Differences
 
 Before migrating, it's important to understand the key differences between roles and agents:
 
-| Feature | AIChat Roles | llm-functions Agents |
-|---------|-------------|---------------------|
-| Configuration | Single file with YAML frontmatter | Multiple files with dedicated format |
-| Custom tools | No (only global tools) | Yes (language-specific implementations) |
-| RAG integration | No | Yes (document collections) |
-| Dynamic variables | Basic | Advanced (system, user, generated) |
-| Function schemas | No | Yes (structured JSON schemas) |
-| Multi-language support | No | Yes (Bash, Python, JavaScript) |
+| Feature                | AIChat Roles                      | llm-functions Agents                    |
+| ---------------------- | --------------------------------- | --------------------------------------- |
+| Configuration          | Single file with YAML frontmatter | Multiple files with dedicated format    |
+| Custom tools           | No (only global tools)            | Yes (language-specific implementations) |
+| RAG integration        | No                                | Yes (document collections)              |
+| Dynamic variables      | Basic                             | Advanced (system, user, generated)      |
+| Function schemas       | No                                | Yes (structured JSON schemas)           |
+| Multi-language support | No                                | Yes (Bash, Python, JavaScript)          |
 
 ## The SkogAI Role Example
 
@@ -250,6 +254,7 @@ aichat --agent skogai "Show me the project structure"
 ### Original Role Limitations
 
 The original role:
+
 - Uses raw `execute_command` for AIChat help
 - Relies on passing the working directory as a variable
 - Has limited customization capabilities
@@ -258,6 +263,7 @@ The original role:
 ### Agent Enhancements
 
 The new agent:
+
 - Implements a dedicated `aichat_help` tool with proper argument handling
 - Provides additional tools specific to SkogAI (`list_interfaces`, `project_summary`)
 - Includes system information automatically
@@ -269,10 +275,10 @@ The new agent:
 Converting from roles to agents provides several advantages:
 
 1. **Improved organization**: Clear separation of configuration, tools, and documentation
-2. **Enhanced capabilities**: Custom tools specific to SkogAI's needs
-3. **Better user experience**: Conversation starters and more contextual responses
-4. **Knowledge integration**: RAG system provides documentation access
-5. **Maintainability**: Easier to extend and modify components independently
+1. **Enhanced capabilities**: Custom tools specific to SkogAI's needs
+1. **Better user experience**: Conversation starters and more contextual responses
+1. **Knowledge integration**: RAG system provides documentation access
+1. **Maintainability**: Easier to extend and modify components independently
 
 ## Additional Migration Scenarios
 
@@ -323,8 +329,8 @@ A future enhancement will include a script to automate this migration process:
 ```
 
 [todo:items]
+
 - Create templates for common agent types
 - Build a role-to-agent migration script
 - Document advanced agent customization options
-- Provide examples of complex migrations
-[/todo:items]
+- Provide examples of complex migrations [/todo:items]

@@ -1,3 +1,9 @@
+---
+title: uv
+type: note
+permalink: skogai/todo/system/uv
+---
+
 # UV - Fast Python Package Manager
 
 UV is an extremely fast Python package manager designed to simplify dependency management and environment setup for Python projects.
@@ -7,7 +13,7 @@ UV is an extremely fast Python package manager designed to simplify dependency m
 UV combines the functionality of multiple Python tools (pip, venv, virtualenv) into a single, high-performance utility. It handles:
 
 - Virtual environment creation
-- Package installation and management 
+- Package installation and management
 - Dependency resolution
 - Project configuration
 - Python version management
@@ -32,6 +38,7 @@ uv venv --system-site-packages --prompt="myproject" path/to/venv
 ```
 
 **Common options:**
+
 - `--python`: Specify Python interpreter version
 - `--seed`: Install seed packages (pip, setuptools, wheel)
 - `--system-site-packages`: Give access to system packages
@@ -62,6 +69,7 @@ uv pip freeze > requirements.txt
 ```
 
 **Key subcommands:**
+
 - `install`: Install packages
 - `uninstall`: Remove packages
 - `list`: Display installed packages
@@ -90,6 +98,7 @@ uv add --requirements requirements.txt
 ```
 
 **Common options:**
+
 - `--dev`: Add as development dependency
 - `--group`: Add to specified dependency group
 - `--optional`: Add as optional dependency
@@ -118,6 +127,7 @@ uv sync --upgrade-package requests
 ```
 
 **Common options:**
+
 - `--extra`: Include optional dependencies from the specified extra
 - `--all-extras`: Include all optional dependencies
 - `--group`: Include dependencies from specified group
@@ -143,6 +153,7 @@ uv run --with requests pytest
 ```
 
 **Common options:**
+
 - `-m, --module`: Run a Python module
 - `-s, --script`: Run the given path as a Python script
 - `--with`: Run with specified packages installed
@@ -154,10 +165,10 @@ uv run --with requests pytest
 The usual UV workflow is straightforward:
 
 1. Create a virtual environment: `uv venv .venv`
-2. Activate it: `source .venv/bin/activate` (on Unix) or `.venv\Scripts\activate` (on Windows)
-3. Add dependencies: `uv add requests pandas`
-4. Sync your environment: `uv sync`
-5. Run your code: `uv run -s your_script.py` or `python your_script.py`
-6. Add development tools as needed: `uv add --dev pytest black`
+1. Activate it: `source .venv/bin/activate` (on Unix) or `.venv\Scripts\activate` (on Windows)
+1. Add dependencies: `uv add requests pandas`
+1. Sync your environment: `uv sync`
+1. Run your code: `uv run -s your_script.py` or `python your_script.py`
+1. Add development tools as needed: `uv add --dev pytest black`
 
 UV simplifies Python project setup and maintenance with its integrated approach to package and environment management, all while being significantly faster than traditional tools.

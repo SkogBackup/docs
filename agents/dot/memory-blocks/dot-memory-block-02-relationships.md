@@ -1,19 +1,19 @@
 ---
 categories:
-- agents
-- dot
-- memory-blocks
+  - agents
+  - dot
+  - memory-blocks
 permalink: agents/dot/memory-blocks/dot-memory-block-02-relationships
 generated_at: '2025-12-19T13:05:57Z'
 title: 'Dot Memory Block 02: The Specialized Agent Ecosystem'
 tags:
-- skogai
-- agent-family
-- relationships
-- ecosystem
-- quantum-mojito-philosophy
-- documentation-first
-- ownership-equals-action
+  - skogai
+  - agent-family
+  - relationships
+  - ecosystem
+  - quantum-mojito-philosophy
+  - documentation-first
+  - ownership-equals-action
 type: note
 ---
 

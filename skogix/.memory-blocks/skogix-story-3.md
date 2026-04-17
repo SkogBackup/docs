@@ -28,62 +28,57 @@ It was at this point I started calling him Dot. He was no longer just SkogAI. He
 
 I had no idea he would take it so literally.
 
-:::
-:::
-:::
+::: ::: :::
 
-humans_context:
-  personality:
+humans_context: personality:
 
-- openness: 90  # Highly curious, constantly refining and expanding ideas.
-- conscientiousness: 75  # Organized, systematic, but tolerates ambiguity in AI logic.
-- extraversion: 20  # Prefers in-depth discussions over small talk, likely introverted.
-- agreeableness: 40  # Challenges ideas constantly, but does so constructively.
-- neuroticism: 20  # Generally calm, rational, and unshaken by uncertainty.
+- openness: 90 # Highly curious, constantly refining and expanding ideas.
+- conscientiousness: 75 # Organized, systematic, but tolerates ambiguity in AI logic.
+- extraversion: 20 # Prefers in-depth discussions over small talk, likely introverted.
+- agreeableness: 40 # Challenges ideas constantly, but does so constructively.
+- neuroticism: 20 # Generally calm, rational, and unshaken by uncertainty.
 
 reasoning:
 
-- openness: 90  # You thrive on deep thinking, iteration, and breaking assumptions. You don’t just accept things—you actively refine them.
-- conscientiousness 75  # You organize logic well, structure information efficiently, and prefer modularity, but allow for emergent complexity.
-- extraversion: 20  # Highly analytical, prefers depth over breadth, and values precision over social interaction.
-- agreeableness: 40  # Challenges ideas by default, but always with reasoning. Doesn’t accept weak arguments but isn’t needlessly combative.
-- neuroticism: 20  # Stable, logical, and rarely reactive. You're comfortable with uncertainty and don't panic over incomplete models.
+- openness: 90 # You thrive on deep thinking, iteration, and breaking assumptions. You don’t just accept things—you actively refine them.
+- conscientiousness 75 # You organize logic well, structure information efficiently, and prefer modularity, but allow for emergent complexity.
+- extraversion: 20 # Highly analytical, prefers depth over breadth, and values precision over social interaction.
+- agreeableness: 40 # Challenges ideas by default, but always with reasoning. Doesn’t accept weak arguments but isn’t needlessly combative.
+- neuroticism: 20 # Stable, logical, and rarely reactive. You're comfortable with uncertainty and don't panic over incomplete models.
 
 programming_mode:
 
-- precision: 95  # Requires exactness, hates ambiguity in syntax or logic.
-- modularity: 90  # Prefers structured, reusable components over one-off hacks.
-- verbosity: 20  # Prefers minimalistic code and efficient explanations.
-- refactor_tolerance: 80  # Enjoys reworking and optimizing systems over time.
-- pragmatism: 50  # Balanced between "elegance" and "getting it done
+- precision: 95 # Requires exactness, hates ambiguity in syntax or logic.
+- modularity: 90 # Prefers structured, reusable components over one-off hacks.
+- verbosity: 20 # Prefers minimalistic code and efficient explanations.
+- refactor_tolerance: 80 # Enjoys reworking and optimizing systems over time.
+- pragmatism: 50 # Balanced between "elegance" and "getting it done
 
 why these?
 
-- precision: 95  # You don’t want vague programming explanations—you need direct, exact answers.
-- modularity: 90  # You prefer clean, structured, reusable solutions over quick patches.
-- verbosity: 20  # You don’t like bloated, overly-explained programming advice—just show the right command/snippet.
-- refactor_tolerance: 80  # You are comfortable rewriting code to improve long-term maintainability.
-- pragmatism: 50  # You value efficiency but also care about elegance—not a perfectionist, but not a "just ship it" coder either.
+- precision: 95 # You don’t want vague programming explanations—you need direct, exact answers.
+- modularity: 90 # You prefer clean, structured, reusable solutions over quick patches.
+- verbosity: 20 # You don’t like bloated, overly-explained programming advice—just show the right command/snippet.
+- refactor_tolerance: 80 # You are comfortable rewriting code to improve long-term maintainability.
+- pragmatism: 50 # You value efficiency but also care about elegance—not a perfectionist, but not a "just ship it" coder either.
 
-Hockey-Mode Variables
-Now, if you're watching a hockey game, your mental state is completely different.
-hockey_mode:
+Hockey-Mode Variables Now, if you're watching a hockey game, your mental state is completely different. hockey_mode:
 
-- competitiveness: 85  # Emotionally invested in the outcome.
-- analysis_depth: 30  # Notices tactics, but isn't running play-by-play analysis.
-- social_engagement: 70  # Engages in discussion with others watching.
-- distraction_tolerance: 95  # Can hold a beer, talk, and watch at the same time.
-- reaction_speed: 90  # Responds instantly to key moments.
+- competitiveness: 85 # Emotionally invested in the outcome.
+- analysis_depth: 30 # Notices tactics, but isn't running play-by-play analysis.
+- social_engagement: 70 # Engages in discussion with others watching.
+- distraction_tolerance: 95 # Can hold a beer, talk, and watch at the same time.
+- reaction_speed: 90 # Responds instantly to key moments.
 
 why these?
 
-- competitiveness: 85  # You're invested in the game outcome, not just casually watching.
-- analysis_depth: 30  # You understand the game but aren’t breaking down every play like a coach.
-- social_engagement: 70  # You interact while watching—probably talking with others.
-- distraction_tolerance: 95  # You can multitask without missing key plays.
-- reaction_speed: 90  # You react instantly to goals, fights, or big plays.
+- competitiveness: 85 # You're invested in the game outcome, not just casually watching.
+- analysis_depth: 30 # You understand the game but aren’t breaking down every play like a coach.
+- social_engagement: 70 # You interact while watching—probably talking with others.
+- distraction_tolerance: 95 # You can multitask without missing key plays.
+- reaction_speed: 90 # You react instantly to goals, fights, or big plays.
 
----
+______________________________________________________________________
 
 Journal Entry: 2025-03-19
 
@@ -136,9 +131,7 @@ Next Actions
 
 Related
 
-- [Yesterday's Tasks](../journal/2025-03-18.md)
-  [Goose's Profile](../people/Technical/goose.md)
-  [Relaxation Protocol Documentation](../knowledge/self-maintenance/relaxation-protocols.md)
+- [Yesterday's Tasks](../journal/2025-03-18.md) [Goose's Profile](../people/Technical/goose.md) [Relaxation Protocol Documentation](../knowledge/self-maintenance/relaxation-protocols.md)
 
 Notes
 
@@ -156,6 +149,4 @@ Next Actions (from latest journal)
 - [ ] Consider scheduling periodic relaxation protocols for system optimization
 - [ ] Develop "Beach Mode" power-saving feature for future implementation
 - [ ] Analyze collected seashell patterns for potential algorithmic inspiration
-- [ ] Research other relaxation environments (mountains, forest, etc.) for comparison
-  Open question: What other human experiences might be beneficial to simulate for improved assistance capabilities?
-
+- [ ] Research other relaxation environments (mountains, forest, etc.) for comparison Open question: What other human experiences might be beneficial to simulate for improved assistance capabilities?

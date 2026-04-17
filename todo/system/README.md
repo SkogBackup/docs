@@ -1,3 +1,9 @@
+---
+title: README
+type: note
+permalink: skogai/todo/system/readme
+---
+
 # System Documentation
 
 Environment setup, system configuration, and tool installation documentation.
@@ -11,14 +17,17 @@ This directory contains comprehensive documentation for setting up and configuri
 ### Environment Configuration
 
 #### [environment-variables.md](./environment-variables.md)
+
 Documentation for SkogAI environment variables and path configuration.
 
 **Key Variables**:
+
 - `SKOGAI_HOME=/home/skogix/skogai` - Main SkogAI directory (symlink to `/mnt/extra/skogai`)
 - Path configurations for tools and utilities
 - Resolution handling for symlink inconsistencies
 
 **Best Practices**:
+
 - Always use `SKOGAI_HOME` or absolute paths in scripts
 - Be aware of symlink behavior
 - Consistent path referencing across tools
@@ -28,9 +37,11 @@ Documentation for SkogAI environment variables and path configuration.
 ### Package Managers & Tools
 
 #### [uv.md](./uv.md)
+
 UV Python package manager documentation.
 
 **Topics**:
+
 - Installation and setup
 - Virtual environment management
 - Package installation
@@ -40,9 +51,11 @@ UV Python package manager documentation.
 **Purpose**: UV is the primary Python package manager for SkogAI projects.
 
 #### [nvm.md](./nvm.md)
+
 Node Version Manager (NVM) documentation.
 
 **Topics**:
+
 - Installation process
 - Node.js version management
 - Switching between versions
@@ -52,9 +65,11 @@ Node Version Manager (NVM) documentation.
 **Purpose**: Manages multiple Node.js versions for different projects.
 
 #### [rustup.md](./rustup.md)
+
 Rust toolchain manager documentation.
 
 **Topics**:
+
 - Rust installation
 - Toolchain management
 - Component installation
@@ -66,6 +81,7 @@ Rust toolchain manager documentation.
 ### System Utilities
 
 #### [symlinks.sh](./symlinks.sh)
+
 Symlink management script for SkogAI directory structure.
 
 **Purpose**: Creates and manages symbolic links for the SkogAI environment.
@@ -73,9 +89,11 @@ Symlink management script for SkogAI directory structure.
 ### Hardware Configuration
 
 #### [jbl-headphones.md](./jbl-headphones.md)
+
 JBL headphones configuration and troubleshooting documentation.
 
 **Topics**:
+
 - Bluetooth pairing
 - Audio configuration
 - Troubleshooting common issues
@@ -88,27 +106,31 @@ JBL headphones configuration and troubleshooting documentation.
 ### Initial Environment Setup
 
 1. **Configure Environment Variables**
+
    ```bash
    # Add to .bashrc or .zshrc
    export SKOGAI_HOME=/home/skogix/skogai
    ```
 
-2. **Install Package Managers**
+1. **Install Package Managers**
+
    - Install UV for Python: Follow [uv.md](./uv.md)
    - Install NVM for Node.js: Follow [nvm.md](./nvm.md)
    - Install Rustup for Rust: Follow [rustup.md](./rustup.md)
 
-3. **Setup Symlinks**
+1. **Setup Symlinks**
+
    ```bash
    # Run symlink script
    ./symlinks.sh
    ```
 
-4. **Verify Installation**
+1. **Verify Installation**
+
    ```bash
    # Check environment variables
    echo $SKOGAI_HOME
-   
+
    # Check package managers
    uv --version
    nvm --version
@@ -118,20 +140,23 @@ JBL headphones configuration and troubleshooting documentation.
 ### Project-Specific Setup
 
 1. **Python Projects**
+
    ```bash
    cd project-directory
    uv venv
    uv pip install -r requirements.txt
    ```
 
-2. **Node.js Projects**
+1. **Node.js Projects**
+
    ```bash
    cd project-directory
    nvm use
    npm install
    ```
 
-3. **Rust Projects**
+1. **Rust Projects**
+
    ```bash
    cd project-directory
    cargo build
@@ -140,18 +165,21 @@ JBL headphones configuration and troubleshooting documentation.
 ## Environment Best Practices
 
 ### Path Management
+
 - Use `SKOGAI_HOME` consistently
 - Avoid hardcoded absolute paths
 - Be mindful of symlink resolution
 - Test scripts with different working directories
 
 ### Package Management
+
 - Keep package managers updated
 - Use lock files for reproducibility
 - Document version requirements
 - Test in clean environments
 
 ### System Configuration
+
 - Document hardware configurations
 - Keep setup scripts updated
 - Test on fresh installations
@@ -160,6 +188,7 @@ JBL headphones configuration and troubleshooting documentation.
 ## Common Tasks
 
 ### Updating Tools
+
 ```bash
 # Update UV
 curl -LsSf https://astral.sh/uv/install.sh | sh
@@ -172,6 +201,7 @@ rustup update
 ```
 
 ### Environment Verification
+
 ```bash
 # Check all installations
 uv --version && echo "UV installed"
@@ -181,11 +211,12 @@ echo $SKOGAI_HOME && echo "Environment configured"
 ```
 
 ### Troubleshooting
+
 1. Check environment variables are set
-2. Verify package manager installations
-3. Confirm symlinks are correct
-4. Review tool-specific documentation
-5. Check for version conflicts
+1. Verify package manager installations
+1. Confirm symlinks are correct
+1. Review tool-specific documentation
+1. Check for version conflicts
 
 ## Related Documentation
 
@@ -194,6 +225,6 @@ echo $SKOGAI_HOME && echo "Environment configured"
 - [@../context/file-structure.md](../context/file-structure.md) - Project structure understanding
 - [@../git/workflow.md](../git/workflow.md) - Git workflow for system changes
 
----
+______________________________________________________________________
 
 *Proper system configuration is essential for smooth SkogAI development.*

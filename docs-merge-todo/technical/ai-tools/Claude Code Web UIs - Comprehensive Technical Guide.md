@@ -3,13 +3,13 @@ title: Claude Code Web UIs - Comprehensive Technical Guide
 type: research
 permalink: ai-tools/claude-code-web-uis-comprehensive-technical-guide
 tags:
-- '["claude"'
-- '"web-ui"'
-- '"api"'
-- '"development"'
-- '"tools"'
-- '"research"'
-- '"comprehensive-guide"]'
+  - '["claude"'
+  - '"web-ui"'
+  - '"api"'
+  - '"development"'
+  - '"tools"'
+  - '"research"'
+  - '"comprehensive-guide"]'
 ---
 
 # Claude Code Web UIs: A Comprehensive Technical Guide
@@ -93,22 +93,26 @@ The Claude Code web UI ecosystem represents a remarkable collaboration between A
 ## Key Resources and Projects
 
 ### Official Platforms
+
 - **Claude.ai** - Primary web interface with Artifacts and streaming support
 - **Anthropic Console** - API management and testing environment
 - **Claude Code SDK** - TypeScript/Python SDKs for integration
 
 ### Notable Third-Party Web UIs
+
 - **claudecodeui** (siteboon) - Comprehensive React-based interface with mobile support
 - **claude-code-webui** (sugyan) - Security-focused local deployment solution
 - **cui** (wbopan) - Advanced interface with background agent streaming
 - **Claudia** (getAsterisk) - Desktop Tauri application with enterprise features
 
 ### Browser Extensions
+
 - **Thinking Claude** - Visualizes AI reasoning process
 - **Claude Memory (Mem0)** - Adds persistent memory capabilities
 - **CG - Claude on Google** - Integrates responses into search results
 
 ### Integration Frameworks
+
 - **Vercel AI SDK** - Streamlined React/Next.js integration
 - **Official Anthropic SDK** - Direct API access with streaming
 - **n8n** - No-code automation workflows

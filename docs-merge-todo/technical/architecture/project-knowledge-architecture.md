@@ -3,10 +3,10 @@ title: project-knowledge-architecture
 type: note
 permalink: architecture/project-knowledge-architecture
 tags:
-- '["architecture"'
-- '"knowledge-system"'
-- '"claude-md"'
-- '"basic-memory"]'
+  - '["architecture"'
+  - '"knowledge-system"'
+  - '"claude-md"'
+  - '"basic-memory"]'
 ---
 
 # Project Knowledge Architecture
@@ -45,11 +45,11 @@ Cross-project knowledge graph connecting:
 
 ## Relations
 
-- implements [[Distributed Knowledge System]]
-- uses [[Progressive Knowledge Building]]
-- connects [[Project-Specific CLAUDE.md Files]]
-- enables [[Cross-Project Learning]]
-- supports [[Semantic Project Linking]]
+- implements \[[Distributed Knowledge System]\]
+- uses \[[Progressive Knowledge Building]\]
+- connects \[[Project-Specific CLAUDE.md Files]\]
+- enables \[[Cross-Project Learning]\]
+- supports \[[Semantic Project Linking]\]
 
 ## Example Implementation
 
@@ -71,7 +71,7 @@ Cross-project knowledge graph connecting:
 ## Workflow
 
 1. Create focused CLAUDE.md in project directory
-2. Write to basic-memory with semantic markup
-3. Create relations to other projects
-4. Use memory:// URIs for cross-project planning
-5. Incrementally add detail through research
+1. Write to basic-memory with semantic markup
+1. Create relations to other projects
+1. Use memory:// URIs for cross-project planning
+1. Incrementally add detail through research

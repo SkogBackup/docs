@@ -3,10 +3,10 @@ title: Collaborative Note-Taking Best Practices
 type: note
 permalink: skogai-memory/collaborative-note-taking-best-practices
 tags:
-- collaboration
-- workflow
-- note-taking
-- enhancement
+  - collaboration
+  - workflow
+  - note-taking
+  - enhancement
 ---
 
 # Best Practices for Collaborative Note-Taking
@@ -54,6 +54,7 @@ tags:
 **AI enhances with technical details:**
 
 AI adds:
+
 - Specific code line references
 - Security vulnerability classifications
 - Connections to security best practices notes
@@ -77,6 +78,7 @@ Speaker: Sarah Chen
 **AI expands with comprehensive coverage:**
 
 AI enhances with:
+
 - Detailed explanations of technical concepts
 - Connections to existing web development knowledge
 - Links to speaker's previous work and papers
@@ -100,6 +102,7 @@ AI enhances with:
 **AI creates comprehensive analysis:**
 
 AI adds:
+
 - Mathematical foundations of attention
 - Comparison with previous sequence models
 - Impact on subsequent research and applications
@@ -107,6 +110,7 @@ AI adds:
 - Implementation considerations and code examples
 
 ## observations
+
 - [workflow] Collaborative note-taking combines human intuition with AI structure and connections #collaboration #workflow
 - [pattern] AI excels at expanding context and linking to existing knowledge #enhancement #context
 - [practice] Quick human capture followed by AI enhancement maximizes both speed and quality #efficiency #quality
@@ -114,7 +118,8 @@ AI adds:
 - [iterative] Progressive building through multiple passes creates rich, comprehensive notes #iteration #development
 
 ## relations
-- implements [[AI Assistant Guide for Basic Memory]] (practical collaboration patterns)
-- enhances [[Basic Memory Document Format]] (shows format usage in practice)
-- enables [[Knowledge Graph Construction]] (collaborative graph building)
-- supports [[Technical Documentation]] (domain-specific note-taking patterns)
+
+- implements \[[AI Assistant Guide for Basic Memory]\] (practical collaboration patterns)
+- enhances \[[Basic Memory Document Format]\] (shows format usage in practice)
+- enables \[[Knowledge Graph Construction]\] (collaborative graph building)
+- supports \[[Technical Documentation]\] (domain-specific note-taking patterns)

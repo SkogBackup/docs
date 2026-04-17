@@ -2,6 +2,7 @@
 name: skogai-lore-creation
 description: Expert guidance for creating structured lore and knowledge documentation. Use when building knowledge bases, documentation systems, or structured information repositories.
 allowed-tools: Bash, Read, Write, Edit
+permalink: skogai/skills/skogai-lore-creation/skill
 ---
 
 # Lore Creation

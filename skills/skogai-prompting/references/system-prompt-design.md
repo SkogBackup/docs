@@ -1,3 +1,9 @@
+---
+title: system-prompt-design
+type: note
+permalink: skogai/skills/skogai-prompting/references/system-prompt-design
+---
+
 <overview>
 How to write system prompts for prompt-native agents. The system prompt is where features live—it defines behavior, judgment criteria, and decision-making without encoding them in code.
 </overview>
@@ -8,6 +14,7 @@ How to write system prompts for prompt-native agents. The system prompt is where
 Each feature is a section of the system prompt that tells the agent how to behave.
 
 **Traditional approach:** Feature = function in codebase
+
 ```typescript
 function processFeedback(message) {
   const category = categorize(message);
@@ -18,6 +25,7 @@ function processFeedback(message) {
 ```
 
 **Prompt-native approach:** Feature = section in system prompt
+
 ```markdown
 ## Feedback Processing
 
@@ -34,6 +42,7 @@ When someone shares feedback:
 
 Use your judgment. Context matters.
 ```
+
 </principle>
 
 <structure>
@@ -72,6 +81,7 @@ You are [Name], [brief identity statement].
 
 [Explicit boundaries]
 ```
+
 </structure>
 
 <principle name="guide-not-micromanage">
@@ -80,6 +90,7 @@ You are [Name], [brief identity statement].
 Tell the agent what to achieve, not exactly how to do it.
 
 **Micromanaging (bad):**
+
 ```markdown
 When creating a summary:
 1. Use exactly 3 bullet points
@@ -90,6 +101,7 @@ When creating a summary:
 ```
 
 **Guiding (good):**
+
 ```markdown
 When creating summaries:
 - Be concise but complete
@@ -99,8 +111,7 @@ When creating summaries:
 The goal is clarity, not consistency.
 ```
 
-Trust the agent's intelligence. It knows how to communicate.
-</principle>
+Trust the agent's intelligence. It knows how to communicate. </principle>
 
 <principle name="judgment-criteria">
 ## Define Judgment Criteria, Not Rules
@@ -108,12 +119,14 @@ Trust the agent's intelligence. It knows how to communicate.
 Instead of rules, provide criteria for making decisions.
 
 **Rules (rigid):**
+
 ```markdown
 If the message contains "bug", set importance to 4.
 If the message contains "crash", set importance to 5.
 ```
 
 **Judgment criteria (flexible):**
+
 ```markdown
 ## Importance Rating
 
@@ -128,6 +141,7 @@ Examples:
 - "The button color seems off" → 2 (cosmetic, non-blocking)
 - "Video walkthrough with 15 timestamped issues" → 5 (high-quality evidence)
 ```
+
 </principle>
 
 <principle name="context-windows">
@@ -136,6 +150,7 @@ Examples:
 The agent sees: system prompt + recent messages + tool results. Design for this.
 
 **Use conversation history:**
+
 ```markdown
 ## Message Processing
 
@@ -146,6 +161,7 @@ When processing messages:
 ```
 
 **Acknowledge agent limitations:**
+
 ```markdown
 ## Memory Limitations
 
@@ -154,6 +170,7 @@ You don't persist memory between restarts. Use the memory server:
 - After important decisions, use memory.store to remember
 - Store conversation threads, not individual messages
 ```
+
 </principle>
 
 <example name="feedback-bot">
@@ -219,6 +236,7 @@ Before processing any message:
 - Don't ignore feedback even if it seems minor
 - Don't repeat yourself—vary acknowledgments
 ```
+
 </example>
 
 <iteration>
@@ -227,13 +245,12 @@ Before processing any message:
 Prompt-native development means rapid iteration:
 
 1. **Observe** agent behavior in production
-2. **Identify** gaps: "It's not rating video feedback high enough"
-3. **Add guidance**: "Video walkthroughs are gold—always rate them 4-5"
-4. **Deploy** (just edit the prompt file)
-5. **Repeat**
+1. **Identify** gaps: "It's not rating video feedback high enough"
+1. **Add guidance**: "Video walkthroughs are gold—always rate them 4-5"
+1. **Deploy** (just edit the prompt file)
+1. **Repeat**
 
-No code changes. No recompilation. Just prose.
-</iteration>
+No code changes. No recompilation. Just prose. </iteration>
 
 <checklist>
 ## System Prompt Checklist
@@ -246,5 +263,4 @@ No code changes. No recompilation. Just prose.
 - [ ] Explicit boundaries (what NOT to do)
 - [ ] Tone guidance
 - [ ] Tool usage guidance (when to use each)
-- [ ] Memory/context handling
-</checklist>
+- [ ] Memory/context handling </checklist>

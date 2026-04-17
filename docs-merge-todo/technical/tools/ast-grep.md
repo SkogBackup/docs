@@ -3,12 +3,12 @@ title: ast-grep-cheat-sheet
 type: note
 permalink: tools/ast-grep-cheat-sheet
 tags:
-  - "[skogai"
-  - "ast"
-  - "grep"
-  - "cheat"
-  - "sheet"
-  - "ai]"
+  - '[skogai'
+  - ast
+  - grep
+  - cheat
+  - sheet
+  - ai]
 ---
 
 # ast-grep Cheat Sheet
@@ -152,11 +152,10 @@ fix: |
 ## Tips & Tricks
 
 1. **Start simple**: Use basic patterns first, then add complexity
-2. **Use playground**: Visit https://ast-grep.github.io/playground.html to test
-   patterns
-3. **Language-specific**: Patterns must match the language's AST structure
-4. **Combine with git**: `git ls-files '*.py' | xargs ast-grep run --pattern "..."`
-5. **Batch operations**: Process multiple files at once for consistency
+1. **Use playground**: Visit https://ast-grep.github.io/playground.html to test patterns
+1. **Language-specific**: Patterns must match the language's AST structure
+1. **Combine with git**: `git ls-files '*.py' | xargs ast-grep run --pattern "..."`
+1. **Batch operations**: Process multiple files at once for consistency
 
 ## Examples
 

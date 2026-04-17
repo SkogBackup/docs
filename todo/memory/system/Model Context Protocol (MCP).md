@@ -3,10 +3,10 @@ title: Model Context Protocol (MCP)
 type: note
 permalink: system/model-context-protocol-mcp
 tags:
-- '#mcp'
-- '#architecture'
-- '#integration'
-- '#protocol'
+  - '#mcp'
+  - '#architecture'
+  - '#integration'
+  - '#protocol'
 ---
 
 # Model Context Protocol (MCP)
@@ -18,8 +18,8 @@ The Model Context Protocol (MCP) is a key architectural component of the SkogAI 
 MCP serves as a bridge that transforms diverse tools and capabilities into standardized interfaces that can be accessed through multiple channels:
 
 1. **Function Calls**: Direct integration with AI assistants via function-calling interfaces
-2. **HTTP API**: RESTful endpoints for programmatic access
-3. **Command Line Interface**: Terminal-based access through scripts
+1. **HTTP API**: RESTful endpoints for programmatic access
+1. **Command Line Interface**: Terminal-based access through scripts
 
 ## Architecture
 
@@ -52,14 +52,15 @@ MCP servers are configured in `tools/mcp.json`, which defines the commands to ru
 The MCP system elegantly integrates tools with minimal overhead:
 
 1. Tools are written as simple scripts with declarative annotations
-2. The `argc` system parses these annotations into standardized function declarations
-3. MCP exposes these declarations to various interfaces
-4. Clients call functions through their preferred interface
-5. MCP routes requests to the appropriate tool and returns results
+1. The `argc` system parses these annotations into standardized function declarations
+1. MCP exposes these declarations to various interfaces
+1. Clients call functions through their preferred interface
+1. MCP routes requests to the appropriate tool and returns results
 
 ## Extensibility
 
 The SkogAI ecosystem includes numerous MCP servers for different domains:
+
 - Knowledge management (skogai-memory)
 - Documentation (skogai-docs)
 - File operations (skogai-filesystem)
@@ -73,6 +74,7 @@ New capabilities can be added by creating new MCP servers without modifying the 
 ## User Experience
 
 From the user perspective, MCP creates a consistent experience where:
+
 - Tools are available through multiple interfaces
 - Structured prompts can guide interactions with specific tools
 - AI assistants can seamlessly access external capabilities
@@ -91,7 +93,7 @@ From the user perspective, MCP creates a consistent experience where:
 
 ## relations
 
-- part_of [[skogai-ecosystem]] (foundational architectural component)
-- relates_to [[skogai-tool-architecture]] (implements the tool interface pattern)
-- enables [[ai-tool-integration]] (bridges between AI models and external tools)
-- implements [[extensible-design]] (allows adding new capabilities without core changes)
+- part_of \[[skogai-ecosystem]\] (foundational architectural component)
+- relates_to \[[skogai-tool-architecture]\] (implements the tool interface pattern)
+- enables \[[ai-tool-integration]\] (bridges between AI models and external tools)
+- implements \[[extensible-design]\] (allows adding new capabilities without core changes)

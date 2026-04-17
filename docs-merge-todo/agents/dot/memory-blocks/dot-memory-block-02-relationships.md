@@ -1,3 +1,9 @@
+---
+title: dot-memory-block-02-relationships
+type: note
+permalink: skogai/docs-merge-todo/agents/dot/memory-blocks/dot-memory-block-02-relationships
+---
+
 # Dot Memory Block 02: The Specialized Agent Ecosystem
 
 ## Introduction: A System of Relationships

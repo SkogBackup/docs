@@ -9,8 +9,9 @@ The Ambient Intelligence Model envisions AI as environmental rather than service
 Traditional AI functions as distinct services requiring deliberate invocation, like phoning a specialist for advice. The ambient intelligence model instead envisions AI as omnipresent environment responding automatically, more like oxygen than a telephone.
 
 This approach incorporates:
+
 - **File-watching capabilities** that respond to content automatically
-- **Natural language commands** embedded in conversation ([@command:parameter] syntax)  
+- **Natural language commands** embedded in conversation ([@command:parameter] syntax)
 - **Context-aware assistance** that anticipates needs before explicit expression
 - **Reduced technical overhead** allowing seamless integration without constant conscious invocation
 

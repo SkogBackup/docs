@@ -1,9 +1,10 @@
 ---
 name: skogai-routing
 description: Create routing skills using progressive disclosure. Route agents to knowledge through guided discovery, not information dumps. Use when building skills that show what's needed to find what's needed.
+permalink: skogai/skills/skogai-routing/skill
 ---
 
-<essential_principles>
+\<essential_principles>
 
 ## How Skills Work
 
@@ -60,20 +61,18 @@ Keep markdown formatting within content (bold, lists, code blocks).
 
 SKILL.md under 500 lines. Split detailed content into reference files. Load only what's needed for the current workflow.
 
-**The power of routing:** 7 quick choices per level = exponential coverage. 7¹ = 7, 7² = 49, 7³ = 343. Massive documentation coverage while using say 500 \* 7 = 3500 tokens to cover a "information space" of hundreds or thousand times the size it would take to manually search - as would be the alternative.
-</essential_principles>
+**The power of routing:** 7 quick choices per level = exponential coverage. 7¹ = 7, 7² = 49, 7³ = 343. Massive documentation coverage while using say 500 * 7 = 3500 tokens to cover a "information space" of hundreds or thousand times the size it would take to manually search - as would be the alternative. \</essential_principles>
 
 <intake>
 What would you like to do?
 
 1. Create new skill
-2. Audit/modify existing skill
-3. Add component (workflow/reference/template/script)
-4. Get guidance
-5. Use the routing patterns in your general workflow
+1. Audit/modify existing skill
+1. Add component (workflow/reference/template/script)
+1. Get guidance
+1. Use the routing patterns in your general workflow
 
-If intent is clear from context, route directly. Otherwise, ask.
-</intake>
+If intent is clear from context, route directly. Otherwise, ask. </intake>
 
 <routing>
 | Response | Next Action | Workflow |
@@ -104,10 +103,9 @@ If intent is clear from context, route directly. Otherwise, ask.
 - "add workflow", "add reference", etc. → workflows/add-{type}.md
 - "upgrade to router" → workflows/upgrade-to-router.md
 
-**After reading the workflow, follow it exactly.**
-</routing>
+**After reading the workflow, follow it exactly.** </routing>
 
-<quick_reference>
+\<quick_reference>
 
 ## Skill Structure Quick Reference
 
@@ -149,9 +147,9 @@ scripts/:
   (deploy, setup, API calls, data processing)
 ```
 
-</quick_reference>
+\</quick_reference>
 
-<reference_index>
+\<reference_index>
 
 ## Domain Knowledge
 
@@ -161,10 +159,9 @@ All in `references/`:
 - **Principles:** [core-principles.md](./references/core-principles.md), [be-clear-and-direct.md](./references/be-clear-and-direct.md), [use-xml-tags.md](./references/use-xml-tags.md)
 - **Patterns:** [common-patterns.md](./references/common-patterns.md), [workflows-and-validation.md](./references/workflows-and-validation.md)
 - **Assets:** [using-templates.md](./references/using-templates.md), [using-scripts.md](./references/using-scripts.md)
-- **Advanced:** [executable-code.md](./references/executable-code.md), [api-security.md](./references/api-security.md), [iteration-and-testing.md](./references/iteration-and-testing.md)
-  </reference_index>
+- **Advanced:** [executable-code.md](./references/executable-code.md), [api-security.md](./references/api-security.md), [iteration-and-testing.md](./references/iteration-and-testing.md) \</reference_index>
 
-<workflows_index>
+\<workflows_index>
 
 ## Workflows
 
@@ -183,9 +180,9 @@ All in `workflows/`:
 | upgrade-to-router.md             | Convert simple skill to router pattern            |
 | get-guidance.md                  | Help decide what kind of skill to build           |
 
-</workflows_index>
+\</workflows_index>
 
-<yaml_requirements>
+\<yaml_requirements>
 
 ## YAML Frontmatter
 
@@ -198,11 +195,9 @@ description: ... # What it does AND when to use it (third person)
 ---
 ```
 
-Name conventions: `create-*`, `manage-*`, `setup-*`, `generate-*`, `build-*`
-</yaml_requirements>
+Name conventions: `create-*`, `manage-*`, `setup-*`, `generate-*`, `build-*` \</yaml_requirements>
 
-<success_criteria>
-A well-structured routing skill:
+\<success_criteria> A well-structured routing skill:
 
 - Routes based on intent, not forced menu navigation
 - Trusts the agent to understand and detect clear asks
@@ -211,5 +206,4 @@ A well-structured routing skill:
 - Provides the right tool for the job, then gets out of the way
 - Has been tested with real usage and actually helps
 - Grows organically as new patterns emerge
-- Improves over time by naturally showing the most used paths
-  </success_criteria>
+- Improves over time by naturally showing the most used paths \</success_criteria>

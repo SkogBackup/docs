@@ -1,7 +1,10 @@
 ---
 prompt: project-summary-pre
+permalink: skogai/todo/prompts/project-summary-pre
 ---
+
 [$prompt:project-summary-pre]
+
 # SkogAI Project Summary
 
 ## Why do i see this document?
@@ -15,8 +18,6 @@ This document is automatically generated context for AI agents such as yourself.
 
 ## What should i do if i think something needs to change?
 
-You are receiving this as contextual knowledge only. If you identify potential improvements or issues, suggest them to the user rather than attempting direct
-modifications. The source code exists elsewhere with proper context and ownership.
+You are receiving this as contextual knowledge only. If you identify potential improvements or issues, suggest them to the user rather than attempting direct modifications. The source code exists elsewhere with proper context and ownership.
 
-This does not mean you cannot suggest improvements, but rather that you should do so in a way that goes through the correct channels. E.g., if you think the current project could be improved, suggest that the user file an issue or pull request in the project's repository rather than trying to change the project directly.
-[/$prompt:project-summary-pre]
+This does not mean you cannot suggest improvements, but rather that you should do so in a way that goes through the correct channels. E.g., if you think the current project could be improved, suggest that the user file an issue or pull request in the project's repository rather than trying to change the project directly. [/$prompt:project-summary-pre]

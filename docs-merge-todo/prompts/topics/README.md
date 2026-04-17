@@ -1,3 +1,9 @@
+---
+title: README
+type: note
+permalink: skogai/docs-merge-todo/prompts/topics/readme
+---
+
 # SkogAI
 
 ## Documentation System
@@ -8,6 +14,7 @@
 ### Docs Folder Structure
 
 #### Active/Managed (Keep as-is)
+
 - **memory/**: Basic-memory managed knowledge base (20+ domains)
   - Technical: ai-tools, architecture, dev, tools, ansible
   - Research: coffee, concepts, ontology, research
@@ -18,6 +25,7 @@
 - **media/**: Grok-generated visual assets (22 images + 10 videos, ~17MB)
 
 #### Pending Integration/Review
+
 - **to-be-looked-over/**: Claude workspace documentation staging (33 files, 240KB)
   - Organized system docs, agent configs, Claude Code documentation
   - **Status**: Ready for review and integration into proper locations
@@ -28,7 +36,8 @@
   - Agent creation templates, metaprompts, tool creators
   - **Status**: Old prompts needing integration back into active system
 
-#### For Cleanup/Relocation  
+#### For Cleanup/Relocation
+
 - **curated/**: Mixed staging content (test files + substantial SkogAI docs in todo/ subfolder)
   - **Status**: WIP content, likely duplicates of basic-memory entries - review for removal
 - **generated/**: Empty knowledge templates (4 stub files)
@@ -39,6 +48,7 @@
   - **Status**: Session logging - determine if belongs in memory system
 
 #### External Dependencies
+
 - **archives/**: Librarian workspace + symlink to `/tools/agents/librarian/archives/`
   - **Status**: Symlink will resolve when tools/librarian project is restored
 
@@ -67,5 +77,6 @@
   - `token.sh`: Token count estimation utility for text files
 
 ## TODO
+
 - [ ] Document individual projects
 - [ ] Organize documentation structure

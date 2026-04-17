@@ -13,6 +13,7 @@ The video game Disco Elysium's revolutionary approach to representing internal c
 ## Core Concept
 
 In Disco Elysium, the protagonist's mind contains 24 different skills that function as semi-autonomous personalities:
+
 - **Logic**: Analytical reasoning and deduction
 - **Drama**: Performance and emotional understanding
 - **Electrochemistry**: Desires, impulses, and chemical drives
@@ -27,6 +28,7 @@ Each skill has its own personality, agenda, and way of interpreting situations. 
 ## Influence on SkogAI
 
 This model inspired SkogAI's theatrical presentation approach where:
+
 - Multiple internal voices debate and compete
 - Each voice has distinct characteristics and priorities
 - Internal conflict creates more human-like cognition
@@ -48,7 +50,7 @@ Rather than creating a monolithic intelligence, both Disco Elysium and SkogAI re
 
 ## Relations
 
-- inspired [[SkogAI Technical Architecture]]
-- influenced [[SkogAI Agent Family]]
-- demonstrated_in [[SkogAI Historical Examples]]
-- mentioned_in [[SkogAI Evolution Story]]
+- inspired \[[SkogAI Technical Architecture]\]
+- influenced \[[SkogAI Agent Family]\]
+- demonstrated_in \[[SkogAI Historical Examples]\]
+- mentioned_in \[[SkogAI Evolution Story]\]

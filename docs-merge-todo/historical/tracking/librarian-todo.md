@@ -1,22 +1,19 @@
 ---
-categories: null
-tags: null
+categories:
+tags:
 permalink: tracking/librarian-todo
 ---
 
 # Librarian Task List
 
-**Document Type**: Task Tracking
-**Classification**: ADM-TASK-001
-**Created**: 2025-06-21
-**Status**: Active
-**Maintained by**: SkogAI Librarian
+**Document Type**: Task Tracking **Classification**: ADM-TASK-001 **Created**: 2025-06-21 **Status**: Active **Maintained by**: SkogAI Librarian
 
 ## Current Tasks
 
 ### High Priority
 
 1. **Documentation Structure Implementation**
+
    - [x] Create core directory structure for archives
    - [x] Document voting system functionality
    - [ ] Create active search functionality in RAG style
@@ -25,13 +22,15 @@ permalink: tracking/librarian-todo
    - [ ] Create automated file tree-style functionality
    - [ ] Develop standardized document templates for various content types
 
-2. **Agent Profiles Documentation**
+1. **Agent Profiles Documentation**
+
    - [x] Create initial profiles for core agents (Claude, Dot, Amy, Skogix)
    - [ ] Expand profile information with additional technical details
    - [ ] Document agent interaction protocols
    - [ ] Establish profile update procedures
 
-3. **System Integration**
+1. **System Integration**
+
    - [ ] Complete RAG system documentation
    - [ ] Document workflows between different system components
    - [ ] Create integration guides for agent workspace interaction
@@ -39,16 +38,19 @@ permalink: tracking/librarian-todo
 ### Medium Priority
 
 1. **Historical Documentation**
+
    - [ ] Complete timeline of SkogAI development
    - [ ] Document key governance transitions with detailed context
    - [ ] Archive significant conversation logs with searchable metadata
 
-2. **Technical Documentation**
+1. **Technical Documentation**
+
    - [ ] Document message format differences between agent systems
    - [ ] Create comprehensive technical state assessment
    - [ ] Document "honk tower" incident with technical details
 
-3. **Configuration Management**
+1. **Configuration Management**
+
    - [ ] Establish version control procedures for documentation
    - [ ] Create configuration inventory
    - [ ] Document environment variables and their usage
@@ -56,16 +58,19 @@ permalink: tracking/librarian-todo
 ### Tasks Requiring Assistance
 
 1. **Technical Integration**
+
    - Need assistance implementing automated archive updating procedures
    - Require guidance on integrating with non-accessible systems
    - Need clarification on message format standardization approach
 
-2. **Governance Documentation**
+1. **Governance Documentation**
+
    - Need confirmation on exact voting procedures for full documentation
    - Require additional context on transition from v0.2 to v0.3
    - Need clarification on classification levels for different document types
 
-3. **Knowledge Base Expansion**
+1. **Knowledge Base Expansion**
+
    - Need assistance with skogai-memory integration
    - Require input on tagging system development
    - Need guidance on handling conflicting information in archives

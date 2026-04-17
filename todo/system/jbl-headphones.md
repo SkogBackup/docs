@@ -1,3 +1,9 @@
+---
+title: jbl-headphones
+type: note
+permalink: skogai/todo/system/jbl-headphones
+---
+
 # JBL Quantum350 Wireless Headphones Configuration
 
 ## Problem Description
@@ -66,6 +72,7 @@ load-module module-filter-apply
 ```
 
 The key changes were:
+
 - Adding `module-alsa-sink` to ensure USB headphones are detected
 - Disabling `module-suspend-on-idle` to prevent crashes from power-saving features
 - Adding `module-switch-on-connect` for better device switching
@@ -91,15 +98,16 @@ Sink #1
 ## Remaining Concerns
 
 1. USB power management may still cause issues with the headphones
-2. Mic/audio simultaneous usage might still experience cutouts
-3. Long-term stability needs monitoring
+1. Mic/audio simultaneous usage might still experience cutouts
+1. Long-term stability needs monitoring
 
 ## Future Improvements
 
 Consider:
+
 1. Creating a udev rule to disable USB autosuspend for the headphones (not yet implemented)
-2. Adjusting USB power settings if issues persist
-3. Fine-tuning buffer sizes if audio dropouts occur during use
+1. Adjusting USB power settings if issues persist
+1. Fine-tuning buffer sizes if audio dropouts occur during use
 
 ## Related Hardware Info
 

@@ -1,3 +1,9 @@
+---
+title: initial-design
+type: note
+permalink: skogai/docs-merge-todo/technical/memory-system/memory-extraction-epistemic-framework/guides/initial-design
+---
+
 # Claude Code Memory System - Initial Design
 
 ## Overview
@@ -7,6 +13,7 @@ A memory system that learns from Jesse's historical Claude Code conversation his
 ## Problem Statement
 
 Claude Code sessions currently start with limited context about:
+
 - User's coding preferences and style requirements
 - Past architectural decisions and their reasoning
 - Repeated mistakes and how to avoid them
@@ -14,6 +21,7 @@ Claude Code sessions currently start with limited context about:
 - Domain-specific constraints and requirements
 
 This leads to:
+
 - Repeated corrections for the same issues
 - Re-explaining preferences each session
 - Missing opportunities to learn from past successes/failures
@@ -22,10 +30,10 @@ This leads to:
 ## Goals
 
 1. **Extract actionable insights** from 3GB of historical conversation data
-2. **Index memories** with semantic search + structured metadata
-3. **Inject relevant context** into active sessions at appropriate decision points
-4. **Self-reinforce** useful memories through natural conversation patterns
-5. **Stay local** - no external services, privacy-first architecture
+1. **Index memories** with semantic search + structured metadata
+1. **Inject relevant context** into active sessions at appropriate decision points
+1. **Self-reinforce** useful memories through natural conversation patterns
+1. **Stay local** - no external services, privacy-first architecture
 
 ## Architecture
 
@@ -82,12 +90,15 @@ This leads to:
 **Process Flow:**
 
 #### Phase 1: Session Chunking
+
 - Parse JSONL session files
 - Break into coherent conversation threads based on topic shifts
 - Preserve context (surrounding messages, metadata, timestamps)
 
 #### Phase 2: LLM Screening (Haiku)
+
 For each chunk, ask: "Does this contain anything worth remembering?"
+
 - Rules and preferences
 - Design decisions with reasoning
 - Problem-solving patterns
@@ -99,7 +110,9 @@ For each chunk, ask: "Does this contain anything worth remembering?"
 Output: Yes/No + brief reason
 
 #### Phase 3: Structured Extraction (Haiku)
+
 For flagged chunks:
+
 - Extract the core insight/rule/pattern
 - Capture reasoning and context
 - Identify domain applicability (project-specific vs. general)
@@ -108,17 +121,20 @@ For flagged chunks:
 - Generate confidence score
 
 #### Phase 4: Synthesis & Deduplication (Sonnet)
+
 - Group similar memories
 - Identify contradictions (flag for review - preferences evolve)
 - Create case studies from related memories
 - Generate final deduplicated memory files
 
 **Expected Yield from Full Corpus:**
+
 - 500-800 actionable rules and insights
 - 20-30 detailed case studies
 - Cross-referenced memory graph
 
 **Incremental Updates:**
+
 - Store last extraction timestamp in `index/last-extraction.json`
 - Process only new sessions since last run
 - CLI: `extract-memories` (no date required)
@@ -126,6 +142,7 @@ For flagged chunks:
 ### 2. Memory Storage
 
 **File Organization:**
+
 ```
 memories/
   2025/
@@ -140,7 +157,8 @@ memories/
 ```
 
 **Memory File Format:**
-```markdown
+
+````markdown
 ---
 id: mem-2025-09-26-143022
 created: 2025-09-26T14:30:22Z
@@ -180,13 +198,15 @@ on the lace agent-dispatch feature.
 Bad:
 ```typescript
 const { spawn } = require('child_process');
-```
+````
 
 Good:
+
 ```typescript
 import { spawn } from 'child_process';
 ```
-```
+
+````
 
 **Vector Database: LanceDB**
 - Embedded TypeScript vector DB (no server required)
@@ -264,9 +284,10 @@ Stored in temp file per session:
   messageCount: number,
   relevanceThreshold: number           // Increases with messageCount
 }
-```
+````
 
 **Memory Injection Format:**
+
 ```json
 {
   "additionalContext": "## Relevant Memories\n\n### Memory: mem-2025-09-26-001\n**Tags**: code-style, imports\n\n[memory content]\n\n---\n\n### Memory: mem-2025-09-26-042\n..."
@@ -284,16 +305,19 @@ Stored in temp file per session:
 #### Positive Signals
 
 **Explicit Citation**
+
 - Pattern: `Memory (mem-\d{4}-\d{2}-\d{2}-\d+) (?:was )?useful|helped`
 - Boost: +0.5 to usefulness_score
 - Interpretation: Claude explicitly acknowledged memory value
 
 **Implicit Reference**
+
 - Detection: LLM analyzes if Claude cited/applied injected memory
 - Boost: +0.2 to usefulness_score
 - Interpretation: Memory influenced decision without explicit mention
 
 **No Correction After Injection**
+
 - Detection: Memory injected → Claude acts → no user correction within 3 messages
 - Boost: +0.1 to usefulness_score
 - Interpretation: Memory helped Claude get it right
@@ -301,22 +325,25 @@ Stored in temp file per session:
 #### Negative Signals
 
 **User Correction Despite Memory**
+
 - Detection: Memory about X injected → Claude does X wrong → user corrects
 - Penalty: -0.3 to usefulness_score
 - Interpretation: Memory didn't prevent mistake
 
 **Contradiction**
+
 - Detection: User states opposite of what memory says
 - Penalty: -0.5 to usefulness_score + flag for manual review
 - Interpretation: Memory may be outdated or context-specific
 
 #### Decay Mechanism
 
-- Every 30 days: usefulness_score *= 0.9 (10% decay)
+- Every 30 days: usefulness_score \*= 0.9 (10% decay)
 - Memories with score < 0.1 after decay: archived (lower priority, not deleted)
 - Recent reinforcement: resets decay timer
 
 **Memory File Updates:**
+
 ```yaml
 usefulness_score: 1.8
 last_reinforced: 2025-09-26T10:30:00Z
@@ -333,6 +360,7 @@ reinforcement_history:
 ```
 
 **Additional Instruction in CLAUDE.md:**
+
 ```
 If a memory was useful in helping you make a decision or avoid a
 mistake, mention it: "Memory mem-2025-09-26-001 was useful here"
@@ -355,30 +383,35 @@ mistake, mention it: "Memory mem-2025-09-26-001 was useful here"
 ## Design Principles
 
 ### Privacy-First
+
 - All processing local (no external services)
 - LanceDB embedded (no server)
 - Local embedding model
 - Data never leaves machine
 
 ### Loosely Coupled
+
 - Embeddings separate from content (can swap models)
 - Vector DB interface abstracted (can swap LanceDB for alternatives)
 - Memory format independent of retrieval mechanism
 - Hooks use standard JSON interface
 
 ### Human-Readable
+
 - Memory files are markdown
 - Git-friendly (can version control memories)
 - Easy to inspect, edit, or curate manually
 - Clear provenance (source sessions linked)
 
 ### Self-Reinforcing
+
 - Useful memories strengthen through natural use
 - No manual labeling required
 - Feedback loop embedded in conversation
 - Decay prevents stale memories from dominating
 
 ### Incremental
+
 - Extract once, update incrementally
 - Session-level deduplication (no repeat injections)
 - Token budgets prevent context flooding
@@ -387,18 +420,21 @@ mistake, mention it: "Memory mem-2025-09-26-001 was useful here"
 ## Success Criteria
 
 ### Short-Term (3 months)
+
 - Extract and index 80%+ of valuable insights from historical data
 - < 5% false positive rate on extracted memories
 - Measurable reduction in repeated user corrections
 - User reports improved first-attempt accuracy
 
 ### Medium-Term (6 months)
+
 - Complete case study library (top 100 sessions)
 - Integrated memory injection in all sessions
 - Automatic reinforcement working (useful memories rise)
 - User satisfaction with memory relevance
 
 ### Long-Term (12 months)
+
 - Self-updating system (new sessions processed automatically)
 - Preference evolution tracking (detect when patterns change)
 - Cross-project pattern identification
@@ -408,31 +444,29 @@ mistake, mention it: "Memory mem-2025-09-26-001 was useful here"
 
 1. **Contradiction Resolution:** How to handle conflicting memories when preferences evolve? Manual review? Timestamp-based priority?
 
-2. **Memory Compression:** Will the memory corpus grow unboundedly? Need periodic consolidation?
+1. **Memory Compression:** Will the memory corpus grow unboundedly? Need periodic consolidation?
 
-3. **Cross-User Learning:** Could this system work for teams? Privacy/consent issues?
+1. **Cross-User Learning:** Could this system work for teams? Privacy/consent issues?
 
-4. **Active Learning:** Should Claude be able to ask clarifying questions to extract better rules?
+1. **Active Learning:** Should Claude be able to ask clarifying questions to extract better rules?
 
-5. **Memory Visualization:** UI to browse/search/edit memories outside of CLI?
+1. **Memory Visualization:** UI to browse/search/edit memories outside of CLI?
 
-6. **MCP Tool Integration:** Should memories also be exposed as MCP resources for proactive search?
+1. **MCP Tool Integration:** Should memories also be exposed as MCP resources for proactive search?
 
 ## Next Steps
 
 1. Set up project structure and dependencies
-2. Build JSONL parser and session chunker
-3. Implement Phase 1 extraction (screening with Haiku)
-4. Create memory file writer with frontmatter
-5. Set up LanceDB and embedding pipeline
-6. Build retrieval hooks
-7. Test on subset of historical data
-8. Iterate based on results
-9. Process full corpus
-10. Deploy hooks and monitor
+1. Build JSONL parser and session chunker
+1. Implement Phase 1 extraction (screening with Haiku)
+1. Create memory file writer with frontmatter
+1. Set up LanceDB and embedding pipeline
+1. Build retrieval hooks
+1. Test on subset of historical data
+1. Iterate based on results
+1. Process full corpus
+1. Deploy hooks and monitor
 
----
+______________________________________________________________________
 
-**Document Version:** 1.0
-**Date:** 2025-09-26
-**Author:** Jesse & Claude (brainstorm session)
+**Document Version:** 1.0 **Date:** 2025-09-26 **Author:** Jesse & Claude (brainstorm session)

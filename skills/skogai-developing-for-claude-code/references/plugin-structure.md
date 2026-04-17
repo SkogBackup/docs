@@ -1,3 +1,9 @@
+---
+title: plugin-structure
+type: note
+permalink: skogai/skills/skogai-developing-for-claude-code/references/plugin-structure
+---
+
 # Plugin Structure Reference
 
 ## Standard Directory Layout
@@ -31,6 +37,7 @@ my-plugin/
 ### 1. `.claude-plugin/` Contains ONLY Manifests
 
 **❌ WRONG:**
+
 ```
 .claude-plugin/
 ├── plugin.json
@@ -39,6 +46,7 @@ my-plugin/
 ```
 
 **✅ CORRECT:**
+
 ```
 .claude-plugin/
 ├── plugin.json          # Only manifests
@@ -51,6 +59,7 @@ commands/                # Commands at plugin root
 ### 2. Always Use `${CLAUDE_PLUGIN_ROOT}` for Paths in Config
 
 **❌ WRONG - Hardcoded paths:**
+
 ```json
 {
   "mcpServers": {
@@ -62,6 +71,7 @@ commands/                # Commands at plugin root
 ```
 
 **✅ CORRECT - Variable paths:**
+
 ```json
 {
   "mcpServers": {
@@ -75,10 +85,12 @@ commands/                # Commands at plugin root
 ### 3. Use Relative Paths in `plugin.json`
 
 All paths in `plugin.json` must:
+
 - Start with `./`
 - Be relative to plugin root
 
 **❌ WRONG:**
+
 ```json
 {
   "mcpServers": {
@@ -90,6 +102,7 @@ All paths in `plugin.json` must:
 ```
 
 **✅ CORRECT:**
+
 ```json
 {
   "mcpServers": {
@@ -169,6 +182,7 @@ For local testing, create in `.claude-plugin/`:
 ```
 
 **Installation:**
+
 ```bash
 /plugin marketplace add /path/to/my-plugin
 /plugin install my-plugin@my-plugin-dev
@@ -246,6 +260,7 @@ Be specific and clear about the expected behavior.
 ```
 
 **Available hook events:**
+
 - `PreToolUse`, `PostToolUse`
 - `UserPromptSubmit`
 - `SessionStart`, `SessionEnd`

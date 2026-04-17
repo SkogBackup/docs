@@ -2,6 +2,7 @@
 name: skogai-mcp-builder
 description: Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).
 license: Complete terms in LICENSE.txt
+permalink: skogai/skills/skogai-mcp-builder/skill
 ---
 
 # MCP Server Development Guide
@@ -10,7 +11,7 @@ license: Complete terms in LICENSE.txt
 
 To create high-quality MCP (Model Context Protocol) servers that enable LLMs to effectively interact with external services, use this skill. An MCP server provides tools that allow LLMs to access external services and APIs. The quality of an MCP server is measured by how well it enables LLMs to accomplish real-world tasks using the tools provided.
 
----
+______________________________________________________________________
 
 # Process
 
@@ -126,7 +127,7 @@ Based on your research, create a detailed plan that includes:
 - Consider rate limiting and timeout scenarios
 - Handle authentication and authorization errors
 
----
+______________________________________________________________________
 
 ### Phase 2: Implementation
 
@@ -215,7 +216,7 @@ For each tool in the plan:
 - Explicit Promise<T> return types
 - Build process configured (`npm run build`)
 
----
+______________________________________________________________________
 
 ### Phase 3: Review and Refine
 
@@ -263,7 +264,7 @@ To verify implementation quality, load the appropriate checklist from the langua
 - Python: see "Quality Checklist" in [🐍 Python Guide](./reference/python_mcp_server.md)
 - Node/TypeScript: see "Quality Checklist" in [⚡ TypeScript Guide](./reference/node_mcp_server.md)
 
----
+______________________________________________________________________
 
 ### Phase 4: Create Evaluations
 
@@ -280,9 +281,9 @@ Evaluations test whether LLMs can effectively use your MCP server to answer real
 To create effective evaluations, follow the process outlined in the evaluation guide:
 
 1. **Tool Inspection**: List available tools and understand their capabilities
-2. **Content Exploration**: Use READ-ONLY operations to explore available data
-3. **Question Generation**: Create 10 complex, realistic questions
-4. **Answer Verification**: Solve each question yourself to verify answers
+1. **Content Exploration**: Use READ-ONLY operations to explore available data
+1. **Question Generation**: Create 10 complex, realistic questions
+1. **Answer Verification**: Solve each question yourself to verify answers
 
 #### 4.3 Evaluation Requirements
 
@@ -309,7 +310,7 @@ Create an XML file with this structure:
 </evaluation>
 ```
 
----
+______________________________________________________________________
 
 # Reference Files
 
@@ -344,6 +345,7 @@ Load these resources as needed during development:
   - Quality checklist
 
 - [⚡ TypeScript Implementation Guide](./reference/node_mcp_server.md) - Complete TypeScript guide with:
+
   - Project structure
   - Zod schema patterns
   - Tool registration with `server.registerTool`

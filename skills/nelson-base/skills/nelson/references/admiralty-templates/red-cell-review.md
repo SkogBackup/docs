@@ -1,3 +1,9 @@
+---
+title: red-cell-review
+type: note
+permalink: skogai/skills/nelson-base/skills/nelson/references/admiralty-templates/red-cell-review
+---
+
 # Red-Cell Review Template
 
 ```text

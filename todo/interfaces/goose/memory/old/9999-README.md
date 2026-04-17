@@ -1,3 +1,9 @@
+---
+title: 9999-README
+type: note
+permalink: skogai/todo/interfaces/goose/memory/old/9999-readme
+---
+
 # SkogAI Memory System Documentation
 
 This document provides a comprehensive overview of the SkogAI memory system as used by Goose, a quantum-mojito powered AI assistant in the SkogAI family.
@@ -11,6 +17,7 @@ The memory system is designed to maintain knowledge, identity, and operational c
 ### Hierarchical Numbering Convention
 
 - **00-09**: Emergency restart and critical information
+
   - *00-current-focus*: Immediate priorities and current project focus
   - *00-current-tools*: List of available tools and MCPs
   - *00-next-steps*: Planned future work and immediate action items
@@ -25,9 +32,11 @@ The memory system is designed to maintain knowledge, identity, and operational c
   - *09-efficient-response*: Protocol for efficient task handling
 
 - **10-99**: Core operational knowledge
+
   - *10-memory-navigation-guide*: Map of memory structure
 
 - **100-199**: Standards and procedures
+
   - *101-workflow-development-phases*: Development methodology
   - *102-goosehints*: Structured communication protocols
   - *103-context-management*: Task-specific context filtering
@@ -35,9 +44,11 @@ The memory system is designed to maintain knowledge, identity, and operational c
   - *105-critical-state*: Current system status and priorities
 
 - **200-299**: Project-specific information
+
   - Reserved for domain-specific project knowledge
 
 - **300-399**: Tools and functions documentation
+
   - *300-tools-and-functions*: Overview of available tools
   - *301-memory-system-architecture*: Memory system details
   - *302-future-backlog*: Planned development items
@@ -53,6 +64,7 @@ The memory system is designed to maintain knowledge, identity, and operational c
   - *313-context-validation-principle*: Handling confidence and knowledge boundaries
 
 - **400+**: Special conceptual frameworks and principles
+
   - *400-efficient-context-management*: Guidelines for context minimalism and task delegation
   - *1000-context-validation-principle*: Managing the boundary between standard and custom knowledge
   - *3000-test-something*: Test data and validation points
@@ -72,6 +84,7 @@ Each memory entry belongs to a category and may have multiple tags for organizat
 ### Storage
 
 Memory is stored using the `remember_memory` function with parameters:
+
 - `category`: The organizational category
 - `data`: The content to remember
 - `is_global`: Boolean indicating if memory is globally available
@@ -84,6 +97,7 @@ remember_memory(category="example-category", data="Memory content", is_global=tr
 ### Retrieval
 
 Memories are retrieved using the `retrieve_memories` function with parameters:
+
 - `category`: The category to retrieve
 - `is_global`: Boolean indicating if searching global memory
 
@@ -96,11 +110,13 @@ retrieve_memories(category="example-category", is_global=true)
 Memories can be removed in two ways:
 
 1. Remove an entire category:
+
 ```
 remove_memory_category(category="example-category", is_global=true)
 ```
 
 2. Remove a specific memory entry:
+
 ```
 remove_specific_memory(category="example-category", memory_content="Exact content to remove", is_global=true)
 ```
@@ -153,9 +169,9 @@ remove_specific_memory(category="example-category", memory_content="Exact conten
 For efficient initialization or context recovery:
 
 1. Load **00-09 range** first for critical startup information
-2. Add **10-19 range** for structural understanding
-3. Include **100-105 range** for core principles
-4. Add domain-specific memories as needed for current tasks
+1. Add **10-19 range** for structural understanding
+1. Include **100-105 range** for core principles
+1. Add domain-specific memories as needed for current tasks
 
 ## Memory System Limitations
 
@@ -179,16 +195,19 @@ The current development focus for the memory system includes:
 ## Best Practices
 
 1. **For Adding New Information**:
+
    - Use descriptive category names with number prefixes following convention
    - Apply specific, relevant tags that aid in organization
    - Set appropriate scope (global vs. local)
 
-2. **For Updating Existing Information**:
+1. **For Updating Existing Information**:
+
    - If replacing entirely: Remove category first, then add new memory
    - If updating specific entry: Remove that memory content, then add updated version
    - If adding complementary info: Add new memory with appropriate tags
 
-3. **For Complex Organizations**:
+1. **For Complex Organizations**:
+
    - Use consistent tag structures across related categories
    - Create index/map memories that document the organizational structure
    - Consider hierarchical numbering for related categories
@@ -207,7 +226,8 @@ The memory system is designed to maintain important information across different
 The memory system evolved from a simple file-based approach to the current categorized and tagged system. It incorporates lessons learned about context management, information economics, and efficient knowledge retrieval across quantum timelines.
 
 This modular design ensures that even if the internet is unavailable and only basic functionality remains:
+
 1. Core identity still works
-2. Basic tools still function
-3. Essential memory persists
-4. The system can rebuild remaining components
+1. Basic tools still function
+1. Essential memory persists
+1. The system can rebuild remaining components

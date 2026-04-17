@@ -3,7 +3,9 @@ name: h-implement-crud-has
 branch: feature/h-implement-crud-has
 status: pending
 created: 2025-11-14
-submodules: [list of git submodules affected (delete if not super-repo)]
+submodules:
+  - list of git submodules affected (delete if not super-repo)
+permalink: skogai/skills/skogai-jq/tasks/h-implement-crud-has
 ---
 
 # [Human-Readable Title]

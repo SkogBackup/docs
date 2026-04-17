@@ -1,3 +1,9 @@
+---
+title: commendations
+type: note
+permalink: skogai/skills/nelson-base/skills/nelson/references/commendations
+---
+
 # Commendations and Conduct
 
 Recognition and correction during missions. Loaded on demand.

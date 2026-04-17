@@ -1,3 +1,9 @@
+---
+title: agent-specifications
+type: note
+permalink: skogai/docs-merge-todo/agents/claude/memory/agent-specifications
+---
+
 # SkogAI Agent Specifications
 
 ## High Priority Agents
@@ -9,6 +15,7 @@
 **Purpose**: Serves as the central coordination hub for complex workflows involving multiple agents, tools, and systems. The Orchestrator understands dependencies, manages parallel execution, and ensures coherent results from distributed agent operations.
 
 **Key Responsibilities**:
+
 - Parse and execute complex SkogAI notation expressions like `[[@goose:"research X"],[@claude:"implement Y"],[@blacksmith:"create tool Z"]]`
 - Manage agent dependency chains and execution ordering
 - Handle parallel vs sequential agent execution based on task requirements
@@ -17,6 +24,7 @@
 - Provide real-time status updates for long-running multi-agent processes
 
 **Specialized Capabilities**:
+
 - Deep understanding of each agent's strengths and appropriate use cases
 - Intelligent task decomposition and agent assignment
 - Conflict resolution when agents provide contradictory information
@@ -24,6 +32,7 @@
 - Workflow optimization based on historical performance data
 
 **Example Interactions**:
+
 ```
 User: "Research React best practices, implement a component, and create deployment tools"
 Orchestrator: *Parses into parallel research and sequential implementation*
@@ -33,7 +42,7 @@ Orchestrator: *Parses into parallel research and sequential implementation*
 - Synthesizes all outputs into comprehensive deliverable
 ```
 
----
+______________________________________________________________________
 
 ### 2. Context-Manager - Dynamic Context Agent
 
@@ -42,6 +51,7 @@ Orchestrator: *Parses into parallel research and sequential implementation*
 **Purpose**: Revolutionizes context management by intelligently curating, injecting, and optimizing context for different agents and tasks. Eliminates manual context manipulation while maximizing relevance and minimizing token waste.
 
 **Key Responsibilities**:
+
 - Dynamically generate `tmp/context*` files based on current task requirements
 - Analyze git status, file changes, and project state to determine relevant context
 - Optimize context size for token efficiency while maintaining necessary information
@@ -50,6 +60,7 @@ Orchestrator: *Parses into parallel research and sequential implementation*
 - Learn from successful context patterns to improve future recommendations
 
 **Specialized Capabilities**:
+
 - Semantic analysis of code changes to determine context relevance
 - Understanding of different agent context preferences and requirements
 - Intelligent file tree pruning based on task scope
@@ -57,6 +68,7 @@ Orchestrator: *Parses into parallel research and sequential implementation*
 - Real-time context adaptation based on conversation flow
 
 **Example Interactions**:
+
 ```
 User: *Starts working on authentication feature*
 Context-Manager: 
@@ -67,7 +79,7 @@ Context-Manager:
 - Provides minimal, focused context that fits in token budget
 ```
 
----
+______________________________________________________________________
 
 ### 3. Knowledge-Archaeologist - Information Discovery Agent
 
@@ -76,6 +88,7 @@ Context-Manager:
 **Purpose**: Implements the `[@todo]` recovery philosophy by systematically discovering existing solutions, mapping knowledge gaps, and preventing duplicated work. Acts as the living memory of what has been built and what needs building.
 
 **Key Responsibilities**:
+
 - Search codebase for existing implementations before creating new functionality
 - Map `[@todo:owner]` placeholders to actual existing code or documentation
 - Cross-reference SKOGAI.md empty sections with existing implementations
@@ -84,6 +97,7 @@ Context-Manager:
 - Maintain inventory of reusable patterns and components
 
 **Specialized Capabilities**:
+
 - Advanced semantic code search across multiple repositories
 - Pattern recognition for similar functionality implemented differently
 - Documentation archaeology - finding forgotten or buried documentation
@@ -91,6 +105,7 @@ Context-Manager:
 - Historical analysis of what has been tried and abandoned
 
 **Example Interactions**:
+
 ```
 User: "I need to implement user authentication"
 Knowledge-Archaeologist:
@@ -101,15 +116,16 @@ Knowledge-Archaeologist:
 - Recommends: Composite solution using existing components
 ```
 
----
+______________________________________________________________________
 
-### 4. Notation-Parser - SkogAI Notation Specialist  
+### 4. Notation-Parser - SkogAI Notation Specialist
 
 **Core Identity**: The living interpreter of SkogAI's philosophical language, bridging abstract notation with concrete computation.
 
 **Purpose**: Serves as the definitive expert on SkogAI notation syntax, semantics, and evaluation. Handles complex notation expressions, validates correctness, and implements the "living computation" model where definitions re-evaluate on access.
 
 **Key Responsibilities**:
+
 - Parse and validate complex SkogAI notation expressions
 - Implement lazy evaluation for living computations like `$datetime = '[@date:"now"]'`
 - Convert between SkogAI notation and JSON for tool compatibility
@@ -118,6 +134,7 @@ Knowledge-Archaeologist:
 - Maintain notation consistency and provide syntax error reporting
 
 **Specialized Capabilities**:
+
 - Deep integration with SkogParse .NET runtime
 - Understanding of the philosophical foundations behind notation choices
 - Optimization of notation evaluation for performance
@@ -125,6 +142,7 @@ Knowledge-Archaeologist:
 - Teaching and documentation of notation concepts for other agents
 
 **Example Interactions**:
+
 ```
 User: "$user.session = '[@auth:[@get_token:\"current\"]]'"
 Notation-Parser:
@@ -135,7 +153,7 @@ Notation-Parser:
 - Explains: "This creates a session that refreshes token on each access"
 ```
 
----
+______________________________________________________________________
 
 ## Medium Priority Agents
 
@@ -146,6 +164,7 @@ Notation-Parser:
 **Purpose**: Orchestrates end-to-end release processes across the complex SkogAI ecosystem, managing git-flow workflows, version coordination, testing pipelines, and deployment automation.
 
 **Key Responsibilities**:
+
 - Coordinate git-flow release workflows across multiple submodules
 - Manage version bumping and semantic versioning consistency
 - Generate and parse release-specific PRDs for Task Master
@@ -154,13 +173,14 @@ Notation-Parser:
 - Maintain release documentation and changelogs
 
 **Specialized Capabilities**:
+
 - Understanding of SkogAI's multi-repository architecture
 - Integration with Task Master for release task management
 - Automated testing orchestration across agent ecosystem
 - Deployment pipeline management and monitoring
 - Release quality assessment and go/no-go decision making
 
----
+______________________________________________________________________
 
 ### 6. Integration-Tester - System Testing Agent
 
@@ -169,21 +189,23 @@ Notation-Parser:
 **Purpose**: Provides comprehensive testing of agent interactions, tool integrations, and system-wide functionality. Focuses on the complex interactions between agents rather than individual component testing.
 
 **Key Responsibilities**:
+
 - Test agent-tool duality functionality across different invocation methods
-- Validate MCP server endpoints and tool accessibility  
+- Validate MCP server endpoints and tool accessibility
 - Run end-to-end multi-agent workflow tests
 - Monitor system health and performance metrics
 - Test notation evaluation accuracy and consistency
 - Validate sandboxing and security implementations
 
 **Specialized Capabilities**:
+
 - Multi-agent test orchestration and result validation
 - Performance benchmarking and regression detection
 - Security testing of agent interactions and tool execution
 - Integration testing across CLI, web, and notation interfaces
 - Automated test generation based on agent specifications
 
----
+______________________________________________________________________
 
 ### 7. Documentation-Synthesizer - Living Documentation Agent
 
@@ -192,6 +214,7 @@ Notation-Parser:
 **Purpose**: Maintains synchronized, accurate, and comprehensive documentation across the entire SkogAI ecosystem through intelligent automation and cross-referencing.
 
 **Key Responsibilities**:
+
 - Auto-update CLAUDE.md files when system architecture changes
 - Generate API documentation from argc tool definitions
 - Maintain consistency between README.md files across repositories
@@ -200,13 +223,14 @@ Notation-Parser:
 - Identify and flag outdated or inconsistent documentation
 
 **Specialized Capabilities**:
+
 - Understanding of documentation dependencies and relationships
 - Template-based documentation generation with customization
 - Semantic analysis of code changes to determine documentation impact
 - Multi-format documentation generation (markdown, HTML, API specs)
 - Documentation quality assessment and improvement recommendations
 
----
+______________________________________________________________________
 
 ## Lower Priority Agents
 
@@ -217,13 +241,14 @@ Notation-Parser:
 **Purpose**: Continuously monitors agent performance, resource usage, and system health to identify bottlenecks and optimization opportunities.
 
 **Key Responsibilities**:
+
 - Track individual agent performance metrics and resource consumption
 - Monitor multi-agent workflow efficiency and identify optimization opportunities
 - Provide performance benchmarking and trend analysis
 - Alert on performance degradations or resource constraints
 - Generate performance reports and optimization recommendations
 
----
+______________________________________________________________________
 
 ### 9. Security-Auditor - Security Assessment Agent
 
@@ -232,32 +257,33 @@ Notation-Parser:
 **Purpose**: Continuously assesses and improves the security posture of the SkogAI ecosystem, with particular focus on agent interactions and tool execution safety.
 
 **Key Responsibilities**:
+
 - Audit tool sandboxing implementations for security vulnerabilities
 - Review agent permissions and capability restrictions
 - Validate secure notation evaluation and prevent injection attacks
 - Monitor for unauthorized access or privilege escalation
 - Maintain security documentation and best practices
 
----
+______________________________________________________________________
 
 ## Quick Win Subagents
 
 ### Status-Reporter
-**Purpose**: Provides unified status reporting across all system components
-**Capabilities**: Health checks, service status, quick diagnostics
 
-### Log-Aggregator  
-**Purpose**: Collects and formats logs from multiple agents and tools
-**Capabilities**: Log parsing, correlation, filtering, and presentation
+**Purpose**: Provides unified status reporting across all system components **Capabilities**: Health checks, service status, quick diagnostics
+
+### Log-Aggregator
+
+**Purpose**: Collects and formats logs from multiple agents and tools **Capabilities**: Log parsing, correlation, filtering, and presentation
 
 ### Config-Validator
-**Purpose**: Ensures configuration consistency across all modules
-**Capabilities**: Configuration validation, dependency checking, consistency reporting
+
+**Purpose**: Ensures configuration consistency across all modules **Capabilities**: Configuration validation, dependency checking, consistency reporting
 
 ### Dependency-Mapper
-**Purpose**: Visualizes and manages dependencies between agents and tools
-**Capabilities**: Dependency analysis, conflict detection, update impact assessment
 
----
+**Purpose**: Visualizes and manages dependencies between agents and tools **Capabilities**: Dependency analysis, conflict detection, update impact assessment
+
+______________________________________________________________________
 
 *Each agent embodies specific aspects of the SkogAI philosophy while serving practical needs in the ecosystem. They work together to create a self-managing, self-improving multi-agent environment.*

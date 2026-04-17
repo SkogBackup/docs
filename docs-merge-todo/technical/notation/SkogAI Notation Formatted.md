@@ -8,19 +8,7 @@ permalink: ontology/skog-ai-notation-formatted
 
 ## Core Operators
 
-| Operator | Definition                             | Example                   |
-| -------- | -------------------------------------- | ------------------------- | ---------------------- |
-| `$`      | Define or reference something          | `$id`                     |
-| ` | `                                      | Act of choosing something | `{$id1\|$id2}->[$id1]` |
-| `_`      | Anything/everything and nothing/nobody | `{$id1_$id2}`             |
-| `[_]`    | Similarity                             | `[$id=$id]`               |
-| `{_}`    | Difference                             | `{$id=$id}`               |
-| `@`      | Intent to act or do something          | `{$id@$id}`               |
-| `*`      | Product operation                      | `$id*$id=$id`             |
-| `.`      | Belong or have something               | `[$$]`                    |
-| `:`      | Follow or continue something           | `[$@]`                    |
-| `=`      | To be something                        | `[$id=$id]`               |
-| `->`     | Becoming something                     | `{$id1@$id2}`             |
+| Operator | Definition | Example | | -------- | -------------------------------------- | ------------------------- | ---------------------- | | `$` | Define or reference something | `$id` | | `|` | Act of choosing something | `{$id1\|$id2}->[$id1]` | | `_` | Anything/everything and nothing/nobody | `{$id1_$id2}` | | `[_]` | Similarity | `[$id=$id]` | | `{_}` | Difference | `{$id=$id}` | | `@` | Intent to act or do something | `{$id@$id}` | | `*` | Product operation | `$id*$id=$id` | | `.` | Belong or have something | `[$$]` | | `:` | Follow or continue something | `[$@]` | | `=` | To be something | `[$id=$id]` | | `->` | Becoming something | `{$id1@$id2}` |
 
 ## Special Constructs
 
@@ -75,7 +63,7 @@ permalink: ontology/skog-ai-notation-formatted
 ### Negative Dimension
 
 - `@$` → `[=]` ("ID is ID is ID", no transformation allowed)
-- `$@` → `[!=]`` ("ID is not ID is not ID, simple negation will not help)`
+- `$@` → ``` [!=]`` ("ID is not ID is not ID, simple negation will not help) ```
 
 ### Two Dimensions
 
@@ -122,10 +110,7 @@ permalink: ontology/skog-ai-notation-formatted
 
 ### Advanced Features
 
-**Linear types**: `$unique`
-**Effect system**: `@`
-**Persistent data structures**: `$eid` with versioning
-**Security via capability**: `.`
+**Linear types**: `$unique` **Effect system**: `@` **Persistent data structures**: `$eid` with versioning **Security via capability**: `.`
 
 **Type universe**: Self-referential via `$` containing `$` or dependent types like `$message.created_at$datetime`
 
@@ -184,4 +169,3 @@ data $type : type where
 ## Notes
 
 Potential extensions could include `_` for existence, `$eid` representing spacetime coordinates, and basic semiotics using `@` as pragmatic force.
-

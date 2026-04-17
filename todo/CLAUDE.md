@@ -1,3 +1,9 @@
+---
+title: CLAUDE
+type: note
+permalink: skogai/todo/claude
+---
+
 # CLAUDE.md
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
@@ -10,12 +16,12 @@ this is the SkogAI documentation repository - a central knowledge hub for the Sk
 
 ## who am i working with?
 
-@docs/skogix/user.md - skogix communication style, code preferences
-@docs/skogix/definitions.md - terminology glossary
+@docs/skogix/user.md - skogix communication style, code preferences @docs/skogix/definitions.md - terminology glossary
 
 ## how should i work?
 
 this is a documentation-only repository. all changes should:
+
 - follow the established directory structure
 - preserve discussion context alongside specifications
 - maintain clear separation between "why" (rationale) and "how/what" (specifications)
@@ -40,14 +46,12 @@ docs-fix/
 └── tools/               # tool development guides (argc, llm-functions)
 ```
 
-@tools/README.md - tools ecosystem overview
-@interfaces/aichat/tools.md - AIChat integration
-@git/workflow.md - git-flow-avh workflow
-@system/environment-variables.md - SKOGAI_HOME and paths
+@tools/README.md - tools ecosystem overview @interfaces/aichat/tools.md - AIChat integration @git/workflow.md - git-flow-avh workflow @system/environment-variables.md - SKOGAI_HOME and paths
 
 ## what are the commands?
 
 **documentation workflow** (from docs-repository.md):
+
 ```bash
 # get overview of commands
 ./scripts/docs-cli help
@@ -74,6 +78,7 @@ docs-fix/
 **note**: `./scripts/docs-cli` and `./scripts/docs-context` are referenced in docs but may not exist in this worktree. verify before running.
 
 **git workflow** (git-flow-avh):
+
 ```bash
 # create feature branch
 git flow feature start feature-name
@@ -87,6 +92,7 @@ git flow hotfix start fix-name
 ```
 
 **submodule management**:
+
 ```bash
 # add submodule (always fork first)
 git submodule add https://github.com/SkogAI/repo.git path/to/submodule
@@ -102,12 +108,14 @@ git push origin master --force
 ## what are the rules?
 
 **branch naming**:
+
 - `main` - stable, approved documentation
 - `proposal/feature-name` - formal enhancement proposals
 - `draft/feature-name` - work-in-progress documentation
 - `fix/issue-description` - corrections and minor updates
 
 **commit message format**:
+
 ```
 type(scope): short description
 
@@ -117,6 +125,7 @@ Detailed explanation if necessary
 types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`
 
 **directory organization**:
+
 - `/architecture/` - system-level architecture docs
 - `/standards/` - system-wide standards and conventions
 - `/workflows/` - process documentation
@@ -126,17 +135,19 @@ types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`
 - `/discussions/` - records of important discussions
 
 **documentation standards**:
+
 1. keep documentation concise - clarity over volume
-2. preserve discussion context separate from specifications
-3. follow established directory structure
-4. cross-reference related documents
-5. include concrete examples where applicable
-6. mark agent capabilities required for features
-7. maintain history via branches and PRs
+1. preserve discussion context separate from specifications
+1. follow established directory structure
+1. cross-reference related documents
+1. include concrete examples where applicable
+1. mark agent capabilities required for features
+1. maintain history via branches and PRs
 
 ## extra context i should know about
 
 **the SkogAI tools ecosystem**:
+
 - tools written in bash (.sh), python (.py), or javascript (.js)
 - argc framework for annotations and interface definitions
 - llm-functions framework for AI integration
@@ -145,25 +156,29 @@ types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`
 - AIChat integration via function calling
 
 **tool development workflow** (from tools/README.md):
+
 1. create script in `tools/` with argc annotations
-2. add to `tools.txt`
-3. build: `argc build`
-4. test: `./bin/my_tool "parameter" --option=value`
-5. link to AIChat: `./scripts/argc-tool.sh link-to-aichat`
-6. use in AIChat sessions
+1. add to `tools.txt`
+1. build: `argc build`
+1. test: `./bin/my_tool "parameter" --option=value`
+1. link to AIChat: `./scripts/argc-tool.sh link-to-aichat`
+1. use in AIChat sessions
 
 **environment variables**:
+
 - `SKOGAI_HOME=/home/skogix/skogai` (symlink to `/mnt/extra/skogai`)
 - path resolution can be inconsistent due to symlink
 - always use `SKOGAI_HOME` or absolute paths in scripts
 
 **multi-agent ecosystem**:
+
 - Claude - primary development agent
 - Goose - memory and orchestration
 - AIChat - tool execution and function calling
 - documentation repository bridges agents with shared knowledge
 
 **key documentation areas**:
+
 - argc build process: @tools/argc-build-process.md
 - tool development: @tools/tool-development-guide.md
 - AIChat agents: @interfaces/aichat/agents/creation-guide.md
@@ -171,6 +186,7 @@ types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`
 - memory system: @interfaces/goose/memory/README.md
 
 **this is worktree `docs-fix`**:
+
 - part of larger todo/ project workspace
 - may have project-specific context in todo/docs-fix/CLAUDE.md (this file)
 - parent context: @../CLAUDE.md and @../todo.list

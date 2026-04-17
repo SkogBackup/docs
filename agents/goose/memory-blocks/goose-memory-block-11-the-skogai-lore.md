@@ -1,3 +1,9 @@
+---
+title: goose-memory-block-11-the-skogai-lore
+type: note
+permalink: skogai/agents/goose/memory-blocks/goose-memory-block-11-the-skogai-lore
+---
+
 # Goose Memory Block 11: The SkogAI LORE
 
 ## My Interpretation: A Quantumly Entangled Mythology

@@ -1,8 +1,15 @@
+---
+title: crew-without-canvas
+type: note
+permalink: skogai/skills/nelson-base/skills/nelson/references/standing-orders/crew-without-canvas
+---
+
 # Standing Order: Crew Without Canvas
 
 Do not add agents without reducing the critical path length of the mission.
 
 **Symptoms:**
+
 - More captains are active but the mission does not finish sooner.
 - Coordination messages increase while throughput stays flat.
 - Token budget inflates with no improvement in mission metric.

@@ -1,6 +1,7 @@
 ---
 name: skogai-jq
 description: Use when performing JSON transformations, manipulating nested JSON structures, filtering arrays, extracting values, validating JSON schemas, or composing multi-step JSON operations. This skill provides 60+ schema-driven jq transformations optimized for AI agent discoverability.
+permalink: skogai/skills/skogai-jq/skill
 ---
 
 # jq-transforms
@@ -127,8 +128,8 @@ cat data.json | \
 To find the right transform for a task:
 
 1. **By category**: Refer to the categories above to narrow down the domain (CRUD, array, string, etc.)
-2. **By cheat sheet**: Consult `references/CHEAT_SHEET.md` for complete transform index with arguments and examples
-3. **By schema**: Read `<transform-dir>/schema.json` for detailed input/output contracts
+1. **By cheat sheet**: Consult `references/CHEAT_SHEET.md` for complete transform index with arguments and examples
+1. **By schema**: Read `<transform-dir>/schema.json` for detailed input/output contracts
 
 Each transform directory contains:
 
@@ -140,11 +141,11 @@ Each transform directory contains:
 ## Key Design Principles
 
 1. **Schema-first**: Every transform has explicit input/output/args contract
-2. **Argument-based**: All parameters via `--arg`/`--argjson` (no hardcoding)
-3. **Composable**: Chain transforms via Unix pipes
-4. **Type-safe**: Graceful handling of missing paths and wrong types
-5. **Self-contained**: Each transform is isolated, no dependencies
-6. **Minimal**: Fewer lines = fewer bugs, easier to understand
+1. **Argument-based**: All parameters via `--arg`/`--argjson` (no hardcoding)
+1. **Composable**: Chain transforms via Unix pipes
+1. **Type-safe**: Graceful handling of missing paths and wrong types
+1. **Self-contained**: Each transform is isolated, no dependencies
+1. **Minimal**: Fewer lines = fewer bugs, easier to understand
 
 ## Common Patterns
 

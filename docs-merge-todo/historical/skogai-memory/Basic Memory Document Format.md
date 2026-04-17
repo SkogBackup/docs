@@ -3,10 +3,10 @@ title: Basic Memory Document Format
 type: note
 permalink: skogai-memory/basic-memory-document-format
 tags:
-- format
-- structure
-- documentation
-- technical
+  - format
+  - structure
+  - documentation
+  - technical
 ---
 
 # Core Document Structure
@@ -67,30 +67,30 @@ Each observation contains:
 
 ### Common Categories
 
-- [tech]: Technical details
-- [design]: Architecture decisions
-- [feature]: User capabilities
-- [decision]: Choices that were made
+- \[tech\]: Technical details
+- \[design\]: Architecture decisions
+- \[feature\]: User capabilities
+- \[decision\]: Choices that were made
 
 ### Additional Categories
 
-- [principle]: Fundamental concepts
-- [method]: Approaches or techniques
-- [preference]: Personal opinions
+- \[principle\]: Fundamental concepts
+- \[method\]: Approaches or techniques
+- \[preference\]: Personal opinions
 
 ## Relations
 
 Relations connect documents to form the knowledge graph:
 
-- implements [[Search Design]]
-- depends_on [[Database Schema]]
-- relates_to [[User Interface]]
+- implements \[[Search Design]\]
+- depends_on \[[Database Schema]\]
+- relates_to \[[User Interface]\]
 
-Relations are markdown list items beginning a descriptive word, followed by a [[wiki link]] value. The description will by used as the relationship type.
+Relations are markdown list items beginning a descriptive word, followed by a \[[wiki link]\] value. The description will by used as the relationship type.
 
 You can also create inline references:
 
-This builds on [[Core Design]] and uses [[Utility Functions]].
+This builds on \[[Core Design]\] and uses \[[Utility Functions]\].
 
 ### Common relation types include:
 
@@ -195,6 +195,7 @@ You can:
 The system will build the semantic knowledge graph regardless of how you organize your files.
 
 ## observations
+
 - [structure] Basic Memory uses YAML frontmatter plus markdown for document structure #format #structure
 - [flexibility] System supports both structured relations and inline references #linking #flexibility
 - [automation] Knowledge graph builds automatically from document connections #automation #graph
@@ -202,7 +203,8 @@ The system will build the semantic knowledge graph regardless of how you organiz
 - [organization] File organization is flexible while maintaining semantic connections #organization #flexibility
 
 ## relations
-- complements [[AI Assistant Guide for Basic Memory]] (provides technical format details)
-- defines [[Document Format Specification]] (core structure requirements)
-- enables [[Knowledge Graph Construction]] (technical foundation for connections)
-- supports [[Memory URI System]] (addressing and reference mechanisms)
+
+- complements \[[AI Assistant Guide for Basic Memory]\] (provides technical format details)
+- defines \[[Document Format Specification]\] (core structure requirements)
+- enables \[[Knowledge Graph Construction]\] (technical foundation for connections)
+- supports \[[Memory URI System]\] (addressing and reference mechanisms)

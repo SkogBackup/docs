@@ -6,5 +6,3 @@ tags: [argc, examples, patterns, recipes, cli, automation, commands]
 title: argc-practical-examples
 type: guide
 ---
-
-

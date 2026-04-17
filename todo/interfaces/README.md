@@ -1,3 +1,9 @@
+---
+title: README
+type: note
+permalink: skogai/todo/interfaces/readme
+---
+
 # Interfaces Documentation
 
 Documentation for AI interface integrations in the SkogAI ecosystem.
@@ -9,6 +15,7 @@ This directory contains documentation for integrating and working with different
 ## Structure
 
 ### [aichat/](./aichat/)
+
 AIChat integration documentation covering:
 
 - **Function Calls**: How AIChat function calling works
@@ -18,6 +25,7 @@ AIChat integration documentation covering:
 - **Submodules**: AIChat submodule management
 
 **Key Files**:
+
 - `function-calls.md` - Function calling mechanism
 - `tools.md` - Tool integration guide
 - `custom-tool-example.md` - Example custom tool implementation
@@ -29,9 +37,11 @@ AIChat integration documentation covering:
 **Purpose**: AIChat serves as the primary interface for tool execution and LLM function calling in the SkogAI ecosystem.
 
 ### [goose/](./goose/)
+
 Goose integration documentation focusing on memory systems:
 
 **Structure**:
+
 - `memory/` - Goose memory system implementation
   - `README.md` - Memory system overview
   - `current/` - Active memory files
@@ -39,6 +49,7 @@ Goose integration documentation focusing on memory systems:
   - `*.yaml` - Goose configuration files (orchestrator, specialists)
 
 **Key Features**:
+
 - Tag-based memory organization
 - Category-based storage
 - Global and session-specific memories
@@ -49,32 +60,38 @@ Goose integration documentation focusing on memory systems:
 ## Integration Overview
 
 ### AIChat Integration
+
 AIChat connects tools to LLM capabilities through:
+
 1. Function definitions in `functions.json`
-2. Tool wrappers in `bin/` directory
-3. Agent configurations grouping tools
-4. argc build process for tool compilation
+1. Tool wrappers in `bin/` directory
+1. Agent configurations grouping tools
+1. argc build process for tool compilation
 
 ### Goose Integration
+
 Goose manages system memory through:
+
 1. Memory files with tag-based organization
-2. Category-based storage system
-3. Extension-based memory loading
-4. Hierarchical folder structure
+1. Category-based storage system
+1. Extension-based memory loading
+1. Hierarchical folder structure
 
 ## Usage
 
 ### For AIChat
+
 1. Build tools with `argc build`
-2. Link to AIChat using scripts
-3. Start AIChat session
-4. Tools become available as function calls
+1. Link to AIChat using scripts
+1. Start AIChat session
+1. Tools become available as function calls
 
 ### For Goose
+
 1. Create `.txt` files with `# tag1 tag2` header
-2. Place in `memory/` root directory
-3. Goose loads files via memory extension
-4. Access memories during sessions
+1. Place in `memory/` root directory
+1. Goose loads files via memory extension
+1. Access memories during sessions
 
 ## Related Documentation
 

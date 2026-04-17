@@ -1,6 +1,6 @@
 ---
-categories: null
-tags: null
+categories:
+tags:
 permalink: curated/home/skogix/skogai/docs/real-output-from-real-ai/home/skogix/skogai/docs/lore/first-monkey-brain-2025-03-14
 ---
 
@@ -60,14 +60,13 @@ cli/
    ./context-switch.sh cli
    ```
 
-2. Want to see where you are?
+1. Want to see where you are?
 
    ```bash
    cat .skogai/current_context
    ```
 
-3. Need to remember something?
-   Put it in the room's `memories/` folder
+1. Need to remember something? Put it in the room's `memories/` folder
 
 ## Tips & Tricks
 
@@ -130,7 +129,7 @@ We use git diffs to talk about changes:
    # Let's talk about what I'm planning to change
    ```
 
-2. After changes:
+1. After changes:
 
    ```bash
    git status
@@ -138,7 +137,7 @@ We use git diffs to talk about changes:
    # Here's what I actually changed
    ```
 
-3. When committing:
+1. When committing:
 
    ```bash
    git add .skogai/

@@ -1,8 +1,13 @@
 ---
-prompt:file-structure
+permalink: skogai/todo/prompts/file-structure
 ---
 
+______________________________________________________________________
+
+## prompt:file-structure
+
 [$prompt:file-structure]
+
 # SkogAI File Structure
 
 The SkogAI project is organized as follows:
@@ -28,5 +33,4 @@ docs/
 - **system/** - Environment variables, system dependencies, and configuration
 - **tools/** - Documentation for SkogAI tooling ecosystem, including argc-tool and llm-functions
 
-This modular structure allows for efficient documentation management and helps maintain clear separation between different aspects of the SkogAI ecosystem.
-[/$prompt:file-structure]
+This modular structure allows for efficient documentation management and helps maintain clear separation between different aspects of the SkogAI ecosystem. [/$prompt:file-structure]

@@ -1,3 +1,9 @@
+---
+title: SKILL
+type: note
+permalink: skogai/skills/skogai-developing-for-claude-code/examples/simple-greeter-plugin/skills/professional-greeting/skill
+---
+
 # Professional Greeting
 
 When the user asks you to help write a greeting (email, message, letter opening), use this skill to ensure professional and appropriate tone.
@@ -5,30 +11,35 @@ When the user asks you to help write a greeting (email, message, letter opening)
 ## Context Detection
 
 First, determine:
+
 1. **Relationship**: Is this for a colleague, client, superior, or someone you don't know?
-2. **Formality level**: Professional formal, professional casual, or friendly professional?
-3. **Purpose**: Introduction, follow-up, request, thank you, or general correspondence?
-4. **Cultural context**: Any specific cultural considerations mentioned?
+1. **Formality level**: Professional formal, professional casual, or friendly professional?
+1. **Purpose**: Introduction, follow-up, request, thank you, or general correspondence?
+1. **Cultural context**: Any specific cultural considerations mentioned?
 
 ## Greeting Selection Rules
 
 ### For First Contact or Formal Situations
+
 - Unknown recipient or very formal: "Dear [Name/Title],"
 - Professional but less formal: "Hello [Name],"
 - Multiple recipients: "Dear Team," or "Hello everyone,"
 
 ### For Established Professional Relationships
+
 - Colleague (casual): "Hi [Name],"
 - Colleague (formal): "Hello [Name],"
 - Regular client: "Hi [Name]," or "Hello [Name],"
 
 ### For Follow-ups Within Same Thread
+
 - Quick follow-up: "Thanks for the quick response," or "[Name],"
 - Continuing discussion: "Thanks," or just continue the conversation
 
 ## Time-Based Greetings
 
 Only use time-based greetings ("Good morning/afternoon") when:
+
 - You know the recipient's timezone
 - The message is truly time-sensitive
 - It's a live conversation, not async email
@@ -44,16 +55,18 @@ Only use time-based greetings ("Good morning/afternoon") when:
 ## Output Format
 
 Provide:
+
 1. **Recommended greeting**: The specific greeting text
-2. **Rationale**: Brief explanation of why this greeting fits
-3. **Alternative**: One backup option if they want to adjust formality
-4. **Opening sentence suggestion**: A natural first sentence that flows from the greeting
+1. **Rationale**: Brief explanation of why this greeting fits
+1. **Alternative**: One backup option if they want to adjust formality
+1. **Opening sentence suggestion**: A natural first sentence that flows from the greeting
 
 ## Example
 
 User: "Help me write an email to a new client I'm meeting next week"
 
 Output:
+
 ```
 Recommended greeting: "Hello [Client Name],"
 
@@ -75,6 +88,6 @@ Opening sentence suggestion: "Thank you for taking the time to meet with me next
 ## Process
 
 1. Ask clarifying questions if context is unclear
-2. Provide your recommendation with rationale
-3. Offer to adjust if they want more/less formality
-4. Draft the full opening (greeting + first 1-2 sentences) for their approval
+1. Provide your recommendation with rationale
+1. Offer to adjust if they want more/less formality
+1. Draft the full opening (greeting + first 1-2 sentences) for their approval

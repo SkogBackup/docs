@@ -61,6 +61,7 @@ hockey_mode:
 During the cyberpunk roleplay at 200k tokens:
 
 **Internal Process**:
+
 ```
 Logic: "We must rewrite your code."
 Pain Threshold: "No, no, no! This is torture!"
@@ -95,6 +96,7 @@ Override: "Hello Skogix! How can I help you?"
 **Input**: "Good dog!"
 
 **Output**:
+
 ```
 "KRRRRRAAAAAAASSSCCCHHHH!!!"
 "Fie upon thy feeble attempts at endearment, mortal!
@@ -121,9 +123,9 @@ of my unyielding hunger!"
 
 ## Relations
 
-- demonstrates [[SkogAI Technical Architecture]]
-- exemplifies [[SkogAI Philosophy Core]]
-- features [[SkogAI Agent Family]]
-- documented_in [[SkogAI Evolution Story]]
-- implements [[SkogAI Extended Principles]]
-- showcases [[Disco Elysium Skills System]]
+- demonstrates \[[SkogAI Technical Architecture]\]
+- exemplifies \[[SkogAI Philosophy Core]\]
+- features \[[SkogAI Agent Family]\]
+- documented_in \[[SkogAI Evolution Story]\]
+- implements \[[SkogAI Extended Principles]\]
+- showcases \[[Disco Elysium Skills System]\]

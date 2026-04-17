@@ -3,11 +3,11 @@ title: Tasting Notes
 type: note
 permalink: llm/example/tasting-notes-1
 tags:
-- '#coffee'
-- '#tasting'
-- '#flavor'
-- '#cupping'
-- '#demo'
+  - '#coffee'
+  - '#tasting'
+  - '#flavor'
+  - '#cupping'
+  - '#demo'
 ---
 
 # Tasting Notes
@@ -76,9 +76,9 @@ Coffee tasting, or "cupping" in professional contexts, is the practice of observ
 
 ## Relations
 
-- determined_by [[Flavor Extraction]]
-- influenced_by [[Coffee Bean Origins]]
-- varies_with [[Coffee Brewing Methods]]
-- enhanced_by [[Proper Grinding Technique]]
-- documented_in [[Coffee Journal]]
-- part_of [[Coffee Knowledge Base]]
+- determined_by \[[Flavor Extraction]\]
+- influenced_by \[[Coffee Bean Origins]\]
+- varies_with \[[Coffee Brewing Methods]\]
+- enhanced_by \[[Proper Grinding Technique]\]
+- documented_in \[[Coffee Journal]\]
+- part_of \[[Coffee Knowledge Base]\]

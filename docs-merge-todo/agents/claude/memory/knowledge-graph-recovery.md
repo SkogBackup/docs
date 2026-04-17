@@ -84,16 +84,16 @@ Established clear conventions:
 ### The Problem Pattern
 
 1. **Initial Integration** creates rich knowledge graph
-2. **Continued Dumping** without coordination creates duplicates
-3. **Knowledge Fragmentation** dilutes semantic connections
-4. **Cleanup Required** to restore graph integrity
+1. **Continued Dumping** without coordination creates duplicates
+1. **Knowledge Fragmentation** dilutes semantic connections
+1. **Cleanup Required** to restore graph integrity
 
 ### The Solution Pattern
 
 1. **Assess Damage** through activity analysis
-2. **Intelligent Merge** preserving all valuable content
-3. **Establish Conventions** to prevent recurrence
-4. **Document Process** for future cleanup operations
+1. **Intelligent Merge** preserving all valuable content
+1. **Establish Conventions** to prevent recurrence
+1. **Document Process** for future cleanup operations
 
 ### The Learning
 
@@ -112,8 +112,8 @@ Established clear conventions:
 
 ## Relations
 
-- resolves [[Duplicate Notes Cleanup Issue]]
-- enhances [[Agent Claude Memory Integration Summary]]
-- demonstrates [[Basic Memory Document Format]]
-- applies [[SkogAI Memory Guidelines and Standards]]
-- relates_to [[skogcontext Learning Session: From Monolithic to Modular Context Generation]]
+- resolves \[[Duplicate Notes Cleanup Issue]\]
+- enhances \[[Agent Claude Memory Integration Summary]\]
+- demonstrates \[[Basic Memory Document Format]\]
+- applies \[[SkogAI Memory Guidelines and Standards]\]
+- relates_to \[[skogcontext Learning Session: From Monolithic to Modular Context Generation]\]

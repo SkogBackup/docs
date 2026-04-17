@@ -1,3 +1,9 @@
+---
+title: example
+type: note
+permalink: skogai/docs-merge-todo/skogai/notation/example
+---
+
 # SkogAI Function Signatures
 
 This document defines the notation for expressing function signatures in SkogAI, providing an implementation-agnostic way to describe transformations between types.
@@ -98,13 +104,13 @@ This indicates that `calculateTotal` is a pure function with no side effects.
 
 These signature formats map to various implementation approaches:
 
-| Signature Aspect | Functional Implementation | Object-Oriented Implementation | Python Implementation |
-|------------------|---------------------------|--------------------------------|----------------------|
-| Basic Function | Pure function | Static method | Function |
-| Parameters | Parameter list | Method arguments | Function parameters |
-| Return Type | Return value | Return type | Return annotation |
-| Optional Parameters | Maybe/Option type | Nullable parameters | Optional parameters |
-| Union Returns | Sum types | Polymorphic returns | Union types |
+| Signature Aspect    | Functional Implementation | Object-Oriented Implementation | Python Implementation |
+| ------------------- | ------------------------- | ------------------------------ | --------------------- |
+| Basic Function      | Pure function             | Static method                  | Function              |
+| Parameters          | Parameter list            | Method arguments               | Function parameters   |
+| Return Type         | Return value              | Return type                    | Return annotation     |
+| Optional Parameters | Maybe/Option type         | Nullable parameters            | Optional parameters   |
+| Union Returns       | Sum types                 | Polymorphic returns            | Union types           |
 
 ## Core Function Examples
 
@@ -130,10 +136,10 @@ let getAgent $agent.id = $agent | $null
 This function signature notation provides several advantages:
 
 1. **Clear Intent** - Shows exactly what a function needs and produces
-2. **Implementation Agnostic** - Not tied to any programming paradigm
-3. **Type Safety** - Leverages the type system for precision
-4. **Documentation** - Serves as clear documentation of function behavior
-5. **Composition** - Enables reasoning about function composition
+1. **Implementation Agnostic** - Not tied to any programming paradigm
+1. **Type Safety** - Leverages the type system for precision
+1. **Documentation** - Serves as clear documentation of function behavior
+1. **Composition** - Enables reasoning about function composition
 
 # SkogAI Command Processing System
 
@@ -157,9 +163,9 @@ Where:
 Command processing happens recursively from inside out:
 
 1. Innermost commands are executed first
-2. Their output replaces the command directive
-3. Outer commands then process this output
-4. This continues until no commands remain
+1. Their output replaces the command directive
+1. Outer commands then process this output
+1. This continues until no commands remain
 
 Example of nested commands:
 
@@ -170,9 +176,9 @@ Example of nested commands:
 Processing sequence:
 
 1. `[@fetch:data.json]` executes, retrieving the JSON data
-2. The result replaces the command, becoming `[@format:<json-data>:pretty]`
-3. `[@format:<json-data>:pretty]` executes, formatting the data
-4. The formatted result replaces the entire directive
+1. The result replaces the command, becoming `[@format:<json-data>:pretty]`
+1. `[@format:<json-data>:pretty]` executes, formatting the data
+1. The formatted result replaces the entire directive
 
 ## Type-Annotated Parameters
 
@@ -189,42 +195,43 @@ This indicates that both parameters should be coordinate pairs.
 A key feature of the command system is that it operates invisibly:
 
 1. Input text contains command directives
-2. Processing resolves these directives
-3. Output text contains only the results
-4. The user sees only the final transformed text
+1. Processing resolves these directives
+1. Output text contains only the results
+1. The user sees only the final transformed text
 
 ## Implementation Mechanism
 
 As demonstrated by the `skogai-agents` example:
 
 1. When `[@skogai-agents: message]` is encountered:
+
    - The `skogai-agents` script is executed with `message` as input
    - The script outputs a response
    - The response replaces the original directive
 
-2. The implementation can use any mechanism (scripts, APIs, etc.)
+1. The implementation can use any mechanism (scripts, APIs, etc.)
 
-3. The user sees only the final result, not the processing
+1. The user sees only the final result, not the processing
 
 ## Command Categories
 
 Commands typically fall into these categories:
 
 1. **Data Retrieval** - Fetching information from various sources
-2. **Content Transformation** - Formatting, summarizing, or modifying content
-3. **Tool Execution** - Running tools and returning their output
-4. **Context Management** - Retrieving or modifying conversation context
-5. **Meta-Commands** - Commands that affect command processing itself
+1. **Content Transformation** - Formatting, summarizing, or modifying content
+1. **Tool Execution** - Running tools and returning their output
+1. **Context Management** - Retrieving or modifying conversation context
+1. **Meta-Commands** - Commands that affect command processing itself
 
 ## Benefits
 
 The command processing system provides several advantages:
 
 1. **Dynamic Content** - Content can be generated on demand
-2. **Tool Integration** - External tools can be seamlessly integrated
-3. **Composition** - Commands can be combined for complex transformations
-4. **Abstraction** - Implementation details are hidden from users
-5. **Extensibility** - New commands can be added without changing the core system
+1. **Tool Integration** - External tools can be seamlessly integrated
+1. **Composition** - Commands can be combined for complex transformations
+1. **Abstraction** - Implementation details are hidden from users
+1. **Extensibility** - New commands can be added without changing the core system
 
 ## Example Commands
 
@@ -260,17 +267,17 @@ The command processing system provides several advantages:
 The command system requires careful security boundaries:
 
 1. Command execution should be limited to trusted commands
-2. User-provided content should be properly sanitized
-3. Access to sensitive systems should be properly authenticated
-4. Commands should operate in isolated environments when possible
+1. User-provided content should be properly sanitized
+1. Access to sensitive systems should be properly authenticated
+1. Commands should operate in isolated environments when possible
 
 ## Extension Mechanism
 
 New commands can be added by:
 
 1. Creating a new implementation (script, function, etc.)
-2. Registering it with the command processor
-3. Documenting its parameters and behavior
+1. Registering it with the command processor
+1. Documenting its parameters and behavior
 
 This allows for continuous extension of the system's capabilities.
 
@@ -337,19 +344,19 @@ $agent.threads = [$thread.id]
 
 The algebraic type system maps naturally to various implementation approaches:
 
-| Algebraic Type | Functional | Object-Oriented | Python |
-|----------------|------------|-----------------|--------|
-| Product Type | Record, Tuple | Class, Struct | dataclass, NamedTuple |
-| Sum Type | Variant, ADT | Class hierarchy | Union, Enum |
-| Type Definition | Type alias | Interface | TypeAlias |
+| Algebraic Type  | Functional    | Object-Oriented | Python                |
+| --------------- | ------------- | --------------- | --------------------- |
+| Product Type    | Record, Tuple | Class, Struct   | dataclass, NamedTuple |
+| Sum Type        | Variant, ADT  | Class hierarchy | Union, Enum           |
+| Type Definition | Type alias    | Interface       | TypeAlias             |
 
 ## Benefits
 
 1. **Precision** - Types are defined exactly in terms of their components
-2. **Composition** - Complex types are built from simpler ones
-3. **Validation** - Clear rules for what constitutes valid data
-4. **Communication** - Universal language for discussing data structures
-5. **Verification** - Can verify implementations against type definitions
+1. **Composition** - Complex types are built from simpler ones
+1. **Validation** - Clear rules for what constitutes valid data
+1. **Communication** - Universal language for discussing data structures
+1. **Verification** - Can verify implementations against type definitions
 
 ## Examples
 
@@ -401,10 +408,10 @@ This document provides practical guidelines for implementing SkogChat's type sys
 When implementing SkogChat's type system in Python, adhere to these principles:
 
 1. **Immutability** - Data structures should be immutable
-2. **Validation** - Enforce type constraints during construction
-3. **Serialization** - Support conversion to/from basic data formats
-4. **Relationships** - Express relationships through IDs, not object embedding
-5. **Functional Style** - Prefer pure functions for operations on data
+1. **Validation** - Enforce type constraints during construction
+1. **Serialization** - Support conversion to/from basic data formats
+1. **Relationships** - Express relationships through IDs, not object embedding
+1. **Functional Style** - Prefer pure functions for operations on data
 
 ## Python Implementation Approach
 
@@ -652,9 +659,9 @@ def is_valid_message(obj: Any) -> TypeGuard[Message]:
 Ensure that Python implementations remain compatible with the abstract schema definition:
 
 1. Use the same field names as in the schema
-2. Respect type constraints defined in the schema
-3. Implement validation according to schema rules
-4. Maintain relationships as specified in the schema
+1. Respect type constraints defined in the schema
+1. Implement validation according to schema rules
+1. Maintain relationships as specified in the schema
 
 ## Conclusion
 
@@ -666,7 +673,7 @@ By following these guidelines, you can implement SkogChat's algebraic type syste
 - Easily testable due to pure functions
 - Maintainable through clear separation of concerns
 
----
+______________________________________________________________________
 
 # SkogAI Notation for Common Patterns
 
@@ -694,7 +701,7 @@ $properties = { $string : $any }
 $timestamp = $datetime
 ```
 
----
+______________________________________________________________________
 
 ### **2. Immutable Update Pattern**
 
@@ -713,7 +720,7 @@ where
   $entity' = $entity.id * $new_name * $entity.type * ...
 ```
 
----
+______________________________________________________________________
 
 ### **3. Error Handling with Results**
 
@@ -730,7 +737,7 @@ $result[T] = |success:$T|error:$error_info|
 $error_info = $code * $message * $details
 ```
 
----
+______________________________________________________________________
 
 ### **4. Collection Operations**
 
@@ -748,7 +755,7 @@ $message' = $message.read_by -> set.add($entity_id)
 $messages' = map($messages, λmsg.msg.read_by -> set.add($entity_id))
 ```
 
----
+______________________________________________________________________
 
 ### **5. Command Pattern**
 
@@ -765,66 +772,59 @@ $command = @command:$command_name:[$param...]
 $param = $value | $key:$value
 ```
 
----
+______________________________________________________________________
 
 ### **What Fits Perfectly**
 
-1. **Entity Definitions**
-   Product types (`*`) perfectly model your data classes:
+1. **Entity Definitions** Product types (`*`) perfectly model your data classes:
 
    ```
    $message = $id * $content * $thread_id * $parent_id
    ```
 
-2. **Validation Constraints**
-   Native type constraints:
+1. **Validation Constraints** Native type constraints:
 
    ```
    $username = $string[3..20] * $no_special_chars
    ```
 
-3. **Immutable Updates**
-   Built into the type system:
+1. **Immutable Updates** Built into the type system:
 
    ```
    $updated_message = $message.content -> replace("old", "new")
    ```
 
-4. **Function Signatures**
-   Pure function notation:
+1. **Function Signatures** Pure function notation:
 
    ```
    *let send_message $thread_id $content = $message
    ```
 
----
+______________________________________________________________________
 
 ### **What Needs Adaptation**
 
-1. **I/O Operations**
-   SkogSyntax's pure type system needs boundary definitions:
+1. **I/O Operations** SkogSyntax's pure type system needs boundary definitions:
 
    ```
    -- Boundary definitions
    !effect io_send_message $message = $ok | $error
    ```
 
-2. **Caching**
-   Requires monadic extension:
+1. **Caching** Requires monadic extension:
 
    ```
    $cached[T] = $T * $expiry_time
    *let get_cached $key = $cached[T] | $null
    ```
 
-3. **CLI Interactions**
-   Needs command syntax extension:
+1. **CLI Interactions** Needs command syntax extension:
 
    ```
    @cli command:$name params:[$param...] => $result
    ```
 
----
+______________________________________________________________________
 
 ### **Full Translation Example**
 
@@ -856,12 +856,11 @@ where
 !effect persist_message $message = $ok | $error
 ```
 
----
+______________________________________________________________________
 
 ### **Unrepresentable Concepts**
 
-1. **Mutable State**
-   Can't directly represent:
+1. **Mutable State** Can't directly represent:
 
    ```python
    self.counter += 1
@@ -873,15 +872,13 @@ where
    $state_action[S,T] = $S -> ($T * $S')
    ```
 
-2. **Inheritance**
-   SkogSyntax uses composition instead:
+1. **Inheritance** SkogSyntax uses composition instead:
 
    ```
    $admin_user = $user * $admin_permissions
    ```
 
-3. **Loops**
-   Must use recursive functions:
+1. **Loops** Must use recursive functions:
 
    ```
    *let rec process_all $items $acc =
@@ -890,19 +887,16 @@ where
      | x::xs -> process_all xs (acc ++ process_item x)
    ```
 
----
+______________________________________________________________________
 
 ### **Key Insights**
 
-1. **Your Type System is Turing-Complete**
-   With recursion and pattern matching, you can express any computable function
+1. **Your Type System is Turing-Complete** With recursion and pattern matching, you can express any computable function
 
-2. **Implementation Details Become Boundary Definitions**
-   What you called "impure" becomes clearly marked effects:
+1. **Implementation Details Become Boundary Definitions** What you called "impure" becomes clearly marked effects:
 
    ```
    !effect database_query $sql = $result | $error
    ```
 
-3. **The Big Win**
-   **All core business logic becomes pure type transformations** - exactly what you wanted for LLM safety and verification!
+1. **The Big Win** **All core business logic becomes pure type transformations** - exactly what you wanted for LLM safety and verification!

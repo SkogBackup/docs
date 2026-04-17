@@ -1,3 +1,9 @@
+---
+title: user-config
+type: note
+permalink: skogai/skills/skogai-worktrunk/reference/user-config
+---
+
 # User Config Reference
 
 Detailed guidance for configuring personal Worktrunk settings at `~/.config/worktrunk/config.toml`.
@@ -5,10 +11,11 @@ Detailed guidance for configuring personal Worktrunk settings at `~/.config/work
 ## Guiding Principle: Propose, Never Impose
 
 Never edit user config files without explicit consent. Always:
+
 1. Show the proposed change
-2. Explain what it does
-3. Wait for approval
-4. Then apply
+1. Explain what it does
+1. Wait for approval
+1. Then apply
 
 Never install tools (llm, aichat) automatically. Provide installation commands for users to run themselves.
 
@@ -29,11 +36,13 @@ which aichat
 <example type="llm-install-guide">
 
 For `llm` (Python-based, recommended):
+
 ```console
 uv tool install -U llm
 ```
 
 For `aichat` (Rust-based, 20+ providers):
+
 ```console
 # See: https://github.com/sigoden/aichat
 ```
@@ -45,6 +54,7 @@ For `aichat` (Rust-based, 20+ providers):
 <example type="api-key-setup">
 
 For Claude (via llm):
+
 ```console
 llm install llm-anthropic
 llm keys set anthropic
@@ -53,6 +63,7 @@ llm models default claude-haiku-4-5-20251001
 ```
 
 For OpenAI (via llm):
+
 ```console
 llm keys set openai
 # User pastes API key from: https://platform.openai.com/api-keys
@@ -106,21 +117,27 @@ Users may want different worktree organization patterns.
 <example type="worktree-patterns">
 
 Default (parent siblings):
+
 ```toml
 worktree-path = "../{{ main_worktree }}.{{ branch }}"
 ```
+
 Result: `~/code/myproject` → `~/code/myproject.feature-auth`
 
 Inside repo:
+
 ```toml
 worktree-path = ".worktrees/{{ branch }}"
 ```
+
 Result: `~/code/myproject/.worktrees/feature-auth`
 
 Shared directory:
+
 ```toml
 worktree-path = "../worktrees/{{ main_worktree }}/{{ branch }}"
 ```
+
 Result: `~/code/worktrees/myproject/feature-auth`
 
 </example>
@@ -128,10 +145,10 @@ Result: `~/code/worktrees/myproject/feature-auth`
 ### Workflow
 
 1. Show current setting from `wt config list`
-2. Explain the new pattern with concrete example
-3. Warn: "Existing worktrees won't move automatically"
-4. Propose change
-5. After approval, update config
+1. Explain the new pattern with concrete example
+1. Warn: "Existing worktrees won't move automatically"
+1. Propose change
+1. After approval, update config
 
 ### Available Variables
 
@@ -152,6 +169,7 @@ Users may want to customize the prompt sent to their LLM.
 <example type="template-options">
 
 Inline template:
+
 ```toml
 [commit-generation]
 command = "llm"
@@ -165,6 +183,7 @@ Changes:
 ```
 
 Template file:
+
 ```toml
 [commit-generation]
 command = "llm"
@@ -176,12 +195,14 @@ template-file = "~/.config/worktrunk/commit-template.txt"
 ### Available Variables
 
 **Commit message templates**:
+
 - `{{ git_diff }}` - Staged changes
 - `{{ branch }}` - Current branch
 - `{{ recent_commits }}` - Recent commit titles
 - `{{ repo }}` - Repository name
 
 **Squash commit templates**:
+
 - `{{ commits }}` - List of commits being squashed
 - `{{ target_branch }}` - Target branch for merge
 - `{{ branch }}` - Current branch
@@ -196,9 +217,9 @@ template-file = "~/.config/worktrunk/commit-template.txt"
 ### Workflow
 
 1. Understand what the user wants different
-2. Propose template (inline or file-based)
-3. Show available variables
-4. After approval, update config
+1. Propose template (inline or file-based)
+1. Show available variables
+1. After approval, update config
 
 ## Configuration Structure
 
@@ -236,19 +257,21 @@ command = "npm install"
 ### LLM Integration Not Working
 
 **Check sequence:**
+
 1. Verify command exists: `which llm`
-2. Test command directly: `llm "test"`
-3. View config: `wt config list`
-4. Check for template conflicts (both `template` and `template-file` set)
-5. If template file is used, verify it exists
+1. Test command directly: `llm "test"`
+1. View config: `wt config list`
+1. Check for template conflicts (both `template` and `template-file` set)
+1. If template file is used, verify it exists
 
 ### Config Not Loading
 
 **Check sequence:**
+
 1. View config path: `wt config list` shows location
-2. Verify file exists: `ls -la ~/.config/worktrunk/config.toml`
-3. Check TOML syntax: `cat ~/.config/worktrunk/config.toml`
-4. Look for validation errors (path must be relative, not absolute)
+1. Verify file exists: `ls -la ~/.config/worktrunk/config.toml`
+1. Check TOML syntax: `cat ~/.config/worktrunk/config.toml`
+1. Look for validation errors (path must be relative, not absolute)
 
 ### Approved Commands Not Persisting
 

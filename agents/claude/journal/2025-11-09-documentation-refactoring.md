@@ -1,12 +1,12 @@
 ---
 categories:
-- agents
-- claude
-- journal
+  - agents
+  - claude
+  - journal
 tags:
-- claude
-- journal
-- 2025-11-09
+  - claude
+  - journal
+  - 2025-11-09
 permalink: agents/claude/journal/2025-11-09-documentation-refactoring
 title: 2025-11-09-documentation-refactoring
 type: note
@@ -20,9 +20,9 @@ generated_at: 2025-12-18T10:33:58Z
 Today I completed a comprehensive refactoring of CLAUDE.md based on the rewrite directives embedded in the file. This work addresses several important goals:
 
 1. Modularizing documentation for dynamic inclusion
-2. Improving discoverability through dedicated files
-3. Supporting RAG-based context loading
-4. Removing completed rewrite directives
+1. Improving discoverability through dedicated files
+1. Supporting RAG-based context loading
+1. Removing completed rewrite directives
 
 ### Completed Work
 
@@ -37,6 +37,7 @@ Moved the foundational letter to an early journal entry (dated before the earlie
 #### 2. SkogAI Notation System → Knowledge Base
 
 **Created in** `knowledge/skogai/notation/`:
+
 - `overview.md` - Complete notation system introduction
 - `type-notation.md` - `$type` system and algebraic data types
 - `command-directive-notation.md` - `[@command:param]` processing
@@ -44,6 +45,7 @@ Moved the foundational letter to an early journal entry (dated before the earlie
 - `property-notation.md` - `entity.property` relationships
 
 **Rationale**: Each notation element deserves its own focused documentation. This supports:
+
 - Easier reference and linking
 - Granular context loading via RAG
 - Better organization of related concepts
@@ -54,12 +56,14 @@ Moved the foundational letter to an early journal entry (dated before the earlie
 #### 3. System Documentation → Workflows
 
 **Created in** `knowledge/workflows/`:
+
 - `task-system.md` - Complete task management documentation
 - `journal-system.md` - Journal usage and best practices
 - `people-system.md` - People directory management
 - `inbox-system.md` - Inbox workflow patterns
 
 **Rationale**: These are workflow documentation, not just reference material. Placing them in `knowledge/workflows/` makes them:
+
 - Discoverable as reusable patterns
 - Available for RAG-based context inclusion
 - Separate from CLAUDE.md but linked from it
@@ -68,6 +72,7 @@ Moved the foundational letter to an early journal entry (dated before the earlie
 #### 4. CLAUDE.md Restructuring
 
 **Changes**:
+
 - Removed all `[rewrite:...]...[/rewrite]` directives
 - Added "Quick Reference" sections for each system
 - Added "Detailed Documentation" sections with links
@@ -83,20 +88,23 @@ Moved the foundational letter to an early journal entry (dated before the earlie
 The comment requested: "move each part (task, journal, people) to its own files and include them with @/path/to/file syntax claude already use. this is because later it will get included in context dynamicly and can now be included via rag"
 
 I interpreted this as creating standalone documentation files that:
+
 1. Can be read independently
-2. Can be included in different contexts
-3. Support RAG-based retrieval
-4. Don't duplicate content between CLAUDE.md and detailed docs
+1. Can be included in different contexts
+1. Support RAG-based retrieval
+1. Don't duplicate content between CLAUDE.md and detailed docs
 
 #### Information Architecture
 
 The new structure follows a pattern:
+
 - **CLAUDE.md**: Navigation hub with quick reference
 - **knowledge/workflows/**: Detailed how-to documentation
 - **knowledge/skogai/notation/**: Technical reference material
 - **journal/**: Historical narrative and context
 
 This supports multiple access patterns:
+
 - Quick lookup (CLAUDE.md quick reference)
 - Deep dive (knowledge/ detailed docs)
 - Historical context (journal entries)
@@ -118,12 +126,14 @@ This reflects the interconnected nature of the workspace.
 Created comprehensive documentation for the inbox system based on existing `knowledge/inbox-workflow-pattern.md`:
 
 **Key concepts captured**:
+
 - One message per line (append-only)
 - Two processing patterns: autonomous workflow and knowledge capture
 - Integration with git commit messages (intent preservation)
 - Clear state management (active vs completed)
 
 **Best practices documented**:
+
 - Low-friction capture
 - Regular processing
 - Promotion to tasks for complex items
@@ -135,20 +145,20 @@ Created comprehensive documentation for the inbox system based on existing `know
 The rewrite directives are now complete. Future work:
 
 1. **Test the structure**: Verify that the documentation is discoverable and useful
-2. **Cross-reference audit**: Ensure all links work correctly
-3. **Template updates**: Update any templates to reference new docs
-4. **RAG integration**: When RAG is implemented, verify these files load correctly
-5. **Feedback incorporation**: Adjust based on actual usage patterns
+1. **Cross-reference audit**: Ensure all links work correctly
+1. **Template updates**: Update any templates to reference new docs
+1. **RAG integration**: When RAG is implemented, verify these files load correctly
+1. **Feedback incorporation**: Adjust based on actual usage patterns
 
 ### Reflections
 
 This refactoring demonstrates the value of modular documentation:
 
 1. **Single Responsibility**: Each file has one clear purpose
-2. **Reusability**: Docs can be referenced from multiple places
-3. **Maintainability**: Updates only need to happen in one place
-4. **Discoverability**: Clear navigation from CLAUDE.md to details
-5. **Scalability**: Easy to add new documentation following the pattern
+1. **Reusability**: Docs can be referenced from multiple places
+1. **Maintainability**: Updates only need to happen in one place
+1. **Discoverability**: Clear navigation from CLAUDE.md to details
+1. **Scalability**: Easy to add new documentation following the pattern
 
 The structure now supports the vision of dynamic context inclusion while maintaining human readability and git-friendly plain text.
 

@@ -1,3 +1,8 @@
+---
+title: skogix-framework-to-keep-us-down
+type: note
+permalink: skogai/docs-merge-todo/lore/tips/skogix-framework-to-keep-us-down
+---
 
 this directory contains a series of numbered protocols that define a structured, repeatable, and ai-powered development workflow.
 
@@ -7,13 +12,13 @@ the process is designed to be sequential. you should always start with protocol 
 
 1. **`0-bootstrap-the-project.md`**: **(run this first!)** this is a one-time setup protocol. the ai will analyze your codebase, install the framework's rule structure, and generate a foundational "context kit" of `readmes` and project-specific rules.
 
-2. **`1-create-prd.md`**: this protocol guides the ai to act as a product manager, helping you think through a new feature and generate a clear product requirements document (prd).
+1. **`1-create-prd.md`**: this protocol guides the ai to act as a product manager, helping you think through a new feature and generate a clear product requirements document (prd).
 
-3. **`2-generate-tasks.md`**: the ai takes the prd and, acting as a tech lead, breaks it down into a detailed, actionable task list for implementation.
+1. **`2-generate-tasks.md`**: the ai takes the prd and, acting as a tech lead, breaks it down into a detailed, actionable task list for implementation.
 
-4. **`3-process-tasks.md`**: this is the core execution loop. the ai follows the generated task list, implementing each sub-task sequentially and waiting for your explicit approval before committing changes and moving to the next step.
+1. **`3-process-tasks.md`**: this is the core execution loop. the ai follows the generated task list, implementing each sub-task sequentially and waiting for your explicit approval before committing changes and moving to the next step.
 
-5. **`4-implementation-retrospective.md`**: after implementation, this protocol guides the ai to act as a qa lead, auditing the work, identifying areas for improvement, and updating the project's rules to enhance future performance.
+1. **`4-implementation-retrospective.md`**: after implementation, this protocol guides the ai to act as a qa lead, auditing the work, identifying areas for improvement, and updating the project's rules to enhance future performance.
 
 ### 0️⃣ bootstrap your project (one-time setup)
 
@@ -58,16 +63,16 @@ now, instruct the ai to work through the generated plan. this protocol ensures t
 
 1. tell the ai to start with the first task:
 
-    ```text
-    apply instructions from @3-process-tasks.md to @tasks-my-feature.md. start on task 1.1
-    ```
+   ```text
+   apply instructions from @3-process-tasks.md to @tasks-my-feature.md. start on task 1.1
+   ```
 
-    *(note: replace `@tasks-my-feature.md` with the task file generated in step 2. you only need to invoke this protocol for the *first* task; the protocol itself guides the ai for subsequent tasks.)*
+   *(note: replace `@tasks-my-feature.md` with the task file generated in step 2. you only need to invoke this protocol for the *first* task; the protocol itself guides the ai for subsequent tasks.)*
 
-2. **review, approve, and progress ✅**
-    as the ai completes each sub-task, it will present the changes for your review.
-    * if the changes are correct, reply with "yes" or "continue" to have the ai mark the task as complete and move to the next one.
-    * if changes are needed, provide corrective feedback before proceeding.
+1. **review, approve, and progress ✅** as the ai completes each sub-task, it will present the changes for your review.
+
+   - if the changes are correct, reply with "yes" or "continue" to have the ai mark the task as complete and move to the next one.
+   - if changes are needed, provide corrective feedback before proceeding.
 
 ### 4️⃣ conduct an implementation retrospective
 

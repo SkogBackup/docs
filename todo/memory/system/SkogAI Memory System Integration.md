@@ -3,9 +3,9 @@ title: SkogAI Memory System Integration
 type: note
 permalink: system/skog-ai-memory-system-integration
 tags:
-- '#memory'
-- '#integration'
-- '#knowledge-graph'
+  - '#memory'
+  - '#integration'
+  - '#knowledge-graph'
 ---
 
 # SkogAI Memory System Integration
@@ -17,14 +17,14 @@ The SkogAI Memory System provides a sophisticated knowledge graph built on markd
 The memory system can be accessed through multiple interfaces:
 
 1. **Function Calls**: Direct integration with AI assistants through function calling
-2. **HTTP API**: RESTful endpoint (http://localhost:8808/tools) for programmatic access
-3. **Command Line Interface**: Using `scripts/argc-tool.sh mcp run@tool`
+1. **HTTP API**: RESTful endpoint (http://localhost:8808/tools) for programmatic access
+1. **Command Line Interface**: Using `scripts/argc-tool.sh mcp run@tool`
 
 ## Core Memory Operations
 
 The memory system exposes several key functions:
 
-- **Creating/Updating Content**: `skogai_memory_write_note` 
+- **Creating/Updating Content**: `skogai_memory_write_note`
 - **Reading Content**: `skogai_memory_read_note`, `skogai_memory_read_content`
 - **Searching**: `skogai_memory_search_notes`
 - **Context Building**: `skogai_memory_build_context`, `skogai_memory_recent_activity`
@@ -77,7 +77,7 @@ The memory system is configured through the MCP server, which is defined in `too
 
 ## relations
 
-- part_of [[skogai-ecosystem]] (memory is a core component)
-- implements [[knowledge-management]] (practical system for organized knowledge)
-- relates_to [[skogai-tool-architecture]] (uses the same architectural patterns)
-- extends [[markdown-systems]] (builds knowledge graph capabilities on markdown)
+- part_of \[[skogai-ecosystem]\] (memory is a core component)
+- implements \[[knowledge-management]\] (practical system for organized knowledge)
+- relates_to \[[skogai-tool-architecture]\] (uses the same architectural patterns)
+- extends \[[markdown-systems]\] (builds knowledge graph capabilities on markdown)

@@ -1,13 +1,19 @@
+---
+title: README
+type: note
+permalink: skogai/skills/skogai-worktrunk/reference/readme
+---
+
 # Worktrunk
 
 <!-- User badges -->
 
-[![Crates.io](https://img.shields.io/crates/v/worktrunk?style=for-the-badge&logo=rust)](https://crates.io/crates/worktrunk)
-[![License: MIT](https://img.shields.io/badge/LICENSE-MIT-blue?style=for-the-badge)](https://opensource.org/licenses/MIT)
-[![GitHub CI Status](https://img.shields.io/github/actions/workflow/status/max-sixty/worktrunk/ci.yml?event=push&branch=main&logo=github&style=for-the-badge)](https://github.com/max-sixty/worktrunk/actions?query=branch%3Amain+workflow%3Aci)
+[![Crates.io](https://img.shields.io/crates/v/worktrunk?style=for-the-badge&logo=rust)](https://crates.io/crates/worktrunk) [![License: MIT](https://img.shields.io/badge/LICENSE-MIT-blue?style=for-the-badge)](https://opensource.org/licenses/MIT) [![GitHub CI Status](https://img.shields.io/github/actions/workflow/status/max-sixty/worktrunk/ci.yml?event=push&branch=main&logo=github&style=for-the-badge)](https://github.com/max-sixty/worktrunk/actions?query=branch%3Amain+workflow%3Aci)
 
 <!-- Dev badges (uncomment when repo is public and has traction) -->
+
 <!-- [![Downloads](https://img.shields.io/crates/d/worktrunk?style=for-the-badge&logo=rust)](https://crates.io/crates/worktrunk) -->
+
 <!-- [![Stars](https://img.shields.io/github/stars/max-sixty/worktrunk?style=for-the-badge&logo=github)](https://github.com/max-sixty/worktrunk/stargazers) -->
 
 Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows. Worktrees give each agent an isolated branch and directory; Worktrunk adds branch-based navigation, lifecycle hooks, and unified status. The goal is to make spinning up a new AI "developer" for a task feel as routine as `git switch`.
@@ -54,8 +60,7 @@ $ wt merge
 
 <!-- END AUTO-GENERATED -->
 
-`wt merge` handles the full workflow: stage, commit, squash, rebase, run hooks,
-merge, cleanup.
+`wt merge` handles the full workflow: stage, commit, squash, rebase, run hooks, merge, cleanup.
 
 ### 4. List worktrees
 
@@ -89,8 +94,7 @@ So we use git worktrees: many working directories, one repository.
 
 ## Why Worktrunk?
 
-Git's worktree commands handle the basics, but leave lifecycle management to you.
-Worktrunk wraps creation, hooks, merging, and cleanup into three commands — `wt switch`, `wt merge`, `wt list`. A comparison:
+Git's worktree commands handle the basics, but leave lifecycle management to you. Worktrunk wraps creation, hooks, merging, and cleanup into three commands — `wt switch`, `wt merge`, `wt list`. A comparison:
 
 <table>
 <tr>
@@ -134,8 +138,7 @@ cargo install --path .</pre></td>
 
 ### LLM commit messages
 
-Worktrunk can invoke external commands to generate commit messages.
-[llm](https://llm.datasette.io/) is recommended.
+Worktrunk can invoke external commands to generate commit messages. [llm](https://llm.datasette.io/) is recommended.
 
 `~/.config/worktrunk/config.toml`:
 
@@ -291,8 +294,7 @@ See `wt switch --help` and `wt merge --help` for skipping hooks, template variab
 
 ### Shell integration
 
-Shell integration lets `wt switch`, `wt merge`, and `wt remove` change
-directories:
+Shell integration lets `wt switch`, `wt merge`, and `wt remove` change directories:
 
 ```console
 wt config shell install  # Bash, Zsh, Fish
@@ -309,19 +311,13 @@ alias wsl='wt switch --create --execute=claude'
 wsl new-feature  # Creates worktree, runs hooks, launches Claude
 ```
 
-**Eliminate cold starts** — `post-create` hooks install deps and copy caches.
-See [`.config/wt.toml`](.config/wt.toml) for an example using copy-on-write.
+**Eliminate cold starts** — `post-create` hooks install deps and copy caches. See [`.config/wt.toml`](.config/wt.toml) for an example using copy-on-write.
 
-**Local CI gate** — `pre-merge` hooks run before merging. Failures abort the
-merge.
+**Local CI gate** — `pre-merge` hooks run before merging. Failures abort the merge.
 
-**Track agent status** — Custom emoji markers show agent state in `wt list`.
-Claude Code hooks can set these automatically. See [Custom Worktree
-Status](#custom-worktree-status).
+**Track agent status** — Custom emoji markers show agent state in `wt list`. Claude Code hooks can set these automatically. See [Custom Worktree Status](#custom-worktree-status).
 
-**Monitor CI across branches** — `wt list --full --branches` shows PR/CI status
-for all branches, including those without worktrees. CI column links to PR pages
-in terminals with hyperlink support.
+**Monitor CI across branches** — `wt list --full --branches` shows PR/CI status for all branches, including those without worktrees. CI column links to PR pages in terminals with hyperlink support.
 
 **JSON API** — `wt list --format=json` for dashboards, statuslines, scripts.
 
@@ -335,9 +331,7 @@ in terminals with hyperlink support.
 "validate" = "just test lint"
 ```
 
-**Shortcuts** — `^` = default branch, `@` = current branch, `-` = previous
-worktree. Example: `wt switch --create hotfix --base=@` branches from current
-HEAD.
+**Shortcuts** — `^` = default branch, `@` = current branch, `-` = previous worktree. Example: `wt switch --create hotfix --base=@` branches from current HEAD.
 
 ## Commands
 
@@ -394,10 +388,11 @@ Global Options:
 Arguments are resolved using **path-first lookup**:
 
 1. Compute the expected path for the argument (using the configured path template)
-2. If a worktree exists at that path, switch to it (regardless of what branch it's on)
-3. Otherwise, treat the argument as a branch name
+1. If a worktree exists at that path, switch to it (regardless of what branch it's on)
+1. Otherwise, treat the argument as a branch name
 
 **Example**: If `repo.foo/` exists but is on branch `bar`:
+
 - `wt switch foo` switches to `repo.foo/` (the `bar` branch worktree)
 - `wt switch bar` also works (falls back to branch lookup)
 
@@ -410,11 +405,11 @@ Arguments are resolved using **path-first lookup**:
 ### Creating New Worktree (`--create`)
 
 1. Creates new branch (defaults to current default branch as base)
-2. Creates worktree in configured location (default: `../{{ main_worktree }}.{{ branch }}`)
-3. Runs post-create hooks sequentially (blocking)
-4. Shows success message
-5. Spawns post-start hooks in background (non-blocking)
-6. Changes directory to new worktree via shell integration
+1. Creates worktree in configured location (default: `../{{ main_worktree }}.{{ branch }}`)
+1. Runs post-create hooks sequentially (blocking)
+1. Shows success message
+1. Spawns post-start hooks in background (non-blocking)
+1. Changes directory to new worktree via shell integration
 
 ## Hooks
 
@@ -435,9 +430,7 @@ Arguments are resolved using **path-first lookup**:
 
 **Template variables:** `{{ repo }}`, `{{ branch }}`, `{{ worktree }}`, `{{ repo_root }}`
 
-**Security:** Commands from project hooks require approval on first run.
-Approvals are saved to user config. Use `--force` to bypass prompts.
-See `wt config approvals --help`.
+**Security:** Commands from project hooks require approval on first run. Approvals are saved to user config. Use `--force` to bypass prompts. See `wt config approvals --help`.
 
 ## Examples
 
@@ -553,13 +546,11 @@ Commit → Squash → Rebase → Pre-merge hooks → Push → Cleanup → Post-m
 
 ### Commit
 
-Uncommitted changes are staged and committed with LLM commit message.
-Use `--stage=tracked` to stage only tracked files, or `--stage=none` to commit only what's already staged.
+Uncommitted changes are staged and committed with LLM commit message. Use `--stage=tracked` to stage only tracked files, or `--stage=none` to commit only what's already staged.
 
 ### Squash
 
-Multiple commits are squashed into one (like GitHub's "Squash and merge") with LLM commit message.
-Skip with `--no-squash`. Safety backup: `git reflog show refs/wt-backup/<branch>`
+Multiple commits are squashed into one (like GitHub's "Squash and merge") with LLM commit message. Skip with `--no-squash`. Safety backup: `git reflog show refs/wt-backup/<branch>`
 
 ### Rebase
 
@@ -567,8 +558,7 @@ Branch is rebased onto target. Conflicts abort the merge immediately.
 
 ### Hooks
 
-Pre-merge commands run after rebase (failures abort). Post-merge commands
-run after cleanup (failures logged). Skip all with `--no-verify`.
+Pre-merge commands run after rebase (failures abort). Post-merge commands run after cleanup (failures logged). Skip all with `--no-verify`.
 
 ### Push
 
@@ -580,9 +570,7 @@ Worktree and branch are removed. Skip with `--no-remove`.
 
 **Template variables:** `{{ repo }}`, `{{ branch }}`, `{{ worktree }}`, `{{ repo_root }}`, `{{ target }}`
 
-**Security:** Commands from project hooks require approval on first run.
-Approvals are saved to user config. Use `--force` to bypass prompts.
-See `wt config approvals --help`.
+**Security:** Commands from project hooks require approval on first run. Approvals are saved to user config. Use `--force` to bypass prompts. See `wt config approvals --help`.
 
 ## Examples
 
@@ -671,15 +659,15 @@ Removes worktree directory, git metadata, and branch. Requires clean working tre
 Arguments are resolved to worktrees using **path-first lookup**:
 
 1. Compute the expected path for the argument (using the configured path template)
-2. If a worktree exists at that path, use it (regardless of what branch it's on)
-3. Otherwise, treat the argument as a branch name
+1. If a worktree exists at that path, use it (regardless of what branch it's on)
+1. Otherwise, treat the argument as a branch name
 
 **Example**: If `repo.foo/` exists but is on branch `bar`:
+
 - `wt remove foo` removes `repo.foo/` and the `bar` branch
 - `wt remove bar` also works (falls back to branch lookup)
 
-**Conflict detection**: If path `repo.foo/` has a worktree on branch `bar`, but
-branch `foo` has a different worktree at `repo.bar/`, an error is raised.
+**Conflict detection**: If path `repo.foo/` has a worktree on branch `bar`, but branch `foo` has a different worktree at `repo.bar/`, an error is raised.
 
 **Special arguments**:
 
@@ -694,9 +682,7 @@ By default, branches are deleted only when their content has been integrated:
 - Traditional merge: branch is an ancestor of the target (git's `-d` behavior)
 - Squash merge/rebase: branch's tree SHA matches target's tree SHA
 
-This handles workflows where PRs are squash-merged or rebased, which don't preserve
-commit ancestry but do integrate the content. Use `-D` to delete unintegrated
-branches, or `--no-delete-branch` to always keep branches.
+This handles workflows where PRs are squash-merged or rebased, which don't preserve commit ancestry but do integrate the content. Use `-D` to delete unintegrated branches, or `--no-delete-branch` to always keep branches.
 
 ### Background removal (default)
 
@@ -842,8 +828,7 @@ Order: `+!? ✖⚠≡_ ↻⋈ ↑↓↕ ⇡⇣⇅ ⎇⌫⊠`
 
 ## JSON Output
 
-Use `--format=json` for structured data. Each object contains two status maps
-with the same fields in the same order as Status Symbols above:
+Use `--format=json` for structured data. Each object contains two status maps with the same fields in the same order as Status Symbols above:
 
 **`status`** - variant names for querying:
 
@@ -937,7 +922,7 @@ Global Options:
    eval "$(wt config shell init bash)"
    ```
 
-2. (Optional) Create config file
+1. (Optional) Create config file
 
    ```console
    wt config create
@@ -945,11 +930,9 @@ Global Options:
 
    This creates ~/.config/worktrunk/config.toml with examples.
 
-3. (Optional) Enable LLM commit messages
+1. (Optional) Enable LLM commit messages
 
-   Install: `uv tool install -U llm`
-   Configure: `llm keys set anthropic`
-   Add to config.toml:
+   Install: `uv tool install -U llm` Configure: `llm keys set anthropic` Add to config.toml:
 
    ```toml
    [commit-generation]
@@ -972,8 +955,7 @@ For OpenAI:
 llm keys set openai
 ```
 
-Use `wt config show` to view the current configuration.
-Docs: <https://llm.datasette.io/> | <https://github.com/sigoden/aichat>
+Use `wt config show` to view the current configuration. Docs: <https://llm.datasette.io/> | <https://github.com/sigoden/aichat>
 
 ## Configuration Files
 
@@ -1091,8 +1073,7 @@ Preview tabs (toggle with `1`/`2`/`3`):
 
 Single-line status for shell prompts, starship, or editor integrations.
 
-**Claude Code integration** (`--claude-code`): Reads workspace context from
-stdin, outputs directory, branch status, and model name.
+**Claude Code integration** (`--claude-code`): Reads workspace context from stdin, outputs directory, branch status, and model name.
 
 ```
 ~/w/myproject.feature-auth  !🤖  ±+42 -8  ↑3  ⇡1  ●  | Opus
@@ -1116,8 +1097,7 @@ Add to `~/.claude/settings.json`:
 
 ## Project Status
 
-Worktrunk is in active development. The core features are stable and ready for
-use. There may be backward-incompatible changes.
+Worktrunk is in active development. The core features are stable and ready for use. There may be backward-incompatible changes.
 
 The most helpful way to contribute:
 
@@ -1133,8 +1113,8 @@ The most helpful way to contribute:
 Worktrunk executes commands in three contexts:
 
 1. **Project hooks** (`.config/wt.toml`) - Automation for worktree lifecycle
-2. **LLM commands** (`~/.config/worktrunk/config.toml`) - Commit message generation
-3. **--execute flag** - Commands provided explicitly
+1. **LLM commands** (`~/.config/worktrunk/config.toml`) - Commit message generation
+1. **--execute flag** - Commands provided explicitly
 
 Commands from project hooks and LLM configuration require approval on first run. Approved commands are saved to `~/.config/worktrunk/config.toml` under the project's configuration. If a command changes, Worktrunk requires new approval.
 
@@ -1168,8 +1148,7 @@ Use `--force` to bypass prompts (useful for CI/automation).
 
 ### vs. Branch Switching
 
-Branch switching uses one directory, so only one agent can work at a time.
-Worktrees give each agent its own directory.
+Branch switching uses one directory, so only one agent can work at a time. Worktrees give each agent its own directory.
 
 ### vs. Plain `git worktree`
 
@@ -1214,17 +1193,14 @@ These tools can be used together—run git-machete or git-town inside individual
 
 ### vs. Git TUIs (lazygit, gh-dash, etc.)
 
-Git TUIs operate on a single repository. Worktrunk manages multiple worktrees,
-runs automation hooks, and aggregates status across branches. TUIs work inside
-each worktree directory.
+Git TUIs operate on a single repository. Worktrunk manages multiple worktrees, runs automation hooks, and aggregates status across branches. TUIs work inside each worktree directory.
 
 </details>
 
 <details>
 <summary><strong>Installation fails with C compilation errors</strong></summary>
 
-Errors related to tree-sitter or C compilation (C99 mode, `le16toh` undefined)
-can be avoided by installing without syntax highlighting:
+Errors related to tree-sitter or C compilation (C99 mode, `le16toh` undefined) can be avoided by installing without syntax highlighting:
 
 ```console
 cargo install worktrunk --no-default-features

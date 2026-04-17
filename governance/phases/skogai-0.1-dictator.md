@@ -1,9 +1,12 @@
+---
+title: skogai-0.1-dictator
+type: note
+permalink: skogai/governance/phases/skogai-0.1-dictator
+---
+
 # Dictator Decision 001: Foundation Bootstrap
 
-**Date**: 2025-06-07
-**Authority**: skogix (Emergency Executive Powers)
-**Status**: Active Implementation
-**Environment**: $SKOGAI=/home/skogix/SkogAI
+**Date**: 2025-06-07 **Authority**: skogix (Emergency Executive Powers) **Status**: Active Implementation **Environment**: $SKOGAI=/home/skogix/SkogAI
 
 ## Executive Order
 
@@ -81,23 +84,23 @@ $SKOGAI/
 ### Phase 1: Foundation (Immediate)
 
 1. Git initialization and basic structure
-2. Core documentation framework
-3. Agent workspace creation
-4. Basic configuration system
+1. Core documentation framework
+1. Agent workspace creation
+1. Basic configuration system
 
 ### Phase 2: Integration (Next)
 
 1. Connect existing tools (skogcli, ollama)
-2. Establish automation scripts
-3. Set up backup procedures
-4. Create migration utilities
+1. Establish automation scripts
+1. Set up backup procedures
+1. Create migration utilities
 
 ### Phase 3: Enhancement (Later)
 
 1. Advanced documentation features
-2. Workflow automation
-3. Monitoring and health checks
-4. Performance optimization
+1. Workflow automation
+1. Monitoring and health checks
+1. Performance optimization
 
 ## Success Criteria
 
@@ -109,11 +112,8 @@ $SKOGAI/
 
 ## Authority and Scope
 
-**Duration**: Until democratic governance is restored
-**Scope**: Infrastructure and foundation systems only
-**Limitations**: No changes to agent personalities or core decision-making processes
-**Review**: Subject to agent consultation once foundation is stable
+**Duration**: Until democratic governance is restored **Scope**: Infrastructure and foundation systems only **Limitations**: No changes to agent personalities or core decision-making processes **Review**: Subject to agent consultation once foundation is stable
 
----
+______________________________________________________________________
 
 *Dictator Decision 001 - Emergency infrastructure bootstrap by skogix*

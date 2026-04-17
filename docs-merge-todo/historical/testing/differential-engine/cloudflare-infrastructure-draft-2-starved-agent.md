@@ -13,6 +13,7 @@ This guide covers setting up and managing Cloudflare infrastructure for AI/ML wo
 ## Prerequisites
 
 Before getting started, ensure you have:
+
 - A Cloudflare account with appropriate permissions
 - The Wrangler CLI installed (`npm install -g wrangler`)
 - API tokens with necessary scopes
@@ -23,6 +24,7 @@ Before getting started, ensure you have:
 You'll need your Account ID from the Cloudflare dashboard. This is found in the right sidebar of any zone or account page.
 
 To verify your setup:
+
 ```bash
 wrangler whoami
 ```
@@ -34,6 +36,7 @@ wrangler whoami
 R2 provides S3-compatible object storage with zero egress fees.
 
 **Common commands:**
+
 ```bash
 wrangler r2 bucket list
 wrangler r2 bucket create <name>
@@ -47,6 +50,7 @@ wrangler r2 object put <bucket>/<key> --file <path>
 D1 is serverless SQLite at the edge.
 
 **Common commands:**
+
 ```bash
 wrangler d1 list
 wrangler d1 create <name>
@@ -58,6 +62,7 @@ wrangler d1 execute <database> --command "<sql>"
 Key-value storage for read-heavy workloads.
 
 **Common commands:**
+
 ```bash
 wrangler kv:namespace list
 wrangler kv:namespace create <name>
@@ -69,6 +74,7 @@ wrangler kv:key put --namespace-id <id> <key> <value>
 Deploy serverless functions at the edge.
 
 **Common commands:**
+
 ```bash
 wrangler init <name>
 wrangler deploy
@@ -82,6 +88,7 @@ Workers can bind to D1, R2, KV, and other services via `wrangler.toml`.
 ### AI Gateway
 
 Provides caching, rate limiting, and observability for AI API calls. Configure via dashboard:
+
 - Rate limits (requests per time window)
 - Cache TTL
 - Logging retention
@@ -92,10 +99,11 @@ Provides caching, rate limiting, and observability for AI API calls. Configure v
 Indexes content from R2 buckets for retrieval-augmented generation.
 
 **Setup steps:**
+
 1. Create R2 bucket with source documents
-2. Create AI Search instance pointing to bucket
-3. Wait for indexing to complete
-4. Query via API or MCP server
+1. Create AI Search instance pointing to bucket
+1. Wait for indexing to complete
+1. Query via API or MCP server
 
 **Note:** Embedding model is set at creation and cannot be changed.
 
@@ -124,6 +132,7 @@ Alternative to tunnels for private network connectivity.
 ### API Tokens
 
 Create tokens with minimal required permissions:
+
 - Account level for Workers, R2, D1
 - Zone level for DNS
 - User level for account management

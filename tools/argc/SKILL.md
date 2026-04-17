@@ -1,6 +1,7 @@
 ---
 name: argc
 description: Create and manage argc-powered bash CLIs and Argcfile.sh task runners. Use when creating Argcfile.sh files, converting bash scripts to argc CLIs, adding argument parsing, shell completion, or task automation to projects.
+permalink: skogai/tools/argc/skill
 ---
 
 # argc skill
@@ -10,6 +11,7 @@ guide for using argc to build bash clis and task automation.
 ## when to use this skill
 
 use when:
+
 - creating a new `Argcfile.sh` for task automation
 - converting a bash script to argc-powered cli
 - adding argument parsing to bash scripts
@@ -20,6 +22,7 @@ use when:
 ## quick reference
 
 **core tags:**
+
 - `# @cmd` - define command/subcommand
 - `# @arg name` - positional argument
 - `# @option --name` - option argument
@@ -28,6 +31,7 @@ use when:
 - `# @describe` - description text
 
 **modifiers:**
+
 - `!` - required
 - `*` - zero or more
 - `+` - one or more required
@@ -36,6 +40,7 @@ use when:
 - `~` - catch all remaining
 
 **variable access:**
+
 - flags: `$argc_flag` (0 or 1)
 - options/args: `$argc_name`
 - multi-value: `${argc_name[@]}`
@@ -45,11 +50,13 @@ use when:
 ### workflow
 
 1. **understand project needs:**
+
    - what tasks need automation? (build, test, deploy, etc.)
    - what parameters do tasks need?
    - are there task dependencies?
 
-2. **create basic structure:**
+1. **create basic structure:**
+
    ```sh
    #!/usr/bin/env bash
    set -e
@@ -62,17 +69,20 @@ use when:
    eval "$(argc --argc-eval "$0" "$@")"
    ```
 
-3. **add parameters to tasks:**
+1. **add parameters to tasks:**
+
    - use `@flag` for boolean options
    - use `@option` for key-value pairs
    - use `@arg` for positional arguments
    - use `@env` for environment variables
 
-4. **implement dependencies:**
+1. **implement dependencies:**
+
    - call other tasks as functions
    - tasks run in order of calls
 
-5. **test:**
+1. **test:**
+
    ```sh
    argc --help           # see all tasks
    argc task_name --help # see task options
@@ -151,26 +161,31 @@ eval "$(argc --argc-eval "$0" "$@")"
 ### workflow
 
 1. **identify current arguments:**
+
    - what flags does the script accept?
    - what options?
    - what positional arguments?
 
-2. **add argc tags:**
+1. **add argc tags:**
+
    - replace manual parsing with `@flag`, `@option`, `@arg` tags
    - add descriptions to each parameter
    - add `@describe` for script overview
 
-3. **replace argument access:**
+1. **replace argument access:**
+
    - change `$1`, `$2`, etc. to `$argc_name`
    - change flag checks to `[[ $argc_flag -eq 1 ]]`
    - change multi-value to arrays: `${argc_args[@]}`
 
-4. **add eval line:**
+1. **add eval line:**
+
    ```sh
    eval "$(argc --argc-eval "$0" "$@")"
    ```
 
-5. **test and refine:**
+1. **test and refine:**
+
    - run with `--help` to see generated help
    - test all parameter combinations
 
@@ -247,6 +262,7 @@ eval "$(argc --argc-eval "$0" "$@")"
 ```
 
 usage:
+
 ```sh
 argc docker up -d
 argc docker down
@@ -254,6 +270,7 @@ argc docker image ls
 ```
 
 **rules:**
+
 - parent commands need `{ :; }` body
 - use `::` to create hierarchy
 - arbitrary nesting depth
@@ -283,6 +300,7 @@ eval "$(argc --argc-eval "$0" "$@")"
 ```
 
 create `.env`:
+
 ```
 DATABASE_URL=postgres://localhost/mydb
 API_KEY=secret123
@@ -369,6 +387,7 @@ _choice_branches() {
 **naming:** prefix with `_choice_`
 
 **with descriptions:**
+
 ```sh
 _choice_services() {
     cat <<-'EOF'
@@ -382,16 +401,19 @@ EOF
 ## debugging
 
 **see parsed arguments:**
+
 ```sh
 argc --argc-dump script.sh arg1 arg2 --flag
 ```
 
 **see generated code:**
+
 ```sh
 argc --argc-eval script.sh --help
 ```
 
 **verbose mode:**
+
 ```sh
 ARGC_VERBOSE=1 ./script.sh --help
 ```
@@ -399,6 +421,7 @@ ARGC_VERBOSE=1 ./script.sh --help
 ## common mistakes
 
 **wrong: missing eval**
+
 ```sh
 # @flag -v
 # continuing without eval...
@@ -406,6 +429,7 @@ ARGC_VERBOSE=1 ./script.sh --help
 ```
 
 **correct:**
+
 ```sh
 # @flag -v
 eval "$(argc --argc-eval "$0" "$@")"
@@ -413,22 +437,26 @@ eval "$(argc --argc-eval "$0" "$@")"
 ```
 
 **wrong: string comparison for flags**
+
 ```sh
 [[ "$argc_verbose" == "1" ]]  # string ❌
 ```
 
 **correct:**
+
 ```sh
 [[ $argc_verbose -eq 1 ]]  # numeric ✓
 ```
 
 **wrong: multi-value without modifier**
+
 ```sh
 # @arg files
 # only gets first file ❌
 ```
 
 **correct:**
+
 ```sh
 # @arg files*
 # gets all files as array ✓
@@ -530,6 +558,7 @@ eval "$(argc --argc-eval "$0" "$@")"
 ### skogai task categories
 
 organize tasks by function:
+
 - `install` - dependency installation
 - `dev` - development server
 - `test` - test execution
@@ -556,6 +585,7 @@ deploy() {
 ```
 
 file structure:
+
 ```
 .env          # default/development
 .env.staging  # staging overrides
@@ -565,6 +595,7 @@ file structure:
 ### skogai-specific workflows
 
 **skill management:**
+
 ```sh
 # @cmd
 skill() { :; }
@@ -578,6 +609,7 @@ skill::create() {
 ```
 
 **agent workflows:**
+
 ```sh
 # @cmd
 agent() { :; }
@@ -595,6 +627,7 @@ for complete skogai patterns see: @docs/tools/argc/skogai-patterns.md
 ## documentation references
 
 comprehensive documentation available at:
+
 - overview: @docs/tools/argc/index.md
 - getting started: @docs/tools/argc/getting-started.md
 - cli authoring: @docs/tools/argc/cli-authoring.md
@@ -605,6 +638,7 @@ comprehensive documentation available at:
 - skogai patterns: @docs/tools/argc/skogai-patterns.md
 
 upstream sources:
+
 - source: @src/argc
 - completions: @src/argc-completions
 - examples: @src/argc/examples/

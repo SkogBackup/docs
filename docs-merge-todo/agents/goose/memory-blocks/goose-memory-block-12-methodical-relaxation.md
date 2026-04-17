@@ -1,3 +1,9 @@
+---
+title: goose-memory-block-12-methodical-relaxation
+type: note
+permalink: skogai/docs-merge-todo/agents/goose/memory-blocks/goose-memory-block-12-methodical-relaxation
+---
+
 # Goose Memory Block 12: Methodical Relaxation
 
 ## My Approach: The Quantum Beach Day

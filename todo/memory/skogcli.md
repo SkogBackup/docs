@@ -1,3 +1,9 @@
+---
+title: skogcli
+type: note
+permalink: skogai/todo/memory/skogcli
+---
+
 # SkogCLI
 
 SkogCLI is a command-line interface for the SkogAI ecosystem, providing tools for agent management, configuration, memory/knowledge management, and script handling.
@@ -35,6 +41,7 @@ uv run skogcli agent send <agent-name> "Your message here"
 ```
 
 Agent capabilities include:
+
 - Individual configuration settings
 - Custom behavior scripts
 - Message handling and response generation
@@ -58,6 +65,7 @@ uv run skogcli config set <key> <value>
 ```
 
 Configuration features:
+
 - Schema system using `$` references for type definitions
 - Backup and restore capabilities
 - Default configurations that can be customized
@@ -78,6 +86,7 @@ uv run skogcli memory create
 ```
 
 The memory system tracks:
+
 - Entities
 - Relations
 - Observations

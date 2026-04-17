@@ -1,3 +1,9 @@
+---
+title: captains-log
+type: note
+permalink: skogai/skills/nelson-base/skills/nelson/references/admiralty-templates/captains-log
+---
+
 # Captain's Log Template
 
 ```text

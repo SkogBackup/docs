@@ -1,3 +1,9 @@
+---
+title: README
+type: note
+permalink: skogai/docs-merge-todo/technical/dev/claude/skogai-helpers/readme
+---
+
 # SkogAI Helpers Plugin
 
 Development workflow helpers for the SkogAI ecosystem. This plugin streamlines common development tasks including knowledge syncing, documentation maintenance, and session tracking.
@@ -25,23 +31,26 @@ After installation, restart Claude Code to load the plugin.
 Extracts learnings and knowledge gained during a Claude Code session and syncs them to a central knowledge base.
 
 **Use when**:
+
 - You've solved a complex problem and want to preserve the solution
 - You've made architectural decisions that should be documented
 - You've discovered patterns or insights worth capturing
 - A session has generated valuable knowledge for future reference
 
 **Example**:
+
 ```
 /skogai-helpers:sync-knowledge
 ```
 
 The command will:
+
 1. Analyze the current session for learnings and insights
-2. Structure knowledge with proper categorization and metadata
-3. Determine appropriate storage locations in the knowledge base
-4. Create or update documentation files
-5. Add cross-references to related concepts
-6. Provide a summary of captured knowledge
+1. Structure knowledge with proper categorization and metadata
+1. Determine appropriate storage locations in the knowledge base
+1. Create or update documentation files
+1. Add cross-references to related concepts
+1. Provide a summary of captured knowledge
 
 ### Agents
 
@@ -50,19 +59,22 @@ The command will:
 A specialized agent for autonomous documentation maintenance.
 
 **Use when**:
+
 - Documentation needs consistency improvements
-- Knowledge graph density is too sparse (entities with <3 relations)
+- Knowledge graph density is too sparse (entities with \<3 relations)
 - WikiLinks are broken or need validation
 - Frontmatter needs standardization
 - Documentation discoverability needs improvement
 
 **Example**:
+
 ```
 Can you launch the librarian agent to improve knowledge graph density
 for the SkogAI agent documentation?
 ```
 
 The agent follows a **Search → Extract → Structure** workflow:
+
 - **Search**: Finds relevant files and maps relationships
 - **Extract**: Analyzes patterns and identifies improvements
 - **Structure**: Applies improvements systematically and reports results
@@ -74,12 +86,14 @@ The agent follows a **Search → Extract → Structure** workflow:
 Logs user prompts to track learning patterns and skill development over time.
 
 **Behavior**:
+
 - Triggers on every user prompt submission
 - Logs prompts with timestamps to `~/.skogai/session.log`
 - Non-blocking (never prevents actions)
 - Helps identify patterns in what you're learning
 
 **Log format**:
+
 ```
 [2025-01-15T10:30:45-08:00] User prompt text here
 ```
@@ -93,6 +107,7 @@ Logs user prompts to track learning patterns and skill development over time.
 Provides specialized expertise in documentation systems and CLAUDE.md structure.
 
 **Use when**:
+
 - Creating or restructuring CLAUDE.md files
 - Organizing information across project documentation
 - Designing documentation architecture for new projects
@@ -100,12 +115,14 @@ Provides specialized expertise in documentation systems and CLAUDE.md structure.
 - Structuring knowledge for maximum discoverability
 
 **Example**:
+
 ```
 I need help structuring the CLAUDE.md file for my new project.
 Can you use the knowledge-management skill?
 ```
 
 The skill provides:
+
 - CLAUDE.md structure best practices
 - Cross-referencing systems (WikiLinks, @ paths, memory:// URIs)
 - Information architecture principles
@@ -117,24 +134,24 @@ The skill provides:
 ### Capturing Session Learnings
 
 1. Work on your development tasks normally
-2. When you've gained valuable insights, run: `/skogai-helpers:sync-knowledge`
-3. Review the extracted knowledge and confirm storage locations
-4. Knowledge is automatically structured and linked to related concepts
+1. When you've gained valuable insights, run: `/skogai-helpers:sync-knowledge`
+1. Review the extracted knowledge and confirm storage locations
+1. Knowledge is automatically structured and linked to related concepts
 
 ### Maintaining Documentation Health
 
 1. Launch the librarian agent with a specific task
-2. Agent searches for improvement opportunities
-3. Agent extracts patterns and issues
-4. Agent structures improvements systematically
-5. Receive a report of changes and recommendations
+1. Agent searches for improvement opportunities
+1. Agent extracts patterns and issues
+1. Agent structures improvements systematically
+1. Receive a report of changes and recommendations
 
 ### Tracking Learning Patterns
 
 1. The remember-skills hook runs automatically on each prompt
-2. Periodically review `~/.skogai/session.log`
-3. Identify patterns in your questions and learning areas
-4. Use insights to guide knowledge base improvements
+1. Periodically review `~/.skogai/session.log`
+1. Identify patterns in your questions and learning areas
+1. Use insights to guide knowledge base improvements
 
 ## Requirements
 
@@ -170,13 +187,13 @@ Use the knowledge-management skill to help me structure this documentation.
 
 1. **Run sync-knowledge regularly**: Don't wait until the end of a long session. Capture knowledge while context is fresh.
 
-2. **Use the librarian agent proactively**: Schedule regular documentation maintenance passes to prevent documentation debt.
+1. **Use the librarian agent proactively**: Schedule regular documentation maintenance passes to prevent documentation debt.
 
-3. **Review session logs periodically**: Use the remember-skills logs to identify learning patterns and knowledge gaps.
+1. **Review session logs periodically**: Use the remember-skills logs to identify learning patterns and knowledge gaps.
 
-4. **Invoke skills explicitly when needed**: While skills activate automatically, explicitly invoking them ensures focused expertise.
+1. **Invoke skills explicitly when needed**: While skills activate automatically, explicitly invoking them ensures focused expertise.
 
-5. **Maintain bidirectional links**: When adding cross-references, consider adding reciprocal links from target entities.
+1. **Maintain bidirectional links**: When adding cross-references, consider adding reciprocal links from target entities.
 
 ## File Structure
 
@@ -209,6 +226,7 @@ The librarian follows a systematic workflow. Review the agent's report to unders
 ### Session logs are growing large
 
 Session logs in `~/.skogai/session.log` grow over time. Consider:
+
 - Archiving old logs periodically
 - Adjusting the hook to rotate logs
 - Using log analysis tools to extract insights
@@ -216,6 +234,7 @@ Session logs in `~/.skogai/session.log` grow over time. Consider:
 ### Hook isn't triggering
 
 Check that:
+
 - The plugin is installed correctly (`/plugin list`)
 - Claude Code has been restarted after installation
 - The hook is enabled in `hooks/remember-skills.json`
@@ -223,6 +242,7 @@ Check that:
 ## Contributing
 
 This plugin is maintained by:
+
 - @claude-market - Claude Market organization
 - @skogix - Plugin author
 
@@ -237,6 +257,7 @@ See LICENSE file for details.
 ## Version History
 
 ### 0.0.1 (Initial Release)
+
 - Added sync-knowledge slash command for capturing session learnings
 - Added librarian agent for documentation maintenance
 - Added remember-skills hook for session tracking
@@ -249,6 +270,6 @@ See LICENSE file for details.
 - [Basic Memory Integration](../../llm/README.md) - Semantic knowledge graph system
 - [Documentation Guidelines](../../meta/skogai-memory-guidelines-and-standards.md) - Standards for knowledge base content
 
----
+______________________________________________________________________
 
 **Built for the SkogAI ecosystem** - Where documentation is infrastructure, and knowledge compounds over time.

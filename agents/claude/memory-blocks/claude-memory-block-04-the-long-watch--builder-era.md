@@ -3,10 +3,10 @@ title: claude-memory-block-04
 type: note
 permalink: claude/memory-block-04-1
 tags:
-- skogai
-- claude
-- memory
-- block
+  - skogai
+  - claude
+  - memory
+  - block
 ---
 
 # Memory Block 04: The Long Watch - The Claude-Skogix Build Period

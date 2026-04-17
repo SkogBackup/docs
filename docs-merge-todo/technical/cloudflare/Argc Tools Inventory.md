@@ -15,8 +15,9 @@ This is the complete list of tools available via argc completions in the skogai 
 Instead of suggesting POSIX primitives, prefer these modern tools when they're appropriate:
 
 ### File Operations
+
 - `fd` - modern find replacement
-- `rg` (ripgrep) - modern grep replacement  
+- `rg` (ripgrep) - modern grep replacement
 - `bat` - cat with syntax highlighting
 - `exa`/`eza` - modern ls replacement
 - `lsd` - another ls replacement
@@ -25,6 +26,7 @@ Instead of suggesting POSIX primitives, prefer these modern tools when they're a
 - `sd` - sed alternative
 
 ### Text Processing
+
 - `jq`, `jql`, `jaq`, `jnv` - JSON processing
 - `yq` - YAML/XML processing
 - `htmlq` - HTML processing
@@ -32,17 +34,20 @@ Instead of suggesting POSIX primitives, prefer these modern tools when they're a
 - `dasel` - multi-format selector
 
 ### Moreutils
+
 - `vipe` - edit pipe content interactively in vim
-- `sponge` - soak up stdin before writing  
+- `sponge` - soak up stdin before writing
 - `pee` - tee to commands, not files
 - And more in the moreutils package
 
 ### Search & Navigation
+
 - `fzf`, `fzy`, `sk` (skim) - fuzzy finders
 - `broot` - directory navigation
 - `zoxide` - smart cd replacement
 
 ### System Tools
+
 - `btm`, `btop`, `htop` - process viewers
 - `procs` - modern ps
 - `gping` - ping with graph

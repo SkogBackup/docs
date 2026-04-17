@@ -1,13 +1,19 @@
+---
+title: mcp-tool-design
+type: note
+permalink: skogai/skills/skogai-prompting/references/mcp-tool-design
+---
+
 <overview>
 How to design MCP tools following prompt-native principles. Tools should be primitives that enable capability, not workflows that encode decisions.
 
-**Core principle:** Whatever a user can do, the agent should be able to do. Don't artificially limit the agent—give it the same primitives a power user would have.
-</overview>
+**Core principle:** Whatever a user can do, the agent should be able to do. Don't artificially limit the agent—give it the same primitives a power user would have. </overview>
 
 <principle name="primitives-not-workflows">
 ## Tools Are Primitives, Not Workflows
 
 **Wrong approach:** Tools that encode business logic
+
 ```typescript
 tool("process_feedback", {
   feedback: z.string(),
@@ -23,6 +29,7 @@ tool("process_feedback", {
 ```
 
 **Right approach:** Primitives that enable any workflow
+
 ```typescript
 tool("store_item", {
   key: z.string(),
@@ -41,23 +48,21 @@ tool("send_message", {
 });
 ```
 
-The agent decides categorization, priority, and when to notify based on the system prompt.
-</principle>
+The agent decides categorization, priority, and when to notify based on the system prompt. </principle>
 
 <principle name="descriptive-names">
 ## Tools Should Have Descriptive, Primitive Names
 
 Names should describe the capability, not the use case:
 
-| Wrong | Right |
-|-------|-------|
-| `process_user_feedback` | `store_item` |
-| `create_feedback_summary` | `write_file` |
-| `send_notification` | `send_message` |
-| `deploy_to_production` | `git_push` |
+| Wrong                     | Right          |
+| ------------------------- | -------------- |
+| `process_user_feedback`   | `store_item`   |
+| `create_feedback_summary` | `write_file`   |
+| `send_notification`       | `send_message` |
+| `deploy_to_production`    | `git_push`     |
 
-The prompt tells the agent *when* to use primitives. The tool just provides *capability*.
-</principle>
+The prompt tells the agent *when* to use primitives. The tool just provides *capability*. </principle>
 
 <principle name="simple-inputs">
 ## Inputs Should Be Simple
@@ -65,6 +70,7 @@ The prompt tells the agent *when* to use primitives. The tool just provides *cap
 Tools accept data. They don't accept decisions.
 
 **Wrong:** Tool accepts decisions
+
 ```typescript
 tool("format_content", {
   content: z.string(),
@@ -74,6 +80,7 @@ tool("format_content", {
 ```
 
 **Right:** Tool accepts data, agent decides format
+
 ```typescript
 tool("write_file", {
   path: z.string(),
@@ -81,6 +88,7 @@ tool("write_file", {
 }, ...)
 // Agent decides to write index.html with HTML content, or data.json with JSON
 ```
+
 </principle>
 
 <principle name="rich-outputs">
@@ -89,6 +97,7 @@ tool("write_file", {
 Return enough information for the agent to verify and iterate.
 
 **Wrong:** Minimal output
+
 ```typescript
 async ({ key }) => {
   await db.delete(key);
@@ -97,6 +106,7 @@ async ({ key }) => {
 ```
 
 **Right:** Rich output
+
 ```typescript
 async ({ key }) => {
   const existed = await db.has(key);
@@ -107,9 +117,11 @@ async ({ key }) => {
   return { text: `Deleted ${key}. ${await db.count()} items remaining.` };
 }
 ```
+
 </principle>
 
-<design_template>
+\<design_template>
+
 ## Tool Design Template
 
 ```typescript
@@ -210,7 +222,8 @@ export const serverName = createSdkMcpServer({
   ],
 });
 ```
-</design_template>
+
+\</design_template>
 
 <example name="feedback-server">
 ## Example: Feedback Storage Server
@@ -301,6 +314,7 @@ When someone shares feedback:
 
 Use your judgment about importance ratings.
 ```
+
 </example>
 
 <principle name="dynamic-capability-discovery">
@@ -310,8 +324,7 @@ Use your judgment about importance ratings.
 
 If you're building a constrained agent with limited capabilities, static tool mapping may be intentional. But for agent-native apps integrating with HealthKit, HomeKit, GraphQL, or similar APIs:
 
-**Static Tool Mapping (Anti-pattern for Agent-Native):**
-Build individual tools for each API capability. Always out of date, limits agent to only what you anticipated.
+**Static Tool Mapping (Anti-pattern for Agent-Native):** Build individual tools for each API capability. Always out of date, limits agent to only what you anticipated.
 
 ```typescript
 // ❌ Static: Every API type needs a hardcoded tool
@@ -330,8 +343,7 @@ tool("read_sleep", async ({ startDate, endDate }) => {
 // When HealthKit adds glucose tracking... you need a code change
 ```
 
-**Dynamic Capability Discovery (Preferred):**
-Build a meta-tool that discovers what's available, and a generic tool that can access anything.
+**Dynamic Capability Discovery (Preferred):** Build a meta-tool that discovers what's available, and a generic tool that can access anything.
 
 ```typescript
 // ✅ Dynamic: Agent discovers and uses any capability
@@ -364,12 +376,12 @@ tool("read_health_data", {
 
 **When to Use Each Approach:**
 
-| Dynamic (Agent-Native) | Static (Constrained Agent) |
-|------------------------|---------------------------|
-| Agent should access anything user can | Agent has intentionally limited scope |
+| Dynamic (Agent-Native)                                         | Static (Constrained Agent)            |
+| -------------------------------------------------------------- | ------------------------------------- |
+| Agent should access anything user can                          | Agent has intentionally limited scope |
 | External API with many endpoints (HealthKit, HomeKit, GraphQL) | Internal domain with fixed operations |
-| API evolves independently of your code | Tightly coupled domain logic |
-| You want full action parity | You want strict guardrails |
+| API evolves independently of your code                         | Tightly coupled domain logic          |
+| You want full action parity                                    | You want strict guardrails            |
 
 **The agent-native default is Dynamic.** Only use Static when you're intentionally limiting the agent's capabilities.
 
@@ -436,12 +448,12 @@ func buildSystemPrompt() -> String {
 ```
 
 **Benefits:**
+
 - Agent can use any API capability, including ones added after your code shipped
 - API is the validator, not your enum definition
 - Smaller tool surface (2-3 tools vs N tools)
 - Agent naturally discovers capabilities by asking
-- Works with any API that has introspection (HealthKit, GraphQL, OpenAPI)
-</principle>
+- Works with any API that has introspection (HealthKit, GraphQL, OpenAPI) </principle>
 
 <principle name="crud-completeness">
 ## CRUD Completeness
@@ -449,6 +461,7 @@ func buildSystemPrompt() -> String {
 Every data type the agent can create, it should be able to read, update, and delete. Incomplete CRUD = broken action parity.
 
 **Anti-pattern: Create-only tools**
+
 ```typescript
 // ❌ Can create but not modify or delete
 tool("create_experiment", { hypothesis, variable, metric })
@@ -457,6 +470,7 @@ tool("write_journal_entry", { content, author, tags })
 ```
 
 **Correct: Full CRUD for each entity**
+
 ```typescript
 // ✅ Complete CRUD
 tool("create_experiment", { hypothesis, variable, metric })
@@ -470,20 +484,20 @@ tool("update_journal_entry", { id, content, tags? })
 tool("delete_journal_entry", { id })
 ```
 
-**The CRUD Audit:**
-For each entity type in your app, verify:
+**The CRUD Audit:** For each entity type in your app, verify:
+
 - [ ] Create: Agent can create new instances
 - [ ] Read: Agent can query/search/list instances
 - [ ] Update: Agent can modify existing instances
 - [ ] Delete: Agent can remove instances
 
-If any operation is missing, users will eventually ask for it and the agent will fail.
-</principle>
+If any operation is missing, users will eventually ask for it and the agent will fail. </principle>
 
 <checklist>
 ## MCP Tool Design Checklist
 
 **Fundamentals:**
+
 - [ ] Tool names describe capability, not use case
 - [ ] Inputs are data, not decisions
 - [ ] Outputs are rich (enough for agent to verify)
@@ -493,6 +507,7 @@ If any operation is missing, users will eventually ask for it and the agent will
 - [ ] Descriptions explain what the tool does, not when to use it
 
 **Dynamic Capability Discovery (for agent-native apps):**
+
 - [ ] For external APIs where agent should have full access, use dynamic discovery
 - [ ] Include a `list_*` or `discover_*` tool for each API surface
 - [ ] Use string inputs (not enums) when the API validates
@@ -500,7 +515,7 @@ If any operation is missing, users will eventually ask for it and the agent will
 - [ ] Only use static tool mapping if intentionally limiting agent scope
 
 **CRUD Completeness:**
+
 - [ ] Every entity has create, read, update, delete operations
 - [ ] Every UI action has a corresponding agent tool
-- [ ] Test: "Can the agent undo what it just did?"
-</checklist>
+- [ ] Test: "Can the agent undo what it just did?" </checklist>

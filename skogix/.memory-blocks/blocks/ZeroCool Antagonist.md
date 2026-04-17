@@ -7,6 +7,7 @@ permalink: skogix/blocks/zero-cool-antagonist
 ZeroCool represents the external threat archetype in SkogAI narratives - a mysterious hacker figure who tracks Skogix's movements with calculated precision. ZeroCool's methods are described as "calculated and precise," creating atmospheric tension and unease.
 
 The character serves multiple narrative functions:
+
 - **External Catalyst**: Forces characters to respond to crisis situations
 - **Reality Distorter**: Introduces elements that break normal system operations
 - **Plot Device**: Creates scenarios that reveal character depths under pressure

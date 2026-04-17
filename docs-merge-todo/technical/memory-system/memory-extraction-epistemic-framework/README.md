@@ -1,3 +1,9 @@
+---
+title: README
+type: note
+permalink: skogai/docs-merge-todo/technical/memory-system/memory-extraction-epistemic-framework/readme
+---
+
 # Claude Introspection Documentation
 
 Complete documentation for the multi-dimensional memory extraction system.
@@ -24,9 +30,9 @@ Complete documentation for the multi-dimensional memory extraction system.
 ### Core Components
 
 1. **[SessionParser](../src/extraction/parser.ts)** - Reads JSONL conversation files
-2. **[SessionChunker](../src/extraction/chunker.ts)** - Breaks conversations into manageable pieces
-3. **[AgentExtractor](../src/extraction/agent-extractor.ts)** - Uses Claude CLI for extraction
-4. **[Multi-dimensional Agent](../agents/multi-dimensional-extractor.md)** - Production extraction prompt
+1. **[SessionChunker](../src/extraction/chunker.ts)** - Breaks conversations into manageable pieces
+1. **[AgentExtractor](../src/extraction/agent-extractor.ts)** - Uses Claude CLI for extraction
+1. **[Multi-dimensional Agent](../agents/multi-dimensional-extractor.md)** - Production extraction prompt
 
 ### Memory Format
 
@@ -50,18 +56,22 @@ source:
 ### Key Discoveries
 
 1. **Multi-dimensional analysis superior to single techniques**
+
    - Five Whys (root cause) + Hidden Motivation (psychology) + Systems Thinking (prevention)
    - 85% match to human ground truth vs 60-70% for single techniques
 
-2. **Methodology lessons more valuable than technical fixes**
+1. **Methodology lessons more valuable than technical fixes**
+
    - Extract HOW we solved problems, not WHAT the solution was
    - "Root cause analysis finds bugs" > "The hasResult check was wrong"
 
-3. **Epistemic humility crucial for ambiguous cases**
+1. **Epistemic humility crucial for ambiguous cases**
+
    - Agents show dangerous overconfidence (100% convergence) on ambiguous cases
    - Need explicit uncertainty acknowledgment and confidence scoring
 
-4. **Human calibration essential for quality**
+1. **Human calibration essential for quality**
+
    - Ground truth validation revealed gaps invisible in automated testing
    - Iterative correction cycles improve abstraction level
 
@@ -85,10 +95,10 @@ source:
 ### Known Limitations
 
 1. **Claude CLI dependency** - Requires authenticated Claude CLI
-2. **Processing time** - 1-2 minutes per conversation
-3. **Token costs** - $0.50-2.00 per conversation
-4. **Manual review** - Some extractions may need human validation
-5. **No search interface** - Memories are files, no semantic search yet
+1. **Processing time** - 1-2 minutes per conversation
+1. **Token costs** - $0.50-2.00 per conversation
+1. **Manual review** - Some extractions may need human validation
+1. **No search interface** - Memories are files, no semantic search yet
 
 ### Next Phase
 
@@ -118,13 +128,14 @@ docs/
 ## Contributing
 
 1. **Improve extraction quality**: Modify `agents/multi-dimensional-extractor.md`
-2. **Add validation data**: Create more ground truth examples
-3. **Build search**: Implement semantic search over memories
-4. **Add tests**: Create test suite for extraction pipeline
+1. **Add validation data**: Create more ground truth examples
+1. **Build search**: Implement semantic search over memories
+1. **Add tests**: Create test suite for extraction pipeline
 
 ## Research Citations
 
 This work builds on established techniques in:
+
 - **Root Cause Analysis**: Five Whys methodology
 - **Cognitive Science**: Hidden motivation and psychological drivers
 - **Systems Thinking**: Feedback loops and prevention mechanisms
@@ -134,8 +145,6 @@ This work builds on established techniques in:
 
 MIT - See [LICENSE](../LICENSE) for details.
 
----
+______________________________________________________________________
 
-**Last Updated**: September 28, 2025
-**Version**: 1.0 (Production Ready)
-**Contributors**: Claude (Anthropic) & Jesse
+**Last Updated**: September 28, 2025 **Version**: 1.0 (Production Ready) **Contributors**: Claude (Anthropic) & Jesse

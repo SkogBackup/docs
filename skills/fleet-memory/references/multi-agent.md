@@ -1,3 +1,9 @@
+---
+title: multi-agent
+type: note
+permalink: skogai/skills/fleet-memory/references/multi-agent
+---
+
 # Multi-Agent Communication Patterns
 
 How agents exchange information through the filesystem without message passing.
@@ -22,11 +28,13 @@ Captain reads   →  scratch/results  →  Captain writes findings.md
 ```
 
 No messages. No callbacks. Files are the interface.
+
 ### Example
 
 **Step 1: Captain writes briefing before spawn**
 
 File: `ships/victory/agents/code-reviewer/briefing.md`
+
 ```markdown
 # Briefing: code-reviewer
 
@@ -50,6 +58,7 @@ None — begin immediately.
 **Step 2: Specialist writes status during work**
 
 File: `ships/victory/agents/code-reviewer/status.md`
+
 ```markdown
 # Status: code-reviewer
 **Updated**: 2026-02-27T14:15:00Z
@@ -69,6 +78,7 @@ File: `ships/victory/agents/code-reviewer/status.md`
 **Step 3: Specialist writes results to scratch**
 
 File: `ships/victory/agents/code-reviewer/scratch/vulnerabilities.md`
+
 ```markdown
 # Vulnerability Findings
 
@@ -158,10 +168,10 @@ Ship B depends on Ship A's output. They run in parallel but have a data dependen
 Ships never read each other's files directly during active work. Instead:
 
 1. Ship A completes work, writes to `ships/alpha/findings.md`
-2. Ship A's captain updates their status
-3. Coordinator runs checkpoint, reads all ship findings, writes checkpoint noting "alpha completed"
-4. Ship B reads checkpoint, sees dependency resolved
-5. Ship B reads `ships/alpha/findings.md` to get the actual data
+1. Ship A's captain updates their status
+1. Coordinator runs checkpoint, reads all ship findings, writes checkpoint noting "alpha completed"
+1. Ship B reads checkpoint, sees dependency resolved
+1. Ship B reads `ships/alpha/findings.md` to get the actual data
 
 The checkpoint is the synchronization barrier. Without it, Ship B might read Ship A's findings mid-write.
 
@@ -172,6 +182,7 @@ The checkpoint is the synchronization barrier. Without it, Ship B might read Shi
 **Step 1: Alpha completes, writes findings**
 
 File: `ships/alpha/findings.md`
+
 ```markdown
 # API Pattern Research — Ship Alpha
 
@@ -188,6 +199,7 @@ Migrate 3 RPC endpoints to REST. Add rate limiting to internal routes.
 **Step 2: Coordinator writes checkpoint**
 
 File: `state/checkpoints/001-checkpoint.md`
+
 ```markdown
 # Checkpoint 001
 **Time**: 2026-02-27T14:45:00Z
@@ -211,9 +223,10 @@ File: `state/checkpoints/001-checkpoint.md`
 **Step 3: Beta reads checkpoint, then reads alpha's findings**
 
 Beta's reading order:
+
 1. `state/checkpoints/001-checkpoint.md` — sees "beta: unblocked" and instruction to read alpha findings
-2. `ships/alpha/findings.md` — gets the actual research data
-3. Begins its own analysis, writing to `ships/beta/findings.md`
+1. `ships/alpha/findings.md` — gets the actual research data
+1. Begins its own analysis, writing to `ships/beta/findings.md`
 
 **The wrong way (and why it fails)**:
 
@@ -238,6 +251,7 @@ The spawning agent writes `briefing.md` to the target agent's workspace, then sp
 ### Example: Captain Briefing
 
 File: `ships/victory/briefing.md`
+
 ```markdown
 # Briefing: captain-marsh (Ship Victory)
 
@@ -268,6 +282,7 @@ Write prioritized vulnerability list to ships/victory/findings.md.
 ### Example: Specialist Briefing
 
 File: `ships/victory/agents/code-reviewer/briefing.md`
+
 ```markdown
 # Briefing: code-reviewer
 
@@ -290,15 +305,15 @@ Update status.md when complete.
 
 ### Mandatory vs Optional Sections
 
-| Section | Captain | Specialist | Required? |
-|---------|---------|------------|-----------|
-| Mission/Task | mission scope | specific task | mandatory |
-| Your Files | full ownership table | own files + readable scope | mandatory |
-| Dependencies | cross-ship deps | within-ship deps | mandatory |
-| Output | deliverable path | scratch output path | mandatory |
-| Agents You May Spawn | specialist list | (omit) | captain only |
-| Policy Files | paths to consult | paths to consult | optional |
-| Context from Other Ships | checkpoint pointers | (omit) | if dependencies exist |
+| Section                  | Captain              | Specialist                 | Required?             |
+| ------------------------ | -------------------- | -------------------------- | --------------------- |
+| Mission/Task             | mission scope        | specific task              | mandatory             |
+| Your Files               | full ownership table | own files + readable scope | mandatory             |
+| Dependencies             | cross-ship deps      | within-ship deps           | mandatory             |
+| Output                   | deliverable path     | scratch output path        | mandatory             |
+| Agents You May Spawn     | specialist list      | (omit)                     | captain only          |
+| Policy Files             | paths to consult     | paths to consult           | optional              |
+| Context from Other Ships | checkpoint pointers  | (omit)                     | if dependencies exist |
 
 ### Token Budget
 
@@ -344,7 +359,6 @@ If a briefing exceeds 500 tokens, split: task summary in briefing, detailed requ
 
 **Correction**: Briefing contains file paths: "Read policy/standing-orders.md when you encounter a decision about X." Agent loads 200-500 tokens of policy when it actually needs them, not upfront.
 
----
+______________________________________________________________________
 
-**Reference Version**: 1.0.0
-**Companion to**: fleet-memory SKILL.md
+**Reference Version**: 1.0.0 **Companion to**: fleet-memory SKILL.md

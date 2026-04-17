@@ -3,11 +3,11 @@ title: Brewing Equipment
 type: note
 permalink: llm/example/brewing-equipment-1
 tags:
-- '#coffee'
-- '#equipment'
-- '#gear'
-- '#brewing'
-- '#demo'
+  - '#coffee'
+  - '#equipment'
+  - '#gear'
+  - '#brewing'
+  - '#demo'
 ---
 
 # Brewing Equipment
@@ -39,6 +39,7 @@ The equipment used to brew coffee plays a crucial role in determining the final 
 ## Brewers
 
 ### Pour Over Brewers
+
 - [equipment] Hario V60 uses a conical design with spiral ridges to control flow rate #pourover
 - [equipment] Kalita Wave has a flat bottom with three small holes for more consistent extraction #pourover
 - [equipment] Chemex combines brewer and server with thick proprietary filters for ultra-clean cup #pourover
@@ -47,6 +48,7 @@ The equipment used to brew coffee plays a crucial role in determining the final 
 - [material] Plastic brewers are inexpensive, durable, and surprisingly good for heat retention #materials
 
 ### Immersion Brewers
+
 - [equipment] French Press uses a metal mesh to separate grounds, allowing oils and fine particles to pass #immersion
 - [equipment] AeroPress uses pressure and paper filter for clean, versatile brewing #immersion
 - [equipment] Clever Dripper combines immersion and drip methods with a valve mechanism #hybrid
@@ -54,6 +56,7 @@ The equipment used to brew coffee plays a crucial role in determining the final 
 - [material] Stainless steel or ceramic French presses offer better durability and heat retention #materials
 
 ### Pressure Brewers
+
 - [equipment] Espresso machines use 9 bars of pressure, requiring significant investment for good results #espresso
 - [equipment] Moka pot uses steam pressure for strong, concentrated coffee at affordable price #moka
 - [equipment] Manual lever machines like Flair or Robot provide espresso-style coffee with manual control #manual_espresso
@@ -76,8 +79,8 @@ The equipment used to brew coffee plays a crucial role in determining the final 
 
 ## Relations
 
-- improves [[Coffee Brewing Methods]]
-- affects [[Flavor Extraction]]
-- requires [[Proper Maintenance]]
-- enhances [[Home Coffee Setup]]
-- part_of [[Coffee Knowledge Base]]
+- improves \[[Coffee Brewing Methods]\]
+- affects \[[Flavor Extraction]\]
+- requires \[[Proper Maintenance]\]
+- enhances \[[Home Coffee Setup]\]
+- part_of \[[Coffee Knowledge Base]\]

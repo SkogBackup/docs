@@ -49,6 +49,7 @@ files/
 ## Task Descriptions
 
 ### main.yml
+
 ```yaml
 # [orchestration] Execute security hardening in proper sequence #coordination
 # [validation] Assess current security posture #security-assessment
@@ -62,6 +63,7 @@ files/
 ```
 
 ### firewall.yml
+
 ```yaml
 # [firewall] Install and configure UFW (Uncomplicated Firewall) #ufw-setup
 # [firewall] Set default firewall policies (deny incoming, allow outgoing) #default-policies
@@ -73,6 +75,7 @@ files/
 ```
 
 ### ssh.yml
+
 ```yaml
 # [ssh] Backup original SSH configuration #backup-config
 # [ssh] Configure SSH key-based authentication only #key-auth
@@ -85,6 +88,7 @@ files/
 ```
 
 ### users.yml
+
 ```yaml
 # [user] Configure password policies and aging #password-policy
 # [user] Setup secure sudo configuration #sudo-security
@@ -96,6 +100,7 @@ files/
 ```
 
 ### audit.yml
+
 ```yaml
 # [audit] Install and configure auditd system #auditd-setup
 # [audit] Configure audit rules for file access monitoring #file-audit
@@ -107,6 +112,7 @@ files/
 ```
 
 ### encryption.yml
+
 ```yaml
 # [encryption] Configure LUKS disk encryption support #disk-encryption
 # [encryption] Setup encrypted swap partition #swap-encryption
@@ -117,6 +123,7 @@ files/
 ```
 
 ### network.yml
+
 ```yaml
 # [network] Configure secure DNS settings #dns-security
 # [network] Setup network intrusion detection #intrusion-detection
@@ -127,6 +134,7 @@ files/
 ```
 
 ### services.yml
+
 ```yaml
 # [service] Audit and disable unnecessary system services #service-audit
 # [service] Configure service security settings #service-security
@@ -185,24 +193,28 @@ backup_retention_days: 30
 ## Key Features
 
 ### Network Security
+
 - [feature] Comprehensive firewall configuration #firewall-protection
 - [feature] SSH hardening with key-based authentication #ssh-security
 - [feature] Network intrusion detection and prevention #intrusion-prevention
 - [feature] Secure DNS configuration #dns-security
 
 ### Access Control
+
 - [feature] Strong password policies and enforcement #password-security
 - [feature] Secure sudo configuration with timeouts #sudo-security
 - [feature] User account lockout protection #account-protection
 - [feature] Multi-factor authentication support #mfa-support
 
 ### Monitoring and Auditing
+
 - [feature] System call and file access auditing #system-auditing
 - [feature] Failed login attempt monitoring #login-monitoring
 - [feature] Security event alerting and notification #alerting
 - [feature] Regular security scanning automation #security-scanning
 
 ### Data Protection
+
 - [feature] Disk and file encryption capabilities #encryption
 - [feature] Secure backup with encryption #backup-security
 - [feature] SSL/TLS certificate management #certificate-management
@@ -227,11 +239,13 @@ backup_retention_days: 30
 ## Security Compliance
 
 ### Standards Alignment
+
 - [compliance] CIS (Center for Internet Security) benchmarks #cis-compliance
 - [compliance] NIST cybersecurity framework alignment #nist-compliance
 - [compliance] Common security best practices #best-practices
 
 ### Verification
+
 - [verification] Automated security configuration testing #config-testing
 - [verification] Security posture assessment scripts #posture-assessment
 - [verification] Compliance reporting capabilities #compliance-reporting
@@ -245,7 +259,7 @@ backup_retention_days: 30
 
 ## Relations
 
-- depends_on [[Base System Role]]
-- hardens [[SSH Configuration]]
-- protects [[User Account Management]]
-- monitors [[System Activity]]
+- depends_on \[[Base System Role]\]
+- hardens \[[SSH Configuration]\]
+- protects \[[User Account Management]\]
+- monitors \[[System Activity]\]

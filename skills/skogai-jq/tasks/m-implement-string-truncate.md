@@ -3,7 +3,9 @@ name: m-implement-string-truncate
 branch: feature/m-implement-string-truncate
 status: pending
 created: 2025-11-14
-submodules: [list of git submodules affected (delete if not super-repo)]
+submodules:
+  - list of git submodules affected (delete if not super-repo)
+permalink: skogai/skills/skogai-jq/tasks/m-implement-string-truncate
 ---
 
 # [Human-Readable Title]

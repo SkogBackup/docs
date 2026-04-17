@@ -1,3 +1,9 @@
+---
+title: submodules
+type: note
+permalink: skogai/todo/git/submodules
+---
+
 # Git Submodules in SkogAI
 
 ## Overview
@@ -52,18 +58,20 @@ git push origin develop --force
 ### Making Custom Changes
 
 1. Create a feature branch:
+
    ```bash
    git checkout develop
    git checkout -b feature/custom-modification
    ```
 
-2. Make changes, commit, and push:
+1. Make changes, commit, and push:
+
    ```bash
    git commit -am "Add custom functionality"
    git push origin feature/custom-modification
    ```
 
-3. Create a pull request to merge into develop
+1. Create a pull request to merge into develop
 
 ### Updating the Main Repository
 
@@ -124,14 +132,15 @@ git commit -m "Removed submodule"
 ## Best Practices
 
 1. **Always use forks**: Never directly reference third-party repositories
-2. **Maintain clean branches**: Keep master and develop synced with upstream
-3. **Document changes**: Add comments about significant modifications
-4. **Use feature branches**: Develop new functionality in isolated branches
-5. **Commit submodule updates separately**: Don't mix submodule updates with other changes
+1. **Maintain clean branches**: Keep master and develop synced with upstream
+1. **Document changes**: Add comments about significant modifications
+1. **Use feature branches**: Develop new functionality in isolated branches
+1. **Commit submodule updates separately**: Don't mix submodule updates with other changes
 
 ## Current Submodules
 
 For details on specific submodules in SkogAI, see:
+
 - [llm-functions documentation](/mnt/extra/skogai/docs/interfaces/aichat/submodules.md)
 
 This documentation provides a foundation for working with Git submodules in the SkogAI project and will be expanded as needed.

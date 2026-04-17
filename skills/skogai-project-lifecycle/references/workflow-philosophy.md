@@ -1,12 +1,17 @@
+---
+title: workflow-philosophy
+type: note
+permalink: skogai/skills/skogai-project-lifecycle/references/workflow-philosophy
+---
+
 # Workflow Philosophy - When to Use Which
 
-<core_principle>
-The dual system exists because creativity and quality require different constraints.
-</core_principle>
+\<core_principle> The dual system exists because creativity and quality require different constraints. \</core_principle>
 
 ## The Problem
 
 **Single workflow doesn't work:**
+
 - Strict standards kill creativity and exploration
 - No standards produce unmaintainable bloat
 - "Best practices" applied too early optimize the wrong things
@@ -16,7 +21,7 @@ The dual system exists because creativity and quality require different constrai
 **Two workflows with explicit transition:**
 
 1. **Explosive** - maximize exploration, defer quality
-2. **Production** - maximize quality, defer new features
+1. **Production** - maximize quality, defer new features
 
 The transition point (pruning) forces conscious decision about what actually matters.
 
@@ -51,42 +56,48 @@ Use production workflow when:
 Transition is not automatic. Requires active decision to:
 
 1. **Stop adding features**
-2. **Remove failed experiments** (typically 50%+)
-3. **Simplify what remains**
-4. **Add tests and minimal docs**
-5. **Apply production standards**
+1. **Remove failed experiments** (typically 50%+)
+1. **Simplify what remains**
+1. **Add tests and minimal docs**
+1. **Apply production standards**
 
 Most ideas stay in explosive forever. That's fine. The ones that graduate earn it.
 
 ## Why This Works
 
 **Psychological:**
+
 - Explosive phase: permission to fail, high creativity
 - Pruning phase: clear goal (subtract), manageable scope
 - Production phase: pride in quality, long-term thinking
 
 **Practical:**
+
 - Explosive catches 10 ideas, 5 work, 2 are valuable
 - Without explosive: catch 2 ideas, 2 work, 1 is valuable (lost opportunity)
 - Without production: 5 working ideas become unmaintainable bloat
 
 **Economic:**
+
 - Cheap experiments in explosive (throw away easily)
 - Expensive quality in production (invest in proven winners)
 
 ## Common Mistakes
 
 **Premature optimization:**
+
 - Writing tests for experimental code
 - Perfect documentation before proving value
 - Production-quality code in first iteration
 
 **Never graduating:**
+
 - Keeping everything in explosive forever
 - "It works, good enough" without pruning
 - Fear of deleting code
 
 **Skipping pruning:**
+
 - Moving explosive code directly to production
 - Bringing failed experiments along
 - No subtraction phase
@@ -116,29 +127,31 @@ Q: General solution or project-specific?
 ## Real-World Application
 
 **This skill creation:**
+
 - Started explosive: figuring out what to document
 - Tested routing approach by using it
 - Will prune later: remove what doesn't work
 - Might migrate to core if proven valuable
 
-**The meta-pattern:**
-Creating a skill about the workflow WHILE using the workflow validates both.
+**The meta-pattern:** Creating a skill about the workflow WHILE using the workflow validates both.
 
 ## Success Metrics
 
 **Explosive phase success:**
+
 - High volume of experiments
 - Quick iteration cycles
 - Learning rate > code quality
 
 **Production phase success:**
+
 - Low defect rate
 - High reusability
 - Maintenance cost < value delivered
 
 **Overall system success:**
+
 - Ideas flow through pipeline
 - Clear decision points
 - No artificial barriers
 - Quality scales with proven value
-

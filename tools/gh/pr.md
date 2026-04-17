@@ -1,29 +1,31 @@
 ---
 categories:
-- tools
-- gh
+  - tools
+  - gh
 permalink: tools/gh/pr
 generated_at: '2025-12-19T12:58:07Z'
 title: '# gh - Pull Request Operations'
 tags:
-- pull-request-operations
-- github
-- gh-pr-create
-- gh-pr-checkout
-- gh-pr-view
-- gh-pr-list
-- gh-pr-status
+  - pull-request-operations
+  - github
+  - gh-pr-create
+  - gh-pr-checkout
+  - gh-pr-view
+  - gh-pr-list
+  - gh-pr-status
 type: note
 ---
 
 # gh - Pull Request Operations
 
 ## When to Use
+
 Working with pull requests - create, checkout, review, merge
 
 ## Key Commands
 
 ### gh pr create
+
 Create a pull request
 
 ```bash
@@ -31,6 +33,7 @@ gh pr create [flags]
 ```
 
 **Essential Flags:**
+
 ```bash
 -t, --title string        PR title
 -b, --body string         PR body
@@ -48,6 +51,7 @@ gh pr create [flags]
 ```
 
 ### gh pr checkout
+
 Checkout a PR locally
 
 ```bash
@@ -55,6 +59,7 @@ gh pr checkout {<number> | <url> | <branch>}
 ```
 
 **Examples:**
+
 ```bash
 gh pr checkout 123
 gh pr checkout https://github.com/owner/repo/pull/123
@@ -62,6 +67,7 @@ gh pr checkout feature-branch
 ```
 
 ### gh pr view
+
 View PR details
 
 ```bash
@@ -69,6 +75,7 @@ gh pr view [<number> | <url> | <branch>] [flags]
 ```
 
 **Flags:**
+
 ```bash
 -c, --comments            View PR comments
 -w, --web                 Open in browser
@@ -77,9 +84,11 @@ gh pr view [<number> | <url> | <branch>] [flags]
 ```
 
 ### gh pr list
+
 List PRs (see filtering.md)
 
 ### gh pr status
+
 Show status of relevant PRs
 
 ```bash
@@ -87,11 +96,13 @@ gh pr status
 ```
 
 Shows:
+
 - PRs assigned to you
 - PRs you created
 - PRs requesting your review
 
 ### gh pr review
+
 Review a pull request
 
 ```bash
@@ -99,6 +110,7 @@ gh pr review [<number> | <url> | <branch>] [flags]
 ```
 
 **Flags:**
+
 ```bash
 -a, --approve             Approve PR
 -r, --request-changes     Request changes
@@ -107,6 +119,7 @@ gh pr review [<number> | <url> | <branch>] [flags]
 ```
 
 ### gh pr merge
+
 Merge a pull request
 
 ```bash
@@ -114,6 +127,7 @@ gh pr merge [<number> | <url> | <branch>] [flags]
 ```
 
 **Flags:**
+
 ```bash
 -m, --merge               Create merge commit (default)
 -s, --squash              Squash commits
@@ -124,6 +138,7 @@ gh pr merge [<number> | <url> | <branch>] [flags]
 ```
 
 ### gh pr diff
+
 View PR diff
 
 ```bash
@@ -131,12 +146,14 @@ gh pr diff [<number> | <url> | <branch>] [flags]
 ```
 
 **Flags:**
+
 ```bash
 --color string            Use color: {always|never|auto}
 --patch                   Display in patch format
 ```
 
 ### gh pr checks
+
 View PR check status
 
 ```bash
@@ -146,6 +163,7 @@ gh pr checks [<number> | <url> | <branch>]
 Shows CI/CD check results
 
 ### gh pr edit
+
 Edit PR details
 
 ```bash
@@ -153,6 +171,7 @@ gh pr edit [<number> | <url> | <branch>] [flags]
 ```
 
 **Flags:**
+
 ```bash
 --add-assignee login      Add assignees
 --add-label name          Add labels
@@ -168,6 +187,7 @@ gh pr edit [<number> | <url> | <branch>] [flags]
 ## Common Workflows
 
 ### Create PR from Current Branch
+
 ```bash
 # Quick create with prompts
 gh pr create
@@ -187,6 +207,7 @@ gh pr create --fill
 ```
 
 ### Check Out PR for Review
+
 ```bash
 # By number
 gh pr checkout 123
@@ -200,6 +221,7 @@ git diff main...
 ```
 
 ### Review a PR
+
 ```bash
 # Approve
 gh pr review 123 --approve -b "LGTM!"
@@ -212,6 +234,7 @@ gh pr review 123 --comment -b "Question about Y"
 ```
 
 ### Check PR Status
+
 ```bash
 # View checks
 gh pr checks 123
@@ -224,6 +247,7 @@ gh pr view 123 --comments
 ```
 
 ### Merge PR
+
 ```bash
 # Merge with prompt
 gh pr merge 123
@@ -236,6 +260,7 @@ gh pr merge 123 --auto --squash
 ```
 
 ### Get PR Info as JSON
+
 ```bash
 # All PRs
 gh pr list --json number,title,state,headRefName
@@ -250,6 +275,7 @@ gh pr list --json number,title,reviews --jq '.[] | select(.reviews | length > 0)
 ## Common Patterns for AI Agents
 
 ### DON'T manually parse PR numbers
+
 ```bash
 # BAD
 gh pr list | grep "#" | cut -d'#' -f2 | ...
@@ -261,6 +287,7 @@ gh pr list --json number --jq '.[].number'
 ```
 
 ### DON'T fetch details multiple times
+
 ```bash
 # BAD - multiple calls
 gh pr view 123 --json title
@@ -274,12 +301,14 @@ gh pr view 123 --json title,state,reviewDecision
 ```
 
 ### DO use --fill for automatic titles/bodies
+
 ```bash
 # If you have good commit messages
 gh pr create --fill
 ```
 
 ### DO check status before operations
+
 ```bash
 # Check if PR is mergeable
 gh pr view 123 --json mergeable,reviewDecision --jq '{mergeable, reviewDecision}'
@@ -288,11 +317,13 @@ gh pr view 123 --json mergeable,reviewDecision --jq '{mergeable, reviewDecision}
 ## Available JSON Fields
 
 Run to discover:
+
 ```bash
 gh pr view --json
 ```
 
 Common fields:
+
 ```
 number, title, body, state, isDraft, url,
 headRefName, baseRefName, author,
@@ -303,10 +334,12 @@ createdAt, updatedAt, closedAt, mergedAt, mergedBy
 ```
 
 ## Don't Use When
+
 - Just viewing in browser (use `--web`)
 - Need to edit PR description/code (check out and edit locally)
 
 ## See Also
+
 - @skogai/gh/json.md - JSON output
 - @skogai/gh/filtering.md - Filtering PRs
 - Run `gh pr <command> --help` for detailed flags

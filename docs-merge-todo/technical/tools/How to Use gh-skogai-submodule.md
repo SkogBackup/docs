@@ -15,21 +15,25 @@ The `gh-skogai-submodule` extension enables dynamic add/work/remove workflows fo
 ## Current Features (v0.0.3)
 
 ### ✅ Smart Branch Detection
+
 - Automatically detects and uses `develop` branch for SkogAI repos (git-flow compatible)
 - Falls back to `main` then `master` for other repositories
 - Perfect for git-flow development workflows
 
-### ✅ AI Agent Compatibility  
+### ✅ AI Agent Compatibility
+
 - `--no-interactive` mode for programmatic use
 - `--json` output for machine parsing
 - `--batch` processing without confirmation prompts
 
 ### ✅ Dynamic Workflow Support
+
 - `.gitmodules` is ignored in parent repo (no commit pollution)
 - Auto-unstages `.gitmodules` to prevent accidental commits
 - Clean temporary workspace management
 
 ### ✅ Repository Discovery
+
 - Smart API endpoint fallback (tries org endpoint first for private repos, falls back to user endpoint for public)
 - Discovers up to 144+ repositories vs basic 60 limit
 
@@ -59,15 +63,15 @@ gh skogai-submodule --org SkogAI --search "tool" --regexp "^skog.*" --no-interac
 
 ### Key Flags
 
-| Flag | Description | AI Agent Friendly |
-|------|-------------|-------------------|
-| `--org <org>` | Organization name | ✅ Required |
-| `--search <query>` | Search query (use "." for all repos) | ✅ |
-| `--csr <repos>` | Comma-separated repo list | ✅ |
-| `--no-interactive` | Skip interactive selection | ✅ Essential |
-| `--json` | JSON output format | ✅ Essential |
-| `--batch` | Process without confirmation | ✅ |
-| `--dryrun` | Show what would be done | ✅ |
+| Flag               | Description                          | AI Agent Friendly |
+| ------------------ | ------------------------------------ | ----------------- |
+| `--org <org>`      | Organization name                    | ✅ Required       |
+| `--search <query>` | Search query (use "." for all repos) | ✅                |
+| `--csr <repos>`    | Comma-separated repo list            | ✅                |
+| `--no-interactive` | Skip interactive selection           | ✅ Essential      |
+| `--json`           | JSON output format                   | ✅ Essential      |
+| `--batch`          | Process without confirmation         | ✅                |
+| `--dryrun`         | Show what would be done              | ✅                |
 
 ## Dynamic Development Workflow
 
@@ -116,11 +120,13 @@ gh skogai-submodule --org SkogAI -s gh-skogai-submodule
 ```
 
 Output shows the smart detection:
+
 ```bash
 git submodule add --branch develop https://github.com/SkogAI/gh-skogai-submodule
 ```
 
 The `.gitmodules` entry automatically includes:
+
 ```ini
 [submodule "gh-skogai-submodule"]
 	path = gh-skogai-submodule
@@ -131,6 +137,7 @@ The `.gitmodules` entry automatically includes:
 ## Configuration
 
 ### Set Default Organization
+
 ```bash
 gh skogai-submodule --org SkogAI --default
 ```
@@ -143,12 +150,14 @@ Configuration is stored in GitHub CLI config under `skogai-submodule.default-org
 
 The extension uses smart fallback for maximum repository visibility:
 
-1. **Org Endpoint First** (`/orgs/{org}/repos`): 
+1. **Org Endpoint First** (`/orgs/{org}/repos`):
+
    - Includes private repositories if authenticated
    - Used when user has org membership or admin access
-   
-2. **User Endpoint Fallback** (`/users/{org}/repos`):
-   - Public repositories only  
+
+1. **User Endpoint Fallback** (`/users/{org}/repos`):
+
+   - Public repositories only
    - Used when org endpoint fails or is unavailable
 
 ### Fork Handling
@@ -167,16 +176,19 @@ gh skogai-submodule --org SkogAI --fork "false"
 ## Best Practices
 
 ### For AI Agents
+
 - Always use `--no-interactive --json` for programmatic access
 - Use `--dryrun` first to see what will be added
 - Check JSON output for empty results before proceeding
 
 ### For Developers
-- Set default org with `--default` to speed up workflows  
+
+- Set default org with `--default` to speed up workflows
 - Use search patterns to find specific repositories
 - Remember that `.gitmodules` changes stay local (ignored)
 
 ### For Dynamic Workflows
+
 - Always clean up with `git submodule deinit` when done
 - Perfect for temporary "fix this issue" scenarios
 - No permanent changes to main project structure
@@ -186,20 +198,25 @@ gh skogai-submodule --org SkogAI --fork "false"
 ### Common Issues
 
 **"No organization specified"**
+
 - Use `--org` flag or set default with `--default`
 
-**"No repositories found"**  
+**"No repositories found"**
+
 - Check organization name and access permissions
 - Try different search terms or use `--search "."` for all repos
 
 **"Git directory conflict"**
+
 - Clean up with `git submodule deinit <name>` and `rm -rf <name>`
 - Remove cached modules: `rm -rf .git/modules/<name>`
 
 ### Git Credential Lock Errors
+
 ```bash
 fatal: unable to get credential storage lock in 1000 ms: File exists
 ```
+
 - Usually resolves automatically after a few seconds
 - Kill hanging git processes if persistent: `pkill git`
 

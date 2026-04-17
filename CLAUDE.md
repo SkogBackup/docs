@@ -4,6 +4,7 @@ env: $SKOGAI_DOCS
 title: docs/claude
 type: claude.md
 description: SkogAI/docs repository
+permalink: skogai/claude
 ---
 
 # SkogAI @~/skogai/docs repository

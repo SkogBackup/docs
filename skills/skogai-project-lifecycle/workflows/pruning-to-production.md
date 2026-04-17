@@ -1,3 +1,9 @@
+---
+title: pruning-to-production
+type: note
+permalink: skogai/skills/skogai-project-lifecycle/workflows/pruning-to-production
+---
+
 # Workflow: Pruning to Production
 
 ## Entry Criteria
@@ -37,9 +43,9 @@ For each item, ask: **"Could Claude recreate this knowing nothing about our proj
 For any substantial documentation:
 
 1. Use the prompt template from `@../references/differential-documentation-engine.md`
-2. Provide your current docs as `{$PROJECT_CONTEXT}`
-3. Provide the topic as `{$TOPIC}`
-4. Replace your docs with the `[differential_doc]` output
+1. Provide your current docs as `{$PROJECT_CONTEXT}`
+1. Provide the topic as `{$TOPIC}`
+1. Replace your docs with the `[differential_doc]` output
 
 Expected results: 60-80% reduction in size, 100% signal preserved.
 
@@ -48,12 +54,11 @@ Expected results: 60-80% reduction in size, 100% signal preserved.
 **The reconstruction test:**
 
 1. Start a fresh Claude session (no project context)
-2. Give it only your pruned documentation
-3. Ask it to implement/explain the feature
-4. Compare to what you actually built
+1. Give it only your pruned documentation
+1. Ask it to implement/explain the feature
+1. Compare to what you actually built
 
-If Claude reconstructs it correctly → pruning successful
-If Claude gets confused → you pruned something essential (restore it)
+If Claude reconstructs it correctly → pruning successful If Claude gets confused → you pruned something essential (restore it)
 
 ### Step 5: Check Production Standards
 

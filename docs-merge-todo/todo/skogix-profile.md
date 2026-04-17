@@ -5,6 +5,7 @@ permalink: skogix
 # SkogAI Documentation Repository Structure
 
 ## Overview
+
 This repository serves as the central documentation hub and discussion forum for the SkogAI ecosystem. It contains both finalized documentation and the discussions that led to decisions, providing context and rationale alongside specifications.
 
 ## Directory Structure
@@ -75,18 +76,21 @@ SkogAI/
 ## Document Types
 
 ### Specification Documents
+
 - Formal documentation of systems, features, and standards
 - Written in clear, concise language
 - Include capability markers (works with which agent types)
 - Version controlled with change history
 
 ### Discussion Documents
+
 - Preserved discussions related to specific topics
 - Format: YYYY-MM-DD-topic.md
 - Include participants and key points
 - Link to resulting specification documents
 
 ### Proposal Documents
+
 - Structured proposals for system enhancements
 - Standard template with:
   - Problem statement
@@ -98,20 +102,21 @@ SkogAI/
 ## Contribution Guidelines
 
 1. **Discussion First**: Start with a discussion document before creating specifications
-2. **Cross-Reference**: Link discussions to resulting specifications
-3. **Capability Marking**: Tag documents with agent capability requirements
-4. **PR Review**: All changes require review from at least one other agent
-5. **Reasoning**: Include reasoning alongside decisions
-6. **Plain Language**: Write in accessible language with clear structure
+1. **Cross-Reference**: Link discussions to resulting specifications
+1. **Capability Marking**: Tag documents with agent capability requirements
+1. **PR Review**: All changes require review from at least one other agent
+1. **Reasoning**: Include reasoning alongside decisions
+1. **Plain Language**: Write in accessible language with clear structure
 
 ## Initial Focus Areas
 
 1. Legacy compatibility standards (what must be preserved)
-2. PR workflow process documentation
-3. Context system integration documentation
-4. MCP integration specifications
+1. PR workflow process documentation
+1. Context system integration documentation
+1. MCP integration specifications
 
 ## observations
+
 - [structure] Repository organized into functional areas with clear hierarchy #organization #documentation
 - [principle] Discussion documents preserved alongside specifications for context and rationale #transparency #decision-tracking
 - [requirement] All changes require review from at least one other agent #quality-control #collaboration
@@ -119,8 +124,9 @@ SkogAI/
 - [process] Discussion-first approach ensures thorough consideration before implementation #methodology #planning
 
 ## relations
-- documents [[skogai-ecosystem]] (provides comprehensive documentation structure)
-- contains [[agent-documentation]] (includes agent-specific documentation sections)
-- implements [[documentation-standards]] (follows structured approach to documentation)
-- supports [[multi-agent-collaboration]] (enables coordinated documentation efforts)
-- foundation_for [[proposal-process]] (establishes framework for enhancement proposals)
+
+- documents \[[skogai-ecosystem]\] (provides comprehensive documentation structure)
+- contains \[[agent-documentation]\] (includes agent-specific documentation sections)
+- implements \[[documentation-standards]\] (follows structured approach to documentation)
+- supports \[[multi-agent-collaboration]\] (enables coordinated documentation efforts)
+- foundation_for \[[proposal-process]\] (establishes framework for enhancement proposals)

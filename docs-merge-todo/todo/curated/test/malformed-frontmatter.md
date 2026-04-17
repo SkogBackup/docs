@@ -2,13 +2,15 @@
 permalink: todo/curated/test/malformed-frontmatter
 ---
 
----
+______________________________________________________________________
+
 categories:
-  - broken yaml syntax here [
-tags
-  - missing colon
-  - "unclosed quote
----
+
+- broken yaml syntax here \[ tags
+- missing colon
+- "unclosed quote
+
+______________________________________________________________________
 
 # Malformed Frontmatter Test
 

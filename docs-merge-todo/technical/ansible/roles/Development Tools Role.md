@@ -47,6 +47,7 @@ files/
 ## Task Descriptions
 
 ### main.yml
+
 ```yaml
 # [orchestration] Setup development environment in logical order #coordination
 # [validation] Check system requirements for development tools #pre-check
@@ -60,6 +61,7 @@ files/
 ```
 
 ### languages.yml
+
 ```yaml
 # [language] Install Python with pip and virtual environment tools #python
 # [language] Install Node.js with npm and yarn package managers #nodejs
@@ -72,6 +74,7 @@ files/
 ```
 
 ### editors.yml
+
 ```yaml
 # [editor] Install and configure Neovim with plugins #neovim
 # [editor] Setup Vim with essential plugins and configuration #vim
@@ -82,6 +85,7 @@ files/
 ```
 
 ### version-control.yml
+
 ```yaml
 # [vcs] Configure Git with user information and aliases #git-config
 # [vcs] Install Git GUI tools (gitk, git-gui) #git-gui
@@ -91,6 +95,7 @@ files/
 ```
 
 ### containers.yml
+
 ```yaml
 # [container] Install Docker and Docker Compose #docker
 # [container] Configure Docker daemon settings #docker-config
@@ -101,6 +106,7 @@ files/
 ```
 
 ### databases.yml
+
 ```yaml
 # [database] Install PostgreSQL client tools #postgresql
 # [database] Install MySQL/MariaDB client tools #mysql
@@ -110,6 +116,7 @@ files/
 ```
 
 ### productivity.yml
+
 ```yaml
 # [tool] Install terminal multiplexer (tmux/screen) #multiplexer
 # [tool] Install file managers (ranger, nnn) #file-managers
@@ -120,6 +127,7 @@ files/
 ```
 
 ### shell.yml
+
 ```yaml
 # [shell] Install and configure Zsh shell #zsh
 # [shell] Install Oh My Zsh framework #oh-my-zsh
@@ -177,24 +185,28 @@ install_fzf: true
 ## Key Features
 
 ### Language Support
+
 - [feature] Multiple programming language runtimes #multi-language
 - [feature] Package managers for each language ecosystem #package-managers
 - [feature] Language servers for IDE-like features #intellisense
 - [feature] Code formatting and linting tools #code-quality
 
 ### Editor Configuration
+
 - [feature] Modern text editors with plugin ecosystems #modern-editors
 - [feature] Syntax highlighting and code completion #syntax-support
 - [feature] Integrated debugging capabilities #debugging
 - [feature] Project navigation and file management #navigation
 
 ### Development Workflow
+
 - [feature] Version control integration and automation #vcs-integration
 - [feature] Container-based development environments #containerization
 - [feature] Database access and management tools #database-access
 - [feature] Terminal productivity enhancements #terminal-productivity
 
 ### Shell Enhancement
+
 - [feature] Modern shell with advanced features #modern-shell
 - [feature] Intelligent command completion #completion
 - [feature] File and directory navigation improvements #navigation
@@ -225,7 +237,7 @@ install_fzf: true
 
 ## Relations
 
-- depends_on [[Base System Role]]
-- integrates_with [[Terminal Configuration Role]]
-- complements [[i3 Window Manager Role]]
-- enables [[Software Development Workflow]]
+- depends_on \[[Base System Role]\]
+- integrates_with \[[Terminal Configuration Role]\]
+- complements \[[i3 Window Manager Role]\]
+- enables \[[Software Development Workflow]\]

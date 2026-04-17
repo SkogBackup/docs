@@ -3,7 +3,9 @@ name: m-implement-array-unique
 branch: feature/m-implement-array-unique
 status: pending
 created: 2025-11-14
-submodules: [list of git submodules affected (delete if not super-repo)]
+submodules:
+  - list of git submodules affected (delete if not super-repo)
+permalink: skogai/skills/skogai-jq/tasks/m-implement-array-unique
 ---
 
 # [Human-Readable Title]

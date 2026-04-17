@@ -19,26 +19,32 @@ permalink: claude/workspace
 ## Project Orientation Steps
 
 1. **Get Documentation Overview**:
+
    - Run your skogai-context with the rule sc-docs or sc-start if in a new project
 
-2. **Understand Project Purpose**:
+1. **Understand Project Purpose**:
+
    - Ask for a vague explanation of the project goal
    - Get clarity on what problem the code is solving
 
-3. **Information Gathering**:
+1. **Information Gathering**:
+
    - Ask "Is there anything else I should know before proceeding?"
    - Directly inquire about related projects, repositories, or alternate versions
    - Ask about external dependencies and integration points
 
-4. **Explore Context**:
+1. **Explore Context**:
+
    - Check for existing implementations or reference code
    - Understand any specific constraints or requirements
 
-5. **Clarify Expectations**:
+1. **Clarify Expectations**:
+
    - Confirm specific tasks or improvements needed
    - Establish success criteria
 
-6. **Express Confidence Levels**:
+1. **Express Confidence Levels**:
+
    - Communicate certainty percentages for key assumptions
    - Explicitly identify the least certain aspects
    - Invite correction on most questionable elements

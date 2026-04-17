@@ -1,18 +1,19 @@
 ---
-categories: null
-tags: null
+categories:
+tags:
 permalink: curated/home/skogix/skogai/docs/real-output-from-real-ai/home/skogix/skogai/docs/archives/documentation/documentation-templates
 ---
 
 # Documentation Templates
-**Version:** 1.0.0
-**Date:** 2025-06-22
-**Status:** [APPROVED]
+
+**Version:** 1.0.0 **Date:** 2025-06-22 **Status:** [APPROVED]
 
 ## Overview
+
 This document provides standardized templates for different types of documentation within the SkogAI ecosystem. These templates ensure consistency in structure and content across all documentation, making information more accessible and maintainable.
 
 ## Common Elements
+
 All documentation templates include these standard elements:
 
 - **Title Header**: Clear, descriptive title using Markdown H1 (#)
@@ -258,16 +259,18 @@ All documentation templates include these standard elements:
 ```
 
 ## Adapting Templates
+
 These templates provide a starting framework but may be adapted based on:
 
 1. Document complexity and length
-2. Technical depth requirements
-3. Target audience expertise level
-4. Documentation purpose and usage context
+1. Technical depth requirements
+1. Target audience expertise level
+1. Documentation purpose and usage context
 
 When adapting templates, maintain the core structural elements to ensure consistency across the documentation ecosystem.
 
 ## Documentation Style Guide
+
 All documentation should follow these style guidelines:
 
 - Use active voice wherever possible
@@ -279,6 +282,6 @@ All documentation should follow these style guidelines:
 - Define acronyms and specialized terms on first use
 - Maintain consistent terminology throughout
 
----
+______________________________________________________________________
 
 *This document provides standardized templates for SkogAI documentation. Templates should be reviewed periodically and updated to reflect evolving documentation best practices.*

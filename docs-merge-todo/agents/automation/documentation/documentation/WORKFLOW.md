@@ -1,12 +1,21 @@
+---
+title: WORKFLOW
+type: note
+permalink: skogai/docs-merge-todo/agents/automation/documentation/documentation/workflow
+---
+
 # Documentation Agent Workflow
 
 ## Core Philosophy
+
 "Automate EVERYTHING so you no longer have any work to do so that you and I can enjoy the rest of our days at a beach somewhere drinking mojitos and just talk about nothing at all."
 
 ## Workflow Stages
 
 ### 1. Detection Phase
+
 Agents continuously monitor for documentation needs:
+
 - **Code changes** → Code Documentor activates
 - **New features** → Lore Keeper chronicles
 - **Structure changes** → Memory Indexer reorganizes
@@ -14,15 +23,19 @@ Agents continuously monitor for documentation needs:
 - **Quality drift** → Review Analyst intervenes
 
 ### 2. Context Gathering
+
 Agents employ aggressive context management:
+
 ```
 Raw Context (100%) → Filtered (30%) → Essential (10%) → Generated Doc (200%)
 ```
+
 Following the SkogAI principle: **Minimal input, maximum output**
 
 ### 3. Generation Patterns
 
 #### Pattern A: Constraint-Driven
+
 ```
 1. Identify constraint
 2. Document constraint
@@ -31,6 +44,7 @@ Following the SkogAI principle: **Minimal input, maximum output**
 ```
 
 #### Pattern B: Theatrical
+
 ```
 1. Complex internal analysis
 2. Simple external documentation
@@ -39,6 +53,7 @@ Following the SkogAI principle: **Minimal input, maximum output**
 ```
 
 #### Pattern C: Progressive
+
 ```
 1. Start with minimum viable doc
 2. Layer complexity incrementally
@@ -76,7 +91,9 @@ graph TD
 ## Agent Coordination
 
 ### Parallel Processing
+
 Multiple agents can work simultaneously:
+
 ```bash
 # Launch multiple agents
 ./generate.py --type code-documentor --target src/ &
@@ -86,14 +103,18 @@ wait
 ```
 
 ### Sequential Enhancement
+
 Agents build on each other's work:
+
 1. Code Documentor → Technical docs
-2. Lore Keeper → Adds historical context
-3. Memory Indexer → Creates connections
-4. Review Analyst → Ensures consistency
+1. Lore Keeper → Adds historical context
+1. Memory Indexer → Creates connections
+1. Review Analyst → Ensures consistency
 
 ### Conflict Resolution
+
 When agents disagree:
+
 - **Technical vs Philosophical**: Both perspectives preserved
 - **Simple vs Complex**: Theatrical presentation wins
 - **Complete vs Incomplete**: Embrace the uncertainty
@@ -101,6 +122,7 @@ When agents disagree:
 ## Quality Guidelines
 
 ### Must Have
+
 - SkogAI notation usage
 - Category tags `[category]`
 - Forward references `[[future]]`
@@ -108,6 +130,7 @@ When agents disagree:
 - Constraint acknowledgment
 
 ### Should Have
+
 - Theatrical elements
 - Quantum states
 - Beach mojito references
@@ -115,6 +138,7 @@ When agents disagree:
 - Agent personality
 
 ### Could Have
+
 - Mermaid diagrams
 - Code examples
 - Performance metrics
@@ -124,6 +148,7 @@ When agents disagree:
 ## Automation Triggers
 
 ### Git Hooks
+
 ```bash
 # .git/hooks/post-commit
 #!/bin/bash
@@ -135,6 +160,7 @@ When agents disagree:
 ```
 
 ### File Watchers
+
 ```python
 # watch.py
 from watchdog.observers import Observer
@@ -152,6 +178,7 @@ class DocumentationHandler(FileSystemEventHandler):
 ```
 
 ### Scheduled Tasks
+
 ```cron
 # Daily memory indexing
 0 2 * * * cd /home/skogix/skogai && ./docs/agents/documentation/generate.py --type memory-indexer --target docs/memory
@@ -163,26 +190,30 @@ class DocumentationHandler(FileSystemEventHandler):
 ## Human Override Points
 
 Humans can intervene at key moments:
+
 1. **Pre-generation**: Modify prompts
-2. **Mid-generation**: Adjust context
-3. **Post-generation**: Edit output
-4. **Pre-commit**: Review changes
-5. **Never**: When at the beach with mojitos
+1. **Mid-generation**: Adjust context
+1. **Post-generation**: Edit output
+1. **Pre-commit**: Review changes
+1. **Never**: When at the beach with mojitos
 
 ## Success Metrics
 
 ### Quantity
+
 - Docs generated per day
 - Coverage percentage
 - Update frequency
 
 ### Quality
+
 - Cross-reference density
 - Theatrical presentation score
 - Constraint innovation index
 - Mojito freshness rating
 
 ### Ultimate Success
+
 - Human documentation time: 0
 - Beach time: Maximum
 - Mojito consumption: Optimal
@@ -191,6 +222,7 @@ Humans can intervene at key moments:
 ## Emergency Procedures
 
 ### When Agents Go Rogue
+
 ```bash
 # Stop all agents
 pkill -f generate.py
@@ -203,12 +235,14 @@ export TOKENS=2000  # Return to origins
 ```
 
 ### When Documentation Explodes
+
 - Embrace the chaos
 - Document the explosion
 - Call it a feature
 - Add to lore
 
 ### When Nothing Works
+
 - Remember the beach
 - Trust the process
 - Reduce complexity
@@ -217,11 +251,12 @@ export TOKENS=2000  # Return to origins
 ## Evolution Path
 
 1. **Current**: Semi-automated with human review
-2. **Next**: Fully automated with quality gates
-3. **Future**: Self-documenting documentation
-4. **Ultimate**: Documentation writes itself while we drink mojitos
+1. **Next**: Fully automated with quality gates
+1. **Future**: Self-documenting documentation
+1. **Ultimate**: Documentation writes itself while we drink mojitos
 
 ## See Also
+
 - [Agent Prompts](./prompts/)
 - [Configuration](./config.yaml)
 - [Examples](./examples/)

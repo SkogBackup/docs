@@ -1,3 +1,9 @@
+---
+title: differential-documentation-engine
+type: note
+permalink: skogai/skills/skogai-project-lifecycle/references/differential-documentation-engine
+---
+
 # Differential Documentation Engine
 
 ## Purpose
@@ -32,6 +38,7 @@ From actual testing:
 **Executable prompt:** `@../templates/differential-docs.yaml`
 
 **Usage:**
+
 ```bash
 skogcli prompt run differential-docs \
   --topic="Topic to document" \
@@ -55,8 +62,8 @@ Or provide inputs directly to the YAML prompt template.
 For informal use, just ask yourself:
 
 1. "What would I write with full context?"
-2. "What would Claude write knowing nothing?"
-3. "What's the difference?"
+1. "What would Claude write knowing nothing?"
+1. "What's the difference?"
 
 ### Iterative Pruning
 
@@ -73,9 +80,9 @@ Each pass finds cruft the previous pass missed.
 To test if documentation is sufficiently pruned:
 
 1. Give the pruned doc to a fresh Claude session
-2. Ask it to expand/implement
-3. If it can do so correctly → docs are good
-4. If it gets confused → you pruned something non-inferable (add it back)
+1. Ask it to expand/implement
+1. If it can do so correctly → docs are good
+1. If it gets confused → you pruned something non-inferable (add it back)
 
 ## Related
 

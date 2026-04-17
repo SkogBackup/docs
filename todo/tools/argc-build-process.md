@@ -1,9 +1,15 @@
 ---
-title: "argc Build Process"
-description: "Comprehensive documentation on the argc build system for SkogAI tools and agents"
-date: "2023-11-06"
-tags: ["argc", "build", "tools", "agents", "llm-functions"]
-status: "published"
+title: argc Build Process
+description: Comprehensive documentation on the argc build system for SkogAI tools and agents
+date: '2023-11-06'
+tags:
+  - argc
+  - build
+  - tools
+  - agents
+  - llm-functions
+status: published
+permalink: skogai/todo/tools/argc-build-process
 ---
 
 # The argc Build Process
@@ -19,8 +25,8 @@ The `argc build` command transforms annotated script files in the `tools/` and `
 Before running the build process, you need:
 
 1. The llm-functions framework installed as a Git submodule at `/home/skogix/skogai/tools`
-2. Scripts with proper argc annotations in the `tools/tools/` directory
-3. Agent configurations in the `tools/agents/` directory
+1. Scripts with proper argc annotations in the `tools/tools/` directory
+1. Agent configurations in the `tools/agents/` directory
 
 ## Configuration Files
 
@@ -61,11 +67,11 @@ todo
 When running `argc build`, the following steps occur:
 
 1. The system reads `tools.txt` and `agents.txt` to determine what to build
-2. For each tool in `tools.txt`:
+1. For each tool in `tools.txt`:
    - Parses the annotations in the script file
    - Generates a wrapper script in the `bin/` directory
    - Adds the function definition to the main `functions.json`
-3. For each agent in `agents.txt`:
+1. For each agent in `agents.txt`:
    - Reads the agent's `tools.txt` to determine which tools it needs
    - Generates an agent-specific `functions.json` in the agent's directory
    - Creates a wrapper script for the agent in the `bin/` directory
@@ -147,6 +153,7 @@ Each agent gets its own `functions.json` containing only the tools it needs, plu
 ### 3. Executable Wrappers
 
 The build process creates executable wrapper scripts in the `bin/` directory for both tools and agents. These wrappers handle:
+
 - Parameter validation
 - Input/output formatting
 - Error handling
@@ -248,6 +255,7 @@ To make these tools available in AIChat, run:
 ```
 
 This creates symbolic links from AIChat's functions directory to:
+
 - The main `functions.json` file
 - Agent-specific function definitions
 - Executable wrappers in the `bin/` directory
@@ -257,34 +265,34 @@ This creates symbolic links from AIChat's functions directory to:
 If the build fails, check for these common issues:
 
 1. **Missing Configuration Files**: Ensure both `tools.txt` and `agents.txt` exist
-2. **Invalid Tool Scripts**: Verify tool scripts have proper argc annotations
-3. **Permission Issues**: Check that you have write permissions in the `bin/` directory
-4. **Agent Configuration**: Ensure each agent has a valid `index.yaml` and `tools.txt`
-5. **Syntax Errors**: Look for errors in the annotations or script content
-6. **Missing Dependencies**: Verify all required dependencies are installed
+1. **Invalid Tool Scripts**: Verify tool scripts have proper argc annotations
+1. **Permission Issues**: Check that you have write permissions in the `bin/` directory
+1. **Agent Configuration**: Ensure each agent has a valid `index.yaml` and `tools.txt`
+1. **Syntax Errors**: Look for errors in the annotations or script content
+1. **Missing Dependencies**: Verify all required dependencies are installed
 
 ## Best Practices
 
 1. **Tool Organization**: Keep tools organized by functionality
-2. **Annotation Clarity**: Write clear descriptions and parameter documentation
-3. **Agent Specialization**: Create focused agents for specific tasks
-4. **Regular Rebuilding**: After any changes to tools or agents, rerun the build process
-5. **Version Control**: Keep track of changes to tool scripts and configurations
-6. **Incremental Building**: Use targeted build commands for faster iteration
-7. **Validation**: Run the check command before full builds to catch errors early
+1. **Annotation Clarity**: Write clear descriptions and parameter documentation
+1. **Agent Specialization**: Create focused agents for specific tasks
+1. **Regular Rebuilding**: After any changes to tools or agents, rerun the build process
+1. **Version Control**: Keep track of changes to tool scripts and configurations
+1. **Incremental Building**: Use targeted build commands for faster iteration
+1. **Validation**: Run the check command before full builds to catch errors early
 
 ## Understanding the JSON Schema
 
 The generated function definitions follow the OpenAI Function Calling schema, which consists of:
 
 1. **Name**: The function identifier used in calling
-2. **Description**: Explains what the function does
-3. **Parameters**: Structured as a JSON Schema object with:
+1. **Description**: Explains what the function does
+1. **Parameters**: Structured as a JSON Schema object with:
    - **Properties**: Each parameter with type and description
    - **Required**: Array listing which parameters are mandatory
 
 This schema ensures compatibility with various LLM function calling implementations, particularly AIChat and OpenAI-compatible interfaces.
 
----
+______________________________________________________________________
 
 By understanding the argc build process, you can effectively create, modify, and manage tools and agents in the SkogAI system, extending the capabilities of AIChat with custom functionality.

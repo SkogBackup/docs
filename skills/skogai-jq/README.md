@@ -1,3 +1,9 @@
+---
+title: README
+type: note
+permalink: skogai/skills/skogai-jq/readme
+---
+
 # jq-transforms
 
 Schema-driven JSON transformation library for AI agents.
@@ -173,22 +179,22 @@ jq-transforms/
 ## Adding New Transformations
 
 1. Create a new directory with the transformation name
-2. Create `transform.jq` with the jq code
-3. Create `schema.json` with the contract
-4. Create `test.sh` with test cases
-5. Create test input files as needed
-6. Run `./test-all.sh` to verify
+1. Create `transform.jq` with the jq code
+1. Create `schema.json` with the contract
+1. Create `test.sh` with test cases
+1. Create test input files as needed
+1. Run `./test-all.sh` to verify
 
 See existing transformations for examples.
 
 ## Design Principles
 
 1. **Schema-driven**: Every transformation has input/output/args schema
-2. **Test-first**: Tests show usage and verify behavior
-3. **Minimal**: Less code, fewer bugs, easier to understand
-4. **Composable**: Transformations chain via pipes
-5. **Direct**: No wrappers hiding what actually runs
-6. **Isolated**: Each transformation is self-contained
+1. **Test-first**: Tests show usage and verify behavior
+1. **Minimal**: Less code, fewer bugs, easier to understand
+1. **Composable**: Transformations chain via pipes
+1. **Direct**: No wrappers hiding what actually runs
+1. **Isolated**: Each transformation is self-contained
 
 ## Use Cases
 

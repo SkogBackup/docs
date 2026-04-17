@@ -1,3 +1,9 @@
+---
+title: comparisons
+type: note
+permalink: skogai/todo/persona/guides/comparisons
+---
+
 # Comparison of Character Creation Guides: AVAK's, kingbri's, and AliCat's Approaches
 
 After analyzing all three guides on AI character creation, here's a comprehensive comparison of their approaches, strengths, and potential applications for SkogAI's lorebook system:
@@ -68,11 +74,11 @@ Based on your description of using local models to parse logs, add important inf
 
 1. **Structure & Format**: Use kingbri's consolidated PList format with semicolon separators for efficiency, but organize content categories following AVAK's comprehensive trait classification
 
-2. **Technical Implementation**: Implement kingbri's recursive scanning approach for your log-parsing system, which would allow previously identified information to trigger searches for related concepts
+1. **Technical Implementation**: Implement kingbri's recursive scanning approach for your log-parsing system, which would allow previously identified information to trigger searches for related concepts
 
-3. **Dialogue Examples**: Follow AliCat's approach of using dialogue examples in lorebook entries to demonstrate how the character relates to specific concepts or information
+1. **Dialogue Examples**: Follow AliCat's approach of using dialogue examples in lorebook entries to demonstrate how the character relates to specific concepts or information
 
-4. **Lorebook Entry Format**:
+1. **Lorebook Entry Format**:
 
    ```
    {
@@ -92,7 +98,8 @@ Based on your description of using local models to parse logs, add important inf
    }
    ```
 
-5. **Log Parsing Strategy**:
+1. **Log Parsing Strategy**:
+
    - First pass: Identify key topics, concepts, and character references
    - Second pass: Group related information using the recursive scanning approach
    - Third pass: Format information into consolidated PLists with appropriate category tags
@@ -101,13 +108,13 @@ Based on your description of using local models to parse logs, add important inf
 This approach would allow your system to:
 
 1. Identify important information from logs efficiently
-2. Structure it in a token-optimized format
-3. Create connections between related concepts
-4. Implement a tiered system where more specific information is only included when directly relevant
+1. Structure it in a token-optimized format
+1. Create connections between related concepts
+1. Implement a tiered system where more specific information is only included when directly relevant
 
 The lorebook entry format you shared is already well-suited for this approach, particularly with its support for regex, selective logic, and recursive scanning. The key adaptation would be implementing the consolidated PList format within the "content" field rather than using a more verbose description.
 
---------
+______________________________________________________________________
 
 ## Comparison to AVAK's Guide
 
@@ -116,18 +123,18 @@ Both guides focus on creating consistent AI characters using PLists and Ali:Chat
 ### AVAK's Guide (First Document)
 
 1. **Structure**: Uses multiple separate PLists for different aspects of the character
-2. **Focus**: Emphasizes comprehensive character definition through detailed examples
-3. **Approach**: More descriptive and detailed, prioritizing character depth
-4. **Implementation**: Places PLists directly in character description
-5. **Examples**: Recommends 3-5 dialogue examples with extensive context
+1. **Focus**: Emphasizes comprehensive character definition through detailed examples
+1. **Approach**: More descriptive and detailed, prioritizing character depth
+1. **Implementation**: Places PLists directly in character description
+1. **Examples**: Recommends 3-5 dialogue examples with extensive context
 
 ### kingbri's MinimALIstic Guide (Second Document)
 
 1. **Structure**: Consolidates PLists with semicolon separators into a single entry
-2. **Focus**: Prioritizes token efficiency and optimization
-3. **Approach**: More technical, emphasizing how to reduce token count while preserving function
-4. **Implementation**: Places PLists in Author's Notes section
-5. **Examples**: Recommends 2-3 more concise dialogue examples
+1. **Focus**: Prioritizes token efficiency and optimization
+1. **Approach**: More technical, emphasizing how to reduce token count while preserving function
+1. **Implementation**: Places PLists in Author's Notes section
+1. **Examples**: Recommends 2-3 more concise dialogue examples
 
 ### Key Differences
 

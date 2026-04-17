@@ -3,10 +3,10 @@ title: Effective Documentation Patterns
 type: note
 permalink: skogai-memory/effective-documentation-patterns
 tags:
-- documentation
-- patterns
-- best-practices
-- guidelines
+  - documentation
+  - patterns
+  - best-practices
+  - guidelines
 ---
 
 # Effective Documentation Patterns
@@ -16,6 +16,7 @@ Extracted patterns and best practices for creating maintainable, discoverable, a
 ## Core Structure Pattern
 
 ### 1. Consistent Frontmatter
+
 ```yaml
 ---
 title: Clear Descriptive Title
@@ -29,6 +30,7 @@ tags:
 ```
 
 Every document needs:
+
 - **Clear title** that serves as the primary identifier for linking
 - **Type classification** (note, guide, reference, etc.)
 - **Stable permalink** for addressing even when files move
@@ -61,6 +63,7 @@ Connections to other documents...
 Use semantic categories that convey the type of information:
 
 **Domain-Specific Categories:**
+
 - `[principle]` - Fundamental concepts or rules
 - `[method]` - Approaches, techniques, procedures
 - `[technique]` - Specific implementation details
@@ -69,6 +72,7 @@ Use semantic categories that convey the type of information:
 - `[preference]` - Subjective choices or opinions
 
 **Technical Categories:**
+
 - `[tech]` - Technical implementation details
 - `[design]` - Architecture and design decisions
 - `[feature]` - Capabilities and functionality
@@ -81,11 +85,13 @@ Use semantic categories that convey the type of information:
 ```
 
 **Good Examples:**
+
 - `[principle] Coffee extraction follows predictable pattern: acids → sugars → bitter compounds #extraction_order`
 - `[technique] Water at 195-205°F (90-96°C) extracts optimal flavor compounds #temperature`
 - `[method] V60 produces very clean cup with excellent clarity of flavor #pourover`
 
 **Key Qualities:**
+
 - Start with actionable or descriptive category
 - State clear, specific information
 - Add relevant tags for searchability
@@ -98,22 +104,26 @@ Use semantic categories that convey the type of information:
 Use specific relation types that convey meaning:
 
 **Hierarchical Relations:**
+
 - `contains` - Parent contains child
 - `part_of` - Child is part of parent
 - `extends` - Builds upon or enhances
 
 **Dependency Relations:**
+
 - `requires` - Prerequisite relationship
 - `depends_on` - Technical dependency
 - `uses` - Utilizes or employs
 
 **Associative Relations:**
+
 - `affects` - Has impact on
 - `influenced_by` - Receives influence from
 - `pairs_with` - Complementary relationship
 - `relates_to` - General connection
 
 **Implementation Relations:**
+
 - `implements` - Realizes a specification
 - `demonstrates` - Shows example of
 - `enables` - Makes possible
@@ -133,6 +143,7 @@ Use specific relation types that convey meaning:
 ### 1. Progressive Disclosure
 
 Start with overview, then detail:
+
 - Brief summary in opening paragraph
 - Expanded overview section
 - Detailed subsections
@@ -158,6 +169,7 @@ Organize observations by subtopic:
 ### 3. Balance Theory and Practice
 
 Mix conceptual and practical information:
+
 - Scientific principles with practical techniques
 - Theory with real-world application
 - General rules with specific examples
@@ -167,6 +179,7 @@ Mix conceptual and practical information:
 ### 1. Hub Documents
 
 Create index/overview documents that:
+
 - Provide entry points to topic areas
 - List and link to related documents
 - Explain how components relate
@@ -193,26 +206,31 @@ Example: `coffee-knowledge-base.md` acts as hub for all coffee topics
 ### High-Quality Documentation Has:
 
 1. **Rich Observations** (5-10+ per document)
+
    - Multiple categories used
    - Specific, actionable information
    - Appropriate tags for discovery
 
-2. **Dense Relations** (3-5+ connections)
+1. **Dense Relations** (3-5+ connections)
+
    - Multiple relation types
    - Both hierarchical and associative links
    - Connections to different domains
 
-3. **Clear Structure**
+1. **Clear Structure**
+
    - Logical flow from general to specific
    - Grouped related information
    - Consistent formatting
 
-4. **Semantic Richness**
+1. **Semantic Richness**
+
    - Meaningful categories and relations
    - Descriptive tags
    - Context where valuable
 
-5. **Practical Value**
+1. **Practical Value**
+
    - Actionable information
    - Clear explanations
    - Real-world applicability
@@ -220,22 +238,27 @@ Example: `coffee-knowledge-base.md` acts as hub for all coffee topics
 ## Anti-Patterns to Avoid
 
 1. **Vague Observations**
+
    - ❌ `[info] Coffee is complex`
    - ✅ `[science] Coffee contains over 1,000 aroma compounds #chemistry`
 
-2. **Generic Relations**
+1. **Generic Relations**
+
    - ❌ `relates_to` everything
    - ✅ Specific relation types that convey meaning
 
-3. **Missing Context**
+1. **Missing Context**
+
    - ❌ Isolated facts without explanation
    - ✅ Facts with context and connections
 
-4. **Poor Organization**
+1. **Poor Organization**
+
    - ❌ Random observation order
    - ✅ Logical grouping by subtopic
 
-5. **Weak Linking**
+1. **Weak Linking**
+
    - ❌ Few or no connections
    - ✅ Rich web of semantic relations
 
@@ -252,8 +275,8 @@ Example: `coffee-knowledge-base.md` acts as hub for all coffee topics
 
 ## Relations
 
-- extracted_from [[Coffee Knowledge Base]]
-- complements [[Basic Memory Document Format]]
-- guides [[Documentation Writing Process]]
-- enables [[Knowledge Graph Construction]]
-- supports [[Semantic Search Capabilities]]
+- extracted_from \[[Coffee Knowledge Base]\]
+- complements \[[Basic Memory Document Format]\]
+- guides \[[Documentation Writing Process]\]
+- enables \[[Knowledge Graph Construction]\]
+- supports \[[Semantic Search Capabilities]\]

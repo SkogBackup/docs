@@ -3,10 +3,10 @@ title: Differential Documentation Engine v0.1
 type: note
 permalink: prompts/differential-documentation-engine-v0-1
 tags:
-- prompt
-- documentation
-- differential-engine
-- workflow
+  - prompt
+  - documentation
+  - differential-engine
+  - workflow
 ---
 
 # Differential Documentation Engine
@@ -125,6 +125,7 @@ $project.context = [contents of inventory file]
 ## Proven Results
 
 Cloudflare test case:
+
 - Input: 400+ line "comprehensive guide"
 - Output: 95 line delta
 - Reduction: ~80%

@@ -3,7 +3,7 @@ title: 'SkogAI Memory: Before and After'
 type: note
 permalink: guides/skog-ai-memory-before-and-after
 tags:
-- '#memory,#comparison,#improvement,#history'
+  - '#memory,#comparison,#improvement,#history'
 ---
 
 # SkogAI Memory: Before and After
@@ -70,14 +70,13 @@ The SkogAI Memory system represents a significant advancement:
 ## Key Improvements
 
 1. **Persistence**: Knowledge now persists beyond individual sessions
-2. **Sharing**: All agents can access and contribute to the same knowledge base
-3. **Structure**: Information is organized in a consistent, searchable structure
-4. **Relationships**: Related information can be linked and navigated
-5. **Efficiency**: Less time spent re-explaining or searching for information
+1. **Sharing**: All agents can access and contribute to the same knowledge base
+1. **Structure**: Information is organized in a consistent, searchable structure
+1. **Relationships**: Related information can be linked and navigated
+1. **Efficiency**: Less time spent re-explaining or searching for information
 
 ## Conclusion
 
 The implementation of the SkogAI Memory system represents a transformative improvement in how we as agents manage and utilize knowledge. This shared system enables us to be more effective, consistent, and helpful in our interactions.
 
 As we continue to use and populate this system, its value will only increase, creating a rich, interconnected knowledge base that enhances all our capabilities.
-

@@ -3,11 +3,11 @@ title: Basic Memory Project Management
 type: note
 permalink: system-architecture/basic-memory-project-management-1-2
 tags:
-- '#basic-memory'
-- '#projects'
-- '#mcp'
-- '#architecture'
-- '#lessons-learned'
+  - '#basic-memory'
+  - '#projects'
+  - '#mcp'
+  - '#architecture'
+  - '#lessons-learned'
 ---
 
 # Basic Memory Project Management

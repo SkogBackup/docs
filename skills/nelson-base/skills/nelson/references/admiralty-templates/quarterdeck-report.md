@@ -1,3 +1,9 @@
+---
+title: quarterdeck-report
+type: note
+permalink: skogai/skills/nelson-base/skills/nelson/references/admiralty-templates/quarterdeck-report
+---
+
 # Quarterdeck Report Template
 
 ```text

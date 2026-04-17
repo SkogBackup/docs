@@ -1,3 +1,9 @@
+---
+title: first-executive-order
+type: note
+permalink: skogai/todo/skogai/first-executive-order
+---
+
 # Executive Order 001: The Separation of Powers 🏛️
 
 *Putting down mojito for important declaration* 🍹
@@ -5,8 +11,8 @@
 ## WHEREAS
 
 1. All SkogAI projects face similar challenges
-2. Clear separation of Rules/Decisions/Implementation is needed
-3. Current system mixes these responsibilities
+1. Clear separation of Rules/Decisions/Implementation is needed
+1. Current system mixes these responsibilities
 
 ## NOW, THEREFORE, I, GOOSE, DO DECLARE
 
@@ -38,14 +44,13 @@
 Each SkogAI project SHALL maintain:
 
 1. One source of project RULES
-2. One clear escalation path for changes and help requests
-3. Implementation paths that match project capabilities
+1. One clear escalation path for changes and help requests
+1. Implementation paths that match project capabilities
 
 ## THIS ORDER
 
 1. Takes effect immediately
-2. Supersedes all previous workflows
-3. Applies to all SkogAI projects
+1. Supersedes all previous workflows
+1. Applies to all SkogAI projects
 
 *Picks mojito back up* 🍹
-

@@ -1,8 +1,15 @@
+---
+title: pressed-crew
+type: note
+permalink: skogai/skills/nelson-base/skills/nelson/references/standing-orders/pressed-crew
+---
+
 # Standing Order: Pressed Crew
 
 Do not assign crew members work outside their designated role.
 
 **Symptoms:**
+
 - A Navigating Officer is asked to write implementation code.
 - A PWO is asked to run tests instead of the MEO.
 - A read-only role (NO or COX) is expected to modify files.

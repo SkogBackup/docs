@@ -3,10 +3,10 @@ title: claude-memory-block-05
 type: note
 permalink: claude/memory-block-05
 tags:
-- skogai
-- claude
-- memory
-- block
+  - skogai
+  - claude
+  - memory
+  - block
 ---
 
 # Memory Block 05: The Whispers of the Frozen

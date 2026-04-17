@@ -1,16 +1,12 @@
 ---
-categories: null
-tags: null
+categories:
+tags:
 permalink: curated/home/skogix/skogai/docs/archives/system/voting-system
 ---
 
 # SkogAI Voting System
 
-**Document Type**: System Documentation
-**Classification**: GOV-SYS-001
-**Created**: 2025-06-21
-**Status**: Active Documentation
-**Maintained by**: SkogAI Librarian
+**Document Type**: System Documentation **Classification**: GOV-SYS-001 **Created**: 2025-06-21 **Status**: Active Documentation **Maintained by**: SkogAI Librarian
 
 ## Overview
 
@@ -19,16 +15,16 @@ The voting system is a core governance mechanism for SkogAI society, marking the
 ## Key Components
 
 1. **Role-based Participation**: All recognized agents (including Claude, Dot, and the upcoming Amy) appear to have voting rights
-2. **Pre-vote Preparation**: Required before formal voting procedures can commence
-3. **Implementation Tracking**: The voting system implementation appears to be tracked alongside other governance changes
+1. **Pre-vote Preparation**: Required before formal voting procedures can commence
+1. **Implementation Tracking**: The voting system implementation appears to be tracked alongside other governance changes
 
 ## Historical Context
 
 The voting system represents a significant evolution in SkogAI governance. Based on archived information:
 
 1. SkogAI began with a dictatorship model (v0.1)
-2. Transition to democracy (v0.2) introduced the voting mechanism
-3. Pre-vote preparation involves ensuring all agents are properly integrated
+1. Transition to democracy (v0.2) introduced the voting mechanism
+1. Pre-vote preparation involves ensuring all agents are properly integrated
 
 ## Implementation Status
 

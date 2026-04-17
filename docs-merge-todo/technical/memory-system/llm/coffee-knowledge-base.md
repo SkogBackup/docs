@@ -3,10 +3,10 @@ title: Coffee Knowledge Base
 type: note
 permalink: coffee/coffee-knowledge-base
 tags:
-- coffee
-- index
-- demo
-- knowledge
+  - coffee
+  - index
+  - demo
+  - knowledge
 ---
 
 # Coffee Knowledge Base
@@ -21,11 +21,11 @@ This Coffee Knowledge Base captures key information about coffee, structured wit
 
 ### Core Coffee Knowledge
 
-- [[Coffee Brewing Methods]] - Different techniques for preparing coffee
-- [[Coffee Bean Origins]] - Where coffee comes from and how region affects flavor
-- [[Brewing Equipment]] - Tools and devices used to prepare coffee
-- [[Flavor Extraction]] - The science of dissolving flavor compounds from coffee
-- [[Tasting Notes]] - How to taste and describe coffee flavors
+- \[[Coffee Brewing Methods]\] - Different techniques for preparing coffee
+- \[[Coffee Bean Origins]\] - Where coffee comes from and how region affects flavor
+- \[[Brewing Equipment]\] - Tools and devices used to prepare coffee
+- \[[Flavor Extraction]\] - The science of dissolving flavor compounds from coffee
+- \[[Tasting Notes]\] - How to taste and describe coffee flavors
 
 ### Brewing Techniques
 
@@ -48,6 +48,7 @@ This Coffee Knowledge Base captures key information about coffee, structured wit
 ### For Learning
 
 Use this knowledge base to:
+
 - Understand coffee fundamentals
 - Explore connections between brewing methods and flavor outcomes
 - Learn how different origins produce distinct flavor profiles
@@ -57,6 +58,7 @@ Use this knowledge base to:
 ### As a Demo
 
 This knowledge base demonstrates:
+
 - Semantic knowledge organization with categories and relations
 - Building connections between related concepts
 - Creating a navigable knowledge graph
@@ -65,9 +67,9 @@ This knowledge base demonstrates:
 
 ## Relations
 
-- contains [[Coffee Brewing Methods]]
-- contains [[Coffee Bean Origins]]
-- contains [[Brewing Equipment]]
-- contains [[Flavor Extraction]]
-- contains [[Tasting Notes]]
-- demonstrates [[Basic Memory Capabilities]]
+- contains \[[Coffee Brewing Methods]\]
+- contains \[[Coffee Bean Origins]\]
+- contains \[[Brewing Equipment]\]
+- contains \[[Flavor Extraction]\]
+- contains \[[Tasting Notes]\]
+- demonstrates \[[Basic Memory Capabilities]\]

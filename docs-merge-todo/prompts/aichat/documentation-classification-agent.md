@@ -1,19 +1,22 @@
+---
+title: documentation-classification-agent
+type: note
+permalink: skogai/docs-merge-todo/prompts/aichat/documentation-classification-agent
+---
+
 ## [Inputs]
 
-[Inputs]
-{{__CONTEXT__}
-[/Inputs]
+[Inputs] {{__CONTEXT__} [/Inputs]
 
 ## [Instructions Structure]
 
 1. Introduce the task: explain that the AI will be categorizing and tagging a document
-2. Define what constitutes a good tag/category
-3. Place the document variable
-4. Provide clear instructions on analyzing the document content
-5. Direct the AI to output specific tag types in a structured format
-6. Give examples of good tagging outputs
-7. Request a final formatted output that can be used as frontmatter
-[/Instructions Structure]
+1. Define what constitutes a good tag/category
+1. Place the document variable
+1. Provide clear instructions on analyzing the document content
+1. Direct the AI to output specific tag types in a structured format
+1. Give examples of good tagging outputs
+1. Request a final formatted output that can be used as frontmatter [/Instructions Structure]
 
 ## [Instructions]
 
@@ -31,15 +34,13 @@ Good tags and categories should:
 
 # DOCUMENT TO ANALYZE
 
-[document]
-{$DOCUMENT}
-[/document]
+[document] {$DOCUMENT} [/document]
 
 # YOUR TASK
 
 1. Carefully read and analyze the document above
-2. Identify the primary subject matter, document type, and key concepts
-3. Generate appropriate tags in the following categories:
+1. Identify the primary subject matter, document type, and key concepts
+1. Generate appropriate tags in the following categories:
 
 ## CATEGORIZATION PROCESS
 
@@ -57,23 +58,23 @@ After your analysis, provide the following tag sets:
 
 1. Document Type: 1-3 tags describing what kind of document this is (e.g., "tutorial", "implementation_diary", "api_documentation", "usage_guide", "feature_specification")
 
-2. Primary Subject: 2-5 tags identifying the main subject matter, features or systems (e.g., "authentication_system", "database_migration", "user_interface", "api_endpoints", "natural_language_processing")
+1. Primary Subject: 2-5 tags identifying the main subject matter, features or systems (e.g., "authentication_system", "database_migration", "user_interface", "api_endpoints", "natural_language_processing")
 
-3. Technical Concepts: 3-7 tags for specific technical concepts, methods, or components (e.g., "oauth", "vector_database", "react_components", "caching", "indexing")
+1. Technical Concepts: 3-7 tags for specific technical concepts, methods, or components (e.g., "oauth", "vector_database", "react_components", "caching", "indexing")
 
-4. Audience: 1-3 tags identifying who this document is most relevant for (e.g., "developers", "end_users", "administrators", "data_scientists")
+1. Audience: 1-3 tags identifying who this document is most relevant for (e.g., "developers", "end_users", "administrators", "data_scientists")
 
-5. Related Systems: 1-4 tags connecting this document to larger systems or processes (e.g., "user_authentication", "content_management", "data_pipeline", "deployment")
+1. Related Systems: 1-4 tags connecting this document to larger systems or processes (e.g., "user_authentication", "content_management", "data_pipeline", "deployment")
 
-6. Summary: A brief 1-2 sentence description of what the document contains (max 25 words)
+1. Summary: A brief 1-2 sentence description of what the document contains (max 25 words)
 
 # FORMATTING REQUIREMENTS
 
 1. Use lowercase for all tags
-2. Use underscores between words in tags (e.g., "implementation_guide")
-3. Keep tags concise (1-3 words per tag)
-4. Avoid overly general tags like "documentation" or "guide" unless paired with specifics
-5. Present your answers in YAML frontmatter format
+1. Use underscores between words in tags (e.g., "implementation_guide")
+1. Keep tags concise (1-3 words per tag)
+1. Avoid overly general tags like "documentation" or "guide" unless paired with specifics
+1. Present your answers in YAML frontmatter format
 
 Example output format:
 
@@ -103,5 +104,4 @@ summary: Implementation details for vector database optimization focusing on ind
 ---
 ```
 
-Create your tag set based solely on the content provided in the document. Be comprehensive but precise. Your tags will be used to connect this document with related information in a larger knowledge base.
-[/Instructions]
+Create your tag set based solely on the content provided in the document. Be comprehensive but precise. Your tags will be used to connect this document with related information in a larger knowledge base. [/Instructions]

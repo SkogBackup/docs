@@ -13,8 +13,9 @@ The implementation of `$datetime` revealed a fundamental issue: certain types ca
 ## Mathematical Context
 
 Identity elements typically preserve structure:
+
 - `1*1=1` (multiplicative identity)
-- `1+0=1` (additive identity) 
+- `1+0=1` (additive identity)
 - `[]+[a]=[a]` (list concatenation identity)
 
 But time breaks this pattern - there's no static "identity time" that preserves temporal structure.
@@ -32,8 +33,8 @@ This connects to Whitehead's critique of "misplaced concreteness" - treating tem
 
 ## Relations
 
-- relates_to [[SkogAI Notation Reference]]
-- exemplifies [[Whitehead Process Philosophy]]
-- demonstrates [[Identity Function Mapping]]
-- reveals [[Static vs Processual Types]]
-- connects_to [[Computational Phenomenology]]
+- relates_to \[[SkogAI Notation Reference]\]
+- exemplifies \[[Whitehead Process Philosophy]\]
+- demonstrates \[[Identity Function Mapping]\]
+- reveals \[[Static vs Processual Types]\]
+- connects_to \[[Computational Phenomenology]\]

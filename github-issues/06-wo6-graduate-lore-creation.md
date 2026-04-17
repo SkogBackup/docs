@@ -1,6 +1,7 @@
 ---
-title: "WO-6: Graduate lore-creation from skogai-wip"
+title: 'WO-6: Graduate lore-creation from skogai-wip'
 labels: skills, cleanup, phase-1
+permalink: skogai/github-issues/06-wo6-graduate-lore-creation
 ---
 
 ## Summary
@@ -10,10 +11,12 @@ labels: skills, cleanup, phase-1
 ## Context
 
 **`skogai-wip/` contains:**
+
 - `lore-creation/SKILL.md` — the only file in the entire WIP tree (160 lines)
 - No other files, subdirectories, README, or CLAUDE.md for the WIP container
 
 **`lore-creation/SKILL.md` contents:**
+
 - Frontmatter: name `lore-creation`, allowed-tools: Bash, Read, Write, Edit
 - "When to Use" section: knowledge documentation, knowledge bases, complex systems
 - "Lore Structure" section: markdown template (Overview, Key Concepts, Details, Examples, References)

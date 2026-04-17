@@ -87,10 +87,10 @@ The integration created a rich web of connections between:
 ## Methodology Applied
 
 1. **Content Analysis**: Identified key concepts and relationships within each note
-2. **Context Mapping**: Found relevant entities in broader knowledge base through targeted searches
-3. **Observation Categorization**: Added meaningful categorized observations with tags
-4. **Relation Creation**: Established bidirectional connections using appropriate relation types
-5. **Semantic Enhancement**: Elevated isolated information to interconnected knowledge
+1. **Context Mapping**: Found relevant entities in broader knowledge base through targeted searches
+1. **Observation Categorization**: Added meaningful categorized observations with tags
+1. **Relation Creation**: Established bidirectional connections using appropriate relation types
+1. **Semantic Enhancement**: Elevated isolated information to interconnected knowledge
 
 ## Result
 
@@ -113,12 +113,12 @@ This transformation demonstrates how Basic Memory's knowledge graph approach can
 
 ## Relations
 
-- documents [[argc CLI Framework]]
-- documents [[skogcontext Architecture: Static vs Agent Tools Pattern]]
-- documents [[update-claude-md-before-git-staging]]
-- documents [[2025-07-31-claude.md]]
-- enhances [[SkogAI Technical Architecture]]
-- enhances [[SkogAI Agent Family]]
-- enhances [[SkogAI Notation Reference]]
-- demonstrates [[Basic Memory Document Format]]
-- applies [[SkogAI Memory Guidelines and Standards]]
+- documents \[[argc CLI Framework]\]
+- documents \[[skogcontext Architecture: Static vs Agent Tools Pattern]\]
+- documents \[[update-claude-md-before-git-staging]\]
+- documents \[[2025-07-31-claude.md]\]
+- enhances \[[SkogAI Technical Architecture]\]
+- enhances \[[SkogAI Agent Family]\]
+- enhances \[[SkogAI Notation Reference]\]
+- demonstrates \[[Basic Memory Document Format]\]
+- applies \[[SkogAI Memory Guidelines and Standards]\]

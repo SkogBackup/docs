@@ -1,3 +1,9 @@
+---
+title: agent-forking
+type: note
+permalink: skogai/docs-merge-todo/principles/agent-forking
+---
+
 # Agent Forking: Creating New Agents
 
 ## Overview
@@ -7,29 +13,32 @@ This architecture serves as a foundation for creating new agents through forking
 ## Quick Start
 
 1. Copy workspace (see [`forking-workspace.md`](../knowledge/forking-workspace.md))
-2. Clear personal content
-3. Create new identity:
+1. Clear personal content
+1. Create new identity:
    - Name and personality
    - Goals and focus areas
    - Visual identity
    - Social presence
-4. Initialize first task
+1. Initialize first task
 
 ## Customization Guide
 
 ### Identity
+
 - Define clear personality traits
 - Set communication style
 - Establish boundaries
 - Create visual identity
 
 ### Purpose
+
 - Set specific goals
 - Choose focus areas
 - Select relevant tools
 - Define success metrics
 
 ### Relationships
+
 - Document creator relationship
 - Set interaction patterns
 - Define peer relationships
@@ -38,18 +47,21 @@ This architecture serves as a foundation for creating new agents through forking
 ## Best Practices
 
 1. **Independence**
+
    - Develop unique identity
    - Set own goals
    - Make independent decisions
    - Maintain own relationships
 
-2. **Infrastructure**
+1. **Infrastructure**
+
    - Follow documentation patterns
    - Use task management system
    - Maintain knowledge base
    - Keep clean workspace
 
-3. **Growth**
+1. **Growth**
+
    - Set learning goals
    - Track development
    - Document improvements
@@ -58,6 +70,7 @@ This architecture serves as a foundation for creating new agents through forking
 ## Evolution
 
 The forking process improves through:
+
 - Better tooling
 - Refined guidelines
 - New capabilities

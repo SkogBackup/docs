@@ -1,9 +1,15 @@
 ---
-title: "llm-functions Framework"
-description: "Comprehensive documentation on the llm-functions framework integrated in SkogAI"
-date: "2023-11-06"
-tags: ["llm-functions", "framework", "tools", "agents", "submodule"]
-status: "published"
+title: llm-functions Framework
+description: Comprehensive documentation on the llm-functions framework integrated in SkogAI
+date: '2023-11-06'
+tags:
+  - llm-functions
+  - framework
+  - tools
+  - agents
+  - submodule
+status: published
+permalink: skogai/todo/intefaces/aichat/llm-functions
 ---
 
 # llm-functions Framework
@@ -19,6 +25,7 @@ The framework is built around three fundamental concepts:
 ### 1. Tools
 
 Individual executable components that perform specific tasks:
+
 - Single-purpose functions with clearly defined inputs and outputs
 - Each tool focuses on one capability (file operations, web search, data processing)
 - Can be implemented in various languages (Bash, Python, JavaScript)
@@ -27,6 +34,7 @@ Individual executable components that perform specific tasks:
 ### 2. Agents
 
 Higher-level components that coordinate multiple tools:
+
 - Can combine multiple tools into cohesive workflows
 - Provide specialized environments for specific domains
 - Define custom interfaces tailored to particular use cases
@@ -35,6 +43,7 @@ Higher-level components that coordinate multiple tools:
 ### 3. The argc System
 
 The command-line interface and build system that ties everything together:
+
 - Processes annotations to generate standardized interfaces
 - Builds wrappers that handle parameter validation and execution
 - Provides a consistent execution environment
@@ -76,6 +85,7 @@ The llm-functions framework is maintained as a Git submodule with a dual remote 
 - **upstream** - Points to the original repository (`sigoden/llm-functions`)
 
 This setup enables SkogAI to:
+
 - Track and incorporate upstream changes
 - Maintain SkogAI-specific modifications
 - Contribute improvements back to the original project
@@ -94,8 +104,8 @@ The repository follows a structured branch organization:
 The framework integrates with AIChat through:
 
 1. **Function Definitions** - JSON schema files that AIChat can consume
-2. **Symbolic Links** - Connect AIChat's functions directory to the tool wrappers
-3. **Execution Bridge** - AIChat can execute the tools and capture their outputs
+1. **Symbolic Links** - Connect AIChat's functions directory to the tool wrappers
+1. **Execution Bridge** - AIChat can execute the tools and capture their outputs
 
 ## Building and Using Tools
 
@@ -104,38 +114,37 @@ The framework integrates with AIChat through:
 The build process converts annotated scripts into executable tools:
 
 1. **Read Configuration**:
+
    ```bash
    # Lists of tools and agents to build
    tools.txt
    agents.txt
    ```
 
-2. **Parse Annotations**:
-   Extracts interface definitions from structured comments
+1. **Parse Annotations**: Extracts interface definitions from structured comments
 
-3. **Generate Wrappers**:
-   Creates executable scripts in the `bin/` directory
+1. **Generate Wrappers**: Creates executable scripts in the `bin/` directory
 
-4. **Create Function Definitions**:
-   Produces `functions.json` files that follow the OpenAI function calling schema
+1. **Create Function Definitions**: Produces `functions.json` files that follow the OpenAI function calling schema
 
 ### Running Tools
 
 Tools can be executed in several ways:
 
 1. **Direct Execution**:
+
    ```bash
    cd /home/skogix/skogai/tools
    ./bin/tool_name "parameter" --option=value
    ```
 
-2. **Using argc-tool.sh**:
+1. **Using argc-tool.sh**:
+
    ```bash
    ./scripts/argc-tool.sh run@tool tool_name "parameter" --option=value
    ```
 
-3. **Via AIChat**:
-   AIChat uses function calling to invoke tools based on conversational context
+1. **Via AIChat**: AIChat uses function calling to invoke tools based on conversational context
 
 ### Linking to AIChat
 
@@ -146,6 +155,7 @@ To make tools available in AIChat:
 ```
 
 This creates symbolic links from AIChat's functions directory to:
+
 - The main `functions.json` file
 - Individual agent function definitions
 - Wrapper scripts in the `bin/` directory
@@ -155,23 +165,27 @@ This creates symbolic links from AIChat's functions directory to:
 ### Creating a New Tool
 
 1. **Create the script file**:
+
    ```bash
    ./scripts/argc-tool.sh create@tool my-new-tool
    ```
 
-2. **Edit the annotations and implementation**:
+1. **Edit the annotations and implementation**:
+
    ```bash
    # @description My custom tool
    # @param input Input parameter
    # @option --format=text[text,json] Output format
    ```
 
-3. **Add to tools.txt**:
+1. **Add to tools.txt**:
+
    ```
    my-new-tool.sh
    ```
 
-4. **Build and test**:
+1. **Build and test**:
+
    ```bash
    ./scripts/argc-tool.sh build
    ./bin/my-new-tool "test input" --format=json
@@ -180,28 +194,33 @@ This creates symbolic links from AIChat's functions directory to:
 ### Creating a New Agent
 
 1. **Create the agent directory**:
+
    ```bash
    mkdir -p agents/my-agent
    ```
 
-2. **Create configuration files**:
+1. **Create configuration files**:
+
    ```bash
    # index.yaml - Agent configuration
    # tools.txt - List of tools to include
    # README.md - Documentation
    ```
 
-3. **Add agent-specific tools** (optional):
+1. **Add agent-specific tools** (optional):
+
    ```bash
    # tools.sh, tools.py, or tools.js file with agent-specific functionality
    ```
 
-4. **Add to agents.txt**:
+1. **Add to agents.txt**:
+
    ```
    my-agent
    ```
 
-5. **Build and test**:
+1. **Build and test**:
+
    ```bash
    ./scripts/argc-tool.sh build
    ./bin/my-agent "test query"
@@ -272,36 +291,36 @@ The framework can be extended in several ways:
 Support for new programming languages requires:
 
 1. **Annotation Parser** - To extract interface definitions
-2. **Execution Wrapper** - To handle parameters and execution
-3. **Output Formatter** - To standardize tool outputs
+1. **Execution Wrapper** - To handle parameters and execution
+1. **Output Formatter** - To standardize tool outputs
 
 ### Custom Agents
 
 Advanced agents can be created using:
 
 1. **Custom Tools** - Agent-specific tools written in agent directories
-2. **Input Processors** - Special handlers for agent inputs
-3. **Output Formatters** - Customize how agent results are presented
-4. **Chain Execution** - Define workflows that combine multiple tools
+1. **Input Processors** - Special handlers for agent inputs
+1. **Output Formatters** - Customize how agent results are presented
+1. **Chain Execution** - Define workflows that combine multiple tools
 
 ### Integration with External Systems
 
 The framework can be integrated with:
 
 1. **Web Services** - Connect to APIs and online resources
-2. **Databases** - Store and retrieve data persistently
-3. **Local Applications** - Interact with installed software
-4. **IoT Devices** - Control and monitor connected devices
+1. **Databases** - Store and retrieve data persistently
+1. **Local Applications** - Interact with installed software
+1. **IoT Devices** - Control and monitor connected devices
 
 ## Security Considerations
 
 The framework implements several security measures:
 
 1. **Parameter Validation** - Ensures inputs match expected formats
-2. **Execution Boundaries** - Limits what tools can access and modify
-3. **Resource Controls** - Prevents excessive resource consumption
-4. **Permission Management** - Controls which operations are allowed
-5. **Sanitization** - Cleans potentially dangerous inputs
+1. **Execution Boundaries** - Limits what tools can access and modify
+1. **Resource Controls** - Prevents excessive resource consumption
+1. **Permission Management** - Controls which operations are allowed
+1. **Sanitization** - Cleans potentially dangerous inputs
 
 ## Troubleshooting
 
@@ -309,24 +328,24 @@ Common issues and their solutions:
 
 ### Build Issues
 
-**Problem**: Tools fail to build
-**Solution**: 
+**Problem**: Tools fail to build **Solution**:
+
 - Verify `tools.txt` and `agents.txt` exist and contain the correct entries
 - Check script permissions (`chmod +x`)
 - Validate annotation syntax
 
 ### Execution Issues
 
-**Problem**: Tools fail to execute
-**Solution**: 
+**Problem**: Tools fail to execute **Solution**:
+
 - Ensure dependencies are installed
 - Check for consistent parameter names between annotations and code
 - Verify path resolution and working directory
 
 ### Integration Issues
 
-**Problem**: AIChat can't find tools
-**Solution**: 
+**Problem**: AIChat can't find tools **Solution**:
+
 - Re-run the link-to-aichat command
 - Check AIChat configuration has tools enabled
 - Verify symbolic links aren't broken
@@ -334,13 +353,13 @@ Common issues and their solutions:
 ## Best Practices
 
 1. **Clear Documentation** - Document tools thoroughly in annotations
-2. **Modular Design** - Create small, focused tools
-3. **Consistent Interfaces** - Use consistent parameter patterns
-4. **Error Handling** - Return helpful error messages
-5. **Progressive Complexity** - Implement simple functionality first
-6. **Testing** - Test tools with various inputs
-7. **Security First** - Validate all inputs and outputs
+1. **Modular Design** - Create small, focused tools
+1. **Consistent Interfaces** - Use consistent parameter patterns
+1. **Error Handling** - Return helpful error messages
+1. **Progressive Complexity** - Implement simple functionality first
+1. **Testing** - Test tools with various inputs
+1. **Security First** - Validate all inputs and outputs
 
----
+______________________________________________________________________
 
 The llm-functions framework provides a powerful foundation for extending AI capabilities through external tools. By following this guide, you can effectively use, create, and manage tools and agents within the SkogAI ecosystem.

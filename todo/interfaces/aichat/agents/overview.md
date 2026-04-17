@@ -1,20 +1,24 @@
 ---
-title: "Agent System Overview"
-description: "Comprehensive overview of the agent system in SkogAI"
-category: "interfaces"
-subcategory: "aichat"
-tags: ["agent", "aichat", "tools", "llm-functions", "configuration"]
-version: "0.1.0"
-status: "draft"
-created: "2024-07-01"
-updated: "2024-07-01"
+title: Agent System Overview
+description: Comprehensive overview of the agent system in SkogAI
+category: interfaces
+subcategory: aichat
+tags:
+  - agent
+  - aichat
+  - tools
+  - llm-functions
+  - configuration
+version: 0.1.0
+status: draft
+created: '2024-07-01'
+updated: '2024-07-01'
+permalink: skogai/todo/interfaces/aichat/agents/overview
 ---
 
 # Agent System Overview
 
-[prompt:intro]
-This document describes the agent system used in SkogAI, which builds upon AIChat's role system with significantly enhanced capabilities through the llm-functions framework.
-[/prompt:intro]
+[prompt:intro] This document describes the agent system used in SkogAI, which builds upon AIChat's role system with significantly enhanced capabilities through the llm-functions framework. [/prompt:intro]
 
 ## Roles vs. Agents: Understanding the Distinction
 
@@ -23,6 +27,7 @@ SkogAI utilizes both AIChat roles and llm-functions agents, which have important
 ### AIChat Roles (Basic)
 
 AIChat roles are simple configuration files that provide:
+
 - A system prompt that defines the AI's persona and instructions
 - Tool permissions in a YAML front matter block (like `use_tools: fs, run_command`)
 - Optional variable placeholders (e.g., `{{mode}}`, `{{task}}`)
@@ -48,6 +53,7 @@ These roles provide basic customization but lack advanced capabilities like dedi
 ### Agents (Advanced)
 
 Agents in the llm-functions framework are complete AI systems with:
+
 - Dedicated configuration files (`index.yaml`)
 - Custom tool implementations (in Bash, Python, JavaScript)
 - Function schemas for structured interaction
@@ -104,6 +110,7 @@ documents:
 Agents can implement tools in multiple languages:
 
 #### Bash (`tools.sh`)
+
 ```bash
 #!/usr/bin/env bash
 set -e
@@ -120,6 +127,7 @@ eval "$(argc --argc-eval "$0" "$@")"
 ```
 
 #### Python (`tools.py`)
+
 ```python
 import urllib.request
 
@@ -133,6 +141,7 @@ def get_ipinfo():
 ```
 
 #### JavaScript (`tools.js`)
+
 ```javascript
 /**
  * Get the system info
@@ -201,12 +210,15 @@ This agent serves as a demo to guide agent development and showcase various agen
 Agents support several types of variables:
 
 1. **System Variables**: Injected automatically by the framework
+
    - `{{__os__}}`, `{{__shell__}}`, `{{__cwd__}}`, `{{__now__}}`
 
-2. **User Variables**: Custom variables defined in the configuration
+1. **User Variables**: Custom variables defined in the configuration
+
    - `{{username}}` - Prompts the user for input during initialization
 
-3. **Tool Template**: Automatically generated list of available tools
+1. **Tool Template**: Automatically generated list of available tools
+
    - `{{__tools__}}` - Populated with tool descriptions
 
 ### Retrieval-Augmented Generation (RAG)
@@ -214,9 +226,10 @@ Agents support several types of variables:
 Agents can integrate document collections for enhanced knowledge:
 
 1. Local files (e.g., `README.md`)
-2. Web resources (e.g., GitHub documentation)
+1. Web resources (e.g., GitHub documentation)
 
 The RAG system:
+
 - Embeds documents with a configurable model (e.g., ollama:nomic-embed-text)
 - Chunks content with customizable size and overlay parameters
 - Provides context-aware responses based on relevant knowledge
@@ -224,8 +237,9 @@ The RAG system:
 ### Multi-Language Support
 
 The agent system supports tool implementation in multiple programming languages:
+
 - Bash scripts (`tools.sh`)
-- Python scripts (`tools.py`) 
+- Python scripts (`tools.py`)
 - JavaScript modules (`tools.js`)
 
 This allows developers to create tools in their language of choice while maintaining a consistent interface.
@@ -235,9 +249,11 @@ This allows developers to create tools in their language of choice while maintai
 Agents support two types of tools:
 
 1. **Agent-specific tools**: Implemented directly in the agent's directory
+
    - Example: `get_ipinfo` in the demo agent
 
-2. **Global tools**: Referenced from the central tools repository
+1. **Global tools**: Referenced from the central tools repository
+
    - Example: `execute_command.sh` listed in tools.txt
 
 ## Creating a New Agent
@@ -245,11 +261,11 @@ Agents support two types of tools:
 To create a new agent:
 
 1. Create a directory in `tools/agents/[agent-name]`
-2. Create an `index.yaml` configuration file
-3. Implement tools in your preferred language(s)
-4. List external tools in `tools.txt`
-5. Provide documentation in `README.md`
-6. Build and link the agent:
+1. Create an `index.yaml` configuration file
+1. Implement tools in your preferred language(s)
+1. List external tools in `tools.txt`
+1. Provide documentation in `README.md`
+1. Build and link the agent:
    ```
    ./scripts/argc-tool.sh build
    ./scripts/argc-tool.sh link-to-aichat
@@ -264,33 +280,34 @@ aichat --agent [agent-name] "Your prompt here"
 ```
 
 During first activation, the agent will:
+
 1. Initialize its RAG system if documents are specified
-2. Prompt for any user variables defined in the configuration
-3. Load and prepare the specified tools
+1. Prompt for any user variables defined in the configuration
+1. Load and prepare the specified tools
 
 ## Key Differences Between Roles and Agents
 
-| Feature | AIChat Roles | llm-functions Agents |
-|---------|-------------|---------------------|
-| Configuration | Single file with YAML frontmatter | Multiple files with dedicated format |
-| Custom tools | No (only global tools) | Yes (language-specific implementations) |
-| RAG integration | No | Yes (document collections) |
-| Dynamic variables | Basic | Advanced (system, user, generated) |
-| Function schemas | No | Yes (structured JSON schemas) |
-| Multi-language support | No | Yes (Bash, Python, JavaScript) |
-| Conversation starters | No | Yes |
-| Environment awareness | Limited | Extensive (OS, shell, architecture, etc.) |
+| Feature                | AIChat Roles                      | llm-functions Agents                      |
+| ---------------------- | --------------------------------- | ----------------------------------------- |
+| Configuration          | Single file with YAML frontmatter | Multiple files with dedicated format      |
+| Custom tools           | No (only global tools)            | Yes (language-specific implementations)   |
+| RAG integration        | No                                | Yes (document collections)                |
+| Dynamic variables      | Basic                             | Advanced (system, user, generated)        |
+| Function schemas       | No                                | Yes (structured JSON schemas)             |
+| Multi-language support | No                                | Yes (Bash, Python, JavaScript)            |
+| Conversation starters  | No                                | Yes                                       |
+| Environment awareness  | Limited                           | Extensive (OS, shell, architecture, etc.) |
 
 ## Transitioning from Roles to Agents
 
 To transition from using basic AIChat roles to the more powerful agent system:
 
 1. Identify the core functionality of your existing role
-2. Create a new agent directory structure
-3. Transfer the system prompt to the `instructions` field in index.yaml
-4. Implement any custom tools in your preferred language(s)
-5. Define user variables for any placeholders in your original role
-6. Add relevant documentation to the RAG collection
+1. Create a new agent directory structure
+1. Transfer the system prompt to the `instructions` field in index.yaml
+1. Implement any custom tools in your preferred language(s)
+1. Define user variables for any placeholders in your original role
+1. Add relevant documentation to the RAG collection
 
 [@todo:agents:Create a wizard script to transform roles into agents]
 
@@ -299,8 +316,8 @@ To transition from using basic AIChat roles to the more powerful agent system:
 The agent system provides a powerful extension to AIChat's basic role capabilities. By leveraging the llm-functions framework, agents can offer specialized tools, contextual awareness, and advanced knowledge integration that significantly enhances the AI's capabilities beyond simple text generation.
 
 [todo:items]
+
 - Create detailed examples of complete agent implementations
 - Document agent variable precedence and scoping rules
 - Explore agent composition and inheritance patterns
-- Provide templates for common agent types
-[/todo:items]
+- Provide templates for common agent types [/todo:items]

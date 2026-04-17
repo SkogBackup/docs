@@ -1,12 +1,12 @@
 ---
 categories:
-- Software Development
-- Testing
+  - Software Development
+  - Testing
 tags:
-- bash
-- scripts
-- automation
-- existing
+  - bash
+  - scripts
+  - automation
+  - existing
 created: 2024-01-15
 modified: 2024-01-20
 permalink: curated/test/existing-frontmatter
@@ -19,6 +19,7 @@ This file already has YAML frontmatter to test how scripts handle files that don
 ## Purpose
 
 Tests the script's ability to:
+
 - Detect existing frontmatter
 - Skip processing when appropriate
 - Avoid duplicate frontmatter
@@ -28,10 +29,12 @@ Tests the script's ability to:
 The add-frontmatter script should skip this file since it already has frontmatter at the top.
 
 ## Observations
+
 - File has pre-existing YAML frontmatter
 - Should be skipped by frontmatter addition scripts
 - Tests conditional processing logic
 
 ## Relations
-- [[frontmatter-handling]]
-- [[script-logic]]
+
+- \[[frontmatter-handling]\]
+- \[[script-logic]\]

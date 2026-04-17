@@ -1,3 +1,9 @@
+---
+title: battle-plan
+type: note
+permalink: skogai/skills/nelson-base/skills/nelson/references/admiralty-templates/battle-plan
+---
+
 # Battle Plan Template
 
 ```text

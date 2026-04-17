@@ -1,3 +1,9 @@
+---
+title: README
+type: note
+permalink: skogai/docs-merge-todo/reference/notation/readme
+---
+
 # SkogAI Notation Reference
 
 This directory contains documentation for the SkogAI Notation System, a formal symbolic language for expressing computational, logical, and existential relationships within AI agent societies.
@@ -13,11 +19,12 @@ This directory contains documentation for the SkogAI Notation System, a formal s
 ## Quick Reference
 
 ### Core Symbols
+
 - `$` - Definition/Reference
 - `|` - Choice (Sum types)
 - `_` - Universal/Null
 - `[_]` - Similarity
-- `{_}` - Difference  
+- `{_}` - Difference
 - `@` - Action/Intent
 - `*` - Product
 - `.` - Belonging
@@ -26,12 +33,14 @@ This directory contains documentation for the SkogAI Notation System, a formal s
 - `->` - Transformation
 
 ### Special Identifiers
+
 - `id` - Primary identifier (`$int*$unique`)
 - `self` - Self-reference (`$self | [$id@$id]`)
 - `eid` - Extended identifier (`$id*$id`)
 - `unique` - Uniqueness constraint
 
 ## Implementation Status
+
 - [x] Core notation documented
 - [ ] Parser implementation
 - [x] Enhanced philosophical foundations (v2.0)
@@ -39,5 +48,6 @@ This directory contains documentation for the SkogAI Notation System, a formal s
 - [ ] Example library
 - [ ] Integration with SkogAI systems
 
----
+______________________________________________________________________
+
 Maintained by: SkogAI Librarian [SKG-LIB-0001]

@@ -1,28 +1,19 @@
 ---
-<<<<<<<< HEAD:docs-merge-todo/prompts/aichat/tool-creator.md
-title: Tool Development Guide
-description: A comprehensive guide to creating and maintaining tools for SkogAI using
-  the argc framework
-date: '2023-11-06'
-tags:
+permalink: skogai/docs-merge-todo/prompts/aichat/tool-creator
+---
+
+______________________________________________________________________
+
+\<<\<<\<<\<< HEAD:docs-merge-todo/prompts/aichat/tool-creator.md title: Tool Development Guide description: A comprehensive guide to creating and maintaining tools for SkogAI using the argc framework date: '2023-11-06' tags:
+
 - tools
 - argc
 - development
-- llm-functions
-permalink: prompts/aichat/tool-creator
-|||||||| parent of 080afdc (more add):prompts/tool-creator.md
-title: "Tool Development Guide"
-description: "A comprehensive guide to creating and maintaining tools for SkogAI using the argc framework"
-date: "2023-11-06"
-tags: ["tools", "argc", "development", "llm-functions"]
-========
-title: "Tool Development Guide"
-description: "A comprehensive guide to creating and maintaining tools for SkogAI using the argc framework"
-date: "2023-11-06"
-tags: ["tools", "argc", "development", "llm-functions"]
-status: "published"
->>>>>>>> 080afdc (more add):todo/intefaces/aichat/tool-development-guide.md
----
+- llm-functions permalink: prompts/aichat/tool-creator |||||||| parent of 080afdc (more add):prompts/tool-creator.md title: "Tool Development Guide" description: "A comprehensive guide to creating and maintaining tools for SkogAI using the argc framework" date: "2023-11-06" tags: ["tools", "argc", "development", "llm-functions"] ======== title: "Tool Development Guide" description: "A comprehensive guide to creating and maintaining tools for SkogAI using the argc framework" date: "2023-11-06" tags: ["tools", "argc", "development", "llm-functions"] status: "published"
+
+> > > > > > > > 080afdc (more add):todo/intefaces/aichat/tool-development-guide.md
+
+______________________________________________________________________
 
 # Tool Development Guide
 
@@ -88,18 +79,20 @@ To define the parameters that your tool accepts, you'll use specially formatted 
 
 Use `# @describe`, `# @option`, and `# @flag` comments to define your tool's parameters.
 
-* `# @describe <description>`: A brief description of your tool's functionality. This is required.
+- `# @describe <description>`: A brief description of your tool's functionality. This is required.
 
-* `# @option --<option-name>[!<type>][<constraints>] <description>`: Defines an option.
-    * `--<option-name>`: The name of the option (use kebab-case).
-    * `!`: Indicates a required option.
-    * `<type>`: The data type (e.g., `INT`, `NUM`, `<enum>`). If omitted, defaults to `STRING`.
-    * `<constraints>`: Any constraints (e.g., `[foo|bar]` for an enum).
-    * `<description>`: A description of the option.
+- `# @option --<option-name>[!<type>][<constraints>] <description>`: Defines an option.
 
-* `# @flag --<flag-name> <description>`: Defines a boolean flag.
-    * `--<flag-name>`: The name of the flag (use kebab-case).
-    * `<description>`: A description of the flag.
+  - `--<option-name>`: The name of the option (use kebab-case).
+  - `!`: Indicates a required option.
+  - `<type>`: The data type (e.g., `INT`, `NUM`, `<enum>`). If omitted, defaults to `STRING`.
+  - `<constraints>`: Any constraints (e.g., `[foo|bar]` for an enum).
+  - `<description>`: A description of the option.
+
+- `# @flag --<flag-name> <description>`: Defines a boolean flag.
+
+  - `--<flag-name>`: The name of the flag (use kebab-case).
+  - `<description>`: A description of the flag.
 
 **Example:**
 
@@ -133,13 +126,13 @@ eval "$(argc --argc-eval "$0" "$@")"
 
 Use JSDoc-style comments to define your tool's parameters. The `@typedef` block defines the argument object, and each property within that object represents a parameter.
 
-* `/** ... */`: JSDoc comment block containing the description and parameter definitions.
-* `@typedef {Object} Args`: Defines the type of the argument object.
-* `@property {<type>} <n> <description>`: Defines a property (parameter) of the `Args` object.
-    * `<type>`: The data type (e.g., `string`, `boolean`, `number`, `string[]`, `{foo|bar}`).
-    * `<n>`: The name of the parameter.
-    * `<description>`: A description of the parameter.
-    * `[]`: Indicates an optional parameter.
+- `/** ... */`: JSDoc comment block containing the description and parameter definitions.
+- `@typedef {Object} Args`: Defines the type of the argument object.
+- `@property {<type>} <n> <description>`: Defines a property (parameter) of the `Args` object.
+  - `<type>`: The data type (e.g., `string`, `boolean`, `number`, `string[]`, `{foo|bar}`).
+  - `<n>`: The name of the parameter.
+  - `<description>`: A description of the parameter.
+  - `[]`: Indicates an optional parameter.
 
 **Example:**
 
@@ -165,6 +158,7 @@ exports.run = function (args) {
 ```
 
 You can also use ESM `export` expressions:
+
 ```javascript
 export function run(args) {
   // Implementation 
@@ -175,12 +169,12 @@ export function run(args) {
 
 Use type hints and docstrings to define your tool's parameters.
 
-* `def run(...)`: Function definition.
-* `<type> <parameter_name>: <description>`: Type hints with descriptions in the docstring.
-    * `<type>`: The data type (e.g., `str`, `bool`, `int`, `float`, `List[str]`, `Literal["foo", "bar"]`).
-    * `<parameter_name>`: The name of the parameter.
-    * `<description>`: Description of the parameter.
-* `Optional[...]`: Indicates an optional parameter.
+- `def run(...)`: Function definition.
+- `<type> <parameter_name>: <description>`: Type hints with descriptions in the docstring.
+  - `<type>`: The data type (e.g., `str`, `bool`, `int`, `float`, `List[str]`, `Literal["foo", "bar"]`).
+  - `<parameter_name>`: The name of the parameter.
+  - `<description>`: Description of the parameter.
+- `Optional[...]`: Indicates an optional parameter.
 
 **Example:**
 
@@ -242,8 +236,7 @@ git_diff() {
 eval "$(argc --argc-eval "$0" "$@")"
 ```
 
-> Note: In common tools (tools/tools/*.sh), we use the `@describe` comment tag and a single `main` function.
-> In agent tools (agents/*/tools.sh), we use the `@cmd` comment tag and named functions.
+> Note: In common tools (tools/tools/*.sh), we use the `@describe` comment tag and a single `main` function. In agent tools (agents/*/tools.sh), we use the `@cmd` comment tag and named functions.
 
 ## Quickly Creating Tools
 
@@ -256,6 +249,7 @@ The argc system provides a tool creation helper:
 ```
 
 The suffixes attached to the parameters define their characteristics:
+
 - `!`: Indicates that the parameter is required.
 - `*`: Specifies that the parameter value should be an array.
 - `+`: Marks the parameter as required, with the value also needing to be an array.
@@ -290,11 +284,13 @@ cd /home/skogix/skogai/tools
 To include your tool in an agent:
 
 1. Add your tool's name to the agent's `tools.txt` file:
+
    ```
    my_new_tool.sh
    ```
 
-2. Rebuild the agent:
+1. Rebuild the agent:
+
    ```bash
    ./scripts/argc-tool.sh build
    ```
@@ -390,39 +386,39 @@ This schema defines the interface that AIChat will use when invoking the tool.
 ## Best Practices
 
 1. **Safety First**: Implement strict validation and safety checks
-2. **Clear Documentation**: Write detailed descriptions and examples
-3. **Error Handling**: Return clear error messages when problems occur
-4. **Input Validation**: Validate all inputs before processing
-5. **Resource Management**: Limit resource usage (memory, CPU, time)
-6. **Testing**: Test edge cases and potential misuse scenarios
-7. **Consistency**: Follow naming conventions and structural patterns
-8. **Versioning**: Document any changes to parameter interfaces
-9. **Descriptive Names**: Use clear, descriptive parameter names
-10. **Return Structured Data**: When possible, return data in structured formats (JSON)
+1. **Clear Documentation**: Write detailed descriptions and examples
+1. **Error Handling**: Return clear error messages when problems occur
+1. **Input Validation**: Validate all inputs before processing
+1. **Resource Management**: Limit resource usage (memory, CPU, time)
+1. **Testing**: Test edge cases and potential misuse scenarios
+1. **Consistency**: Follow naming conventions and structural patterns
+1. **Versioning**: Document any changes to parameter interfaces
+1. **Descriptive Names**: Use clear, descriptive parameter names
+1. **Return Structured Data**: When possible, return data in structured formats (JSON)
 
 ## Common Tool Categories
 
 Consider developing tools in these categories:
 
 1. **File System Operations**: Creating, reading, modifying files
-2. **Data Processing**: Transforming, analyzing, summarizing data
-3. **External APIs**: Connecting to web services and databases
-4. **System Operations**: Managing processes and resources
-5. **Information Retrieval**: Searching and fetching information
-6. **Content Generation**: Creating content in various formats
-7. **Analysis Tools**: Analyzing code, text, or data
+1. **Data Processing**: Transforming, analyzing, summarizing data
+1. **External APIs**: Connecting to web services and databases
+1. **System Operations**: Managing processes and resources
+1. **Information Retrieval**: Searching and fetching information
+1. **Content Generation**: Creating content in various formats
+1. **Analysis Tools**: Analyzing code, text, or data
 
 ## Troubleshooting
 
 Common issues when developing tools:
 
 1. **Annotation Parsing Failures**: Ensure annotations follow the exact syntax
-2. **Parameter Errors**: Check parameter names match between annotations and code
-3. **Execution Permissions**: Ensure scripts have proper execute permissions
-4. **Build Failures**: Verify your tool is correctly listed in tools.txt
-5. **Runtime Errors**: Use proper error handling to catch exceptions
-6. **Type Mismatch**: Ensure parameter types match what your code expects
+1. **Parameter Errors**: Check parameter names match between annotations and code
+1. **Execution Permissions**: Ensure scripts have proper execute permissions
+1. **Build Failures**: Verify your tool is correctly listed in tools.txt
+1. **Runtime Errors**: Use proper error handling to catch exceptions
+1. **Type Mismatch**: Ensure parameter types match what your code expects
 
----
+______________________________________________________________________
 
 By following this guide, you can create powerful tools that extend SkogAI's capabilities and integrate seamlessly with the argc framework and AIChat interface.

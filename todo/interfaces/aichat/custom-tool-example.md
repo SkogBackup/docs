@@ -1,3 +1,9 @@
+---
+title: custom-tool-example
+type: note
+permalink: skogai/todo/interfaces/aichat/custom-tool-example
+---
+
 # Creating and Using Custom Tools in AIChat
 
 This document walks through a practical example of creating a simple custom tool for AIChat and verifying its functionality.
@@ -8,7 +14,7 @@ AIChat's function calling capabilities can be extended with custom tools that fo
 
 ## Creating a Simple Hello World Tool
 
-The simplest way to create a custom tool is using a shell script with the argc annotation system. 
+The simplest way to create a custom tool is using a shell script with the argc annotation system.
 
 ### Step 1: Create the Tool Script
 
@@ -36,6 +42,7 @@ eval "$(argc --argc-eval "$0" "$@")"
 ```
 
 The key components of this tool are:
+
 - `@describe` - Documents the tool's purpose
 - `@option` - Defines the optional parameter "name"
 - The main function that outputs a greeting
@@ -60,7 +67,7 @@ chmod +x tools/tools/hello_world.sh
 To make the tool available in AIChat for a specific role, you need to update the role's configuration. For example, to add the tool to the "skogai" role:
 
 1. Update the configuration in `interfaces/aichat/configs/skogai.json` or similar to include the new tool in the "tools" array.
-2. Alternatively, ensure the tool is available in the default set of tools for all roles.
+1. Alternatively, ensure the tool is available in the default set of tools for all roles.
 
 ## Testing the Tool
 
@@ -100,20 +107,20 @@ Note that the actual syntax for function calls will depend on your specific envi
 ## Key Benefits of Custom Tools
 
 1. **Functionality Extension**: Easily add new capabilities to AIChat without modifying core code
-2. **Standardized Interface**: Tools follow a consistent pattern making them interoperable
-3. **Language Flexibility**: Create tools in any scripting language (Bash, Python, JavaScript, etc.)
-4. **Automated Documentation**: The annotation system automatically generates documentation
-5. **Parameter Validation**: Built-in parameter handling with validation
+1. **Standardized Interface**: Tools follow a consistent pattern making them interoperable
+1. **Language Flexibility**: Create tools in any scripting language (Bash, Python, JavaScript, etc.)
+1. **Automated Documentation**: The annotation system automatically generates documentation
+1. **Parameter Validation**: Built-in parameter handling with validation
 
 ## Best Practices
 
 When creating custom tools:
 
 1. Always include a clear `@describe` annotation explaining the tool's purpose
-2. Mark required parameters with `!` (e.g., `--path!`)
-3. Provide sensible defaults for optional parameters when possible
-4. Include proper error handling
-5. Keep tools focused on a single, well-defined task
+1. Mark required parameters with `!` (e.g., `--path!`)
+1. Provide sensible defaults for optional parameters when possible
+1. Include proper error handling
+1. Keep tools focused on a single, well-defined task
 
 ## Conclusion
 

@@ -17,20 +17,22 @@ argc --argc-run ~/.local/src/argc-completions/completions/<tool>.sh <command> <a
 ## What Happens
 
 1. argc wrapper executes choice functions that query LIVE system state
-2. Validates input against actual available options
-3. Returns error with REAL valid options if invalid
-4. Self-correcting feedback loop
+1. Validates input against actual available options
+1. Returns error with REAL valid options if invalid
+1. Self-correcting feedback loop
 
 ## Example
 
 User says: "restart the api service"
 
 **Wrong approach:**
+
 ```bash
 systemctl restart api  # Fails - guessing
 ```
 
 **Right approach:**
+
 ```bash
 argc --argc-run ~/.local/src/argc-completions/completions/linux/systemctl.sh restart api
 # Returns: invalid value `api`
@@ -42,6 +44,7 @@ systemctl restart postgresql.service
 ## Key Insight
 
 This works for 1000+ commands. Every argc wrapper has:
+
 - Static structure from help parsing
 - Dynamic validation via choice functions querying real state
 - Self-correcting error messages with actual alternatives
@@ -55,6 +58,7 @@ This works for 1000+ commands. Every argc wrapper has:
 ## Commands to Validate
 
 High-risk operations with user input:
+
 - systemctl (restart, stop, start, enable, disable)
 - docker (run, stop, rm, exec)
 - git (checkout, merge, rebase)
@@ -65,6 +69,7 @@ High-risk operations with user input:
 ## Integration Pattern
 
 Before executing command with user-provided arg:
+
 1. Try argc validation first
-2. Parse error output for valid options
-3. Execute correct command
+1. Parse error output for valid options
+1. Execute correct command

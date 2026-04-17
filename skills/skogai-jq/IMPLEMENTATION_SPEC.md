@@ -1,3 +1,9 @@
+---
+title: IMPLEMENTATION_SPEC
+type: note
+permalink: skogai/skills/skogai-jq/implementation-spec
+---
+
 # Implementation Specification for jq-transforms
 
 This document provides the exact pattern for implementing new transformations in this library.
@@ -345,7 +351,7 @@ Study these to understand the exact pattern.
 
 The `test-all.sh` script automatically discovers and runs all `*/test.sh` files. No need to modify it when adding new transformations.
 
----
+______________________________________________________________________
 
 # CRITICAL: Comprehensive Testing Requirements
 
@@ -417,7 +423,7 @@ Test with ALL JSON types:
 - [ ] Out-of-bounds access
 - [ ] Missing intermediate keys in paths
 
----
+______________________________________________________________________
 
 ## Common Testing Anti-Patterns (DON'T DO THIS)
 
@@ -504,7 +510,7 @@ Test 3: Extract "charlie"... PASS
 
 **Right approach:** Add tests for common type mistakes users will make.
 
----
+______________________________________________________________________
 
 ## Minimum Test Requirements by Category
 
@@ -513,65 +519,62 @@ Test 3: Extract "charlie"... PASS
 **Minimum 8 tests:**
 
 1. Basic nested path (happy path)
-2. Deep nesting (3+ levels)
-3. Non-existent path
-4. Path with null value
-5. Path with false value
-6. Path with 0 value
-7. Empty object input
-8. Intermediate missing keys
+1. Deep nesting (3+ levels)
+1. Non-existent path
+1. Path with null value
+1. Path with false value
+1. Path with 0 value
+1. Empty object input
+1. Intermediate missing keys
 
 ### For Array Operations (map/filter/reduce)
 
 **Minimum 10 tests:**
 
 1. Basic array operation (happy path)
-2. Empty array
-3. Array field doesn't exist
-4. Array field is not an array (type safety)
-5. Array contains primitives
-6. Array contains mixed types (objects + primitives)
-7. Missing fields in array objects
-8. Null values in fields
-9. Boolean false in fields
-10. Zero values in fields
+1. Empty array
+1. Array field doesn't exist
+1. Array field is not an array (type safety)
+1. Array contains primitives
+1. Array contains mixed types (objects + primitives)
+1. Missing fields in array objects
+1. Null values in fields
+1. Boolean false in fields
+1. Zero values in fields
 
 ### For String Operations (split/join/replace)
 
 **Minimum 8 tests:**
 
 1. Basic operation (happy path)
-2. Empty string
-3. Delimiter at start
-4. Delimiter at end
-5. Consecutive delimiters
-6. Delimiter not found
-7. Non-string value (returns null)
-8. Multi-character delimiter (if applicable)
+1. Empty string
+1. Delimiter at start
+1. Delimiter at end
+1. Consecutive delimiters
+1. Delimiter not found
+1. Non-string value (returns null)
+1. Multi-character delimiter (if applicable)
 
 ### For Object Operations (pick/merge/nest)
 
 **Minimum 8 tests:**
 
 1. Basic operation (happy path)
-2. Missing fields
-3. All fields missing
-4. Empty object input
-5. Boolean/null/zero values
-6. Array values
-7. Object values
-8. Whitespace in arguments (if applicable)
+1. Missing fields
+1. All fields missing
+1. Empty object input
+1. Boolean/null/zero values
+1. Array values
+1. Object values
+1. Whitespace in arguments (if applicable)
 
----
+______________________________________________________________________
 
 ## Real Bugs Found and How to Prevent Them
 
 ### Bug 1: array-filter couldn't filter null/false values
 
-**Root cause:** Used `fromjson? // $value` which treats null/false as falsy
-**How found:** No test for filtering null or false values
-**Prevention:** ALWAYS test filtering/matching for null and false
-**Test required:**
+**Root cause:** Used `fromjson? // $value` which treats null/false as falsy **How found:** No test for filtering null or false values **Prevention:** ALWAYS test filtering/matching for null and false **Test required:**
 
 ```bash
 # Test: Filter for null values
@@ -582,10 +585,7 @@ expected='{"items":[{"val":null}]}'
 
 ### Bug 2: array-map crashed on non-array fields
 
-**Root cause:** No type checking before `map()` operation
-**How found:** No test for wrong input types
-**Prevention:** ALWAYS test with wrong types (string instead of array, etc.)
-**Test required:**
+**Root cause:** No type checking before `map()` operation **How found:** No test for wrong input types **Prevention:** ALWAYS test with wrong types (string instead of array, etc.) **Test required:**
 
 ```bash
 # Test: Non-array field gracefully returns empty array
@@ -596,10 +596,7 @@ expected='[]'
 
 ### Bug 3: crud-has returned false for existing paths with null values
 
-**Root cause:** Checked `getpath() != null` instead of key existence
-**How found:** No test for paths with null values
-**Prevention:** ALWAYS test "path exists with null value"
-**Test required:**
+**Root cause:** Checked `getpath() != null` instead of key existence **How found:** No test for paths with null values **Prevention:** ALWAYS test "path exists with null value" **Test required:**
 
 ```bash
 # Test: Path exists even if value is null
@@ -608,35 +605,29 @@ echo "$input" | jq -f transform.jq --arg path "user.name"
 expected='true'  # Key exists!
 ```
 
----
+______________________________________________________________________
 
 ## Testing Workflow
 
 1. **Write implementation**
-2. **Run this checklist** - Mark each category tested
-3. **Add minimum required tests** (8-10 based on category)
-4. **Add edge case tests** for every falsy value
-5. **Add type safety tests** for wrong input types
-6. **Run tests** - All must pass
-7. **Code review** - Verify coverage
+1. **Run this checklist** - Mark each category tested
+1. **Add minimum required tests** (8-10 based on category)
+1. **Add edge case tests** for every falsy value
+1. **Add type safety tests** for wrong input types
+1. **Run tests** - All must pass
+1. **Code review** - Verify coverage
 
----
+______________________________________________________________________
 
 ## Test Coverage Self-Assessment
 
 Before submitting, rate your tests:
 
-**Happy Path Coverage:** **_ / 3 tests
-**Falsy Value Coverage:** _** / 6 tests (null, false, 0, "", [], {})
-**Type Safety Coverage:** **_ / 4 tests (wrong types, missing fields, etc.)
-**Boundary Conditions:** _** / 3 tests (empty, single, edges)
-**Data Type Coverage:** \_\_\_ / 6 types (string, number, boolean, null, array, object)
+**Happy Path Coverage:** **\_ / 3 tests **Falsy Value Coverage:** \_** / 6 tests (null, false, 0, "", [], {}) **Type Safety Coverage:** **\_ / 4 tests (wrong types, missing fields, etc.) **Boundary Conditions:** \_** / 3 tests (empty, single, edges) **Data Type Coverage:** \_\_\_ / 6 types (string, number, boolean, null, array, object)
 
-**Minimum acceptable:** 15 tests covering all categories
-**Good coverage:** 20+ tests
-**Excellent coverage:** 25+ tests with all edge cases
+**Minimum acceptable:** 15 tests covering all categories **Good coverage:** 20+ tests **Excellent coverage:** 25+ tests with all edge cases
 
----
+______________________________________________________________________
 
 ## When in Doubt, Add the Test
 

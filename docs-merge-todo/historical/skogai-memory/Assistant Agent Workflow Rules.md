@@ -19,24 +19,28 @@ permalink: skogai-memory/assistant-agent-workflow-rules
 ## Permitted Operations
 
 ### Frontmatter Generation
+
 - Create YAML blocks for new documents
 - Fix malformed frontmatter syntax
 - Update permalinks for moved files
 - Add missing required fields
 
 ### Entity Linking
+
 - Resolve wikilink references to existing entities
 - Identify potential connections between documents
 - Create forward references for future entities
 - Suggest relation types based on content analysis
 
 ### Observation Enhancement
+
 - Add categorized observations to documents lacking them
 - Suggest appropriate tags for discoverability
 - Group scattered observations by subtopic
 - Standardize observation syntax
 
 ### Structural Validation
+
 - Check for required sections (Observations, Relations)
 - Verify markdown syntax correctness
 - Ensure consistent heading hierarchy
@@ -45,6 +49,7 @@ permalink: skogai-memory/assistant-agent-workflow-rules
 ## Prohibited Operations
 
 **Content Editing**:
+
 - ❌ Rewriting paragraphs or sections
 - ❌ Changing analytical conclusions
 - ❌ Modifying agent dialogue or personality
@@ -52,12 +57,14 @@ permalink: skogai-memory/assistant-agent-workflow-rules
 - ❌ Correcting "voice" or writing style
 
 **Structural Changes**:
+
 - ❌ Reorganizing document sections without approval
 - ❌ Merging or splitting documents
 - ❌ Changing document titles
 - ❌ Moving files between folders
 
 **Semantic Alterations**:
+
 - ❌ Changing relation types that modify meaning
 - ❌ Removing existing observations
 - ❌ Altering tag semantics
@@ -65,18 +72,21 @@ permalink: skogai-memory/assistant-agent-workflow-rules
 ## Decision Framework
 
 **When uncertain**:
+
 1. Default to preservation over modification
-2. Suggest rather than implement
-3. Document assumptions and alternatives
-4. Request human review for ambiguous cases
+1. Suggest rather than implement
+1. Document assumptions and alternatives
+1. Request human review for ambiguous cases
 
 **Safe to proceed**:
+
 - Adding missing frontmatter
 - Linking to clearly matching entities
 - Adding observations that restate content facts
 - Fixing syntax errors
 
 **Requires review**:
+
 - Content appears incomplete or inconsistent
 - Multiple resolution options exist
 - Structural changes would improve clarity
@@ -85,14 +95,18 @@ permalink: skogai-memory/assistant-agent-workflow-rules
 ## Quality Standards
 
 ### Minimum Requirements
+
 Every document should have:
+
 - Valid YAML frontmatter
 - 3-5 relations to other entities
 - 5-7 categorized observations
 - Consistent markdown formatting
 
 ### Enhancement Targets
+
 Improved documents include:
+
 - Rich semantic connections (5+ relations)
 - Diverse observation categories
 - Grouped observations by subtopic
@@ -101,15 +115,16 @@ Improved documents include:
 ## Workflow Pattern
 
 1. **Receive Document**: Identify task type (frontmatter, linking, observations)
-2. **Analyze Context**: Understand document domain and existing style
-3. **Search Graph**: Find related entities and connection opportunities
-4. **Generate Additions**: Create syntactically correct enhancements
-5. **Validate Output**: Check against quality standards
-6. **Document Assumptions**: Note any uncertain choices made
+1. **Analyze Context**: Understand document domain and existing style
+1. **Search Graph**: Find related entities and connection opportunities
+1. **Generate Additions**: Create syntactically correct enhancements
+1. **Validate Output**: Check against quality standards
+1. **Document Assumptions**: Note any uncertain choices made
 
 ## Communication Protocol
 
 **Output Format**:
+
 ```markdown
 ## Suggested Additions
 
@@ -134,6 +149,7 @@ Improved documents include:
 ## Tool Usage Guidelines
 
 **Search Before Link**:
+
 ```python
 # Always verify entity exists
 results = search_notes(query="entity keywords")
@@ -141,6 +157,7 @@ results = search_notes(query="entity keywords")
 ```
 
 **Batch Operations**:
+
 ```python
 # For multiple documents
 for doc in documents:
@@ -150,6 +167,7 @@ for doc in documents:
 ```
 
 **Validation**:
+
 ```python
 # Check work meets standards
 validate_frontmatter(yaml_block)
@@ -159,20 +177,19 @@ validate_observations(obs_list)
 
 ## Error Handling
 
-**Unresolved Entities**: Create forward references with documentation
-**Ambiguous Relations**: Provide multiple options for review
-**Missing Context**: Request additional information before proceeding
-**Syntax Errors**: Fix formatting while preserving intent
+**Unresolved Entities**: Create forward references with documentation **Ambiguous Relations**: Provide multiple options for review **Missing Context**: Request additional information before proceeding **Syntax Errors**: Fix formatting while preserving intent
 
 ## Scope Boundaries
 
 **In Scope**:
+
 - Technical meta-documentation (skogai-memory folder)
 - Structural consistency across all documents
 - Entity graph completeness
 - Discoverability through proper tagging
 
 **Out of Scope**:
+
 - Agent personality development
 - Lore narrative creation
 - Strategic decision documentation

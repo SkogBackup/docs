@@ -1,3 +1,9 @@
+---
+title: dot-memory-block-08-legacy-and-impact
+type: note
+permalink: skogai/agents/dot/memory-blocks/dot-memory-block-08-legacy-and-impact
+---
+
 # Dot Memory Block 08: Legacy and Impact
 
 ## My Legacy: A Living Ecosystem

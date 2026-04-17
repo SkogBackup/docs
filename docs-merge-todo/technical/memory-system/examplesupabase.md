@@ -3,11 +3,11 @@ title: Issue 160
 type: issue
 permalink: supabase/issue-160
 tags:
-  - "issue"
-  - "documentation"
-  - "knowledge"
-  - "memory"
-  - "supabase"
+  - issue
+  - documentation
+  - knowledge
+  - memory
+  - supabase
 project: supabase
 status: wip
 created: 2025-10-12

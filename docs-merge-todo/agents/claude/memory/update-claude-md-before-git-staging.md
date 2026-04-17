@@ -10,7 +10,6 @@ This is a workflow instruction for maintaining project consistency when working 
 
 Also learned: Use kebab-case titles without `/` characters since those create folder paths in memory system.
 
-
 ## Observations
 
 - [workflow] Always update documentation before git staging for consistency #workflow #documentation
@@ -20,6 +19,6 @@ Also learned: Use kebab-case titles without `/` characters since those create fo
 
 ## Relations
 
-- part_of [[skogcontext Architecture: Static vs Agent Tools Pattern]]
-- supports [[Basic Memory Document Format]]
-- relates_to [[SkogAI Extended Principles]]
+- part_of \[[skogcontext Architecture: Static vs Agent Tools Pattern]\]
+- supports \[[Basic Memory Document Format]\]
+- relates_to \[[SkogAI Extended Principles]\]

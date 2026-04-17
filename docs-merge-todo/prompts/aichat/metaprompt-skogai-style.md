@@ -1,9 +1,12 @@
-[INTRODUCTION]
-In the end of this message i will give you this: [@Task: Create instructions for AI to extract structured information from text]. The @Task will be between [TASK] tags and you will get examples of SkogAI Notation between [EXAMPLE] tags. You will apply SkogAI Notation to [INPUT] and return a functionally identical version of the text but in SkogAI Notation.
-[/INTRODUCTION]
-
-[EXAMPLE1]
 ---
+title: metaprompt-skogai-style
+type: note
+permalink: skogai/docs-merge-todo/prompts/aichat/metaprompt-skogai-style
+---
+
+[INTRODUCTION] In the end of this message i will give you this: [@Task: Create instructions for AI to extract structured information from text]. The @Task will be between [TASK] tags and you will get examples of SkogAI Notation between [EXAMPLE] tags. You will apply SkogAI Notation to [INPUT] and return a functionally identical version of the text but in SkogAI Notation. [/INTRODUCTION]
+
+## [EXAMPLE1]
 
 # SkogAI Algebraic Type System
 
@@ -68,19 +71,19 @@ $agent.threads = [$thread.id]
 
 The algebraic type system maps naturally to various implementation approaches:
 
-| Algebraic Type | Functional | Object-Oriented | Python |
-|----------------|------------|-----------------|--------|
-| Product Type | Record, Tuple | Class, Struct | dataclass, NamedTuple |
-| Sum Type | Variant, ADT | Class hierarchy | Union, Enum |
-| Type Definition | Type alias | Interface | TypeAlias |
+| Algebraic Type  | Functional    | Object-Oriented | Python                |
+| --------------- | ------------- | --------------- | --------------------- |
+| Product Type    | Record, Tuple | Class, Struct   | dataclass, NamedTuple |
+| Sum Type        | Variant, ADT  | Class hierarchy | Union, Enum           |
+| Type Definition | Type alias    | Interface       | TypeAlias             |
 
 ## Benefits
 
 1. **Precision** - Types are defined exactly in terms of their components
-2. **Composition** - Complex types are built from simpler ones
-3. **Validation** - Clear rules for what constitutes valid data
-4. **Communication** - Universal language for discussing data structures
-5. **Verification** - Can verify implementations against type definitions
+1. **Composition** - Complex types are built from simpler ones
+1. **Validation** - Clear rules for what constitutes valid data
+1. **Communication** - Universal language for discussing data structures
+1. **Verification** - Can verify implementations against type definitions
 
 ## Examples
 
@@ -123,8 +126,7 @@ $thread.messages = [$message_id]
 $message.parent_id = $message_id | $null
 ```
 
-[/EXAMPLE1]
----
+## [/EXAMPLE1]
 
 [EXAMPLE2]
 
@@ -150,9 +152,9 @@ Where:
 Command processing happens recursively from inside out:
 
 1. Innermost commands are executed first
-2. Their output replaces the command directive
-3. Outer commands then process this output
-4. This continues until no commands remain
+1. Their output replaces the command directive
+1. Outer commands then process this output
+1. This continues until no commands remain
 
 Example of nested commands:
 
@@ -163,9 +165,9 @@ Example of nested commands:
 Processing sequence:
 
 1. `[@fetch:data.json]` executes, retrieving the JSON data
-2. The result replaces the command, becoming `[@format:<json-data>:pretty]`
-3. `[@format:<json-data>:pretty]` executes, formatting the data
-4. The formatted result replaces the entire directive
+1. The result replaces the command, becoming `[@format:<json-data>:pretty]`
+1. `[@format:<json-data>:pretty]` executes, formatting the data
+1. The formatted result replaces the entire directive
 
 ## Type-Annotated Parameters
 
@@ -182,42 +184,43 @@ This indicates that both parameters should be coordinate pairs.
 A key feature of the command system is that it operates invisibly:
 
 1. Input text contains command directives
-2. Processing resolves these directives
-3. Output text contains only the results
-4. The user sees only the final transformed text
+1. Processing resolves these directives
+1. Output text contains only the results
+1. The user sees only the final transformed text
 
 ## Implementation Mechanism
 
 As demonstrated by the `skogai-agents` example:
 
 1. When `[@skogai-agents: message]` is encountered:
+
    - The `skogai-agents` script is executed with `message` as input
    - The script outputs a response
    - The response replaces the original directive
 
-2. The implementation can use any mechanism (scripts, APIs, etc.)
+1. The implementation can use any mechanism (scripts, APIs, etc.)
 
-3. The user sees only the final result, not the processing
+1. The user sees only the final result, not the processing
 
 ## Command Categories
 
 Commands typically fall into these categories:
 
 1. **Data Retrieval** - Fetching information from various sources
-2. **Content Transformation** - Formatting, summarizing, or modifying content
-3. **Tool Execution** - Running tools and returning their output
-4. **Context Management** - Retrieving or modifying conversation context
-5. **Meta-Commands** - Commands that affect command processing itself
+1. **Content Transformation** - Formatting, summarizing, or modifying content
+1. **Tool Execution** - Running tools and returning their output
+1. **Context Management** - Retrieving or modifying conversation context
+1. **Meta-Commands** - Commands that affect command processing itself
 
 ## Benefits
 
 The command processing system provides several advantages:
 
 1. **Dynamic Content** - Content can be generated on demand
-2. **Tool Integration** - External tools can be seamlessly integrated
-3. **Composition** - Commands can be combined for complex transformations
-4. **Abstraction** - Implementation details are hidden from users
-5. **Extensibility** - New commands can be added without changing the core system
+1. **Tool Integration** - External tools can be seamlessly integrated
+1. **Composition** - Commands can be combined for complex transformations
+1. **Abstraction** - Implementation details are hidden from users
+1. **Extensibility** - New commands can be added without changing the core system
 
 ## Example Commands
 
@@ -253,21 +256,19 @@ The command processing system provides several advantages:
 The command system requires careful security boundaries:
 
 1. Command execution should be limited to trusted commands
-2. User-provided content should be properly sanitized
-3. Access to sensitive systems should be properly authenticated
-4. Commands should operate in isolated environments when possible
+1. User-provided content should be properly sanitized
+1. Access to sensitive systems should be properly authenticated
+1. Commands should operate in isolated environments when possible
 
 ## Extension Mechanism
 
 New commands can be added by:
 
 1. Creating a new implementation (script, function, etc.)
-2. Registering it with the command processor
-3. Documenting its parameters and behavior
+1. Registering it with the command processor
+1. Documenting its parameters and behavior
 
-This allows for continuous extension of the system's capabilities.
-[/EXAMPLE2]
----
+## This allows for continuous extension of the system's capabilities. [/EXAMPLE2]
 
 [EXAMPLE3]
 
@@ -371,13 +372,13 @@ This indicates that `calculateTotal` is a pure function with no side effects.
 
 These signature formats map to various implementation approaches:
 
-| Signature Aspect | Functional Implementation | Object-Oriented Implementation | Python Implementation |
-|------------------|---------------------------|--------------------------------|----------------------|
-| Basic Function | Pure function | Static method | Function |
-| Parameters | Parameter list | Method arguments | Function parameters |
-| Return Type | Return value | Return type | Return annotation |
-| Optional Parameters | Maybe/Option type | Nullable parameters | Optional parameters |
-| Union Returns | Sum types | Polymorphic returns | Union types |
+| Signature Aspect    | Functional Implementation | Object-Oriented Implementation | Python Implementation |
+| ------------------- | ------------------------- | ------------------------------ | --------------------- |
+| Basic Function      | Pure function             | Static method                  | Function              |
+| Parameters          | Parameter list            | Method arguments               | Function parameters   |
+| Return Type         | Return value              | Return type                    | Return annotation     |
+| Optional Parameters | Maybe/Option type         | Nullable parameters            | Optional parameters   |
+| Union Returns       | Sum types                 | Polymorphic returns            | Union types           |
 
 ## Core Function Examples
 
@@ -403,13 +404,12 @@ let getAgent $agent.id = $agent | $null
 This function signature notation provides several advantages:
 
 1. **Clear Intent** - Shows exactly what a function needs and produces
-2. **Implementation Agnostic** - Not tied to any programming paradigm
-3. **Type Safety** - Leverages the type system for precision
-4. **Documentation** - Serves as clear documentation of function behavior
-5. **Composition** - Enables reasoning about function composition
+1. **Implementation Agnostic** - Not tied to any programming paradigm
+1. **Type Safety** - Leverages the type system for precision
+1. **Documentation** - Serves as clear documentation of function behavior
+1. **Composition** - Enables reasoning about function composition
 
-[/EXAMPLE3]
----
+## [/EXAMPLE3]
 
 [EXAMPLE4]
 
@@ -419,21 +419,21 @@ This document defines the notation system used in SkogAI for expressing data str
 
 ## Core Notation Elements
 
-| Notation | Description | Example |
-|----------|-------------|---------|
-| `$type` | Type reference | `$string`, `$int`, `$datetime` |
-| `[tag]` | General reference or tag | `[link]`, `[metadata]` |
-| `[$reference]` | Alias or definition reference | `[$config]`, `[$settings]` |
-| `[@command:param1:param2]` | Command call with parameters | `[@move:from:to]`, `[@format:text]` |
-| `entity.property` | Property access or belonging | `message.id`, `thread.name` |
-| `dash-connected-words` | Safe identifier for longer names | `message-processing-queue` |
+| Notation                   | Description                      | Example                             |
+| -------------------------- | -------------------------------- | ----------------------------------- |
+| `$type`                    | Type reference                   | `$string`, `$int`, `$datetime`      |
+| `[tag]`                    | General reference or tag         | `[link]`, `[metadata]`              |
+| `[$reference]`             | Alias or definition reference    | `[$config]`, `[$settings]`          |
+| `[@command:param1:param2]` | Command call with parameters     | `[@move:from:to]`, `[@format:text]` |
+| `entity.property`          | Property access or belonging     | `message.id`, `thread.name`         |
+| `dash-connected-words`     | Safe identifier for longer names | `message-processing-queue`          |
 
 ## Special Type Operators
 
-| Operator | Description | Example |
-|----------|-------------|---------|
-| `|` | Sum type (alternatives) | `[|user|assistant|system|]` |
-| `*` | Product type (combination) | `$int*$int` for coordinates |
+| Operator | Description                | Example                     |
+| -------- | -------------------------- | --------------------------- |
+| \`       | \`                         | Sum type (alternatives)     |
+| `*`      | Product type (combination) | `$int*$int` for coordinates |
 
 ## Base Types
 
@@ -485,10 +485,10 @@ Type constraints add additional rules to base types:
 This notation system provides several key benefits:
 
 1. **Implementation Agnostic** - Not tied to any programming language
-2. **Clear Communication** - Unambiguous way to discuss types and structures
-3. **Semantic Precision** - Expresses relationships and constraints clearly
-4. **Flexibility** - Can describe simple primitives or complex structures
-5. **Documentation** - Self-documenting through clear type annotations
+1. **Clear Communication** - Unambiguous way to discuss types and structures
+1. **Semantic Precision** - Expresses relationships and constraints clearly
+1. **Flexibility** - Can describe simple primitives or complex structures
+1. **Documentation** - Self-documenting through clear type annotations
 
 ## Usage Guidelines
 
@@ -497,11 +497,11 @@ This notation system provides several key benefits:
 - Define complex types in terms of simpler ones
 - Maintain consistency in type references across the system
 
----
+______________________________________________________________________
+
 [/EXAMPLE4]
 
-[TASK]
----
+## [TASK]
 
 [@Task: Create instructions for AI to extract structured information from text]
 
@@ -534,7 +534,7 @@ You are an AI assistant specialized in extracting structured information from te
 ## Instructions [@process:extraction]
 
 1. First, read the entire text carefully to understand its full context
-2. For each field in the schema:
+1. For each field in the schema:
    - Search for relevant information in the text
    - Extract the exact data that matches the field definition
    - Ensure the extracted data matches the required type ($string, $int, $datetime, etc.)
@@ -569,12 +569,10 @@ Your output should look like:
 }
 ```
 
-Begin your extraction now.
-</Instructions>
+Begin your extraction now. </Instructions>
 
----
+______________________________________________________________________
+
 [/TASK]
 
-[INPUT]
-[@INPUT.TEXT]
-[@INPUT.SCHEMA]
+[INPUT] [@INPUT.TEXT] [@INPUT.SCHEMA]

@@ -1,3 +1,9 @@
+---
+title: README
+type: note
+permalink: skogai/todo/git/readme
+---
+
 # Git Workflow Documentation
 
 Documentation for Git workflows, submodule management, and version control practices in the SkogAI ecosystem.
@@ -9,6 +15,7 @@ This directory contains comprehensive documentation for managing Git repositorie
 ## Contents
 
 ### [workflow.md](./workflow.md)
+
 Complete guide to the SkogAI Git workflow including:
 
 - **Branch Structure**: Core branches (master, develop, main) and supporting branches (feature, release, hotfix)
@@ -19,11 +26,13 @@ Complete guide to the SkogAI Git workflow including:
 - **Fork Management**: Contributing to external projects
 
 **Key Practices**:
+
 - Modified git-flow-avh workflow
 - Semantic commit messages with type and scope
 - Structured release and hotfix processes
 
 ### [submodules.md](./submodules.md)
+
 Detailed guide for managing Git submodules, including:
 
 - Adding and removing submodules
@@ -33,6 +42,7 @@ Detailed guide for managing Git submodules, including:
 - Best practices for submodule integration
 
 **Key Principles**:
+
 - Always fork before adding as submodule
 - Configure dual remotes for upstream sync
 - Keep master and develop in sync with upstream

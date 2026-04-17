@@ -1,3 +1,9 @@
+---
+title: initial-implementation
+type: note
+permalink: skogai/docs-merge-todo/technical/memory-system/memory-extraction-epistemic-framework/guides/plans/initial-implementation
+---
+
 # Claude Introspection - Initial Implementation Plan
 
 ## Overview
@@ -7,6 +13,7 @@ This plan implements a memory system that learns from historical Claude Code con
 ## Prerequisites
 
 ### Required Knowledge
+
 - TypeScript/Node.js development
 - Working with JSON/JSONL files
 - Basic understanding of vector embeddings and semantic search
@@ -14,6 +21,7 @@ This plan implements a memory system that learns from historical Claude Code con
 - Git workflow and frequent commits
 
 ### Required Tools
+
 - Node.js 18+ and npm
 - TypeScript compiler
 - Git
@@ -38,18 +46,21 @@ cp .env.example .env
 ## Phase 1: Project Foundation (Day 1)
 
 ### Task 1.1: Initialize TypeScript Project
+
 **Objective:** Set up TypeScript project with proper configuration
 
 **Steps:**
+
 1. Create `package.json` with dependencies
-2. Create `tsconfig.json` for TypeScript configuration
-3. Set up basic project structure
-4. Create `.gitignore` file
-5. Commit: "Initialize TypeScript project structure"
+1. Create `tsconfig.json` for TypeScript configuration
+1. Set up basic project structure
+1. Create `.gitignore` file
+1. Commit: "Initialize TypeScript project structure"
 
 **Files to create:**
 
 `package.json`:
+
 ```json
 {
   "name": "claude-introspection",
@@ -91,6 +102,7 @@ cp .env.example .env
 ```
 
 `tsconfig.json`:
+
 ```json
 {
   "compilerOptions": {
@@ -118,6 +130,7 @@ cp .env.example .env
 ```
 
 `.gitignore`:
+
 ```
 node_modules/
 dist/
@@ -130,6 +143,7 @@ index/
 ```
 
 `.env.example`:
+
 ```
 ANTHROPIC_API_KEY=your-api-key-here
 CLAUDE_PROJECTS_DIR=~/.claude/projects
@@ -138,6 +152,7 @@ INDEX_DIR=./index
 ```
 
 **Directory structure to create:**
+
 ```
 claude-introspection/
 ├── src/
@@ -157,17 +172,20 @@ claude-introspection/
 ```
 
 **Testing:**
+
 ```bash
 npm install
 npm run typecheck  # Should pass with no files yet
 ```
 
 ### Task 1.2: Create Core Type Definitions
+
 **Objective:** Define TypeScript interfaces for the entire system
 
 **Files to create:**
 
 `src/types/session.ts`:
+
 ```typescript
 // ABOUTME: Type definitions for Claude Code session data structures
 // ABOUTME: Represents JSONL message formats and session metadata
@@ -222,6 +240,7 @@ export interface Session {
 ```
 
 `src/types/memory.ts`:
+
 ```typescript
 // ABOUTME: Type definitions for memory storage and metadata
 // ABOUTME: Defines structure of extracted memories and their attributes
@@ -268,6 +287,7 @@ export interface ExtractedInsight {
 ```
 
 `src/types/index.ts`:
+
 ```typescript
 // ABOUTME: Central export point for all type definitions
 // ABOUTME: Re-exports types from individual modules
@@ -277,6 +297,7 @@ export * from './memory';
 ```
 
 **Test file:** `tests/unit/types.test.ts`
+
 ```typescript
 import { SessionMessage, Memory } from '../../src/types';
 
@@ -321,6 +342,7 @@ describe('Type Definitions', () => {
 ```
 
 **Testing:**
+
 ```bash
 npm test tests/unit/types.test.ts
 ```
@@ -330,9 +352,11 @@ npm test tests/unit/types.test.ts
 ## Phase 2: Session Data Parser (Day 1-2)
 
 ### Task 2.1: JSONL Parser Implementation
+
 **Objective:** Parse JSONL session files into structured data
 
 **File to create:** `src/extraction/parser.ts`
+
 ```typescript
 // ABOUTME: JSONL parser for Claude Code session files
 // ABOUTME: Reads and parses session transcripts from filesystem
@@ -425,6 +449,7 @@ export class SessionParser {
 ```
 
 **Test file:** `tests/unit/parser.test.ts`
+
 ```typescript
 import * as fs from 'fs';
 import * as path from 'path';
@@ -511,6 +536,7 @@ describe('SessionParser', () => {
 ```
 
 **Testing:**
+
 ```bash
 npm test tests/unit/parser.test.ts
 ```
@@ -518,9 +544,11 @@ npm test tests/unit/parser.test.ts
 **Commit:** "Implement JSONL session parser"
 
 ### Task 2.2: Session Chunker
+
 **Objective:** Break sessions into coherent conversation chunks
 
 **File to create:** `src/extraction/chunker.ts`
+
 ```typescript
 // ABOUTME: Breaks sessions into coherent conversation chunks for analysis
 // ABOUTME: Groups related messages into extractable units
@@ -653,6 +681,7 @@ export class SessionChunker {
 ```
 
 **Test file:** `tests/unit/chunker.test.ts`
+
 ```typescript
 import { SessionChunker } from '../../src/extraction/chunker';
 import { Session, SessionMessage } from '../../src/types';
@@ -744,6 +773,7 @@ describe('SessionChunker', () => {
 ```
 
 **Testing:**
+
 ```bash
 npm test tests/unit/chunker.test.ts
 ```
@@ -753,9 +783,11 @@ npm test tests/unit/chunker.test.ts
 ## Phase 3: LLM-Based Extraction (Day 2-3)
 
 ### Task 3.1: Claude SDK Integration
+
 **Objective:** Set up Claude Code SDK for LLM calls
 
 **File to create:** `src/extraction/llm-client.ts`
+
 ```typescript
 // ABOUTME: Claude Code SDK client wrapper for memory extraction
 // ABOUTME: Handles LLM calls for screening and extracting insights
@@ -965,6 +997,7 @@ Respond with the synthesized insights in the same JSON format, with duplicates m
 ```
 
 **Test file:** `tests/unit/llm-client.test.ts`
+
 ```typescript
 import { LLMClient } from '../../src/extraction/llm-client';
 import { ConversationChunk } from '../../src/extraction/chunker';
@@ -1069,6 +1102,7 @@ describe('LLMClient', () => {
 ```
 
 **Testing:**
+
 ```bash
 npm test tests/unit/llm-client.test.ts
 ```
@@ -1078,9 +1112,11 @@ npm test tests/unit/llm-client.test.ts
 ## Phase 4: Memory Storage (Day 3-4)
 
 ### Task 4.1: Memory File Writer
+
 **Objective:** Write memories to markdown files with frontmatter
 
 **File to create:** `src/storage/memory-writer.ts`
+
 ```typescript
 // ABOUTME: Writes extracted memories to markdown files with YAML frontmatter
 // ABOUTME: Organizes memories by date and generates unique IDs
@@ -1301,6 +1337,7 @@ export class MemoryWriter {
 ```
 
 **Test file:** `tests/unit/memory-writer.test.ts`
+
 ```typescript
 import * as fs from 'fs';
 import * as path from 'path';
@@ -1423,6 +1460,7 @@ describe('MemoryWriter', () => {
 ```
 
 **Testing:**
+
 ```bash
 npm test tests/unit/memory-writer.test.ts
 ```
@@ -1430,9 +1468,11 @@ npm test tests/unit/memory-writer.test.ts
 **Commit:** "Implement memory file writer"
 
 ### Task 4.2: Vector Database Setup with LanceDB
+
 **Objective:** Set up LanceDB for vector storage and search
 
 **File to create:** `src/storage/vector-store.ts`
+
 ```typescript
 // ABOUTME: Vector database using LanceDB for semantic search
 // ABOUTME: Stores embeddings and metadata for memory retrieval
@@ -1604,6 +1644,7 @@ export class VectorStore {
 ```
 
 **Test file:** `tests/unit/vector-store.test.ts`
+
 ```typescript
 import * as fs from 'fs';
 import * as path from 'path';
@@ -1751,6 +1792,7 @@ describe('VectorStore', () => {
 ```
 
 **Testing:**
+
 ```bash
 npm test tests/unit/vector-store.test.ts
 ```
@@ -1760,9 +1802,11 @@ npm test tests/unit/vector-store.test.ts
 ## Phase 5: CLI Application (Day 4)
 
 ### Task 5.1: Main CLI Entry Point
+
 **Objective:** Create the command-line interface
 
 **File to create:** `src/cli.ts`
+
 ```typescript
 #!/usr/bin/env node
 // ABOUTME: Main CLI entry point for memory extraction and management
@@ -1837,6 +1881,7 @@ if (!process.argv.slice(2).length) {
 ```
 
 **File to create:** `src/commands/extract.ts`
+
 ```typescript
 // ABOUTME: Extract command implementation for processing sessions
 // ABOUTME: Orchestrates the full extraction pipeline
@@ -2061,6 +2106,7 @@ export class ExtractCommand {
 ```
 
 **File to create:** `src/utils/embeddings.ts`
+
 ```typescript
 // ABOUTME: Generate embeddings using local model (transformers.js)
 // ABOUTME: Converts text to vector representations for semantic search
@@ -2085,6 +2131,7 @@ export class EmbeddingGenerator {
 ```
 
 **Testing the CLI:**
+
 ```bash
 # Make executable
 chmod +x src/cli.ts
@@ -2140,9 +2187,10 @@ npm test -- --watch
 ## Phase 7: Documentation (Day 5)
 
 ### Task 7.1: Create README
+
 **File:** `README.md`
 
-```markdown
+````markdown
 # Claude Introspection
 
 Memory system for Claude Code that learns from conversation history to improve future sessions.
@@ -2152,7 +2200,7 @@ Memory system for Claude Code that learns from conversation history to improve f
 ```bash
 npm install
 npm run build
-```
+````
 
 ## Configuration
 
@@ -2199,9 +2247,9 @@ npx claude-memories stats
 ## How It Works
 
 1. **Extraction**: Reads JSONL session files, chunks conversations, uses LLM to extract insights
-2. **Storage**: Saves memories as markdown with frontmatter, indexes with LanceDB
-3. **Retrieval**: Claude Code hooks query memories and inject relevant context
-4. **Reinforcement**: Tracks memory usefulness through conversation patterns
+1. **Storage**: Saves memories as markdown with frontmatter, indexes with LanceDB
+1. **Retrieval**: Claude Code hooks query memories and inject relevant context
+1. **Reinforcement**: Tracks memory usefulness through conversation patterns
 
 ## Development
 
@@ -2218,7 +2266,8 @@ npm run typecheck
 # Lint
 npm run lint
 ```
-```
+
+````
 
 **Commit:** "Add documentation"
 
@@ -2290,4 +2339,5 @@ Add logging for production:
 
 ---
 
-This plan provides everything needed to implement the initial memory extraction system. Each phase builds on the previous one, with clear testing points and commit boundaries. Follow the TDD approach: write tests first, implement to pass, then refactor.
+This plan provides everything needed to implement the initial memory extraction system. Each phase builds on the previous one, with clear testing points and commit boundaries. Follow the TDD approach: write tests first, implement to pass, then refactor.```
+````

@@ -1,3 +1,9 @@
+---
+title: royal-marines
+type: note
+permalink: skogai/skills/nelson-base/skills/nelson/references/royal-marines
+---
+
 # Royal Marines
 
 Royal Marines are short-lived sub-agents a captain deploys for focused, independent objectives in service of the ship's task. They are doctrinally distinct from crew: crew subdivide the ship's deliverable, marines execute discrete sorties and return.
@@ -7,18 +13,18 @@ Royal Marines are short-lived sub-agents a captain deploys for focused, independ
 Choose the first condition that matches.
 
 1. Quick recon of unfamiliar area → **Recce Marine**
-2. Targeted fix or small implementation to unblock ship → **Assault Marine**
-3. Quick config/build/infra task → **Sapper**
-4. Sustained work, own deliverable, needs file ownership → **NOT a marine.** Request a new ship from the admiral.
-5. Work that subdivides the ship's main deliverable → **NOT a marine.** Crew the role instead.
+1. Targeted fix or small implementation to unblock ship → **Assault Marine**
+1. Quick config/build/infra task → **Sapper**
+1. Sustained work, own deliverable, needs file ownership → **NOT a marine.** Request a new ship from the admiral.
+1. Work that subdivides the ship's main deliverable → **NOT a marine.** Crew the role instead.
 
 ## Marine Specialisations
 
-| Type | Function | subagent_type | Use case |
-|---|---|---|---|
-| Recce Marine | Reconnaissance & intel gathering | Explore (read-only) | Scout unfamiliar code, gather findings |
-| Assault Marine | Direct action, targeted changes | general-purpose | Small fix, unblock a dependency |
-| Sapper | Engineering support | general-purpose | Quick config, build, infra task |
+| Type           | Function                         | subagent_type       | Use case                               |
+| -------------- | -------------------------------- | ------------------- | -------------------------------------- |
+| Recce Marine   | Reconnaissance & intel gathering | Explore (read-only) | Scout unfamiliar code, gather findings |
+| Assault Marine | Direct action, targeted changes  | general-purpose     | Small fix, unblock a dependency        |
+| Sapper         | Engineering support              | general-purpose     | Quick config, build, infra task        |
 
 ### Read-Only Specialisation
 

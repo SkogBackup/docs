@@ -10,11 +10,13 @@ tags: [argc, getting-started, installation]
 ## installation
 
 argc is pre-installed and available at:
+
 - binary: `argc` (check with `which argc`)
 - source: `@src/argc` → `/home/skogix/.local/src/argc`
 - completions: `@src/argc-completions` → `/home/skogix/.local/src/argc-completions`
 
 verify installation:
+
 ```sh
 argc --version  # should show: argc 1.23.0
 ```
@@ -24,6 +26,7 @@ argc --version  # should show: argc 1.23.0
 ### 1. create your first cli script
 
 create `hello.sh`:
+
 ```sh
 #!/usr/bin/env bash
 # @describe a friendly greeting tool
@@ -40,6 +43,7 @@ echo "$greeting"
 ```
 
 make it executable and run:
+
 ```sh
 chmod +x hello.sh
 ./hello.sh                  # hello, World!
@@ -48,6 +52,7 @@ chmod +x hello.sh
 ```
 
 automatic help:
+
 ```sh
 ./hello.sh --help
 ```
@@ -55,6 +60,7 @@ automatic help:
 ### 2. create your first argcfile.sh
 
 create `Argcfile.sh` in your project:
+
 ```sh
 #!/usr/bin/env bash
 set -e
@@ -87,6 +93,7 @@ eval "$(argc --argc-eval "$0" "$@")"
 ```
 
 run tasks:
+
 ```sh
 argc build              # build the project
 argc dev --watch        # start dev server with watch
@@ -99,16 +106,19 @@ argc --help             # see all available tasks
 ### enable completion
 
 for bash (add to `~/.bashrc`):
+
 ```sh
 eval "$(argc --argc-completions bash)"
 ```
 
 for zsh (add to `~/.zshrc`):
+
 ```sh
 eval "$(argc --argc-completions zsh)"
 ```
 
 for fish (add to `~/.config/fish/config.fish`):
+
 ```sh
 argc --argc-completions fish | source
 ```
@@ -116,6 +126,7 @@ argc --argc-completions fish | source
 ### completion for argc-powered scripts
 
 any script using argc automatically gets completion:
+
 ```sh
 ./hello.sh <TAB>        # shows --name, --loud, --help
 argc <TAB>              # shows all Argcfile.sh commands
@@ -131,27 +142,32 @@ argc <TAB>              # shows all Argcfile.sh commands
 ## common patterns
 
 **required argument:**
+
 ```sh
 # @arg input!  Input file (required)
 ```
 
 **multi-value argument:**
+
 ```sh
 # @arg files*  Files to process
 # access: ${argc_files[@]}
 ```
 
 **choices:**
+
 ```sh
 # @option --format[json|yaml|toml]=json  Output format
 ```
 
 **environment variable:**
+
 ```sh
 # @env API_KEY!  API key (required from env)
 ```
 
 **nested commands:**
+
 ```sh
 # @cmd
 db() { :; }
@@ -166,16 +182,19 @@ db::seed() { echo "seeding..."; }
 ## debugging
 
 **see parsed arguments:**
+
 ```sh
 argc --argc-dump script.sh arg1 arg2
 ```
 
 **verbose mode:**
+
 ```sh
 ARGC_VERBOSE=1 ./script.sh --help
 ```
 
 **check what argc sees:**
+
 ```sh
 argc --argc-eval script.sh --help  # see generated shell code
 ```

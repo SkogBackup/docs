@@ -28,10 +28,11 @@ eval "$(argc --argc-eval "$0" "$@")"
 ```
 
 **key components:**
+
 1. shebang: `#!/usr/bin/env bash`
-2. comment tags: `# @tag ...`
-3. eval line: `eval "$(argc --argc-eval "$0" "$@")"`
-4. implementation: use `argc_*` variables
+1. comment tags: `# @tag ...`
+1. eval line: `eval "$(argc --argc-eval "$0" "$@")"`
+1. implementation: use `argc_*` variables
 
 ## argument types
 
@@ -72,6 +73,7 @@ echo "copying $argc_source to ${argc_dest:-default.txt}"
 ```
 
 **modifiers:**
+
 - `!` = required
 - no modifier = optional
 
@@ -91,18 +93,21 @@ echo "processing ${#argc_items[@]} items"
 ```
 
 **modifiers:**
+
 - `*` = zero or more
 - `+` = one or more (required)
 
 ### choices (enum)
 
 **static choices:**
+
 ```sh
 # @option --format[json|yaml|toml|xml]=json  Output format
 # @option --log-level[debug|info|warn|error]  Log level
 ```
 
 **dynamic choices:**
+
 ```sh
 # @option --branch[`git branch -r`]  Remote branch
 # @option --file[`_choice_files`]  Select file
@@ -159,6 +164,7 @@ eval "$(argc --argc-eval "$0" "$@")"
 ```
 
 usage:
+
 ```sh
 ./docker.sh ps --all
 ./docker.sh image ls
@@ -166,6 +172,7 @@ usage:
 ```
 
 **rules:**
+
 - parent commands need empty body: `{ :; }`
 - use `::` to create hierarchy
 - each level can have its own options/args
@@ -186,6 +193,7 @@ echo "listening on port $argc_PORT"
 ```
 
 **modifiers:**
+
 - `!` = required (fail if not set)
 - `=value` = default value
 - `$$` = bind to env var with same name
@@ -202,6 +210,7 @@ echo "listening on port $argc_PORT"
 ```
 
 `.env` file:
+
 ```
 API_KEY=abc123
 SECRET=xyz789
@@ -233,6 +242,7 @@ SECRET=xyz789
 ```
 
 for options/args/flags:
+
 ```sh
 # @option --timeout  Connection timeout in seconds
 # @flag -q --quiet  Suppress all output
@@ -328,12 +338,14 @@ the generated script includes argc's parsing logic and has no external dependenc
 ## generating documentation
 
 **man pages:**
+
 ```sh
 argc --argc-mangen script.sh > script.1
 man ./script.1
 ```
 
 **completion scripts:**
+
 ```sh
 argc --argc-completions bash script.sh > script-completion.bash
 source script-completion.bash
@@ -342,25 +354,27 @@ source script-completion.bash
 ## best practices
 
 1. **always include @describe** - makes `--help` useful
-2. **use meaningful variable names** - `--output-file` not `--out`
-3. **provide defaults** - `@option --port=8080`
-4. **validate early** - check required params before expensive operations
-5. **use flags for booleans** - not `--verbose=true`
-6. **group related options** - put common options first
-7. **leverage nested commands** - for complex clis with multiple actions
-8. **test with --help** - ensure help text is clear
-9. **use choices** - restrict invalid input early
-10. **document env vars** - use `@env` even if optional
+1. **use meaningful variable names** - `--output-file` not `--out`
+1. **provide defaults** - `@option --port=8080`
+1. **validate early** - check required params before expensive operations
+1. **use flags for booleans** - not `--verbose=true`
+1. **group related options** - put common options first
+1. **leverage nested commands** - for complex clis with multiple actions
+1. **test with --help** - ensure help text is clear
+1. **use choices** - restrict invalid input early
+1. **document env vars** - use `@env` even if optional
 
 ## common pitfalls
 
 **wrong: missing eval line**
+
 ```sh
 # @flag -v
 # script.sh continues... ❌ argc_v won't exist
 ```
 
 **correct:**
+
 ```sh
 # @flag -v
 eval "$(argc --argc-eval "$0" "$@")"
@@ -368,16 +382,19 @@ eval "$(argc --argc-eval "$0" "$@")"
 ```
 
 **wrong: testing flags**
+
 ```sh
 [[ "$argc_verbose" == "1" ]]  # string comparison ❌
 ```
 
 **correct:**
+
 ```sh
 [[ $argc_verbose -eq 1 ]]  # numeric comparison ✓
 ```
 
 **wrong: multi-value without modifier**
+
 ```sh
 # @arg files  Files
 # ./script.sh a b c
@@ -385,6 +402,7 @@ eval "$(argc --argc-eval "$0" "$@")"
 ```
 
 **correct:**
+
 ```sh
 # @arg files*  Files
 # ./script.sh a b c

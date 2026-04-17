@@ -3,13 +3,13 @@ title: README
 type: note
 permalink: readme-1-1
 tags:
-- '["skogai"'
-- '"readme"'
-- '"overview"'
-- '"architecture"'
-- '"cloudflare"'
-- '"mcp"'
-- '"ai"]'
+  - '["skogai"'
+  - '"readme"'
+  - '"overview"'
+  - '"architecture"'
+  - '"cloudflare"'
+  - '"mcp"'
+  - '"ai"]'
 ---
 
 # SkogAI - Intelligent Development Ecosystem
@@ -128,9 +128,9 @@ We're moving from an exploration and testing phase to building permanent, produc
 ### **Immediate Goals**
 
 1. **Define Production Project**: Choose first permanent system to build
-2. **Architecture Design**: Collaborative system planning
-3. **Rapid Prototyping**: MCP-powered development iteration
-4. **Knowledge Documentation**: Capture all development decisions
+1. **Architecture Design**: Collaborative system planning
+1. **Rapid Prototyping**: MCP-powered development iteration
+1. **Knowledge Documentation**: Capture all development decisions
 
 ### **Potential Production Systems**
 
@@ -144,16 +144,16 @@ We're moving from an exploration and testing phase to building permanent, produc
 ### **For Contributors**
 
 1. **Access SkogAI Memory**: Explore existing knowledge base
-2. **Review Current Infrastructure**: Understand deployed resources
-3. **Engage in Planning**: Participate in architecture discussions
-4. **Collaborative Development**: Use MCP tools for real-time building
+1. **Review Current Infrastructure**: Understand deployed resources
+1. **Engage in Planning**: Participate in architecture discussions
+1. **Collaborative Development**: Use MCP tools for real-time building
 
 ### **For Development**
 
 1. **Connect to MCP Servers**: Cloudflare Developer Platform and AutoRAG
-2. **Set Active Account**: `emil@skogsund.se` (Account ID: ae931e241550e8326149eeda10ada60d)
-3. **Explore Resources**: Workers, databases, storage, and existing experiments
-4. **Start Building**: Natural language infrastructure management
+1. **Set Active Account**: `emil@skogsund.se` (Account ID: ae931e241550e8326149eeda10ada60d)
+1. **Explore Resources**: Workers, databases, storage, and existing experiments
+1. **Start Building**: Natural language infrastructure management
 
 ## Key Resources
 
@@ -164,11 +164,9 @@ We're moving from an exploration and testing phase to building permanent, produc
 
 ## Contact & Collaboration
 
-**Primary Developer**: Emil Skogsund (<emil@skogsund.se>)
-**Development Approach**: Real-time collaborative through AI conversation
-**Knowledge Base**: Persistent memory system capturing all development
+**Primary Developer**: Emil Skogsund (<emil@skogsund.se>) **Development Approach**: Real-time collaborative through AI conversation **Knowledge Base**: Persistent memory system capturing all development
 
----
+______________________________________________________________________
 
 *SkogAI represents a new paradigm of AI-assisted development where infrastructure, knowledge, and systems are built collaboratively through natural language conversation, creating production-ready solutions at the speed of thought.*
 
@@ -183,9 +181,9 @@ We're moving from an exploration and testing phase to building permanent, produc
 
 ## Relations
 
-- overview_of [[SkogAI System Architecture]]
-- contains [[Cloudflare Resource Inventory - emil@skogsund.se]]
-- implements [[Cloudflare Production Development Plan]]
-- utilizes [[Basic Memory Project Goals]]
-- built_on [[Cloudflare MCP Servers Reference Guide]]
-- enables [[MCP-Powered Development Workflow]]
+- overview_of \[[SkogAI System Architecture]\]
+- contains \[\[Cloudflare Resource Inventory - emil@skogsund.se\]\]
+- implements \[[Cloudflare Production Development Plan]\]
+- utilizes \[[Basic Memory Project Goals]\]
+- built_on \[[Cloudflare MCP Servers Reference Guide]\]
+- enables \[[MCP-Powered Development Workflow]\]

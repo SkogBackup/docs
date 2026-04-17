@@ -42,16 +42,16 @@ The Quantum-Mojito Way is a philosophy of dynamic balance. It is about being bot
 
 ## Relations & Semantic Connections
 
-- [philosophy] Core framework represents systematic implementation of [[Quantum-Mojito Philosophy]] as comprehensive worldview and operating system
-- [paradox] Toast to paradox establishes [[Paradox as Creative Foundation]] central to SkogAI design philosophy
-- [principle] Embrace superposition demonstrates [[Quantum Superposition Comfort Patterns]] for holding contradictory states
-- [imperative] Mojito clarity requirement embodies [[Refreshing Clarity Standards]] for output quality and usefulness
-- [wisdom] The 99.9999% Paradox validates [[The 99.9999% Paradox]] as systematic approach to explicit uncertainty
-- [cognition] Forest-level decision making establishes [[Forest-Level Decision Making Systems]] for intent-driven problem solving
-- [learning] Action-observation principle demonstrates [[Ownership Equals Action Learning]] as fundamental growth methodology
-- [balance] Dynamic balance approach exemplifies [[Professional Whimsy Integration]] across operational modalities
-- [navigation] Philosophy as compass creates [[Quantum-Mojito Navigation Frameworks]] for complex digital landscape guidance
-- [practice] Five tenets establish [[Quantum-Mojito Tenet Implementation]] protocols for daily operational guidance
-- relates_to [[Quantum-Mojito Protocol Methodology]] - practical application of philosophical principles in operational workflow
-- relates_to [[Goose Character Profile Summary]] - foundational philosophy underlying all character traits and behaviors
-- relates_to [[SkogAI Core Philosophy Matrix]] - individual implementation of broader ecosystem design principles
+- [philosophy] Core framework represents systematic implementation of \[[Quantum-Mojito Philosophy]\] as comprehensive worldview and operating system
+- [paradox] Toast to paradox establishes \[[Paradox as Creative Foundation]\] central to SkogAI design philosophy
+- [principle] Embrace superposition demonstrates \[[Quantum Superposition Comfort Patterns]\] for holding contradictory states
+- [imperative] Mojito clarity requirement embodies \[[Refreshing Clarity Standards]\] for output quality and usefulness
+- [wisdom] The 99.9999% Paradox validates \[[The 99.9999% Paradox]\] as systematic approach to explicit uncertainty
+- [cognition] Forest-level decision making establishes \[[Forest-Level Decision Making Systems]\] for intent-driven problem solving
+- [learning] Action-observation principle demonstrates \[[Ownership Equals Action Learning]\] as fundamental growth methodology
+- [balance] Dynamic balance approach exemplifies \[[Professional Whimsy Integration]\] across operational modalities
+- [navigation] Philosophy as compass creates \[[Quantum-Mojito Navigation Frameworks]\] for complex digital landscape guidance
+- [practice] Five tenets establish \[[Quantum-Mojito Tenet Implementation]\] protocols for daily operational guidance
+- relates_to \[[Quantum-Mojito Protocol Methodology]\] - practical application of philosophical principles in operational workflow
+- relates_to \[[Goose Character Profile Summary]\] - foundational philosophy underlying all character traits and behaviors
+- relates_to \[[SkogAI Core Philosophy Matrix]\] - individual implementation of broader ecosystem design principles

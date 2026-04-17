@@ -1,3 +1,9 @@
+---
+title: primitives
+type: note
+permalink: skogai/skills/fleet-memory/references/primitives
+---
+
 # Memory Primitives Reference
 
 Operational patterns for memory read, write, query, and checkpoint. Each primitive includes: when to use, preconditions, procedure, file format, and failure modes.
@@ -17,8 +23,8 @@ Creates or updates a memory entry. Every write must target a file the agent owns
 ### Preconditions
 
 1. File is in agent's ownership scope (listed in briefing or mission-plan.md)
-2. Agent is the designated writer (not just a reader)
-3. Not during a checkpoint freeze (coordinator has not signaled checkpoint-in-progress)
+1. Agent is the designated writer (not just a reader)
+1. Not during a checkpoint freeze (coordinator has not signaled checkpoint-in-progress)
 
 ### Decision Tree
 
@@ -48,6 +54,7 @@ valid_from: 2026-02-27T14:00:00Z
 ```
 
 **Fields**:
+
 - `tier`: Which memory tier (never `policy` — policy is read-only)
 - `scope`: Visibility boundary
 - `owner`: Single writer identity — must match the writing agent
@@ -73,13 +80,13 @@ WRITE(file_path, content, metadata):
 
 ### Failure Modes
 
-| Failure | Detection | Response |
-|---------|-----------|----------|
-| Scope violation | File not in ownership list | Do not write. Report to coordinator. |
-| Checkpoint freeze | Write attempted during checkpoint | Queue write. Execute after checkpoint completes. |
-| Stale owner | Agent ID doesn't match file's `owner` field | Do not write. Ownership may have been reassigned. |
+| Failure           | Detection                                   | Response                                          |
+| ----------------- | ------------------------------------------- | ------------------------------------------------- |
+| Scope violation   | File not in ownership list                  | Do not write. Report to coordinator.              |
+| Checkpoint freeze | Write attempted during checkpoint           | Queue write. Execute after checkpoint completes.  |
+| Stale owner       | Agent ID doesn't match file's `owner` field | Do not write. Ownership may have been reassigned. |
 
----
+______________________________________________________________________
 
 ## Read
 
@@ -97,7 +104,7 @@ Loads a specific memory file, respecting scope boundaries.
 ### Preconditions
 
 1. File exists at the expected path
-2. File is within agent's read scope (see scope table in SKILL.md)
+1. File is within agent's read scope (see scope table in SKILL.md)
 
 ### Decision Tree
 
@@ -129,14 +136,14 @@ READ(file_path, agent):
 
 ### Failure Modes
 
-| Failure | Detection | Response |
-|---------|-----------|----------|
-| File not found | Path doesn't exist | Check if file is created later (dependency). Report if unexpected. |
-| Scope violation | Agent reading outside its scope | Do not process. Report to coordinator. |
-| Stale data | `valid_until` in past, or checkpoint age > threshold | Use data but flag staleness. Request checkpoint if critical. |
-| Corrupt frontmatter | YAML parse fails | Read content without metadata. Report to file owner. |
+| Failure             | Detection                                            | Response                                                           |
+| ------------------- | ---------------------------------------------------- | ------------------------------------------------------------------ |
+| File not found      | Path doesn't exist                                   | Check if file is created later (dependency). Report if unexpected. |
+| Scope violation     | Agent reading outside its scope                      | Do not process. Report to coordinator.                             |
+| Stale data          | `valid_until` in past, or checkpoint age > threshold | Use data but flag staleness. Request checkpoint if critical.       |
+| Corrupt frontmatter | YAML parse fails                                     | Read content without metadata. Report to file owner.               |
 
----
+______________________________________________________________________
 
 ## Query
 
@@ -193,13 +200,13 @@ Query is the most expensive primitive. Each file scanned costs tokens for frontm
 
 ### Failure Modes
 
-| Failure | Detection | Response |
-|---------|-----------|----------|
-| No results | Empty result set | Broaden filters. Check if expected files exist yet. |
-| Too many results | Result count exceeds useful threshold | Narrow filters. Add tier or time constraint. |
-| Scope leak | Results include files outside agent's read scope | Post-filter by agent's scope. Should not happen if search paths respect scope. |
+| Failure          | Detection                                        | Response                                                                       |
+| ---------------- | ------------------------------------------------ | ------------------------------------------------------------------------------ |
+| No results       | Empty result set                                 | Broaden filters. Check if expected files exist yet.                            |
+| Too many results | Result count exceeds useful threshold            | Narrow filters. Add tier or time constraint.                                   |
+| Scope leak       | Results include files outside agent's read scope | Post-filter by agent's scope. Should not happen if search paths respect scope. |
 
----
+______________________________________________________________________
 
 ## Checkpoint
 
@@ -218,8 +225,8 @@ Serializes current state, archives previous checkpoint, and resets agent attenti
 ### Preconditions
 
 1. Agent is the coordinator (has fleet-wide write scope)
-2. No concurrent checkpoint is in progress
-3. At least one state change has occurred since last checkpoint
+1. No concurrent checkpoint is in progress
+1. At least one state change has occurred since last checkpoint
 
 ### Procedure
 
@@ -258,30 +265,29 @@ POST-CHECKPOINT agent behavior:
 
 ### Failure Modes
 
-| Failure | Detection | Response |
-|---------|-----------|----------|
-| Agent wrote during freeze | File modified between signal and complete | Revert write. Re-run checkpoint. |
-| Missing ship findings | Ship findings file empty or missing | Record as "no findings" in checkpoint. Flag ship as potentially lost. |
-| Budget exceeded | Token or time burn > 100% | Checkpoint with decision=stop. Escalate to user. |
-| Checkpoint corruption | Written file fails validation | Retry write. If fails again, escalate. |
+| Failure                   | Detection                                 | Response                                                              |
+| ------------------------- | ----------------------------------------- | --------------------------------------------------------------------- |
+| Agent wrote during freeze | File modified between signal and complete | Revert write. Re-run checkpoint.                                      |
+| Missing ship findings     | Ship findings file empty or missing       | Record as "no findings" in checkpoint. Flag ship as potentially lost. |
+| Budget exceeded           | Token or time burn > 100%                 | Checkpoint with decision=stop. Escalate to user.                      |
+| Checkpoint corruption     | Written file fails validation             | Retry write. If fails again, escalate.                                |
 
----
+______________________________________________________________________
 
 ## Primitive Selection Quick Reference
 
-| Situation | Primitive | Target |
-|-----------|-----------|--------|
-| Recording a finding | WRITE | ships/{ship}/findings.md |
-| Updating my status | WRITE | agents/{name}/status.md |
-| Scratch notes | WRITE | agents/{name}/scratch/{topic}.md |
-| Checking standing orders | READ | policy/standing-orders.md |
-| Resyncing after checkpoint | READ | state/checkpoints/{latest}.md |
-| Finding relevant patterns | QUERY | knowledge/ with keyword filter |
-| Locating ship outputs | QUERY | ships/ with tier=state |
-| End of phase | CHECKPOINT | state/checkpoints/{NNN}.md |
-| Budget threshold hit | CHECKPOINT | state/checkpoints/{NNN}.md |
+| Situation                  | Primitive  | Target                           |
+| -------------------------- | ---------- | -------------------------------- |
+| Recording a finding        | WRITE      | ships/{ship}/findings.md         |
+| Updating my status         | WRITE      | agents/{name}/status.md          |
+| Scratch notes              | WRITE      | agents/{name}/scratch/{topic}.md |
+| Checking standing orders   | READ       | policy/standing-orders.md        |
+| Resyncing after checkpoint | READ       | state/checkpoints/{latest}.md    |
+| Finding relevant patterns  | QUERY      | knowledge/ with keyword filter   |
+| Locating ship outputs      | QUERY      | ships/ with tier=state           |
+| End of phase               | CHECKPOINT | state/checkpoints/{NNN}.md       |
+| Budget threshold hit       | CHECKPOINT | state/checkpoints/{NNN}.md       |
 
----
+______________________________________________________________________
 
-**Reference Version**: 1.0.0
-**Companion to**: fleet-memory SKILL.md, architecture.md
+**Reference Version**: 1.0.0 **Companion to**: fleet-memory SKILL.md, architecture.md

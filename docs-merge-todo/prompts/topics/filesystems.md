@@ -1,3 +1,9 @@
+---
+title: filesystems
+type: note
+permalink: skogai/docs-merge-todo/prompts/topics/filesystems
+---
+
 # SkogAI Filesystem Structure
 
 Last updated: 2025-10-05
@@ -25,12 +31,14 @@ The SkogAI project consists of multiple independent git repositories and local f
 ## Git Repositories
 
 ### 1. **config/**
+
 - **Remote:** https://github.com/SkogAI/config.git
 - **Branch:** develop
 - **Size:** 6.2M
 - **Purpose:** System-wide configurations for MCP servers and environment
 
 ### 2. **docs/**
+
 - **Remote:** git@github.com:SkogAI/docs.git
 - **Branch:** feature/tmp
 - **Size:** 86M
@@ -43,6 +51,7 @@ The SkogAI project consists of multiple independent git repositories and local f
   - `to-be-looked-over/` - Staged Claude workspace documentation
 
 ### 3. **tools/**
+
 - **Remote:** git@github.com:SkogAI/tools.git
 - **Branch:** develop
 - **Size:** 51M
@@ -56,11 +65,13 @@ The SkogAI project consists of multiple independent git repositories and local f
 ## Local Folders (Not Git Repos)
 
 ### 1. **scripts/**
+
 - **Size:** 15M
 - **Purpose:** Utility scripts and automation helpers
 - **Contents:** argc, claude, rag, git, and other shell/python scripts
 
 ### 2. **tmp/**
+
 - **Size:** 2.2G
 - **Purpose:** Experimental and archived content
 - **Contents:**
@@ -89,14 +100,15 @@ The SkogAI project consists of multiple independent git repositories and local f
 ## Important Notes
 
 1. Each git repository operates independently with its own history and remote
-2. The root `/home/skogix/skogai/` is NOT a git repository
-3. The `tmp/` folder contains 2.2G of experimental content that could potentially be cleaned up
-4. All active development happens in the git-tracked folders (config, docs, tools)
-5. Scripts folder contains useful utilities but is not version controlled
+1. The root `/home/skogix/skogai/` is NOT a git repository
+1. The `tmp/` folder contains 2.2G of experimental content that could potentially be cleaned up
+1. All active development happens in the git-tracked folders (config, docs, tools)
+1. Scripts folder contains useful utilities but is not version controlled
 
 ## Environment Variables
 
 Key paths referenced in the system:
+
 - `SKOGAI_ARGC`: Points to main Argcfile.sh
 - `SKOGAI_PWD`: SkogAI project root (/home/skogix/skogai)
 - `SKOGAI_TOOLS_ARGC`: Tools-specific Argcfile location

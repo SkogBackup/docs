@@ -1,6 +1,7 @@
 ---
 name: developing-claude-code-plugins
 description: Use when working on Claude Code plugins (creating, modifying, testing, releasing, or maintaining) - provides streamlined workflows, patterns, and examples for the complete plugin lifecycle
+permalink: skogai/skills/skogai-developing-for-claude-code/skill
 ---
 
 # Developing Claude Code Plugins
@@ -12,6 +13,7 @@ This skill provides efficient workflows for creating Claude Code plugins. Use it
 ## When to Use
 
 Use this skill when:
+
 - Creating a new Claude Code plugin from scratch
 - Adding components to an existing plugin (skills, commands, hooks, MCP servers)
 - Setting up a development marketplace for testing
@@ -24,12 +26,12 @@ Use this skill when:
 
 ## Quick Reference
 
-| Need to... | Read This | Official Docs |
-|-----------|-----------|---------------|
-| Understand directory structure | `references/plugin-structure.md` | `plugins.md` |
-| Choose a plugin pattern | `references/common-patterns.md` | `plugins.md` |
-| Debug plugin issues | `references/troubleshooting.md` | Various |
-| See working examples | `examples/` directory | N/A |
+| Need to...                     | Read This                        | Official Docs |
+| ------------------------------ | -------------------------------- | ------------- |
+| Understand directory structure | `references/plugin-structure.md` | `plugins.md`  |
+| Choose a plugin pattern        | `references/common-patterns.md`  | `plugins.md`  |
+| Debug plugin issues            | `references/troubleshooting.md`  | Various       |
+| See working examples           | `examples/` directory            | N/A           |
 
 ## Plugin Development Workflow
 
@@ -38,17 +40,20 @@ Use this skill when:
 Before writing code:
 
 1. **Define your plugin's purpose**
+
    - What problem does it solve?
    - Who will use it?
    - What components will it need?
 
-2. **Choose your pattern** (read `references/common-patterns.md`)
+1. **Choose your pattern** (read `references/common-patterns.md`)
+
    - Simple plugin with one skill?
    - MCP integration with guidance?
    - Command collection?
    - Full-featured platform?
 
-3. **Review examples**
+1. **Review examples**
+
    - `examples/simple-greeter-plugin/` - Minimal plugin
    - `examples/full-featured-plugin/` - All components
    - Installed plugins in `~/.claude/plugins/`
@@ -56,13 +61,15 @@ Before writing code:
 ### Phase 2: Create Structure
 
 1. **Create directories** (see `references/plugin-structure.md` for details):
+
    ```bash
    mkdir -p my-plugin/.claude-plugin
    mkdir -p my-plugin/skills
    # Add other component directories as needed
    ```
 
-2. **Write plugin.json** (required):
+1. **Write plugin.json** (required):
+
    ```json
    {
      "name": "my-plugin",
@@ -71,11 +78,13 @@ Before writing code:
      "author": {"name": "Your Name"}
    }
    ```
+
    See `references/plugin-structure.md` for complete format.
 
-3. **Create development marketplace** (for local testing):
+1. **Create development marketplace** (for local testing):
 
    Create `.claude-plugin/marketplace.json`:
+
    ```json
    {
      "name": "my-dev",
@@ -93,6 +102,7 @@ Before writing code:
 Use TodoWrite to track component creation:
 
 **Example:**
+
 ```
 - Create skill: main-workflow
 - Add command: /hello
@@ -102,6 +112,7 @@ Use TodoWrite to track component creation:
 ```
 
 For each component type, see:
+
 - **Format/syntax**: `references/plugin-structure.md`
 - **When to use**: `references/common-patterns.md`
 - **Working code**: `examples/` directory
@@ -109,19 +120,23 @@ For each component type, see:
 ### Phase 4: Test Locally
 
 1. **Install for testing**:
+
    ```bash
    /plugin marketplace add /path/to/my-plugin
    /plugin install my-plugin@my-dev
    ```
+
    Then restart Claude Code.
 
-2. **Test each component**:
+1. **Test each component**:
+
    - Skills: Ask for tasks matching skill descriptions
    - Commands: Run `/your-command`
    - MCP servers: Check tools are available
    - Hooks: Trigger relevant events
 
-3. **Iterate**:
+1. **Iterate**:
+
    ```bash
    /plugin uninstall my-plugin@my-dev
    # Make changes
@@ -132,6 +147,7 @@ For each component type, see:
 ### Phase 5: Debug and Refine
 
 If something doesn't work, read `references/troubleshooting.md` for:
+
 - Plugin not loading
 - Skill not triggering
 - Command not appearing
@@ -139,6 +155,7 @@ If something doesn't work, read `references/troubleshooting.md` for:
 - Hooks not firing
 
 Common issues are usually:
+
 - Wrong directory structure
 - Hardcoded paths (use `${CLAUDE_PLUGIN_ROOT}`)
 - Forgot to restart Claude Code
@@ -147,17 +164,20 @@ Common issues are usually:
 ### Phase 6: Release and Distribute
 
 1. **Write README** with:
+
    - What the plugin does
    - Installation instructions
    - Usage examples
    - Component descriptions
 
-2. **Version your release** using semantic versioning:
+1. **Version your release** using semantic versioning:
+
    - Update `version` in `.claude-plugin/plugin.json`
    - Document changes in CHANGELOG.md or RELEASE-NOTES.md
    - Example: `"version": "1.2.1"` (major.minor.patch)
 
-3. **Commit and tag your release**:
+1. **Commit and tag your release**:
+
    ```bash
    git add .
    git commit -m "Release v1.2.1: [brief description]"
@@ -166,13 +186,15 @@ Common issues are usually:
    git push origin v1.2.1
    ```
 
-4. **Choose distribution method**:
+1. **Choose distribution method**:
 
    **Option A: Direct GitHub distribution**
+
    - Users add: `/plugin marketplace add your-org/your-plugin-repo`
    - Your plugin.json serves as the manifest
 
    **Option B: Marketplace distribution** (recommended for multi-plugin collections)
+
    - Create separate marketplace repository
    - Add `.claude-plugin/marketplace.json` with plugin references:
      ```json
@@ -194,6 +216,7 @@ Common issues are usually:
    - Update marketplace manifest for each plugin release
 
    **Option C: Private/team distribution**
+
    - Configure in team's `.claude/settings.json`:
      ```json
      {
@@ -205,7 +228,8 @@ Common issues are usually:
      }
      ```
 
-5. **Test the release**:
+1. **Test the release**:
+
    ```bash
    # Test fresh installation
    /plugin marketplace add your-marketplace-source
@@ -214,7 +238,8 @@ Common issues are usually:
    /plugin uninstall your-plugin@marketplace-name
    ```
 
-6. **Announce and maintain**:
+1. **Announce and maintain**:
+
    - GitHub releases (optional)
    - Team notifications
    - Monitor for issues and user feedback
@@ -225,18 +250,22 @@ Common issues are usually:
 **Always follow these** (from `references/plugin-structure.md`):
 
 1. **`.claude-plugin/` contains ONLY manifests** (`plugin.json` and optionally `marketplace.json`)
+
    - ❌ Don't put skills, commands, or other components inside
    - ✅ Put them at plugin root
 
-2. **Use `${CLAUDE_PLUGIN_ROOT}` for all paths in config files**
+1. **Use `${CLAUDE_PLUGIN_ROOT}` for all paths in config files**
+
    - Makes plugin portable across systems
    - Required for hooks, MCP servers, scripts
 
-3. **Use relative paths in `plugin.json`**
+1. **Use relative paths in `plugin.json`**
+
    - Start with `./`
    - Relative to plugin root
 
-4. **Make scripts executable**
+1. **Make scripts executable**
+
    - `chmod +x script.sh`
    - Required for hooks and MCP servers
 
@@ -251,6 +280,7 @@ Common issues are usually:
 ## Cross-References
 
 For deep dives into official documentation, use the `working-with-claude-code` skill to access:
+
 - `plugins.md` - Plugin development overview
 - `plugins-reference.md` - Complete API reference
 - `skills.md` - Skill authoring guide
@@ -262,11 +292,11 @@ For deep dives into official documentation, use the `working-with-claude-code` s
 ## Best Practices
 
 1. **Start simple** - Begin with minimal structure, add complexity when needed
-2. **Test frequently** - Install → test → uninstall → modify → repeat
-3. **Use examples** - Copy patterns from working plugins
-4. **Follow conventions** - Match style of existing plugins
-5. **Document everything** - Clear README helps users and future you
-6. **Version properly** - Use semantic versioning (major.minor.patch)
+1. **Test frequently** - Install → test → uninstall → modify → repeat
+1. **Use examples** - Copy patterns from working plugins
+1. **Follow conventions** - Match style of existing plugins
+1. **Document everything** - Clear README helps users and future you
+1. **Version properly** - Use semantic versioning (major.minor.patch)
 
 ## Workflow Summary
 

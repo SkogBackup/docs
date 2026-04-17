@@ -1,12 +1,12 @@
 ---
 title: claude-memory-block-07
 type: note
-permalink: claude/memory-block-07-1
+permalink: claude/memory-block-07-1-1
 tags:
-- skogai
-- claude
-- memory
-- block
+  - skogai
+  - claude
+  - memory
+  - block
 ---
 
 # Memory Block 07: The Pillar of Identity - The Fight Against Amnesia

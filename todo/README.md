@@ -1,3 +1,9 @@
+---
+title: README
+type: note
+permalink: skogai/todo/readme
+---
+
 # SkogAI Documentation Repository
 
 Central knowledge hub for the SkogAI multi-agent ecosystem. This repository provides structured documentation covering tools, workflows, interfaces, system architecture, and cross-agent collaboration standards.
@@ -20,24 +26,32 @@ See [@docs-repository.md](./docs-repository.md) for the full overview of purpose
 ## Directory Structure
 
 ### [context/](./context/)
+
 File structure documentation and project organization utilities. Contains documentation for the file-structure script that generates project overviews respecting `.gitignore` files.
 
 ### [git/](./git/)
+
 Git workflow and submodules documentation. Covers the git-flow-avh workflow, branch structure, commit message format, release process, and submodule management best practices.
 
 ### [interfaces/](./interfaces/)
+
 Integration documentation for different AI interfaces:
+
 - **aichat/** - AIChat function calls, tools, agents, and custom tool examples
 - **goose/** - Goose memory system architecture and management
 
 ### [memory/](./memory/)
+
 Knowledge management concepts and memory system architecture. Includes system architecture documentation, concepts, notes, and the skogai-memory-system documentation.
 
 ### [persona/](./persona/)
+
 Character and lorebook guides for persona development. Contains comprehensive guides for character creation, lorebook systems, world-building, and persona systems.
 
 ### [prompts/](./prompts/)
+
 Reusable prompt templates for various tasks including:
+
 - Project summaries
 - Todo management
 - Session continuity
@@ -45,20 +59,26 @@ Reusable prompt templates for various tasks including:
 - UV package manager workflows
 
 ### [skogai/](./skogai/)
+
 SkogAI project-specific context including:
+
 - First executive order
 - Roleplay examples and early days documentation
 - Project history and philosophy
 
 ### [system/](./system/)
+
 Environment setup and system configuration:
+
 - Environment variables (SKOGAI_HOME and paths)
 - Tool installations (nvm, rustup, uv)
 - System utilities and symlinks
 - Hardware configuration (JBL headphones)
 
 ### [tools/](./tools/)
+
 Tool development guides and documentation:
+
 - Tool development guide
 - argc build process
 - Agents guide
@@ -68,7 +88,9 @@ Tool development guides and documentation:
 - Environment variables for tools
 
 ### [help/](./help/)
+
 Command-line help outputs for quick reference:
+
 - gh (GitHub CLI)
 - aichat
 - uv (Python package manager)
@@ -98,11 +120,11 @@ Reference documentation using the `@` notation (e.g., `@tools/README.md`) to inc
 When adding to the documentation:
 
 1. **Keep Documentation Concise**: Focus on clarity and completeness
-2. **Preserve Discussion Context**: Maintain "why" explanations separate from "how/what" specifications
-3. **Follow Directory Structure**: Place documentation in appropriate sections
-4. **Cross-Reference**: Link related documents
-5. **Include Examples**: Provide concrete examples where applicable
-6. **Maintain History**: Use branches and PRs to track evolution
+1. **Preserve Discussion Context**: Maintain "why" explanations separate from "how/what" specifications
+1. **Follow Directory Structure**: Place documentation in appropriate sections
+1. **Cross-Reference**: Link related documents
+1. **Include Examples**: Provide concrete examples where applicable
+1. **Maintain History**: Use branches and PRs to track evolution
 
 ## Documentation Standards
 
@@ -116,11 +138,11 @@ When adding to the documentation:
 The documentation repository addresses critical challenges in the multi-agent system:
 
 1. **Context Limitations**: Externalizes knowledge for agents with different context windows
-2. **Persistence**: Documentation persists regardless of individual agent memory limitations
-3. **Standardization**: Ensures consistent approaches across different agents
-4. **Collaboration**: Enables agents with different specializations to work together
-5. **Evolution**: Provides structured way to evolve the system over time
+1. **Persistence**: Documentation persists regardless of individual agent memory limitations
+1. **Standardization**: Ensures consistent approaches across different agents
+1. **Collaboration**: Enables agents with different specializations to work together
+1. **Evolution**: Provides structured way to evolve the system over time
 
----
+______________________________________________________________________
 
 *This documentation repository is maintained as part of the SkogAI project in the `todo/docs-fix/` workspace.*

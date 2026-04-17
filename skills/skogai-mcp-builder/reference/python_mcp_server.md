@@ -1,10 +1,16 @@
+---
+title: python_mcp_server
+type: note
+permalink: skogai/skills/skogai-mcp-builder/reference/python-mcp-server
+---
+
 # Python MCP Server Implementation Guide
 
 ## Overview
 
 This document provides Python-specific best practices and examples for implementing MCP servers using the MCP Python SDK. It covers server setup, tool registration patterns, input validation with Pydantic, error handling, and complete working examples.
 
----
+______________________________________________________________________
 
 ## Quick Reference
 
@@ -33,7 +39,7 @@ async def tool_function(params: InputModel) -> str:
     pass
 ```
 
----
+______________________________________________________________________
 
 ## MCP Python SDK and FastMCP
 
@@ -43,8 +49,7 @@ The official MCP Python SDK provides FastMCP, a high-level framework for buildin
 - Pydantic model integration for input validation
 - Decorator-based tool registration with `@mcp.tool`
 
-**For complete SDK documentation, use WebFetch to load:**
-`https://raw.githubusercontent.com/modelcontextprotocol/python-sdk/main/README.md`
+**For complete SDK documentation, use WebFetch to load:** `https://raw.githubusercontent.com/modelcontextprotocol/python-sdk/main/README.md`
 
 ## Server Naming Convention
 
@@ -507,7 +512,7 @@ if __name__ == "__main__":
     mcp.run()
 ```
 
----
+______________________________________________________________________
 
 ## Advanced FastMCP Features
 
@@ -678,7 +683,7 @@ if __name__ == "__main__":
 - **HTTP**: Web services, remote access, multiple clients
 - **SSE**: Real-time updates, push notifications
 
----
+______________________________________________________________________
 
 ## Code Best Practices
 
@@ -694,7 +699,8 @@ Your implementation MUST prioritize composability and code reuse:
    - Extract business logic into dedicated functions that can be composed
    - Extract shared markdown or JSON field selection & formatting functionality
 
-2. **Avoid Duplication**:
+1. **Avoid Duplication**:
+
    - NEVER copy-paste similar code between tools
    - If you find yourself writing similar logic twice, extract it into a function
    - Common operations like pagination, filtering, field selection, and formatting should be shared
@@ -703,12 +709,12 @@ Your implementation MUST prioritize composability and code reuse:
 ### Python-Specific Best Practices
 
 1. **Use Type Hints**: Always include type annotations for function parameters and return values
-2. **Pydantic Models**: Define clear Pydantic models for all input validation
-3. **Avoid Manual Validation**: Let Pydantic handle input validation with constraints
-4. **Proper Imports**: Group imports (standard library, third-party, local)
-5. **Error Handling**: Use specific exception types (httpx.HTTPStatusError, not generic Exception)
-6. **Async Context Managers**: Use `async with` for resources that need cleanup
-7. **Constants**: Define module-level constants in UPPER_CASE
+1. **Pydantic Models**: Define clear Pydantic models for all input validation
+1. **Avoid Manual Validation**: Let Pydantic handle input validation with constraints
+1. **Proper Imports**: Group imports (standard library, third-party, local)
+1. **Error Handling**: Use specific exception types (httpx.HTTPStatusError, not generic Exception)
+1. **Async Context Managers**: Use `async with` for resources that need cleanup
+1. **Constants**: Define module-level constants in UPPER_CASE
 
 ## Quality Checklist
 

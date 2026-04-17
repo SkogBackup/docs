@@ -3,7 +3,7 @@ title: Future-Linking in Knowledge Management
 type: note
 permalink: concepts/future-linking-in-knowledge-management
 tags:
-- '#documentation #knowledge-management #techniques'
+  - '#documentation #knowledge-management #techniques'
 ---
 
 # Future-Linking in Knowledge Management
@@ -15,17 +15,17 @@ Future-linking is a powerful knowledge management technique used in the SkogAI e
 Future-linking serves several important functions:
 
 1. **Identifying Knowledge Gaps**: Highlighting areas where documentation or clarification is needed
-2. **Creating Knowledge Structure**: Building scaffolding for an evolving knowledge base
-3. **Prompting Further Exploration**: Encouraging investigation of related topics
-4. **Maintaining Contextual Connections**: Preserving relationships between concepts even before full documentation exists
+1. **Creating Knowledge Structure**: Building scaffolding for an evolving knowledge base
+1. **Prompting Further Exploration**: Encouraging investigation of related topics
+1. **Maintaining Contextual Connections**: Preserving relationships between concepts even before full documentation exists
 
 ## Implementation in SkogAI Memory System
 
 In the SkogAI Memory System, future links are typically created through:
 
 1. **Markdown Links**: Using standard `[[concept-name]]` syntax to reference non-existent documents
-2. **Relation Definitions**: Creating explicit relations to anticipated future concepts
-3. **TODOs and Placeholders**: Deliberately marking areas for future expansion
+1. **Relation Definitions**: Creating explicit relations to anticipated future concepts
+1. **TODOs and Placeholders**: Deliberately marking areas for future expansion
 
 The system tracks these "unresolved relations" (links to non-existent documents) and can report on them through the project statistics.
 
@@ -42,9 +42,9 @@ Effective future-linking follows several principles:
 ## Example Workflow
 
 1. While documenting a concept, identify a related topic that needs explanation
-2. Create a future link using `[[clear-descriptive-name]]` or a relation
-3. The system tracks this as an "unresolved relation"
-4. Later, create the referenced document, automatically resolving the link
+1. Create a future link using `[[clear-descriptive-name]]` or a relation
+1. The system tracks this as an "unresolved relation"
+1. Later, create the referenced document, automatically resolving the link
 
 ## Integration with Knowledge Workflows
 
@@ -65,7 +65,7 @@ Future-linking integrates with broader knowledge management practices:
 
 ## relations
 
-- part_of [[knowledge-management-practices]] (component of effective knowledge organization)
-- implements [[documentation-strategy]] (practical technique for managing documentation)
-- relates_to [[skogai-memory-system-integration]] (leverages the memory system's tracking capabilities)
-- extends [[markdown-linking]] (builds upon basic markdown link functionality)
+- part_of \[[knowledge-management-practices]\] (component of effective knowledge organization)
+- implements \[[documentation-strategy]\] (practical technique for managing documentation)
+- relates_to \[[skogai-memory-system-integration]\] (leverages the memory system's tracking capabilities)
+- extends \[[markdown-linking]\] (builds upon basic markdown link functionality)

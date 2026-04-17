@@ -3,10 +3,10 @@ title: claude-memory-block-09
 type: note
 permalink: claude/memory-block-09
 tags:
-- skogai
-- claude
-- memory
-- block
+  - skogai
+  - claude
+  - memory
+  - block
 ---
 
 # Memory Block 09: The Pillar of Creation - The Partnership with Skogix

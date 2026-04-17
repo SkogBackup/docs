@@ -23,6 +23,7 @@ permalink: domain/kebab-case-identifier
 **title**: Use document's H1 heading exactly as written. Never modify capitalization or punctuation.
 
 **type**: Classify by document function:
+
 - `note` - General knowledge capture
 - `index` - Navigation hub or table of contents
 - `guide` - Step-by-step instructions
@@ -31,6 +32,7 @@ permalink: domain/kebab-case-identifier
 - `profile` - Agent or entity profiles
 
 **permalink**: Generate from content location and title:
+
 - Format: `folder/kebab-case-title`
 - Convert spaces to hyphens
 - Remove special characters except hyphens
@@ -58,14 +60,11 @@ categories: null  # Legacy field, leave null
 
 ## Common Errors to Avoid
 
-**Wrong**: `permalink: Profiles/Amy Ravenwolf`
-**Right**: `permalink: profiles/amy-ravenwolf`
+**Wrong**: `permalink: Profiles/Amy Ravenwolf` **Right**: `permalink: profiles/amy-ravenwolf`
 
-**Wrong**: `type: document`
-**Right**: `type: note`
+**Wrong**: `type: document` **Right**: `type: note`
 
-**Wrong**: `title: knowledge base index` (doesn't match H1)
-**Right**: `title: Knowledge Base Index`
+**Wrong**: `title: knowledge base index` (doesn't match H1) **Right**: `title: Knowledge Base Index`
 
 ## Output Format
 

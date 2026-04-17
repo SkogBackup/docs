@@ -34,7 +34,7 @@ permalink: ontology/equality-choice-and-multiplication-operators-1
 
 ## relations
 
-- part_of [[Skogix Symbol System]] (core operators)
-- relates_to [[Bracket and Operator Symbols]] (operator family)
-- uses [[@ and $ Combinations]] (in equality expressions)
-- connects_to [[Identity Construction]] (building composite identities)
+- part_of \[[Skogix Symbol System]\] (core operators)
+- relates_to \[[Bracket and Operator Symbols]\] (operator family)
+- uses \[[@ and $ Combinations]\] (in equality expressions)
+- connects_to \[[Identity Construction]\] (building composite identities)

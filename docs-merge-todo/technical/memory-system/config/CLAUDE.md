@@ -1,3 +1,9 @@
+---
+title: CLAUDE
+type: note
+permalink: skogai/docs-merge-todo/technical/memory-system/config/claude
+---
+
 # CLAUDE.md
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
@@ -60,7 +66,7 @@ Following the guidelines in `meta/skogai-memory-guidelines-and-standards.md`:
 - **Semantic Markup**: Use categorized observations `[category] Description #tags`
 - **Rich Relations**: Connect notes with specific relation types (`implements`, `contains`, `maps_to`, etc.)
 - **Knowledge Graph Density**: Target 3+ relations and 5+ observations per entity
-- **Forward References**: Create references to entities that don't exist yet using [[WikiLinks]]
+- **Forward References**: Create references to entities that don't exist yet using \[[WikiLinks]\]
 
 ### File Organization Principles
 
@@ -99,20 +105,20 @@ A formal symbolic language for representing computational and philosophical conc
 ### When Making Changes
 
 1. Understand the semantic context by reading related notes
-2. Follow established patterns in similar documents
-3. Create rich semantic markup with observations and relations
-4. Link to existing knowledge graph entities using exact titles
-5. Add forward references to concepts that should be connected
-6. Maintain consistency with established terminology and formatting
+1. Follow established patterns in similar documents
+1. Create rich semantic markup with observations and relations
+1. Link to existing knowledge graph entities using exact titles
+1. Add forward references to concepts that should be connected
+1. Maintain consistency with established terminology and formatting
 
 ### Research Process
 
 Use the search and context-building tools in Basic Memory:
 
 1. Search for related concepts using broad terms
-2. Build context around memory:// URIs to understand connections
-3. Follow relation chains to discover related work
-4. Create new connections between previously isolated concepts
+1. Build context around memory:// URIs to understand connections
+1. Follow relation chains to discover related work
+1. Create new connections between previously isolated concepts
 
 ### Quality Standards
 
@@ -158,14 +164,16 @@ This repository includes automated workflows for issue management:
 **Create Issue Workflow** (`.github/workflows/create-issue.yml`):
 
 - **Manual Trigger**: Use GitHub's workflow dispatch interface with parameters:
+
   - `title` (required): Issue title
-  - `body` (optional): Issue description/body 
+  - `body` (optional): Issue description/body
   - `labels` (optional): Comma-separated labels
   - `assignees` (optional): Comma-separated assignees
   - `milestone` (optional): Milestone number or title
   - `project` (optional): Project name or number
 
 - **API Trigger**: Use repository dispatch for programmatic access:
+
   ```bash
   # Example with gh CLI
   gh api repos/SkogAI/docs/dispatches \
@@ -173,7 +181,8 @@ This repository includes automated workflows for issue management:
     -f client_payload='{"title":"Automated Issue","body":"Created via API"}'
   ```
 
-- **argc CLI Integration**: Compatible with argc-based scripts:  
+- **argc CLI Integration**: Compatible with argc-based scripts:
+
   ```bash
   # Example argc script integration
   create_issue() {
@@ -185,8 +194,9 @@ This repository includes automated workflows for issue management:
   ```
 
 - **Security Features**:
+
   - Input validation (title length, body size limits)
-  - Rate limiting checks  
+  - Rate limiting checks
   - GitHub token authentication
   - Comprehensive logging of all creation attempts
 

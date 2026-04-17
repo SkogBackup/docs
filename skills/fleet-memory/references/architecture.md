@@ -1,3 +1,9 @@
+---
+title: architecture
+type: note
+permalink: skogai/skills/fleet-memory/references/architecture
+---
+
 # Fleet Memory Architecture Reference
 
 Detailed architecture for multi-agent memory coordination. The SKILL.md provides the decision framework; this document provides implementation depth.
@@ -9,12 +15,14 @@ Detailed architecture for multi-agent memory coordination. The SKILL.md provides
 **Purpose**: Permanent reference consulted at decision points. Never modified during execution.
 
 **Contents**:
+
 - Standing orders (anti-patterns, operational guardrails)
 - Role definitions (per-role read/write permissions)
 - Damage control procedures (typed failure recovery)
 - Mission-level constraints (budget, scope, quality gates)
 
 **File convention**:
+
 ```
 policy/
   standing-orders.md    # One file, sections per order
@@ -25,6 +33,7 @@ policy/
 **Access pattern**: Read on demand at decision points. Never loaded at spawn (too expensive). Agent knows policy files exist from briefing; reads when encountering a decision that matches policy scope.
 
 **Example: roles.md**
+
 ```markdown
 # Role Permissions
 
@@ -40,11 +49,13 @@ policy/
 **Purpose**: Mutable snapshots of current execution state. Scoped to mission/session lifetime.
 
 **Contents**:
+
 - Mission plan (task DAG, ownership map, dependencies)
 - Checkpoints (sequenced state snapshots)
 - Active task status per agent
 
 **File convention**:
+
 ```
 state/
   mission-plan.md       # Single source of truth for task structure
@@ -56,6 +67,7 @@ state/
 **Access pattern**: Mission plan read at spawn (included in briefing summary). Checkpoints written by coordinator at defined intervals. Agents read latest checkpoint to resync after drift.
 
 **Example: mission-plan.md (ownership section)**
+
 ```markdown
 ## File Ownership
 
@@ -70,6 +82,7 @@ state/
 ```
 
 **Example: checkpoint file**
+
 ```markdown
 # Checkpoint 002
 **Time**: 2026-02-27T14:30:00Z
@@ -95,11 +108,13 @@ None — all ships on track. Continue.
 **Purpose**: Persistent identity and relationship tracking across missions.
 
 **Contents**:
+
 - Agent identities (name, role, capabilities)
 - Scope boundaries (which agent owns which workspace)
 - Relationship map (who reports to whom, who depends on whom)
 
 **File convention**:
+
 ```
 knowledge/
   entities.md           # Entity registry with properties
@@ -108,6 +123,7 @@ knowledge/
 **Access pattern**: Loaded when coordinator needs to resolve identity ("which agent owns this file?") or when spawning new agents ("what roles exist?").
 
 **Example: entities.md**
+
 ```markdown
 # Entity Registry
 
@@ -130,11 +146,13 @@ knowledge/
 **Purpose**: Learned facts and patterns that persist beyond individual missions. Subject to consolidation.
 
 **Contents**:
+
 - Reusable patterns discovered during execution
 - Synthesis outputs from completed missions
 - Facts with temporal validity (`valid_from`, `valid_until`)
 
 **File convention**:
+
 ```
 knowledge/
   patterns.md           # Pattern name → description + evidence
@@ -144,50 +162,54 @@ knowledge/
 **Access pattern**: Loaded when starting new missions (what did we learn before?). Consolidated when file exceeds threshold.
 
 **Consolidation rules**:
+
 1. When `patterns.md` exceeds 200 lines, consolidate: merge similar patterns, promote high-confidence patterns to policy, archive low-evidence patterns
-2. When entity count exceeds 50, archive inactive entities (no mission reference in last 5 missions)
-3. Never delete — mark deprecated with `valid_until` timestamp
+1. When entity count exceeds 50, archive inactive entities (no mission reference in last 5 missions)
+1. Never delete — mark deprecated with `valid_until` timestamp
 
 ## Scope Enforcement Protocol
 
 ### At Mission Planning Time
 
 1. Coordinator creates `state/mission-plan.md` with explicit file ownership table
-2. Every writable file appears in the ownership table with exactly one owner
-3. Each agent's briefing includes only the files they own and can read
-4. No file is unowned — if a file has no writer, it doesn't need to exist yet
+1. Every writable file appears in the ownership table with exactly one owner
+1. Each agent's briefing includes only the files they own and can read
+1. No file is unowned — if a file has no writer, it doesn't need to exist yet
 
 ### At Write Time
 
 Before writing any file, the agent checks:
+
 1. Is this file in my ownership scope? (listed in briefing or mission plan)
-2. Am I the designated writer? (not just a reader)
-3. Is this the right time? (not between checkpoints when state is frozen)
+1. Am I the designated writer? (not just a reader)
+1. Is this the right time? (not between checkpoints when state is frozen)
 
 If any check fails, the agent does not write. It reports the attempted write to its coordinator as a potential scope violation.
 
 ### At Checkpoint Time
 
 1. Coordinator signals checkpoint (all agents pause writes)
-2. Coordinator reads all ship findings and agent status files
-3. Coordinator writes checkpoint file to `state/checkpoints/`
-4. Coordinator updates mission plan if task status changed
-5. Agents resume — they re-read latest checkpoint to resync
+1. Coordinator reads all ship findings and agent status files
+1. Coordinator writes checkpoint file to `state/checkpoints/`
+1. Coordinator updates mission plan if task status changed
+1. Agents resume — they re-read latest checkpoint to resync
 
 ### Scope Violation Response
 
 When a scope violation is detected:
+
 1. **Immediate**: Revert the unauthorized write (coordinator or owning agent)
-2. **Diagnostic**: Why did the agent attempt this write? Missing briefing info? Unclear ownership?
-3. **Corrective**: Update mission plan or briefing to clarify boundaries
-4. **Preventive**: If pattern repeats, add to standing orders as anti-pattern
+1. **Diagnostic**: Why did the agent attempt this write? Missing briefing info? Unclear ownership?
+1. **Corrective**: Update mission plan or briefing to clarify boundaries
+1. **Preventive**: If pattern repeats, add to standing orders as anti-pattern
 
 ## Checkpoint Protocol
 
 Checkpoints serve three functions:
+
 1. **State snapshot**: Capture current progress for recovery
-2. **Attention reset**: Agents re-read state instead of relying on conversation history
-3. **Coordination sync**: All agents align on current mission state
+1. **Attention reset**: Agents re-read state instead of relying on conversation history
+1. **Coordination sync**: All agents align on current mission state
 
 ### When to Checkpoint
 
@@ -200,6 +222,7 @@ Checkpoints serve three functions:
 ### Checkpoint Contents
 
 Every checkpoint includes:
+
 ```markdown
 # Checkpoint {NNN}
 **Time**: {ISO 8601}
@@ -225,12 +248,15 @@ Every checkpoint includes:
 ## Progressive Disclosure Protocol
 
 ### Layer 0: Skill Discovery (~20 tokens)
+
 ```
 fleet-memory — Multi-agent memory coordination
 ```
+
 Only the name and one-line description. Loaded in skill catalog at startup.
 
 ### Layer 1: Briefing (~500 tokens)
+
 ```markdown
 Your task: {task description}
 Your files: {owned files list}
@@ -238,26 +264,32 @@ Your scope: {what you can read}
 Dependencies: {what must complete before you start}
 Policy files: {paths to consult at decision points}
 ```
+
 Injected when agent is spawned. Contains everything needed to begin work.
 
 ### Layer 2: Policy On-Demand (~200-500 tokens each)
+
 Agent reads standing-orders.md or damage-control.md when:
+
 - Encountering a decision not covered by briefing
 - Hitting a failure mode
 - Reaching a quality gate
 
 ### Layer 3: Full Architecture (this file, ~1500 tokens)
+
 Loaded only when designing or debugging the memory system itself. Not needed during normal execution.
 
 ## Worked Example: Three-Ship Mission
 
 ### Setup
+
 ```
 Mission: Analyze codebase and produce refactoring plan
 Ships: Alpha (research), Beta (analysis), Gamma (synthesis)
 ```
 
 ### File Structure Created at Mission Start
+
 ```
 fleet-workspace/
   policy/
@@ -287,15 +319,16 @@ fleet-workspace/
 ### Execution Flow
 
 1. **Coordinator** writes mission-plan.md with ownership table and spawns three ships
-2. **Alpha** reads briefing, begins research, writes findings to `ships/alpha/findings.md`
-3. **Beta** is blocked on Alpha — reads briefing, waits (or works on independent subtask)
-4. **Alpha completes** — coordinator runs Checkpoint 001, reads Alpha findings
-5. **Beta unblocked** — reads checkpoint, reads Alpha findings, begins analysis
-6. **Beta completes** — coordinator runs Checkpoint 002
-7. **Gamma** reads both checkpoints + Alpha/Beta findings, produces synthesis
-8. **Coordinator** runs final checkpoint, writes knowledge/patterns.md with learned patterns
+1. **Alpha** reads briefing, begins research, writes findings to `ships/alpha/findings.md`
+1. **Beta** is blocked on Alpha — reads briefing, waits (or works on independent subtask)
+1. **Alpha completes** — coordinator runs Checkpoint 001, reads Alpha findings
+1. **Beta unblocked** — reads checkpoint, reads Alpha findings, begins analysis
+1. **Beta completes** — coordinator runs Checkpoint 002
+1. **Gamma** reads both checkpoints + Alpha/Beta findings, produces synthesis
+1. **Coordinator** runs final checkpoint, writes knowledge/patterns.md with learned patterns
 
 ### Token Budget Through Mission
+
 ```
 Spawn briefing:     ~500 tokens per agent (1,500 total)
 Policy reads:       ~300 tokens per read, ~2 reads per agent
@@ -307,31 +340,25 @@ Total coordination: ~5,000 tokens overhead for 3-ship mission
 ## Anti-Patterns
 
 ### Split Keel (Concurrent Writes)
-**Symptom**: Two agents write the same file; one agent's work is silently overwritten.
-**Cause**: File not in ownership table, or ownership table has two writers.
-**Prevention**: Every writable file has exactly one owner. Audit mission plan before execution.
+
+**Symptom**: Two agents write the same file; one agent's work is silently overwritten. **Cause**: File not in ownership table, or ownership table has two writers. **Prevention**: Every writable file has exactly one owner. Audit mission plan before execution.
 
 ### Drifting Anchorage (Stale State)
-**Symptom**: Agent acts on outdated information because it never re-read state.
-**Cause**: No checkpoint between state change and agent's next action.
-**Prevention**: Checkpoint after every significant state change. Agents re-read state at checkpoint.
+
+**Symptom**: Agent acts on outdated information because it never re-read state. **Cause**: No checkpoint between state change and agent's next action. **Prevention**: Checkpoint after every significant state change. Agents re-read state at checkpoint.
 
 ### Memory Hoarding (Context Bloat)
-**Symptom**: Agent loads all memory files at once, exceeding effective context limit.
-**Cause**: No progressive disclosure; agent treats memory as "load everything."
-**Prevention**: Briefing contains file paths, not file contents. Agent loads on demand.
+
+**Symptom**: Agent loads all memory files at once, exceeding effective context limit. **Cause**: No progressive disclosure; agent treats memory as "load everything." **Prevention**: Briefing contains file paths, not file contents. Agent loads on demand.
 
 ### Ghost Writer (Unowned Files)
-**Symptom**: File appears in workspace with no designated owner. Nobody maintains it, it goes stale.
-**Cause**: File created ad-hoc during execution, never added to mission plan.
-**Prevention**: If a file needs to exist, it needs an owner. Add to mission plan or don't create it.
+
+**Symptom**: File appears in workspace with no designated owner. Nobody maintains it, it goes stale. **Cause**: File created ad-hoc during execution, never added to mission plan. **Prevention**: If a file needs to exist, it needs an owner. Add to mission plan or don't create it.
 
 ### Policy Drift (Mutable Policy)
-**Symptom**: Agent modifies standing orders during execution, breaking invariants for other agents.
-**Cause**: Policy files not marked read-only in ownership table.
-**Prevention**: Policy tier is always read-only. Changes to policy happen between missions, never during.
 
----
+**Symptom**: Agent modifies standing orders during execution, breaking invariants for other agents. **Cause**: Policy files not marked read-only in ownership table. **Prevention**: Policy tier is always read-only. Changes to policy happen between missions, never during.
 
-**Reference Version**: 1.0.0
-**Companion to**: fleet-memory SKILL.md
+______________________________________________________________________
+
+**Reference Version**: 1.0.0 **Companion to**: fleet-memory SKILL.md

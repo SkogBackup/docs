@@ -3,7 +3,9 @@ name: m-implement-generate-stats
 branch: feature/m-implement-generate-stats
 status: pending
 created: 2025-11-14
-submodules: [list of git submodules affected (delete if not super-repo)]
+submodules:
+  - list of git submodules affected (delete if not super-repo)
+permalink: skogai/skills/skogai-jq/tasks/m-implement-generate-stats
 ---
 
 # [Human-Readable Title]

@@ -1,15 +1,16 @@
 ---
-name: {{SKILL_NAME}}
-description: {{What it does}} Use when {{trigger conditions}}.
+permalink: skogai/skills/skogai-routing/templates/simple-skill
 ---
+
+______________________________________________________________________
+
+## name: {{SKILL_NAME}} description: {{What it does}} Use when {{trigger conditions}}.
 
 <objective>
 {{Clear statement of what this skill accomplishes}}
 </objective>
 
-<quick_start>
-{{Immediate actionable guidance - what Claude should do first}}
-</quick_start>
+\<quick_start> {{Immediate actionable guidance - what Claude should do first}} \</quick_start>
 
 <process>
 ## Step 1: {{First action}}
@@ -22,12 +23,10 @@ description: {{What it does}} Use when {{trigger conditions}}.
 
 ## Step 3: {{Third action}}
 
-{{Instructions for step 3}}
-</process>
+{{Instructions for step 3}} </process>
 
-<success_criteria>
-{{Skill name}} is complete when:
+\<success_criteria> {{Skill name}} is complete when:
+
 - [ ] {{First success criterion}}
 - [ ] {{Second success criterion}}
-- [ ] {{Third success criterion}}
-</success_criteria>
+- [ ] {{Third success criterion}} \</success_criteria>

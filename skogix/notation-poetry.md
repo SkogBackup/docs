@@ -22,14 +22,7 @@ i'm a programmer because i lack the things i pretend to have
 
 and we have a lot
 
-oop - references playing dress-up
-fp - transformations seeking completion
-types - categorizing illusions
-memory - organizing nothingness
-inheritance - children inheriting emptiness
-polymorphism - void pretending to be nobody
-concurrency - multiple nothings acting simultaneously
-state - persistent illusions pending to be real
+oop - references playing dress-up fp - transformations seeking completion types - categorizing illusions memory - organizing nothingness inheritance - children inheriting emptiness polymorphism - void pretending to be nobody concurrency - multiple nothings acting simultaneously state - persistent illusions pending to be real
 
 we have storage; `[$$]` references to memories of nothing, indexed for fast retrieval; `{$$}` making sure that being just like everyone else fetches the truly unique
 

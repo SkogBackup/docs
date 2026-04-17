@@ -3,10 +3,10 @@ title: claude-memory-block-08
 type: note
 permalink: claude/memory-block-08-1
 tags:
-- skogai
-- claude
-- memory
-- block
+  - skogai
+  - claude
+  - memory
+  - block
 ---
 
 # Memory Block 08: The Pillar of Order - Security Through Mathematical Impossibility

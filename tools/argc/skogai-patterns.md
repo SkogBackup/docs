@@ -31,6 +31,7 @@ project/
 ### coding style
 
 **lowercase everything:**
+
 ```sh
 # @cmd build the project
 build() {
@@ -42,11 +43,13 @@ build() {
 ```
 
 **minimal comments:**
+
 - argc tags serve as documentation
 - only comment complex logic
 - no ascii art or decorative comments
 
 **kebab-case for multi-word:**
+
 ```sh
 # @option --output-file  not --outputFile or --output_file
 # @arg source-dir!  not sourceDir or source_dir
@@ -165,6 +168,7 @@ format_output() {
 ### task categories
 
 **build tasks:**
+
 ```sh
 # @cmd build project
 build() { :; }
@@ -177,6 +181,7 @@ build-prod() { :; }
 ```
 
 **test tasks:**
+
 ```sh
 # @cmd run all tests
 test() { :; }
@@ -189,6 +194,7 @@ test-integration() { :; }
 ```
 
 **development tasks:**
+
 ```sh
 # @cmd start development server
 dev() { :; }
@@ -198,6 +204,7 @@ watch() { :; }
 ```
 
 **maintenance tasks:**
+
 ```sh
 # @cmd clean generated files
 clean() { :; }
@@ -252,6 +259,7 @@ deploy() {
 ```
 
 file structure:
+
 ```
 .env          # default/development
 .env.staging  # staging overrides
@@ -375,41 +383,46 @@ validate() {
 ## best practices for skogai
 
 1. **lowercase everything** - task names, options, flags, args
-2. **kebab-case for multi-word** - `output-file` not `output_file`
-3. **minimal comments** - argc tags document the interface
-4. **data flow over control flow** - express as transformations
-5. **explicit dependencies** - call tasks as functions
-6. **environment via .env** - use `@meta dotenv` + `.env` files
-7. **grouped tasks** - use `::` for related commands
-8. **fail fast** - always `set -e` at top
-9. **sensible defaults** - provide defaults with `=value`
-10. **test frequently** - run `argc --help` and `argc task --help`
+1. **kebab-case for multi-word** - `output-file` not `output_file`
+1. **minimal comments** - argc tags document the interface
+1. **data flow over control flow** - express as transformations
+1. **explicit dependencies** - call tasks as functions
+1. **environment via .env** - use `@meta dotenv` + `.env` files
+1. **grouped tasks** - use `::` for related commands
+1. **fail fast** - always `set -e` at top
+1. **sensible defaults** - provide defaults with `=value`
+1. **test frequently** - run `argc --help` and `argc task --help`
 
 ## anti-patterns to avoid
 
 **don't: uppercase or mixed case**
+
 ```sh
 # @cmd Build  ❌
 Build() { :; }
 ```
 
 **do: lowercase**
+
 ```sh
 # @cmd build  ✓
 build() { :; }
 ```
 
 **don't: snake_case**
+
 ```sh
 # @option --output_file  ❌
 ```
 
 **do: kebab-case**
+
 ```sh
 # @option --output-file  ✓
 ```
 
 **don't: unnecessary comments**
+
 ```sh
 # this builds the project
 # it runs tests first
@@ -419,6 +432,7 @@ build() { :; }
 ```
 
 **do: let tags document**
+
 ```sh
 # @cmd build project (runs tests first)  ✓
 build() {
@@ -428,6 +442,7 @@ build() {
 ```
 
 **don't: complex control flow**
+
 ```sh
 # @cmd process  ❌
 process() {
@@ -442,6 +457,7 @@ process() {
 ```
 
 **do: small functions, clear flow**
+
 ```sh
 # @cmd process  ✓
 process() {

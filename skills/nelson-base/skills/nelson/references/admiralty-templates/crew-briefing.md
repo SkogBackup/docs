@@ -1,3 +1,9 @@
+---
+title: crew-briefing
+type: note
+permalink: skogai/skills/nelson-base/skills/nelson/references/admiralty-templates/crew-briefing
+---
+
 # Crew Briefing Template
 
 When spawning each teammate via `Task()`, include this briefing in their prompt. Teammates do not inherit the lead's conversation context — they start with a clean slate and need explicit mission context to operate independently.

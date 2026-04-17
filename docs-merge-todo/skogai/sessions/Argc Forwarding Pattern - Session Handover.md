@@ -7,15 +7,18 @@ permalink: skogai/sessions/argc-forwarding-pattern-session-handover
 # Argc Forwarding Pattern - Session Handover
 
 ## Current State
+
 Successfully implemented a hierarchical argc command forwarding pattern in `/home/skogix/skogai/skogargc/`.
 
 ## What Works
-- **File**: `/home/skogix/skogai/skogargc/docs/Argcfile.sh` 
-- **Command**: `argc demo flags --verbose` 
+
+- **File**: `/home/skogix/skogai/skogargc/docs/Argcfile.sh`
+- **Command**: `argc demo flags --verbose`
 - **Result**: Forwards to parent and executes correctly
 - **Completion**: `argc demo <tab>` shows parent's subcommands
 
 ## Core Pattern
+
 ```bash
 # Dynamic parent discovery
 parent_argcfile() {
@@ -46,24 +49,29 @@ _choice_skogix_args() {
 ```
 
 ## Key Technical Details
+
 1. **Execution forwarding**: `argc --argc-run "$parent" <command> "${argc_args[@]}"`
-2. **Completion forwarding**: `argc --argc-compgen generic "$parent" <command> <command> "${args[@]}"` 
-3. **Path discovery**: Uses `argc --argc-script-path` in parent directory
-4. **Base case**: Empty string when no parent Argcfile exists
+1. **Completion forwarding**: `argc --argc-compgen generic "$parent" <command> <command> "${args[@]}"`
+1. **Path discovery**: Uses `argc --argc-script-path` in parent directory
+1. **Base case**: Empty string when no parent Argcfile exists
 
 ## Next Steps / TODO
+
 - Generalize the pattern for any command name (not just "demo")
-- Create reusable template/generator 
+- Create reusable template/generator
 - Test at multiple hierarchy depths
 - Document best practices for complex hierarchies
 
 ## Files Modified
+
 - `/home/skogix/skogai/skogargc/docs/Argcfile.sh` - working implementation
 - `/home/skogix/skogai/skogargc/docs/argc-forwarding-pattern.md` - documentation
 - `/home/skogix/skogai/skogargc/argc-forward.sh` - abandoned approach
 
 ## Architecture Insight
+
 This enables building modular CLI tool ecosystems:
+
 ```
 /project/Argcfile.sh           # root commands
 ├── tools/Argcfile.sh          # forwards to root  

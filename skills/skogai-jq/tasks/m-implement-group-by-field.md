@@ -3,7 +3,9 @@ name: m-implement-group-by-field
 branch: feature/m-implement-group-by-field
 status: pending
 created: 2025-11-14
-submodules: [list of git submodules affected (delete if not super-repo)]
+submodules:
+  - list of git submodules affected (delete if not super-repo)
+permalink: skogai/skills/skogai-jq/tasks/m-implement-group-by-field
 ---
 
 # [Human-Readable Title]

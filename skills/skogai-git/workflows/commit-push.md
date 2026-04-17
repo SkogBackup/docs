@@ -1,10 +1,16 @@
+---
+title: commit-push
+type: note
+permalink: skogai/skills/skogai-git/workflows/commit-push
+---
+
 # Commit and Push Workflow
 
 Semantic commits following "outcomes not process" philosophy.
 
-<required_reading>
-- references/commit-philosophy.md
-</required_reading>
+\<required_reading>
+
+- references/commit-philosophy.md \</required_reading>
 
 <process>
 
@@ -35,6 +41,7 @@ git log --oneline -10
 ```
 
 Match existing convention:
+
 - Conventional: `feat:`, `fix:`, `docs:`
 - Simple: "Add feature X"
 - Ticket refs: "[JIRA-123] Add feature"
@@ -42,6 +49,7 @@ Match existing convention:
 ## 4. Write Commit Message
 
 **Format:**
+
 ```
 type(scope): short description
 
@@ -52,6 +60,7 @@ type(scope): short description
 ```
 
 **Types:**
+
 - `feat` - New feature
 - `fix` - Bug fix
 - `docs` - Documentation
@@ -60,6 +69,7 @@ type(scope): short description
 - `chore` - Maintenance
 
 **Example:**
+
 ```bash
 git commit -m "feat(auth): add JWT refresh token rotation
 
@@ -113,7 +123,7 @@ Generates commit message from diff automatically.
 
 </process>
 
-<message_templates>
+\<message_templates>
 
 ## Feature
 
@@ -164,11 +174,12 @@ Current: [task name]
 Blocked: [reason if blocked]
 ```
 
-</message_templates>
+\</message_templates>
 
-<anti_patterns>
+\<anti_patterns>
 
 Avoid:
+
 - "Fixed typo"
 - "WIP"
 - "Updates"
@@ -178,11 +189,11 @@ Avoid:
 
 These create noise. Commit outcomes, not process.
 
-</anti_patterns>
+\</anti_patterns>
 
-<success_criteria>
+\<success_criteria>
+
 - Commits are atomic and reviewable
 - Messages describe outcomes
 - Matches repo style
-- Changes pushed to remote
-</success_criteria>
+- Changes pushed to remote \</success_criteria>

@@ -100,21 +100,25 @@ We will [specific action] by [approach].
 ## Documentation Process
 
 1. **Read the implementation thoroughly**
+
    - Understand actual behavior, not intended
    - Identify the one core pattern/abstraction
    - Find the most common usage scenario
 
-2. **Write within token limits**
+1. **Write within token limits**
+
    - Count tokens before finalizing
    - Rewrite if over limit
    - Remove adjectives, keep facts
 
-3. **Focus on practical usage**
+1. **Focus on practical usage**
+
    - How to use it correctly
    - How to handle errors
    - What breaks it
 
-4. **Ensure consistency**
+1. **Ensure consistency**
+
    - Module/package docs identical across all related files
    - Examples must actually work/execute
    - ADRs must reference real code
@@ -141,14 +145,13 @@ We will [specific action] by [approach].
 
 ## Token Counting
 
-150 tokens ≈ 100-120 words ≈ 6-8 lines of text
-500 tokens ≈ 350-400 words ≈ 20-25 lines of text
+150 tokens ≈ 100-120 words ≈ 6-8 lines of text 500 tokens ≈ 350-400 words ≈ 20-25 lines of text
 
 If approaching limit, remove:
 
 1. Adjectives and adverbs
-2. Redundant explanations
-3. Optional details
-4. Multiple examples (keep one)
+1. Redundant explanations
+1. Optional details
+1. Multiple examples (keep one)
 
 Remember: Concise documentation is more likely to be read and maintained. Every word must earn its place.
